@@ -12,4 +12,9 @@ export class ThemeService {
   setTheme(theme: Theme) {
     this.$theme.next(theme);
   }
+
+  toggleTheme() {
+    const theme = this.$theme.getValue();
+    this.setTheme(theme === 'dark' ? 'light' : 'dark');
+  }
 }
