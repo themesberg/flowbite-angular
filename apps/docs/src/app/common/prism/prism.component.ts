@@ -15,11 +15,11 @@ import { highlightElement } from 'prismjs';
   ><code #codeEle class="language-{{ language }}">{{code}}</code></pre>`,
 })
 export class PrismComponent implements AfterViewInit {
-  @ViewChild('codeEle') codeEle!: ElementRef;
+  @ViewChild('codeEle') codeEle?: ElementRef;
   @Input() code?: string;
   @Input() language?: string;
 
   ngAfterViewInit() {
-    highlightElement(this.codeEle.nativeElement);
+    this.codeEle && highlightElement(this.codeEle.nativeElement);
   }
 }

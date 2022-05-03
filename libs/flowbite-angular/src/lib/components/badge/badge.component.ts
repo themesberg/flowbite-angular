@@ -15,7 +15,7 @@ export type BadgeSize = 'xs' | 'sm';
 @Component({
   selector: 'flowbite-badge',
   template: `<span [class.group]="href">
-    <span
+    <a
       class="flex h-fit items-center gap-1 font-semibold"
       [class.cursor-pointer]="href"
       [ngClass]="[
@@ -35,7 +35,7 @@ export type BadgeSize = 'xs' | 'sm';
         *ngIf="icon"
       ></span>
       <span><ng-content></ng-content></span>
-    </span>
+    </a>
   </span>`,
 })
 export class BadgeComponent {
