@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-  title = 'docs';
-}
+export class AppComponent {}
