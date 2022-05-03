@@ -6,7 +6,7 @@
     </a>
   </p>
   <p>
-    Build websites even faster with components on top of React and Tailwind CSS
+    Build websites even faster with components on top of Angular and Tailwind CSS
   </p>
   <p>
     <a href="https://discord.com/invite/4eeurUVvTy">
