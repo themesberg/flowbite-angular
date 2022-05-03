@@ -21,7 +21,7 @@
     "test": "nx run-many --target test --all",
     "prettier": "nx format:check",
     "prettier:fix": "nx format:write",
-    "release": "standard-version --packageFiles libs/flowbite-angular/package.json -a",
+    "release": "standard-version",
     "prepublishOnly": "yarn build:lib"
   },
   "dependencies": {
