@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/flowbite-angular",
+  "sourceRoot": "libs/flowbite-angular/src",
+  "prefix": "flowbite",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/flowbite-angular"],
+      "options": {
+        "project": "libs/flowbite-angular/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/flowbite-angular/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/flowbite-angular/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/flowbite-angular"],
+      "options": {
+        "jestConfig": "libs/flowbite-angular/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/flowbite-angular/**/*.ts",
+          "libs/flowbite-angular/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
