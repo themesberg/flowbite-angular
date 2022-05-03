@@ -3,7 +3,7 @@ import { SidebarService } from '../../services';
 
 @Component({
   selector: 'flowbite-sidebar-item',
-  template: `<li
+  template: `<a
     class="group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
     [routerLink]="link"
     routerLinkActive="bg-gray-200 dark:bg-gray-700"
@@ -25,7 +25,7 @@ import { SidebarService } from '../../services';
       *ngIf="(sidebarService.$collapsed | async) === false && label"
       >{{ label }}</flowbite-badge
     >
-  </li>`,
+  </a>`,
 })
 export class SidebarItemComponent {
   @Input() icon?: string;
