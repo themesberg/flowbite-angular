@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   template: ` <button
     type="button"
     class="rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-    (click)="toggleTheme()"
+    (click)="themeService.toggleTheme()"
   >
     <svg
       *ngIf="themeService.$theme.getValue() === 'dark'"
@@ -48,11 +48,6 @@ export class DarkThemeToggleComponent implements OnInit, OnDestroy {
   private themeSubscription: Subscription | undefined = undefined;
 
   constructor(public readonly themeService: ThemeService) {}
-
-  toggleTheme() {
-    const theme = this.themeService.$theme.getValue();
-    this.themeService.setTheme(theme === 'dark' ? 'light' : 'dark');
-  }
 
   ngOnInit(): void {
     if (
