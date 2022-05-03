@@ -1,0 +1,18 @@
+{
+  "packageFiles": [
+    {
+      "filename": "libs/flowbite-angular/package.json",
+      "type": "json"
+    }
+  ],
+  "bumpFiles": [
+    {
+      "filename": "libs/flowbite-angular/package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package.json",
+      "type": "json"
+    }
+  ]
+}
