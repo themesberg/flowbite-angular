@@ -1,6 +1,5 @@
 {
   "projectType": "library",
-  "root": "libs/flowbite-angular",
   "sourceRoot": "libs/flowbite-angular/src",
   "prefix": "flowbite",
   "targets": {
