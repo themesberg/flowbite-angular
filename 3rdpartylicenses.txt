@@ -10,6 +10,8 @@ MIT
 @angular/router
 MIT
 
+@scullyio/ng-lib
+
 flowbite-angular
 MIT
 
