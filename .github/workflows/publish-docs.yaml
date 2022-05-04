@@ -43,7 +43,7 @@ jobs:
 
       - name: Build code 🛠
         run: |
-          yarn build --base-href /flowbite-angular/
+          yarn build
           yarn scully --project docs
 
       - name: Deploy the website 🚀

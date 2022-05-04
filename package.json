@@ -40,6 +40,7 @@
     "@scullyio/ng-lib": "^2.1.32",
     "@scullyio/platform-server": "^2.1.32",
     "@scullyio/scully": "^2.1.32",
+    "@scullyio/scully-plugin-base-href-rewrite": "^2.1.32",
     "@scullyio/scully-plugin-puppeteer": "^2.1.32",
     "flowbite": "^1.4.4",
     "rxjs": "~7.4.0",
