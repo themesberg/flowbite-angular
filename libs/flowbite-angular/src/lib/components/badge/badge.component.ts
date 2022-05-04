@@ -29,12 +29,7 @@ export type BadgeSize = 'xs' | 'sm';
       ]"
       [routerLink]="href"
     >
-      <span
-        [ngClass]="iconSizeClasses[size]"
-        [innerHTML]="icon! | sanitizeHtml"
-        *ngIf="icon"
-      ></span>
-      <span><ng-content></ng-content></span>
+      <ng-content></ng-content>
     </a>
   </span>`,
 })
@@ -42,7 +37,6 @@ export class BadgeComponent {
   @Input() color: BadgeColor = 'blue';
   @Input() size: BadgeSize = 'xs';
   @Input() href?: string;
-  @Input() icon?: string;
   @Input() onlyIcon = false;
 
   colorClasses: Record<BadgeColor, string> = {
@@ -63,10 +57,5 @@ export class BadgeComponent {
   sizeClasses: Record<BadgeSize, string> = {
     xs: 'text-xs',
     sm: 'text-sm',
-  };
-
-  iconSizeClasses: Record<BadgeSize, string> = {
-    xs: 'w-3 h-3',
-    sm: 'w-3.5 h-3.5',
   };
 }
