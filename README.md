@@ -75,7 +75,7 @@ module.exports = {
 <table>
   <tr>
     <td width="33.3333%">:construction: Alerts</td>
-    <td width="33.3333%">:construction: Badge</td>
+    <td width="33.3333%">Badges</td>
     <td width="33.3333%">:construction: Breadcrumbs</td>
   </tr>
   <tr>
