@@ -5,6 +5,6 @@ export const config: ScullyConfig = {
   projectRoot: './apps/docs/src',
   projectName: 'docs',
   distFolder: './dist/apps/docs',
-  outDir: './dist/static',
+  outDir: './dist/docs-static',
   routes: {},
 };
