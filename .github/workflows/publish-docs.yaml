@@ -41,10 +41,13 @@ jobs:
       - name: Run unit tests 🔬
         run: yarn test
 
+      - name: Build code 🛠
+        run: |
+          yarn build --base-href /flowbite-angular/
+          yarn scully --project docs
+
       - name: Deploy the website 🚀
-        uses: cmgriffing/scully-gh-pages-action@v9
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-branch: gh-pages
-          build-args: --base-href /flowbite-angular/
-          scully-args: --project docs
+          branch: gh-pages
+          folder: dist/docs-static
