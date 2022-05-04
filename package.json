@@ -22,7 +22,9 @@
     "prettier": "nx format:check",
     "prettier:fix": "nx format:write",
     "release": "standard-version",
-    "prepublishOnly": "yarn build:lib"
+    "prepublishOnly": "yarn build:lib",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "dependencies": {
     "@angular/animations": "~13.3.0",
@@ -32,8 +34,13 @@
     "@angular/forms": "~13.3.0",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
+    "@angular/platform-server": "^13.3.6",
     "@angular/router": "~13.3.0",
     "@nrwl/angular": "14.1.1",
+    "@scullyio/ng-lib": "^2.1.32",
+    "@scullyio/platform-server": "^2.1.32",
+    "@scullyio/scully": "^2.1.32",
+    "@scullyio/scully-plugin-puppeteer": "^2.1.32",
     "flowbite": "^1.4.4",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
@@ -55,6 +62,7 @@
     "@nrwl/jest": "14.1.1",
     "@nrwl/linter": "14.1.1",
     "@nrwl/workspace": "14.1.1",
+    "@scullyio/init": "^2.1.32",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
     "@types/prismjs": "^1.26.0",
@@ -83,4 +91,3 @@
     "typescript": "~4.6.2"
   }
 }
-

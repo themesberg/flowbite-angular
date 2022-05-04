@@ -1,14 +1,29 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
 
-import { routes } from './routes';
+import {
+  BadgePageComponent,
+  DashboardPageComponent,
+  SidebarPageComponent,
+} from '../pages';
+
+const routes: Route[] = [
+  {
+    path: '',
+    component: DashboardPageComponent,
+  },
+  {
+    path: 'badges',
+    component: BadgePageComponent,
+  },
+  {
+    path: 'sidebar',
+    component: SidebarPageComponent,
+  },
+];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(
-      routes.map(({ href, component }) => ({ path: href, component }))
-    ),
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class RoutingModule {}
