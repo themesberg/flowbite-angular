@@ -44,6 +44,7 @@ jobs:
       - name: Deploy the website 🚀
         uses: cmgriffing/scully-gh-pages-action@v9
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          branch: gh-pages
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-branch: gh-pages
           build-args: --base-href /flowbite-angular/
+          scully-args: --project docs
