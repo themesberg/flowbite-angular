@@ -17,6 +17,7 @@ import {
   DemoPageComponent,
   PrismComponent,
 } from './common';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 const PAGES_COMPONENTS = [
   BadgePageComponent,
@@ -32,7 +33,7 @@ const COMMON_COMPONENTS = [
 
 @NgModule({
   declarations: [AppComponent, PAGES_COMPONENTS, COMMON_COMPONENTS],
-  imports: [BrowserModule, RoutingModule, FlowbiteModule],
+  imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
