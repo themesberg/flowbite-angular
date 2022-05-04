@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/docs",
   "sourceRoot": "apps/docs/src",
   "prefix": "flowbite",
   "targets": {

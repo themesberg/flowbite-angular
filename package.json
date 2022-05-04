@@ -33,7 +33,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@nrwl/angular": "14.0.5",
+    "@nrwl/angular": "14.1.1",
     "flowbite": "^1.4.4",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
@@ -49,12 +49,12 @@
     "@angular/language-service": "~13.3.0",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
-    "@nrwl/cli": "14.0.5",
-    "@nrwl/cypress": "14.0.5",
-    "@nrwl/eslint-plugin-nx": "14.0.5",
-    "@nrwl/jest": "14.0.5",
-    "@nrwl/linter": "14.0.5",
-    "@nrwl/workspace": "14.0.5",
+    "@nrwl/cli": "14.1.1",
+    "@nrwl/cypress": "14.1.1",
+    "@nrwl/eslint-plugin-nx": "14.1.1",
+    "@nrwl/jest": "14.1.1",
+    "@nrwl/linter": "14.1.1",
+    "@nrwl/workspace": "14.1.1",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
     "@types/prismjs": "^1.26.0",
@@ -68,7 +68,7 @@
     "jest": "27.5.1",
     "jest-preset-angular": "11.1.1",
     "ng-packagr": "^13.0.0",
-    "nx": "14.0.5",
+    "nx": "14.1.1",
     "postcss": "^8.4.13",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^6.7.0",
@@ -83,3 +83,4 @@
     "typescript": "~4.6.2"
   }
 }
+
