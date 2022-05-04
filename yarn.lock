@@ -2226,6 +2226,30 @@
   dependencies:
     tslib "^2.3.1"
 
+"@scullyio/scully-plugin-base-href-rewrite@^2.1.32":
+  version "2.1.32"
+  resolved "https://registry.yarnpkg.com/@scullyio/scully-plugin-base-href-rewrite/-/scully-plugin-base-href-rewrite-2.1.32.tgz#4668caea1be89404610c2245a949ba8f6151dfc5"
+  integrity sha512-yL8wE61qMq1XB64dnSvf4k0Yg+DBJWEEu9wFXroKfKtElhXnek2KMW//+BAFuycJY2J9JFBfIKUHzJcz7wcv9A==
+  dependencies:
+    "@angular/common" "12.2.6"
+    "@angular/core" "12.2.6"
+    "@angular/platform-server" "12.2.6"
+    "@sentry/node" "^6.12.0"
+    asciidoctor "^2.2.5"
+    chalk "^4.1.2"
+    chokidar "^3.5.3"
+    compression "^1.7.4"
+    cors "^2.8.5"
+    express "4.17.3"
+    js-yaml "^4.1.0"
+    os "^0.1.2"
+    prismjs "^1.27.0"
+    puppeteer "^13.4.1"
+    rxjs "^7.5.4"
+    selfsigned "^2.0.0"
+    ws "^8.5.0"
+    zone.js "0.11.4"
+
 "@scullyio/scully-plugin-puppeteer@^2.1.32":
   version "2.1.32"
   resolved "https://registry.yarnpkg.com/@scullyio/scully-plugin-puppeteer/-/scully-plugin-puppeteer-2.1.32.tgz#cde19fcde95bd766a7ffcff19274d3a501b9fa62"
