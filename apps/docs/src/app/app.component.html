@@ -18,7 +18,11 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-      <a class="text-xl font-semibold dark:text-white cursor-pointer" routerLink="">Flowbite Angular Components</a>
+      <a
+        class="cursor-pointer text-xl font-semibold dark:text-white"
+        routerLink=""
+        >Flowbite Angular Components</a
+      >
     </div>
     <div class="flex items-center gap-2">
       <a
@@ -49,7 +53,12 @@
   <div class="flex h-full overflow-hidden bg-gray-50 dark:bg-gray-900">
     <flowbite-sidebar extraClass="border-r">
       <flowbite-sidebar-item-group>
-        <flowbite-sidebar-item *ngFor="let route of routes" [icon]="route.icon" [link]="route.href">{{route.title}}</flowbite-sidebar-item>
+        <flowbite-sidebar-item
+          *ngFor="let component of components"
+          [icon]="component.icon"
+          [link]="component.href"
+          >{{ component.title }}</flowbite-sidebar-item
+        >
       </flowbite-sidebar-item-group>
     </flowbite-sidebar>
     <main class="flex-1 overflow-auto p-4">

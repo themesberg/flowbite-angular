@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { SidebarService } from 'flowbite-angular';
 
-import { routes } from './routing/routes';
+import { components } from './common';
 
 @Component({
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  routes = routes;
+  components = components;
 
   constructor(public readonly sidebarService: SidebarService) {}
 }

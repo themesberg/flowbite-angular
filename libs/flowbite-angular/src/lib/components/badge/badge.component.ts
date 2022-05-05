@@ -21,7 +21,7 @@ export type BadgeSize = 'xs' | 'sm';
       [ngClass]="[
         colorClasses[color],
         sizeClasses[size],
-        !onlyIcon
+        !iconOnly
           ? 'rounded px-2 py-0.5'
           : size === 'xs'
           ? 'rounded-full p-1'
@@ -37,7 +37,7 @@ export class BadgeComponent {
   @Input() color: BadgeColor = 'blue';
   @Input() size: BadgeSize = 'xs';
   @Input() href?: string;
-  @Input() onlyIcon = false;
+  @Input() iconOnly = false;
 
   colorClasses: Record<BadgeColor, string> = {
     blue: 'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
