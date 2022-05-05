@@ -44,7 +44,7 @@ jobs:
       - name: Build code 🛠
         run: |
           yarn build
-          yarn scully --project docs
+          yarn scully --project docs --scanRoutes
 
       - name: Deploy the website 🚀
         uses: JamesIves/github-pages-deploy-action@v4

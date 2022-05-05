@@ -1,9 +1,4 @@
-import { Component, Input } from '@angular/core';
-
-export type CodeExample = {
-  title: string;
-  code: string;
-};
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-page',
