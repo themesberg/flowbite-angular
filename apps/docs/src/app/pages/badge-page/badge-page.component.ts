@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'flowbite-badge-page',
   template: ` <flowbite-demo-page>
-    <flowbite-demo-example title="Default Badge" [code]="examples[0]">
+    <flowbite-demo-example title="Default Badge" [codes]="[examples[0]]">
       <div class="flex flex-wrap gap-2">
         <flowbite-badge>Default</flowbite-badge>
         <flowbite-badge color="dark">Dark</flowbite-badge>
@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
         <flowbite-badge color="pink">Pink</flowbite-badge>
       </div>
     </flowbite-demo-example>
-    <flowbite-demo-example title="Large badge" [code]="examples[1]">
+    <flowbite-demo-example title="Large badge" [codes]="[examples[1]]">
       <div class="flex flex-wrap gap-2">
         <flowbite-badge size="sm">Default</flowbite-badge>
         <flowbite-badge color="dark" size="sm">Dark</flowbite-badge>
@@ -27,13 +27,13 @@ import { Component } from '@angular/core';
         <flowbite-badge color="pink" size="sm">Pink</flowbite-badge>
       </div>
     </flowbite-demo-example>
-    <flowbite-demo-example title="Badges as links" [code]="examples[2]">
+    <flowbite-demo-example title="Badges as links" [codes]="[examples[2]]">
       <div class="flex flex-wrap items-center gap-2">
         <flowbite-badge href="/badges">Default</flowbite-badge>
         <flowbite-badge href="/badges" size="sm">Default</flowbite-badge>
       </div>
     </flowbite-demo-example>
-    <flowbite-demo-example title="Badges with icon" [code]="examples[3]">
+    <flowbite-demo-example title="Badges with icon" [codes]="[examples[3]]">
       <div class="flex flex-wrap items-center gap-2">
         <flowbite-badge>
           <svg
@@ -75,9 +75,9 @@ import { Component } from '@angular/core';
         </flowbite-badge>
       </div>
     </flowbite-demo-example>
-    <flowbite-demo-example title="Badge with icon only" [code]="examples[4]">
+    <flowbite-demo-example title="Badge with icon only" [codes]="[examples[4]]">
       <div class="flex flex-wrap items-center gap-2">
-        <flowbite-badge [onlyIcon]="true">
+        <flowbite-badge [iconOnly]="true">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -95,7 +95,7 @@ import { Component } from '@angular/core';
             ></path>
           </svg>
         </flowbite-badge>
-        <flowbite-badge [onlyIcon]="true" color="dark">
+        <flowbite-badge [iconOnly]="true" color="dark">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -113,7 +113,7 @@ import { Component } from '@angular/core';
             ></path>
           </svg>
         </flowbite-badge>
-        <flowbite-badge [onlyIcon]="true" size="sm">
+        <flowbite-badge [iconOnly]="true" size="sm">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -131,7 +131,7 @@ import { Component } from '@angular/core';
             ></path>
           </svg>
         </flowbite-badge>
-        <flowbite-badge [onlyIcon]="true" color="dark" size="sm">
+        <flowbite-badge [iconOnly]="true" color="dark" size="sm">
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -155,7 +155,9 @@ import { Component } from '@angular/core';
 })
 export class BadgePageComponent {
   examples = [
-    `
+    {
+      language: 'html',
+      code: `
 <flowbite-badge>Default</flowbite-badge>
 <flowbite-badge color="dark">Dark</flowbite-badge>
 <flowbite-badge color="red">Red</flowbite-badge>
@@ -165,7 +167,10 @@ export class BadgePageComponent {
 <flowbite-badge color="purple">Purple</flowbite-badge>
 <flowbite-badge color="pink">Pink</flowbite-badge>
 `,
-    `
+    },
+    {
+      language: 'html',
+      code: `
 <flowbite-badge size="sm">Default</flowbite-badge>
 <flowbite-badge color="dark" size="sm">Dark</flowbite-badge>
 <flowbite-badge color="red" size="sm">Red</flowbite-badge>
@@ -175,16 +180,26 @@ export class BadgePageComponent {
 <flowbite-badge color="purple" size="sm">Purple</flowbite-badge>
 <flowbite-badge color="pink" size="sm">Pink</flowbite-badge>
 `,
-    `
+    },
+    {
+      language: 'html',
+      code: `
 <flowbite-badge href="/badges">Default</flowbite-badge>
 <flowbite-badge href="/badges" size="sm">Default</flowbite-badge>`,
-    `
+    },
+    {
+      language: 'html',
+      code: `
 <flowbite-badge><svg>...</svg> 2 minutes ago</flowbite-badge>
 <flowbite-badge color="dark"><svg>...</svg> 3 days ago</flowbite-badge>`,
-    `
-<flowbite-badge [onlyIcon]="true"><svg>...</svg></flowbite-badge>
-<flowbite-badge [onlyIcon]="true" color="dark"><svg>...</svg></flowbite-badge>
-<flowbite-badge [onlyIcon]="true" size="sm"><svg>...</svg></flowbite-badge>
-<flowbite-badge [onlyIcon]="true" color="dark" size="sm"><svg>...</svg></flowbite-badge>`,
+    },
+    {
+      language: 'html',
+      code: `
+<flowbite-badge [iconOnly]="true"><svg>...</svg></flowbite-badge>
+<flowbite-badge [iconOnly]="true" color="dark"><svg>...</svg></flowbite-badge>
+<flowbite-badge [iconOnly]="true" size="sm"><svg>...</svg></flowbite-badge>
+<flowbite-badge [iconOnly]="true" color="dark" size="sm"><svg>...</svg></flowbite-badge>`,
+    },
   ];
 }

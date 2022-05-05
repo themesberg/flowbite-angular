@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import {
+  AlertComponent,
   BadgeComponent,
   DarkThemeToggleComponent,
   NavbarComponent,
@@ -14,6 +15,7 @@ import { SidebarService, ThemeService } from './services';
 import { SanitizeHtmlPipe } from './pipes';
 
 const COMPONENTS = [
+  AlertComponent,
   BadgeComponent,
   DarkThemeToggleComponent,
   NavbarComponent,
