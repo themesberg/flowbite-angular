@@ -10,6 +10,7 @@ import 'prismjs/components/prism-typescript';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing/routing.module';
 import {
+  AccordionPageComponent,
   AlertPageComponent,
   BadgePageComponent,
   DashboardPageComponent,
@@ -22,6 +23,7 @@ import {
 } from './common';
 
 const PAGES_COMPONENTS = [
+  AccordionPageComponent,
   AlertPageComponent,
   BadgePageComponent,
   DashboardPageComponent,

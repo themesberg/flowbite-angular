@@ -47,7 +47,7 @@ import { Subscription } from 'rxjs';
 export class DarkThemeToggleComponent implements OnInit, OnDestroy {
   private themeSubscription: Subscription | undefined = undefined;
 
-  constructor(public readonly themeService: ThemeService) {}
+  constructor(readonly themeService: ThemeService) {}
 
   ngOnInit(): void {
     if (

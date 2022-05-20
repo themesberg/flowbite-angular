@@ -1,3 +1,4 @@
+export * from './accordion-page/accordion-page.component';
 export * from './alert-page/alert-page.component';
 export * from './badge-page/badge-page.component';
 export * from './dashboard-page/dashboard-page.component';
