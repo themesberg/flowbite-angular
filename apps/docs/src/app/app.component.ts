@@ -10,5 +10,5 @@ import { components } from './common';
 export class AppComponent {
   components = components;
 
-  constructor(public readonly sidebarService: SidebarService) {}
+  constructor(readonly sidebarService: SidebarService) {}
 }

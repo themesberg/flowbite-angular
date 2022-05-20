@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import {
+  AccordionComponent,
+  AccordionContentComponent,
+  AccordionPanelComponent,
+  AccordionTitleComponent,
   AlertComponent,
   BadgeComponent,
   DarkThemeToggleComponent,
@@ -15,6 +19,10 @@ import { SidebarService, ThemeService } from './services';
 import { SanitizeHtmlPipe } from './pipes';
 
 const COMPONENTS = [
+  AccordionComponent,
+  AccordionContentComponent,
+  AccordionPanelComponent,
+  AccordionTitleComponent,
   AlertComponent,
   BadgeComponent,
   DarkThemeToggleComponent,

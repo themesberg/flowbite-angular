@@ -32,5 +32,5 @@ export class SidebarItemComponent {
   @Input() link?: string;
   @Input() label?: string;
 
-  constructor(public readonly sidebarService: SidebarService) {}
+  constructor(readonly sidebarService: SidebarService) {}
 }

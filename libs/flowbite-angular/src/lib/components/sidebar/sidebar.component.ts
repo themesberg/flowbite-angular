@@ -21,5 +21,5 @@ export class SidebarComponent {
   @Input() extraClass = '';
   @Input() rounded = false;
 
-  constructor(public readonly sidebarService: SidebarService) {}
+  constructor(readonly sidebarService: SidebarService) {}
 }

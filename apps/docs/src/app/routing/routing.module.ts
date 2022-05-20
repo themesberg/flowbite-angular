@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 
 import {
+  AccordionPageComponent,
   AlertPageComponent,
   BadgePageComponent,
   DashboardPageComponent,
@@ -12,6 +13,10 @@ const routes: Route[] = [
   {
     path: '',
     component: DashboardPageComponent,
+  },
+  {
+    path: 'accordion',
+    component: AccordionPageComponent,
   },
   {
     path: 'alerts',
