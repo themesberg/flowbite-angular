@@ -1,6 +1,6 @@
-module.exports = {
+export default {
   displayName: 'docs',
-  preset: '../../jest.preset.ts',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
