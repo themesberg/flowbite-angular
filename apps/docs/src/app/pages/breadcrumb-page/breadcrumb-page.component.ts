@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-badge-page',
+  selector: 'flowbite-breadcrumb-page',
   template: ` <flowbite-demo-page>
     <flowbite-demo-example title="Default Breadcrumb" [codes]="[examples[0]]">
       <flowbite-breadcrumb>
