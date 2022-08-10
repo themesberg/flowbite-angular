@@ -15,6 +15,7 @@ import {
   BadgePageComponent,
   DashboardPageComponent,
   SidebarPageComponent,
+  BreadcrumbPageComponent,
 } from './pages';
 import {
   DemoExampleComponent,
@@ -28,6 +29,7 @@ const PAGES_COMPONENTS = [
   BadgePageComponent,
   DashboardPageComponent,
   SidebarPageComponent,
+  BreadcrumbPageComponent,
 ];
 
 const COMMON_COMPONENTS = [

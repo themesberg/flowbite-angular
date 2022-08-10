@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+
       - name: Setup Cache 🗂
         uses: actions/cache@v3
         with:
