@@ -5,3 +5,4 @@ export * from './dark-theme-toggle';
 export * from './navbar';
 export * from './sidebar';
 export * from './breadcrumb';
+export * from './button';
