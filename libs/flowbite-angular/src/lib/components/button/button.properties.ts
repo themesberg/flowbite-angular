@@ -38,3 +38,8 @@ export const buttonPillClasses: Record<string, string> = {
   false: ' rounded-lg',
   true: ' rounded-full',
 };
+
+export const buttonDisableClasses: Record<string, string> = {
+  false: '',
+  true: ' cursor-not-allowed opacity-50',
+};
