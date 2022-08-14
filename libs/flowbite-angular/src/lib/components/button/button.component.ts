@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {
+  buttonBaseClass,
   buttonColorClasses,
   ButtonColors,
   buttonDisableClasses,
@@ -20,15 +21,16 @@ export class ButtonComponent implements OnInit {
   @Input() color: ButtonColors = 'info';
   @Input() size: ButtonSizes = 'md';
   @Input() pill = false;
+  @Input() outline = false;
   @Input() disabled = false;
 
-  buttonClass =
-    'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10 ';
+  buttonClass = buttonBaseClass;
 
   ngOnInit() {
-    this.buttonClass += buttonColorClasses[this.color];
-    this.buttonClass += buttonSizeClasses[this.size];
+    this.buttonClass +=
+      buttonColorClasses[this.color][this.outline ? 'outline' : 'solid'];
     this.buttonClass += buttonPillClasses[String(this.pill)];
     this.buttonClass += buttonDisableClasses[String(this.disabled)];
+    this.buttonClass += buttonSizeClasses[this.size];
   }
 }
