@@ -34,8 +34,14 @@ type FillClasses = {
   outline: string;
 };
 
-export const buttonBaseClass =
-  'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10';
+export const buttonBaseClass = {
+  default:
+    'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
+  span: 'group inline-flex relative items-center justify-center p-0.5 mb-2 mr-2 font-medium overflow-hidden',
+};
+
+export const spanBaseClass =
+  'relative inline-flex items-center bg-white transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900';
 
 export const buttonColorClasses: Record<ButtonColors, FillClasses> = {
   dark: {
@@ -112,7 +118,8 @@ export const buttonDuoToneColorClasses: Record<
   purpleToBlue: {
     solid:
       ' text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800',
-    outline: ' ',
+    outline:
+      ' text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800',
   },
   cyanToBlue: {
     solid:
