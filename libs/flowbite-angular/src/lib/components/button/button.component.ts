@@ -4,6 +4,8 @@ import {
   buttonColorClasses,
   ButtonColors,
   buttonDisableClasses,
+  buttonDuoToneColorClasses,
+  ButtonDuoToneColors,
   buttonMonochromeColorClasses,
   ButtonMonochromeColors,
   buttonPillClasses,
@@ -22,6 +24,7 @@ import {
 export class ButtonComponent implements OnInit {
   @Input() color: ButtonColors = 'info';
   @Input() gradientMonochrome?: ButtonMonochromeColors;
+  @Input() gradientDuoTone?: ButtonDuoToneColors;
   @Input() size: ButtonSizes = 'md';
   @Input() pill = false;
   @Input() outline = false;
@@ -30,7 +33,12 @@ export class ButtonComponent implements OnInit {
   buttonClass = buttonBaseClass;
 
   ngOnInit() {
-    if (this.gradientMonochrome) {
+    if (this.gradientDuoTone) {
+      this.buttonClass +=
+        buttonDuoToneColorClasses[this.gradientDuoTone][
+          this.outline ? 'outline' : 'solid'
+        ];
+    } else if (this.gradientMonochrome) {
       this.buttonClass += buttonMonochromeColorClasses[this.gradientMonochrome];
     } else {
       this.buttonClass +=
