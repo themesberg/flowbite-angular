@@ -11,13 +11,27 @@ import {
   buttonPillClasses,
   buttonSizeClasses,
   ButtonSizes,
+  spanBaseClass,
 } from './button.properties';
 
 @Component({
   selector: 'flowbite-button',
   template: `
     <button type="button" [class]="buttonClass" [disabled]="disabled">
-      <ng-content></ng-content>
+      <span
+        *ngIf="gradientDuoTone && outline; else default"
+        [class]="spanClass"
+      >
+        <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
+      </span>
+
+      <ng-template #default>
+        <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
+      </ng-template>
+
+      <ng-template #contentOutlet>
+        <ng-content></ng-content>
+      </ng-template>
     </button>
   `,
 })
@@ -30,22 +44,37 @@ export class ButtonComponent implements OnInit {
   @Input() outline = false;
   @Input() disabled = false;
 
-  buttonClass = buttonBaseClass;
+  buttonClass = '';
+  spanClass = spanBaseClass;
 
   ngOnInit() {
-    if (this.gradientDuoTone) {
+    if (this.gradientDuoTone && this.outline) {
+      this.buttonClass = buttonBaseClass['span'];
       this.buttonClass +=
         buttonDuoToneColorClasses[this.gradientDuoTone][
           this.outline ? 'outline' : 'solid'
         ];
-    } else if (this.gradientMonochrome) {
-      this.buttonClass += buttonMonochromeColorClasses[this.gradientMonochrome];
+
+      this.spanClass += this.pill ? buttonPillClasses['true'] : ' rounded-md';
+      this.spanClass += buttonSizeClasses[this.size];
     } else {
-      this.buttonClass +=
-        buttonColorClasses[this.color][this.outline ? 'outline' : 'solid'];
+      this.buttonClass = buttonBaseClass['default'];
+
+      if (this.gradientDuoTone) {
+        this.buttonClass +=
+          buttonDuoToneColorClasses[this.gradientDuoTone]['solid'];
+      } else if (this.gradientMonochrome) {
+        this.buttonClass +=
+          buttonMonochromeColorClasses[this.gradientMonochrome];
+      } else {
+        this.buttonClass +=
+          buttonColorClasses[this.color][this.outline ? 'outline' : 'solid'];
+      }
+
+      this.buttonClass += buttonPillClasses[String(this.pill)];
+      this.buttonClass += buttonSizeClasses[this.size];
     }
-    this.buttonClass += buttonPillClasses[String(this.pill)];
+
     this.buttonClass += buttonDisableClasses[String(this.disabled)];
-    this.buttonClass += buttonSizeClasses[this.size];
   }
 }
