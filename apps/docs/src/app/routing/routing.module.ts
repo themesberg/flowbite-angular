@@ -6,6 +6,7 @@ import {
   AlertPageComponent,
   BadgePageComponent,
   BreadcrumbPageComponent,
+  ButtonPageComponent,
   DashboardPageComponent,
   SidebarPageComponent,
 } from '../pages';
@@ -30,6 +31,10 @@ const routes: Route[] = [
   {
     path: 'breadcrumb',
     component: BreadcrumbPageComponent,
+  },
+  {
+    path: 'buttons',
+    component: ButtonPageComponent,
   },
   {
     path: 'sidebar',
