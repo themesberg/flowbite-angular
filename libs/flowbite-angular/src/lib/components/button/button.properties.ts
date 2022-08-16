@@ -160,11 +160,11 @@ export const buttonDuoToneColorClasses: Record<
 };
 
 export const buttonSizeClasses: Record<ButtonSizes, string> = {
-  xs: ' text-xs px-2 py-1',
-  sm: ' text-sm px-3 py-1.5',
-  md: ' text-sm px-4 py-2',
-  lg: ' text-base px-5 py-2.5',
-  xl: ' text-base px-6 py-3',
+  xs: ' text-xs py-2 px-3',
+  sm: ' text-sm py-2 px-3',
+  md: ' text-sm px-5 py-2.5',
+  lg: ' text-base py-3 px-5',
+  xl: ' text-base px-6 py-3.5',
 };
 
 export const buttonPillClasses: Record<string, string> = {
