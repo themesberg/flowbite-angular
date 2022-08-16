@@ -70,11 +70,10 @@ export class ButtonComponent implements OnInit {
         this.buttonClass +=
           buttonColorClasses[this.color][this.outline ? 'outline' : 'solid'];
       }
-
-      this.buttonClass += buttonPillClasses[String(this.pill)];
       this.buttonClass += buttonSizeClasses[this.size];
     }
 
+    this.buttonClass += buttonPillClasses[String(this.pill)];
     this.buttonClass += buttonDisableClasses[String(this.disabled)];
   }
 }
