@@ -148,7 +148,17 @@ import { Component } from '@angular/core';
         </flowbite-button>
       </div>
     </flowbite-demo-example>
-    <flowbite-demo-example title="Icon buttons" [codes]="[examples[8]]">
+    <flowbite-demo-example title="Button with label" [codes]="[examples[8]]">
+      <div class="flex flex-wrap gap-2">
+        <flowbite-button>
+          Messages
+          <flowbite-badge customStyle="py-0" [iconOnly]="true" class="ml-2"
+            >2</flowbite-badge
+          >
+        </flowbite-button>
+      </div>
+    </flowbite-demo-example>
+    <flowbite-demo-example title="Icon buttons" [codes]="[examples[9]]">
       <div class="flex flex-wrap items-center gap-2">
         <flowbite-button>
           <svg
@@ -212,7 +222,7 @@ import { Component } from '@angular/core';
         </flowbite-button>
       </div>
     </flowbite-demo-example>
-    <flowbite-demo-example title="Disabled" [codes]="[examples[9]]">
+    <flowbite-demo-example title="Disabled" [codes]="[examples[10]]">
       <div class="flex flex-wrap gap-2">
         <flowbite-button [disabled]="true">Disabled button</flowbite-button>
       </div>
@@ -342,6 +352,15 @@ export class ButtonPageComponent {
 <flowbite-button>
   Choose plan
   <svg aria-hidden="true" class="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+</flowbite-button>
+`,
+    },
+    {
+      language: 'html',
+      code: `
+<flowbite-button>
+  Messages
+  <flowbite-badge customStyle="py-0" [iconOnly]="true" class="ml-2">2</flowbite-badge>
 </flowbite-button>
 `,
     },
