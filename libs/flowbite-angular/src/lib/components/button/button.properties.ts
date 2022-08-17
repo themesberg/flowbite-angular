@@ -37,7 +37,7 @@ type FillClasses = {
 export const buttonBaseClass = {
   default:
     'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
-  span: 'group inline-flex relative items-center justify-center p-0.5 mb-2 mr-2 font-medium overflow-hidden',
+  span: 'group inline-flex relative items-center justify-center p-0.5 font-medium overflow-hidden',
 };
 
 export const spanBaseClass =
