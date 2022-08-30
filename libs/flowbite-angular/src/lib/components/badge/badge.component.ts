@@ -25,7 +25,8 @@ export type BadgeSize = 'xs' | 'sm';
           ? 'rounded px-2 py-0.5'
           : size === 'xs'
           ? 'rounded-full p-1'
-          : 'rounded-full p-1.5'
+          : 'rounded-full p-1.5',
+        customStyle
       ]"
       [routerLink]="href"
     >
@@ -38,6 +39,7 @@ export class BadgeComponent {
   @Input() size: BadgeSize = 'xs';
   @Input() href?: string;
   @Input() iconOnly = false;
+  @Input() customStyle = '';
 
   colorClasses: Record<BadgeColor, string> = {
     blue: 'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
