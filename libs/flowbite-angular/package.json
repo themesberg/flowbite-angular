@@ -17,9 +17,9 @@
     "type": "git"
   },
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0",
-    "flowbite": "^1.4.5"
+    "@angular/common": ">=13 <15",
+    "@angular/core": ">=13 <15",
+    "flowbite": "^1.5.3"
   },
   "dependencies": {
     "tslib": "^2.3.0"
