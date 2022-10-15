@@ -26,21 +26,21 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: yarn install
+        run: npm ci
 
       - name: Lint the code 🕵
-        run: yarn lint
+        run: npm run lint
 
       - name: Run Prettier 💅
-        run: yarn prettier
+        run: npm run prettier
 
       - name: Run unit tests 🔬
-        run: yarn test
+        run: npm run test
 
       - name: Build code 🛠
-        run: yarn build
+        run: npm run build
