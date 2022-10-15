@@ -42,7 +42,7 @@
 
 Documentation for `flowbite-angular` is not yet finished.
 
-If you want to browse the components, visit [flowbite-angular.com](https://flowbite-angular.com/).
+If you want to browse the components, visit [Flowbite Angular](https://themesberg.github.io/flowbite-angular/).
 
 If you want to learn more about Flowbite, visit [Flowbite docs](https://flowbite.com/docs/getting-started/introduction/).
 
