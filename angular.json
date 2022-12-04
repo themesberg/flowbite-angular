@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 1,
   "projects": {
     "docs": "apps/docs",
     "docs-e2e": "apps/docs-e2e",
