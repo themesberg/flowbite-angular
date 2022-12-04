@@ -63,7 +63,7 @@ jobs:
       - name: Build code 🛠
         run: |
           yarn build
-          yarn scully --project docs --scanRoutes --noPrompt
+          yarn scully
       
       - name: Deploy if this is the `main` branch
         uses: JamesIves/github-pages-deploy-action@v4
