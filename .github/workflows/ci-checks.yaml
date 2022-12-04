@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Check out the code 🗄
         uses: actions/checkout@v3
+          fetch-depth: 0
+        
 
       - name: Setup NodeJS 16 💿
         uses: actions/setup-node@v3
