@@ -23,7 +23,7 @@
     "prettier:fix": "nx format:write",
     "release": "standard-version",
     "prepublishOnly": "yarn build:lib",
-    "scully": "scully",
+    "scully": "scully --project docs --scanRoutes",
     "scully:serve": "scully serve"
   },
   "dependencies": {

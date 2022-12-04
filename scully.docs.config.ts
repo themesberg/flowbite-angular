@@ -3,7 +3,7 @@ import { baseHrefRewrite } from '@scullyio/scully-plugin-base-href-rewrite';
 import '@scullyio/scully-plugin-puppeteer';
 
 const defaultPostRenderers = ['seoHrefOptimise', baseHrefRewrite];
-setPluginConfig(baseHrefRewrite, { href: '/flowbite-angular/' });
+setPluginConfig(baseHrefRewrite, { href: '/' });
 
 export const config: ScullyConfig = {
   projectRoot: './apps/docs/src',

@@ -63,16 +63,14 @@ jobs:
       - name: Build code 🛠
         run: |
           yarn build
-          yarn scully --project docs --scanRoutes
+          yarn scully --project docs --scanRoutes --noPrompt
       
       - name: Deploy if this is the `main` branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: ${{ env.DOMAIN }} # TODO you need to set this if you're using a custom domain. Otherwise you can remove it.
-
+          folder: dist/docs-static
 
       - name: Deploy to PR preview 🚀
         uses: JamesIves/github-pages-deploy-action@v4
