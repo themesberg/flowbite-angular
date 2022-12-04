@@ -10,6 +10,7 @@ import {
   DashboardPageComponent,
   SidebarPageComponent,
 } from '../pages';
+import {AvatarPageComponent} from "../pages/avatar-page/avatar-page.component";
 
 const routes: Route[] = [
   {
@@ -23,6 +24,10 @@ const routes: Route[] = [
   {
     path: 'alerts',
     component: AlertPageComponent,
+  },
+  {
+    path: 'avatar',
+    component: AvatarPageComponent,
   },
   {
     path: 'badges',
