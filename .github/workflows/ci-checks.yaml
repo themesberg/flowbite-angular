@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Check out the code 🗄
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+        
 
       - name: Setup NodeJS 16 💿
         uses: actions/setup-node@v3
@@ -37,7 +40,7 @@ jobs:
         run: yarn lint
 
       - name: Run Prettier 💅
-        run: yarn prettier
+        run: yarn prettier --base=HEAD
 
       - name: Run unit tests 🔬
         run: yarn test

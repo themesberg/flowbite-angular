@@ -1,9 +1,7 @@
-import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
-import { baseHrefRewrite } from '@scullyio/scully-plugin-base-href-rewrite';
+import { ScullyConfig } from '@scullyio/scully';
 import '@scullyio/scully-plugin-puppeteer';
 
-const defaultPostRenderers = ['seoHrefOptimise', baseHrefRewrite];
-setPluginConfig(baseHrefRewrite, { href: '/flowbite-angular/' });
+const defaultPostRenderers = ['seoHrefOptimise'];
 
 export const config: ScullyConfig = {
   projectRoot: './apps/docs/src',
@@ -12,4 +10,8 @@ export const config: ScullyConfig = {
   outDir: './dist/docs-static',
   routes: {},
   defaultPostRenderers,
+  target: 'targets',
+  puppeteerLaunchOptions: {
+    args: ['--no-sandbox'],
+  },
 };
