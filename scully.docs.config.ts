@@ -10,6 +10,7 @@ export const config: ScullyConfig = {
   projectName: 'docs',
   distFolder: './dist/apps/docs',
   outDir: './dist/docs-static',
+  target: 'targets',
   routes: {},
   defaultPostRenderers,
 };

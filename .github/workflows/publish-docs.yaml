@@ -69,14 +69,14 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           folder: dist/docs-static
 
       - name: Deploy to PR preview 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref != 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           folder: dist/docs-static
           target-folder: ${{ env.PR_PATH }}
           
