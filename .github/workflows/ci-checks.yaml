@@ -37,7 +37,7 @@ jobs:
         run: yarn lint
 
       - name: Run Prettier 💅
-        run: yarn prettier
+        run: yarn prettier --base=HEAD
 
       - name: Run unit tests 🔬
         run: yarn test

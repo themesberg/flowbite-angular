@@ -1,0 +1,23 @@
+[
+  {
+    "route": "/"
+  },
+  {
+    "route": "/accordion"
+  },
+  {
+    "route": "/alerts"
+  },
+  {
+    "route": "/badges"
+  },
+  {
+    "route": "/breadcrumb"
+  },
+  {
+    "route": "/buttons"
+  },
+  {
+    "route": "/sidebar"
+  }
+]
