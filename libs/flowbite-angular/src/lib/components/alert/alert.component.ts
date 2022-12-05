@@ -22,7 +22,7 @@ export type AlertColor = 'blue' | 'red' | 'green' | 'yellow' | 'gray';
         [ngClass]="buttonColorClasses[color]"
         *ngIf="dismiss"
         aria-label="Close"
-        (click)="dismiss?.()"
+        (click)="dismiss()"
       >
         <span class="sr-only">Close</span>
         <svg

@@ -1,11 +1,13 @@
 {
+  "name": "flowbite-angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/flowbite-angular/src",
   "prefix": "flowbite",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/flowbite-angular"],
+      "outputs": ["{workspaceRoot}/dist/libs/flowbite-angular"],
       "options": {
         "project": "libs/flowbite-angular/ng-package.json"
       },
@@ -21,7 +23,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/flowbite-angular"],
+      "outputs": ["{workspaceRoot}/coverage/libs/flowbite-angular"],
       "options": {
         "jestConfig": "libs/flowbite-angular/jest.config.ts",
         "passWithNoTests": true

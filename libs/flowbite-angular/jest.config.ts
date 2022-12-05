@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
   displayName: 'flowbite-angular',
   preset: '../../jest.preset.js',
