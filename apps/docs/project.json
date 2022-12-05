@@ -15,9 +15,20 @@
         "polyfills": "apps/docs/src/polyfills.ts",
         "tsConfig": "apps/docs/tsconfig.app.json",
         "inlineStyleLanguage": "css",
-        "assets": ["apps/docs/src/favicon.png", "apps/docs/src/assets"],
+        "assets": [
+          "apps/docs/src/favicon.png",
+          "apps/docs/src/assets",
+          {
+            "glob": "**/*.md",
+            "input": "apps/docs/src/app",
+            "output": "/assets/markdown"
+          }
+        ],
         "styles": ["apps/docs/src/styles.css"],
-        "scripts": []
+        "scripts": [
+          "node_modules/marked/marked.min.js",
+          "node_modules/clipboard/dist/clipboard.min.js"
+        ]
       },
       "configurations": {
         "production": {

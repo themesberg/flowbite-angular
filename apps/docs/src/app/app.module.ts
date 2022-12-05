@@ -23,6 +23,8 @@ import {
   DemoPageComponent,
   PrismComponent,
 } from './common';
+import { AvatarPageComponent } from './pages/avatar-page/avatar-page.component';
+import {MarkdownModule} from "ngx-markdown";
 
 const PAGES_COMPONENTS = [
   AccordionPageComponent,
@@ -41,8 +43,13 @@ const COMMON_COMPONENTS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, PAGES_COMPONENTS, COMMON_COMPONENTS],
-  imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
+  declarations: [
+    AppComponent,
+    PAGES_COMPONENTS,
+    COMMON_COMPONENTS,
+    AvatarPageComponent,
+  ],
+    imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule, MarkdownModule.forRoot()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

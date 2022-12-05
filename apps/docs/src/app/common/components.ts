@@ -25,7 +25,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'accordion-light.svg', dark: 'accordion-dark.svg' },
+      images: {light: 'accordion-light.svg', dark: 'accordion-dark.svg'},
     },
   },
   {
@@ -35,7 +35,17 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'alerts-light.svg', dark: 'alerts-dark.svg' },
+      images: {light: 'alerts-light.svg', dark: 'alerts-dark.svg'},
+    },
+  },
+  {
+    title: 'Avatar',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"> <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /> </svg>',
+    href: '/avatar',
+    group: false,
+    card: {
+      className: 'w-56',
+      images: {light: 'alerts-light.svg', dark: 'alerts-dark.svg'},
     },
   },
   {
@@ -44,7 +54,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-28',
-      images: { light: 'badges-light.svg', dark: 'badges-dark.svg' },
+      images: {light: 'badges-light.svg', dark: 'badges-dark.svg'},
     },
     icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`,
   },
@@ -55,7 +65,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'breadcrumb-light.svg', dark: 'breadcrumb-dark.svg' },
+      images: {light: 'breadcrumb-light.svg', dark: 'breadcrumb-dark.svg'},
     },
   },
   {
@@ -65,7 +75,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-24',
-      images: { light: 'buttons.svg', dark: 'buttons.svg' },
+      images: {light: 'buttons.svg', dark: 'buttons.svg'},
     },
   },
   {
@@ -74,7 +84,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-16',
-      images: { light: 'sidebar-light.svg', dark: 'sidebar-dark.svg' },
+      images: {light: 'sidebar-light.svg', dark: 'sidebar-dark.svg'},
     },
     icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>`,
   },
