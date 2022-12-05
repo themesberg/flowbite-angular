@@ -47,3 +47,4 @@ scullyStats.json
 /scully/**/*.js.map
 /scully/**/*.d.ts
 scully.docs.config.js
+.vercel
