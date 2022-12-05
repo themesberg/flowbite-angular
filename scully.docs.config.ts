@@ -12,4 +12,7 @@ export const config: ScullyConfig = {
   outDir: './dist/docs-static',
   routes: {},
   defaultPostRenderers,
+  puppeteerLaunchOptions: {
+    args: ['--no-sandbox'],
+  },
 };
