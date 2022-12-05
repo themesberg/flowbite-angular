@@ -9590,6 +9590,13 @@ ng-packagr@15.0.1:
   optionalDependencies:
     esbuild "^0.15.9"
 
+ngx-boolean-input@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-boolean-input/-/ngx-boolean-input-1.2.0.tgz#c9812e8ed4d183dbf4f185cf74617a4f4865f55b"
+  integrity sha512-HrzjNlHPa7lYlADC5iCeuNTSmAOHurrXIN2K8FJdU1jP0tGbx1b2qe9z7L1zd2giUlbDhcV9C6L9FRPxJQNjbg==
+  dependencies:
+    tslib "^2.3.0"
+
 ngx-markdown@^15.0.0:
   version "15.0.0"
   resolved "https://registry.yarnpkg.com/ngx-markdown/-/ngx-markdown-15.0.0.tgz#212ea7c1157294117c1199109c6534e28b282533"
