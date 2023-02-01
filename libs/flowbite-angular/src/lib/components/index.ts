@@ -6,3 +6,4 @@ export * from './navbar';
 export * from './sidebar';
 export * from './breadcrumb';
 export * from './button';
+export * from './button-group';
