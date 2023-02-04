@@ -37,6 +37,10 @@ const routes: Route[] = [
     component: ButtonPageComponent,
   },
   {
+    path: 'button-group',
+    loadComponent: () => import('../pages/button-group-page/button-group-page.component')
+  },
+  {
     path: 'sidebar',
     component: SidebarPageComponent,
   },
@@ -46,4 +50,4 @@ const routes: Route[] = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class RoutingModule {}
+export class RoutingModule { }

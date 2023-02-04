@@ -48,4 +48,4 @@ const PIPES = [SanitizeHtmlPipe];
   exports: [COMPONENTS, SanitizeHtmlPipe],
   providers: [SERVICES, PIPES],
 })
-export class FlowbiteModule {}
+export class FlowbiteModule { }

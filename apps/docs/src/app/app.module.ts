@@ -19,10 +19,9 @@ import {
   ButtonPageComponent,
 } from './pages';
 import {
-  DemoExampleComponent,
   DemoPageComponent,
-  PrismComponent,
 } from './common';
+import { DemoExampleModule } from './common/demo-example/demo-example.module';
 
 const PAGES_COMPONENTS = [
   AccordionPageComponent,
@@ -36,13 +35,11 @@ const PAGES_COMPONENTS = [
 
 const COMMON_COMPONENTS = [
   DemoPageComponent,
-  DemoExampleComponent,
-  PrismComponent,
 ];
 
 @NgModule({
   declarations: [AppComponent, PAGES_COMPONENTS, COMMON_COMPONENTS],
-  imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
+  imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule, DemoExampleModule],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
