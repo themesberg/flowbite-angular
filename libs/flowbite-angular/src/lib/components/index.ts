@@ -2,6 +2,7 @@ export * from './accordion';
 export * from './alert';
 export * from './badge';
 export * from './dark-theme-toggle';
+export * from './modal';
 export * from './navbar';
 export * from './sidebar';
 export * from './breadcrumb';

@@ -69,6 +69,16 @@ export const components: RouteProps[] = [
     },
   },
   {
+    title: 'Modals',
+    href: 'modals',
+    group: false,
+    card: {
+      className: 'w-56',
+      images: { light: 'modals-light.svg', dark: 'modals-dark.svg' },
+    },
+    icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm4 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>`,
+  },
+  {
     title: 'Sidebar',
     href: 'sidebar',
     group: false,
