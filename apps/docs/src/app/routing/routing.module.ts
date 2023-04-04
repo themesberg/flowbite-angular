@@ -8,6 +8,7 @@ import {
   BreadcrumbPageComponent,
   ButtonPageComponent,
   DashboardPageComponent,
+  ModalPageComponent,
   SidebarPageComponent,
 } from '../pages';
 
@@ -40,6 +41,10 @@ const routes: Route[] = [
     path: 'sidebar',
     component: SidebarPageComponent,
   },
+  {
+    path: 'modals',
+    component: ModalPageComponent,
+  }
 ];
 
 @NgModule({
