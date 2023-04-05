@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
                 codeClassName="dark:!bg-gray-900 divide-y"
                 [codes]="[examples[0]]">
                 <flowbite-button (click)="modal.open()">Open modal</flowbite-button>
-                <flowbite-modal #modal [position]="'center'">
+                <flowbite-modal #modal>
                     <flowbite-modal-header>Terms of Service</flowbite-modal-header>
                     <flowbite-modal-body>
                         <p class="mb-2 text-gray-500 dark:text-gray-400 items-start justify-end">
@@ -150,9 +150,33 @@ import { Component } from '@angular/core';
                     </flowbite-modal-body>
                 </flowbite-modal>
             </flowbite-demo-example>
+            <flowbite-demo-example
+            [title]="'Positioned Modal'"
+            [codes]="[examples[4]]">
+                <button type="button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-blue-700 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700" id="options-menu" aria-haspopup="true" aria-expanded="true" (click)="positionModal.open()">
+                    Open modal
+                </button>
+                <flowbite-modal #positionModal [dismissable]="true" [position]="'top-center'">
+                    <flowbite-modal-header>Terms of Service</flowbite-modal-header>
+                    <flowbite-modal-body>
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">
+                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                        </p>
+                        <p class="text-gray-500 dark:text-gray-400">
+                            The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that
+                            affect them.
+                        </p>
+                    </flowbite-modal-body>
+                    <flowbite-modal-footer>
+                        <flowbite-button (click)="positionModal.close()">Close</flowbite-button>        
+                        <flowbite-button (click)="modal.close()" [color]="'gray'">I decline</flowbite-button>
+                    </flowbite-modal-footer>
+                </flowbite-modal>
+            </flowbite-demo-example>
         </flowbite-demo-page>
     `,
 })
+
 export class ModalPageComponent {
     examples = [
         {
@@ -288,6 +312,27 @@ export class ModalPageComponent {
     </flowbite-modal-footer>
 </flowbite-modal>
             `,
+        },
+        {
+            language: 'html',
+            code: `
+<flowbite-button (click)="modal.open()">Open modal</flowbite-button>
+<flowbite-modal #modal position="'top-center'">
+    <flowbite-modal-header>Terms of Service</flowbite-modal-header>
+    <flowbite-modal-body>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">
+            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+        </p>
+        <p class="text-gray-500 dark:text-gray-400">
+            The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+        </p>
+    </flowbite-modal-body>
+    <flowbite-modal-footer>
+        <flowbite-button (click)="modal.close()">I accept</flowbite-button>
+        <flowbite-button (click)="modal.close()" [color]="'gray'">I decline</flowbite-button>
+    </flowbite-modal-footer>
+</flowbite-modal>
+`
         }
     ];
 }
