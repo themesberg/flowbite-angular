@@ -3,9 +3,21 @@ import { Component, HostListener, Input } from '@angular/core';
 @Component({
     selector: 'flowbite-modal',
     template: `
-        <div tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full justify-center items-center flex"
-            [ngClass]="{ 'hidden': !isOpen }"
-            (click)="onBackdropClick($event)">")
+        <div tabindex="-1" aria-hidden="true"
+            [ngClass]="{ 
+                'hidden': !isOpen,
+                'items-start justify-start' : position === 'top-left',
+                'items-start justify-center': position === 'top-center',
+                'items-start justify-end': position === 'top-right',
+                'items-center justify-start': position === 'center-left',
+                'items-center justify-center test': position === 'center',
+                'items-center justify-end': position === 'center-right',
+                'items-end justify-start': position === 'bottom-left',
+                'items-end justify-center': position === 'bottom-center',
+                'items-end justify-end': position === 'bottom-right'
+            }"
+            class="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex"
+            (click)="onBackdropClick($event)">
             <div class="relative w-full h-full md:h-auto" [ngClass]="{
                 'max-w-md': size === 'sm',
                 'max-w-lg': size === 'md',
@@ -23,6 +35,7 @@ export class ModalComponent {
     @Input() dismissable?: boolean = false;
     @Input() size?: 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Input() isOpen?: boolean = false;
+    @Input() position?: 'center' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center' | 'center-left' | 'center-right' = 'center';
 
     open() {
         this.isOpen = true;
@@ -60,7 +73,6 @@ export class ModalComponent {
         }
     }
 
-    // If backdrop is clicked, close modal
     onBackdropClick(event: MouseEvent) {
         console.log(this.dismissable)
         if (event.target == event.currentTarget && this.dismissable) {
