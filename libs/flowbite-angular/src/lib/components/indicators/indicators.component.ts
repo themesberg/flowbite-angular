@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import * as classNames from 'classnames';
+import { Component, Input } from '@angular/core';
 
-export const color:
+ const color:
   | 'gray'
   | 'dark'
   | 'blue'
@@ -13,9 +12,9 @@ export const color:
   | 'teal'
   | 'none' = 'gray';
 
-export const size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+ const size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
-export const placement:
+ const placement:
   | 'top-left'
   | 'top-center'
   | 'top-right'
@@ -25,7 +24,8 @@ export const placement:
   | 'bottom-left'
   | 'bottom-center'
   | 'bottom-right'
-  | undefined = undefined;
+  | undefined
+  = undefined;
 
 
 const colors = {
@@ -86,10 +86,18 @@ const offsets = {
 @Component({
   selector: 'flowbite-indicator',
   template: `
-   <div [class]="dotClass"><ng-content></ng-content></div>
+   <div class="flex-shrink-0" [ngClass]="[
+  this.placement && this.offset ? offsetClasses[this.placement] : '',
+  placement ? 'absolute ' + placementClasses[placement] : '',
+  colorClasses[this.color],
+  sizeClasses[this.size],
+  rounded ? 'rounded' : 'rounded-full',
+  border ? 'border-2 border-white dark:border-gray-800' : ''
+]"
+><ng-content></ng-content></div>
   `,
 })
-export class IndicatorComponent implements OnInit {
+export class IndicatorComponent {
   @Input() pill = false;
   @Input() outline = false;
   @Input() disabled = false;
@@ -99,21 +107,12 @@ export class IndicatorComponent implements OnInit {
   @Input() color = color;
   @Input() size = size;
   @Input() placement = placement;
-  dotClass = '';
 
-  ngOnInit() {
+  colorClasses = colors;
+  sizeClasses = sizes;
+  placementClasses = placements;
+  offsetClasses = offsets;
 
-    this.dotClass = classNames(
-      'flex-shrink-0',
-      this.rounded ? 'rounded' : 'rounded-full',
-      this.border && 'border-2 border-white dark:border-gray-800',
-      sizes[this.size],
-      colors[this.color],
-      // $$slots.default && 'inline-flex items-center justify-center',
-      this.placement && 'absolute ' + placements[this.placement],
-      this.placement && this.offset && offsets[this.placement],
-      // $$props.class
-    );
-  }
+
 
 }
