@@ -21,11 +21,13 @@ import {
   SidebarComponent,
   SidebarItemComponent,
   SidebarItemGroupComponent,
+  IndicatorComponent,
 } from './components';
 import { SidebarService, ThemeService } from './services';
 import { SanitizeHtmlPipe } from './pipes';
 
 const COMPONENTS = [
+  IndicatorComponent,
   AccordionComponent,
   AccordionContentComponent,
   AccordionPanelComponent,
