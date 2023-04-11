@@ -21,6 +21,10 @@ import {
   SidebarComponent,
   SidebarItemComponent,
   SidebarItemGroupComponent,
+  DropdownComponent,
+  DropdownItemComponent,
+  DropdownDividerComponent,
+  DropdownHeaderComponent
 } from './components';
 import { SidebarService, ThemeService } from './services';
 import { SanitizeHtmlPipe } from './pipes';
@@ -36,6 +40,10 @@ const COMPONENTS = [
   BreadcrumbItemComponent,
   ButtonComponent,
   DarkThemeToggleComponent,
+  DropdownComponent,
+  DropdownItemComponent,
+  DropdownDividerComponent,
+  DropdownHeaderComponent,
   NavbarComponent,
   ModalComponent,
   ModalHeaderComponent,

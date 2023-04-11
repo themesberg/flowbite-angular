@@ -17,6 +17,7 @@ import {
   SidebarPageComponent,
   BreadcrumbPageComponent,
   ButtonPageComponent,
+  DropdownPageComponent,
   ModalPageComponent,
 } from './pages';
 import {
@@ -34,6 +35,7 @@ const PAGES_COMPONENTS = [
   ModalPageComponent,
   BreadcrumbPageComponent,
   ButtonPageComponent,
+  DropdownPageComponent,
 ];
 
 const COMMON_COMPONENTS = [

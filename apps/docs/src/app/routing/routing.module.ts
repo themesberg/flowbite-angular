@@ -10,6 +10,7 @@ import {
   DashboardPageComponent,
   ModalPageComponent,
   SidebarPageComponent,
+  DropdownPageComponent
 } from '../pages';
 
 const routes: Route[] = [
@@ -36,6 +37,10 @@ const routes: Route[] = [
   {
     path: 'buttons',
     component: ButtonPageComponent,
+  },
+  {
+    path: 'dropdown',
+    component: DropdownPageComponent
   },
   {
     path: 'sidebar',

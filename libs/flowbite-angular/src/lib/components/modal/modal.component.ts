@@ -5,7 +5,7 @@ import { Component, HostListener, Input } from '@angular/core';
     template: `
         <div tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full justify-center items-center flex"
             [ngClass]="{ 'hidden': !isOpen }"
-            (click)="onBackdropClick($event)">")
+            (click)="onBackdropClick($event)">
             <div class="relative w-full h-full md:h-auto" [ngClass]="{
                 'max-w-md': size === 'sm',
                 'max-w-lg': size === 'md',
