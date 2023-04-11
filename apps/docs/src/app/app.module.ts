@@ -19,6 +19,7 @@ import {
   ButtonPageComponent,
   DropdownPageComponent,
   ModalPageComponent,
+  IndicatorPageComponent,
 } from './pages';
 import {
   DemoExampleComponent,
@@ -36,6 +37,7 @@ const PAGES_COMPONENTS = [
   BreadcrumbPageComponent,
   ButtonPageComponent,
   DropdownPageComponent,
+  IndicatorPageComponent
 ];
 
 const COMMON_COMPONENTS = [
@@ -49,4 +51,4 @@ const COMMON_COMPONENTS = [
   imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

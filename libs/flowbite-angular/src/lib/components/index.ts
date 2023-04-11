@@ -8,3 +8,4 @@ export * from './sidebar';
 export * from './breadcrumb';
 export * from './button';
 export * from './dropdown';
+export * from './indicators';

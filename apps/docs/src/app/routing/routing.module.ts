@@ -8,6 +8,7 @@ import {
   BreadcrumbPageComponent,
   ButtonPageComponent,
   DashboardPageComponent,
+  IndicatorPageComponent,
   ModalPageComponent,
   SidebarPageComponent,
   DropdownPageComponent
@@ -40,7 +41,11 @@ const routes: Route[] = [
   },
   {
     path: 'dropdown',
-    component: DropdownPageComponent
+    component: DropdownPageComponent,
+  },
+  {
+    path: 'indicators',
+    component: IndicatorPageComponent,
   },
   {
     path: 'sidebar',

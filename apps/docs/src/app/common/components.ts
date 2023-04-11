@@ -39,6 +39,17 @@ export const components: RouteProps[] = [
     },
   },
   {
+    title: 'Indicator',
+    // create icon gray circular svg
+    icon: '<svg width="10" height="10"><circle cx="5" cy="5" r="4" stroke="#ccc" stroke-width="1" fill="#ccc"/></svg>    ',
+    href: '/indicators',
+    group: false,
+    card: {
+      className: 'w-56',
+      images: { light: 'indicators.svg', dark: 'indicators-dark.svg' },
+    },
+  },
+  {
     title: 'Badges',
     href: 'badges',
     group: false,

@@ -25,11 +25,13 @@ import {
   DropdownItemComponent,
   DropdownDividerComponent,
   DropdownHeaderComponent
+  IndicatorComponent,
 } from './components';
 import { SidebarService, ThemeService } from './services';
 import { SanitizeHtmlPipe } from './pipes';
 
 const COMPONENTS = [
+  IndicatorComponent,
   AccordionComponent,
   AccordionContentComponent,
   AccordionPanelComponent,
