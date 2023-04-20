@@ -82,7 +82,7 @@ export const InputProperties = {
         'text-sm',
         'bg-transparent',
         'rounded-lg',
-        'border-1',
+        'border-2',
         'appearance-none',
         'focus:outline-none',
         'focus:ring-0',
@@ -183,8 +183,8 @@ export const InputProperties = {
     },
   },
   default: {
-    base: ['border', 'rounded-lg', 'block', 'w-full'],
-    defaultState: [
+    base: ['border', 'rounded-lg', 'block', 'w-full', 'focus:outline-none'],
+    default: [
       'focus:ring-blue-500',
       'focus:border-blue-500',
       'dark:focus:ring-blue-500',

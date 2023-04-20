@@ -47,6 +47,8 @@ export class InputDirective extends BaseInputDirective {
         classesToAdd.push(...InputProperties.default.validation[this._validation])
       } else if (this._disabled) {
         classesToAdd.push(...InputProperties.default.disabled);
+      } else {
+        classesToAdd.push(...InputProperties.default.default)
       }
       if (this._size) {
         classesToAdd.push(...InputProperties.default.size[this._size])

@@ -102,6 +102,7 @@ export class FormFieldComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // Completing the BehaviorSubject such that we don't need to manually unsubscribe
     this._properties.complete();
   }
 }
