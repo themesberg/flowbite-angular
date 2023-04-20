@@ -22,6 +22,7 @@ import {
   SidebarItemComponent,
   SidebarItemGroupComponent,
   IndicatorComponent,
+  FormFieldModule,
 } from './components';
 import { SidebarService, ThemeService } from './services';
 import { SanitizeHtmlPipe } from './pipes';
@@ -53,9 +54,9 @@ const SERVICES = [SidebarService, ThemeService];
 const PIPES = [SanitizeHtmlPipe];
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormFieldModule],
   declarations: [COMPONENTS, SanitizeHtmlPipe],
-  exports: [COMPONENTS, SanitizeHtmlPipe],
+  exports: [COMPONENTS, SanitizeHtmlPipe, FormFieldModule],
   providers: [SERVICES, PIPES],
 })
 export class FlowbiteModule {}

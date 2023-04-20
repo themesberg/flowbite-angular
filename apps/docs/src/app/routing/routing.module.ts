@@ -8,6 +8,7 @@ import {
   BreadcrumbPageComponent,
   ButtonPageComponent,
   DashboardPageComponent,
+  FormsPageComponent,
   IndicatorPageComponent,
   ModalPageComponent,
   SidebarPageComponent,
@@ -43,13 +44,17 @@ const routes: Route[] = [
     component: IndicatorPageComponent,
   },
   {
+    path: 'forms',
+    component: FormsPageComponent,
+  },
+  {
     path: 'sidebar',
     component: SidebarPageComponent,
   },
   {
     path: 'modals',
     component: ModalPageComponent,
-  }
+  },
 ];
 
 @NgModule({
