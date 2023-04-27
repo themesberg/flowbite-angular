@@ -40,6 +40,8 @@ const PAGES_COMPONENTS = [
   ButtonPageComponent,
   IndicatorPageComponent,
   FormsPageComponent,
+  InputFieldPageComponent,
+  FloatingLabelPageComponent,
 ];
 
 const COMMON_COMPONENTS = [
@@ -49,13 +51,7 @@ const COMMON_COMPONENTS = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PAGES_COMPONENTS,
-    COMMON_COMPONENTS,
-    InputFieldPageComponent,
-    FloatingLabelPageComponent,
-  ],
+  declarations: [AppComponent, PAGES_COMPONENTS, COMMON_COMPONENTS],
   imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
   bootstrap: [AppComponent],
 })
