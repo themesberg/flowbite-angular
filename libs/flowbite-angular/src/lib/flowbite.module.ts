@@ -24,7 +24,7 @@ import {
   DropdownComponent,
   DropdownItemComponent,
   DropdownDividerComponent,
-  DropdownHeaderComponent
+  DropdownHeaderComponent,
   IndicatorComponent,
 } from './components';
 import { SidebarService, ThemeService } from './services';

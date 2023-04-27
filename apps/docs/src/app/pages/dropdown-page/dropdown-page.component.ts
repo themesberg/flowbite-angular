@@ -54,17 +54,17 @@ import { Component } from '@angular/core';
                 [codes]="[examples[3]]"
             >
                 <div class="flex flex-wrap gap-2">
-                    <flowbite-dropdown [position]="'top-start'">
+                    <flowbite-dropdown [position]="'top-start'" [label]="'Top start'">
                         <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
                         <flowbite-dropdown-item>Item 2</flowbite-dropdown-item>
                         <flowbite-dropdown-item>Item 3</flowbite-dropdown-item>
                     </flowbite-dropdown>
-                    <flowbite-dropdown [position]="'top'">
+                    <flowbite-dropdown [position]="'left-start'" [label]="'Left start'">
                         <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
                         <flowbite-dropdown-item>Item 2</flowbite-dropdown-item>
                         <flowbite-dropdown-item>Item 3</flowbite-dropdown-item>
                     </flowbite-dropdown>
-                    <flowbite-dropdown [position]="'top-end'">
+                    <flowbite-dropdown [position]="'right-end'" [label]="'Right end'">
                         <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
                         <flowbite-dropdown-item>Item 2</flowbite-dropdown-item>
                         <flowbite-dropdown-item>Item 3</flowbite-dropdown-item>
