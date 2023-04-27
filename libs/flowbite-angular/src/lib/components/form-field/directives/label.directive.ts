@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
 import { BaseInputDirective } from './base-input.directive';
 import { FloatingLabelType, InputValidation, LabelProperties } from '../form-field.properties';
 
@@ -6,9 +6,17 @@ import { FloatingLabelType, InputValidation, LabelProperties } from '../form-fie
   selector: 'label[flowbiteLabel]',
 })
 export class LabelDirective extends BaseInputDirective {
+  _parentId = '';
   _validation: InputValidation | null = null;
   _floatingLabelType: FloatingLabelType | null = null;
 
+  @HostBinding('attr.for') get for() {
+    return this._parentId;
+  }
+
+  @Input() set parentId(id: string) {
+    this._parentId = id;
+  }
   @Input() set validation(validation: InputValidation | null) {
     this._validation = validation;
     this.handleClasses();

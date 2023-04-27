@@ -17,7 +17,6 @@ import {
 import { BehaviorSubject } from 'rxjs';
 
 interface PropertyMap {
-  _id: string;
   type: InputType;
   floatingLabelType: FloatingLabelType | null;
   size: InputSize;
@@ -91,8 +90,8 @@ interface PropertyMap {
   `,
 })
 export class FormFieldComponent implements OnDestroy {
+  _inputId = generateID('flowbite-input');
   _properties = new BehaviorSubject<PropertyMap>({
-    _id: generateID('flowbite-input'),
     type: 'text',
     floatingLabelType: null,
     size: 'default',
@@ -102,15 +101,14 @@ export class FormFieldComponent implements OnDestroy {
   });
 
   @ContentChild(InputDirective) set input(content: InputDirective) {
-    console.log(content);
     if (content) {
-      this._properties.subscribe((value) => Object.assign(content, value));
+      this._properties.subscribe((value) => Object.assign(content, { ...value, _id: this._inputId }));
     }
   }
   @ContentChild(LabelDirective) set label(content: LabelDirective) {
     if (content) {
-      this._properties.subscribe(({ _id, floatingLabelType, validation }) =>
-        Object.assign(content, { for: _id, floatingLabelType, validation })
+      this._properties.subscribe(({ floatingLabelType, validation }) =>
+        Object.assign(content, { _id: generateID('flowbite-label'), parentId: this._inputId, floatingLabelType, validation })
       );
     }
   }
