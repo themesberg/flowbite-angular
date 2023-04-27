@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormFieldComponent } from './form-field.component';
 import {
-  HintDirective,
+  HelperDirective,
   InputDirective,
   LabelDirective,
-  PrefixDirective,
+  IconDirective,
+  AddonDirective,
 } from './directives';
 
 const DECLARATIONS = [
   FormFieldComponent,
   InputDirective,
   LabelDirective,
-  PrefixDirective,
-  HintDirective,
+  HelperDirective,
+  IconDirective,
+  AddonDirective,
 ];
 
 @NgModule({

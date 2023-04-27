@@ -1,8 +1,8 @@
-import { HintDirective } from './hint.directive';
+import { HelperDirective } from './helper.directive';
 
 describe('HintDirective', () => {
   it('should create an instance', () => {
-    const directive = new HintDirective();
+    const directive = new HelperDirective();
     expect(directive).toBeTruthy();
   });
 });

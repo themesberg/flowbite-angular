@@ -7,11 +7,11 @@ import {
   BadgePageComponent,
   BreadcrumbPageComponent,
   ButtonPageComponent,
-  DashboardPageComponent,
+  DashboardPageComponent, FloatingLabelPageComponent,
   FormsPageComponent,
-  IndicatorPageComponent,
+  IndicatorPageComponent, InputFieldPageComponent,
   ModalPageComponent,
-  SidebarPageComponent,
+  SidebarPageComponent
 } from '../pages';
 
 const routes: Route[] = [
@@ -46,6 +46,14 @@ const routes: Route[] = [
   {
     path: 'forms',
     component: FormsPageComponent,
+  },
+  {
+    path: 'input-field',
+    component: InputFieldPageComponent
+  },
+  {
+    path: 'floating-label',
+    component: FloatingLabelPageComponent
   },
   {
     path: 'sidebar',

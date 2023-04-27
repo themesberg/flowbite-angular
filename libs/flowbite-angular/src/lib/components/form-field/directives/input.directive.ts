@@ -1,7 +1,8 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 import {
+  FloatingLabelType, InputPrefixType,
   InputProperties,
-  InputSize
+  InputSize, InputValidation
 } from '../form-field.properties';
 import { BaseInputDirective } from './base-input.directive';
 
@@ -11,6 +12,9 @@ import { BaseInputDirective } from './base-input.directive';
 export class InputDirective extends BaseInputDirective {
   _size: InputSize = 'default';
   _disabled: boolean | string = false;
+  _validation: InputValidation | null = null;
+  _floatingLabelType: FloatingLabelType | null = null;
+  _prefixType: InputPrefixType | null = null;
 
   @HostBinding('attr.disabled') get isDisabled() {
     return this._disabled || null;
@@ -20,9 +24,20 @@ export class InputDirective extends BaseInputDirective {
     this._disabled = disabled;
     this.handleClasses();
   }
-
   @Input() set size(size: InputSize) {
     this._size = size;
+    this.handleClasses();
+  }
+  @Input() set validation(validation: InputValidation | null) {
+    this._validation = validation;
+    this.handleClasses();
+  }
+  @Input() set floatingLabelType(floatingLabelType: FloatingLabelType | null) {
+    this._floatingLabelType = floatingLabelType;
+    this.handleClasses();
+  }
+  @Input() set prefixType(type: InputPrefixType | null) {
+    this._prefixType = type;
     this.handleClasses();
   }
 
@@ -49,6 +64,11 @@ export class InputDirective extends BaseInputDirective {
         classesToAdd.push(...InputProperties.default.disabled);
       } else {
         classesToAdd.push(...InputProperties.default.default)
+      }
+      if (this._prefixType === 'addon') {
+        classesToAdd.push(...InputProperties.default.addon);
+      } else if (this._prefixType === 'icon') {
+        classesToAdd.push(...InputProperties.default.icon);
       }
       if (this._size) {
         classesToAdd.push(...InputProperties.default.size[this._size])

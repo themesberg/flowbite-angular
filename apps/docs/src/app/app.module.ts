@@ -20,6 +20,8 @@ import {
   ModalPageComponent,
   IndicatorPageComponent,
   FormsPageComponent,
+  InputFieldPageComponent,
+  FloatingLabelPageComponent,
 } from './pages';
 import {
   DemoExampleComponent,
@@ -47,7 +49,13 @@ const COMMON_COMPONENTS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, PAGES_COMPONENTS, COMMON_COMPONENTS],
+  declarations: [
+    AppComponent,
+    PAGES_COMPONENTS,
+    COMMON_COMPONENTS,
+    InputFieldPageComponent,
+    FloatingLabelPageComponent,
+  ],
   imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
   bootstrap: [AppComponent],
 })

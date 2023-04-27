@@ -1,12 +1,19 @@
 import { Component, ContentChild, Input, OnDestroy } from '@angular/core';
 import {
   FloatingLabelType,
+  InputPrefixType,
   InputSize,
   InputType,
   InputValidation,
 } from './form-field.properties';
 import generateID from '../../utils/id.generator';
-import { HintDirective, InputDirective, LabelDirective } from './directives';
+import {
+  AddonDirective,
+  HelperDirective,
+  IconDirective,
+  InputDirective,
+  LabelDirective,
+} from './directives';
 import { BehaviorSubject } from 'rxjs';
 
 interface PropertyMap {
@@ -16,6 +23,7 @@ interface PropertyMap {
   size: InputSize;
   disabled: boolean | string;
   validation: InputValidation | null;
+  prefixType: InputPrefixType | null;
 }
 
 @Component({
@@ -40,8 +48,29 @@ interface PropertyMap {
     </ng-container>
     <ng-template #nonFloatingTemplate>
       <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
-      <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>
+      <ng-container
+        *ngIf="
+          (_properties | async)?.prefixType as prefixType;
+          else inputTemplate
+        "
+      >
+        <ng-container *ngIf="prefixType === 'icon'; else inputWithAddon">
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
+            </div>
+            <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>
+          </div>
+        </ng-container>
+      </ng-container>
       <ng-container *ngTemplateOutlet="hintTemplate"></ng-container>
+    </ng-template>
+
+    <ng-template #inputWithAddon>
+      <div class="flex">
+        <ng-container *ngTemplateOutlet="addonTemplate"></ng-container>
+        <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>
+      </div>
     </ng-template>
 
     <ng-template #inputTemplate>
@@ -51,10 +80,13 @@ interface PropertyMap {
       <ng-content select="label[flowbiteLabel]"></ng-content>
     </ng-template>
     <ng-template #hintTemplate>
-      <ng-content select="[flowbiteHint]"></ng-content>
+      <ng-content select="[flowbiteHelper]"></ng-content>
     </ng-template>
-    <ng-template #errorTemplate>
-      <ng-content select="[flowbiteError]"></ng-content>
+    <ng-template #iconTemplate>
+      <ng-content select="[flowbiteIcon]"></ng-content>
+    </ng-template>
+    <ng-template #addonTemplate>
+      <ng-content select="[flowbiteAddon][flowbiteAddon]"></ng-content>
     </ng-template>
   `,
 })
@@ -66,21 +98,37 @@ export class FormFieldComponent implements OnDestroy {
     size: 'default',
     disabled: false,
     validation: null,
+    prefixType: null,
   });
 
   @ContentChild(InputDirective) set input(content: InputDirective) {
+    console.log(content);
     if (content) {
       this._properties.subscribe((value) => Object.assign(content, value));
     }
   }
   @ContentChild(LabelDirective) set label(content: LabelDirective) {
     if (content) {
-      this._properties.subscribe((value) => Object.assign(content, value));
+      this._properties.subscribe(({ _id, floatingLabelType, validation }) =>
+        Object.assign(content, { for: _id, floatingLabelType, validation })
+      );
     }
   }
-  @ContentChild(HintDirective) set hint(content: HintDirective) {
+  @ContentChild(HelperDirective) set hint(content: HelperDirective) {
     if (content) {
-      this._properties.subscribe(value => Object.assign(content, value));
+      this._properties.subscribe(({ validation }) =>
+        Object.assign(content, { validation })
+      );
+    }
+  }
+  @ContentChild(AddonDirective) set addon(content: AddonDirective) {
+    if (content) {
+      this._properties.next({ ...this._properties.value, prefixType: 'addon' });
+    }
+  }
+  @ContentChild(IconDirective) set icon(content: IconDirective) {
+    if (content) {
+      this._properties.next({ ...this._properties.value, prefixType: 'icon' });
     }
   }
   @Input() set type(type: InputType) {
@@ -95,7 +143,10 @@ export class FormFieldComponent implements OnDestroy {
   @Input() set disabled(disabled: boolean | string) {
     // hack because if you pass disabled instead of disabled=true
     // it will come as empty string value
-    this._properties.next({ ...this._properties.value, disabled: typeof disabled === 'boolean' ? disabled : true });
+    this._properties.next({
+      ...this._properties.value,
+      disabled: typeof disabled === 'boolean' ? disabled : true,
+    });
   }
   @Input() set validation(validation: InputValidation | null) {
     this._properties.next({ ...this._properties.value, validation });

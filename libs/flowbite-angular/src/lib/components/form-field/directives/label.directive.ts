@@ -1,11 +1,23 @@
-import { Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import { BaseInputDirective } from './base-input.directive';
-import { LabelProperties } from '../form-field.properties';
+import { FloatingLabelType, InputValidation, LabelProperties } from '../form-field.properties';
 
 @Directive({
   selector: 'label[flowbiteLabel]',
 })
 export class LabelDirective extends BaseInputDirective {
+  _validation: InputValidation | null = null;
+  _floatingLabelType: FloatingLabelType | null = null;
+
+  @Input() set validation(validation: InputValidation | null) {
+    this._validation = validation;
+    this.handleClasses();
+  }
+  @Input() set floatingLabelType(floatingLabelType: FloatingLabelType | null) {
+    this._floatingLabelType = floatingLabelType;
+    this.handleClasses();
+  }
+
   override handleClasses(): void {
     const classesToAdd = [];
     if (this._floatingLabelType) {

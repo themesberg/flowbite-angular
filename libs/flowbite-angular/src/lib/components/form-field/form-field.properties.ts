@@ -10,7 +10,7 @@ export type InputType =
 export type InputSize = 'large' | 'default' | 'small';
 export type InputValidation = 'success' | 'error';
 export type FloatingLabelType = 'filled' | 'outlined' | 'standard';
-export type InputPrefix = 'addon' | 'icon';
+export type InputPrefixType = 'addon' | 'icon';
 
 export const InputProperties = {
   floatingLabel: {
@@ -194,6 +194,8 @@ export const InputProperties = {
       'dark:placeholder-gray-400',
       'dark:text-white',
     ],
+    icon: ['pl-10'],
+    addon: ['rounded-none', 'rounded-r-lg', 'flex-1', 'min-w-0'],
     size: {
       small: ['text-xs', 'p-2'],
       default: ['text-sm', 'p-2.5'],
@@ -379,7 +381,25 @@ export const HintProperties = {
   },
 };
 
-export const PrefixProperties = {
-  icon: {},
-  addon: {},
-};
+export const IconProperties = [
+  'w-5',
+  'h-5',
+  'text-gray-500',
+  'dark:text-gray-400',
+];
+
+export const AddonProperties = [
+  'inline-flex',
+  'items-center',
+  'px-3',
+  'text-sm',
+  'text-gray-900',
+  'bg-gray-200',
+  'border',
+  'border-r-0',
+  'border-gray-300',
+  'rounded-l-md',
+  'dark:bg-gray-600',
+  'dark:text-gray-400',
+  'dark:border-gray-600',
+];
