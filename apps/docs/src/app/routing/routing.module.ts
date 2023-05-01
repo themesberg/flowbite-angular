@@ -7,8 +7,9 @@ import {
   BadgePageComponent,
   BreadcrumbPageComponent,
   ButtonPageComponent,
-  DashboardPageComponent,
-  IndicatorPageComponent,
+  DashboardPageComponent, FloatingLabelPageComponent,
+  FormsPageComponent,
+  IndicatorPageComponent, InputFieldPageComponent,
   ModalPageComponent,
   SidebarPageComponent,
   DropdownPageComponent
@@ -48,13 +49,25 @@ const routes: Route[] = [
     component: IndicatorPageComponent,
   },
   {
+    path: 'forms',
+    component: FormsPageComponent,
+  },
+  {
+    path: 'input-field',
+    component: InputFieldPageComponent
+  },
+  {
+    path: 'floating-label',
+    component: FloatingLabelPageComponent
+  },
+  {
     path: 'sidebar',
     component: SidebarPageComponent,
   },
   {
     path: 'modals',
     component: ModalPageComponent,
-  }
+  },
 ];
 
 @NgModule({

@@ -1,19 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IndicatorComponent } from './indicators.component';
+import { FormsPageComponent } from './forms-page.component';
 
-describe('IndicatorComponent', () => {
-  let component: IndicatorComponent;
-  let fixture: ComponentFixture<IndicatorComponent>;
+describe('InputPageComponent', () => {
+  let component: FormsPageComponent;
+  let fixture: ComponentFixture<FormsPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [IndicatorComponent],
+      declarations: [FormsPageComponent],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(IndicatorComponent);
+    fixture = TestBed.createComponent(FormsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
