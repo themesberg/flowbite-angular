@@ -86,7 +86,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-28',
-      images: { light: 'dropdown-light.svg', dark: 'dropdown-dark.svg' 
+      images: { light: 'dropdown-light.svg', dark: 'dropdown-dark.svg' },
     },
   },
   {

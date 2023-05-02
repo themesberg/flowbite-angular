@@ -40,7 +40,7 @@ const PAGES_COMPONENTS = [
   BreadcrumbPageComponent,
   ButtonPageComponent,
   DropdownPageComponent,
-  IndicatorPageComponent
+  IndicatorPageComponent,
   FormsPageComponent,
   InputFieldPageComponent,
   FloatingLabelPageComponent,

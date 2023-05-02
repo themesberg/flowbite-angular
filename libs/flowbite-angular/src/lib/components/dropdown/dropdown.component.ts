@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, ViewChild, AfterViewInit } from "@angular/core";
+import { Component, HostListener, Input, ViewChild, AfterViewInit, ElementRef } from "@angular/core";
 import { autoUpdate, computePosition, offset, Placement, flip, shift } from '@floating-ui/dom';
 
 @Component({
@@ -26,8 +26,8 @@ export class DropdownComponent implements AfterViewInit {
     @Input() label = "Dropdown";
     @Input() isOpen = false;
     @Input() position: Placement = "bottom-start";
-    @ViewChild('dropdown') dropdown: any;
-    @ViewChild('button') button: any;
+    @ViewChild('dropdown') dropdown!: ElementRef;
+    @ViewChild('button') button!: ElementRef;
     x = 0;
     y = 0;
     width = 0;
@@ -59,7 +59,7 @@ export class DropdownComponent implements AfterViewInit {
 
     // Onclick outside the dropdown, close it
     @HostListener('document:click', ['$event'])
-    clickout(event: any) {
+    clickout(event: Event) {
         if (!this.dropdown.nativeElement.contains(event.target) && this.isOpen && !this.button.nativeElement.contains(event.target)) {
             this.isOpen = false;
         }
