@@ -80,6 +80,16 @@ export const components: RouteProps[] = [
     },
   },
   {
+    title: 'Dropdown',
+    icon: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" data-testid="flowbite-sidebar-item-icon" class="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path></svg>',
+    href: '/dropdown',
+    group: false,
+    card: {
+      className: 'w-28',
+      images: { light: 'dropdown-light.svg', dark: 'dropdown-dark.svg' },
+    },
+  },
+  {
     title: 'Forms',
     icon: '<svg fill="none" class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path></svg>',
     href: '/forms',
@@ -115,7 +125,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'modals-light.svg', dark: 'modals-dark.svg' },
+      images: { light: 'modal-light.svg', dark: 'modal-dark.svg' },
     },
     icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm4 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>`,
   },
