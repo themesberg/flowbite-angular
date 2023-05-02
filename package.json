@@ -35,6 +35,7 @@
     "@angular/platform-browser-dynamic": "15.0.2",
     "@angular/platform-server": "15.0.2",
     "@angular/router": "15.0.2",
+    "@floating-ui/dom": "^1.2.6",
     "@nrwl/angular": "15.2.4",
     "@scullyio/ng-lib": "^2.1.32",
     "@scullyio/platform-server": "^2.1.32",
