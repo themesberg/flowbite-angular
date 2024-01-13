@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/docs",
         "index": "apps/docs/src/index.html",
         "main": "apps/docs/src/main.ts",
-        "polyfills": "apps/docs/src/polyfills.ts",
+        "polyfills": "zone.js",
         "tsConfig": "apps/docs/tsconfig.app.json",
         "inlineStyleLanguage": "css",
         "assets": ["apps/docs/src/favicon.png", "apps/docs/src/assets"],
