@@ -141,7 +141,7 @@ import { Component } from '@angular/core';
       >
         <flowbite-form-field>
           <label flowbiteLabel>Your Email</label>
-          <span flowbiteAddon>@</span>
+          <span flowbiteAddon>&#64;</span>
           <input flowbiteInput placeholder="name@flowbite.com" />
         </flowbite-form-field>
       </flowbite-demo-example>
