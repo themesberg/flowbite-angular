@@ -50,3 +50,4 @@ scullyStats.json
 /scully/**/*.d.ts
 scully.docs.config.js
 .vercel
+.nx
