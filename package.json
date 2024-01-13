@@ -12,7 +12,6 @@
     "type": "git"
   },
   "scripts": {
-    "postinstall": "ngcc",
     "start": "nx serve",
     "build": "nx build",
     "build:lib": "nx run flowbite-angular:build && cp README.md LICENSE dist/libs/flowbite-angular",
@@ -47,13 +46,13 @@
     "@nx/angular": "16.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "15.2.10",
-    "@angular-devkit/core": "15.2.10",
-    "@angular-devkit/schematics": "15.2.10",
+    "@angular-devkit/build-angular": "16.2.11",
+    "@angular-devkit/core": "16.2.11",
+    "@angular-devkit/schematics": "16.2.11",
     "@angular-eslint/eslint-plugin": "14.0.4",
     "@angular-eslint/eslint-plugin-template": "14.0.4",
     "@angular-eslint/template-parser": "14.0.4",
-    "@angular/cli": "~15.2.0",
+    "@angular/cli": "16.2.11",
     "@angular/compiler-cli": "15.2.10",
     "@angular/language-service": "15.2.10",
     "@commitlint/cli": "^16.2.4",
@@ -95,3 +94,4 @@
     "typescript": "4.9.5"
   }
 }
+
