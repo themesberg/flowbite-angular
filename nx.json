@@ -8,7 +8,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YTVmMTBiZGQtMDQxZS00ODViLTk0NTktYjJjZGFjNjRlZjlmfHJlYWQtd3JpdGU="
@@ -16,17 +16,17 @@
     }
   },
   "generators": {
-    "@nrwl/angular:application": {
+    "@nx/angular:application": {
       "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/angular:library": {
+    "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
+    "@nx/angular:component": {
       "style": "css"
     }
   },
