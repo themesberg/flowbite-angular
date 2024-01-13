@@ -40,7 +40,7 @@ import { Component } from '@angular/core';
                                 Bonnie Green
                             </span>
                             <span className="block truncate text-sm font-medium">
-                                bonnie@flowbite.com
+                                bonnie&#64;flowbite.com
                             </span>
                         </flowbite-dropdown-header>
                         <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>

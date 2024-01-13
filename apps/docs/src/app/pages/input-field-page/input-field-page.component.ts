@@ -136,7 +136,7 @@ import { Component } from '@angular/core';
       </flowbite-form-field>
       <flowbite-form-field>
         <label flowbiteLabel>Username</label>
-        <span flowbiteAddon>@</span>
+        <span flowbiteAddon>&#64;</span>
         <input flowbiteInput placeholder="elonmusk" />
       </flowbite-form-field>
     </flowbite-demo-example>

@@ -25,18 +25,11 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/flowbite-angular"],
       "options": {
-        "jestConfig": "libs/flowbite-angular/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/flowbite-angular/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/flowbite-angular/**/*.ts",
-          "libs/flowbite-angular/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
   },
   "tags": []
