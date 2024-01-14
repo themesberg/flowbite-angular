@@ -4,6 +4,7 @@ import { BaseInputDirective } from './base-input.directive';
 import generateID from '../../../utils/id.generator';
 
 @Directive({
+  standalone: true,
   selector: '[flowbiteIcon]',
 })
 export class IconDirective extends BaseInputDirective {

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'flowbite-breadcrumb',
   template: `
     <nav aria-label="Breadcrumb">

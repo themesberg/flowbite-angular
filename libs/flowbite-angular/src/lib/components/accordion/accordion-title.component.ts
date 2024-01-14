@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { AccordionComponent } from './accordion.component';
 import { AccordionPanelComponent } from './accordion-panel.component';
+import { NgClass } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [NgClass],
   selector: 'flowbite-accordion-title',
   template: ` <button
     class="flex w-full items-center justify-between py-5 px-5 text-left font-medium text-gray-500 dark:text-gray-400"
