@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlowbiteModule } from 'flowbite-angular';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 
 import 'prismjs';
 import 'prismjs/components/prism-xml-doc';
@@ -54,7 +53,7 @@ const COMMON_COMPONENTS = [
 
 @NgModule({
   declarations: [AppComponent, PAGES_COMPONENTS, COMMON_COMPONENTS],
-  imports: [BrowserModule, RoutingModule, FlowbiteModule, ScullyLibModule],
+  imports: [BrowserModule, RoutingModule, FlowbiteModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
