@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
- const color:
+const color:
   | 'gray'
   | 'dark'
   | 'blue'
@@ -12,9 +13,9 @@ import { Component, Input } from '@angular/core';
   | 'teal'
   | 'none' = 'gray';
 
- const size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+const size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
- const placement:
+const placement:
   | 'top-left'
   | 'top-center'
   | 'top-right'
@@ -24,9 +25,7 @@ import { Component, Input } from '@angular/core';
   | 'bottom-left'
   | 'bottom-center'
   | 'bottom-right'
-  | undefined
-  = undefined;
-
+  | undefined = undefined;
 
 const colors = {
   gray: 'bg-gray-200',
@@ -38,7 +37,7 @@ const colors = {
   indigo: 'bg-indigo-500',
   yellow: 'bg-yellow-300',
   teal: 'bg-teal-500',
-  none: ''
+  none: '',
 };
 
 const sizes = {
@@ -46,7 +45,7 @@ const sizes = {
   sm: 'w-2.5 h-2.5',
   md: 'w-3 h-3',
   lg: 'w-3.5 h-3.5',
-  xl: 'w-6 h-6'
+  xl: 'w-6 h-6',
 };
 
 const placements = {
@@ -63,7 +62,7 @@ const placements = {
   // bottom
   'bottom-left': 'bottom-0 left-0',
   'bottom-center': 'bottom-0 left-1/2 -translate-x-1/2',
-  'bottom-right': 'bottom-0 right-0'
+  'bottom-right': 'bottom-0 right-0',
 };
 
 const offsets = {
@@ -80,21 +79,27 @@ const offsets = {
   // bottom
   'bottom-left': '-translate-x-1/3 translate-y-1/3',
   'bottom-center': 'translate-y-1/3',
-  'bottom-right': 'translate-x-1/3 translate-y-1/3'
+  'bottom-right': 'translate-x-1/3 translate-y-1/3',
 };
 
 @Component({
+  standalone: true,
+  imports: [NgClass],
   selector: 'flowbite-indicator',
   template: `
-   <div class="flex-shrink-0" [ngClass]="[
-  this.placement && this.offset ? offsetClasses[this.placement] : '',
-  placement ? 'absolute ' + placementClasses[placement] : '',
-  colorClasses[this.color],
-  sizeClasses[this.size],
-  rounded ? 'rounded' : 'rounded-full',
-  border ? 'border-2 border-white dark:border-gray-800' : ''
-]"
-><ng-content></ng-content></div>
+    <div
+      class="flex-shrink-0"
+      [ngClass]="[
+        this.placement && this.offset ? offsetClasses[this.placement] : '',
+        placement ? 'absolute ' + placementClasses[placement] : '',
+        colorClasses[this.color],
+        sizeClasses[this.size],
+        rounded ? 'rounded' : 'rounded-full',
+        border ? 'border-2 border-white dark:border-gray-800' : ''
+      ]"
+    >
+      <ng-content></ng-content>
+    </div>
   `,
 })
 export class IndicatorComponent {
@@ -112,7 +117,4 @@ export class IndicatorComponent {
   sizeClasses = sizes;
   placementClasses = placements;
   offsetClasses = offsets;
-
-
-
 }

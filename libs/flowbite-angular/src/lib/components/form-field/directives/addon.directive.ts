@@ -4,6 +4,7 @@ import { AddonProperties } from '../form-field.properties';
 import generateID from '../../../utils/id.generator';
 
 @Directive({
+  standalone: true,
   selector: '[flowbiteAddon]',
 })
 export class AddonDirective extends BaseInputDirective {
