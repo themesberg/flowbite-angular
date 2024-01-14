@@ -9,7 +9,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/docs",
+        "outputPath": "dist/docs-static",
         "index": "apps/docs/src/index.html",
         "main": "apps/docs/src/main.ts",
         "polyfills": "zone.js",
