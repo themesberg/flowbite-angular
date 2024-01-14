@@ -5,6 +5,7 @@ const defaultPostRenderers = ['seoHrefOptimise'];
 
 export const config: ScullyConfig = {
   projectRoot: './apps/docs/src',
+  sourceRoot: "./apps/docs/src",
   projectName: 'docs',
   distFolder: './dist/apps/docs',
   outDir: './dist/docs-static',
