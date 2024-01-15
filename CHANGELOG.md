@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+* Migrate to standalone components
+* Migrate to Angular 17
 * Add "Button with label" example to docs ([2f167a0](https://github.com/themesberg/flowbite-angular/commit/2f167a004ba49d2cb8b341aea47c8dcea862eebf))
 * Add disable property to button component ([00e42c0](https://github.com/themesberg/flowbite-angular/commit/00e42c05ff81f83e7ad61fb6a9a70aebf504f1ba))
 * Add DuoTone gradient outline span tweak ([b2840c9](https://github.com/themesberg/flowbite-angular/commit/b2840c947e340a020eb4136f5d0342ebc3d6e099))
