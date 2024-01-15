@@ -43,6 +43,6 @@ import { NgClass } from '@angular/common';
 export class AccordionTitleComponent {
   constructor(
     readonly accordion: AccordionComponent,
-    readonly accordionPanel: AccordionPanelComponent
+    readonly accordionPanel: AccordionPanelComponent,
   ) {}
 }

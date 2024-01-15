@@ -1,7 +1,6 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
-
 export type AlertColor = 'blue' | 'red' | 'green' | 'yellow' | 'gray';
 
 @Component({
