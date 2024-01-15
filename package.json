@@ -22,7 +22,8 @@
     "release": "standard-version",
     "prepublishOnly": "yarn build:lib",
     "docs:build": "yarn nx run docs:build",
-    "docs:serve": "yarn nx run docs:serve"
+    "docs:serve": "yarn nx run docs:serve",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@angular/animations": "17.0.9",
@@ -69,7 +70,7 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-cypress": "2.15.1",
     "eslint-plugin-sort-imports-es6-autofix": "0.6.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-preset-angular": "14.0.0",
