@@ -2,7 +2,7 @@
   "name": "flowbite-angular",
   "version": "0.0.3",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "homepage": "https://flowbite-angular.com",
   "bugs": {
     "url": "https://github.com/themesberg/flowbite-angular/issues"
