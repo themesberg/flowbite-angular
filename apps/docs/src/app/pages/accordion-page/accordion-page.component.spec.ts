@@ -8,7 +8,7 @@ describe('AccordionPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AccordionPageComponent],
+      imports: [AccordionPageComponent],
     }).compileComponents();
   });
 

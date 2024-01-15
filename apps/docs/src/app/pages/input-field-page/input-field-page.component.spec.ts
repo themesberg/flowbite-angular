@@ -8,7 +8,7 @@ describe('InputFieldPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InputFieldPageComponent],
+      imports: [InputFieldPageComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(InputFieldPageComponent);

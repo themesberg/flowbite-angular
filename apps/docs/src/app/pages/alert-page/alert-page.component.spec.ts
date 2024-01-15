@@ -8,7 +8,7 @@ describe('AlertPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AlertPageComponent],
+      imports: [AlertPageComponent],
     }).compileComponents();
   });
 
