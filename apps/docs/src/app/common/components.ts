@@ -96,7 +96,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'forms.svg', dark: 'forms-dark.svg' },
+      images: { light: 'forms-light.svg', dark: 'forms-dark.svg' },
     },
   },
   {
@@ -106,7 +106,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'forms.svg', dark: 'forms-dark.svg' },
+      images: { light: 'forms-light.svg', dark: 'forms-dark.svg' },
     },
   },
   {
@@ -116,7 +116,7 @@ export const components: RouteProps[] = [
     group: false,
     card: {
       className: 'w-56',
-      images: { light: 'forms.svg', dark: 'forms-dark.svg' },
+      images: { light: 'forms-light.svg', dark: 'forms-dark.svg' },
     },
   },
   {
