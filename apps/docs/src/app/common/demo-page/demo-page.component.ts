@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   selector: 'flowbite-demo-page',
-  template: `<div class="mx-auto flex max-w-4xl flex-col gap-8 dark:text-white">
-    <ng-content></ng-content>
-  </div>`,
+  templateUrl: './demo-page.component.html',
 })
 export class DemoPageComponent {}
