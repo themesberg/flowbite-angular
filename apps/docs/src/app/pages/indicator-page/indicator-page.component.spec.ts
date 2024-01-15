@@ -8,7 +8,7 @@ describe('IndicatorPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [IndicatorPageComponent],
+      imports: [IndicatorPageComponent],
     }).compileComponents();
   });
 

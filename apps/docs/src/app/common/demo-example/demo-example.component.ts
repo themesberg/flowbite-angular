@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { NgClass, NgFor } from '@angular/common';
+import { PrismComponent } from '../prism/prism.component';
 
 @Component({
+  standalone: true,
+  imports: [PrismComponent, NgClass, NgFor],
   selector: 'flowbite-demo-example',
   template: `<div class="flex flex-col gap-2">
     <span class="text-2xl font-bold">{{ title }}</span>

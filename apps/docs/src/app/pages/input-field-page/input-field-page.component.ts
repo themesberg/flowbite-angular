@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { DemoExampleComponent, DemoPageComponent } from '../../common';
+import { ButtonComponent, FormFieldComponent, InputDirective, LabelDirective } from '@flowbite-angular/lib';
 
 @Component({
+  standalone: true,
+  imports: [DemoPageComponent, DemoExampleComponent, FormFieldComponent, LabelDirective, ButtonComponent, LabelDirective, InputDirective],
   selector: 'flowbite-input-field-page',
   template: `<flowbite-demo-page>
     <flowbite-demo-example title="Input fields" [codes]="[examples[0]]">

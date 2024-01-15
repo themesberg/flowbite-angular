@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { DemoExampleComponent, DemoPageComponent } from '../../common';
+import { DropdownComponent, DropdownDividerComponent, DropdownHeaderComponent, DropdownItemComponent } from '@flowbite-angular/lib';
 
 @Component({
+  standalone: true,
+  imports: [DemoPageComponent, DemoExampleComponent, DropdownComponent, DropdownItemComponent, DropdownDividerComponent, DropdownHeaderComponent],
     selector: 'flowbite-dropdown-page',
     template: `
         <flowbite-demo-page>
@@ -89,7 +93,7 @@ export class DropdownPageComponent {
         {
             language: 'html',
             code: `
-<flowbite-dropdown> 
+<flowbite-dropdown>
     <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
     <flowbite-dropdown-divider></flowbite-dropdown-divider>
     <flowbite-dropdown-item>Item 2</flowbite-dropdown-item>

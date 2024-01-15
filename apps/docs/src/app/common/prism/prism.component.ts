@@ -7,7 +7,11 @@ import {
 } from '@angular/core';
 import { highlightElement } from 'prismjs';
 
+import { NgIf } from '@angular/common';
+
 @Component({
+  standalone: true,
+  imports: [NgIf],
   selector: 'flowbite-prism',
   template: `<pre
     *ngIf="language"

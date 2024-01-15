@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'flowbite-demo-page',
   template: `<div class="mx-auto flex max-w-4xl flex-col gap-8 dark:text-white">
     <ng-content></ng-content>

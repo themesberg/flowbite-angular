@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { DemoExampleComponent, DemoPageComponent } from '../../common';
+import { FormFieldComponent, InputDirective, LabelDirective } from '@flowbite-angular/lib';
 
 @Component({
+  standalone: true,
+  imports: [DemoPageComponent, DemoExampleComponent, FormFieldComponent, LabelDirective, InputDirective],
   selector: 'flowbite-floating-label-page',
   template: `
     <flowbite-demo-page>
