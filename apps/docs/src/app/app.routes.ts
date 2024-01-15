@@ -1,20 +1,18 @@
 import { Route } from '@angular/router';
 
-import {
-  AccordionPageComponent,
-  AlertPageComponent,
-  BadgePageComponent,
-  BreadcrumbPageComponent,
-  ButtonPageComponent,
-  DashboardPageComponent,
-  DropdownPageComponent,
-  FloatingLabelPageComponent,
-  FormsPageComponent,
-  IndicatorPageComponent,
-  InputFieldPageComponent,
-  ModalPageComponent,
-  SidebarPageComponent,
-} from '@flowbite-angular-docs/app/pages';
+import { AccordionPageComponent } from './pages/accordion-page/accordion-page.component';
+import { AlertPageComponent } from './pages/alert-page/alert-page.component';
+import { BadgePageComponent } from './pages/badge-page/badge-page.component';
+import { BreadcrumbPageComponent } from './pages/breadcrumb-page/breadcrumb-page.component';
+import { ButtonPageComponent } from './pages/button-page/button-page.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { DropdownPageComponent } from './pages/dropdown-page/dropdown-page.component';
+import { FloatingLabelPageComponent } from './pages/floating-label-page/floating-label-page.component';
+import { FormsPageComponent } from './pages/forms-page/forms-page.component';
+import { IndicatorPageComponent } from './pages/indicator-page/indicator-page.component';
+import { InputFieldPageComponent } from './pages/input-field-page/input-field-page.component';
+import { ModalPageComponent } from './pages/modal-page/modal-page.component';
+import { SidebarPageComponent } from './pages/sidebar-page/sidebar-page.component';
 
 export const appRoutes: Route[] = [
   {

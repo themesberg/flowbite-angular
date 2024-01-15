@@ -16,8 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@flowbite-angular/lib": ["libs/flowbite-angular/src/index.ts"],
-      "flowbite-angular": ["libs/flowbite-angular/src/index.ts"],
-      "@flowbite-angular-docs/*": ["apps/docs/src/*"]
+      "flowbite-angular": ["libs/flowbite-angular/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

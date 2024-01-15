@@ -10,7 +10,7 @@ import { NgFor } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidebarService } from 'flowbite-angular';
 
-import { components } from '@flowbite-angular-docs/app/common';
+import { components } from './common/components';
 
 @Component({
   standalone: true,
