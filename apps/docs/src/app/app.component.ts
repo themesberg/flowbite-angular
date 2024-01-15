@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SidebarService } from 'flowbite-angular';
-
-import { components } from './common';
 import {
+  DarkThemeToggleComponent,
   NavbarComponent,
   SidebarComponent,
   SidebarItemComponent,
   SidebarItemGroupComponent,
-  DarkThemeToggleComponent,
 } from 'flowbite-angular';
 import { NgFor } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { SidebarService } from 'flowbite-angular';
+
+import { components } from './common';
 
 @Component({
   standalone: true,

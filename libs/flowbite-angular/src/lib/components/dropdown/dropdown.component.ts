@@ -1,17 +1,17 @@
 import {
+  AfterViewInit,
   Component,
+  ElementRef,
   HostListener,
   Input,
   ViewChild,
-  AfterViewInit,
-  ElementRef,
 } from '@angular/core';
 import {
+  Placement,
   autoUpdate,
   computePosition,
-  offset,
-  Placement,
   flip,
+  offset,
   shift,
 } from '@floating-ui/dom';
 

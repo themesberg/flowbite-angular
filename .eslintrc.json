@@ -1,11 +1,19 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "sort-imports-es6-autofix"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "sort-imports-es6-autofix/sort-imports-es6": [
+          2,
+          {
+            "ignoreCase": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+          }
+        ],
         "@nx/enforce-module-boundaries": [
           "error",
           {

@@ -1,6 +1,6 @@
+import { BadgeComponent, ButtonComponent } from '@flowbite-angular/lib';
 import { Component } from '@angular/core';
 import { DemoExampleComponent, DemoPageComponent } from '../../common';
-import { BadgeComponent, ButtonComponent } from '@flowbite-angular/lib';
 
 @Component({
   standalone: true,

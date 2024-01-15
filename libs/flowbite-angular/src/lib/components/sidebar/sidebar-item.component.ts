@@ -1,9 +1,9 @@
+import { AsyncPipe, NgIf } from '@angular/common';
+import { BadgeComponent } from '../badge';
 import { Component, Input } from '@angular/core';
-import { SidebarService } from '../../services';
-import { NgIf, AsyncPipe } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SanitizeHtmlPipe } from '../../pipes';
-import { BadgeComponent } from '../badge';
+import { SidebarService } from '../../services';
 
 @Component({
   standalone: true,

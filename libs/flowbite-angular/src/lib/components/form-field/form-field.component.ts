@@ -1,3 +1,12 @@
+import {
+  AddonDirective,
+  HelperDirective,
+  IconDirective,
+  InputDirective,
+  LabelDirective,
+} from './directives';
+import { AsyncPipe, NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
 import { Component, ContentChild, Input, OnDestroy } from '@angular/core';
 import {
   FloatingLabelType,
@@ -7,15 +16,6 @@ import {
   InputValidation,
 } from './form-field.properties';
 import generateID from '../../utils/id.generator';
-import {
-  AddonDirective,
-  HelperDirective,
-  IconDirective,
-  InputDirective,
-  LabelDirective,
-} from './directives';
-import { BehaviorSubject } from 'rxjs';
-import { NgIf, NgClass, AsyncPipe, NgTemplateOutlet } from '@angular/common';
 
 interface PropertyMap {
   type: InputType;

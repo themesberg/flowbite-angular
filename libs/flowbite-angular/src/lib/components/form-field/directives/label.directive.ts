@@ -1,5 +1,5 @@
-import { Directive, HostBinding, Input } from '@angular/core';
 import { BaseInputDirective } from './base-input.directive';
+import { Directive, HostBinding, Input } from '@angular/core';
 import {
   FloatingLabelType,
   InputValidation,

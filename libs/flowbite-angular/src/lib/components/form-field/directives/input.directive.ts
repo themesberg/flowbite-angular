@@ -1,10 +1,10 @@
+import { BaseInputDirective } from './base-input.directive';
 import { Directive, HostBinding, Input } from '@angular/core';
 import {
   FloatingLabelType, InputPrefixType,
   InputProperties,
   InputSize, InputValidation
 } from '../form-field.properties';
-import { BaseInputDirective } from './base-input.directive';
 
 @Directive({
   standalone: true,

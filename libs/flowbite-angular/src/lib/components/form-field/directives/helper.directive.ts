@@ -1,5 +1,5 @@
-import { Directive, Input } from '@angular/core';
 import { BaseInputDirective } from './base-input.directive';
+import { Directive, Input } from '@angular/core';
 import { HintProperties, InputValidation } from '../form-field.properties';
 import generateID from '../../../utils/id.generator';
 

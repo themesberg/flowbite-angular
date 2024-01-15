@@ -1,5 +1,3 @@
-import { Component } from '@angular/core';
-import { DemoExampleComponent, DemoPageComponent } from '../../common';
 import {
   ButtonComponent,
   ModalBodyComponent,
@@ -7,6 +5,8 @@ import {
   ModalFooterComponent,
   ModalHeaderComponent,
 } from '@flowbite-angular/lib';
+import { Component } from '@angular/core';
+import { DemoExampleComponent, DemoPageComponent } from '../../common';
 
 @Component({
   standalone: true,

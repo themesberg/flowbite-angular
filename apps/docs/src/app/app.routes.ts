@@ -7,13 +7,13 @@ import {
   BreadcrumbPageComponent,
   ButtonPageComponent,
   DashboardPageComponent,
+  DropdownPageComponent,
   FloatingLabelPageComponent,
   FormsPageComponent,
   IndicatorPageComponent,
   InputFieldPageComponent,
   ModalPageComponent,
   SidebarPageComponent,
-  DropdownPageComponent,
 } from './pages';
 
 export const appRoutes: Route[] = [
