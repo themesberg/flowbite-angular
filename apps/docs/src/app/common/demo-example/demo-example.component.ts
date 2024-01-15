@@ -6,23 +6,7 @@ import { PrismComponent } from '../prism/prism.component';
   standalone: true,
   imports: [PrismComponent, NgClass, NgFor],
   selector: 'flowbite-demo-example',
-  template: `<div class="flex flex-col gap-2">
-    <span class="text-2xl font-bold">{{ title }}</span>
-    <span class="text-base">{{ subtitle }}</span>
-    <div
-      class="flex w-full rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800"
-      [ngClass]="[codeClassName ?? '']"
-    >
-      <div class="flex h-full w-full flex-col justify-center gap-6 p-6">
-        <ng-content></ng-content>
-        <flowbite-prism
-          *ngFor="let code of codes"
-          [code]="code.code.trim()"
-          [language]="code.language"
-        ></flowbite-prism>
-      </div>
-    </div>
-  </div>`,
+  templateUrl: './demo-example.component.html',
 })
 export class DemoExampleComponent {
   @Input() title?: string;
