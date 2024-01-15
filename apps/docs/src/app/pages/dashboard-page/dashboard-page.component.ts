@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NgClass, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { components } from '@flowbite-angular-docs/app/common';
+import { components } from '../../common/components';
 
 @Component({
   standalone: true,

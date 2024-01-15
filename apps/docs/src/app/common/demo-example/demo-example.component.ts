@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgClass, NgFor } from '@angular/common';
-import { PrismComponent } from '@flowbite-angular-docs/app/common/prism/prism.component';
+import { PrismComponent } from '../prism/prism.component';
 
 @Component({
   standalone: true,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DemoExampleComponent, DemoPageComponent } from '@flowbite-angular-docs/app/common';
+import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
+import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
 import { DropdownComponent, DropdownDividerComponent, DropdownHeaderComponent, DropdownItemComponent } from '@flowbite-angular/lib';
 
 @Component({
