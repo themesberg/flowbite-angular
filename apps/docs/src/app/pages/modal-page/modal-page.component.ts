@@ -110,10 +110,10 @@ import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
             </p>
           </flowbite-modal-body>
           <flowbite-modal-footer>
-            <flowbite-button (click)="modalSmall.close()"
+            <flowbite-button (click)="modalMedium.close()"
               >I accept</flowbite-button
             >
-            <flowbite-button (click)="modalSmall.close()" [color]="'gray'"
+            <flowbite-button (click)="modalMedium.close()" [color]="'gray'"
               >I decline</flowbite-button
             >
           </flowbite-modal-footer>
@@ -135,10 +135,10 @@ import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
             </p>
           </flowbite-modal-body>
           <flowbite-modal-footer>
-            <flowbite-button (click)="modalSmall.close()"
+            <flowbite-button (click)="modalLarge.close()"
               >I accept</flowbite-button
             >
-            <flowbite-button (click)="modalSmall.close()" [color]="'gray'"
+            <flowbite-button (click)="modalLarge.close()" [color]="'gray'"
               >I decline</flowbite-button
             >
           </flowbite-modal-footer>
@@ -160,10 +160,10 @@ import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
             </p>
           </flowbite-modal-body>
           <flowbite-modal-footer>
-            <flowbite-button (click)="modalSmall.close()"
+            <flowbite-button (click)="modalExtraLarge.close()"
               >I accept</flowbite-button
             >
-            <flowbite-button (click)="modalSmall.close()" [color]="'gray'"
+            <flowbite-button (click)="modalExtraLarge.close()" [color]="'gray'"
               >I decline</flowbite-button
             >
           </flowbite-modal-footer>
@@ -321,7 +321,7 @@ import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
             <flowbite-button (click)="positionModal.close()"
               >Close</flowbite-button
             >
-            <flowbite-button (click)="modal.close()" [color]="'gray'"
+            <flowbite-button (click)="positionModal.close()" [color]="'gray'"
               >I decline</flowbite-button
             >
           </flowbite-modal-footer>
@@ -388,8 +388,8 @@ export class ModalPageComponent {
         </p>
     </flowbite-modal-body>
     <flowbite-modal-footer>
-        <flowbite-button (click)="modalSmall.close()">I accept</flowbite-button>
-        <flowbite-button (click)="modalSmall.close()" [color]="'gray'">I decline</flowbite-button>
+        <flowbite-button (click)="modalMedium.close()">I accept</flowbite-button>
+        <flowbite-button (click)="modalMedium.close()" [color]="'gray'">I decline</flowbite-button>
     </flowbite-modal-footer>
 </flowbite-modal>
 <flowbite-modal #modalLarge [dismissable]="true" [size]="'lg'">
@@ -403,8 +403,8 @@ export class ModalPageComponent {
         </p>
     </flowbite-modal-body>
     <flowbite-modal-footer>
-        <flowbite-button (click)="modalSmall.close()">I accept</flowbite-button>
-        <flowbite-button (click)="modalSmall.close()" [color]="'gray'">I decline</flowbite-button>
+        <flowbite-button (click)="modalLarge.close()">I accept</flowbite-button>
+        <flowbite-button (click)="modalLarge.close()" [color]="'gray'">I decline</flowbite-button>
     </flowbite-modal-footer>
 </flowbite-modal>
 <flowbite-modal #modalExtraLarge [size]="'xl'">
@@ -418,8 +418,8 @@ export class ModalPageComponent {
         </p>
     </flowbite-modal-body>
     <flowbite-modal-footer>
-        <flowbite-button (click)="modalSmall.close()">I accept</flowbite-button>
-        <flowbite-button (click)="modalSmall.close()" [color]="'gray'">I decline</flowbite-button>
+        <flowbite-button (click)="modalExtraLarge.close()">I accept</flowbite-button>
+        <flowbite-button (click)="modalExtraLarge.close()" [color]="'gray'">I decline</flowbite-button>
     </flowbite-modal-footer>
 </flowbite-modal>
             `,
