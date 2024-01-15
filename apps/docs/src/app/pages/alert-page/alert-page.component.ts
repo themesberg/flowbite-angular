@@ -1,6 +1,11 @@
+import { AlertComponent } from '@flowbite-angular/lib';
 import { Component } from '@angular/core';
+import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
+import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
 
 @Component({
+  standalone: true,
+  imports: [DemoPageComponent, DemoExampleComponent, AlertComponent],
   selector: 'flowbite-alert-page',
   template: `
     <flowbite-demo-page>

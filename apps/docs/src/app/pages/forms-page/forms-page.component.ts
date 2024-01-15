@@ -1,6 +1,23 @@
+import {
+  ButtonComponent,
+  FormFieldComponent,
+  InputDirective,
+  LabelDirective,
+} from '@flowbite-angular/lib';
 import { Component } from '@angular/core';
+import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
+import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
 
 @Component({
+  standalone: true,
+  imports: [
+    DemoPageComponent,
+    DemoExampleComponent,
+    FormFieldComponent,
+    ButtonComponent,
+    LabelDirective,
+    InputDirective,
+  ],
   selector: 'flowbite-forms-page',
   template: `
     <flowbite-demo-page>
@@ -141,7 +158,7 @@ import { Component } from '@angular/core';
       >
         <flowbite-form-field>
           <label flowbiteLabel>Your Email</label>
-          <span flowbiteAddon>@</span>
+          <span flowbiteAddon>&#64;</span>
           <input flowbiteInput placeholder="name@flowbite.com" />
         </flowbite-form-field>
       </flowbite-demo-example>

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 export type BadgeColor =
   | 'blue'
@@ -13,6 +15,8 @@ export type BadgeColor =
 export type BadgeSize = 'xs' | 'sm';
 
 @Component({
+  standalone: true,
+  imports: [NgClass, RouterLink],
   selector: 'flowbite-badge',
   template: `<span [class.group]="href">
     <a
@@ -24,8 +28,8 @@ export type BadgeSize = 'xs' | 'sm';
         !iconOnly
           ? 'rounded px-2 py-0.5'
           : size === 'xs'
-          ? 'rounded-full p-1'
-          : 'rounded-full p-1.5',
+            ? 'rounded-full p-1'
+            : 'rounded-full p-1.5',
         customStyle
       ]"
       [routerLink]="href"

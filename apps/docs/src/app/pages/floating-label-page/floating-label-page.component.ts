@@ -1,6 +1,21 @@
 import { Component } from '@angular/core';
+import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
+import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
+import {
+  FormFieldComponent,
+  InputDirective,
+  LabelDirective,
+} from '@flowbite-angular/lib';
 
 @Component({
+  standalone: true,
+  imports: [
+    DemoPageComponent,
+    DemoExampleComponent,
+    FormFieldComponent,
+    LabelDirective,
+    InputDirective,
+  ],
   selector: 'flowbite-floating-label-page',
   template: `
     <flowbite-demo-page>
@@ -150,7 +165,7 @@ export class FloatingLabelPageComponent {
     <input flowbiteInput placeholder=" " />
   </flowbite-form-field>
 </div>
-    `
+    `,
     },
     {
       language: 'html',
@@ -169,7 +184,7 @@ export class FloatingLabelPageComponent {
     <input flowbiteInput placeholder=" " />
   </flowbite-form-field>
 </div>
-      `
+      `,
     },
     {
       language: 'html',
@@ -224,7 +239,7 @@ export class FloatingLabelPageComponent {
     </p>
   </flowbite-form-field>
 </div>
-      `
+      `,
     },
     {
       language: 'html',
@@ -255,7 +270,7 @@ export class FloatingLabelPageComponent {
     <input flowbiteInput placeholder=" " />
   </flowbite-form-field>
 </div>
-      `
+      `,
     },
     {
       language: 'html',
@@ -270,7 +285,7 @@ export class FloatingLabelPageComponent {
     >.
   </p>
 </flowbite-form-field>
-      `
-    }
-  ]
+      `,
+    },
+  ];
 }

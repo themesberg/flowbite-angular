@@ -1,3 +1,12 @@
+import {
+  AddonDirective,
+  HelperDirective,
+  IconDirective,
+  InputDirective,
+  LabelDirective,
+} from './directives';
+import { AsyncPipe, NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
 import { Component, ContentChild, Input, OnDestroy } from '@angular/core';
 import {
   FloatingLabelType,
@@ -7,14 +16,6 @@ import {
   InputValidation,
 } from './form-field.properties';
 import generateID from '../../utils/id.generator';
-import {
-  AddonDirective,
-  HelperDirective,
-  IconDirective,
-  InputDirective,
-  LabelDirective,
-} from './directives';
-import { BehaviorSubject } from 'rxjs';
 
 interface PropertyMap {
   type: InputType;
@@ -26,6 +27,8 @@ interface PropertyMap {
 }
 
 @Component({
+  standalone: true,
+  imports: [NgIf, NgClass, AsyncPipe, NgTemplateOutlet],
   selector: 'flowbite-form-field',
   template: `
     <ng-container
@@ -55,7 +58,9 @@ interface PropertyMap {
       >
         <ng-container *ngIf="prefixType === 'icon'; else inputWithAddon">
           <div class="relative">
-            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <div
+              class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+            >
               <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
             </div>
             <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>
@@ -102,20 +107,27 @@ export class FormFieldComponent implements OnDestroy {
 
   @ContentChild(InputDirective) set input(content: InputDirective) {
     if (content) {
-      this._properties.subscribe((value) => Object.assign(content, { ...value, _id: this._inputId }));
+      this._properties.subscribe((value) =>
+        Object.assign(content, { ...value, _id: this._inputId }),
+      );
     }
   }
   @ContentChild(LabelDirective) set label(content: LabelDirective) {
     if (content) {
       this._properties.subscribe(({ floatingLabelType, validation }) =>
-        Object.assign(content, { _id: generateID('flowbite-label'), parentId: this._inputId, floatingLabelType, validation })
+        Object.assign(content, {
+          _id: generateID('flowbite-label'),
+          parentId: this._inputId,
+          floatingLabelType,
+          validation,
+        }),
       );
     }
   }
   @ContentChild(HelperDirective) set hint(content: HelperDirective) {
     if (content) {
       this._properties.subscribe(({ validation }) =>
-        Object.assign(content, { validation })
+        Object.assign(content, { validation }),
       );
     }
   }

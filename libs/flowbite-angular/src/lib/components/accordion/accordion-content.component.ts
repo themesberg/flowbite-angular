@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
 import { AccordionPanelComponent } from './accordion-panel.component';
+import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [NgIf],
   selector: 'flowbite-accordion-content',
   template: ` <div
     class="py-5 px-5 dark:bg-gray-900"

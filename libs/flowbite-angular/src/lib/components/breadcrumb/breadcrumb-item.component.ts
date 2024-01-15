@@ -1,6 +1,9 @@
 import { Component, HostBinding, Input } from '@angular/core';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [NgIf, NgTemplateOutlet],
   selector: 'flowbite-breadcrumb-item',
   template: `
     <svg

@@ -6,7 +6,7 @@
   "prefix": "flowbite",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/flowbite-angular"],
       "options": {
         "project": "libs/flowbite-angular/ng-package.json"
@@ -22,21 +22,14 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/flowbite-angular"],
       "options": {
-        "jestConfig": "libs/flowbite-angular/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/flowbite-angular/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/flowbite-angular/**/*.ts",
-          "libs/flowbite-angular/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     }
   },
   "tags": []

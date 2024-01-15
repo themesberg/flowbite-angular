@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [NgClass],
   selector: 'flowbite-navbar',
   template: ` <nav
     class="border-gray-200 bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800 sm:px-4"

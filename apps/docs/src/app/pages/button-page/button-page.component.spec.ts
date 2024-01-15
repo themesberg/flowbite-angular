@@ -2,13 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonPageComponent } from './button-page.component';
 
+import { RouterTestingModule } from '@angular/router/testing';
+
 describe('ButtonPageComponent', () => {
   let component: ButtonPageComponent;
   let fixture: ComponentFixture<ButtonPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ButtonPageComponent],
+      imports: [ButtonPageComponent, RouterTestingModule],
     }).compileComponents();
   });
 

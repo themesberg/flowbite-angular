@@ -1,7 +1,10 @@
+import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { SidebarService } from '../../services';
 
 @Component({
+  standalone: true,
+  imports: [NgClass, AsyncPipe],
   selector: 'flowbite-sidebar',
   template: `<aside
     class="h-full"

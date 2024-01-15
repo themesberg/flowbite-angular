@@ -1,7 +1,20 @@
+import { AsyncPipe, NgIf } from '@angular/common';
+import { BadgeComponent } from '../badge';
 import { Component, Input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SanitizeHtmlPipe } from '../../pipes';
 import { SidebarService } from '../../services';
 
 @Component({
+  standalone: true,
+  imports: [
+    NgIf,
+    RouterLink,
+    RouterLinkActive,
+    SanitizeHtmlPipe,
+    AsyncPipe,
+    BadgeComponent,
+  ],
   selector: 'flowbite-sidebar-item',
   template: `<a
     class="group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"

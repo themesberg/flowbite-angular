@@ -1,8 +1,11 @@
 import { Component, Input, TemplateRef } from '@angular/core';
+import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 export type AlertColor = 'blue' | 'red' | 'green' | 'yellow' | 'gray';
 
 @Component({
+  standalone: true,
+  imports: [NgIf, NgClass, NgTemplateOutlet],
   selector: 'flowbite-alert',
   template: ` <div
     class="flex flex-col gap-2 p-4 text-sm"
@@ -52,7 +55,7 @@ export class AlertComponent {
   @Input() withBorderAccent = false;
   @Input() icon: TemplateRef<unknown> | null = null;
   @Input() additionalContent: TemplateRef<unknown> | null = null;
-  @Input() dismiss?: () => void;
+  @Input() dismiss!: () => void;
 
   colorClasses: Record<AlertColor, string> = {
     blue: 'text-blue-700 bg-blue-100 border-blue-500 dark:bg-blue-200 dark:text-blue-800',
