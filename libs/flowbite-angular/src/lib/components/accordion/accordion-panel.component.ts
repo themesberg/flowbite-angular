@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'flowbite-accordion-panel',
   template: ` <div>
     <ng-content></ng-content>

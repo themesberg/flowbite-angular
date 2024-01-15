@@ -8,7 +8,7 @@ describe('FloatingLabelPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FloatingLabelPageComponent],
+      imports: [FloatingLabelPageComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FloatingLabelPageComponent);

@@ -4,6 +4,7 @@ import { HintProperties, InputValidation } from '../form-field.properties';
 import generateID from '../../../utils/id.generator';
 
 @Directive({
+  standalone: true,
   selector: '[flowbiteHelper]',
 })
 export class HelperDirective extends BaseInputDirective {

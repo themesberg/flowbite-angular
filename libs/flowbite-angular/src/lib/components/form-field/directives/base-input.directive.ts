@@ -1,6 +1,8 @@
 import { Directive, HostBinding, Input, OnInit } from '@angular/core';
 
-@Directive({})
+@Directive({
+  standalone: true,
+})
 export abstract class BaseInputDirective implements OnInit {
   _classes: string[] = [];
   @HostBinding('class') get classes() {

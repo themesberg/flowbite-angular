@@ -8,7 +8,7 @@ describe('PrismComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PrismComponent],
+      imports: [PrismComponent],
     }).compileComponents();
   });
 

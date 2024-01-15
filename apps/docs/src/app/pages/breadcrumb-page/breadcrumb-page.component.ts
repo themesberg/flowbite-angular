@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { DemoExampleComponent, DemoPageComponent } from '../../common';
+import { BreadcrumbComponent, BreadcrumbItemComponent } from '@flowbite-angular/lib';
 
 @Component({
+  standalone: true,
+  imports: [DemoPageComponent, DemoExampleComponent, BreadcrumbComponent, BreadcrumbItemComponent],
   selector: 'flowbite-breadcrumb-page',
   template: ` <flowbite-demo-page>
     <flowbite-demo-example title="Default Breadcrumb" [codes]="[examples[0]]">

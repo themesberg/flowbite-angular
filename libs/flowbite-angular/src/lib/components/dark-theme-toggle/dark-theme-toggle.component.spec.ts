@@ -8,7 +8,7 @@ describe('DarkThemeToggleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DarkThemeToggleComponent],
+      imports: [DarkThemeToggleComponent],
     }).compileComponents();
   });
 

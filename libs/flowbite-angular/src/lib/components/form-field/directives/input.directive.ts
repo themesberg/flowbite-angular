@@ -7,6 +7,7 @@ import {
 import { BaseInputDirective } from './base-input.directive';
 
 @Directive({
+  standalone: true,
   selector: 'input[flowbiteInput]',
 })
 export class InputDirective extends BaseInputDirective {
