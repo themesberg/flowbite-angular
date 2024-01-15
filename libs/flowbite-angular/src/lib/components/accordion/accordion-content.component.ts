@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { AccordionPanelComponent } from './accordion-panel.component';
+import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 @Component({

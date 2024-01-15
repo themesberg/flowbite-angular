@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 
-import { ThemeService } from '../../services';
 import { Subscription } from 'rxjs';
+import { ThemeService } from '../../services';
 
 @Component({
   standalone: true,

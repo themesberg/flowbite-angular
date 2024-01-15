@@ -1,18 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
 import {
+  ButtonColors,
+  ButtonDuoToneColors,
+  ButtonMonochromeColors,
+  ButtonSizes,
   buttonBaseClass,
   buttonColorClasses,
-  ButtonColors,
   buttonDisableClasses,
   buttonDuoToneColorClasses,
-  ButtonDuoToneColors,
   buttonMonochromeColorClasses,
-  ButtonMonochromeColors,
   buttonPillClasses,
   buttonSizeClasses,
-  ButtonSizes,
   spanBaseClass,
 } from './button.properties';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({

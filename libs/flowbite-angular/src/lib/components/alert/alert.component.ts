@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
-import { NgIf, NgClass, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 
 export type AlertColor = 'blue' | 'red' | 'green' | 'yellow' | 'gray';

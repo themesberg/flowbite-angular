@@ -1,6 +1,6 @@
-import { Directive } from '@angular/core';
-import { BaseInputDirective } from './base-input.directive';
 import { AddonProperties } from '../form-field.properties';
+import { BaseInputDirective } from './base-input.directive';
+import { Directive } from '@angular/core';
 import generateID from '../../../utils/id.generator';
 
 @Directive({
