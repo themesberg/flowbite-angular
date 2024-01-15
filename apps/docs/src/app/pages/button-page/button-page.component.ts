@@ -5,7 +5,12 @@ import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
 
 @Component({
   standalone: true,
-  imports: [DemoPageComponent, DemoExampleComponent, ButtonComponent, BadgeComponent],
+  imports: [
+    DemoPageComponent,
+    DemoExampleComponent,
+    ButtonComponent,
+    BadgeComponent,
+  ],
   selector: 'flowbite-button-page',
   template: `<flowbite-demo-page>
     <flowbite-demo-example title="Default button" [codes]="[examples[0]]">

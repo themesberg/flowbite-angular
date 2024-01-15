@@ -28,8 +28,8 @@ export type BadgeSize = 'xs' | 'sm';
         !iconOnly
           ? 'rounded px-2 py-0.5'
           : size === 'xs'
-          ? 'rounded-full p-1'
-          : 'rounded-full p-1.5',
+            ? 'rounded-full p-1'
+            : 'rounded-full p-1.5',
         customStyle
       ]"
       [routerLink]="href"

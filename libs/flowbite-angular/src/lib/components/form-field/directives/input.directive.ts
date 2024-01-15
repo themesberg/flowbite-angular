@@ -1,9 +1,11 @@
 import { BaseInputDirective } from './base-input.directive';
 import { Directive, HostBinding, Input } from '@angular/core';
 import {
-  FloatingLabelType, InputPrefixType,
+  FloatingLabelType,
+  InputPrefixType,
   InputProperties,
-  InputSize, InputValidation
+  InputSize,
+  InputValidation,
 } from '../form-field.properties';
 
 @Directive({
@@ -46,25 +48,41 @@ export class InputDirective extends BaseInputDirective {
     const classesToAdd = [];
     if (this._floatingLabelType) {
       // Adding base class
-      classesToAdd.push(...InputProperties.floatingLabel[this._floatingLabelType].base);
+      classesToAdd.push(
+        ...InputProperties.floatingLabel[this._floatingLabelType].base,
+      );
       if (this._validation) {
-        classesToAdd.push(...InputProperties.floatingLabel[this._floatingLabelType].validation[this._validation])
+        classesToAdd.push(
+          ...InputProperties.floatingLabel[this._floatingLabelType].validation[
+            this._validation
+          ],
+        );
       } else if (this._disabled) {
-        classesToAdd.push(...InputProperties.floatingLabel[this._floatingLabelType].disabled);
+        classesToAdd.push(
+          ...InputProperties.floatingLabel[this._floatingLabelType].disabled,
+        );
       } else {
-        classesToAdd.push(...InputProperties.floatingLabel[this._floatingLabelType].default)
+        classesToAdd.push(
+          ...InputProperties.floatingLabel[this._floatingLabelType].default,
+        );
       }
       if (this._size) {
-        classesToAdd.push(...InputProperties.floatingLabel[this._floatingLabelType].size[this._size])
+        classesToAdd.push(
+          ...InputProperties.floatingLabel[this._floatingLabelType].size[
+            this._size
+          ],
+        );
       }
     } else {
       classesToAdd.push(...InputProperties.default.base);
       if (this._validation) {
-        classesToAdd.push(...InputProperties.default.validation[this._validation])
+        classesToAdd.push(
+          ...InputProperties.default.validation[this._validation],
+        );
       } else if (this._disabled) {
         classesToAdd.push(...InputProperties.default.disabled);
       } else {
-        classesToAdd.push(...InputProperties.default.default)
+        classesToAdd.push(...InputProperties.default.default);
       }
       if (this._prefixType === 'addon') {
         classesToAdd.push(...InputProperties.default.addon);
@@ -72,7 +90,7 @@ export class InputDirective extends BaseInputDirective {
         classesToAdd.push(...InputProperties.default.icon);
       }
       if (this._size) {
-        classesToAdd.push(...InputProperties.default.size[this._size])
+        classesToAdd.push(...InputProperties.default.size[this._size]);
       }
     }
 

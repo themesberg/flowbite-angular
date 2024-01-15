@@ -17,7 +17,7 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NgIf,NgTemplateOutlet],
+  imports: [NgIf, NgTemplateOutlet],
   selector: 'flowbite-button',
   template: `
     <button type="button" [class]="buttonClass" [disabled]="disabled">

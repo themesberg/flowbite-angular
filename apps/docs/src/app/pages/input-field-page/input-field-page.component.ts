@@ -1,11 +1,24 @@
-import { ButtonComponent, FormFieldComponent, InputDirective, LabelDirective } from '@flowbite-angular/lib';
+import {
+  ButtonComponent,
+  FormFieldComponent,
+  InputDirective,
+  LabelDirective,
+} from '@flowbite-angular/lib';
 import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
 
 @Component({
   standalone: true,
-  imports: [DemoPageComponent, DemoExampleComponent, FormFieldComponent, LabelDirective, ButtonComponent, LabelDirective, InputDirective],
+  imports: [
+    DemoPageComponent,
+    DemoExampleComponent,
+    FormFieldComponent,
+    LabelDirective,
+    ButtonComponent,
+    LabelDirective,
+    InputDirective,
+  ],
   selector: 'flowbite-input-field-page',
   template: `<flowbite-demo-page>
     <flowbite-demo-example title="Input fields" [codes]="[examples[0]]">
@@ -257,7 +270,7 @@ export class InputFieldPageComponent {
   <label flowbiteLabel>Disabled readonly input</label>
   <input flowbiteInput readonly />
 </flowbite-form-field>
-      `
+      `,
     },
     {
       language: 'html',
