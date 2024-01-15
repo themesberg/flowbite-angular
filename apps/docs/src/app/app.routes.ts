@@ -14,7 +14,7 @@ import {
   InputFieldPageComponent,
   ModalPageComponent,
   SidebarPageComponent,
-} from './pages';
+} from '@flowbite-angular-docs/app/pages';
 
 export const appRoutes: Route[] = [
   {

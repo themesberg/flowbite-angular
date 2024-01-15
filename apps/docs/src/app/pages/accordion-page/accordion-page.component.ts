@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DemoExampleComponent, DemoPageComponent } from '../../common';
+import { DemoExampleComponent, DemoPageComponent } from '@flowbite-angular-docs/app/common';
 
 import {
   AccordionComponent,
