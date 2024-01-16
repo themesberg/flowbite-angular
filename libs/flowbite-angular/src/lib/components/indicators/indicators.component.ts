@@ -86,21 +86,7 @@ const offsets = {
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-indicator',
-  template: `
-    <div
-      class="flex-shrink-0"
-      [ngClass]="[
-        this.placement && this.offset ? offsetClasses[this.placement] : '',
-        placement ? 'absolute ' + placementClasses[placement] : '',
-        colorClasses[this.color],
-        sizeClasses[this.size],
-        rounded ? 'rounded' : 'rounded-full',
-        border ? 'border-2 border-white dark:border-gray-800' : ''
-      ]"
-    >
-      <ng-content></ng-content>
-    </div>
-  `,
+  templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent {
   @Input() pill = false;
