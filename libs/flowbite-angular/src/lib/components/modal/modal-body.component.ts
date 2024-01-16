@@ -4,10 +4,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   selector: 'flowbite-modal-body',
-  template: `
-    <div class="p-6 space-y-6">
-      <ng-content></ng-content>
-    </div>
-  `,
+  templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent {}
