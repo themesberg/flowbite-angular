@@ -19,24 +19,7 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
   standalone: true,
   imports: [NgIf, NgTemplateOutlet],
   selector: 'flowbite-button',
-  template: `
-    <button type="button" [class]="buttonClass" [disabled]="disabled">
-      <span
-        *ngIf="gradientDuoTone && outline; else default"
-        [class]="spanClass"
-      >
-        <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
-      </span>
-
-      <ng-template #default>
-        <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
-      </ng-template>
-
-      <ng-template #contentOutlet>
-        <ng-content></ng-content>
-      </ng-template>
-    </button>
-  `,
+  templateUrl: './button.component.html',
 })
 export class ButtonComponent implements OnInit {
   @Input() color: ButtonColors = 'info';
