@@ -7,47 +7,7 @@ export type AlertColor = 'blue' | 'red' | 'green' | 'yellow' | 'gray';
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet],
   selector: 'flowbite-alert',
-  template: ` <div
-    class="flex flex-col gap-2 p-4 text-sm"
-    [ngClass]="colorClasses[color]"
-    [class.rounded-lg]="rounded"
-    [class.border-t-4]="withBorderAccent"
-    role="alert"
-  >
-    <div class="flex items-center">
-      <ng-container [ngTemplateOutlet]="icon"></ng-container>
-      <div>
-        <ng-content></ng-content>
-      </div>
-      <button
-        type="button"
-        class="-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-2"
-        [ngClass]="buttonColorClasses[color]"
-        *ngIf="dismiss"
-        aria-label="Close"
-        (click)="dismiss()"
-      >
-        <span class="sr-only">Close</span>
-        <svg
-          stroke="currentColor"
-          fill="currentColor"
-          stroke-width="0"
-          viewBox="0 0 20 20"
-          class="h-5 w-5"
-          height="1em"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <ng-container [ngTemplateOutlet]="additionalContent"></ng-container>
-  </div>`,
+  templateUrl: './alert.component.html',
 })
 export class AlertComponent {
   @Input() color: AlertColor = 'blue';
