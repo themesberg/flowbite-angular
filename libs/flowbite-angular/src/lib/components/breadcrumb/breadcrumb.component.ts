@@ -4,12 +4,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   selector: 'flowbite-breadcrumb',
-  template: `
-    <nav aria-label="Breadcrumb">
-      <ol class="flex items-center">
-        <ng-content></ng-content>
-      </ol>
-    </nav>
-  `,
+  templateUrl: './breadcrumb.component.html',
 })
 export class BreadcrumbComponent {}

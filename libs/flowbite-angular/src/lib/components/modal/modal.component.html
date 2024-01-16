@@ -1,0 +1,25 @@
+<div
+  tabindex="-1"
+  aria-hidden="true"
+  [ngClass]="{
+    hidden: !isOpen
+  }"
+  class="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex {{
+    positionClasses
+  }}"
+  (click)="onBackdropClick($event)"
+>
+  <div
+    class="relative w-full h-full md:h-auto"
+    [ngClass]="{
+      'max-w-md': size === 'sm',
+      'max-w-lg': size === 'md',
+      'max-w-4xl': size === 'lg',
+      'max-w-7xl': size === 'xl'
+    }"
+  >
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

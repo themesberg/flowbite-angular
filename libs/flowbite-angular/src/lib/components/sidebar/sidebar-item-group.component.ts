@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   selector: 'flowbite-sidebar-item-group',
-  template: ` <div class="flex flex-col space-y-2">
-    <ng-content></ng-content>
-  </div>`,
+  templateUrl: './sidebar-item-group.component.html',
 })
 export class SidebarItemGroupComponent {}

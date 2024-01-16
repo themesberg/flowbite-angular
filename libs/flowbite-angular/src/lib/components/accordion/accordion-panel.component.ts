@@ -4,9 +4,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   selector: 'flowbite-accordion-panel',
-  template: ` <div>
-    <ng-content></ng-content>
-  </div>`,
+  templateUrl: './accordion-panel.component.html',
 })
 export class AccordionPanelComponent {
   @Input() open?: boolean;
