@@ -5,7 +5,7 @@ import { DropdownComponent } from './dropdown.component';
   standalone: true,
   imports: [],
   selector: 'flowbite-dropdown-divider',
-  template: ` <li class="my-1 h-px bg-gray-100 dark:bg-gray-600"></li> `,
+  templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent {
   constructor(readonly dropdown: DropdownComponent) {}
