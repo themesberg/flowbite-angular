@@ -18,25 +18,7 @@ export type BadgeSize = 'xs' | 'sm';
   standalone: true,
   imports: [NgClass, RouterLink],
   selector: 'flowbite-badge',
-  template: `<span [class.group]="href">
-    <a
-      class="flex h-fit items-center gap-1 font-semibold"
-      [class.cursor-pointer]="href"
-      [ngClass]="[
-        colorClasses[color],
-        sizeClasses[size],
-        !iconOnly
-          ? 'rounded px-2 py-0.5'
-          : size === 'xs'
-            ? 'rounded-full p-1'
-            : 'rounded-full p-1.5',
-        customStyle
-      ]"
-      [routerLink]="href"
-    >
-      <ng-content></ng-content>
-    </a>
-  </span>`,
+  templateUrl: './badge.component.html',
 })
 export class BadgeComponent {
   @Input() color: BadgeColor = 'blue';
