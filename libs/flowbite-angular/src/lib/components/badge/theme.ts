@@ -3,6 +3,7 @@ import {
   FlowbiteColors,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
+import { Injectable } from '@angular/core';
 
 export interface BadgeProperties {
   color: keyof BadgeColors;
@@ -21,16 +22,10 @@ export interface BadgeColors
 
 export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {}
 
-export class BadgeTheme {
-  private static instance: BadgeTheme;
-
-  private constructor() {}
-
-  public static getInstance(): BadgeTheme {
-    if (!BadgeTheme.instance) BadgeTheme.instance = new BadgeTheme();
-    return BadgeTheme.instance;
-  }
-
+@Injectable({
+  providedIn: 'root',
+})
+export class BadgeThemeService {
   public getClasses(properties: BadgeProperties): string {
     const output = this.baseClass.concat(
       ` ${this.colorClass[properties.color]}`,

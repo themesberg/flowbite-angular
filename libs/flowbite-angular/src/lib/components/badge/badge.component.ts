@@ -1,4 +1,4 @@
-import { BadgeColors, BadgeSizes, BadgeTheme } from './theme';
+import { BadgeColors, BadgeSizes, BadgeThemeService } from './theme';
 
 import { BaseComponent } from '../base.component';
 import { Component, Input, OnInit } from '@angular/core';
@@ -20,8 +20,12 @@ export class BadgeComponent extends BaseComponent implements OnInit {
   @Input() href?: string;
   @Input() customStyle?: string;
 
+  constructor(private badgeThemeService: BadgeThemeService) {
+    super();
+  }
+
   ngOnInit(): void {
-    this.componentClass = BadgeTheme.getInstance().getClasses({
+    this.componentClass = this.badgeThemeService.getClasses({
       color: this.color,
       size: this.size,
       isIconOnly: this.isIconOnly,
