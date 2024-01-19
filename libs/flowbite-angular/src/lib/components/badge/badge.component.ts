@@ -1,18 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { BadgeColors, BadgeSizes, BadgeTheme } from './theme';
+
+import { BaseComponent } from '../base.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { FlowbiteBoolean } from '../../common/flowbite.theme';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
-export type BadgeColor =
-  | 'blue'
-  | 'dark'
-  | 'red'
-  | 'green'
-  | 'yellow'
-  | 'indigo'
-  | 'purple'
-  | 'pink';
-
-export type BadgeSize = 'xs' | 'sm';
 
 @Component({
   standalone: true,
@@ -20,30 +12,22 @@ export type BadgeSize = 'xs' | 'sm';
   selector: 'flowbite-badge',
   templateUrl: './badge.component.html',
 })
-export class BadgeComponent {
-  @Input() color: BadgeColor = 'blue';
-  @Input() size: BadgeSize = 'xs';
+export class BadgeComponent extends BaseComponent implements OnInit {
+  @Input() color: keyof BadgeColors = 'blue';
+  @Input() size: keyof BadgeSizes = 'xs';
+  @Input() isIconOnly: keyof FlowbiteBoolean = 'disabled';
+  @Input() isPill: keyof FlowbiteBoolean = 'disabled';
   @Input() href?: string;
-  @Input() iconOnly = false;
-  @Input() customStyle = '';
+  @Input() customStyle?: string;
 
-  colorClasses: Record<BadgeColor, string> = {
-    blue: 'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
-    dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 group-hover:bg-gray-200 dark:group-hover:bg-gray-600',
-    red: 'bg-red-100 text-red-800 dark:bg-red-200 dark:text-red-900 group-hover:bg-red-200 dark:group-hover:bg-red-300',
-    green:
-      'bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900 group-hover:bg-green-200 dark:group-hover:bg-green-300',
-    yellow:
-      'bg-yellow-100 text-yellow-800 dark:bg-yellow-200 dark:text-yellow-900 group-hover:bg-yellow-200 dark:group-hover:bg-yellow-300',
-    indigo:
-      'bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-300',
-    purple:
-      'bg-purple-100 text-purple-800 dark:bg-purple-200 dark:text-purple-900 group-hover:bg-purple-200 dark:group-hover:bg-purple-300',
-    pink: 'bg-pink-100 text-pink-800 dark:bg-pink-200 dark:text-pink-900 group-hover:bg-pink-200 dark:group-hover:bg-pink-300',
-  };
-
-  sizeClasses: Record<BadgeSize, string> = {
-    xs: 'text-xs',
-    sm: 'text-sm',
-  };
+  ngOnInit(): void {
+    this.componentClass = BadgeTheme.getInstance().getClasses({
+      color: this.color,
+      size: this.size,
+      isIconOnly: this.isIconOnly,
+      isPill: this.isPill,
+      href: this.href,
+      customStyle: this.customStyle,
+    });
+  }
 }
