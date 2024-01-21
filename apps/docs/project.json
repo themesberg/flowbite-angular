@@ -79,6 +79,67 @@
       "options": {
         "jestConfig": "apps/docs/jest.config.ts"
       }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/docs-ssr",
+        "main": "apps/docs/server.ts",
+        "tsConfig": "apps/docs/tsconfig.server.json",
+        "inlineStyleLanguage": "css"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/docs/src/environments/environment.ts",
+              "with": "apps/docs/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "docs:build:development",
+          "serverTarget": "docs:server:development"
+        },
+        "production": {
+          "browserTarget": "docs:build:production",
+          "serverTarget": "docs:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@angular-devkit/build-angular:prerender",
+      "options": {
+        "routes": ["/"],
+        "discoverRoutes": true
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "docs:build:development",
+          "serverTarget": "docs:server:development"
+        },
+        "production": {
+          "browserTarget": "docs:build:production",
+          "serverTarget": "docs:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []
