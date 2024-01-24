@@ -3,7 +3,9 @@ import {
   FlowbiteColors,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
-import { Injectable } from '@angular/core';
+import { mergeTheme } from '../../utils/merge-theme';
+
+import { twMerge } from 'tailwind-merge';
 
 export interface BadgeProperties {
   color: keyof BadgeColors;
@@ -11,7 +13,20 @@ export interface BadgeProperties {
   isIconOnly: keyof FlowbiteBoolean;
   isPill: keyof FlowbiteBoolean;
   href?: string;
-  customStyle?: string;
+  customStyle: Partial<BadgeBaseTheme>;
+}
+
+export interface BadgeBaseTheme {
+  root: Partial<BadgeRootTheme>;
+}
+
+export interface BadgeRootTheme {
+  base: string;
+  color: Record<keyof BadgeColors, string>;
+  size: Record<keyof BadgeSizes, string>;
+  pill: Record<keyof FlowbiteBoolean, string>;
+  iconOnly: Record<keyof FlowbiteBoolean, string>;
+  href: Record<keyof FlowbiteBoolean, string>;
 }
 
 export interface BadgeColors
@@ -22,63 +37,57 @@ export interface BadgeColors
 
 export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {}
 
-@Injectable({
-  providedIn: 'root',
-})
-export class BadgeThemeService {
-  public getClasses(properties: BadgeProperties): string {
-    const output = this.baseClass.concat(
-      ` ${this.colorClass[properties.color]}`,
-      ` ${this.sizeClass[properties.size]}`,
-      ` ${
-        this.pillClass[
-          properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
-            ? 'enabled'
-            : properties.isPill
-        ]
-      }`,
-      ` ${this.iconClass[properties.isIconOnly]}`,
-      ` ${this.hrefClass[properties.href ? 'enabled' : 'disabled']}`,
-      ` ${properties.customStyle}`,
-    );
+export const badgeTheme: BadgeBaseTheme = {
+  root: {
+    base: 'flex h-fit items-center gap-1 font-semibold',
+    color: {
+      blue: 'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
+      dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 group-hover:bg-gray-200 dark:group-hover:bg-gray-600',
+      red: 'bg-red-100 text-red-800 dark:bg-red-200 dark:text-red-900 group-hover:bg-red-200 dark:group-hover:bg-red-300',
+      green:
+        'bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900 group-hover:bg-green-200 dark:group-hover:bg-green-300',
+      yellow:
+        'bg-yellow-100 text-yellow-800 dark:bg-yellow-200 dark:text-yellow-900 group-hover:bg-yellow-200 dark:group-hover:bg-yellow-300',
+      indigo:
+        'bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-300',
+      purple:
+        'bg-purple-100 text-purple-800 dark:bg-purple-200 dark:text-purple-900 group-hover:bg-purple-200 dark:group-hover:bg-purple-300',
+      pink: 'bg-pink-100 text-pink-800 dark:bg-pink-200 dark:text-pink-900 group-hover:bg-pink-200 dark:group-hover:bg-pink-300',
+    },
+    size: {
+      xs: 'text-xs p-1',
+      sm: 'text-sm p-1.5',
+    },
+    pill: {
+      enabled: 'rounded-full',
+      disabled: 'rounded',
+    },
+    href: {
+      enabled: 'cursor-pointer',
+      disabled: '',
+    },
+    iconOnly: {
+      enabled: '',
+      disabled: 'px-2 py-0.5',
+    },
+  },
+};
 
-    return output;
-  }
+export function getClasses(properties: BadgeProperties): string {
+  const theme: BadgeBaseTheme = mergeTheme(badgeTheme, properties.customStyle);
 
-  private baseClass = 'flex h-fit items-center gap-1 font-semibold';
+  const output = twMerge(
+    theme.root.base,
+    theme.root.color![properties.color],
+    theme.root.size![properties.size],
+    theme.root.pill![
+      properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
+        ? 'enabled'
+        : properties.isPill
+    ],
+    theme.root.iconOnly![properties.isIconOnly],
+    theme.root.href![properties.href ? 'enabled' : 'disabled'],
+  );
 
-  private colorClass: Record<keyof BadgeColors, string> = {
-    blue: 'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
-    dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 group-hover:bg-gray-200 dark:group-hover:bg-gray-600',
-    red: 'bg-red-100 text-red-800 dark:bg-red-200 dark:text-red-900 group-hover:bg-red-200 dark:group-hover:bg-red-300',
-    green:
-      'bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900 group-hover:bg-green-200 dark:group-hover:bg-green-300',
-    yellow:
-      'bg-yellow-100 text-yellow-800 dark:bg-yellow-200 dark:text-yellow-900 group-hover:bg-yellow-200 dark:group-hover:bg-yellow-300',
-    indigo:
-      'bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-300',
-    purple:
-      'bg-purple-100 text-purple-800 dark:bg-purple-200 dark:text-purple-900 group-hover:bg-purple-200 dark:group-hover:bg-purple-300',
-    pink: 'bg-pink-100 text-pink-800 dark:bg-pink-200 dark:text-pink-900 group-hover:bg-pink-200 dark:group-hover:bg-pink-300',
-  };
-
-  private sizeClass: Record<keyof BadgeSizes, string> = {
-    xs: 'text-xs p-1',
-    sm: 'text-sm',
-  };
-
-  private pillClass: Record<keyof FlowbiteBoolean, string> = {
-    enabled: 'rounded-full',
-    disabled: 'rounded',
-  };
-
-  private iconClass: Record<keyof FlowbiteBoolean, string> = {
-    enabled: 'p-1.5',
-    disabled: 'px-2 py-0.5',
-  };
-
-  private hrefClass: Record<keyof FlowbiteBoolean, string> = {
-    enabled: 'cursor-pointer',
-    disabled: '',
-  };
+  return output;
 }

@@ -1,8 +1,8 @@
-import { BadgeColors, BadgeSizes, BadgeThemeService } from './theme';
-
+import * as properties from './theme';
 import { BaseComponent } from '../base.component';
-import { Component, Input, OnInit } from '@angular/core';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -13,19 +13,15 @@ import { RouterLink } from '@angular/router';
   templateUrl: './badge.component.html',
 })
 export class BadgeComponent extends BaseComponent implements OnInit {
-  @Input() color: keyof BadgeColors = 'blue';
-  @Input() size: keyof BadgeSizes = 'xs';
+  @Input() color: keyof properties.BadgeColors = 'blue';
+  @Input() size: keyof properties.BadgeSizes = 'xs';
   @Input() isIconOnly: keyof FlowbiteBoolean = 'disabled';
   @Input() isPill: keyof FlowbiteBoolean = 'disabled';
   @Input() href?: string;
-  @Input() customStyle?: string;
-
-  constructor(private badgeThemeService: BadgeThemeService) {
-    super();
-  }
+  @Input() customStyle: Partial<properties.BadgeBaseTheme> = {};
 
   ngOnInit(): void {
-    this.componentClass = this.badgeThemeService.getClasses({
+    this.componentClass = properties.getClasses({
       color: this.color,
       size: this.size,
       isIconOnly: this.isIconOnly,

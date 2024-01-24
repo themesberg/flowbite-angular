@@ -39,6 +39,7 @@
     "@nx/angular": "17.2.8",
     "flowbite": "^2.2.1",
     "rxjs": "7.8.1",
+    "tailwind-merge": "^2.2.1",
     "tslib": "^2.0.0",
     "zone.js": "0.14.3"
   },

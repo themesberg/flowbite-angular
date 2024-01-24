@@ -1,7 +1,12 @@
-import { BadgeComponent, ButtonComponent } from '@flowbite-angular/lib';
-import { Component } from '@angular/core';
+import {
+  BadgeBaseTheme,
+  BadgeComponent,
+  ButtonComponent,
+} from '@flowbite-angular/lib';
 import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
+
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -15,6 +20,15 @@ import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
   templateUrl: './button-page.component.html',
 })
 export class ButtonPageComponent {
+  badgeCustomTheme: Partial<BadgeBaseTheme> = {
+    root: {
+      iconOnly: {
+        enabled: 'py-0',
+        disabled: '',
+      },
+    },
+  };
+
   examples = [
     {
       language: 'html',
