@@ -130,14 +130,13 @@ export function getClasses(properties: IndicatorProperties): string {
     theme.root.border![properties.border],
     theme.root.color![properties.color],
     theme.root.disabled![properties.disabled],
-    properties.placement && properties.offset == 'enabled'
-      ? theme.root.offset![properties.placement]
-      : '',
+    properties.placement &&
+      properties.offset == 'enabled' &&
+      theme.root.offset![properties.placement],
     theme.root.outline![properties.outline],
     theme.root.pill![properties.pill],
-    properties.placement
-      ? 'absolute ' + theme.root.placement![properties.placement]
-      : '',
+    properties.placement &&
+      'absolute ' + theme.root.placement![properties.placement],
     theme.root.rounded![properties.rounded],
     theme.root.size![properties.size],
   );
