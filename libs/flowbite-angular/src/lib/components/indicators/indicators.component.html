@@ -1,13 +1,3 @@
-<div
-  class="flex-shrink-0"
-  [ngClass]="[
-    this.placement && this.offset ? offsetClasses[this.placement] : '',
-    placement ? 'absolute ' + placementClasses[placement] : '',
-    colorClasses[this.color],
-    sizeClasses[this.size],
-    rounded ? 'rounded' : 'rounded-full',
-    border ? 'border-2 border-white dark:border-gray-800' : ''
-  ]"
->
+<div [ngClass]="componentClass">
   <ng-content></ng-content>
 </div>
