@@ -1,5 +1,7 @@
 export type FlowbiteHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
+export type FlowbiteTheme = 'dark' | 'light';
+
 export interface FlowbiteBoolean {
   enabled: string;
   disabled: string;
