@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
 })
 export abstract class BaseComponent {
   protected componentClass: string = '';
+  protected contentClasses?: Record<string, string>;
 }
