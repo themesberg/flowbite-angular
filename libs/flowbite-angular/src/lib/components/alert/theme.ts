@@ -64,6 +64,7 @@ export const alertTheme: AlertBaseTheme = {
     },
   },
 };
+
 export function getClasses(properties: AlertProperties): {
   alertClass: string;
   alertButtonClass: string;

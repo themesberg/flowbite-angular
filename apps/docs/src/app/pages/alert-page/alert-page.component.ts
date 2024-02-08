@@ -2,8 +2,7 @@ import { DemoExampleComponent } from '../../common/demo-example/demo-example.com
 import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
 
 import { AlertComponent } from '@flowbite-angular/lib';
-import { Component, OnInit } from '@angular/core';
-import { initFlowbite } from 'flowbite';
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -11,7 +10,7 @@ import { initFlowbite } from 'flowbite';
   selector: 'flowbite-alert-page',
   templateUrl: './alert-page.component.html',
 })
-export class AlertPageComponent implements OnInit {
+export class AlertPageComponent {
   examples = [
     {
       language: 'html',
@@ -70,8 +69,4 @@ export class AlertPageComponent implements OnInit {
   ];
 
   onDismiss = () => alert('Alert dismissed!');
-
-  ngOnInit(): void {
-    initFlowbite();
-  }
 }

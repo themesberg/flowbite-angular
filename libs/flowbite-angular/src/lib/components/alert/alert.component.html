@@ -1,4 +1,4 @@
-<div id="alert" [ngClass]="componentClass" role="alert">
+<div [ngClass]="componentClass" role="alert">
   <div class="flex items-center">
     <ng-container [ngTemplateOutlet]="icon"></ng-container>
     <div>
@@ -8,7 +8,6 @@
       type="button"
       [ngClass]="contentClasses!['alertButton']"
       *ngIf="dismiss"
-      data-dismiss-target="#alert"
       aria-label="Close"
       (click)="dismiss()"
     >
