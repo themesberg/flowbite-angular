@@ -1,17 +1,7 @@
-import {
-  ButtonColors,
-  ButtonDuoToneColors,
-  ButtonMonochromeColors,
-  ButtonSizes,
-  buttonBaseClass,
-  buttonColorClasses,
-  buttonDisableClasses,
-  buttonDuoToneColorClasses,
-  buttonMonochromeColorClasses,
-  buttonPillClasses,
-  buttonSizeClasses,
-  spanBaseClass,
-} from './button.properties';
+import * as properties from './theme';
+import { BaseComponent } from '../base.component';
+import { FlowbiteBoolean } from '../../common/flowbite.theme';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 
@@ -21,45 +11,31 @@ import { NgIf, NgTemplateOutlet } from '@angular/common';
   selector: 'flowbite-button',
   templateUrl: './button.component.html',
 })
-export class ButtonComponent implements OnInit {
-  @Input() color: ButtonColors = 'info';
-  @Input() gradientMonochrome?: ButtonMonochromeColors;
-  @Input() gradientDuoTone?: ButtonDuoToneColors;
-  @Input() size: ButtonSizes = 'md';
-  @Input() pill = false;
-  @Input() outline = false;
-  @Input() disabled = false;
-
-  buttonClass = '';
-  spanClass = spanBaseClass;
+export class ButtonComponent extends BaseComponent implements OnInit {
+  @Input() color: keyof properties.ButtonColors = 'info';
+  @Input() gradientMonochrome?: keyof properties.ButtonMonochromeColors;
+  @Input() gradientDuoTone?: keyof properties.ButtonDuoToneColors;
+  @Input() size: keyof properties.ButtonSizes = 'md';
+  @Input() pill: keyof FlowbiteBoolean = 'disabled';
+  @Input() outline: keyof properties.ButtonFill = 'solid';
+  @Input() disabled: keyof FlowbiteBoolean = 'disabled';
+  @Input() customStyle: Partial<properties.ButtonBaseTheme> = {};
 
   ngOnInit() {
-    if (this.gradientDuoTone && this.outline) {
-      this.buttonClass = buttonBaseClass['span'];
-      this.buttonClass +=
-        buttonDuoToneColorClasses[this.gradientDuoTone][
-          this.outline ? 'outline' : 'solid'
-        ];
+    const t = properties.getClasses({
+      color: this.color,
+      disabled: this.disabled,
+      outline: this.outline,
+      pill: this.pill,
+      size: this.size,
+      gradientDuoTone: this.gradientDuoTone,
+      gradientMonochrome: this.gradientMonochrome,
+      customStyle: this.customStyle,
+    });
 
-      this.spanClass += this.pill ? buttonPillClasses['true'] : ' rounded-md';
-      this.spanClass += buttonSizeClasses[this.size];
-    } else {
-      this.buttonClass = buttonBaseClass['default'];
-
-      if (this.gradientDuoTone) {
-        this.buttonClass +=
-          buttonDuoToneColorClasses[this.gradientDuoTone]['solid'];
-      } else if (this.gradientMonochrome) {
-        this.buttonClass +=
-          buttonMonochromeColorClasses[this.gradientMonochrome];
-      } else {
-        this.buttonClass +=
-          buttonColorClasses[this.color][this.outline ? 'outline' : 'solid'];
-      }
-      this.buttonClass += buttonSizeClasses[this.size];
-    }
-
-    this.buttonClass += buttonPillClasses[String(this.pill)];
-    this.buttonClass += buttonDisableClasses[String(this.disabled)];
+    this.componentClass = t.buttonClass;
+    this.contentClasses = {
+      span: t.spanClass,
+    };
   }
 }
