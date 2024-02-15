@@ -1,6 +1,9 @@
+import * as properties from './accordion-title.theme';
 import { AccordionComponent } from './accordion.component';
 import { AccordionPanelComponent } from './accordion-panel.component';
-import { Component } from '@angular/core';
+import { BaseComponent } from '../base.component';
+
+import { Component, Input, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -9,9 +12,19 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-accordion-title',
   templateUrl: './accordion-title.component.html',
 })
-export class AccordionTitleComponent {
+export class AccordionTitleComponent extends BaseComponent implements OnInit {
+  @Input() customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
+
   constructor(
     readonly accordion: AccordionComponent,
     readonly accordionPanel: AccordionPanelComponent,
-  ) {}
+  ) {
+    super();
+  }
+
+  ngOnInit(): void {
+    this.componentClass = properties.getClass({
+      customStyle: this.customStyle,
+    });
+  }
 }
