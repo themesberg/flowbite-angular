@@ -3,11 +3,11 @@ import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
 import { Component, Input, OnInit } from '@angular/core';
-import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NgIf, NgTemplateOutlet],
+  imports: [NgIf, NgClass, NgTemplateOutlet],
   selector: 'flowbite-button',
   templateUrl: './button.component.html',
 })

@@ -1,11 +1,11 @@
 <button
   type="button"
-  [class]="componentClass"
+  [ngClass]="componentClass"
   [disabled]="disabled === 'enabled'"
 >
   <span
     *ngIf="gradientDuoTone && outline === 'outline'; else default"
-    [class]="contentClasses!['span']"
+    [ngClass]="contentClasses!['span']"
   >
     <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
   </span>

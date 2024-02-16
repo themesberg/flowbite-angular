@@ -3,11 +3,11 @@ import { BaseComponent } from '../base.component';
 
 import { AccordionPanelComponent } from './accordion-panel.component';
 import { Component, Input, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, NgClass],
   selector: 'flowbite-accordion-content',
   templateUrl: './accordion-content.component.html',
 })
