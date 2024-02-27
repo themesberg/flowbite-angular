@@ -1,11 +1,18 @@
+import * as properties from './theme';
+
+import { BaseComponent } from '../base.component';
+import { FlowbiteBoolean } from '../../common/flowbite.theme';
+
 import {
   AfterViewInit,
   Component,
   ElementRef,
   HostListener,
   Input,
+  OnInit,
   ViewChild,
 } from '@angular/core';
+import { NgClass } from '@angular/common';
 import {
   Placement,
   autoUpdate,
@@ -17,28 +24,49 @@ import {
 
 @Component({
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   selector: 'flowbite-dropdown',
   templateUrl: './dropdown.component.html',
 })
-export class DropdownComponent implements AfterViewInit {
+export class DropdownComponent
+  extends BaseComponent
+  implements AfterViewInit, OnInit
+{
   @Input() label = 'Dropdown';
-  @Input() isOpen = false;
-  @Input() position: Placement = 'bottom-start';
+  @Input() isOpen: keyof FlowbiteBoolean = 'disabled';
+  @Input() position: keyof properties.DropdownPositions = 'bottom-center';
+  @Input() customStyle: Partial<properties.DropdownBaseTheme> = {};
+
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
   x = 0;
   y = 0;
   width = 0;
 
+  ngOnInit(): void {
+    const t = properties.getClasses({
+      label: this.label,
+      isOpen: this.isOpen,
+      placement: this.position,
+      customStyle: this.customStyle,
+    });
+
+    this.componentClass = t.dropdownClass;
+    this.contentClasses = {
+      spanClasses: t.spanClass,
+      containerClasses: t.containerClass,
+      contentClasses: t.contentClass,
+      subContentClasses: t.subContentClass,
+    };
+  }
+
   toggle() {
-    this.isOpen = !this.isOpen;
-    this.calculatePosition();
+    this.isOpen = this.isOpen === 'disabled' ? 'enabled' : 'disabled';
   }
 
   calculatePosition() {
     computePosition(this.button.nativeElement, this.dropdown.nativeElement, {
-      placement: this.position,
+      placement: this.convertPosition(this.position),
       middleware: [offset(8), flip(), shift()],
     }).then(({ x, y }: { x: number; y: number }) => {
       this.dropdown.nativeElement.style.left = x + 'px';
@@ -49,7 +77,7 @@ export class DropdownComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (!this.isOpen) return;
+      if (this.isOpen === 'disabled') return;
       this.calculatePosition();
     });
   }
@@ -59,10 +87,23 @@ export class DropdownComponent implements AfterViewInit {
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&
-      this.isOpen &&
+      this.isOpen === 'enabled' &&
       !this.button.nativeElement.contains(event.target)
     ) {
-      this.isOpen = false;
+      this.isOpen = 'disabled';
+    }
+  }
+
+  convertPosition(pos: keyof properties.DropdownPositions): Placement {
+    switch (pos) {
+      case 'top-center':
+        return 'top';
+      case 'bottom-center':
+        return 'bottom';
+      case 'left-center':
+        return 'left';
+      case 'right-center':
+        return 'right';
     }
   }
 }

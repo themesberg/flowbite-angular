@@ -1,10 +1,5 @@
-<button
-  type="button"
-  class="text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600 focus:!ring-2 group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10 rounded-lg"
-  (click)="toggle()"
-  #button
->
-  <span class="flex items-center rounded-md text-sm px-4 py-2">
+<button type="button" [ngClass]="componentClass" (click)="toggle()" #button>
+  <span [ngClass]="contentClasses!['spanClasses']">
     {{ label }}
     <svg
       stroke="currentColor"
@@ -26,13 +21,12 @@
   </span>
 </button>
 <div
-  class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 min-w-fit absolute"
+  [ngClass]="contentClasses!['containerClasses']"
   #dropdown
-  [style.display]="isOpen ? 'block' : 'none'"
-  [style.width]="width + 'px'"
+  [style.display]="isOpen === 'enabled' ? 'block' : 'none'"
 >
-  <div class="py-1 text-sm text-gray-700 dark:text-gray-200">
-    <ul class="py-1">
+  <div [ngClass]="contentClasses!['contentClasses']">
+    <ul [ngClass]="contentClasses!['subContentClasses']">
       <ng-content></ng-content>
     </ul>
   </div>
