@@ -5,7 +5,11 @@ import { Directive, HostBinding, Input, OnInit } from '@angular/core';
 })
 export abstract class BaseInputDirective implements OnInit {
   _classes: string[] = [];
+  _class: string = '';
+
   @HostBinding('class') get classes() {
+    if (this._class) return this._class;
+
     return [...this._classes];
   }
   @HostBinding('id') get id() {

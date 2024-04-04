@@ -1,10 +1,9 @@
+import * as properties from './label.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
+import { FlowbiteBoolean } from '../../../common/flowbite.theme';
+import { FormFieldFloatingLabelTypes, FormFieldValidations } from '../theme';
+
 import { Directive, HostBinding, Input } from '@angular/core';
-import {
-  FloatingLabelType,
-  InputValidation,
-  LabelProperties,
-} from '../form-field.properties';
 
 @Directive({
   standalone: true,
@@ -12,8 +11,10 @@ import {
 })
 export class LabelDirective extends BaseInputDirective {
   _parentId = '';
-  _validation: InputValidation | null = null;
-  _floatingLabelType: FloatingLabelType | null = null;
+  _disabled: keyof FlowbiteBoolean = 'disabled';
+  _validation?: keyof FormFieldValidations;
+  _floatingLabelType?: keyof FormFieldFloatingLabelTypes;
+  @Input() customStyle: Partial<properties.LabelDirectiveBaseTheme> = {};
 
   @HostBinding('attr.for') get for() {
     return this._parentId;
@@ -22,43 +23,23 @@ export class LabelDirective extends BaseInputDirective {
   @Input() set parentId(id: string) {
     this._parentId = id;
   }
-  @Input() set validation(validation: InputValidation | null) {
+  @Input() set validation(validation: keyof FormFieldValidations) {
     this._validation = validation;
     this.handleClasses();
   }
-  @Input() set floatingLabelType(floatingLabelType: FloatingLabelType | null) {
+  @Input() set floatingLabelType(
+    floatingLabelType: keyof FormFieldFloatingLabelTypes,
+  ) {
     this._floatingLabelType = floatingLabelType;
     this.handleClasses();
   }
 
   override handleClasses(): void {
-    const classesToAdd = [];
-    if (this._floatingLabelType) {
-      classesToAdd.push(
-        ...LabelProperties.floatingLabel[this._floatingLabelType].base,
-      );
-      if (this._validation) {
-        classesToAdd.push(
-          ...LabelProperties.floatingLabel[this._floatingLabelType].validation[
-            this._validation
-          ],
-        );
-      } else {
-        classesToAdd.push(
-          ...LabelProperties.floatingLabel[this._floatingLabelType].default,
-        );
-      }
-    } else {
-      classesToAdd.push(...LabelProperties.default.base);
-      if (this._validation) {
-        classesToAdd.push(
-          ...LabelProperties.default.validation[this._validation],
-        );
-      } else {
-        classesToAdd.push(...LabelProperties.default.default);
-      }
-    }
-
-    this._classes = classesToAdd;
+    this._class = properties.getClasses({
+      disabled: this._disabled,
+      validation: this._validation,
+      floatingLabelType: this._floatingLabelType,
+      customStyle: this.customStyle,
+    });
   }
 }

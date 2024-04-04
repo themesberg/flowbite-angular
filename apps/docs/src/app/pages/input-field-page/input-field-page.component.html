@@ -69,28 +69,28 @@
   </flowbite-demo-example>
   <flowbite-demo-example title="Input Sizes" [codes]="[examples[1]]">
     <div class="mb-6">
-      <flowbite-form-field size="large">
+      <flowbite-form-field [size]="'lg'">
         <label flowbiteLabel>Large Input</label>
         <input flowbiteInput />
       </flowbite-form-field>
     </div>
     <div class="mb-6">
-      <flowbite-form-field size="default">
+      <flowbite-form-field [size]="'md'">
         <label flowbiteLabel>Default Input</label>
         <input flowbiteInput />
       </flowbite-form-field>
     </div>
-    <flowbite-form-field size="small">
+    <flowbite-form-field [size]="'sm'">
       <label flowbiteLabel>Small Input</label>
       <input flowbiteInput />
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Disabled Inputs" [codes]="[examples[2]]">
-    <flowbite-form-field disabled>
+    <flowbite-form-field [disabled]="'enabled'">
       <label flowbiteLabel>Disabled input</label>
       <input flowbiteInput />
     </flowbite-form-field>
-    <flowbite-form-field disabled>
+    <flowbite-form-field [disabled]="'enabled'">
       <label flowbiteLabel>Disabled readonly input</label>
       <input flowbiteInput readonly />
     </flowbite-form-field>

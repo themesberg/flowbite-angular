@@ -1,99 +1,62 @@
+import * as properties from './input.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
-import { Directive, HostBinding, Input } from '@angular/core';
+import { FlowbiteBoolean } from '../../../common/flowbite.theme';
 import {
-  FloatingLabelType,
-  InputPrefixType,
-  InputProperties,
-  InputSize,
-  InputValidation,
-} from '../form-field.properties';
+  FormFieldFloatingLabelTypes,
+  FormFieldPrefixes,
+  FormFieldSizes,
+  FormFieldValidations,
+} from '../theme';
+
+import { Directive, Input } from '@angular/core';
 
 @Directive({
   standalone: true,
   selector: 'input[flowbiteInput]',
 })
 export class InputDirective extends BaseInputDirective {
-  _size: InputSize = 'default';
-  _disabled: boolean | string = false;
-  _validation: InputValidation | null = null;
-  _floatingLabelType: FloatingLabelType | null = null;
-  _prefixType: InputPrefixType | null = null;
+  _size: keyof FormFieldSizes = 'md';
+  _disabled: keyof FlowbiteBoolean = 'disabled';
+  _validation?: keyof FormFieldValidations;
+  _floatingLabelType?: keyof FormFieldFloatingLabelTypes;
+  _prefixType?: keyof FormFieldPrefixes;
+  @Input() customStyle: Partial<properties.InputDirectiveBaseTheme> = {};
 
-  @HostBinding('attr.disabled') get isDisabled() {
-    return this._disabled || null;
-  }
-
-  @Input() set disabled(disabled: boolean | string) {
+  @Input() set disabled(disabled: keyof FlowbiteBoolean) {
     this._disabled = disabled;
     this.handleClasses();
   }
-  @Input() set size(size: InputSize) {
+
+  @Input() set size(size: keyof FormFieldSizes) {
     this._size = size;
     this.handleClasses();
   }
-  @Input() set validation(validation: InputValidation | null) {
+
+  @Input() set validation(validation: keyof FormFieldValidations | undefined) {
     this._validation = validation;
     this.handleClasses();
   }
-  @Input() set floatingLabelType(floatingLabelType: FloatingLabelType | null) {
+
+  @Input() set floatingLabelType(
+    floatingLabelType: keyof FormFieldFloatingLabelTypes | undefined,
+  ) {
     this._floatingLabelType = floatingLabelType;
     this.handleClasses();
   }
-  @Input() set prefixType(type: InputPrefixType | null) {
+
+  @Input() set prefixType(type: keyof FormFieldPrefixes | undefined) {
     this._prefixType = type;
     this.handleClasses();
   }
 
   override handleClasses(): void {
-    const classesToAdd = [];
-    if (this._floatingLabelType) {
-      // Adding base class
-      classesToAdd.push(
-        ...InputProperties.floatingLabel[this._floatingLabelType].base,
-      );
-      if (this._validation) {
-        classesToAdd.push(
-          ...InputProperties.floatingLabel[this._floatingLabelType].validation[
-            this._validation
-          ],
-        );
-      } else if (this._disabled) {
-        classesToAdd.push(
-          ...InputProperties.floatingLabel[this._floatingLabelType].disabled,
-        );
-      } else {
-        classesToAdd.push(
-          ...InputProperties.floatingLabel[this._floatingLabelType].default,
-        );
-      }
-      if (this._size) {
-        classesToAdd.push(
-          ...InputProperties.floatingLabel[this._floatingLabelType].size[
-            this._size
-          ],
-        );
-      }
-    } else {
-      classesToAdd.push(...InputProperties.default.base);
-      if (this._validation) {
-        classesToAdd.push(
-          ...InputProperties.default.validation[this._validation],
-        );
-      } else if (this._disabled) {
-        classesToAdd.push(...InputProperties.default.disabled);
-      } else {
-        classesToAdd.push(...InputProperties.default.default);
-      }
-      if (this._prefixType === 'addon') {
-        classesToAdd.push(...InputProperties.default.addon);
-      } else if (this._prefixType === 'icon') {
-        classesToAdd.push(...InputProperties.default.icon);
-      }
-      if (this._size) {
-        classesToAdd.push(...InputProperties.default.size[this._size]);
-      }
-    }
-
-    this._classes = classesToAdd;
+    this._class = properties.getClasses({
+      disabled: this._disabled,
+      size: this._size,
+      validation: this._validation,
+      prefixType: this._prefixType,
+      floatingLabelType: this._floatingLabelType,
+      customStyle: this.customStyle,
+    });
   }
 }
