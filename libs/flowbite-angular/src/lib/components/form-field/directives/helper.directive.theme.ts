@@ -1,4 +1,4 @@
-import { FormFieldValidations } from '../theme';
+import { FormFieldValidations } from '../form-field.theme';
 import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';

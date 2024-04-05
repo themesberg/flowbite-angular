@@ -1,4 +1,4 @@
-import * as properties from './theme';
+import * as properties from './navbar.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 

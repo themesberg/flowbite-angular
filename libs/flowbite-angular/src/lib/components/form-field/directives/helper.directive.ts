@@ -1,6 +1,6 @@
 import * as properties from './helper.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
-import { FormFieldValidations } from '../theme';
+import { FormFieldValidations } from '../form-field.theme';
 import generateID from '../../../utils/id.generator';
 
 import { Directive, Input } from '@angular/core';

@@ -1,5 +1,8 @@
 import { FlowbiteBoolean } from '../../../common/flowbite.theme';
-import { FormFieldFloatingLabelTypes, FormFieldValidations } from '../theme';
+import {
+  FormFieldFloatingLabelTypes,
+  FormFieldValidations,
+} from '../form-field.theme';
 import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';

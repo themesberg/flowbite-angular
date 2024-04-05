@@ -12,7 +12,7 @@ import {
   FormFieldSizes,
   FormFieldTypes,
   FormFieldValidations,
-} from './theme';
+} from './form-field.theme';
 import generateID from '../../utils/id.generator';
 
 import { AsyncPipe, NgClass, NgIf, NgTemplateOutlet } from '@angular/common';

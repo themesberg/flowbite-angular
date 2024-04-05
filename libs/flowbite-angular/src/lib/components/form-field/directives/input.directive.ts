@@ -6,7 +6,7 @@ import {
   FormFieldPrefixes,
   FormFieldSizes,
   FormFieldValidations,
-} from '../theme';
+} from '../form-field.theme';
 
 import { Directive, Input } from '@angular/core';
 

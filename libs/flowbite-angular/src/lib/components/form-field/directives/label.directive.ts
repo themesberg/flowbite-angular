@@ -1,7 +1,10 @@
 import * as properties from './label.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
 import { FlowbiteBoolean } from '../../../common/flowbite.theme';
-import { FormFieldFloatingLabelTypes, FormFieldValidations } from '../theme';
+import {
+  FormFieldFloatingLabelTypes,
+  FormFieldValidations,
+} from '../form-field.theme';
 
 import { Directive, HostBinding, Input } from '@angular/core';
 

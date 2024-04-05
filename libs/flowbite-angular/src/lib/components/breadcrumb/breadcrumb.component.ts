@@ -1,4 +1,4 @@
-import * as properties from './theme';
+import * as properties from './breadcrumb.theme';
 import { BaseComponent } from '../base.component';
 
 import { Component, Input, OnInit } from '@angular/core';

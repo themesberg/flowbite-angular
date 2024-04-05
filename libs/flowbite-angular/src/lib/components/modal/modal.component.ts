@@ -1,4 +1,4 @@
-import * as properties from './theme';
+import * as properties from './modal.theme';
 import { BaseComponent } from '../base.component';
 
 import { Component, HostListener, Input, OnInit } from '@angular/core';

@@ -4,7 +4,7 @@ import {
   FormFieldPrefixes,
   FormFieldSizes,
   FormFieldValidations,
-} from '../theme';
+} from '../form-field.theme';
 import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';

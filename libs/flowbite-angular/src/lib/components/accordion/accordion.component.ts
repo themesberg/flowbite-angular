@@ -1,4 +1,4 @@
-import * as properties from './theme';
+import * as properties from './accordion.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
