@@ -98,11 +98,11 @@
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Disabled Inputs" [codes]="[examples[3]]">
-    <flowbite-form-field [disabled]="'enabled'">
+    <flowbite-form-field disabled="enabled">
       <label flowbiteLabel>Disabled Input</label>
       <input flowbiteInput />
     </flowbite-form-field>
-    <flowbite-form-field [disabled]="'enabled'">
+    <flowbite-form-field disabled="enabled">
       <label flowbiteLabel>Disabled readonly Input</label>
       <input flowbiteInput readonly />
     </flowbite-form-field>
@@ -155,14 +155,14 @@
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Form Validation" [codes]="[examples[7]]">
-    <flowbite-form-field validation="success">
+    <flowbite-form-field validate="success">
       <label flowbiteLabel>Success Input</label>
       <input flowbiteInput />
       <p class="text-sm" flowbiteHelper>
         <span class="font-medium">Well done!</span> Some success message.
       </p>
     </flowbite-form-field>
-    <flowbite-form-field validation="error">
+    <flowbite-form-field validate="error">
       <label flowbiteLabel>Error Input</label>
       <input flowbiteInput />
       <p flowbiteHelper>

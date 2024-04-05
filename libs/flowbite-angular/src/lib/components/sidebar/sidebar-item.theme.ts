@@ -31,16 +31,20 @@ export const sidebarItemTheme: SidebarItemBaseTheme = {
   },
 };
 
-export function getClasses(properties: SidebarItemProperties): {
+export interface SidebarItemClass {
   sidebarClass: string;
   sidebarIconClass: string;
-} {
+}
+
+export function getClasses(
+  properties: SidebarItemProperties,
+): SidebarItemClass {
   const theme: SidebarItemBaseTheme = mergeTheme(
     sidebarItemTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: SidebarItemClass = {
     sidebarClass: twMerge(theme.root.base),
     sidebarIconClass: twMerge(theme.icon.base),
   };

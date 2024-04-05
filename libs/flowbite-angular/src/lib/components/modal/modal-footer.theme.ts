@@ -20,13 +20,21 @@ export const modalFooterTheme: ModalFooterBaseTheme = {
   },
 };
 
-export function getClasses(properties: ModalFooterProperties) {
+export interface ModalFooterClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: ModalFooterProperties,
+): ModalFooterClass {
   const theme: ModalFooterBaseTheme = mergeTheme(
     modalFooterTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: ModalFooterClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

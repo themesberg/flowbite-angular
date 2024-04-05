@@ -22,16 +22,16 @@ export class AlertComponent extends BaseComponent implements OnInit {
   @Input() dismiss!: () => void;
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       color: this.color,
       borderAccent: this.borderAccent,
       rounded: this.rounded,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.alertClass;
+    this.componentClass = propertyClass.alertClass;
     this.contentClasses = {
-      alertButton: t.alertButtonClass,
+      alertButton: propertyClass.alertButtonClass,
     };
   }
 }

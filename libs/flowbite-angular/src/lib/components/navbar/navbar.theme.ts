@@ -53,16 +53,18 @@ export const navbarTheme: NavbarBaseTheme = {
   },
 };
 
-export function getClasses(properties: NavbarProperties): {
+export interface NavbarClass {
   navbarClass: string;
   contentClass: string;
-} {
+}
+
+export function getClasses(properties: NavbarProperties): NavbarClass {
   const theme: NavbarBaseTheme = mergeTheme(
     navbarTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: NavbarClass = {
     navbarClass: twMerge(
       theme.root.base,
       theme.root.color!['gray'],

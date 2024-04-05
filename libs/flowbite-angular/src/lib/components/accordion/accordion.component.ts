@@ -16,9 +16,11 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.AccordionBaseTheme> = {};
 
   ngOnInit(): void {
-    this.componentClass = properties.getClasses({
+    const propertyClass = properties.getClasses({
       flush: this.flush,
       customStyle: this.customStyle,
     });
+
+    this.componentClass = propertyClass.root;
   }
 }

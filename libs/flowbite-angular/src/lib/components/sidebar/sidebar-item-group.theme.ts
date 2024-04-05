@@ -19,13 +19,21 @@ export const sidebarItemGroupTheme: SidebarItemGroupBaseTheme = {
   },
 };
 
-export function getClasses(properties: SidebarItemGroupProperties): string {
+export interface SidebarItemGroupClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: SidebarItemGroupProperties,
+): SidebarItemGroupClass {
   const theme: SidebarItemGroupBaseTheme = mergeTheme(
     sidebarItemGroupTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: SidebarItemGroupClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

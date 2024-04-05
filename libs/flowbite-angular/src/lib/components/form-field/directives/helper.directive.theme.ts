@@ -4,7 +4,7 @@ import { mergeTheme } from '../../../utils/merge-theme';
 import { twMerge } from 'tailwind-merge';
 
 export interface HelperDirectiveProperties {
-  validation?: keyof FormFieldValidations;
+  validate?: keyof FormFieldValidations;
   customStyle: Partial<HelperDirectiveBaseTheme>;
 }
 
@@ -27,16 +27,24 @@ export const helperDirectiveTheme: HelperDirectiveBaseTheme = {
   },
 };
 
-export function getClasses(properties: HelperDirectiveProperties): string {
+export interface HelperDirectiveClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: HelperDirectiveProperties,
+): HelperDirectiveClass {
   const theme: HelperDirectiveBaseTheme = mergeTheme(
     helperDirectiveTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(
-    theme.root.base,
-    theme.root.validation && theme.root.validation![properties.validation!],
-  );
+  const output: HelperDirectiveClass = {
+    root: twMerge(
+      theme.root.base,
+      theme.root.validation && theme.root.validation![properties.validate!],
+    ),
+  };
 
   return output;
 }

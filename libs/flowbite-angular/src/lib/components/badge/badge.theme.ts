@@ -73,21 +73,27 @@ export const badgeTheme: BadgeBaseTheme = {
   },
 };
 
-export function getClasses(properties: BadgeProperties): string {
+export interface BadgeClass {
+  root: string;
+}
+
+export function getClasses(properties: BadgeProperties): BadgeClass {
   const theme: BadgeBaseTheme = mergeTheme(badgeTheme, properties.customStyle);
 
-  const output = twMerge(
-    theme.root.base,
-    theme.root.color![properties.color],
-    theme.root.size![properties.size],
-    theme.root.pill![
-      properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
-        ? 'enabled'
-        : properties.isPill
-    ],
-    theme.root.iconOnly![properties.isIconOnly],
-    theme.root.href![properties.href ? 'enabled' : 'disabled'],
-  );
+  const output: BadgeClass = {
+    root: twMerge(
+      theme.root.base,
+      theme.root.color![properties.color],
+      theme.root.size![properties.size],
+      theme.root.pill![
+        properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
+          ? 'enabled'
+          : properties.isPill
+      ],
+      theme.root.iconOnly![properties.isIconOnly],
+      theme.root.href![properties.href ? 'enabled' : 'disabled'],
+    ),
+  };
 
   return output;
 }

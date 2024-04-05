@@ -20,13 +20,21 @@ export const addonDirectiveTheme: AddonDirectiveBaseTheme = {
   },
 };
 
-export function getClasses(properties: AddonDirectiveProperties): string {
+export interface AddonDirectiveClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: AddonDirectiveProperties,
+): AddonDirectiveClass {
   const theme: AddonDirectiveBaseTheme = mergeTheme(
     addonDirectiveTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: AddonDirectiveClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

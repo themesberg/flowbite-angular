@@ -19,13 +19,21 @@ export const accordionTitleTheme: AccordionTitleBaseTheme = {
   },
 };
 
-export function getClass(properties: AccordionTitleProperties): string {
+export interface AccordionTitleClass {
+  root: string;
+}
+
+export function getClass(
+  properties: AccordionTitleProperties,
+): AccordionTitleClass {
   const theme: AccordionTitleBaseTheme = mergeTheme(
     accordionTitleTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: AccordionTitleClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

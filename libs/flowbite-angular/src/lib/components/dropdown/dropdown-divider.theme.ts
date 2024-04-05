@@ -20,13 +20,21 @@ export const dropdownDividerTheme: DropdownDividerBaseTheme = {
   },
 };
 
-export function getClasses(properties: DropdownDividerProperties): string {
+export interface DropdownDividerClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: DropdownDividerProperties,
+): DropdownDividerClass {
   const theme: DropdownDividerBaseTheme = mergeTheme(
     dropdownDividerTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: DropdownDividerClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

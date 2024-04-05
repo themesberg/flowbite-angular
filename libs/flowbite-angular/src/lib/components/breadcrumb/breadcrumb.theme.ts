@@ -20,13 +20,19 @@ export const breadcrumbTheme: BreadcrumbBaseTheme = {
   },
 };
 
-export function getClasses(properties: BreadcrumbProperties): string {
+export interface BreadcrumbClass {
+  root: string;
+}
+
+export function getClasses(properties: BreadcrumbProperties): BreadcrumbClass {
   const theme: BreadcrumbBaseTheme = mergeTheme(
     breadcrumbTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: BreadcrumbClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

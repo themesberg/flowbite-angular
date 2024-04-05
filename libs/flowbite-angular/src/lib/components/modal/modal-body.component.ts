@@ -14,10 +14,10 @@ export class ModalBodyComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.ModalBodyBaseTheme> = {};
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t;
+    this.componentClass = propertyClass.root;
   }
 }

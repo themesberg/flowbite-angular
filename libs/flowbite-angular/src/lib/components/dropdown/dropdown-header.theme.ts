@@ -20,13 +20,21 @@ export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
   },
 };
 
-export function getClasses(properties: DropdownHeaderProperties): string {
+export interface DropdownHeaderClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: DropdownHeaderProperties,
+): DropdownHeaderClass {
   const theme: DropdownHeaderBaseTheme = mergeTheme(
     dropdownHeaderTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: DropdownHeaderClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

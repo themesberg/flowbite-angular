@@ -12,9 +12,9 @@ import { twMerge } from 'tailwind-merge';
 export interface InputDirectiveProperties {
   size: keyof FormFieldSizes;
   disabled: keyof FlowbiteBoolean;
-  validation?: keyof FormFieldValidations;
+  validate?: keyof FormFieldValidations;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  prefixType?: keyof FormFieldPrefixes;
+  prefix?: keyof FormFieldPrefixes;
   customStyle: Partial<InputDirectiveBaseTheme>;
 }
 
@@ -128,49 +128,59 @@ export const inputDirectiveTheme: InputDirectiveBaseTheme = {
   },
 };
 
-export function getClasses(properties: InputDirectiveProperties): string {
+export interface InputDirectiveClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: InputDirectiveProperties,
+): InputDirectiveClass {
   const theme: InputDirectiveBaseTheme = mergeTheme(
     inputDirectiveTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(
-    properties.floatingLabelType &&
-      theme.floatingLabel[properties.floatingLabelType].base,
-    properties.floatingLabelType &&
-      properties.validation &&
-      theme.floatingLabel[properties.floatingLabelType].validation[
-        properties.validation
-      ],
-    properties.floatingLabelType &&
-      !properties.validation &&
-      properties.disabled &&
-      theme.floatingLabel[properties.floatingLabelType].disabled[
-        properties.disabled
-      ],
-    properties.floatingLabelType &&
-      !properties.validation &&
-      (!properties.disabled || properties.disabled === 'disabled') &&
-      theme.floatingLabel[properties.floatingLabelType].default,
-    properties.floatingLabelType &&
-      theme.floatingLabel[properties.floatingLabelType].size![properties.size],
+  const output: InputDirectiveClass = {
+    root: twMerge(
+      properties.floatingLabelType &&
+        theme.floatingLabel[properties.floatingLabelType].base,
+      properties.floatingLabelType &&
+        properties.validate &&
+        theme.floatingLabel[properties.floatingLabelType].validation[
+          properties.validate
+        ],
+      properties.floatingLabelType &&
+        !properties.validate &&
+        properties.disabled &&
+        theme.floatingLabel[properties.floatingLabelType].disabled[
+          properties.disabled
+        ],
+      properties.floatingLabelType &&
+        !properties.validate &&
+        (!properties.disabled || properties.disabled === 'disabled') &&
+        theme.floatingLabel[properties.floatingLabelType].default,
+      properties.floatingLabelType &&
+        theme.floatingLabel[properties.floatingLabelType].size![
+          properties.size
+        ],
 
-    !properties.floatingLabelType && theme.default.base,
-    !properties.floatingLabelType &&
-      properties.validation &&
-      theme.default.validation[properties.validation],
-    !properties.floatingLabelType &&
-      !properties.validation &&
-      properties.disabled &&
-      theme.default.disabled[properties.disabled],
-    !properties.floatingLabelType &&
-      !properties.validation &&
-      (!properties.disabled || properties.disabled === 'disabled') &&
-      theme.default.default,
-    !properties.floatingLabelType &&
-      theme.default.prefix![properties.prefixType!],
-    !properties.floatingLabelType && theme.default.size[properties.size],
-  );
+      !properties.floatingLabelType && theme.default.base,
+      !properties.floatingLabelType &&
+        properties.validate &&
+        theme.default.validation[properties.validate],
+      !properties.floatingLabelType &&
+        !properties.validate &&
+        properties.disabled &&
+        theme.default.disabled[properties.disabled],
+      !properties.floatingLabelType &&
+        !properties.validate &&
+        (!properties.disabled || properties.disabled === 'disabled') &&
+        theme.default.default,
+      !properties.floatingLabelType &&
+        theme.default.prefix![properties.prefix!],
+      !properties.floatingLabelType && theme.default.size[properties.size],
+    ),
+  };
 
   return output;
 }

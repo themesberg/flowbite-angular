@@ -77,19 +77,21 @@ export const dropdownTheme: DropdownBaseTheme = {
   },
 };
 
-export function getClasses(properties: DropdownProperties): {
+export interface DropdownClass {
   dropdownClass: string;
   spanClass: string;
   containerClass: string;
   contentClass: string;
   subContentClass: string;
-} {
+}
+
+export function getClasses(properties: DropdownProperties): DropdownClass {
   const theme: DropdownBaseTheme = mergeTheme(
     dropdownTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: DropdownClass = {
     dropdownClass: twMerge(theme.root.base),
     spanClass: twMerge(theme.span.base),
     containerClass: twMerge(

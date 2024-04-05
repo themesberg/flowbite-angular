@@ -9,19 +9,6 @@ export interface FormFieldProperties {
   prefix?: keyof FormFieldPrefixes;
 }
 
-export interface FormFieldBaseTheme {
-  root: Partial<FormFieldRootTheme>;
-}
-
-export interface FormFieldRootTheme {
-  base: string;
-  type: Record<keyof FormFieldTypes, string>;
-  size: Record<keyof FormFieldSizes, string>;
-  disable: Record<keyof FlowbiteBoolean, string>;
-  validate: Record<keyof FormFieldValidations, string>;
-  prefix: Record<keyof FormFieldPrefixes, string>;
-}
-
 export interface FormFieldTypes {
   email: string;
   password: string;
@@ -51,9 +38,3 @@ export interface FormFieldPrefixes {
   addon: string;
   icon: string;
 }
-
-export const FormFieldTheme: FormFieldBaseTheme = {
-  root: {
-    base: '',
-  },
-};

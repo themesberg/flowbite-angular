@@ -19,16 +19,16 @@ export class ModalComponent extends BaseComponent implements OnInit {
   @Input() isOpen?: boolean = false;
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       size: this.size,
       position: this.position,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.modalClass;
+    this.componentClass = propertyClass.modalClass;
     this.contentClasses = {
-      modalContainer: t.modalContainerClass,
-      modalContent: t.modalContentClass,
+      modalContainer: propertyClass.modalContainerClass,
+      modalContent: propertyClass.modalContentClass,
     };
   }
 

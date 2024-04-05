@@ -14,8 +14,10 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.SidebarItemGroupBaseTheme> = {};
 
   ngOnInit(): void {
-    this.componentClass = properties.getClasses({
+    const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });
+
+    this.componentClass = propertyClass.root;
   }
 }

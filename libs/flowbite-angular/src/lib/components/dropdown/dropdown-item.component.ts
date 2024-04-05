@@ -19,10 +19,10 @@ export class DropdownItemComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t;
+    this.componentClass = propertyClass.root;
   }
 }

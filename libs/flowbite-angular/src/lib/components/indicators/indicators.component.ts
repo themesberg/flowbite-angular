@@ -28,7 +28,7 @@ export class IndicatorComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.IndicatorBaseTheme> = {};
 
   ngOnInit(): void {
-    this.componentClass = properties.getClasses({
+    const propertyClass = properties.getClasses({
       border: this.border,
       color: this.color,
       disabled: this.disabled,
@@ -40,5 +40,7 @@ export class IndicatorComponent extends BaseComponent implements OnInit {
       size: this.size,
       customStyle: this.customStyle,
     });
+
+    this.componentClass = propertyClass.root;
   }
 }

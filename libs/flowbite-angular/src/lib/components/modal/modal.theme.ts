@@ -75,14 +75,16 @@ export const modalTheme: ModalBaseTheme = {
   },
 };
 
-export function getClasses(properties: ModalProperties): {
+export interface ModalClass {
   modalClass: string;
   modalContainerClass: string;
   modalContentClass: string;
-} {
+}
+
+export function getClasses(properties: ModalProperties): ModalClass {
   const theme: ModalBaseTheme = mergeTheme(modalTheme, properties.customStyle);
 
-  const output = {
+  const output: ModalClass = {
     modalClass: twMerge(
       theme.root.base,
       theme.root.position![properties.position],

@@ -1,3 +1,4 @@
+import * as properties from './form-field.theme';
 import {
   AddonDirective,
   HelperDirective,
@@ -5,10 +6,8 @@ import {
   InputDirective,
   LabelDirective,
 } from './directives';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
-  FormFieldPrefixes,
   FormFieldSizes,
   FormFieldTypes,
   FormFieldValidations,
@@ -18,15 +17,7 @@ import generateID from '../../utils/id.generator';
 import { AsyncPipe, NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 import { Component, ContentChild, Input, OnDestroy } from '@angular/core';
-
-interface PropertyMap {
-  type: keyof FormFieldTypes;
-  floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  size?: keyof FormFieldSizes;
-  disabled: keyof FlowbiteBoolean;
-  validation?: keyof FormFieldValidations;
-  prefixType?: keyof FormFieldPrefixes;
-}
+import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
 @Component({
   standalone: true,
@@ -37,13 +28,13 @@ interface PropertyMap {
 export class FormFieldComponent implements OnDestroy {
   _inputId = generateID('flowbite-input');
 
-  _properties = new BehaviorSubject<PropertyMap>({
+  _properties = new BehaviorSubject<properties.FormFieldProperties>({
     type: 'text',
     floatingLabelType: undefined,
     size: 'md',
     disabled: 'disabled',
-    validation: undefined,
-    prefixType: undefined,
+    validate: undefined,
+    prefix: undefined,
   });
 
   @ContentChild(InputDirective) set input(content: InputDirective) {
@@ -56,12 +47,12 @@ export class FormFieldComponent implements OnDestroy {
 
   @ContentChild(LabelDirective) set label(content: LabelDirective) {
     if (content) {
-      this._properties.subscribe(({ floatingLabelType, validation }) =>
+      this._properties.subscribe(({ floatingLabelType, validate }) =>
         Object.assign(content, {
           _id: generateID('flowbite-label'),
           parentId: this._inputId,
           floatingLabelType,
-          validation,
+          validate,
         }),
       );
     }
@@ -69,21 +60,21 @@ export class FormFieldComponent implements OnDestroy {
 
   @ContentChild(HelperDirective) set hint(content: HelperDirective) {
     if (content) {
-      this._properties.subscribe(({ validation }) =>
-        Object.assign(content, { validation }),
+      this._properties.subscribe(({ validate }) =>
+        Object.assign(content, { validate }),
       );
     }
   }
 
   @ContentChild(AddonDirective) set addon(content: AddonDirective) {
     if (content) {
-      this._properties.next({ ...this._properties.value, prefixType: 'addon' });
+      this._properties.next({ ...this._properties.value, prefix: 'addon' });
     }
   }
 
   @ContentChild(IconDirective) set icon(content: IconDirective) {
     if (content) {
-      this._properties.next({ ...this._properties.value, prefixType: 'icon' });
+      this._properties.next({ ...this._properties.value, prefix: 'icon' });
     }
   }
 
@@ -101,10 +92,13 @@ export class FormFieldComponent implements OnDestroy {
   @Input() set disabled(disabled: keyof FlowbiteBoolean) {
     // hack because if you pass disabled instead of disabled=true
     // it will come as empty string value
-    this._properties.next({ ...this._properties.value, disabled: disabled });
+    this._properties.next({
+      ...this._properties.value,
+      disabled: disabled,
+    });
   }
-  @Input() set validation(validation: keyof FormFieldValidations | undefined) {
-    this._properties.next({ ...this._properties.value, validation });
+  @Input() set validate(validate: keyof FormFieldValidations | undefined) {
+    this._properties.next({ ...this._properties.value, validate });
   }
 
   ngOnDestroy(): void {

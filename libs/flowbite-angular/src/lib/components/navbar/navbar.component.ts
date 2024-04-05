@@ -18,16 +18,16 @@ export class NavbarComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.NavbarBaseTheme> = {};
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       border: this.border,
       fluid: this.fluid,
       rounded: this.rounded,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.navbarClass;
+    this.componentClass = propertyClass.navbarClass;
     this.contentClasses = {
-      content: t.contentClass,
+      content: propertyClass.contentClass,
     };
   }
 }

@@ -18,7 +18,7 @@
 <ng-template #nonFloatingTemplate>
   <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
   <ng-container
-    *ngIf="(_properties | async)?.prefixType as prefixType; else inputTemplate"
+    *ngIf="(_properties | async)?.prefix as prefixType; else inputTemplate"
   >
     <ng-container *ngIf="prefixType === 'icon'; else inputWithAddon">
       <div class="relative">

@@ -2,29 +2,29 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface DropdownHeaderProperties {
-  customStyle: Partial<DropdownHeaderBaseTheme>;
+export interface ModalHeaderProperties {
+  customStyle: Partial<ModalHeaderBaseTheme>;
 }
 
-export interface DropdownHeaderBaseTheme {
-  root: Partial<DropdownHeaderRootTheme>;
-  title: Partial<DropdownHeaderTitleRootTheme>;
-  button: Partial<DropdownHeaderButtonRootTheme>;
+export interface ModalHeaderBaseTheme {
+  root: Partial<ModalHeaderRootTheme>;
+  title: Partial<ModalHeaderTitleRootTheme>;
+  button: Partial<ModalHeaderButtonRootTheme>;
 }
 
-export interface DropdownHeaderRootTheme {
+export interface ModalHeaderRootTheme {
   base: string;
 }
 
-export interface DropdownHeaderTitleRootTheme {
+export interface ModalHeaderTitleRootTheme {
   base: string;
 }
 
-export interface DropdownHeaderButtonRootTheme {
+export interface ModalHeaderButtonRootTheme {
   base: string;
 }
 
-export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
+export const modalHeaderTheme: ModalHeaderBaseTheme = {
   root: {
     base: 'flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600',
   },
@@ -36,17 +36,21 @@ export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
   },
 };
 
-export function getClasses(properties: DropdownHeaderProperties): {
+export interface ModalHeaderClass {
   modalHeaderClass: string;
   modalHeaderTitleClass: string;
   modalHeaderButtonClass: string;
-} {
-  const theme: DropdownHeaderBaseTheme = mergeTheme(
-    dropdownHeaderTheme,
+}
+
+export function getClasses(
+  properties: ModalHeaderProperties,
+): ModalHeaderClass {
+  const theme: ModalHeaderBaseTheme = mergeTheme(
+    modalHeaderTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: ModalHeaderClass = {
     modalHeaderClass: twMerge(theme.root.base),
     modalHeaderTitleClass: twMerge(theme.title.base),
     modalHeaderButtonClass: twMerge(theme.button.base),

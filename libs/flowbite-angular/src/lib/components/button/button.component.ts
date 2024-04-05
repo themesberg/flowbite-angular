@@ -22,7 +22,7 @@ export class ButtonComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.ButtonBaseTheme> = {};
 
   ngOnInit() {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       color: this.color,
       disabled: this.disabled,
       outline: this.outline,
@@ -33,9 +33,9 @@ export class ButtonComponent extends BaseComponent implements OnInit {
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.buttonClass;
+    this.componentClass = propertyClass.buttonClass;
     this.contentClasses = {
-      span: t.spanClass,
+      span: propertyClass.spanClass,
     };
   }
 }

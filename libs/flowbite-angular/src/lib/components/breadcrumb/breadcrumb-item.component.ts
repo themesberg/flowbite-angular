@@ -16,14 +16,14 @@ export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   @HostBinding('attr.class') hostClass = 'group flex items-center';
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       href: this.href,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.breadcrumbClass;
+    this.componentClass = propertyClass.breadcrumbClass;
     this.contentClasses = {
-      content: t.contentClass,
+      content: propertyClass.contentClass,
     };
   }
 }

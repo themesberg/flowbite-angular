@@ -13,8 +13,10 @@ export class IconDirective extends BaseInputDirective {
   override _id = generateID('flowbite-icon');
 
   override handleClasses(): void {
-    this._class = properties.getClasses({
+    const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });
+
+    this._class = propertyClass.root;
   }
 }

@@ -20,10 +20,16 @@ export const modalBodyTheme: ModalBodyBaseTheme = {
   },
 };
 
-export function getClasses(properties: ModalBodyProperties): string {
+export interface ModalBodyClass {
+  root: string;
+}
+
+export function getClasses(properties: ModalBodyProperties): ModalBodyClass {
   const theme = mergeTheme(modalBodyTheme, properties.customStyle);
 
-  const output = twMerge(theme.root.base);
+  const output: ModalBodyClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

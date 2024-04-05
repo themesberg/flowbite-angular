@@ -241,16 +241,18 @@ export const buttonTheme: ButtonBaseTheme = {
   },
 };
 
-export function getClasses(properties: ButtonProperties): {
+export interface ButtonClass {
   buttonClass: string;
   spanClass: string;
-} {
+}
+
+export function getClasses(properties: ButtonProperties): ButtonClass {
   const theme: ButtonBaseTheme = mergeTheme(
     buttonTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: ButtonClass = {
     buttonClass: twMerge(
       properties.gradientDuoTone && properties.outline == 'outline'
         ? theme.root.base!['span']

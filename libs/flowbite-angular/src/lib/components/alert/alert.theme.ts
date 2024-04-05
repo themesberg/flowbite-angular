@@ -43,8 +43,8 @@ export const alertTheme: AlertBaseTheme = {
       gray: 'text-gray-700 bg-gray-100 border-gray-500 dark:bg-gray-700 dark:text-gray-300',
     },
     border: {
-      enabled: '',
-      disabled: 'border-t-4',
+      enabled: 'border-t-4',
+      disabled: '',
     },
     rounded: {
       enabled: 'rounded-lg',
@@ -65,13 +65,15 @@ export const alertTheme: AlertBaseTheme = {
   },
 };
 
-export function getClasses(properties: AlertProperties): {
+export interface AlertClass {
   alertClass: string;
   alertButtonClass: string;
-} {
+}
+
+export function getClasses(properties: AlertProperties): AlertClass {
   const theme: AlertBaseTheme = mergeTheme(alertTheme, properties.customStyle);
 
-  const output = {
+  const output: AlertClass = {
     alertClass: twMerge(
       theme.root.base,
       theme.root.border![properties.borderAccent],

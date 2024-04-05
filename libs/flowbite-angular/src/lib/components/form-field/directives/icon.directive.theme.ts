@@ -20,13 +20,21 @@ export const iconDirectiveTheme: IconDirectiveBaseTheme = {
   },
 };
 
-export function getClasses(properties: IconDirectiveProperties): string {
+export interface IconDirectiveClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: IconDirectiveProperties,
+): IconDirectiveClass {
   const theme: IconDirectiveBaseTheme = mergeTheme(
     iconDirectiveTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: IconDirectiveClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

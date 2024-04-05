@@ -11,3 +11,5 @@ export interface AccordionPanelBaseTheme {
 export interface AccordionPanelRootTheme {
   base: string;
 }
+
+export interface AccordionPanelClass {}

@@ -23,8 +23,10 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.componentClass = properties.getClass({
+    const propertyClass = properties.getClass({
       customStyle: this.customStyle,
     });
+
+    this.componentClass = propertyClass.root;
   }
 }

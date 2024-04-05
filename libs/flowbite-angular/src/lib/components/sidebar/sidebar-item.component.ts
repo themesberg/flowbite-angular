@@ -33,16 +33,16 @@ export class SidebarItemComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       icon: this.icon,
       link: this.link,
       label: this.label,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.sidebarClass;
+    this.componentClass = propertyClass.sidebarClass;
     this.contentClasses = {
-      sidebarIcon: t.sidebarIconClass,
+      sidebarIcon: propertyClass.sidebarIconClass,
     };
   }
 }

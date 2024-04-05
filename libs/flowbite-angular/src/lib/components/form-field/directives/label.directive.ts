@@ -15,7 +15,7 @@ import { Directive, HostBinding, Input } from '@angular/core';
 export class LabelDirective extends BaseInputDirective {
   _parentId = '';
   _disabled: keyof FlowbiteBoolean = 'disabled';
-  _validation?: keyof FormFieldValidations;
+  _validate?: keyof FormFieldValidations;
   _floatingLabelType?: keyof FormFieldFloatingLabelTypes;
   @Input() customStyle: Partial<properties.LabelDirectiveBaseTheme> = {};
 
@@ -26,8 +26,8 @@ export class LabelDirective extends BaseInputDirective {
   @Input() set parentId(id: string) {
     this._parentId = id;
   }
-  @Input() set validation(validation: keyof FormFieldValidations) {
-    this._validation = validation;
+  @Input() set validate(validate: keyof FormFieldValidations) {
+    this._validate = validate;
     this.handleClasses();
   }
   @Input() set floatingLabelType(
@@ -38,11 +38,13 @@ export class LabelDirective extends BaseInputDirective {
   }
 
   override handleClasses(): void {
-    this._class = properties.getClasses({
+    const propertyClass = properties.getClasses({
       disabled: this._disabled,
-      validation: this._validation,
+      validate: this._validate,
       floatingLabelType: this._floatingLabelType,
       customStyle: this.customStyle,
     });
+
+    this._class = propertyClass.root;
   }
 }

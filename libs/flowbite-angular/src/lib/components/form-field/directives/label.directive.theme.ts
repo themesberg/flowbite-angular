@@ -9,7 +9,7 @@ import { twMerge } from 'tailwind-merge';
 
 export interface LabelDirectiveProperties {
   disabled: keyof FlowbiteBoolean;
-  validation?: keyof FormFieldValidations;
+  validate?: keyof FormFieldValidations;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
   customStyle: Partial<LabelDirectiveBaseTheme>;
 }
@@ -84,32 +84,40 @@ export const labelDirectiveTheme: LabelDirectiveBaseTheme = {
   },
 };
 
-export function getClasses(properties: LabelDirectiveProperties): string {
+export interface LabelDirectiveClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: LabelDirectiveProperties,
+): LabelDirectiveClass {
   const theme: LabelDirectiveBaseTheme = mergeTheme(
     labelDirectiveTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(
-    properties.floatingLabelType &&
-      theme.floatingLabel[properties.floatingLabelType].base,
-    properties.floatingLabelType &&
-      properties.validation &&
-      theme.floatingLabel[properties.floatingLabelType].validation[
-        properties.validation
-      ],
-    properties.floatingLabelType &&
-      !properties.validation &&
-      theme.floatingLabel[properties.floatingLabelType].default,
+  const output: LabelDirectiveClass = {
+    root: twMerge(
+      properties.floatingLabelType &&
+        theme.floatingLabel[properties.floatingLabelType].base,
+      properties.floatingLabelType &&
+        properties.validate &&
+        theme.floatingLabel[properties.floatingLabelType].validation[
+          properties.validate
+        ],
+      properties.floatingLabelType &&
+        !properties.validate &&
+        theme.floatingLabel[properties.floatingLabelType].default,
 
-    !properties.floatingLabelType && theme.default.base,
-    !properties.floatingLabelType &&
-      properties.validation &&
-      theme.default.validation[properties.validation],
-    !properties.floatingLabelType &&
-      !properties.validation &&
-      theme.default.default,
-  );
+      !properties.floatingLabelType && theme.default.base,
+      !properties.floatingLabelType &&
+        properties.validate &&
+        theme.default.validation[properties.validate],
+      !properties.floatingLabelType &&
+        !properties.validate &&
+        theme.default.default,
+    ),
+  };
 
   return output;
 }

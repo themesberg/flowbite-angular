@@ -14,8 +14,10 @@ export class AddonDirective extends BaseInputDirective {
   override _id = generateID('flowbite-addon');
 
   override handleClasses(): void {
-    this._class = properties.getClasses({
+    const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });
+
+    this._class = propertyClass.root;
   }
 }

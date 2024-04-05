@@ -44,19 +44,19 @@ export class DropdownComponent
   width = 0;
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       label: this.label,
       isOpen: this.isOpen,
       placement: this.position,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.dropdownClass;
+    this.componentClass = propertyClass.dropdownClass;
     this.contentClasses = {
-      spanClasses: t.spanClass,
-      containerClasses: t.containerClass,
-      contentClasses: t.contentClass,
-      subContentClasses: t.subContentClass,
+      spanClasses: propertyClass.spanClass,
+      containerClasses: propertyClass.containerClass,
+      contentClasses: propertyClass.contentClass,
+      subContentClasses: propertyClass.subContentClass,
     };
   }
 

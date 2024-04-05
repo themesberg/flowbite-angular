@@ -27,13 +27,19 @@ export const accordionTheme: AccordionBaseTheme = {
   },
 };
 
-export function getClasses(properties: AccordionProperties): string {
+export interface AccordionClass {
+  root: string;
+}
+
+export function getClasses(properties: AccordionProperties): AccordionClass {
   const theme: AccordionBaseTheme = mergeTheme(
     accordionTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base, theme.root.flush![properties.flush]);
+  const output: AccordionClass = {
+    root: twMerge(theme.root.base, theme.root.flush![properties.flush]),
+  };
 
   return output;
 }

@@ -35,16 +35,18 @@ export const sidebarTheme: SidebarBaseTheme = {
   },
 };
 
-export function getClasses(properties: SidebarProperties): {
+export interface SidebarClass {
   sidebarClass: string;
   sidebarContentClass: string;
-} {
+}
+
+export function getClasses(properties: SidebarProperties): SidebarClass {
   const theme: SidebarBaseTheme = mergeTheme(
     sidebarTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: SidebarClass = {
     sidebarClass: twMerge(theme.root.base),
     sidebarContentClass: twMerge(
       theme.content.base,

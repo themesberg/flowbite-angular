@@ -20,13 +20,21 @@ export const dropdownItemTheme: DropdownItemBaseTheme = {
   },
 };
 
-export function getClasses(properties: DropdownItemProperties): string {
+export interface DropdownItemClass {
+  root: string;
+}
+
+export function getClasses(
+  properties: DropdownItemProperties,
+): DropdownItemClass {
   const theme: DropdownItemBaseTheme = mergeTheme(
     dropdownItemTheme,
     properties.customStyle,
   );
 
-  const output = twMerge(theme.root.base);
+  const output: DropdownItemClass = {
+    root: twMerge(theme.root.base),
+  };
 
   return output;
 }

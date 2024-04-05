@@ -1,6 +1,5 @@
 import * as properties from './input.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
-import { FlowbiteBoolean } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
   FormFieldPrefixes,
@@ -8,7 +7,8 @@ import {
   FormFieldValidations,
 } from '../form-field.theme';
 
-import { Directive, Input } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
+import { FlowbiteBoolean } from '../../../common/flowbite.theme';
 
 @Directive({
   standalone: true,
@@ -17,10 +17,14 @@ import { Directive, Input } from '@angular/core';
 export class InputDirective extends BaseInputDirective {
   _size: keyof FormFieldSizes = 'md';
   _disabled: keyof FlowbiteBoolean = 'disabled';
-  _validation?: keyof FormFieldValidations;
+  _validate?: keyof FormFieldValidations;
   _floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  _prefixType?: keyof FormFieldPrefixes;
+  _prefix?: keyof FormFieldPrefixes;
   @Input() customStyle: Partial<properties.InputDirectiveBaseTheme> = {};
+
+  @HostBinding('attr.disabled') get isDisabled() {
+    return this._disabled == 'enabled' || null;
+  }
 
   @Input() set disabled(disabled: keyof FlowbiteBoolean) {
     this._disabled = disabled;
@@ -32,8 +36,8 @@ export class InputDirective extends BaseInputDirective {
     this.handleClasses();
   }
 
-  @Input() set validation(validation: keyof FormFieldValidations | undefined) {
-    this._validation = validation;
+  @Input() set validate(validate: keyof FormFieldValidations | undefined) {
+    this._validate = validate;
     this.handleClasses();
   }
 
@@ -44,19 +48,21 @@ export class InputDirective extends BaseInputDirective {
     this.handleClasses();
   }
 
-  @Input() set prefixType(type: keyof FormFieldPrefixes | undefined) {
-    this._prefixType = type;
+  @Input() set prefix(prefix: keyof FormFieldPrefixes | undefined) {
+    this._prefix = prefix;
     this.handleClasses();
   }
 
   override handleClasses(): void {
-    this._class = properties.getClasses({
+    const propertyClass = properties.getClasses({
       disabled: this._disabled,
       size: this._size,
-      validation: this._validation,
-      prefixType: this._prefixType,
+      validate: this._validate,
+      prefix: this._prefix,
       floatingLabelType: this._floatingLabelType,
       customStyle: this.customStyle,
     });
+
+    this._class = propertyClass.root;
   }
 }

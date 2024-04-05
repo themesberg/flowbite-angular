@@ -12,21 +12,21 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-header.component.html',
 })
 export class ModalHeaderComponent extends BaseComponent implements OnInit {
-  @Input() customStyle: Partial<properties.DropdownHeaderBaseTheme> = {};
+  @Input() customStyle: Partial<properties.ModalHeaderBaseTheme> = {};
 
   constructor(readonly modal: ModalComponent) {
     super();
   }
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.modalHeaderClass;
+    this.componentClass = propertyClass.modalHeaderClass;
     this.contentClasses = {
-      modalHeaderTitle: t.modalHeaderTitleClass,
-      modalHeaderButton: t.modalHeaderButtonClass,
+      modalHeaderTitle: propertyClass.modalHeaderTitleClass,
+      modalHeaderButton: propertyClass.modalHeaderButtonClass,
     };
   }
 }

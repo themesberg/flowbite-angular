@@ -21,7 +21,7 @@ export class BadgeComponent extends BaseComponent implements OnInit {
   @Input() customStyle: Partial<properties.BadgeBaseTheme> = {};
 
   ngOnInit(): void {
-    this.componentClass = properties.getClasses({
+    const propertyClass = properties.getClasses({
       color: this.color,
       size: this.size,
       isIconOnly: this.isIconOnly,
@@ -29,5 +29,7 @@ export class BadgeComponent extends BaseComponent implements OnInit {
       href: this.href,
       customStyle: this.customStyle,
     });
+
+    this.componentClass = propertyClass.root;
   }
 }

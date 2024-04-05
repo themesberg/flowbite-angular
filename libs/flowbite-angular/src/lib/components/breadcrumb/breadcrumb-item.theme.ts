@@ -35,16 +35,20 @@ export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
   },
 };
 
-export function getClasses(properties: BreadcrumbItemProperties): {
+export interface BreadcrumbItemClass {
   breadcrumbClass: string;
   contentClass: string;
-} {
+}
+
+export function getClasses(
+  properties: BreadcrumbItemProperties,
+): BreadcrumbItemClass {
   const theme: BreadcrumbItemBaseTheme = mergeTheme(
     breadcrumbItemTheme,
     properties.customStyle,
   );
 
-  const output = {
+  const output: BreadcrumbItemClass = {
     breadcrumbClass: twMerge(theme.root.base),
     contentClass: twMerge(
       theme.item.base![properties.href ? 'enabled' : 'disabled'],

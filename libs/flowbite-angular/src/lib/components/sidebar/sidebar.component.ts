@@ -21,14 +21,14 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const t = properties.getClasses({
+    const propertyClass = properties.getClasses({
       rounded: this.rounded,
       customStyle: this.customStyle,
     });
 
-    this.componentClass = t.sidebarClass;
+    this.componentClass = propertyClass.sidebarClass;
     this.contentClasses = {
-      sidebarContent: t.sidebarContentClass,
+      sidebarContent: propertyClass.sidebarContentClass,
     };
   }
 }
