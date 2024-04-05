@@ -5,7 +5,7 @@ import { SanitizeHtmlPipe } from '../../pipes';
 import { SidebarService } from '../../services';
 
 import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -22,7 +22,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'flowbite-sidebar-item',
   templateUrl: './sidebar-item.component.html',
 })
-export class SidebarItemComponent extends BaseComponent implements OnInit {
+export class SidebarItemComponent extends BaseComponent {
   @Input() icon: string | undefined;
   @Input() link: string | undefined;
   @Input() label: string | undefined;
@@ -32,7 +32,7 @@ export class SidebarItemComponent extends BaseComponent implements OnInit {
     super();
   }
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       icon: this.icon,
       link: this.link,

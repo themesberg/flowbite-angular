@@ -2,7 +2,7 @@ import * as properties from './navbar.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -11,13 +11,13 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-navbar',
   templateUrl: './navbar.component.html',
 })
-export class NavbarComponent extends BaseComponent implements OnInit {
+export class NavbarComponent extends BaseComponent {
   @Input() rounded: keyof FlowbiteBoolean = 'disabled';
   @Input() border: keyof FlowbiteBoolean = 'disabled';
   @Input() fluid: keyof FlowbiteBoolean = 'disabled';
   @Input() customStyle: Partial<properties.NavbarBaseTheme> = {};
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       border: this.border,
       fluid: this.fluid,

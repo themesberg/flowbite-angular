@@ -1,7 +1,7 @@
 import * as properties from './breadcrumb.theme';
 import { BaseComponent } from '../base.component';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,10 +10,10 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-breadcrumb',
   templateUrl: './breadcrumb.component.html',
 })
-export class BreadcrumbComponent extends BaseComponent implements OnInit {
+export class BreadcrumbComponent extends BaseComponent {
   @Input() customStyle: Partial<properties.BreadcrumbBaseTheme> = {};
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });

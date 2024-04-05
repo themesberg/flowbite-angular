@@ -2,7 +2,7 @@ import * as properties from './alert.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   selector: 'flowbite-alert',
   templateUrl: './alert.component.html',
 })
-export class AlertComponent extends BaseComponent implements OnInit {
+export class AlertComponent extends BaseComponent {
   @Input() color: keyof properties.AlertColors = 'blue';
   @Input() rounded: keyof FlowbiteBoolean = 'enabled';
   @Input() borderAccent: keyof FlowbiteBoolean = 'disabled';
@@ -21,7 +21,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   @Input() additionalContent: TemplateRef<unknown> | null = null;
   @Input() dismiss!: () => void;
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       color: this.color,
       borderAccent: this.borderAccent,

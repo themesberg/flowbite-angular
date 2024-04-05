@@ -1,7 +1,7 @@
 import * as properties from './breadcrumb-item.theme';
 import { BaseComponent } from '../base.component';
 
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
@@ -10,12 +10,12 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   selector: 'flowbite-breadcrumb-item',
   templateUrl: './breadcrumb-item.component.html',
 })
-export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
+export class BreadcrumbItemComponent extends BaseComponent {
   @Input() href?: string;
   @Input() customStyle: Partial<properties.BreadcrumbItemBaseTheme> = {};
   @HostBinding('attr.class') hostClass = 'group flex items-center';
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       href: this.href,
       customStyle: this.customStyle,

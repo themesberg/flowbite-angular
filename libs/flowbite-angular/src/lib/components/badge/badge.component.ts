@@ -2,7 +2,7 @@ import * as properties from './badge.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
   selector: 'flowbite-badge',
   templateUrl: './badge.component.html',
 })
-export class BadgeComponent extends BaseComponent implements OnInit {
+export class BadgeComponent extends BaseComponent {
   @Input() color: keyof properties.BadgeColors = 'blue';
   @Input() size: keyof properties.BadgeSizes = 'xs';
   @Input() isIconOnly: keyof FlowbiteBoolean = 'disabled';
@@ -20,7 +20,7 @@ export class BadgeComponent extends BaseComponent implements OnInit {
   @Input() href?: string;
   @Input() customStyle: Partial<properties.BadgeBaseTheme> = {};
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       color: this.color,
       size: this.size,

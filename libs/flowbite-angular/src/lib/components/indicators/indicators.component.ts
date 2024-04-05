@@ -6,7 +6,7 @@ import {
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-indicator',
   templateUrl: './indicators.component.html',
 })
-export class IndicatorComponent extends BaseComponent implements OnInit {
+export class IndicatorComponent extends BaseComponent {
   @Input() pill: keyof FlowbiteBoolean = 'disabled';
   @Input() outline: keyof FlowbiteBoolean = 'disabled';
   @Input() disabled: keyof FlowbiteBoolean = 'disabled';
@@ -27,7 +27,7 @@ export class IndicatorComponent extends BaseComponent implements OnInit {
   @Input() placement?: keyof FlowbitePositions;
   @Input() customStyle: Partial<properties.IndicatorBaseTheme> = {};
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       border: this.border,
       color: this.color,

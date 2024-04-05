@@ -2,7 +2,7 @@ import * as properties from './button.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   selector: 'flowbite-button',
   templateUrl: './button.component.html',
 })
-export class ButtonComponent extends BaseComponent implements OnInit {
+export class ButtonComponent extends BaseComponent {
   @Input() color: keyof properties.ButtonColors = 'info';
   @Input() gradientMonochrome?: keyof properties.ButtonMonochromeColors;
   @Input() gradientDuoTone?: keyof properties.ButtonDuoToneColors;
@@ -21,7 +21,7 @@ export class ButtonComponent extends BaseComponent implements OnInit {
   @Input() disabled: keyof FlowbiteBoolean = 'disabled';
   @Input() customStyle: Partial<properties.ButtonBaseTheme> = {};
 
-  ngOnInit() {
+  protected override fetchClass() {
     const propertyClass = properties.getClasses({
       color: this.color,
       disabled: this.disabled,

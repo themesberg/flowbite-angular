@@ -1,7 +1,7 @@
 import * as properties from './modal-body.theme';
 import { BaseComponent } from '../base.component';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,10 +10,10 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-modal-body',
   templateUrl: './modal-body.component.html',
 })
-export class ModalBodyComponent extends BaseComponent implements OnInit {
+export class ModalBodyComponent extends BaseComponent {
   @Input() customStyle: Partial<properties.ModalBodyBaseTheme> = {};
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });

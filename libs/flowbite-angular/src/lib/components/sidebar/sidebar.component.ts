@@ -4,7 +4,7 @@ import { FlowbiteBoolean } from '../../common/flowbite.theme';
 import { SidebarService } from '../../services';
 
 import { AsyncPipe, NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -12,7 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'flowbite-sidebar',
   templateUrl: './sidebar.component.html',
 })
-export class SidebarComponent extends BaseComponent implements OnInit {
+export class SidebarComponent extends BaseComponent {
   @Input() rounded: keyof FlowbiteBoolean = 'disabled';
   @Input() customStyle: Partial<properties.SidebarBaseTheme> = {};
 
@@ -20,7 +20,7 @@ export class SidebarComponent extends BaseComponent implements OnInit {
     super();
   }
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       rounded: this.rounded,
       customStyle: this.customStyle,

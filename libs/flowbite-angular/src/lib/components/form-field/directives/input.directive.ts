@@ -1,5 +1,6 @@
 import * as properties from './input.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
+import { FlowbiteBoolean } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
   FormFieldPrefixes,
@@ -8,7 +9,6 @@ import {
 } from '../form-field.theme';
 
 import { Directive, HostBinding, Input } from '@angular/core';
-import { FlowbiteBoolean } from '../../../common/flowbite.theme';
 
 @Directive({
   standalone: true,

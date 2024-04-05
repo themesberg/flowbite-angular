@@ -9,7 +9,6 @@ import {
   ElementRef,
   HostListener,
   Input,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -28,10 +27,7 @@ import {
   selector: 'flowbite-dropdown',
   templateUrl: './dropdown.component.html',
 })
-export class DropdownComponent
-  extends BaseComponent
-  implements AfterViewInit, OnInit
-{
+export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @Input() label = 'Dropdown';
   @Input() isOpen: keyof FlowbiteBoolean = 'disabled';
   @Input() position: keyof properties.DropdownPositions = 'bottom-center';
@@ -43,7 +39,7 @@ export class DropdownComponent
   y = 0;
   width = 0;
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       label: this.label,
       isOpen: this.isOpen,

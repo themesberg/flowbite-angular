@@ -2,7 +2,7 @@ import * as properties from './accordion-content.theme';
 import { BaseComponent } from '../base.component';
 
 import { AccordionPanelComponent } from './accordion-panel.component';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
 
 @Component({
@@ -11,14 +11,14 @@ import { NgClass, NgIf } from '@angular/common';
   selector: 'flowbite-accordion-content',
   templateUrl: './accordion-content.component.html',
 })
-export class AccordionContentComponent extends BaseComponent implements OnInit {
+export class AccordionContentComponent extends BaseComponent {
   @Input() customStyle: Partial<properties.AccordionContentBaseTheme> = {};
 
   constructor(readonly accordionPanel: AccordionPanelComponent) {
     super();
   }
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });

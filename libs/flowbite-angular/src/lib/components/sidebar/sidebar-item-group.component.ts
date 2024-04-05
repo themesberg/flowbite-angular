@@ -1,7 +1,7 @@
 import * as properties from './sidebar-item-group.theme';
 import { BaseComponent } from '../base.component';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,10 +10,10 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-sidebar-item-group',
   templateUrl: './sidebar-item-group.component.html',
 })
-export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
+export class SidebarItemGroupComponent extends BaseComponent {
   @Input() customStyle: Partial<properties.SidebarItemGroupBaseTheme> = {};
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       customStyle: this.customStyle,
     });

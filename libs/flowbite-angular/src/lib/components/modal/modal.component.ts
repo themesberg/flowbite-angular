@@ -1,7 +1,7 @@
 import * as properties from './modal.theme';
 import { BaseComponent } from '../base.component';
 
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,7 +10,7 @@ import { NgClass } from '@angular/common';
   selector: 'flowbite-modal',
   templateUrl: './modal.component.html',
 })
-export class ModalComponent extends BaseComponent implements OnInit {
+export class ModalComponent extends BaseComponent {
   @Input() size: keyof properties.ModalSizes = 'md';
   @Input() position: keyof properties.ModalPositions = 'center';
   @Input() customStyle: Partial<properties.ModalBaseTheme> = {};
@@ -18,7 +18,7 @@ export class ModalComponent extends BaseComponent implements OnInit {
   @Input() dismissable?: boolean = false;
   @Input() isOpen?: boolean = false;
 
-  ngOnInit(): void {
+  protected override fetchClass(): void {
     const propertyClass = properties.getClasses({
       size: this.size,
       position: this.position,
