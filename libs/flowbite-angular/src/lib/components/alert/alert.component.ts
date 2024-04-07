@@ -6,6 +6,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, Input, TemplateRef } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/alerts/
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet],
@@ -24,6 +27,7 @@ export class AlertComponent extends BaseComponent {
   protected $dismiss!: () => void;
   //#endregion
   //#region getter/setter
+  /** @default blue */
   public get color(): keyof properties.AlertColors {
     return this.$color;
   }
@@ -32,6 +36,7 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default enabled */
   public get rounded(): keyof FlowbiteBoolean {
     return this.$rounded;
   }
@@ -40,6 +45,7 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get borderAccent(): keyof FlowbiteBoolean {
     return this.$borderAccent;
   }
@@ -48,6 +54,7 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.AlertBaseTheme> {
     return this.$customStyle;
   }
@@ -56,6 +63,7 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default null */
   public get icon(): TemplateRef<unknown> | null {
     return this.$icon;
   }
@@ -64,6 +72,7 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default null */
   public get additionalContent(): TemplateRef<unknown> | null {
     return this.$additionalContent;
   }

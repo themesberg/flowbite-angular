@@ -16,6 +16,7 @@ export class ModalBodyComponent extends BaseComponent {
   protected $customStyle: Partial<properties.ModalBodyBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.ModalBodyBaseTheme> {
     return this.$customStyle;
   }

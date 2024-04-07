@@ -10,6 +10,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/indicators/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -30,6 +33,7 @@ export class IndicatorComponent extends BaseComponent {
   public $customStyle: Partial<properties.IndicatorBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default disabled */
   public get pill(): keyof FlowbiteBoolean {
     return this.$pill;
   }
@@ -38,6 +42,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get outline(): keyof FlowbiteBoolean {
     return this.$outline;
   }
@@ -46,6 +51,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get disabled(): keyof FlowbiteBoolean {
     return this.$disabled;
   }
@@ -54,6 +60,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default enabled */
   public get offset(): keyof FlowbiteBoolean {
     return this.$offset;
   }
@@ -62,6 +69,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get rounded(): keyof FlowbiteBoolean {
     return this.$rounded;
   }
@@ -70,6 +78,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get border(): keyof FlowbiteBoolean {
     return this.$rounded;
   }
@@ -78,6 +87,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default gray */
   public get color(): keyof properties.IndicatorColors {
     return this.$color;
   }
@@ -86,6 +96,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default md */
   public get size(): keyof FlowbiteSizes {
     return this.$size;
   }
@@ -94,6 +105,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default undefined */
   public get placement(): keyof FlowbitePositions | undefined {
     return this.$placement;
   }
@@ -102,6 +114,7 @@ export class IndicatorComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.IndicatorBaseTheme> {
     return this.$customStyle;
   }

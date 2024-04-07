@@ -7,6 +7,9 @@ import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
+/**
+ * @see https://flowbite.com/docs/components/badge/
+ */
 @Component({
   standalone: true,
   imports: [NgClass, RouterLink],
@@ -23,6 +26,7 @@ export class BadgeComponent extends BaseComponent {
   protected $customStyle: Partial<properties.BadgeBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default blue */
   public get color(): keyof properties.BadgeColors {
     return this.$color;
   }
@@ -31,6 +35,7 @@ export class BadgeComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default xs */
   public get size(): keyof properties.BadgeSizes {
     return this.$size;
   }
@@ -39,6 +44,7 @@ export class BadgeComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get isIconOnly(): keyof FlowbiteBoolean {
     return this.$isIconOnly;
   }
@@ -47,6 +53,7 @@ export class BadgeComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get isPill(): keyof FlowbiteBoolean {
     return this.$isPill;
   }
@@ -55,6 +62,7 @@ export class BadgeComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default undefined */
   public get href(): string | undefined {
     return this.$href;
   }
@@ -63,6 +71,7 @@ export class BadgeComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.BadgeBaseTheme> {
     return this.$customStyle;
   }

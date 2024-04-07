@@ -6,6 +6,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/navbar/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -20,6 +23,7 @@ export class NavbarComponent extends BaseComponent {
   public $customStyle: Partial<properties.NavbarBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default disabled */
   public get rounded(): keyof FlowbiteBoolean {
     return this.$rounded;
   }
@@ -28,6 +32,7 @@ export class NavbarComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get border(): keyof FlowbiteBoolean {
     return this.$border;
   }
@@ -36,6 +41,7 @@ export class NavbarComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get fluid(): keyof FlowbiteBoolean {
     return this.$fluid;
   }
@@ -44,6 +50,7 @@ export class NavbarComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.NavbarBaseTheme> {
     return this.$customStyle;
   }

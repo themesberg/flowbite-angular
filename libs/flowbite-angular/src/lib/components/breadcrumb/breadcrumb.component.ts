@@ -5,6 +5,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/breadcrumb/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -16,6 +19,7 @@ export class BreadcrumbComponent extends BaseComponent {
   protected $customStyle: Partial<properties.BreadcrumbBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.BreadcrumbBaseTheme> {
     return this.$customStyle;
   }

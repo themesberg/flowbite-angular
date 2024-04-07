@@ -7,6 +7,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/sidebar/
+ */
 @Component({
   standalone: true,
   imports: [NgClass, AsyncPipe],
@@ -19,6 +22,7 @@ export class SidebarComponent extends BaseComponent {
   protected $customStyle: Partial<properties.SidebarBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default disabled */
   public get rounded(): keyof FlowbiteBoolean {
     return this.$rounded;
   }
@@ -27,6 +31,7 @@ export class SidebarComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.SidebarBaseTheme> {
     return this.$customStyle;
   }

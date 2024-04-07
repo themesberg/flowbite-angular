@@ -11,6 +11,7 @@ export class AccordionPanelComponent {
   protected $open: boolean = false;
   //#endregion
   //#region getter/setter
+  /** @default false */
   public get open(): boolean {
     return this.$open;
   }

@@ -17,6 +17,7 @@ export class DropdownDividerComponent extends BaseComponent {
   protected $customStyle: Partial<properties.DropdownDividerBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.DropdownDividerBaseTheme> {
     return this.$customStyle;
   }

@@ -17,6 +17,7 @@ export class DropdownItemComponent extends BaseComponent {
   protected $customStyle: Partial<properties.DropdownItemBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.DropdownItemBaseTheme> {
     return this.$customStyle;
   }

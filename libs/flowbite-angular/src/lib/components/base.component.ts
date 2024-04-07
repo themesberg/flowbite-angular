@@ -11,5 +11,8 @@ export abstract class BaseComponent implements OnInit {
     this.fetchClass();
   }
 
+  /**
+   * Function to load component's classes
+   */
   protected abstract fetchClass(): void;
 }

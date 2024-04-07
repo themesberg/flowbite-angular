@@ -6,6 +6,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, Input } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/buttons/
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet],
@@ -24,6 +27,7 @@ export class ButtonComponent extends BaseComponent {
   protected $customStyle: Partial<properties.ButtonBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default info */
   public get color(): keyof properties.ButtonColors {
     return this.$color;
   }
@@ -32,6 +36,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default md */
   public get size(): keyof properties.ButtonSizes {
     return this.$size;
   }
@@ -40,6 +45,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get pill(): keyof FlowbiteBoolean {
     return this.$pill;
   }
@@ -48,6 +54,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default solid */
   public get outline(): keyof properties.ButtonFill {
     return this.$outline;
   }
@@ -56,6 +63,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get disabled(): keyof FlowbiteBoolean {
     return this.$disabled;
   }
@@ -64,6 +72,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default undefined */
   public get gradientMonochrome():
     | keyof properties.ButtonMonochromeColors
     | undefined {
@@ -76,6 +85,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default undefined */
   public get gradientDuoTone():
     | keyof properties.ButtonDuoToneColors
     | undefined {
@@ -88,6 +98,7 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.ButtonBaseTheme> {
     return this.$customStyle;
   }

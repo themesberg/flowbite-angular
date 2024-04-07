@@ -1,3 +1,9 @@
+/**
+ * Merge to objects into one
+ * @param target Object to be merged
+ * @param source Object to be merged
+ * @returns The merged object
+ */
 export function mergeTheme<T extends object, S extends object>(
   target: T,
   source: S,

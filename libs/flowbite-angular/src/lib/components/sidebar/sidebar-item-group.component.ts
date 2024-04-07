@@ -16,6 +16,7 @@ export class SidebarItemGroupComponent extends BaseComponent {
   protected $customStyle: Partial<properties.SidebarItemGroupBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.SidebarItemGroupBaseTheme> {
     return this.$customStyle;
   }

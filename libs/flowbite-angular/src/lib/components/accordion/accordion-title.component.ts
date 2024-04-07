@@ -18,6 +18,7 @@ export class AccordionTitleComponent extends BaseComponent {
   protected $customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.AccordionTitleBaseTheme> {
     return this.$customStyle;
   }

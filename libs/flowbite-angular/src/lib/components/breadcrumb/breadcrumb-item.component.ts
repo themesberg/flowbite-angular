@@ -19,6 +19,7 @@ export class BreadcrumbItemComponent extends BaseComponent {
   //#region getter/setter
   @HostBinding('attr.class') hostClass = 'group flex items-center';
 
+  /** @default undefined */
   public get href(): string | undefined {
     return this.$href;
   }
@@ -27,6 +28,7 @@ export class BreadcrumbItemComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.BreadcrumbItemBaseTheme> {
     return this.$customStyle;
   }

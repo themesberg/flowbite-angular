@@ -22,6 +22,9 @@ import {
   shift,
 } from '@floating-ui/dom';
 
+/**
+ * @see https://flowbite.com/docs/components/dropdowns/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -39,6 +42,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
+  /** @default Dropdown */
   public get label(): string {
     return this.$label;
   }
@@ -47,6 +51,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
     this.fetchClass();
   }
 
+  /** @default disabled */
   public get isOpen(): keyof FlowbiteBoolean {
     return this.$isOpen;
   }
@@ -55,6 +60,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
     this.fetchClass();
   }
 
+  /** @default bottom-center */
   public get position(): keyof properties.DropdownPositions {
     return this.$position;
   }
@@ -63,6 +69,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.DropdownBaseTheme> {
     return this.$customStyle;
   }

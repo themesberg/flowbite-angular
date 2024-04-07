@@ -17,6 +17,7 @@ export class DropdownHeaderComponent extends BaseComponent {
   protected $customStyle: Partial<properties.DropdownHeaderBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.DropdownHeaderBaseTheme> {
     return this.$customStyle;
   }

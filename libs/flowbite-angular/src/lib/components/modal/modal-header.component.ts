@@ -17,6 +17,7 @@ export class ModalHeaderComponent extends BaseComponent {
   protected $customStyle: Partial<properties.ModalHeaderBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.ModalHeaderBaseTheme> {
     return this.$customStyle;
   }

@@ -17,6 +17,7 @@ export class ModalFooterComponent extends BaseComponent {
   protected $customStyle: Partial<properties.ModalFooterBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.ModalFooterBaseTheme> {
     return this.$customStyle;
   }

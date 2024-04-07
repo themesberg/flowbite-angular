@@ -31,6 +31,7 @@ export class SidebarItemComponent extends BaseComponent {
   protected $customStyle: Partial<properties.SidebarItemBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default undefined */
   public get icon(): string | undefined {
     return this.$icon;
   }
@@ -39,6 +40,7 @@ export class SidebarItemComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default undefined */
   public get link(): string | undefined {
     return this.$link;
   }
@@ -47,6 +49,7 @@ export class SidebarItemComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default undefined */
   public get label(): string | undefined {
     return this.$label;
   }
@@ -55,6 +58,7 @@ export class SidebarItemComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.SidebarItemBaseTheme> {
     return this.$customStyle;
   }

@@ -17,6 +17,7 @@ export class AccordionContentComponent extends BaseComponent {
   protected $customStyle: Partial<properties.AccordionContentBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default {} */
   public get customStyle(): Partial<properties.AccordionContentBaseTheme> {
     return this.$customStyle;
   }

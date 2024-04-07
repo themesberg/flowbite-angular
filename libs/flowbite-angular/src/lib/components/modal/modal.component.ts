@@ -5,6 +5,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, HostListener, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/modal/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -20,6 +23,7 @@ export class ModalComponent extends BaseComponent {
   protected $customStyle: Partial<properties.ModalBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default md */
   public get size(): keyof properties.ModalSizes {
     return this.$size;
   }
@@ -28,6 +32,7 @@ export class ModalComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default center */
   public get position(): keyof properties.ModalPositions {
     return this.$position;
   }
@@ -36,6 +41,7 @@ export class ModalComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default false */
   public get dismissable(): boolean {
     return this.$dismissable;
   }
@@ -44,6 +50,7 @@ export class ModalComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default false */
   public get isOpen(): boolean {
     return this.$isOpen;
   }
@@ -52,6 +59,7 @@ export class ModalComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.ModalBaseTheme> {
     return this.$customStyle;
   }

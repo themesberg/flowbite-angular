@@ -6,6 +6,9 @@ import { paramNotNull } from '../../utils/param.util';
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
+/**
+ * @see https://flowbite.com/docs/components/accordion/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -18,6 +21,7 @@ export class AccordionComponent extends BaseComponent {
   protected $customStyle: Partial<properties.AccordionBaseTheme> = {};
   //#endregion
   //#region getter/setter
+  /** @default disabled */
   public get flush(): keyof FlowbiteBoolean {
     return this.$flush;
   }
@@ -26,6 +30,7 @@ export class AccordionComponent extends BaseComponent {
     this.fetchClass();
   }
 
+  /** @default {} */
   public get customStyle(): Partial<properties.AccordionBaseTheme> {
     return this.$customStyle;
   }
