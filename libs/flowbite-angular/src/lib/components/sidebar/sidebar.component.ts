@@ -2,6 +2,7 @@ import * as properties from './sidebar.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 import { SidebarService } from '../../services';
+import { paramNotNull } from '../../utils/param.util';
 
 import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
@@ -13,22 +14,45 @@ import { Component, Input } from '@angular/core';
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent extends BaseComponent {
-  @Input() rounded: keyof FlowbiteBoolean = 'disabled';
-  @Input() customStyle: Partial<properties.SidebarBaseTheme> = {};
+  //#region properties
+  protected $rounded: keyof FlowbiteBoolean = 'disabled';
+  protected $customStyle: Partial<properties.SidebarBaseTheme> = {};
+  //#endregion
+  //#region getter/setter
+  public get rounded(): keyof FlowbiteBoolean {
+    return this.$rounded;
+  }
+  @Input() public set rounded(value: keyof FlowbiteBoolean) {
+    this.$rounded = value;
+    this.fetchClass();
+  }
+
+  public get customStyle(): Partial<properties.SidebarBaseTheme> {
+    return this.$customStyle;
+  }
+  @Input() public set customStyle(value: Partial<properties.SidebarBaseTheme>) {
+    this.$customStyle = value;
+    this.fetchClass();
+  }
+  //#endregion
 
   constructor(readonly sidebarService: SidebarService) {
     super();
   }
 
+  //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
-      rounded: this.rounded,
-      customStyle: this.customStyle,
-    });
+    if (paramNotNull(this.rounded, this.customStyle)) {
+      const propertyClass = properties.getClasses({
+        rounded: this.rounded,
+        customStyle: this.customStyle,
+      });
 
-    this.componentClass = propertyClass.sidebarClass;
-    this.contentClasses = {
-      sidebarContent: propertyClass.sidebarContentClass,
-    };
+      this.componentClass = propertyClass.sidebarClass;
+      this.contentClasses = {
+        sidebarContent: propertyClass.sidebarContentClass,
+      };
+    }
   }
+  //#endregion
 }

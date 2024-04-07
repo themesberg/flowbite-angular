@@ -7,9 +7,19 @@ import { Component, Input } from '@angular/core';
   templateUrl: './accordion-panel.component.html',
 })
 export class AccordionPanelComponent {
-  @Input() open?: boolean;
+  //#region properties
+  protected $open: boolean = false;
+  //#endregion
+  //#region getter/setter
+  public get open(): boolean {
+    return this.$open;
+  }
+  @Input() public set open(value: boolean) {
+    this.$open = value;
+  }
+  //#endregion
 
-  setOpen(open: boolean) {
-    this.open = open;
+  toggleVisibility() {
+    this.$open = !this.open;
   }
 }

@@ -1,5 +1,6 @@
 import * as properties from './modal.theme';
 import { BaseComponent } from '../base.component';
+import { paramNotNull } from '../../utils/param.util';
 
 import { Component, HostListener, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -11,26 +12,80 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal.component.html',
 })
 export class ModalComponent extends BaseComponent {
-  @Input() size: keyof properties.ModalSizes = 'md';
-  @Input() position: keyof properties.ModalPositions = 'center';
-  @Input() customStyle: Partial<properties.ModalBaseTheme> = {};
-
-  @Input() dismissable?: boolean = false;
-  @Input() isOpen?: boolean = false;
-
-  protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
-      size: this.size,
-      position: this.position,
-      customStyle: this.customStyle,
-    });
-
-    this.componentClass = propertyClass.modalClass;
-    this.contentClasses = {
-      modalContainer: propertyClass.modalContainerClass,
-      modalContent: propertyClass.modalContentClass,
-    };
+  //#region properties
+  protected $size: keyof properties.ModalSizes = 'md';
+  protected $position: keyof properties.ModalPositions = 'center';
+  protected $dismissable: boolean = false;
+  protected $isOpen: boolean = false;
+  protected $customStyle: Partial<properties.ModalBaseTheme> = {};
+  //#endregion
+  //#region getter/setter
+  public get size(): keyof properties.ModalSizes {
+    return this.$size;
   }
+  @Input() public set size(value: keyof properties.ModalSizes) {
+    this.$size = value;
+    this.fetchClass();
+  }
+
+  public get position(): keyof properties.ModalPositions {
+    return this.$position;
+  }
+  @Input() public set position(value: keyof properties.ModalPositions) {
+    this.$position = value;
+    this.fetchClass();
+  }
+
+  public get dismissable(): boolean {
+    return this.$dismissable;
+  }
+  @Input() public set dismissable(value: boolean) {
+    this.$dismissable = value;
+    this.fetchClass();
+  }
+
+  public get isOpen(): boolean {
+    return this.$isOpen;
+  }
+  @Input() public set isOpen(value: boolean) {
+    this.$isOpen = value;
+    this.fetchClass();
+  }
+
+  public get customStyle(): Partial<properties.ModalBaseTheme> {
+    return this.$customStyle;
+  }
+  @Input() public set customStyle(value: Partial<properties.ModalBaseTheme>) {
+    this.$customStyle = value;
+    this.fetchClass();
+  }
+  //#endregion
+
+  //#region BaseComponent implementation
+  protected override fetchClass(): void {
+    if (
+      paramNotNull(
+        this.size,
+        this.position,
+        this.dismissable,
+        this.isOpen,
+        this.customStyle,
+      )
+    ) {
+      const propertyClass = properties.getClasses({
+        size: this.size,
+        position: this.position,
+        customStyle: this.customStyle,
+      });
+
+      this.componentClass = propertyClass.modalClass;
+      this.contentClasses = {
+        modalContainer: propertyClass.modalContainerClass,
+        modalContent: propertyClass.modalContentClass,
+      };
+    }
+  }
+  //#endregion
 
   open() {
     this.isOpen = true;

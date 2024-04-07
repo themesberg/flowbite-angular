@@ -1,6 +1,7 @@
 import * as properties from './modal-footer.theme';
 import { BaseComponent } from '../base.component';
 import { ModalComponent } from './modal.component';
+import { paramNotNull } from '../../utils/param.util';
 
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -12,17 +13,34 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
-  @Input() customStyle: Partial<properties.ModalFooterBaseTheme> = {};
+  //#region properties
+  protected $customStyle: Partial<properties.ModalFooterBaseTheme> = {};
+  //#endregion
+  //#region getter/setter
+  public get customStyle(): Partial<properties.ModalFooterBaseTheme> {
+    return this.$customStyle;
+  }
+  @Input() public set customStyle(
+    value: Partial<properties.ModalFooterBaseTheme>,
+  ) {
+    this.$customStyle = value;
+    this.fetchClass();
+  }
+  //#endregion
 
   constructor(public modal: ModalComponent) {
     super();
   }
 
+  //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
-      customStyle: this.customStyle,
-    });
+    if (paramNotNull(this.customStyle)) {
+      const propertyClass = properties.getClasses({
+        customStyle: this.customStyle,
+      });
 
-    this.componentClass = propertyClass.root;
+      this.componentClass = propertyClass.root;
+    }
   }
+  //#endregion
 }

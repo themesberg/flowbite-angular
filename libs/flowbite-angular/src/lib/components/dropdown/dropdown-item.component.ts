@@ -1,6 +1,7 @@
 import * as properties from './dropdown-item.theme';
 import { BaseComponent } from '../base.component';
 import { DropdownComponent } from './dropdown.component';
+import { paramNotNull } from '../../utils/param.util';
 
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -12,17 +13,34 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-item.component.html',
 })
 export class DropdownItemComponent extends BaseComponent {
-  @Input() customStyle: Partial<properties.DropdownItemBaseTheme> = {};
+  //#region properties
+  protected $customStyle: Partial<properties.DropdownItemBaseTheme> = {};
+  //#endregion
+  //#region getter/setter
+  public get customStyle(): Partial<properties.DropdownItemBaseTheme> {
+    return this.$customStyle;
+  }
+  @Input() public set customStyle(
+    value: Partial<properties.DropdownItemBaseTheme>,
+  ) {
+    this.$customStyle = value;
+    this.fetchClass();
+  }
+  //#endregion
 
   constructor(readonly dropdown: DropdownComponent) {
     super();
   }
 
+  //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
-      customStyle: this.customStyle,
-    });
+    if (paramNotNull(this.customStyle)) {
+      const propertyClass = properties.getClasses({
+        customStyle: this.customStyle,
+      });
 
-    this.componentClass = propertyClass.root;
+      this.componentClass = propertyClass.root;
+    }
   }
+  //#endregion
 }

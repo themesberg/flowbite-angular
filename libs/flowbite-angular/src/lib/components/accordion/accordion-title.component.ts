@@ -2,6 +2,7 @@ import * as properties from './accordion-title.theme';
 import { AccordionComponent } from './accordion.component';
 import { AccordionPanelComponent } from './accordion-panel.component';
 import { BaseComponent } from '../base.component';
+import { paramNotNull } from '../../utils/param.util';
 
 import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -13,7 +14,19 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  @Input() customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
+  //#region properties
+  protected $customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
+  //#endregion
+  //#region getter/setter
+  public get customStyle(): Partial<properties.AccordionTitleBaseTheme> {
+    return this.$customStyle;
+  }
+  @Input() public set customStyle(
+    value: Partial<properties.AccordionTitleBaseTheme>,
+  ) {
+    this.$customStyle = value;
+  }
+  //#endregion
 
   constructor(
     readonly accordion: AccordionComponent,
@@ -22,11 +35,15 @@ export class AccordionTitleComponent extends BaseComponent {
     super();
   }
 
+  //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClass({
-      customStyle: this.customStyle,
-    });
+    if (paramNotNull(this.customStyle)) {
+      const propertyClass = properties.getClass({
+        customStyle: this.customStyle,
+      });
 
-    this.componentClass = propertyClass.root;
+      this.componentClass = propertyClass.root;
+    }
   }
+  //#endregion
 }

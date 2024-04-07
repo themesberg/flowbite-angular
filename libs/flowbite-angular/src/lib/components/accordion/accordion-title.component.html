@@ -7,7 +7,7 @@
       !accordion.flush
   }"
   type="button"
-  (click)="accordionPanel.setOpen(!accordionPanel.open)"
+  (click)="accordionPanel.toggleVisibility()"
 >
   <h2>
     <ng-content></ng-content>
