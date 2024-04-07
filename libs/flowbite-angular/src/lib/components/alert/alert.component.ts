@@ -19,8 +19,8 @@ export class AlertComponent extends BaseComponent {
   protected $borderAccent: keyof FlowbiteBoolean = 'disabled';
   protected $customStyle: Partial<properties.AlertBaseTheme> = {};
 
-  protected $icon?: TemplateRef<unknown>;
-  protected $additionalContent?: TemplateRef<unknown>;
+  protected $icon: TemplateRef<unknown> | null = null;
+  protected $additionalContent: TemplateRef<unknown> | null = null;
   protected $dismiss!: () => void;
   //#endregion
   //#region getter/setter
@@ -56,20 +56,18 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
-  public get icon(): TemplateRef<unknown> | undefined {
+  public get icon(): TemplateRef<unknown> | null {
     return this.$icon;
   }
-  @Input() public set icon(value: TemplateRef<unknown> | undefined) {
+  @Input() public set icon(value: TemplateRef<unknown> | null) {
     this.$icon = value;
     this.fetchClass();
   }
 
-  public get additionalContent(): TemplateRef<unknown> | undefined {
+  public get additionalContent(): TemplateRef<unknown> | null {
     return this.$additionalContent;
   }
-  @Input() public set additionalContent(
-    value: TemplateRef<unknown> | undefined,
-  ) {
+  @Input() public set additionalContent(value: TemplateRef<unknown> | null) {
     this.$additionalContent = value;
     this.fetchClass();
   }

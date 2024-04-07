@@ -63,15 +63,7 @@ export class ModalComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        this.size,
-        this.position,
-        this.dismissable,
-        this.isOpen,
-        this.customStyle,
-      )
-    ) {
+    if (paramNotNull(this.size, this.position, this.customStyle)) {
       const propertyClass = properties.getClasses({
         size: this.size,
         position: this.position,

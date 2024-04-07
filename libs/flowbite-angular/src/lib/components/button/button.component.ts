@@ -115,6 +115,8 @@ export class ButtonComponent extends BaseComponent {
         outline: this.outline,
         pill: this.pill,
         size: this.size,
+        gradientMonochrome: this.gradientMonochrome,
+        gradientDuoTone: this.gradientDuoTone,
         customStyle: this.customStyle,
       });
 
