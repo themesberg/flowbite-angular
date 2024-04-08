@@ -1,5 +1,5 @@
 <a
-  [ngClass]="componentClass"
+  [ngClass]="contentClasses!.sidebarClass"
   [routerLink]="link"
   routerLinkActive="bg-gray-200 dark:bg-gray-700"
   [routerLinkActiveOptions]="{ exact: true }"
@@ -10,7 +10,7 @@
     *ngIf="!!icon"
   ></span>
   <span
-    [ngClass]="contentClasses!['sidebarIcon']"
+    [ngClass]="contentClasses!.sidebarIconClass"
     [class.ml-3]="!!icon"
     *ngIf="(sidebarService.$collapsed | async) === false"
   >

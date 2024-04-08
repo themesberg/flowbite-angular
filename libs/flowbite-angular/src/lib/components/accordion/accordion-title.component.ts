@@ -14,6 +14,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.AccordionTitleClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
   //#endregion
@@ -43,7 +47,7 @@ export class AccordionTitleComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

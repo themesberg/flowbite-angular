@@ -12,6 +12,10 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './breadcrumb-item.component.html',
 })
 export class BreadcrumbItemComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.BreadcrumbItemClass,
+    string
+  >;
   //#region properties
   protected $href?: string;
   protected $customStyle: Partial<properties.BreadcrumbItemBaseTheme> = {};
@@ -48,10 +52,7 @@ export class BreadcrumbItemComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.breadcrumbClass;
-      this.contentClasses = {
-        content: propertyClass.contentClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

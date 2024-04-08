@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   template: '',
 })
 export abstract class BaseComponent implements OnInit {
-  protected componentClass: string = '';
   protected contentClasses?: Record<string, string>;
 
   public ngOnInit(): void {

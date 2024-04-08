@@ -1,12 +1,12 @@
 <div
   tabindex="-1"
   aria-hidden="true"
-  [className]="componentClass"
+  [className]="contentClasses!.modalClass"
   [ngClass]="{ hidden: !isOpen }"
   (click)="onBackdropClick($event)"
 >
-  <div [ngClass]="contentClasses!['modalContainer']">
-    <div [ngClass]="contentClasses!['modalContent']">
+  <div [ngClass]="contentClasses!.modalContainerClass">
+    <div [ngClass]="contentClasses!.modalContentClass">
       <ng-content></ng-content>
     </div>
   </div>

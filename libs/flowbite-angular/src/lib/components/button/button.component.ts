@@ -20,6 +20,10 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.ButtonClass,
+    string
+  >;
   //#region properties
   protected $color: keyof properties.ButtonColors = 'info';
   protected $size: keyof properties.ButtonSizes = 'md';
@@ -135,10 +139,7 @@ export class ButtonComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.buttonClass;
-      this.contentClasses = {
-        span: propertyClass.spanClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

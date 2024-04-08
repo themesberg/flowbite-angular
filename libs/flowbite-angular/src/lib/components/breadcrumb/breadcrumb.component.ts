@@ -15,6 +15,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './breadcrumb.component.html',
 })
 export class BreadcrumbComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.BreadcrumbClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.BreadcrumbBaseTheme> = {};
   //#endregion
@@ -38,7 +42,7 @@ export class BreadcrumbComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

@@ -37,6 +37,10 @@ import {
   templateUrl: './dropdown.component.html',
 })
 export class DropdownComponent extends BaseComponent implements AfterViewInit {
+  protected override contentClasses?: Record<
+    keyof properties.DropdownClass,
+    string
+  >;
   //#region properties
   protected $label: string = 'Dropdown';
   protected $isOpen: keyof FlowbiteBoolean = 'disabled';
@@ -96,13 +100,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.dropdownClass;
-      this.contentClasses = {
-        spanClasses: propertyClass.spanClass,
-        containerClasses: propertyClass.containerClass,
-        contentClasses: propertyClass.contentClass,
-        subContentClasses: propertyClass.subContentClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

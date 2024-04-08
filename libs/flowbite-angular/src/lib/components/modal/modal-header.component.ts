@@ -13,6 +13,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-header.component.html',
 })
 export class ModalHeaderComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.ModalHeaderClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.ModalHeaderBaseTheme> = {};
   //#endregion
@@ -40,11 +44,7 @@ export class ModalHeaderComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.modalHeaderClass;
-      this.contentClasses = {
-        modalHeaderTitle: propertyClass.modalHeaderTitleClass,
-        modalHeaderButton: propertyClass.modalHeaderButtonClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

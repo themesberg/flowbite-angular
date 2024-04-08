@@ -1,10 +1,10 @@
-<div [ngClass]="componentClass">
-  <h3 [ngClass]="contentClasses!['modalHeaderTitle']">
+<div [ngClass]="contentClasses!.modalHeaderClass">
+  <h3 [ngClass]="contentClasses!.modalHeaderTitleClass">
     <ng-content></ng-content>
   </h3>
   <button
     type="button"
-    [ngClass]="contentClasses!['modalHeaderButton']"
+    [ngClass]="contentClasses!.modalHeaderButtonClass"
     data-modal-hide="medium-modal"
     (click)="modal.close()"
   >

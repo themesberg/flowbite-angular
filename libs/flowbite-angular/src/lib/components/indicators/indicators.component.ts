@@ -24,6 +24,10 @@ import {
   templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.indicatorClass,
+    string
+  >;
   //#region properties
   public $pill: keyof FlowbiteBoolean = 'disabled';
   public $outline: keyof FlowbiteBoolean = 'disabled';
@@ -160,7 +164,7 @@ export class IndicatorComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
 }

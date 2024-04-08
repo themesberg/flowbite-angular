@@ -13,6 +13,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.DropdownDividerClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.DropdownDividerBaseTheme> = {};
   //#endregion
@@ -40,7 +44,7 @@ export class DropdownDividerComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

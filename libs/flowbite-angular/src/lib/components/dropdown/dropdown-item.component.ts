@@ -13,6 +13,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-item.component.html',
 })
 export class DropdownItemComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.DropdownItemClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.DropdownItemBaseTheme> = {};
   //#endregion
@@ -40,7 +44,7 @@ export class DropdownItemComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

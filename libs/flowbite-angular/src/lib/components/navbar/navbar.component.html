@@ -1,5 +1,5 @@
-<nav [ngClass]="componentClass">
-  <div [ngClass]="contentClasses!['content']">
+<nav [ngClass]="contentClasses!.navbarClass">
+  <div [ngClass]="contentClasses!.contentClass">
     <ng-content></ng-content>
   </div>
 </nav>

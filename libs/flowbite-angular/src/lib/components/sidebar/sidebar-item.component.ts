@@ -24,6 +24,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar-item.component.html',
 })
 export class SidebarItemComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.SidebarItemClass,
+    string
+  >;
   //#region properties
   protected $icon?: string;
   protected $link?: string;
@@ -84,10 +88,7 @@ export class SidebarItemComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.sidebarClass;
-      this.contentClasses = {
-        sidebarIcon: propertyClass.sidebarIconClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

@@ -20,6 +20,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion.component.html',
 })
 export class AccordionComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.AccordionClass,
+    string
+  >;
   //#region properties
   protected $flush: keyof FlowbiteBoolean = 'disabled';
   protected $customStyle: Partial<properties.AccordionBaseTheme> = {};
@@ -54,7 +58,7 @@ export class AccordionComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

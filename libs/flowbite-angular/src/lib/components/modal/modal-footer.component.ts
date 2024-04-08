@@ -13,6 +13,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.ModalFooterClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.ModalFooterBaseTheme> = {};
   //#endregion
@@ -40,7 +44,7 @@ export class ModalFooterComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

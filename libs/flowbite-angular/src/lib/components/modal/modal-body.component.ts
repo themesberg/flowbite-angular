@@ -12,6 +12,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.ModalBodyClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.ModalBodyBaseTheme> = {};
   //#endregion
@@ -35,7 +39,7 @@ export class ModalBodyComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

@@ -13,6 +13,10 @@ import { NgClass, NgIf } from '@angular/common';
   templateUrl: './accordion-content.component.html',
 })
 export class AccordionContentComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.AccordionContentClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.AccordionContentBaseTheme> = {};
   //#endregion
@@ -39,7 +43,7 @@ export class AccordionContentComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

@@ -1,5 +1,5 @@
 <button
-  [className]="componentClass"
+  [className]="contentClasses!.root"
   [ngClass]="{
     'text-gray-900 dark:text-white': accordionPanel.open,
     'bg-gray-100 dark:bg-gray-800': accordionPanel.open && !accordion.flush,

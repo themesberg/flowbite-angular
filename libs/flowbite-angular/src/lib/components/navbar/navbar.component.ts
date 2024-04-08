@@ -20,6 +20,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.NavbarClass,
+    string
+  >;
   //#region properties
   public $rounded: keyof FlowbiteBoolean = 'disabled';
   public $border: keyof FlowbiteBoolean = 'disabled';
@@ -76,10 +80,7 @@ export class NavbarComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.navbarClass;
-      this.contentClasses = {
-        content: propertyClass.contentClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

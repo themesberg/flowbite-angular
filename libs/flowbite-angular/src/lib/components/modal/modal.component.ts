@@ -25,6 +25,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal.component.html',
 })
 export class ModalComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.ModalClass,
+    string
+  >;
   //#region properties
   protected $size: keyof properties.ModalSizes = 'md';
   protected $position: keyof properties.ModalPositions = 'center';
@@ -90,11 +94,7 @@ export class ModalComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.modalClass;
-      this.contentClasses = {
-        modalContainer: propertyClass.modalContainerClass,
-        modalContent: propertyClass.modalContentClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

@@ -21,6 +21,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './badge.component.html',
 })
 export class BadgeComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.BadgeClass,
+    string
+  >;
   //#region properties
   protected $color: keyof properties.BadgeColors = 'blue';
   protected $size: keyof properties.BadgeSizes = 'xs';
@@ -107,7 +111,7 @@ export class BadgeComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

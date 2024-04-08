@@ -1,5 +1,5 @@
 <span [class.group]="href">
-  <a [ngClass]="componentClass" [routerLink]="href">
+  <a [ngClass]="contentClasses!.root" [routerLink]="href">
     <ng-content></ng-content>
   </a>
 </span>

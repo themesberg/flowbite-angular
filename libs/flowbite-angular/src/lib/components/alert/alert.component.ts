@@ -20,6 +20,10 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './alert.component.html',
 })
 export class AlertComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.AlertClass,
+    string
+  >;
   //#region properties
   protected $color: keyof properties.AlertColors = 'blue';
   protected $rounded: keyof FlowbiteBoolean = 'enabled';
@@ -112,10 +116,7 @@ export class AlertComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.alertClass;
-      this.contentClasses = {
-        alertButton: propertyClass.alertButtonClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

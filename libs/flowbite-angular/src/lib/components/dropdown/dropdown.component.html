@@ -1,5 +1,10 @@
-<button type="button" [ngClass]="componentClass" (click)="toggle()" #button>
-  <span [ngClass]="contentClasses!['spanClasses']">
+<button
+  type="button"
+  [ngClass]="contentClasses!.dropdownClass"
+  (click)="toggle()"
+  #button
+>
+  <span [ngClass]="contentClasses!.spanClass">
     {{ label }}
     <svg
       stroke="currentColor"
@@ -21,12 +26,12 @@
   </span>
 </button>
 <div
-  [ngClass]="contentClasses!['containerClasses']"
+  [ngClass]="contentClasses!.containerClass"
   #dropdown
   [style.display]="isOpen ? 'block' : 'none'"
 >
-  <div [ngClass]="contentClasses!['contentClasses']">
-    <ul [ngClass]="contentClasses!['subContentClasses']">
+  <div [ngClass]="contentClasses!.contentClass">
+    <ul [ngClass]="contentClasses!.subContentClass">
       <ng-content></ng-content>
     </ul>
   </div>

@@ -12,6 +12,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './sidebar-item-group.component.html',
 })
 export class SidebarItemGroupComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.SidebarItemGroupClass,
+    string
+  >;
   //#region properties
   protected $customStyle: Partial<properties.SidebarItemGroupBaseTheme> = {};
   //#endregion
@@ -35,7 +39,7 @@ export class SidebarItemGroupComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.root;
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion

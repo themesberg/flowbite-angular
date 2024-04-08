@@ -1,5 +1,5 @@
 <svg
-  [ngClass]="componentClass"
+  [ngClass]="contentClasses!.breadcrumbClass"
   fill="currentColor"
   viewBox="0 0 20 20"
   aria-hidden
@@ -15,13 +15,13 @@
 <a
   *ngIf="href; else only_label"
   [href]="href"
-  [ngClass]="contentClasses!['content']"
+  [ngClass]="contentClasses!.contentClass"
 >
   <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
 </a>
 
 <ng-template #only_label>
-  <span [ngClass]="contentClasses!['content']">
+  <span [ngClass]="contentClasses!.contentClass">
     <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
   </span>
 </ng-template>

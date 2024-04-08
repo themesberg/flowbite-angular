@@ -21,6 +21,10 @@ import { Component, Input, booleanAttribute } from '@angular/core';
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.SidebarClass,
+    string
+  >;
   //#region properties
   protected $rounded: keyof FlowbiteBoolean = 'disabled';
   protected $customStyle: Partial<properties.SidebarBaseTheme> = {};
@@ -57,10 +61,7 @@ export class SidebarComponent extends BaseComponent {
         customStyle: this.$customStyle,
       });
 
-      this.componentClass = propertyClass.sidebarClass;
-      this.contentClasses = {
-        sidebarContent: propertyClass.sidebarContentClass,
-      };
+      this.contentClasses = propertyClass;
     }
   }
   //#endregion
