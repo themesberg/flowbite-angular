@@ -24,7 +24,7 @@ export interface SidebarContentRootTheme {
 
 export const sidebarTheme: SidebarBaseTheme = {
   root: {
-    base: '"h-full',
+    base: 'h-full',
   },
   content: {
     base: 'flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
