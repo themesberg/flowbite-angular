@@ -1,11 +1,11 @@
+import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
+import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
+
 import {
   BadgeBaseTheme,
   BadgeComponent,
   ButtonComponent,
 } from '@flowbite-angular/lib';
-import { DemoExampleComponent } from '../../common/demo-example/demo-example.component';
-import { DemoPageComponent } from '../../common/demo-page/demo-page.component';
-
 import { Component } from '@angular/core';
 
 @Component({
