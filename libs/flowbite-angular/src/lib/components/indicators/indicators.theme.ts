@@ -51,7 +51,9 @@ export interface IndicatorColors
     | 'yellow'
     | 'teal'
     | 'gray'
-  > {}
+  > {
+  [key: string]: string;
+}
 
 export const indicatorTheme: IndicatorBaseTheme = {
   root: {

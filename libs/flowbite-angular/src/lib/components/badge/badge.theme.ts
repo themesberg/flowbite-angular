@@ -33,9 +33,13 @@ export interface BadgeColors
   extends Pick<
     FlowbiteColors,
     'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
-  > {}
+  > {
+  [key: string]: string;
+}
 
-export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {}
+export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {
+  [key: string]: string;
+}
 
 export const badgeTheme: BadgeBaseTheme = {
   root: {

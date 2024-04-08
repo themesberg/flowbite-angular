@@ -28,7 +28,9 @@ export interface AlertButtonTheme {
 }
 
 export interface AlertColors
-  extends Pick<FlowbiteColors, 'blue' | 'red' | 'green' | 'yellow' | 'gray'> {}
+  extends Pick<FlowbiteColors, 'blue' | 'red' | 'green' | 'yellow' | 'gray'> {
+  [key: string]: string;
+}
 
 export const alertTheme: AlertBaseTheme = {
   root: {

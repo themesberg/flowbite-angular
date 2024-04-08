@@ -30,7 +30,9 @@ export interface ModalContentRootTheme {
 }
 
 export interface ModalSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {}
+  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
+  [key: string]: string;
+}
 
 export interface ModalPositions
   extends Pick<
@@ -44,7 +46,9 @@ export interface ModalPositions
     | 'bottom-center'
     | 'center-left'
     | 'center-right'
-  > {}
+  > {
+  [key: string]: string;
+}
 
 export const modalTheme: ModalBaseTheme = {
   root: {

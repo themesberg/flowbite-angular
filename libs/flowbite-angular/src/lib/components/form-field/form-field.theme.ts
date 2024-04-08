@@ -27,7 +27,9 @@ export interface FormFieldFloatingLabelTypes {
 }
 
 export interface FormFieldSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {}
+  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
+  [key: string]: string;
+}
 
 export interface FormFieldValidations {
   success: string;

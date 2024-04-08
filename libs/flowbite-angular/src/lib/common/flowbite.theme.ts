@@ -15,6 +15,7 @@ export interface FlowbiteStateColors {
 }
 
 export interface FlowbiteColors extends FlowbiteStateColors {
+  [key: string]: string;
   blue: string;
   cyan: string;
   dark: string;
@@ -32,6 +33,7 @@ export interface FlowbiteColors extends FlowbiteStateColors {
 
 export interface FlowbiteGradientColors
   extends Omit<FlowbiteStateColors, 'warning'> {
+  [key: string]: string;
   cyan: string;
   lime: string;
   pink: string;

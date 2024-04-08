@@ -55,7 +55,9 @@ export interface ButtonColors
     | 'purple'
     | 'success'
     | 'warning'
-  > {}
+  > {
+  [key: string]: string;
+}
 
 export interface ButtonMonochromeColors
   extends Pick<
@@ -68,7 +70,9 @@ export interface ButtonMonochromeColors
     | 'failure'
     | 'pink'
     | 'purple'
-  > {}
+  > {
+  [key: string]: string;
+}
 
 export interface ButtonDuoToneColors
   extends Pick<
@@ -80,10 +84,14 @@ export interface ButtonDuoToneColors
     | 'pinkToOrange'
     | 'tealToLime'
     | 'redToYellow'
-  > {}
+  > {
+  [key: string]: string;
+}
 
 export interface ButtonSizes
-  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {}
+  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+  [key: string]: string;
+}
 
 export interface ButtonFill {
   solid: string;

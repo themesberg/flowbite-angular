@@ -27,7 +27,9 @@ export interface NavbarContentTheme {
   fluid: Record<keyof FlowbiteBoolean, string>;
 }
 
-export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {}
+export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
+  [key: string]: string;
+}
 
 export const navbarTheme: NavbarBaseTheme = {
   root: {
