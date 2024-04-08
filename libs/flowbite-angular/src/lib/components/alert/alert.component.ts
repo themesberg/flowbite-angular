@@ -1,9 +1,13 @@
 import * as properties from './alert.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef, booleanAttribute } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 /**
@@ -36,21 +40,23 @@ export class AlertComponent extends BaseComponent {
     this.fetchClass();
   }
 
-  /** @default enabled */
-  public get rounded(): keyof FlowbiteBoolean {
-    return this.$rounded;
+  /** @default true */
+  public get rounded(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
   }
-  @Input() public set rounded(value: keyof FlowbiteBoolean) {
-    this.$rounded = value;
+  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
+    this.$rounded = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get borderAccent(): keyof FlowbiteBoolean {
-    return this.$borderAccent;
+  /** @default false */
+  public get borderAccent(): boolean {
+    return flowbiteBooleanToBoolean(this.$borderAccent);
   }
-  @Input() public set borderAccent(value: keyof FlowbiteBoolean) {
-    this.$borderAccent = value;
+  @Input({ transform: booleanAttribute }) public set borderAccent(
+    value: boolean,
+  ) {
+    this.$borderAccent = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -93,17 +99,17 @@ export class AlertComponent extends BaseComponent {
   protected override fetchClass(): void {
     if (
       paramNotNull(
-        this.color,
-        this.rounded,
-        this.borderAccent,
-        this.customStyle,
+        this.$color,
+        this.$rounded,
+        this.$borderAccent,
+        this.$customStyle,
       )
     ) {
       const propertyClass = properties.getClasses({
-        color: this.color,
-        borderAccent: this.borderAccent,
-        rounded: this.rounded,
-        customStyle: this.customStyle,
+        color: this.$color,
+        borderAccent: this.$borderAccent,
+        rounded: this.$rounded,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.alertClass;

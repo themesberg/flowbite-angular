@@ -23,7 +23,7 @@
 <div
   [ngClass]="contentClasses!['containerClasses']"
   #dropdown
-  [style.display]="isOpen === 'enabled' ? 'block' : 'none'"
+  [style.display]="isOpen ? 'block' : 'none'"
 >
   <div [ngClass]="contentClasses!['contentClasses']">
     <ul [ngClass]="contentClasses!['subContentClasses']">

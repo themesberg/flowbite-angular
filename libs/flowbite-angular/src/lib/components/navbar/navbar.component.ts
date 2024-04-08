@@ -1,9 +1,13 @@
 import * as properties from './navbar.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 /**
@@ -23,30 +27,30 @@ export class NavbarComponent extends BaseComponent {
   public $customStyle: Partial<properties.NavbarBaseTheme> = {};
   //#endregion
   //#region getter/setter
-  /** @default disabled */
-  public get rounded(): keyof FlowbiteBoolean {
-    return this.$rounded;
+  /** @default false */
+  public get rounded(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
   }
-  @Input() public set rounded(value: keyof FlowbiteBoolean) {
-    this.$rounded = value;
+  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
+    this.$rounded = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get border(): keyof FlowbiteBoolean {
-    return this.$border;
+  /** @default false */
+  public get border(): boolean {
+    return flowbiteBooleanToBoolean(this.$border);
   }
-  @Input() public set border(value: keyof FlowbiteBoolean) {
-    this.$border = value;
+  @Input({ transform: booleanAttribute }) public set border(value: boolean) {
+    this.$border = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get fluid(): keyof FlowbiteBoolean {
-    return this.$fluid;
+  /** @default false */
+  public get fluid(): boolean {
+    return flowbiteBooleanToBoolean(this.$fluid);
   }
-  @Input() public set fluid(value: keyof FlowbiteBoolean) {
-    this.$fluid = value;
+  @Input({ transform: booleanAttribute }) public set fluid(value: boolean) {
+    this.$fluid = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -62,12 +66,14 @@ export class NavbarComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.rounded, this.border, this.fluid, this.customStyle)) {
+    if (
+      paramNotNull(this.$rounded, this.$border, this.$fluid, this.$customStyle)
+    ) {
       const propertyClass = properties.getClasses({
-        border: this.border,
-        fluid: this.fluid,
-        rounded: this.rounded,
-        customStyle: this.customStyle,
+        border: this.$border,
+        fluid: this.$fluid,
+        rounded: this.$rounded,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.navbarClass;

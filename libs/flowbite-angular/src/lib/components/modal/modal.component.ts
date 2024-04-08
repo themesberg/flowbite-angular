@@ -1,8 +1,18 @@
 import * as properties from './modal.theme';
 import { BaseComponent } from '../base.component';
+import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, HostListener, Input } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  booleanAttribute,
+} from '@angular/core';
 import { NgClass } from '@angular/common';
 
 /**
@@ -18,8 +28,8 @@ export class ModalComponent extends BaseComponent {
   //#region properties
   protected $size: keyof properties.ModalSizes = 'md';
   protected $position: keyof properties.ModalPositions = 'center';
-  protected $dismissable: boolean = false;
-  protected $isOpen: boolean = false;
+  protected $dismissable: keyof FlowbiteBoolean = 'disabled';
+  protected $isOpen: keyof FlowbiteBoolean = 'disabled';
   protected $customStyle: Partial<properties.ModalBaseTheme> = {};
   //#endregion
   //#region getter/setter
@@ -43,19 +53,21 @@ export class ModalComponent extends BaseComponent {
 
   /** @default false */
   public get dismissable(): boolean {
-    return this.$dismissable;
+    return flowbiteBooleanToBoolean(this.$dismissable);
   }
-  @Input() public set dismissable(value: boolean) {
-    this.$dismissable = value;
+  @Input({ transform: booleanAttribute }) public set dismissable(
+    value: boolean,
+  ) {
+    this.$dismissable = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
   /** @default false */
   public get isOpen(): boolean {
-    return this.$isOpen;
+    return flowbiteBooleanToBoolean(this.$isOpen);
   }
-  @Input() public set isOpen(value: boolean) {
-    this.$isOpen = value;
+  @Input({ transform: booleanAttribute }) public set isOpen(value: boolean) {
+    this.$isOpen = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -71,11 +83,11 @@ export class ModalComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.size, this.position, this.customStyle)) {
+    if (paramNotNull(this.$size, this.$position, this.$customStyle)) {
       const propertyClass = properties.getClasses({
-        size: this.size,
-        position: this.position,
-        customStyle: this.customStyle,
+        size: this.$size,
+        position: this.$position,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.modalClass;

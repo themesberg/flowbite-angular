@@ -1,9 +1,13 @@
 import * as properties from './badge.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -44,21 +48,23 @@ export class BadgeComponent extends BaseComponent {
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get isIconOnly(): keyof FlowbiteBoolean {
-    return this.$isIconOnly;
+  /** @default false */
+  public get isIconOnly(): boolean {
+    return flowbiteBooleanToBoolean(this.$isIconOnly);
   }
-  @Input() public set isIconOnly(value: keyof FlowbiteBoolean) {
-    this.$isIconOnly = value;
+  @Input({ transform: booleanAttribute }) public set isIconOnly(
+    value: boolean,
+  ) {
+    this.$isIconOnly = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get isPill(): keyof FlowbiteBoolean {
-    return this.$isPill;
+  /** @default false */
+  public get isPill(): boolean {
+    return flowbiteBooleanToBoolean(this.$isPill);
   }
-  @Input() public set isPill(value: keyof FlowbiteBoolean) {
-    this.$isPill = value;
+  @Input({ transform: booleanAttribute }) public set isPill(value: boolean) {
+    this.$isPill = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -85,20 +91,20 @@ export class BadgeComponent extends BaseComponent {
   protected override fetchClass(): void {
     if (
       paramNotNull(
-        this.color,
-        this.size,
-        this.isIconOnly,
-        this.isPill,
-        this.customStyle,
+        this.$color,
+        this.$size,
+        this.$isIconOnly,
+        this.$isPill,
+        this.$customStyle,
       )
     ) {
       const propertyClass = properties.getClasses({
-        color: this.color,
-        size: this.size,
-        isIconOnly: this.isIconOnly,
-        isPill: this.isPill,
-        href: this.href,
-        customStyle: this.customStyle,
+        color: this.$color,
+        size: this.$size,
+        isIconOnly: this.$isIconOnly,
+        isPill: this.$isPill,
+        href: this.$href,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.root;

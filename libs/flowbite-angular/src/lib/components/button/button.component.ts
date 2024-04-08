@@ -1,9 +1,13 @@
 import * as properties from './button.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 /**
@@ -45,12 +49,12 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get pill(): keyof FlowbiteBoolean {
-    return this.$pill;
+  /** @default false */
+  public get pill(): boolean {
+    return flowbiteBooleanToBoolean(this.$pill);
   }
-  @Input() public set pill(value: keyof FlowbiteBoolean) {
-    this.$pill = value;
+  @Input({ transform: booleanAttribute }) public set pill(value: boolean) {
+    this.$pill = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -63,12 +67,12 @@ export class ButtonComponent extends BaseComponent {
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get disabled(): keyof FlowbiteBoolean {
-    return this.$disabled;
+  /** @default false */
+  public get disabled(): boolean {
+    return flowbiteBooleanToBoolean(this.$disabled);
   }
-  @Input() public set disabled(value: keyof FlowbiteBoolean) {
-    this.$disabled = value;
+  @Input({ transform: booleanAttribute }) public set disabled(value: boolean) {
+    this.$disabled = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -112,23 +116,23 @@ export class ButtonComponent extends BaseComponent {
   protected override fetchClass() {
     if (
       paramNotNull(
-        this.color,
-        this.disabled,
-        this.outline,
-        this.pill,
-        this.size,
-        this.customStyle,
+        this.$color,
+        this.$disabled,
+        this.$outline,
+        this.$pill,
+        this.$size,
+        this.$customStyle,
       )
     ) {
       const propertyClass = properties.getClasses({
-        color: this.color,
-        disabled: this.disabled,
-        outline: this.outline,
-        pill: this.pill,
-        size: this.size,
-        gradientMonochrome: this.gradientMonochrome,
-        gradientDuoTone: this.gradientDuoTone,
-        customStyle: this.customStyle,
+        color: this.$color,
+        disabled: this.$disabled,
+        outline: this.$outline,
+        pill: this.$pill,
+        size: this.$size,
+        gradientMonochrome: this.$gradientMonochrome,
+        gradientDuoTone: this.$gradientDuoTone,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.buttonClass;

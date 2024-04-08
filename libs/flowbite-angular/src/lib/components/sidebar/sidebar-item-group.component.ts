@@ -30,9 +30,9 @@ export class SidebarItemGroupComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle)) {
+    if (paramNotNull(this.$customStyle)) {
       const propertyClass = properties.getClasses({
-        customStyle: this.customStyle,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.root;

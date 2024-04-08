@@ -2,6 +2,10 @@ import * as properties from './dropdown.theme';
 
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
 import {
@@ -11,6 +15,7 @@ import {
   HostListener,
   Input,
   ViewChild,
+  booleanAttribute,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import {
@@ -51,12 +56,12 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get isOpen(): keyof FlowbiteBoolean {
-    return this.$isOpen;
+  /** @default false */
+  public get isOpen(): boolean {
+    return flowbiteBooleanToBoolean(this.$isOpen);
   }
-  @Input() public set isOpen(value: keyof FlowbiteBoolean) {
-    this.$isOpen = value;
+  @Input({ transform: booleanAttribute }) public set isOpen(value: boolean) {
+    this.$isOpen = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -82,13 +87,13 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     if (
-      paramNotNull(this.label, this.isOpen, this.position, this.customStyle)
+      paramNotNull(this.$label, this.$isOpen, this.$position, this.$customStyle)
     ) {
       const propertyClass = properties.getClasses({
-        label: this.label,
-        isOpen: this.isOpen,
-        placement: this.position,
-        customStyle: this.customStyle,
+        label: this.$label,
+        isOpen: this.$isOpen,
+        placement: this.$position,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.dropdownClass;
@@ -107,7 +112,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   width = 0;
 
   toggle() {
-    this.isOpen = this.isOpen === 'disabled' ? 'enabled' : 'disabled';
+    this.isOpen = !this.isOpen;
   }
 
   calculatePosition() {
@@ -123,7 +128,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (this.isOpen === 'disabled') return;
+      if (!this.isOpen) return;
       this.calculatePosition();
     });
   }
@@ -133,10 +138,10 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&
-      this.isOpen === 'enabled' &&
+      this.isOpen &&
       !this.button.nativeElement.contains(event.target)
     ) {
-      this.isOpen = 'disabled';
+      this.isOpen = false;
     }
   }
 

@@ -7,8 +7,12 @@ import {
 } from '../../common/flowbite.theme';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 
 /**
  * @see https://flowbite.com/docs/components/indicators/
@@ -33,57 +37,57 @@ export class IndicatorComponent extends BaseComponent {
   public $customStyle: Partial<properties.IndicatorBaseTheme> = {};
   //#endregion
   //#region getter/setter
-  /** @default disabled */
-  public get pill(): keyof FlowbiteBoolean {
-    return this.$pill;
+  /** @default false */
+  public get pill(): boolean {
+    return flowbiteBooleanToBoolean(this.$pill);
   }
-  @Input() public set pill(value: keyof FlowbiteBoolean) {
-    this.$pill = value;
+  @Input({ transform: booleanAttribute }) public set pill(value: boolean) {
+    this.$pill = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get outline(): keyof FlowbiteBoolean {
-    return this.$outline;
+  /** @default false */
+  public get outline(): boolean {
+    return flowbiteBooleanToBoolean(this.$outline);
   }
-  @Input() public set outline(value: keyof FlowbiteBoolean) {
-    this.$outline = value;
+  @Input({ transform: booleanAttribute }) public set outline(value: boolean) {
+    this.$outline = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get disabled(): keyof FlowbiteBoolean {
-    return this.$disabled;
+  /** @default false */
+  public get disabled(): boolean {
+    return flowbiteBooleanToBoolean(this.$disabled);
   }
-  @Input() public set disabled(value: keyof FlowbiteBoolean) {
-    this.$disabled = value;
+  @Input({ transform: booleanAttribute }) public set disabled(value: boolean) {
+    this.$disabled = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default enabled */
-  public get offset(): keyof FlowbiteBoolean {
-    return this.$offset;
+  /** @default true */
+  public get offset(): boolean {
+    return flowbiteBooleanToBoolean(this.$offset);
   }
-  @Input() public set offset(value: keyof FlowbiteBoolean) {
-    this.$offset = value;
+  @Input({ transform: booleanAttribute }) public set offset(value: boolean) {
+    this.$offset = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get rounded(): keyof FlowbiteBoolean {
-    return this.$rounded;
+  /** @default false */
+  public get rounded(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
   }
-  @Input() public set rounded(value: keyof FlowbiteBoolean) {
-    this.$rounded = value;
+  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
+    this.$rounded = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
-  /** @default disabled */
-  public get border(): keyof FlowbiteBoolean {
-    return this.$rounded;
+  /** @default false */
+  public get border(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
   }
-  @Input() public set border(value: keyof FlowbiteBoolean) {
-    this.$border = value;
+  @Input({ transform: booleanAttribute }) public set border(value: boolean) {
+    this.$border = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -132,28 +136,28 @@ export class IndicatorComponent extends BaseComponent {
   protected override fetchClass(): void {
     if (
       paramNotNull(
-        this.border,
-        this.color,
-        this.disabled,
-        this.offset,
-        this.outline,
-        this.pill,
-        this.rounded,
-        this.size,
-        this.customStyle,
+        this.$border,
+        this.$color,
+        this.$disabled,
+        this.$offset,
+        this.$outline,
+        this.$pill,
+        this.$rounded,
+        this.$size,
+        this.$customStyle,
       )
     ) {
       const propertyClass = properties.getClasses({
-        border: this.border,
-        color: this.color,
-        disabled: this.disabled,
-        offset: this.offset,
-        outline: this.outline,
-        pill: this.pill,
-        rounded: this.rounded,
-        size: this.size,
-        placement: this.placement,
-        customStyle: this.customStyle,
+        border: this.$border,
+        color: this.$color,
+        disabled: this.$disabled,
+        offset: this.$offset,
+        outline: this.$outline,
+        pill: this.$pill,
+        rounded: this.$rounded,
+        size: this.$size,
+        placement: this.$placement,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.root;

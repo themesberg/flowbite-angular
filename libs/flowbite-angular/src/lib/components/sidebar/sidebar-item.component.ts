@@ -76,12 +76,12 @@ export class SidebarItemComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle)) {
+    if (paramNotNull(this.$customStyle)) {
       const propertyClass = properties.getClasses({
-        icon: this.icon,
-        link: this.link,
-        label: this.label,
-        customStyle: this.customStyle,
+        icon: this.$icon,
+        link: this.$link,
+        label: this.$label,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.sidebarClass;

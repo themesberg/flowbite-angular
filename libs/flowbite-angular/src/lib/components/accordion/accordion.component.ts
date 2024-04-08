@@ -1,9 +1,13 @@
 import * as properties from './accordion.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 /**
@@ -21,12 +25,12 @@ export class AccordionComponent extends BaseComponent {
   protected $customStyle: Partial<properties.AccordionBaseTheme> = {};
   //#endregion
   //#region getter/setter
-  /** @default disabled */
-  public get flush(): keyof FlowbiteBoolean {
-    return this.$flush;
+  /** @default false */
+  public get flush(): boolean {
+    return flowbiteBooleanToBoolean(this.$flush);
   }
-  @Input() public set flush(value: keyof FlowbiteBoolean) {
-    this.$flush = value;
+  @Input({ transform: booleanAttribute }) public set flush(value: boolean) {
+    this.$flush = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -44,10 +48,10 @@ export class AccordionComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.flush, this.customStyle)) {
+    if (paramNotNull(this.$flush, this.$customStyle)) {
       const propertyClass = properties.getClasses({
-        flush: this.flush,
-        customStyle: this.customStyle,
+        flush: this.$flush,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.root;

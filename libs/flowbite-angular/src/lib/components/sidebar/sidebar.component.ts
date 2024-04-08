@@ -2,10 +2,14 @@ import * as properties from './sidebar.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbiteBoolean } from '../../common/flowbite.theme';
 import { SidebarService } from '../../services';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
 import { AsyncPipe, NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -22,12 +26,12 @@ export class SidebarComponent extends BaseComponent {
   protected $customStyle: Partial<properties.SidebarBaseTheme> = {};
   //#endregion
   //#region getter/setter
-  /** @default disabled */
-  public get rounded(): keyof FlowbiteBoolean {
-    return this.$rounded;
+  /** @default false */
+  public get rounded(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
   }
-  @Input() public set rounded(value: keyof FlowbiteBoolean) {
-    this.$rounded = value;
+  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
+    this.$rounded = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -47,10 +51,10 @@ export class SidebarComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.rounded, this.customStyle)) {
+    if (paramNotNull(this.$rounded, this.$customStyle)) {
       const propertyClass = properties.getClasses({
-        rounded: this.rounded,
-        customStyle: this.customStyle,
+        rounded: this.$rounded,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.sidebarClass;

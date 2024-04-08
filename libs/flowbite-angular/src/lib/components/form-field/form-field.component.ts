@@ -12,12 +12,18 @@ import {
   FormFieldTypes,
   FormFieldValidations,
 } from './form-field.theme';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import generateID from '../../utils/id.generator';
 
 import { AsyncPipe, NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
-import { Component, ContentChild, Input, OnDestroy } from '@angular/core';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  Component,
+  ContentChild,
+  Input,
+  OnDestroy,
+  booleanAttribute,
+} from '@angular/core';
 
 @Component({
   standalone: true,
@@ -89,12 +95,12 @@ export class FormFieldComponent implements OnDestroy {
   @Input() set size(size: keyof FormFieldSizes) {
     this._properties.next({ ...this._properties.value, size });
   }
-  @Input() set disabled(disabled: keyof FlowbiteBoolean) {
+  @Input({ transform: booleanAttribute }) set disabled(disabled: boolean) {
     // hack because if you pass disabled instead of disabled=true
     // it will come as empty string value
     this._properties.next({
       ...this._properties.value,
-      disabled: disabled,
+      disabled: booleanToFlowbiteBoolean(disabled),
     });
   }
   @Input() set validate(validate: keyof FormFieldValidations | undefined) {

@@ -42,10 +42,10 @@ export class BreadcrumbItemComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle)) {
+    if (paramNotNull(this.$customStyle)) {
       const propertyClass = properties.getClasses({
-        href: this.href,
-        customStyle: this.customStyle,
+        href: this.$href,
+        customStyle: this.$customStyle,
       });
 
       this.componentClass = propertyClass.breadcrumbClass;

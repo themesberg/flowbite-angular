@@ -143,7 +143,7 @@
   </flowbite-demo-example>
   <flowbite-demo-example [title]="'Dismissable Modal'" [codes]="[examples[2]]">
     <flowbite-button (click)="dismissModal.open()">Open modal</flowbite-button>
-    <flowbite-modal #dismissModal [dismissable]="true">
+    <flowbite-modal #dismissModal dismissable>
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -171,7 +171,7 @@
   </flowbite-demo-example>
   <flowbite-demo-example [title]="'Modal with form'" [codes]="[examples[3]]">
     <flowbite-button (click)="formModal.open()">Open modal</flowbite-button>
-    <flowbite-modal #formModal [dismissable]="true">
+    <flowbite-modal #formModal dismissable>
       <flowbite-modal-header>Sign in to our platform</flowbite-modal-header>
       <flowbite-modal-body>
         <form class="space-y-6" action="#">
@@ -256,11 +256,7 @@
     >
       Open modal
     </button>
-    <flowbite-modal
-      #positionModal
-      [dismissable]="true"
-      [position]="'top-center'"
-    >
+    <flowbite-modal #positionModal dismissable [position]="'top-center'">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
