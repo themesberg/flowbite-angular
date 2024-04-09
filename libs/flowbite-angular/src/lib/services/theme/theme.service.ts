@@ -1,15 +1,14 @@
 import { BehaviorSubject } from 'rxjs';
+import { FlowbiteTheme } from '../../common/flowbite.theme';
 import { Injectable } from '@angular/core';
-
-export type Theme = 'dark' | 'light';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  $theme = new BehaviorSubject<Theme>('light');
+  $theme = new BehaviorSubject<FlowbiteTheme>('light');
 
-  setTheme(theme: Theme) {
+  setTheme(theme: FlowbiteTheme) {
     this.$theme.next(theme);
   }
 

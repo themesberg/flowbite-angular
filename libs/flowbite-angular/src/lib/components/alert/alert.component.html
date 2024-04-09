@@ -1,10 +1,4 @@
-<div
-  class="flex flex-col gap-2 p-4 text-sm"
-  [ngClass]="colorClasses[color]"
-  [class.rounded-lg]="rounded"
-  [class.border-t-4]="withBorderAccent"
-  role="alert"
->
+<div [ngClass]="contentClasses!.alertClass" role="alert">
   <div class="flex items-center">
     <ng-container [ngTemplateOutlet]="icon"></ng-container>
     <div>
@@ -12,8 +6,7 @@
     </div>
     <button
       type="button"
-      class="-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-2"
-      [ngClass]="buttonColorClasses[color]"
+      [ngClass]="contentClasses!.alertButtonClass"
       *ngIf="dismiss"
       aria-label="Close"
       (click)="dismiss()"

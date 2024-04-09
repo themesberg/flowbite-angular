@@ -1,4 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, booleanAttribute } from '@angular/core';
+import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 
 @Component({
   standalone: true,
@@ -7,9 +12,20 @@ import { Component, Input } from '@angular/core';
   templateUrl: './accordion-panel.component.html',
 })
 export class AccordionPanelComponent {
-  @Input() open?: boolean;
+  //#region properties
+  protected $open: keyof FlowbiteBoolean = 'disabled';
+  //#endregion
+  //#region getter/setter
+  /** @default false */
+  public get open(): boolean {
+    return flowbiteBooleanToBoolean(this.$open);
+  }
+  @Input({ transform: booleanAttribute }) public set open(value: boolean) {
+    this.$open = booleanToFlowbiteBoolean(value);
+  }
+  //#endregion
 
-  setOpen(open: boolean) {
-    this.open = open;
+  toggleVisibility() {
+    this.open = !this.open;
   }
 }

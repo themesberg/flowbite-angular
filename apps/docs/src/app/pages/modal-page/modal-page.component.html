@@ -25,7 +25,7 @@
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="modal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="modal.close()" [color]="'gray'"
+        <flowbite-button (click)="modal.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>
@@ -44,7 +44,7 @@
         >Extra large</flowbite-button
       >
     </div>
-    <flowbite-modal #modalSmall [size]="'sm'">
+    <flowbite-modal #modalSmall size="sm">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -62,12 +62,12 @@
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="modalSmall.close()">I accept</flowbite-button>
-        <flowbite-button (click)="modalSmall.close()" [color]="'gray'"
+        <flowbite-button (click)="modalSmall.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>
     </flowbite-modal>
-    <flowbite-modal #modalMedium [size]="'md'">
+    <flowbite-modal #modalMedium size="md">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -87,12 +87,12 @@
         <flowbite-button (click)="modalMedium.close()"
           >I accept</flowbite-button
         >
-        <flowbite-button (click)="modalMedium.close()" [color]="'gray'"
+        <flowbite-button (click)="modalMedium.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>
     </flowbite-modal>
-    <flowbite-modal #modalLarge [size]="'lg'">
+    <flowbite-modal #modalLarge size="lg">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -110,12 +110,12 @@
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="modalLarge.close()">I accept</flowbite-button>
-        <flowbite-button (click)="modalLarge.close()" [color]="'gray'"
+        <flowbite-button (click)="modalLarge.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>
     </flowbite-modal>
-    <flowbite-modal #modalExtraLarge [size]="'xl'">
+    <flowbite-modal #modalExtraLarge size="xl">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -135,15 +135,15 @@
         <flowbite-button (click)="modalExtraLarge.close()"
           >I accept</flowbite-button
         >
-        <flowbite-button (click)="modalExtraLarge.close()" [color]="'gray'"
+        <flowbite-button (click)="modalExtraLarge.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>
     </flowbite-modal>
   </flowbite-demo-example>
-  <flowbite-demo-example [title]="'Dismissable Modal'" [codes]="[examples[2]]">
+  <flowbite-demo-example title="Dismissable Modal" [codes]="[examples[2]]">
     <flowbite-button (click)="dismissModal.open()">Open modal</flowbite-button>
-    <flowbite-modal #dismissModal [dismissable]="true">
+    <flowbite-modal #dismissModal dismissable>
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -163,15 +163,15 @@
         <flowbite-button (click)="dismissModal.close()"
           >I accept</flowbite-button
         >
-        <flowbite-button (click)="dismissModal.close()" [color]="'gray'"
+        <flowbite-button (click)="dismissModal.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>
     </flowbite-modal>
   </flowbite-demo-example>
-  <flowbite-demo-example [title]="'Modal with form'" [codes]="[examples[3]]">
+  <flowbite-demo-example title="Modal with form" [codes]="[examples[3]]">
     <flowbite-button (click)="formModal.open()">Open modal</flowbite-button>
-    <flowbite-modal #formModal [dismissable]="true">
+    <flowbite-modal #formModal dismissable>
       <flowbite-modal-header>Sign in to our platform</flowbite-modal-header>
       <flowbite-modal-body>
         <form class="space-y-6" action="#">
@@ -245,7 +245,7 @@
       </flowbite-modal-body>
     </flowbite-modal>
   </flowbite-demo-example>
-  <flowbite-demo-example [title]="'Positioned Modal'" [codes]="[examples[4]]">
+  <flowbite-demo-example title="Positioned Modal" [codes]="[examples[4]]">
     <button
       type="button"
       class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-blue-700 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700"
@@ -256,11 +256,7 @@
     >
       Open modal
     </button>
-    <flowbite-modal
-      #positionModal
-      [dismissable]="true"
-      [position]="'top-center'"
-    >
+    <flowbite-modal #positionModal dismissable position="top-center">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -277,7 +273,7 @@
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="positionModal.close()">Close</flowbite-button>
-        <flowbite-button (click)="positionModal.close()" [color]="'gray'"
+        <flowbite-button (click)="positionModal.close()" color="gray"
           >I decline</flowbite-button
         >
       </flowbite-modal-footer>

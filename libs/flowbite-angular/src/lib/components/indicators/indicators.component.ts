@@ -1,106 +1,170 @@
-import { Component, Input } from '@angular/core';
+import * as properties from './indicators.theme';
+import { BaseComponent } from '../base.component';
+import {
+  FlowbiteBoolean,
+  FlowbitePositions,
+  FlowbiteSizes,
+} from '../../common/flowbite.theme';
+import { paramNotNull } from '../../utils/param.util';
+
+import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
+import {
+  booleanToFlowbiteBoolean,
+  flowbiteBooleanToBoolean,
+} from '../../utils/boolean.util';
 
-const color:
-  | 'gray'
-  | 'dark'
-  | 'blue'
-  | 'green'
-  | 'red'
-  | 'purple'
-  | 'indigo'
-  | 'yellow'
-  | 'teal'
-  | 'none' = 'gray';
-
-const size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-
-const placement:
-  | 'top-left'
-  | 'top-center'
-  | 'top-right'
-  | 'center-left'
-  | 'center'
-  | 'center-right'
-  | 'bottom-left'
-  | 'bottom-center'
-  | 'bottom-right'
-  | undefined = undefined;
-
-const colors = {
-  gray: 'bg-gray-200',
-  dark: 'bg-gray-900 dark:bg-gray-700',
-  blue: 'bg-blue-600',
-  green: 'bg-green-500',
-  red: 'bg-red-500',
-  purple: 'bg-purple-500',
-  indigo: 'bg-indigo-500',
-  yellow: 'bg-yellow-300',
-  teal: 'bg-teal-500',
-  none: '',
-};
-
-const sizes = {
-  xs: 'w-2 h-2',
-  sm: 'w-2.5 h-2.5',
-  md: 'w-3 h-3',
-  lg: 'w-3.5 h-3.5',
-  xl: 'w-6 h-6',
-};
-
-const placements = {
-  // top
-  'top-left': 'top-0 left-0',
-  'top-center': 'top-0 left-1/2 -translate-x-1/2',
-  'top-right': 'top-0 right-0',
-
-  // center
-  'center-left': 'top-1/2 -translate-y-1/2 left-0',
-  center: 'top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2',
-  'center-right': 'top-1/2 -translate-y-1/2 right-0',
-
-  // bottom
-  'bottom-left': 'bottom-0 left-0',
-  'bottom-center': 'bottom-0 left-1/2 -translate-x-1/2',
-  'bottom-right': 'bottom-0 right-0',
-};
-
-const offsets = {
-  // top
-  'top-left': '-translate-x-1/3 -translate-y-1/3',
-  'top-center': '-translate-y-1/3',
-  'top-right': 'translate-x-1/3 -translate-y-1/3',
-
-  // center
-  'center-left': '-translate-x-1/3',
-  center: '',
-  'center-right': 'translate-x-1/3',
-
-  // bottom
-  'bottom-left': '-translate-x-1/3 translate-y-1/3',
-  'bottom-center': 'translate-y-1/3',
-  'bottom-right': 'translate-x-1/3 translate-y-1/3',
-};
-
+/**
+ * @see https://flowbite.com/docs/components/indicators/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-indicator',
   templateUrl: './indicators.component.html',
 })
-export class IndicatorComponent {
-  @Input() pill = false;
-  @Input() outline = false;
-  @Input() disabled = false;
-  @Input() offset = true;
-  @Input() rounded = false;
-  @Input() border = false;
-  @Input() color = color;
-  @Input() size = size;
-  @Input() placement = placement;
+export class IndicatorComponent extends BaseComponent {
+  protected override contentClasses?: Record<
+    keyof properties.indicatorClass,
+    string
+  >;
+  //#region properties
+  public $pill: keyof FlowbiteBoolean = 'disabled';
+  public $outline: keyof FlowbiteBoolean = 'disabled';
+  public $disabled: keyof FlowbiteBoolean = 'disabled';
+  public $offset: keyof FlowbiteBoolean = 'enabled';
+  public $rounded: keyof FlowbiteBoolean = 'disabled';
+  public $border: keyof FlowbiteBoolean = 'disabled';
+  public $color: keyof properties.IndicatorColors = 'gray';
+  public $size: keyof FlowbiteSizes = 'md';
+  public $placement?: keyof FlowbitePositions;
+  public $customStyle: Partial<properties.IndicatorBaseTheme> = {};
+  //#endregion
+  //#region getter/setter
+  /** @default false */
+  public get pill(): boolean {
+    return flowbiteBooleanToBoolean(this.$pill);
+  }
+  @Input({ transform: booleanAttribute }) public set pill(value: boolean) {
+    this.$pill = booleanToFlowbiteBoolean(value);
+    this.fetchClass();
+  }
 
-  colorClasses = colors;
-  sizeClasses = sizes;
-  placementClasses = placements;
-  offsetClasses = offsets;
+  /** @default false */
+  public get outline(): boolean {
+    return flowbiteBooleanToBoolean(this.$outline);
+  }
+  @Input({ transform: booleanAttribute }) public set outline(value: boolean) {
+    this.$outline = booleanToFlowbiteBoolean(value);
+    this.fetchClass();
+  }
+
+  /** @default false */
+  public get disabled(): boolean {
+    return flowbiteBooleanToBoolean(this.$disabled);
+  }
+  @Input({ transform: booleanAttribute }) public set disabled(value: boolean) {
+    this.$disabled = booleanToFlowbiteBoolean(value);
+    this.fetchClass();
+  }
+
+  /** @default true */
+  public get offset(): boolean {
+    return flowbiteBooleanToBoolean(this.$offset);
+  }
+  @Input({ transform: booleanAttribute }) public set offset(value: boolean) {
+    this.$offset = booleanToFlowbiteBoolean(value);
+    this.fetchClass();
+  }
+
+  /** @default false */
+  public get rounded(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
+  }
+  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
+    this.$rounded = booleanToFlowbiteBoolean(value);
+    this.fetchClass();
+  }
+
+  /** @default false */
+  public get border(): boolean {
+    return flowbiteBooleanToBoolean(this.$rounded);
+  }
+  @Input({ transform: booleanAttribute }) public set border(value: boolean) {
+    this.$border = booleanToFlowbiteBoolean(value);
+    this.fetchClass();
+  }
+
+  /** @default gray */
+  public get color(): keyof properties.IndicatorColors {
+    return this.$color;
+  }
+  @Input() public set color(value: keyof properties.IndicatorColors) {
+    this.$color = value;
+    this.fetchClass();
+  }
+
+  /** @default md */
+  public get size(): keyof FlowbiteSizes {
+    return this.$size;
+  }
+  @Input() public set size(value: keyof FlowbiteSizes) {
+    this.$size = value;
+    this.fetchClass();
+  }
+
+  /** @default undefined */
+  public get placement(): keyof FlowbitePositions | undefined {
+    return this.$placement;
+  }
+  @Input() public set placement(value: keyof FlowbitePositions | undefined) {
+    this.$placement = value;
+    this.fetchClass();
+  }
+
+  /** @default {} */
+  public get customStyle(): Partial<properties.IndicatorBaseTheme> {
+    return this.$customStyle;
+  }
+  @Input() public set customStyle(
+    value: Partial<properties.IndicatorBaseTheme>,
+  ) {
+    this.$customStyle = value;
+    this.fetchClass();
+  }
+  //#endregion
+
+  //#region BaseComponent implementation
+  //#endregion
+
+  protected override fetchClass(): void {
+    if (
+      paramNotNull(
+        this.$border,
+        this.$color,
+        this.$disabled,
+        this.$offset,
+        this.$outline,
+        this.$pill,
+        this.$rounded,
+        this.$size,
+        this.$customStyle,
+      )
+    ) {
+      const propertyClass = properties.getClasses({
+        border: this.$border,
+        color: this.$color,
+        disabled: this.$disabled,
+        offset: this.$offset,
+        outline: this.$outline,
+        pill: this.$pill,
+        rounded: this.$rounded,
+        size: this.$size,
+        placement: this.$placement,
+        customStyle: this.$customStyle,
+      });
+
+      this.contentClasses = propertyClass;
+    }
+  }
 }

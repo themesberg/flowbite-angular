@@ -1,19 +1,5 @@
 <span [class.group]="href">
-  <a
-    class="flex h-fit items-center gap-1 font-semibold"
-    [class.cursor-pointer]="href"
-    [ngClass]="[
-      colorClasses[color],
-      sizeClasses[size],
-      !iconOnly
-        ? 'rounded px-2 py-0.5'
-        : size === 'xs'
-          ? 'rounded-full p-1'
-          : 'rounded-full p-1.5',
-      customStyle
-    ]"
-    [routerLink]="href"
-  >
+  <a [ngClass]="contentClasses!.root" [routerLink]="href">
     <ng-content></ng-content>
   </a>
 </span>
