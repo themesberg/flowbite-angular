@@ -1,5 +1,5 @@
 <div class="flex h-screen w-full flex-col overflow-hidden">
-  <flowbite-navbar extraClass="border-b" [fluid]="true">
+  <flowbite-navbar extraClass="border-b" fluid>
     <div class="flex items-center">
       <svg
         stroke="currentColor"
@@ -51,7 +51,7 @@
     </div>
   </flowbite-navbar>
   <div class="flex h-full overflow-hidden bg-gray-50 dark:bg-gray-900">
-    <flowbite-sidebar extraClass="border-r">
+    <flowbite-sidebar>
       <flowbite-sidebar-item-group>
         <flowbite-sidebar-item
           *ngFor="let component of components"

@@ -1,12 +1,10 @@
-<div
-  class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600"
->
-  <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+<div [ngClass]="contentClasses!.modalHeaderClass">
+  <h3 [ngClass]="contentClasses!.modalHeaderTitleClass">
     <ng-content></ng-content>
   </h3>
   <button
     type="button"
-    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+    [ngClass]="contentClasses!.modalHeaderButtonClass"
     data-modal-hide="medium-modal"
     (click)="modal.close()"
   >

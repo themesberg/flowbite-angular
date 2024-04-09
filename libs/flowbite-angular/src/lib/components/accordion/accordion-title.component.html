@@ -1,5 +1,5 @@
 <button
-  class="flex w-full items-center justify-between py-5 px-5 text-left font-medium text-gray-500 dark:text-gray-400"
+  [className]="contentClasses!.root"
   [ngClass]="{
     'text-gray-900 dark:text-white': accordionPanel.open,
     'bg-gray-100 dark:bg-gray-800': accordionPanel.open && !accordion.flush,
@@ -7,7 +7,7 @@
       !accordion.flush
   }"
   type="button"
-  (click)="accordionPanel.setOpen(!accordionPanel.open)"
+  (click)="accordionPanel.toggleVisibility()"
 >
   <h2>
     <ng-content></ng-content>
