@@ -12,16 +12,12 @@
     "type": "git"
   },
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
+    "build": "nx run build",
     "build:lib": "nx run flowbite-angular:build && cp README.md LICENSE dist/libs/flowbite-angular",
     "lint": "nx run-many --target lint --all",
     "test": "nx run-many --target test --all",
     "prettier": "nx format:check",
-    "prettier:fix": "nx format:write",
-    "prepublishOnly": "yarn build:lib",
-    "docs:build": "nx run docs:prerender",
-    "docs:serve": "nx run docs:serve-ssr",
+    "release": "standard-version",
     "prepare": "husky install"
   },
   "dependencies": {
