@@ -33,7 +33,7 @@ jobs:
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: yarn install
+        run: yarn
 
       - name: Lint the code 🕵
         run: yarn lint
