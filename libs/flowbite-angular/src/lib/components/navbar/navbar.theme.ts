@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 export interface NavbarProperties {
   rounded: keyof FlowbiteBoolean;
   border: keyof FlowbiteBoolean;
-  fluid: keyof FlowbiteBoolean;
+  fixed: keyof FlowbiteBoolean;
   customStyle: Partial<NavbarBaseTheme>;
 }
 
@@ -20,11 +20,11 @@ export interface NavbarRootTheme {
   color: Record<keyof NavbarColors, string>;
   rounded: Record<keyof FlowbiteBoolean, string>;
   border: Record<keyof FlowbiteBoolean, string>;
+  fixed: Record<keyof FlowbiteBoolean, string>;
 }
 
 export interface NavbarContentTheme {
   base: string;
-  fluid: Record<keyof FlowbiteBoolean, string>;
 }
 
 export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
@@ -33,9 +33,9 @@ export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
 
 export const navbarTheme: NavbarBaseTheme = {
   root: {
-    base: 'sm:px-4',
+    base: 'bg-white border-gray-200 dark:bg-gray-900',
     color: {
-      gray: 'border-gray-200 bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800',
+      gray: 'bg-white border-gray-200 dark:border-gray-700 dark:bg-gray-800',
     },
     rounded: {
       enabled: 'rounded',
@@ -45,13 +45,13 @@ export const navbarTheme: NavbarBaseTheme = {
       enabled: 'border',
       disabled: '',
     },
+    fixed: {
+      enabled: 'sticky w-full z-20 top-0 start-0 border-b',
+      disabled: '',
+    },
   },
   content: {
-    base: 'mx-auto flex flex-wrap items-center justify-between',
-    fluid: {
-      enabled: '',
-      disabled: 'container',
-    },
+    base: 'max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4',
   },
 };
 
@@ -72,11 +72,9 @@ export function getClasses(properties: NavbarProperties): NavbarClass {
       theme.root.color!['gray'],
       theme.root.rounded![properties.rounded],
       theme.root.border![properties.border],
+      theme.root.fixed![properties.fixed],
     ),
-    contentClass: twMerge(
-      theme.content.base,
-      theme.content.fluid![properties.fluid],
-    ),
+    contentClass: twMerge(theme.content.base),
   };
 
   return output;

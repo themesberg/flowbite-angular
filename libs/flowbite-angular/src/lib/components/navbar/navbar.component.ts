@@ -25,10 +25,10 @@ export class NavbarComponent extends BaseComponent {
     string
   >;
   //#region properties
-  public $rounded: keyof FlowbiteBoolean = 'disabled';
-  public $border: keyof FlowbiteBoolean = 'disabled';
-  public $fluid: keyof FlowbiteBoolean = 'disabled';
-  public $customStyle: Partial<properties.NavbarBaseTheme> = {};
+  protected $rounded: keyof FlowbiteBoolean = 'disabled';
+  protected $border: keyof FlowbiteBoolean = 'disabled';
+  protected $fixed: keyof FlowbiteBoolean = 'disabled';
+  protected $customStyle: Partial<properties.NavbarBaseTheme> = {};
   //#endregion
   //#region getter/setter
   /** @default false */
@@ -50,11 +50,11 @@ export class NavbarComponent extends BaseComponent {
   }
 
   /** @default false */
-  public get fluid(): boolean {
-    return flowbiteBooleanToBoolean(this.$fluid);
+  public get fixed(): boolean {
+    return flowbiteBooleanToBoolean(this.$fixed);
   }
-  @Input({ transform: booleanAttribute }) public set fluid(value: boolean) {
-    this.$fluid = booleanToFlowbiteBoolean(value);
+  @Input({ transform: booleanAttribute }) public set fixed(value: boolean) {
+    this.$fixed = booleanToFlowbiteBoolean(value);
     this.fetchClass();
   }
 
@@ -71,12 +71,12 @@ export class NavbarComponent extends BaseComponent {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     if (
-      paramNotNull(this.$rounded, this.$border, this.$fluid, this.$customStyle)
+      paramNotNull(this.$rounded, this.$border, this.$fixed, this.$customStyle)
     ) {
       const propertyClass = properties.getClasses({
         border: this.$border,
-        fluid: this.$fluid,
         rounded: this.$rounded,
+        fixed: this.$fixed,
         customStyle: this.$customStyle,
       });
 

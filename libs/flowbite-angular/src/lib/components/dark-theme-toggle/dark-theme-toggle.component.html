@@ -4,12 +4,11 @@
   (click)="themeService.toggleTheme()"
 >
   <svg
-    *ngIf="themeService.$theme.getValue() === 'dark'"
     stroke="currentColor"
     fill="currentColor"
     stroke-width="0"
     viewBox="0 0 20 20"
-    class="h-5 w-5"
+    class="h-5 w-5 hidden dark:block"
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"
@@ -21,12 +20,11 @@
     ></path>
   </svg>
   <svg
-    *ngIf="themeService.$theme.getValue() === 'light'"
     stroke="currentColor"
     fill="currentColor"
     stroke-width="0"
     viewBox="0 0 20 20"
-    class="h-5 w-5"
+    class="h-5 w-5 dark:hidden"
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg"

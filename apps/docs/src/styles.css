@@ -1,5 +1,13 @@
-@import '~prismjs/themes/prism-tomorrow.min.css';
+@import url('~prismjs/themes/prism-tomorrow.min.css');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf')
+      format('truetype');
+  }
+}
