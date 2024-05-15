@@ -16,7 +16,7 @@ export class NavbarBrandComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.NavbarBrandClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.NavbarBrandBaseTheme> = {};
 

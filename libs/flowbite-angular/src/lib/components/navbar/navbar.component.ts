@@ -23,7 +23,7 @@ export class NavbarComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.NavbarClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $rounded: keyof FlowbiteBoolean = 'disabled';
   protected $border: keyof FlowbiteBoolean = 'disabled';

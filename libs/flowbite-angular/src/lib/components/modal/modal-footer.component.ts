@@ -16,7 +16,7 @@ export class ModalFooterComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.ModalFooterClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.ModalFooterBaseTheme> = {};
   //#endregion

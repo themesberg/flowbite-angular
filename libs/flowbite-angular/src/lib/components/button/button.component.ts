@@ -23,7 +23,7 @@ export class ButtonComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.ButtonClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $color: keyof properties.ButtonColors = 'info';
   protected $size: keyof properties.ButtonSizes = 'md';

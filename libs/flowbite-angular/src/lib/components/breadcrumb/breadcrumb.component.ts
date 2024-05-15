@@ -18,7 +18,7 @@ export class BreadcrumbComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.BreadcrumbClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.BreadcrumbBaseTheme> = {};
   //#endregion

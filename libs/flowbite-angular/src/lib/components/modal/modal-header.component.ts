@@ -16,7 +16,7 @@ export class ModalHeaderComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.ModalHeaderClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.ModalHeaderBaseTheme> = {};
   //#endregion

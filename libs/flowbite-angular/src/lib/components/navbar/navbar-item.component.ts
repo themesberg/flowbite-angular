@@ -16,7 +16,7 @@ export class NavbarItemComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.NavbarItemClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $color: keyof properties.NavbarItemColors = 'blue';
   protected $customStyle: Partial<properties.NavbarItemBaseTheme> = {};

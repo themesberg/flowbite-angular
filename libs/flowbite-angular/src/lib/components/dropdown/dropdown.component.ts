@@ -40,7 +40,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   protected override contentClasses?: Record<
     keyof properties.DropdownClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $label: string = 'Dropdown';
   protected $isOpen: keyof FlowbiteBoolean = 'disabled';

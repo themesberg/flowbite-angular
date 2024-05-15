@@ -27,7 +27,7 @@ export class SidebarItemComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.SidebarItemClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $icon?: string;
   protected $link?: string;

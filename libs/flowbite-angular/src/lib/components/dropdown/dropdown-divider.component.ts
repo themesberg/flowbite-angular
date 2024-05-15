@@ -16,7 +16,7 @@ export class DropdownDividerComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.DropdownDividerClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.DropdownDividerBaseTheme> = {};
   //#endregion

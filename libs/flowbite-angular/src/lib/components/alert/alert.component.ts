@@ -23,7 +23,7 @@ export class AlertComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.AlertClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $color: keyof properties.AlertColors = 'blue';
   protected $rounded: keyof FlowbiteBoolean = 'enabled';

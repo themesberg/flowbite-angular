@@ -24,7 +24,7 @@ export class SidebarComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.SidebarClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $rounded: keyof FlowbiteBoolean = 'disabled';
   protected $customStyle: Partial<properties.SidebarBaseTheme> = {};

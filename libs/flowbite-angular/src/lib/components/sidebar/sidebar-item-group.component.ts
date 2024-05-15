@@ -15,7 +15,7 @@ export class SidebarItemGroupComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.SidebarItemGroupClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.SidebarItemGroupBaseTheme> = {};
   //#endregion

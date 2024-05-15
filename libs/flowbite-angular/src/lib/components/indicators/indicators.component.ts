@@ -27,7 +27,7 @@ export class IndicatorComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.indicatorClass,
     string
-  >;
+  > = undefined;
   //#region properties
   public $pill: keyof FlowbiteBoolean = 'disabled';
   public $outline: keyof FlowbiteBoolean = 'disabled';
@@ -135,8 +135,6 @@ export class IndicatorComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  //#endregion
-
   protected override fetchClass(): void {
     if (
       paramNotNull(
@@ -167,4 +165,5 @@ export class IndicatorComponent extends BaseComponent {
       this.contentClasses = propertyClass;
     }
   }
+  //#endregion
 }

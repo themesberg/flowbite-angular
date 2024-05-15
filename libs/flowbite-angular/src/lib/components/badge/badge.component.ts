@@ -24,7 +24,7 @@ export class BadgeComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.BadgeClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $color: keyof properties.BadgeColors = 'blue';
   protected $size: keyof properties.BadgeSizes = 'xs';

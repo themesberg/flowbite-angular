@@ -16,7 +16,7 @@ export class DropdownItemComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.DropdownItemClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.DropdownItemBaseTheme> = {};
   //#endregion

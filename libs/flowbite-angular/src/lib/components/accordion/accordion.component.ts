@@ -23,7 +23,7 @@ export class AccordionComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.AccordionClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $flush: keyof FlowbiteBoolean = 'disabled';
   protected $customStyle: Partial<properties.AccordionBaseTheme> = {};

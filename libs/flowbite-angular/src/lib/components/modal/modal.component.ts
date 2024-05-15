@@ -28,7 +28,7 @@ export class ModalComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.ModalClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $size: keyof properties.ModalSizes = 'md';
   protected $position: keyof properties.ModalPositions = 'center';

@@ -17,7 +17,7 @@ export class AccordionTitleComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.AccordionTitleClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
   //#endregion

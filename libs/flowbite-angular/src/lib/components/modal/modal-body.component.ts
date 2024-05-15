@@ -15,7 +15,7 @@ export class ModalBodyComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.ModalBodyClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.ModalBodyBaseTheme> = {};
   //#endregion

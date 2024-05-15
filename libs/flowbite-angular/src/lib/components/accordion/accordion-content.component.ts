@@ -16,7 +16,7 @@ export class AccordionContentComponent extends BaseComponent {
   protected override contentClasses?: Record<
     keyof properties.AccordionContentClass,
     string
-  >;
+  > = undefined;
   //#region properties
   protected $customStyle: Partial<properties.AccordionContentBaseTheme> = {};
   //#endregion
