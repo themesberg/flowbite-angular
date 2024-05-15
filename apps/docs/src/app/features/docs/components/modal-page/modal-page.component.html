@@ -2,15 +2,13 @@
   <flowbite-demo-example
     title="Default modal"
     codeClassName="dark:!bg-gray-900 divide-y"
-    [codes]="[examples[0]]"
-  >
+    [codes]="[examples[0]]">
     <flowbite-button (click)="modal.open()">Open modal</flowbite-button>
     <flowbite-modal #modal>
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p
-          class="mb-2 text-gray-500 dark:text-gray-400 items-start justify-end"
-        >
+          class="mb-2 text-gray-500 dark:text-gray-400 items-start justify-end">
           With less than a month to go before the European Union enacts new
           consumer privacy laws for its citizens, companies around the world are
           updating their terms of service agreements to comply.
@@ -34,8 +32,7 @@
   <flowbite-demo-example
     title="Modal sizes"
     codeClassName="dark:!bg-gray-900 divide-y"
-    [codes]="[examples[1]]"
-  >
+    [codes]="[examples[1]]">
     <div class="flex flex-row gap-1">
       <flowbite-button (click)="modalSmall.open()">Small</flowbite-button>
       <flowbite-button (click)="modalMedium.open()">Medium</flowbite-button>
@@ -187,8 +184,7 @@
               id="email"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
               placeholder="name@company.com"
-              required
-            />
+              required />
           </div>
           <div>
             <label
@@ -202,8 +198,7 @@
               id="password"
               placeholder="••••••••"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-              required
-            />
+              required />
           </div>
           <div class="flex justify-between">
             <div class="flex items-start">
@@ -213,8 +208,7 @@
                   type="checkbox"
                   value=""
                   class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                  required
-                />
+                  required />
               </div>
               <label
                 for="remember"
@@ -231,8 +225,7 @@
           <button
             type="submit"
             class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            (click)="formModal.close()"
-          >
+            (click)="formModal.close()">
             Login to your account
           </button>
           <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
@@ -252,8 +245,7 @@
       id="options-menu"
       aria-haspopup="true"
       aria-expanded="true"
-      (click)="positionModal.open()"
-    >
+      (click)="positionModal.open()">
       Open modal
     </button>
     <flowbite-modal #positionModal dismissable position="top-center">

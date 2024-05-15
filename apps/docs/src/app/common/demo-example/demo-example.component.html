@@ -3,15 +3,13 @@
   <span class="text-base">{{ subtitle }}</span>
   <div
     class="flex w-full rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800"
-    [ngClass]="[codeClassName ?? '']"
-  >
+    [ngClass]="[codeClassName ?? '']">
     <div class="flex h-full w-full flex-col justify-center gap-6 p-6">
       <ng-content></ng-content>
       <flowbite-prism
         *ngFor="let code of codes"
         [code]="code.code.trim()"
-        [language]="code.language"
-      ></flowbite-prism>
+        [language]="code.language"></flowbite-prism>
     </div>
   </div>
 </div>

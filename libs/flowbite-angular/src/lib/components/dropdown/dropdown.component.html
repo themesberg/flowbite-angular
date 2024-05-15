@@ -2,8 +2,7 @@
   type="button"
   [ngClass]="contentClasses!.dropdownClass"
   (click)="toggle()"
-  #button
->
+  #button>
   <span [ngClass]="contentClasses!.spanClass">
     {{ label }}
     <svg
@@ -14,22 +13,19 @@
       class="ml-2 h-4 w-4"
       height="1em"
       width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
-        d="M19 9l-7 7-7-7"
-      ></path>
+        d="M19 9l-7 7-7-7"></path>
     </svg>
   </span>
 </button>
 <div
   [ngClass]="contentClasses!.containerClass"
   #dropdown
-  [style.display]="isOpen ? 'block' : 'none'"
->
+  [style.display]="isOpen ? 'block' : 'none'">
   <div [ngClass]="contentClasses!.contentClass">
     <ul [ngClass]="contentClasses!.subContentClass">
       <ng-content></ng-content>

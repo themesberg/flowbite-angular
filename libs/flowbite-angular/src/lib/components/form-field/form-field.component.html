@@ -2,14 +2,12 @@
   *ngIf="
     (_properties | async)?.floatingLabelType as floatingLabelType;
     else nonFloatingTemplate
-  "
->
+  ">
   <div
     [ngClass]="{
       relative: floatingLabelType,
       'z-0': floatingLabelType === 'standard'
-    }"
-  >
+    }">
     <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>
     <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
   </div>
@@ -18,13 +16,11 @@
 <ng-template #nonFloatingTemplate>
   <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
   <ng-container
-    *ngIf="(_properties | async)?.prefix as prefixType; else inputTemplate"
-  >
+    *ngIf="(_properties | async)?.prefix as prefixType; else inputTemplate">
     <ng-container *ngIf="prefixType === 'icon'; else inputWithAddon">
       <div class="relative">
         <div
-          class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
-        >
+          class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
         </div>
         <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>

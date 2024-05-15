@@ -2,22 +2,18 @@
   [ngClass]="contentClasses!.sidebarClass"
   [routerLink]="link"
   routerLinkActive="bg-gray-200 dark:bg-gray-700"
-  [routerLinkActiveOptions]="{ exact: true }"
->
+  [routerLinkActiveOptions]="{ exact: true }">
   <span
     class="flex-shrink-0"
     [innerHTML]="icon! | sanitizeHtml"
-    *ngIf="!!icon"
-  ></span>
+    *ngIf="!!icon"></span>
   <span
     [ngClass]="contentClasses!.sidebarIconClass"
     [class.ml-3]="!!icon"
-    *ngIf="(sidebarService.$collapsed | async) === false"
-  >
+    *ngIf="(sidebarService.$collapsed | async) === false">
     <ng-content></ng-content>
   </span>
-  <flowbite-badge
-    *ngIf="(sidebarService.$collapsed | async) === false && label"
+  <flowbite-badge *ngIf="(sidebarService.$collapsed | async) === false && label"
     >{{ label }}</flowbite-badge
   >
 </a>
