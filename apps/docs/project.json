@@ -106,12 +106,12 @@
       },
       "configurations": {
         "production": {
-          "browserTarget": "docs:build:development",
-          "serverTarget": "docs:server:development"
-        },
-        "development": {
           "browserTarget": "docs:build:production",
           "serverTarget": "docs:server:production"
+        },
+        "development": {
+          "browserTarget": "docs:build:development",
+          "serverTarget": "docs:server:development"
         }
       },
       "defaultConfiguration": "development"
