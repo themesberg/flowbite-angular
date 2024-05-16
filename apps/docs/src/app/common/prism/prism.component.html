@@ -1,3 +1,5 @@
-<pre
-  *ngIf="language"
-  class="language-{{ language }} w-full !m-0"><code #codeEle class="language-{{ language }}">{{code}}</code></pre>
+<pre *ngIf="language" class="language-{{ language }} w-full !m-0">
+  <code #codeEle class="language-{{ language }}">
+    {{code}}
+  </code>
+</pre>
