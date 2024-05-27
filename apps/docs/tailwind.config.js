@@ -304,6 +304,9 @@ module.exports = {
           },
         ],
       },
+      container: {
+        center: true,
+      },
     },
     fontFamily: {
       sans: 'Inter',

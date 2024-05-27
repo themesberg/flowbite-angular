@@ -21,6 +21,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@angular-eslint/template-parser": "^17.5.1",
     "@angular/animations": "17.0.9",
     "@angular/common": "17.0.9",
     "@angular/compiler": "17.0.9",
