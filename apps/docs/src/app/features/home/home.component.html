@@ -1,5 +1,7 @@
-<section id="hero" class="mx-auto flex flex-col items-center px-6 py-4 gap-2">
-  <div id="hero.content" class="flex flex-col items-start gap-8">
+<section
+  id="hero"
+  class="mx-auto flex flex-col items-center py-6 px-4 gap-2 md:py-8 md:px-4">
+  <div id="hero.content" class="flex flex-col items-start gap-8 md:gap-8">
     <div id="hero.content.content" class="flex flex-row items-start gap-4">
       <div
         id="hero.content.content.left-content"
@@ -21,7 +23,7 @@
         </div>
         <div
           id="hero.content.content.left-content.input-and-button"
-          class="flex flex-row items-start gap-4">
+          class="flex flex-row items-start gap-4 md:gap-6">
           <p class="text-xl font-normal">copy component</p>
         </div>
       </div>
@@ -51,7 +53,9 @@
       class="leading-tight text-base font-normal text-gray-400">
       Featured in:
     </p>
-    <div id="content.container.logos" class="flex flex-col items-center gap-8">
+    <div
+      id="content.container.logos"
+      class="flex flex-col md:flex-row items-center gap-8">
       <img
         id="content.container.logos.reddit"
         class="flex flex-row justify-center items-center text-gray-500"
@@ -82,7 +86,7 @@
 </section>
 <section
   id="cta"
-  class="flex flex-col items-center py-6 px-4 gap-8 border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+  class="flex flex-col items-center py-6 md:py-8 px-4 gap-8 md:gap-12 border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
   <div id="cta.row1" class="flex flex-col items-start gap-6">
     <div class="hidden">
       <img
@@ -99,7 +103,7 @@
     <div id="cta.row1.right-content" class="flex flex-col items-start gap-6">
       <div
         id="cta.row1.right-content.heading-and-description"
-        class="flex flex-col items-start gap-6">
+        class="flex flex-col items-start gap-6 md:gap-4">
         <h2
           class="text-3xl leading-tight font-extrabold text-gray-900 dark:text-white">
           UI components in Angular
@@ -326,7 +330,7 @@
       </div>
       <div
         id="cta.row2.left-content.cta"
-        class="flex flex-row items-center gap-[6px]">
+        class="flex flex-row items-center gap-1">
         <a
           routerLink="/docs/customize/dark-mode"
           class="text-base font-medium text-primary-600">
@@ -373,7 +377,7 @@
           Work with Tailwind CSS
         </h2>
         <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
-          <span class="underline font-extrabold text-gray-900 dark:text-white">
+          <span class="underline font-medium text-gray-900 dark:text-white">
             Flowbite budget
           </span>
           is a mobile app that helps users easily track their expenses and
@@ -488,13 +492,15 @@
   </div>
 </section>
 <section id="footer" class="flex flex-col items-center">
-  <div id="footer.container" class="flex flex-col items-center py-6 px-4 gap-6">
+  <div
+    id="footer.container"
+    class="flex flex-col items-center py-6 md:py-8 px-4 gap-6 md:gap-8">
     <div
       id="footer.container.copyright"
-      class="flex flex-row justify-between items-center pt-6">
+      class="flex flex-row justify-between items-center pt-6 md:pt-8 border-t-gray-200">
       <div
         id="footer.container.copyright.logo-and-social-links"
-        class="mx-auto flex flex-col justify-center items-start gap-4">
+        class="mx-auto flex flex-col md:flex-row justify-center items-start md:items-center gap-4 md:gap-5">
         <div
           id="footer.container.copyright.logo-and-social-link.logo"
           class="flex flex-row items-center gap-3">
@@ -506,7 +512,7 @@
             Flowbite
           </span>
         </div>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+        <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
           © 2019-2023 Flowbite™ is a registered trademark. All Rights
           Reserved.
         </p>
