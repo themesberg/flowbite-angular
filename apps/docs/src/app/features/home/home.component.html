@@ -1,22 +1,25 @@
 <section
   id="hero"
-  class="mx-auto flex flex-col items-center py-6 px-4 gap-2 md:py-8 md:px-4">
-  <div id="hero.content" class="flex flex-col items-start gap-8 md:gap-8">
-    <div id="hero.content.content" class="flex flex-row items-start gap-4">
+  class="flex flex-col items-center py-6 px-4 gap-2 md:py-8 md:px-4 xl:pt-16 xl:pb-24">
+  <div
+    id="hero.content"
+    class="max-w-screen-xl mx-auto flex flex-col items-center gap-8 xl:gap-20">
+    <div
+      id="hero.content.content"
+      class="flex flex-row items-start gap-4 xl:gap-16">
       <div
         id="hero.content.content.left-content"
-        class="flex flex-col items-start">
+        class="flex flex-col items-start xl:gap-10">
         <div
           id="hero.content.content.left-content.heading-and-description"
-          class="flex flex-col items-start gap-4">
+          class="flex flex-col items-start gap-4 xl:gap-6">
           <h1
-            class="leading-none text-4xl font-extrabold text-gray-900 dark:text-white">
+            class="leading-7 text-4xl xl:text-6xl font-extrabold text-gray-900 dark:text-white">
             Speed up your web development with
-            <span class="leading-none font-extrabold text-primary-700">
-              Flowbite Angular
-            </span>
+            <span class="text-primary-700"> Flowbite Angular</span>
           </h1>
-          <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+          <p
+            class="leading-7 text-lg xl:text-xl font-normal text-gray-500 dark:text-gray-400">
             Flowbite Angular is an official Flowbite component library for
             Angular. All interactivities are handled by Angular.
           </p>
@@ -27,15 +30,15 @@
           <p class="text-xl font-normal">copy component</p>
         </div>
       </div>
-      <div class="hidden">
+      <div class="hidden xl:block size-full">
         <img
           id="hero.content.content.right-content.light"
-          class="flex dark:hidden flex-col content-center w-[540px] h-[362px] rounded-lg"
+          class="flex dark:hidden flex-col content-center w-full h-full rounded-lg"
           src="/assets/images/angular-hero-mockup-light.png"
           alt="angular hero mockup" />
         <img
           id="hero.content.content.right-content.dark"
-          class="hidden dark:md:flex flex-col content-center w-[540px] h-[362px] rounded-lg"
+          class="hidden dark:md:flex flex-col content-center w-full h-full rounded-lg"
           src="/assets/images/angular-hero-mockup-dark.png"
           alt="angular hero mockup" />
       </div>
@@ -47,7 +50,7 @@
   class="flex flex-col items-center py-6 gap-2 border-gray-100 dark:border-gray-800">
   <div
     id="content.container"
-    class="flex flex-col justify-center items-center px-4 gap-4">
+    class="max-w-screen-xl mx-auto flex flex-col justify-center items-center px-4 gap-4">
     <p
       id="content.container.heading"
       class="leading-tight text-base font-normal text-gray-400">
@@ -87,35 +90,41 @@
 <section
   id="cta"
   class="flex flex-col items-center py-6 md:py-8 px-4 gap-8 md:gap-12 border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-  <div id="cta.row1" class="flex flex-col items-start gap-6">
-    <div class="hidden">
+  <div
+    id="cta.row1"
+    class="max-w-screen-xl mx-auto flex flex-col xl:flex-row items-center gap-6 xl:gap-16">
+    <div class="hidden xl:block size-full">
       <img
         id="cta.row1.image.light"
-        class="flex dark:hidden flex-col items-end w-[608px] shadow-md rounded-lg"
+        class="flex dark:hidden flex-col items-end w-full h-full shadow-md rounded-lg"
         src="/assets/images/code-example-light.png"
         alt="code example light" />
       <img
         id="cta.row1.image.dark"
-        class="hidden dark:flex flex-col items-end w-[608px] shadow-md rounded-lg"
+        class="hidden dark:flex flex-col items-end w-full h-full shadow-md rounded-lg"
         src="/assets/images/code-example-dark.png"
         alt="code example dark" />
     </div>
-    <div id="cta.row1.right-content" class="flex flex-col items-start gap-6">
+    <div
+      id="cta.row1.right-content"
+      class="flex flex-col items-start gap-6 xl:gap-8">
       <div
         id="cta.row1.right-content.heading-and-description"
         class="flex flex-col items-start gap-6 md:gap-4">
         <h2
-          class="text-3xl leading-tight font-extrabold text-gray-900 dark:text-white">
+          class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
           UI components in Angular
         </h2>
-        <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p
+          class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
           <span class="underline font-medium text-gray-900 dark:text-white">
             Flowbite budget
           </span>
           is a mobile app that helps users easily track their expenses and
           create a budget.
         </p>
-        <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p
+          class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
           With a user-friendly interface, the app allows users to quickly input
           their income and expenses, and then automatically categorizes them for
           easy tracking.
@@ -123,7 +132,7 @@
       </div>
       <div
         id="cta.row1.right-content.features"
-        class="flex flex-col items-start border-t-gray-200">
+        class="flex flex-col items-start w-full border-t border-t-gray-200">
         <div class="flex flex-col items-start pt-8 gap-4">
           <div
             id="cta.row1.right-content.features.list.1"
@@ -135,7 +144,8 @@
             <div
               id="cta.row1.right-content.features.list.1.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Dynamic reports and dashboards
               </p>
             </div>
@@ -150,7 +160,8 @@
             <div
               id="cta.row1.right-content.features.list.2.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Templates for everyone
               </p>
             </div>
@@ -165,7 +176,8 @@
             <div
               id="cta.row1.right-content.features.list.3.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Development workflow
               </p>
             </div>
@@ -180,7 +192,8 @@
             <div
               id="cta.row1.right-content.features.list.4.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Limitless business automation
               </p>
             </div>
@@ -195,7 +208,8 @@
             <div
               id="cta.row1.right-content.features.list.5.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Knowledge management
               </p>
             </div>
@@ -208,7 +222,7 @@
         <button
           type="button"
           class="flex flex-row justify-center py-2 px-5 gap-2 rounded-lg bg-primary-700 text-white">
-          <span class="text-sm font-medium">Start building</span>
+          <span class="leading-5 text-sm font-medium">Start building</span>
           <img
             class="block w-5 h-5"
             src="/assets/icons/outline/arrow-right.svg"
@@ -217,13 +231,17 @@
         <button
           type="button"
           class="flex flex-row justify-center py-2 px-5 gap-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-400">
-          <span class="text-sm font-medium">Get a demo</span>
+          <span class="leading-5 text-sm font-medium">Get a demo</span>
         </button>
       </div>
     </div>
   </div>
-  <div id="cta.row2" class="flex flex-col items-start gap-6">
-    <div id="cta.row2.left-content" class="flex flex-col items-start gap-6">
+  <div
+    id="cta.row2"
+    class="max-w-screen-xl mx-auto flex flex-col xl:flex-row items-center gap-6 xl:gap-16">
+    <div
+      id="cta.row2.left-content"
+      class="flex flex-col items-start gap-6 xl:gap-8">
       <div
         id="cta.row2.left-content.tabs"
         class="flex flex-row justify-center items-start gap-8">
@@ -238,7 +256,8 @@
               src="/assets/icons/solid/sun.svg"
               alt="light mode toggle" />
           </div>
-          <span class="text-base font-medium text-gray-900 dark:text-white">
+          <span
+            class="leading-6 text-base font-medium text-gray-900 dark:text-white">
             Light
           </span>
         </button>
@@ -254,7 +273,8 @@
               src="/assets/icons/solid/moon.svg"
               alt="light mode toggle" />
           </div>
-          <span class="text-base font-medium text-gray-900 dark:text-gray-400">
+          <span
+            class="leading-6 text-base font-medium text-gray-900 dark:text-gray-400">
             Dark
           </span>
         </button>
@@ -263,10 +283,11 @@
         id="cta.row2.left-content.heading-and-description"
         class="flex flex-col items-start gap-4">
         <h2
-          class="leading-tight text-3xl font-extrabold text-gray-900 dark:text-white">
+          class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
           Dark mode integration
         </h2>
-        <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p
+          class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
           Dark mode is a popular feature that is being offered by many
           applications, operating systems, and websites in recent years.
           <br /><br />
@@ -277,10 +298,10 @@
       </div>
       <div
         id="cta.row2.left-content.features"
-        class="flex flex-col items-start border-t-gray-200">
+        class="flex flex-col items-start border-t w-full border-t-gray-200">
         <div
           id="cta.row2.left-control.features.list"
-          class="flex flex-col items-start pt-8 gap-4">
+          class="flex flex-col items-start pt-8 gap-4 border-t-gray-200">
           <div
             id="cta.row2.left-control.features.list.1"
             class="flex flex-row items-center gap-2">
@@ -291,7 +312,8 @@
             <div
               id="cta.row2.left-control.features.list.1.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Reduce eye strain
               </p>
             </div>
@@ -306,7 +328,8 @@
             <div
               id="cta.row2.left-control.features.list.2.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Better visibility in low light conditions
               </p>
             </div>
@@ -321,7 +344,8 @@
             <div
               id="cta.row2.left-control.features.list.3.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Accessibility
               </p>
             </div>
@@ -333,7 +357,7 @@
         class="flex flex-row items-center gap-1">
         <a
           routerLink="/docs/customize/dark-mode"
-          class="text-base font-medium text-primary-600">
+          class="leading-6 text-base font-medium text-primary-600">
           Learn how to integrate dark mode
         </a>
         <img
@@ -342,48 +366,54 @@
           alt="chevron right light" />
       </div>
     </div>
-    <div class="hidden">
+    <div class="hidden xl:block size-full">
       <img
         id="cta.row2.image.light"
-        class="flex dark:hidden flex-col items-start w-[608px] shadow-md rounded-lg p-[10px] gap-[10px]"
+        class="flex dark:hidden flex-col items-start w-full h-full shadow-md rounded-lg"
         src="/assets/images/angular-light-mode-thumbnail.png"
         alt="thumbnail light" />
       <img
         id="cta.row2.image.dark"
-        class="hidden dark:flex flex-col items-start w-[608px] shadow-md rounded-lg p-[10px] gap-[10px]"
+        class="hidden dark:flex flex-col items-start w-full h-full shadow-md rounded-lg"
         src="/assets/images/angular-dark-mode-thumbnail.png"
         alt="thumbnail dark" />
     </div>
   </div>
-  <div id="cta.row3" class="flex flex-col items-start gap-6">
-    <div class="hidden">
+  <div
+    id="cta.row3"
+    class="max-w-screen-xl mx-auto flex flex-col xl:flex-row items-center gap-6 xl:gap-16">
+    <div class="hidden xl:block size-full">
       <img
         id="cta.row3.image.light"
-        class="flex dark:hidden flex-col items-start w-[608px] p-[10px] gap-[10px] shadow-md rounded-lg"
+        class="flex dark:hidden flex-col items-start w-full h-full shadow-md rounded-lg"
         src="assets/images/works-with-tailwind-light.png"
         alt="work with tailwind light" />
       <img
         id="cta.row3.image.dark"
-        class="hidden dark:flex flex-col items-start w-[608px] p-[10px] gap-[10px] shadow-md rounded-lg"
+        class="hidden dark:flex flex-col items-start w-full h-full shadow-md rounded-lg"
         src="assets/images/works-with-tailwind-dark.png"
         alt="work with tailwind dark" />
     </div>
-    <div id="cta.row3.right-content" class="flex flex-col items-start gap-6">
+    <div
+      id="cta.row3.right-content"
+      class="flex flex-col items-start gap-6 xl:gap-8">
       <div
         id="cta.row3.right-content.heading-and-description"
         class="flex flex-col items-start gap-4">
         <h2
-          class="leading-tight text-3xl font-extrabold text-gray-900 dark:text-white">
+          class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
           Work with Tailwind CSS
         </h2>
-        <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p
+          class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
           <span class="underline font-medium text-gray-900 dark:text-white">
             Flowbite budget
           </span>
           is a mobile app that helps users easily track their expenses and
           create a budget.
         </p>
-        <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p
+          class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
           With a user-friendly interface, the app allows users to quickly input
           their income and expenses, and then automatically categorizes them for
           easy tracking.
@@ -391,7 +421,7 @@
       </div>
       <div
         id="cta.row3.right-content.features"
-        class="flex flex-col items-start border-t border-t-gray-200">
+        class="flex flex-col items-start w-full border-t border-t-gray-200">
         <div class="flex flex-col items-start pt-8 gap-4">
           <div
             id="cta.row3.right-content.features.list.1"
@@ -403,7 +433,8 @@
             <div
               id="cta.row3.right-content.features.list.1.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Dynamic reports and dashboards
               </p>
             </div>
@@ -418,7 +449,8 @@
             <div
               id="cta.row3.right-content.features.list.2.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Templates for everyone
               </p>
             </div>
@@ -433,7 +465,8 @@
             <div
               id="cta.row3.right-content.features.list.3.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Development workflow
               </p>
             </div>
@@ -448,7 +481,8 @@
             <div
               id="cta.row3.right-content.features.list.4.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Limitless business automation
               </p>
             </div>
@@ -463,7 +497,8 @@
             <div
               id="cta.row3.right-content.features.list.5.content"
               class="flex flex-col items-start gap-1">
-              <p class="text-base font-medium text-gray-900 dark:text-white">
+              <p
+                class="leading-6 text-base font-medium text-gray-900 dark:text-white">
                 Knowledge management
               </p>
             </div>
@@ -476,7 +511,7 @@
         <button
           type="button"
           class="flex flex-row justify-center items-center py-2 px-5 gap-2 bg-primary-700 rounded-lg text-white">
-          <span class="text-sm font-medium">Start building</span>
+          <span class="leading-5 text-sm font-medium">Start building</span>
           <img
             class="block w-5 h-5"
             src="/assets/icons/outline/arrow-right.svg"
@@ -485,7 +520,7 @@
         <button
           type="button"
           class="flex flex-row justify-center items-center py-2 px-5 gap-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-400">
-          <span class="text-sm font-medium">Get a demo</span>
+          <span class="leading-5 text-sm font-medium">Get a demo</span>
         </button>
       </div>
     </div>

@@ -215,92 +215,79 @@ module.exports = {
         xs: [
           '12px',
           {
-            lineHeight: '18px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         sm: [
           '14px',
           {
-            lineHeight: '21px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         DEFAULT: [
           '16px',
           {
-            lineHeight: '24px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         lg: [
           '18px',
           {
-            lineHeight: '27px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         xl: [
           '20px',
           {
-            lineHeight: '30px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '2xl': [
           '24px',
           {
-            lineHeight: '36px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '3xl': [
           '30px',
           {
-            lineHeight: '45px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '4xl': [
           '36px',
           {
-            lineHeight: '54px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '5xl': [
           '48px',
           {
-            lineHeight: '62.4px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '6xl': [
           '60px',
           {
-            lineHeight: '90px',
-            fontWeight: '300px',
+            lineHeight: '1',
           },
         ],
         '7xl': [
           '72px',
           {
-            lineHeight: '108px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '8xl': [
           '96px',
           {
-            lineHeight: '144px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
         '9xl': [
           '128px',
           {
-            lineHeight: '192px',
-            fontWeight: '400px',
+            lineHeight: '1',
           },
         ],
       },
