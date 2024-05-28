@@ -1,6 +1,6 @@
 import { DocsComponent } from './features/docs/docs.component';
 import { HomeComponent } from './features/home/home.component';
-import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 import { Route } from '@angular/router';
 
