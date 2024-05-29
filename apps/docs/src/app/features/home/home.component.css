@@ -1,0 +1,23 @@
+.content-logo {
+  @apply flex flex-row justify-center items-center text-gray-500;
+}
+
+.cta-title {
+  @apply leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white;
+}
+
+.cta-p {
+  @apply leading-7 text-lg font-normal text-gray-500 dark:text-gray-400;
+}
+
+.cta-p-underline {
+  @apply underline font-medium text-gray-900 dark:text-white;
+}
+
+.cta-list-icon {
+  @apply block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700;
+}
+
+.cta-list-text {
+  @apply leading-6 text-base font-medium text-gray-900 dark:text-white;
+}
