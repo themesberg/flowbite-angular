@@ -1,5 +1,5 @@
-export * from './helper.directive';
-export * from './input.directive';
-export * from './label.directive';
-export * from './addon.directive';
-export * from './icon.directive';
+export { HelperDirective } from './helper.directive';
+export { InputDirective } from './input.directive';
+export { LabelDirective } from './label.directive';
+export { AddonDirective } from './addon.directive';
+export { IconDirective } from './icon.directive';

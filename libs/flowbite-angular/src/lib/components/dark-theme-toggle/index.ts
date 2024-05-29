@@ -1,1 +1,1 @@
-export * from './dark-theme-toggle.component';
+export { DarkThemeToggleComponent } from './dark-theme-toggle.component';

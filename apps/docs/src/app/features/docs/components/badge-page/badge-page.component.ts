@@ -1,4 +1,4 @@
-import { BadgeComponent } from '@flowbite-angular/lib';
+import { BadgeComponent } from 'flowbite-angular';
 import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';

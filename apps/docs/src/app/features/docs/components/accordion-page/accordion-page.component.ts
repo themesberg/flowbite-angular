@@ -7,7 +7,7 @@ import {
   AccordionContentComponent,
   AccordionPanelComponent,
   AccordionTitleComponent,
-} from '@flowbite-angular/lib';
+} from 'flowbite-angular';
 
 @Component({
   standalone: true,

@@ -3,7 +3,7 @@ import {
   FormFieldComponent,
   InputDirective,
   LabelDirective,
-} from '@flowbite-angular/lib';
+} from 'flowbite-angular';
 import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';

@@ -5,7 +5,7 @@ import {
   FormFieldComponent,
   InputDirective,
   LabelDirective,
-} from '@flowbite-angular/lib';
+} from 'flowbite-angular';
 
 @Component({
   standalone: true,

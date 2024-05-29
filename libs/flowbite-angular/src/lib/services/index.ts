@@ -1,2 +1,2 @@
-export * from './sidebar';
-export * from './theme';
+export { SidebarService } from './sidebar.service';
+export { ThemeService } from './theme.service';

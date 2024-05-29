@@ -5,7 +5,7 @@ import {
   BadgeBaseTheme,
   BadgeComponent,
   ButtonComponent,
-} from '@flowbite-angular/lib';
+} from 'flowbite-angular';
 import { Component } from '@angular/core';
 
 @Component({

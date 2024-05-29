@@ -1,2 +1,10 @@
-export * from './badge.component';
-export * from './badge.theme';
+export { BadgeComponent } from './badge.component';
+export {
+  BadgeProperties,
+  BadgeClass,
+  BadgeColors,
+  BadgeSizes,
+  BadgeBaseTheme,
+  BadgeRootTheme,
+  badgeTheme,
+} from './badge.theme';

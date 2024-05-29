@@ -1,5 +1,7 @@
+import { FlowbiteTheme } from '../common/flowbite.theme';
+
 import { BehaviorSubject } from 'rxjs';
-import { FlowbiteTheme } from '../../common/flowbite.theme';
+
 import { Injectable } from '@angular/core';
 
 @Injectable({

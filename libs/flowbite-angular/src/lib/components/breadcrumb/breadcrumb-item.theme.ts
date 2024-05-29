@@ -9,11 +9,11 @@ export interface BreadcrumbItemProperties {
 }
 
 export interface BreadcrumbItemBaseTheme {
-  root: Partial<BreadcrumbRootTheme>;
+  icon: Partial<BreadcrumbIconRootTheme>;
   item: Partial<BreadcrumbItemContentTheme>;
 }
 
-export interface BreadcrumbRootTheme {
+export interface BreadcrumbIconRootTheme {
   base: string;
 }
 
@@ -22,7 +22,7 @@ export interface BreadcrumbItemContentTheme {
 }
 
 export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
-  root: {
+  icon: {
     base: 'mx-1 h-6 w-6 text-gray-400 group-first:hidden md:mx-2',
   },
   item: {
@@ -36,7 +36,7 @@ export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
 };
 
 export interface BreadcrumbItemClass {
-  breadcrumbClass: string;
+  breadcrumbIconClass: string;
   contentClass: string;
 }
 
@@ -49,7 +49,7 @@ export function getClasses(
   );
 
   const output: BreadcrumbItemClass = {
-    breadcrumbClass: twMerge(theme.root.base),
+    breadcrumbIconClass: twMerge(theme.icon.base),
     contentClass: twMerge(
       theme.item.base![properties.href ? 'enabled' : 'disabled'],
     ),

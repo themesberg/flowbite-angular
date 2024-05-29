@@ -17,7 +17,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "paths": {
-      "@flowbite-angular/lib": ["libs/flowbite-angular/src/index.ts"],
       "flowbite-angular": ["libs/flowbite-angular/src/index.ts"]
     }
   },

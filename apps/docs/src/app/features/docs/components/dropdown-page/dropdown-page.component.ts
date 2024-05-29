@@ -7,7 +7,7 @@ import {
   DropdownDividerComponent,
   DropdownHeaderComponent,
   DropdownItemComponent,
-} from '@flowbite-angular/lib';
+} from 'flowbite-angular';
 
 @Component({
   standalone: true,

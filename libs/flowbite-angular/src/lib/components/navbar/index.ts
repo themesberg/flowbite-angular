@@ -1,5 +1,37 @@
-export * from './navbar.component';
-export * from './navbar-brand.component';
-export * from './navbar-content.component';
-export * from './navbar-item.component';
-export * from './navbar-toggle.component';
+export { NavbarComponent } from './navbar.component';
+export {
+  NavbarProperties,
+  NavbarClass,
+  NavbarColors,
+  NavbarBaseTheme,
+  NavbarRootTheme,
+  NavbarContentTheme,
+  navbarTheme,
+} from './navbar.theme';
+export { NavbarBrandComponent } from './navbar-brand.component';
+export {
+  NavbarBrandProperties,
+  NavbarBrandClass,
+  NavbarBrandBaseTheme,
+  NavbarBrandRootTheme,
+  navbarBrandTheme,
+} from './navbar-brand.theme';
+export { NavbarContentComponent } from './navbar-content.component';
+export {
+  NavbarContentProperties,
+  NavbarContentClass,
+  NavbarContentBaseTheme,
+  NavbarContentRootTheme,
+  NavBarContentListTheme,
+  navbarContentTheme,
+} from './navbar-content.theme';
+export { NavbarItemComponent } from './navbar-item.component';
+export {
+  NabvarItemProperties,
+  NavbarItemClass,
+  NavbarItemColors,
+  NavbarItemBaseTheme,
+  NavbarItemRootTheme,
+  navbarItemTheme,
+} from './nabvar-item.theme';
+export { NavbarToggleComponent } from './navbar-toggle.component';
