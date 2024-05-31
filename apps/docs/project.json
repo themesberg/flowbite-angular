@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/docs/src",
   "prefix": "flowbite",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -132,6 +133,5 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }
