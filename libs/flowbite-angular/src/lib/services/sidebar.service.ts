@@ -1,18 +1,16 @@
-import { BehaviorSubject } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SidebarService {
-  $collapsed = new BehaviorSubject<boolean>(false);
+  private $collapsed = signal<boolean>(false);
 
-  setCollapsed(collapsed: boolean) {
-    this.$collapsed.next(collapsed);
+  public collapsed = this.$collapsed.asReadonly();
+
+  public setCollapsed(value: boolean) {
+    this.$collapsed.set(value);
   }
 
-  toggleCollapsed() {
-    const collapsed = this.$collapsed.getValue();
-    this.setCollapsed(!collapsed);
+  public toggleCollapsed() {
+    this.$collapsed.set(!this.$collapsed());
   }
 }

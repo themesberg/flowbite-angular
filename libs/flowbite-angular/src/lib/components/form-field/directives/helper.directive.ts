@@ -11,7 +11,7 @@ import { Directive, Input } from '@angular/core';
 })
 export class HelperDirective extends BaseInputDirective {
   @Input() customStyle: Partial<properties.HelperDirectiveBaseTheme> = {};
-  override _id = generateID('flowbite-helper');
+  override _id = generateID();
   _validate?: keyof FormFieldValidations;
 
   @Input() set validate(validate: keyof FormFieldValidations) {

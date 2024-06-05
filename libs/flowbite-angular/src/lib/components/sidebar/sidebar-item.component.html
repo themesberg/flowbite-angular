@@ -10,10 +10,10 @@
   <span
     [ngClass]="contentClasses!.sidebarIconClass"
     [class.ml-3]="!!icon"
-    *ngIf="(sidebarService.$collapsed | async) === false">
+    *ngIf="sidebarService.collapsed() === false">
     <ng-content></ng-content>
   </span>
-  <flowbite-badge *ngIf="(sidebarService.$collapsed | async) === false && label"
+  <flowbite-badge *ngIf="sidebarService.collapsed() === false && label"
     >{{ label }}</flowbite-badge
   >
 </a>

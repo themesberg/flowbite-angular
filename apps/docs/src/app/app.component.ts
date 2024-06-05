@@ -1,5 +1,3 @@
-import { components } from './common/components';
-
 import { Component } from '@angular/core';
 import {
   DarkThemeToggleComponent,
@@ -9,7 +7,6 @@ import {
   NavbarItemComponent,
 } from 'flowbite-angular';
 import { RouterOutlet } from '@angular/router';
-import { SidebarService } from 'flowbite-angular';
 
 @Component({
   standalone: true,
@@ -24,8 +21,4 @@ import { SidebarService } from 'flowbite-angular';
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-  components = components;
-
-  constructor(protected readonly sidebarService: SidebarService) {}
-}
+export class AppComponent {}

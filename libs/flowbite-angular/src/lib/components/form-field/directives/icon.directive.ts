@@ -10,7 +10,7 @@ import { Directive, Input } from '@angular/core';
 })
 export class IconDirective extends BaseInputDirective {
   @Input() customStyle: Partial<properties.IconDirectiveBaseTheme> = {};
-  override _id = generateID('flowbite-icon');
+  override _id = generateID();
 
   override handleClasses(): void {
     const propertyClass = properties.getClasses({

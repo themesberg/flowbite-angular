@@ -11,7 +11,7 @@ import { Directive, Input } from '@angular/core';
 export class AddonDirective extends BaseInputDirective {
   @Input() customStyle: Partial<properties.AddonDirectiveBaseTheme> = {};
 
-  override _id = generateID('flowbite-addon');
+  override _id = generateID();
 
   override handleClasses(): void {
     const propertyClass = properties.getClasses({

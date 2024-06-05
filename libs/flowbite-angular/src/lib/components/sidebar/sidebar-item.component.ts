@@ -5,8 +5,8 @@ import { SanitizeHtmlPipe } from '../../pipes';
 import { SidebarService } from '../../services';
 import { paramNotNull } from '../../utils/param.util';
 
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { NgClass, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -17,7 +17,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     RouterLink,
     RouterLinkActive,
     SanitizeHtmlPipe,
-    AsyncPipe,
     BadgeComponent,
   ],
   selector: 'flowbite-sidebar-item',

@@ -32,7 +32,7 @@ import {
   templateUrl: './form-field.component.html',
 })
 export class FormFieldComponent implements OnDestroy {
-  _inputId = generateID('flowbite-input');
+  _inputId = generateID();
 
   _properties = new BehaviorSubject<properties.FormFieldProperties>({
     type: 'text',
@@ -55,7 +55,7 @@ export class FormFieldComponent implements OnDestroy {
     if (content) {
       this._properties.subscribe(({ floatingLabelType, validate }) =>
         Object.assign(content, {
-          _id: generateID('flowbite-label'),
+          _id: generateID(),
           parentId: this._inputId,
           floatingLabelType,
           validate,

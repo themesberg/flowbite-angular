@@ -8,17 +8,18 @@ import {
 } from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, Input, booleanAttribute } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
  */
 @Component({
   standalone: true,
-  imports: [NgClass, AsyncPipe],
+  imports: [NgClass],
   selector: 'flowbite-sidebar',
   templateUrl: './sidebar.component.html',
+  providers: [SidebarService],
 })
 export class SidebarComponent extends BaseComponent {
   protected override contentClasses?: Record<
