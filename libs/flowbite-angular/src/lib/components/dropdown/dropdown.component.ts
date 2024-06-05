@@ -42,7 +42,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
     string
   > = undefined;
   //#region properties
-  protected $label: string = 'Dropdown';
+  protected $label = 'Dropdown';
   protected $isOpen: keyof FlowbiteBoolean = 'disabled';
   protected $position: keyof properties.DropdownPositions = 'bottom-center';
   protected $customStyle: Partial<properties.DropdownBaseTheme> = {};
