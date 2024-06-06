@@ -1,4 +1,8 @@
-import { FlowbiteBoolean, FlowbiteColors } from '../../common/flowbite.theme';
+import {
+  FlowbiteBoolean,
+  FlowbiteClass,
+  FlowbiteColors,
+} from '../../common/flowbite.theme';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -67,21 +71,26 @@ export const alertTheme: AlertBaseTheme = {
   },
 };
 
-export interface AlertClass {
+export interface AlertClass extends FlowbiteClass {
   alertClass: string;
   alertButtonClass: string;
+}
+
+export function AlertClassInstance(): AlertClass {
+  return { rootClass: '', alertClass: '', alertButtonClass: '' };
 }
 
 export function getClasses(properties: AlertProperties): AlertClass {
   const theme: AlertBaseTheme = mergeTheme(alertTheme, properties.customStyle);
 
   const output: AlertClass = {
-    alertClass: twMerge(
+    rootClass: twMerge(
       theme.root.base,
       theme.root.border![properties.borderAccent],
       theme.root.color![properties.color],
       theme.root.rounded![properties.rounded],
     ),
+    alertClass: '',
     alertButtonClass: twMerge(
       theme.button.base,
       theme.button.color![properties.color],

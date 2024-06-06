@@ -9,4 +9,5 @@ export {
   FlowbiteStateColors,
   FlowbiteHeadingLevel,
   FlowbiteTheme,
+  FlowbiteClass,
 } from './flowbite.theme';

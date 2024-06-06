@@ -74,3 +74,7 @@ export interface FlowbiteSizes {
 export interface FlowbiteContentPositions {
   center: string;
 }
+
+export interface FlowbiteClass {
+  rootClass: string;
+}
