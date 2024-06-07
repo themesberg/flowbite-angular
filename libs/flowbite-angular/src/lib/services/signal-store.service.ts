@@ -8,7 +8,7 @@ export class SignalStoreService<T> {
     return computed(() => this.state()[key]);
   }
 
-  public set<K extends keyof T>(key: K, data: T) {
+  public set<K extends keyof T>(key: K, data: T[K]) {
     this.state.update((currentValue) => ({ ...currentValue, [key]: data }));
   }
 

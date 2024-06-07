@@ -14,7 +14,7 @@ import { SignalStoreService } from '../../services/signal-store.service';
   templateUrl: './accordion-content.component.html',
 })
 export class AccordionContentComponent extends BaseComponent {
-  protected signalStoreService = inject<
+  protected accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
 

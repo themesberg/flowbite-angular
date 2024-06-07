@@ -24,16 +24,17 @@ import { SignalStoreService } from '../../services/signal-store.service';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  protected signalStoreService = inject<
+  protected accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
-  protected signalStoreServiceAccordionState = inject<
+  protected accordionSignalStoreService = inject<
     SignalStoreService<AccordionState>
   >(SignalStoreService<AccordionState>);
 
   protected override contentClasses = signal<properties.AccordionTitleClass>(
     properties.AccordionTitleClassInstance(),
   );
+
   //#region properties
   protected customStyle = input<Partial<properties.AccordionTitleBaseTheme>>(
     {},
@@ -57,9 +58,10 @@ export class AccordionTitleComponent extends BaseComponent {
       () => {
         effect(
           () => {
-            this.signalStoreService.set('isOpen', {
-              isOpen: !this.signalStoreService.select('isOpen')(),
-            });
+            this.accordionPanelSignalStoreService.set(
+              'isOpen',
+              !this.accordionPanelSignalStoreService.select('isOpen')(),
+            );
           },
           { injector: this.injector },
         );

@@ -18,6 +18,7 @@ export class DropdownItemComponent extends BaseComponent {
   protected override contentClasses = signal<properties.DropdownItemClass>(
     properties.DropdownItemClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.DropdownItemBaseTheme>>({});
   //#endregion

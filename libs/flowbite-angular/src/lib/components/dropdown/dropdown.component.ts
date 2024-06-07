@@ -42,13 +42,14 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
-  protected signalStoreService = inject<SignalStoreService<DropdownState>>(
-    SignalStoreService<DropdownState>,
-  );
+  protected dropdownSignalStoreService = inject<
+    SignalStoreService<DropdownState>
+  >(SignalStoreService<DropdownState>);
 
   protected override contentClasses = signal<properties.DropdownClass>(
     properties.DropdownClassInstance(),
   );
+
   //#region properties
   public label = input('Dropdown');
   public isOpen = input(false, { transform: booleanAttribute });
@@ -69,7 +70,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
       const propertyClass = properties.getClasses({
         label: this.label(),
         isOpen: booleanToFlowbiteBoolean(
-          this.signalStoreService.select('isOpen')(),
+          this.dropdownSignalStoreService.select('isOpen')(),
         ),
         placement: this.position(),
         customStyle: this.customStyle(),
@@ -85,9 +86,10 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   width = 0;
 
   toggle() {
-    this.signalStoreService.set('isOpen', {
-      isOpen: !this.signalStoreService.select('isOpen')(),
-    });
+    this.dropdownSignalStoreService.set(
+      'isOpen',
+      !this.dropdownSignalStoreService.select('isOpen')(),
+    );
   }
 
   calculatePosition() {
@@ -104,13 +106,13 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   ngAfterViewInit() {
     afterNextRender(
       () => {
-        this.signalStoreService.set('isOpen', { isOpen: this.isOpen() });
+        this.dropdownSignalStoreService.set('isOpen', this.isOpen());
       },
       { injector: this.injector },
     );
 
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (!this.signalStoreService.select('isOpen')()) return;
+      if (!this.dropdownSignalStoreService.select('isOpen')()) return;
       this.calculatePosition();
     });
   }
@@ -120,10 +122,10 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&
-      this.signalStoreService.select('isOpen')() &&
+      this.dropdownSignalStoreService.select('isOpen')() &&
       !this.button.nativeElement.contains(event.target)
     ) {
-      this.signalStoreService.set('isOpen', { isOpen: false });
+      this.dropdownSignalStoreService.set('isOpen', false);
     }
   }
 

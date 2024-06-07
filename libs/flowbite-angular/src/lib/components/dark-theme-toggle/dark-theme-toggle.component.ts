@@ -25,7 +25,7 @@ export class DarkThemeToggleComponent
   extends BaseComponent
   implements AfterViewInit
 {
-  protected readonly globalSignalStoreService = inject<
+  protected readonly themeGlobalSignalStoreService = inject<
     GlobalSignalStoreService<ThemeState>
   >(GlobalSignalStoreService<ThemeState>);
 
@@ -57,10 +57,10 @@ export class DarkThemeToggleComponent
           (!localStorage.getItem('color-theme') &&
             window.matchMedia('(prefers-color-scheme: dark)').matches)
         ) {
-          this.globalSignalStoreService.set('theme', { theme: 'dark' });
+          this.themeGlobalSignalStoreService.set('theme', 'dark');
           document.documentElement.classList.add('dark');
         } else {
-          this.globalSignalStoreService.set('theme', { theme: 'dark' });
+          this.themeGlobalSignalStoreService.set('theme', 'dark');
           document.documentElement.classList.remove('dark');
         }
 
@@ -68,9 +68,9 @@ export class DarkThemeToggleComponent
           () => {
             localStorage.setItem(
               'color-theme',
-              this.globalSignalStoreService.select('theme')(),
+              this.themeGlobalSignalStoreService.select('theme')(),
             );
-            this.globalSignalStoreService.select('theme')() === 'dark'
+            this.themeGlobalSignalStoreService.select('theme')() === 'dark'
               ? document.documentElement.classList.add('dark')
               : document.documentElement.classList.remove('dark');
           },
@@ -79,5 +79,11 @@ export class DarkThemeToggleComponent
       },
       { injector: this.injector },
     );
+  }
+
+  protected toggleTheme() {
+    if (this.themeGlobalSignalStoreService.select('theme')() === 'light')
+      this.themeGlobalSignalStoreService.set('theme', 'dark');
+    else this.themeGlobalSignalStoreService.set('theme', 'light');
   }
 }

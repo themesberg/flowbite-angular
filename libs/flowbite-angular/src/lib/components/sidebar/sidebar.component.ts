@@ -1,6 +1,5 @@
 import * as properties from './sidebar.theme';
 import { BaseComponent } from '../base.component';
-import { SidebarService } from '../../services';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
@@ -23,16 +22,17 @@ import { SignalStoreService } from '../../services/signal-store.service';
   imports: [NgClass],
   selector: 'flowbite-sidebar',
   templateUrl: './sidebar.component.html',
-  providers: [SidebarService],
+  providers: [SignalStoreService<SidebarState>],
 })
 export class SidebarComponent extends BaseComponent {
-  protected signalStoreService = inject<SignalStoreService<SidebarState>>(
-    SignalStoreService<SidebarState>,
-  );
+  protected sidebarSignalStoreService = inject<
+    SignalStoreService<SidebarState>
+  >(SignalStoreService<SidebarState>);
 
   protected override contentClasses = signal<properties.SidebarClass>(
     properties.SidebarClassInstance(),
   );
+
   //#region properties
   public isRounded = input(false, { transform: booleanAttribute });
   public customStyle = input<Partial<properties.SidebarBaseTheme>>({});

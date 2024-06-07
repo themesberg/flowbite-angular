@@ -2,10 +2,10 @@
   title="accordion-title-toggle"
   [className]="contentClasses().root"
   [ngClass]="{
-    'text-gray-900 dark:text-white': signalStoreService.select('isOpen')(),
-    'bg-gray-100 dark:bg-gray-800': signalStoreService.select('isOpen')() && !signalStoreServiceAccordionState.select('isFlush')(),
+    'text-gray-900 dark:text-white': accordionPanelSignalStoreService.select('isOpen')(),
+    'bg-gray-100 dark:bg-gray-800': accordionPanelSignalStoreService.select('isOpen')() && !accordionSignalStoreService.select('isFlush')(),
     'hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-800 dark:focus:ring-gray-800':
-      !signalStoreServiceAccordionState.select('isFlush')()
+      !accordionSignalStoreService.select('isFlush')()
   }"
   type="button"
   (click)="toggleVisibility()">

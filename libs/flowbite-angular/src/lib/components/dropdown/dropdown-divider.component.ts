@@ -18,6 +18,7 @@ export class DropdownDividerComponent extends BaseComponent {
   protected override contentClasses = signal<properties.DropdownDividerClass>(
     properties.DropdownDividerClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.DropdownDividerBaseTheme>>({});
   //#endregion

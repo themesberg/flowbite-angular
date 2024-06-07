@@ -34,6 +34,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   protected override contentClasses = signal<properties.ModalClass>(
     properties.ModalClassInstance(),
   );
+
   //#region properties
   public size = input<keyof properties.ModalSizes>('md');
   public position = input<keyof properties.ModalPositions>('center');
@@ -59,26 +60,27 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
     afterNextRender(
       () => {
-        this.signalStoreService.set('isOpen', { isOpen: this.isOpen() });
+        this.signalStoreService.set('isOpen', this.isOpen());
       },
       { injector: this.injector },
     );
   }
 
   open() {
-    this.signalStoreService.set('isOpen', { isOpen: true });
+    this.signalStoreService.set('isOpen', true);
     this.changeBackdrop();
   }
 
   close() {
-    this.signalStoreService.set('isOpen', { isOpen: false });
+    this.signalStoreService.set('isOpen', false);
     this.changeBackdrop();
   }
 
   toggle() {
-    this.signalStoreService.set('isOpen', {
-      isOpen: this.signalStoreService.select('isOpen')(),
-    });
+    this.signalStoreService.set(
+      'isOpen',
+      this.signalStoreService.select('isOpen')(),
+    );
     this.changeBackdrop();
   }
 

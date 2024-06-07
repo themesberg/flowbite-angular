@@ -28,13 +28,14 @@ import { SignalStoreService } from '../../services/signal-store.service';
   providers: [SignalStoreService<AccordionState>],
 })
 export class AccordionComponent extends BaseComponent implements AfterViewInit {
-  protected signalStoreService = inject<SignalStoreService<AccordionState>>(
-    SignalStoreService<AccordionState>,
-  );
+  protected accordionSignalStoreService = inject<
+    SignalStoreService<AccordionState>
+  >(SignalStoreService<AccordionState>);
 
   protected override contentClasses = signal<properties.AccordionClass>(
     properties.AccordionClassInstance(),
   );
+
   //#region properties
   public isFlush = input(false, { transform: booleanAttribute });
   public customStyle = input<Partial<properties.AccordionBaseTheme>>({});
@@ -60,7 +61,7 @@ export class AccordionComponent extends BaseComponent implements AfterViewInit {
       () => {
         effect(
           () => {
-            this.signalStoreService.set('isFlush', { isFlush: this.isFlush() });
+            this.accordionSignalStoreService.set('isFlush', this.isFlush());
           },
           { injector: this.injector },
         );

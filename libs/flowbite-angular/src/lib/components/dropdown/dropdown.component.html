@@ -25,7 +25,7 @@
 <div
   [ngClass]="contentClasses().containerClass"
   #dropdown
-  [style.display]="signalStoreService.select('isOpen')() ? 'block' : 'none'">
+  [style.display]="dropdownSignalStoreService.select('isOpen')() ? 'block' : 'none'">
   <div [ngClass]="contentClasses().contentClass">
     <ul [ngClass]="contentClasses().subContentClass">
       <ng-content></ng-content>

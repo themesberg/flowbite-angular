@@ -16,6 +16,7 @@ export class NavbarBrandComponent extends BaseComponent {
   protected override contentClasses = signal<properties.NavbarBrandClass>(
     properties.NavbarBrandClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.NavbarBrandBaseTheme>>({});
   public href = input<string | undefined>(undefined);

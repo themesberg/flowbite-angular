@@ -25,13 +25,14 @@ import { SignalStoreService } from '../../services/signal-store.service';
   providers: [SignalStoreService<NavbarState>],
 })
 export class NavbarComponent extends BaseComponent {
-  protected signalStoreService = inject<SignalStoreService<NavbarState>>(
+  protected narbarSignalStoreService = inject<SignalStoreService<NavbarState>>(
     SignalStoreService<NavbarState>,
   );
 
   protected override contentClasses = signal<properties.NavbarClass>(
     properties.NavbarClassInstance(),
   );
+
   //#region properties
   public isRounded = input(false, { transform: booleanAttribute });
   public hasBorder = input(false, { transform: booleanAttribute });

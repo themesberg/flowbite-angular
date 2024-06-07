@@ -24,9 +24,9 @@ import { SignalStoreService } from '../../services/signal-store.service';
   templateUrl: './sidebar-item.component.html',
 })
 export class SidebarItemComponent extends BaseComponent {
-  protected signalStoreService = inject<SignalStoreService<SidebarState>>(
-    SignalStoreService<SidebarState>,
-  );
+  protected sidebarSignalStoreService = inject<
+    SignalStoreService<SidebarState>
+  >(SignalStoreService<SidebarState>);
 
   protected override contentClasses = signal<properties.SidebarItemClass>(
     properties.SidebarItemClassInstance(),

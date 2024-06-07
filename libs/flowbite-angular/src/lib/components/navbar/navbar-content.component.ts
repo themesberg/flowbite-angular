@@ -16,6 +16,7 @@ export class NavbarContentComponent extends BaseComponent {
   protected override contentClasses = signal<properties.NavbarContentClass>(
     properties.NavbarContentClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.NavbarContentBaseTheme>>({});
   //#endregion

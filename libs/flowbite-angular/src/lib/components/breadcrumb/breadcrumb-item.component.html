@@ -13,12 +13,12 @@
 <a
   *ngIf="href(); else only_label"
   [href]="href()"
-  [ngClass]="contentClasses()?.contentClass">
-  <ng-container *ngTemplateOutlet="contentOutlet()"></ng-container>
+  [ngClass]="contentClasses().contentClass">
+  <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
 </a>
 
 <ng-template #only_label>
-  <span [ngClass]="contentClasses()?.contentClass">
+  <span [ngClass]="contentClasses().contentClass">
     <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
   </span>
 </ng-template>

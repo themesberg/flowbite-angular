@@ -18,6 +18,7 @@ export class DropdownHeaderComponent extends BaseComponent {
   protected override contentClasses = signal<properties.DropdownHeaderClass>(
     properties.DropdownHeaderClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.DropdownHeaderBaseTheme>>({});
   //#endregion

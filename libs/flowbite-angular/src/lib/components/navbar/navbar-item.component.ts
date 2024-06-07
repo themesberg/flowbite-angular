@@ -16,6 +16,7 @@ export class NavbarItemComponent extends BaseComponent {
   protected override contentClasses = signal<properties.NavbarItemClass>(
     properties.NavbarItemClassInstance(),
   );
+
   //#region properties
   public color = input<keyof properties.NavbarItemColors>('blue');
   public customStyle = input<Partial<properties.NavbarItemBaseTheme>>({});

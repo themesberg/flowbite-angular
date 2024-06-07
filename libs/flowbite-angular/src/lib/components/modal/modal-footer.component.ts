@@ -18,6 +18,7 @@ export class ModalFooterComponent extends BaseComponent {
   protected override contentClasses = signal<properties.ModalFooterClass>(
     properties.ModalFooterClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.ModalFooterBaseTheme>>({});
   //#endregion

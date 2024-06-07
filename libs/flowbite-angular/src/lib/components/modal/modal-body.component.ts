@@ -15,6 +15,7 @@ export class ModalBodyComponent extends BaseComponent {
   protected override contentClasses = signal<properties.ModalBodyClass>(
     properties.ModalBodyClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.ModalBodyBaseTheme>>({});
   //#endregion

@@ -11,7 +11,7 @@ import { SignalStoreService } from '../../services/signal-store.service';
   providers: [SignalStoreService<AccordionPanelState>],
 })
 export class AccordionPanelComponent extends BaseComponent {
-  protected signalStoreService = inject<
+  protected accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
 

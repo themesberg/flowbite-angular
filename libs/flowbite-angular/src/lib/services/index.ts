@@ -1,2 +1,2 @@
-export { SidebarService } from './sidebar.service';
-export { ThemeService } from './theme.service';
+export { GlobalSignalStoreService } from './global-signal-store.service';
+export { SignalStoreService } from './signal-store.service';

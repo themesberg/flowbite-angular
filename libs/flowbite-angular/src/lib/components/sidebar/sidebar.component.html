@@ -1,7 +1,7 @@
 <aside
   [ngClass]="contentClasses().sidebarClass"
-  [class.w-16]="signalStoreService.select('isCollapsed')()"
-  [class.w-64]="!signalStoreService.select('isCollapsed')()">
+  [class.w-16]="sidebarSignalStoreService.select('isCollapsed')()"
+  [class.w-64]="!sidebarSignalStoreService.select('isCollapsed')()">
   <div [ngClass]="contentClasses().sidebarContentClass">
     <ng-content></ng-content>
   </div>

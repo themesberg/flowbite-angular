@@ -10,10 +10,11 @@
   <span
     [ngClass]="contentClasses().sidebarIconClass"
     [class.ml-3]="!!icon"
-    *ngIf="!signalStoreService.select('isCollapsed')()">
+    *ngIf="!sidebarSignalStoreService.select('isCollapsed')()">
     <ng-content></ng-content>
   </span>
-  <flowbite-badge *ngIf="!signalStoreService.select('isCollapsed')() && label()"
+  <flowbite-badge
+    *ngIf="!sidebarSignalStoreService.select('isCollapsed')() && label()"
     >{{ label() }}</flowbite-badge
   >
 </a>

@@ -18,6 +18,7 @@ export class ModalHeaderComponent extends BaseComponent {
   protected override contentClasses = signal<properties.ModalHeaderClass>(
     properties.ModalHeaderClassInstance(),
   );
+
   //#region properties
   public customStyle = input<Partial<properties.ModalHeaderBaseTheme>>({});
   //#endregion

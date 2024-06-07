@@ -20,6 +20,7 @@ export class IndicatorComponent extends BaseComponent {
   protected override contentClasses = signal<properties.indicatorClass>(
     properties.IndicatorClassInstance(),
   );
+
   //#region properties
   public isPill = input(false, { transform: booleanAttribute });
   public isOutline = input(false, { transform: booleanAttribute });
