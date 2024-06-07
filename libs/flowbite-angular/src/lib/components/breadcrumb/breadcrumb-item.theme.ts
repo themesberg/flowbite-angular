@@ -1,4 +1,4 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -9,8 +9,13 @@ export interface BreadcrumbItemProperties {
 }
 
 export interface BreadcrumbItemBaseTheme {
+  root: Partial<BreadcrumbItemRootTheme>;
   icon: Partial<BreadcrumbIconRootTheme>;
   item: Partial<BreadcrumbItemContentTheme>;
+}
+
+export interface BreadcrumbItemRootTheme {
+  base: string;
 }
 
 export interface BreadcrumbIconRootTheme {
@@ -22,6 +27,9 @@ export interface BreadcrumbItemContentTheme {
 }
 
 export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
+  root: {
+    base: 'group flex items-center',
+  },
   icon: {
     base: 'mx-1 h-6 w-6 text-gray-400 group-first:hidden md:mx-2',
   },
@@ -35,9 +43,13 @@ export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
   },
 };
 
-export interface BreadcrumbItemClass {
+export interface BreadcrumbItemClass extends FlowbiteClass {
   breadcrumbIconClass: string;
   contentClass: string;
+}
+
+export function BreadcrumbItemClassInstance(): BreadcrumbItemClass {
+  return { rootClass: '', breadcrumbIconClass: '', contentClass: '' };
 }
 
 export function getClasses(
@@ -49,9 +61,10 @@ export function getClasses(
   );
 
   const output: BreadcrumbItemClass = {
+    rootClass: twMerge(theme.root.base),
     breadcrumbIconClass: twMerge(theme.icon.base),
     contentClass: twMerge(
-      theme.item.base![properties.href ? 'enabled' : 'disabled'],
+      theme.item.base?.[properties.href ? 'enabled' : 'disabled'],
     ),
   };
 

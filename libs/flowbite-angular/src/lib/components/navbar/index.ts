@@ -33,5 +33,5 @@ export {
   NavbarItemBaseTheme,
   NavbarItemRootTheme,
   navbarItemTheme,
-} from './nabvar-item.theme';
+} from './navbar-item.theme';
 export { NavbarToggleComponent } from './navbar-toggle.component';

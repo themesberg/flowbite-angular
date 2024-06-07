@@ -1,13 +1,14 @@
 <button
-  [className]="contentClasses!.root"
+  title="accordion-title-toggle"
+  [className]="contentClasses().root"
   [ngClass]="{
-    'text-gray-900 dark:text-white': accordionPanel.open,
-    'bg-gray-100 dark:bg-gray-800': accordionPanel.open && !accordion.flush,
+    'text-gray-900 dark:text-white': signalStoreService.select('isOpen')(),
+    'bg-gray-100 dark:bg-gray-800': signalStoreService.select('isOpen')() && !signalStoreServiceAccordionState.select('isFlush')(),
     'hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-800 dark:focus:ring-gray-800':
-      !accordion.flush
+      !signalStoreServiceAccordionState.select('isFlush')()
   }"
   type="button"
-  (click)="accordionPanel.toggleVisibility()">
+  (click)="toggleVisibility()">
   <h2>
     <ng-content></ng-content>
   </h2>
@@ -17,7 +18,7 @@
     stroke-width="0"
     viewBox="0 0 20 20"
     class="h-6 w-6 shrink-0 duration-200"
-    [class.rotate-180]="accordionPanel.open"
+    [class.rotate-180]="toggleVisibility()"
     height="1em"
     width="1em"
     xmlns="http://www.w3.org/2000/svg">

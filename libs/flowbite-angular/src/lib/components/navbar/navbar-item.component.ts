@@ -1,8 +1,8 @@
-import * as properties from './nabvar-item.theme';
+import * as properties from './navbar-item.theme';
 import { BaseComponent } from '../base.component';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -13,53 +13,24 @@ import { NgClass } from '@angular/common';
   styleUrl: './navbar-item.component.css',
 })
 export class NavbarItemComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.NavbarItemClass,
-    string
-  > = undefined;
+  protected override contentClasses = signal<properties.NavbarItemClass>(
+    properties.NavbarItemClassInstance(),
+  );
   //#region properties
-  protected $color: keyof properties.NavbarItemColors = 'blue';
-  protected $customStyle: Partial<properties.NavbarItemBaseTheme> = {};
-
-  protected $href?: string;
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.NavbarItemBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.NavbarItemBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-
-  /** @default blue */
-  public get color(): keyof properties.NavbarItemColors {
-    return this.$color;
-  }
-  @Input() public set color(value: keyof properties.NavbarItemColors) {
-    this.$color = value;
-    this.fetchClass();
-  }
-
-  /** @default undefined */
-  public get href(): string | undefined {
-    return this.$href;
-  }
-  @Input() public set href(value: string | undefined) {
-    this.$href = value;
-  }
+  public color = input<keyof properties.NavbarItemColors>('blue');
+  public customStyle = input<Partial<properties.NavbarItemBaseTheme>>({});
+  public href = input<string | undefined>(undefined);
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$color, this.$customStyle)) {
-      this.contentClasses = properties.getClasses({
-        color: this.$color,
-        customStyle: this.$customStyle,
+    if (paramNotNull(this.color(), this.customStyle())) {
+      const propertyClass = properties.getClasses({
+        color: this.color(),
+        customStyle: this.customStyle(),
       });
+
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion

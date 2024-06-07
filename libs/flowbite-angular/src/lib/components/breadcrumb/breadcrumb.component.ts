@@ -2,7 +2,7 @@ import * as properties from './breadcrumb.theme';
 import { BaseComponent } from '../base.component';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 /**
@@ -15,34 +15,24 @@ import { NgClass } from '@angular/common';
   templateUrl: './breadcrumb.component.html',
 })
 export class BreadcrumbComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.BreadcrumbClass,
-    string
-  > = undefined;
+  @HostBinding('aria-label') protected hostAriaLabelValue = 'Breadcrumb';
+
+  protected override contentClasses = signal<properties.BreadcrumbClass>(
+    properties.BreadcrumbClassInstance(),
+  );
+
   //#region properties
-  protected $customStyle: Partial<properties.BreadcrumbBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.BreadcrumbBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.BreadcrumbBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public customStyle = input<Partial<properties.BreadcrumbBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
+    if (paramNotNull(this.customStyle())) {
       const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
+        customStyle: this.customStyle(),
       });
 
-      this.contentClasses = propertyClass;
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion

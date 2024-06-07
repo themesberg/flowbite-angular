@@ -1,12 +1,12 @@
-<div [ngClass]="contentClasses!.modalHeaderClass">
-  <h3 [ngClass]="contentClasses!.modalHeaderTitleClass">
+<div [ngClass]="contentClasses().modalHeaderClass">
+  <h3 [ngClass]="contentClasses().modalHeaderTitleClass">
     <ng-content></ng-content>
   </h3>
   <button
     type="button"
-    [ngClass]="contentClasses!.modalHeaderButtonClass"
+    [ngClass]="contentClasses().modalHeaderButtonClass"
     data-modal-hide="medium-modal"
-    (click)="modal.close()">
+    (click)="modalComponent.close()">
     <svg
       aria-hidden="true"
       class="w-5 h-5"

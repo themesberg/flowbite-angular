@@ -1,7 +1,7 @@
 import * as properties from './navbar-content.theme';
 import { BaseComponent } from '../base.component';
 
-import { Component, Input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { paramNotNull } from '../../utils/param.util';
 
@@ -13,31 +13,21 @@ import { paramNotNull } from '../../utils/param.util';
   styleUrl: './navbar-content.component.css',
 })
 export class NavbarContentComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.NavbarContentClass,
-    string
-  > = undefined;
+  protected override contentClasses = signal<properties.NavbarContentClass>(
+    properties.NavbarContentClassInstance(),
+  );
   //#region properties
-  protected $customStyle: Partial<properties.NavbarContentBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  public get customStyle(): Partial<properties.NavbarContentBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.NavbarContentBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public customStyle = input<Partial<properties.NavbarContentBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      this.contentClasses = properties.getClasses({
-        customStyle: this.$customStyle,
+    if (paramNotNull(this.customStyle())) {
+      const propertyClass = properties.getClasses({
+        customStyle: this.customStyle(),
       });
+
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion

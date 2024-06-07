@@ -1,5 +1,6 @@
 import {
   FlowbiteBoolean,
+  FlowbiteClass,
   FlowbiteColors,
   FlowbiteGradientColors,
   FlowbiteGradientDuoToneColors,
@@ -249,9 +250,12 @@ export const buttonTheme: ButtonBaseTheme = {
   },
 };
 
-export interface ButtonClass {
-  buttonClass: string;
+export interface ButtonClass extends FlowbiteClass {
   spanClass: string;
+}
+
+export function ButtonClassInstance(): ButtonClass {
+  return { rootClass: '', spanClass: '' };
 }
 
 export function getClasses(properties: ButtonProperties): ButtonClass {
@@ -261,7 +265,7 @@ export function getClasses(properties: ButtonProperties): ButtonClass {
   );
 
   const output: ButtonClass = {
-    buttonClass: twMerge(
+    rootClass: twMerge(
       properties.gradientDuoTone && properties.outline == 'outline'
         ? theme.root.base!['span']
         : `${theme.root.base!['default']} ${theme.root.size![properties.size]}`,

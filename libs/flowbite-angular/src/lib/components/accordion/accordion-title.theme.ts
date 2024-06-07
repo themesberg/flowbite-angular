@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 import { twMerge } from 'tailwind-merge';
 
@@ -19,8 +20,12 @@ export const accordionTitleTheme: AccordionTitleBaseTheme = {
   },
 };
 
-export interface AccordionTitleClass {
+export interface AccordionTitleClass extends FlowbiteClass {
   root: string;
+}
+
+export function AccordionTitleClassInstance(): AccordionTitleClass {
+  return { root: '', rootClass: '' };
 }
 
 export function getClass(
@@ -32,6 +37,7 @@ export function getClass(
   );
 
   const output: AccordionTitleClass = {
+    rootClass: '',
     root: twMerge(theme.root.base),
   };
 

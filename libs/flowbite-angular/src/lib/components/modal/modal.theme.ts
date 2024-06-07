@@ -1,4 +1,8 @@
-import { FlowbitePositions, FlowbiteSizes } from '../../common/flowbite.theme';
+import {
+  FlowbiteClass,
+  FlowbitePositions,
+  FlowbiteSizes,
+} from '../../common/flowbite.theme';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -79,16 +83,26 @@ export const modalTheme: ModalBaseTheme = {
   },
 };
 
-export interface ModalClass {
+export interface ModalClass extends FlowbiteClass {
   modalClass: string;
   modalContainerClass: string;
   modalContentClass: string;
+}
+
+export function ModalClassInstance(): ModalClass {
+  return {
+    modalClass: '',
+    modalContainerClass: '',
+    modalContentClass: '',
+    rootClass: '',
+  };
 }
 
 export function getClasses(properties: ModalProperties): ModalClass {
   const theme: ModalBaseTheme = mergeTheme(modalTheme, properties.customStyle);
 
   const output: ModalClass = {
+    rootClass: '',
     modalClass: twMerge(
       theme.root.base,
       theme.root.position![properties.position],

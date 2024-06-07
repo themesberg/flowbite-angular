@@ -2,7 +2,7 @@ import * as properties from './modal-body.theme';
 import { BaseComponent } from '../base.component';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -12,34 +12,21 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.ModalBodyClass,
-    string
-  > = undefined;
+  protected override contentClasses = signal<properties.ModalBodyClass>(
+    properties.ModalBodyClassInstance(),
+  );
   //#region properties
-  protected $customStyle: Partial<properties.ModalBodyBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.ModalBodyBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.ModalBodyBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public customStyle = input<Partial<properties.ModalBodyBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
+    if (paramNotNull(this.customStyle())) {
       const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
+        customStyle: this.customStyle(),
       });
 
-      this.contentClasses = propertyClass;
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion

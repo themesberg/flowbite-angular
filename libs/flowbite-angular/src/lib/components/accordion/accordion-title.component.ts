@@ -1,11 +1,21 @@
 import * as properties from './accordion-title.theme';
-import { AccordionComponent } from './accordion.component';
-import { AccordionPanelComponent } from './accordion-panel.component';
 import { BaseComponent } from '../base.component';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import {
+  AccordionPanelState,
+  AccordionState,
+} from '../../services/state/accordion.state';
+import {
+  Component,
+  afterNextRender,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { NgClass } from '@angular/common';
+import { SignalStoreService } from '../../services/signal-store.service';
 
 @Component({
   standalone: true,
@@ -14,41 +24,47 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.AccordionTitleClass,
-    string
-  > = undefined;
-  //#region properties
-  protected $customStyle: Partial<properties.AccordionTitleBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.AccordionTitleBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.AccordionTitleBaseTheme>,
-  ) {
-    this.$customStyle = value;
-  }
-  //#endregion
+  protected signalStoreService = inject<
+    SignalStoreService<AccordionPanelState>
+  >(SignalStoreService<AccordionPanelState>);
+  protected signalStoreServiceAccordionState = inject<
+    SignalStoreService<AccordionState>
+  >(SignalStoreService<AccordionState>);
 
-  constructor(
-    readonly accordion: AccordionComponent,
-    readonly accordionPanel: AccordionPanelComponent,
-  ) {
-    super();
-  }
+  protected override contentClasses = signal<properties.AccordionTitleClass>(
+    properties.AccordionTitleClassInstance(),
+  );
+  //#region properties
+  protected customStyle = input<Partial<properties.AccordionTitleBaseTheme>>(
+    {},
+  );
+  //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
+    if (paramNotNull(this.customStyle())) {
       const propertyClass = properties.getClass({
-        customStyle: this.$customStyle,
+        customStyle: this.customStyle(),
       });
 
-      this.contentClasses = propertyClass;
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion
+
+  protected toggleVisibility(): void {
+    afterNextRender(
+      () => {
+        effect(
+          () => {
+            this.signalStoreService.set('isOpen', {
+              isOpen: !this.signalStoreService.select('isOpen')(),
+            });
+          },
+          { injector: this.injector },
+        );
+      },
+      { injector: this.injector },
+    );
+  }
 }

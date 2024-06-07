@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -20,8 +21,10 @@ export const modalFooterTheme: ModalFooterBaseTheme = {
   },
 };
 
-export interface ModalFooterClass {
-  root: string;
+export type ModalFooterClass = FlowbiteClass;
+
+export function ModalFooterClassInstance(): ModalFooterClass {
+  return { rootClass: '' };
 }
 
 export function getClasses(
@@ -33,7 +36,7 @@ export function getClasses(
   );
 
   const output: ModalFooterClass = {
-    root: twMerge(theme.root.base),
+    rootClass: twMerge(theme.root.base),
   };
 
   return output;

@@ -1,5 +1,6 @@
 import {
   FlowbiteBoolean,
+  FlowbiteClass,
   FlowbiteColors,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
@@ -67,7 +68,7 @@ export const badgeTheme: BadgeBaseTheme = {
       disabled: 'rounded',
     },
     href: {
-      enabled: 'cursor-pointer',
+      enabled: 'group cursor-pointer',
       disabled: '',
     },
     iconOnly: {
@@ -77,25 +78,27 @@ export const badgeTheme: BadgeBaseTheme = {
   },
 };
 
-export interface BadgeClass {
-  root: string;
+export type BadgeClass = FlowbiteClass;
+
+export function BadgeClassInstance(): BadgeClass {
+  return { rootClass: '' };
 }
 
 export function getClasses(properties: BadgeProperties): BadgeClass {
   const theme: BadgeBaseTheme = mergeTheme(badgeTheme, properties.customStyle);
 
   const output: BadgeClass = {
-    root: twMerge(
+    rootClass: twMerge(
       theme.root.base,
-      theme.root.color![properties.color],
-      theme.root.size![properties.size],
-      theme.root.pill![
+      theme.root.color?.[properties.color],
+      theme.root.size?.[properties.size],
+      theme.root.pill?.[
         properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
           ? 'enabled'
           : properties.isPill
       ],
-      theme.root.iconOnly![properties.isIconOnly],
-      theme.root.href![properties.href ? 'enabled' : 'disabled'],
+      theme.root.iconOnly?.[properties.isIconOnly],
+      theme.root.href?.[properties.href ? 'enabled' : 'disabled'],
     ),
   };
 

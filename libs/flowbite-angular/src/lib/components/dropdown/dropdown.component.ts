@@ -1,11 +1,7 @@
 import * as properties from './dropdown.theme';
 
 import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
 import {
@@ -13,10 +9,14 @@ import {
   Component,
   ElementRef,
   HostListener,
-  Input,
   ViewChild,
+  afterNextRender,
   booleanAttribute,
+  inject,
+  input,
+  signal,
 } from '@angular/core';
+import { DropdownState } from '../../services/state/dropdown.state';
 import { NgClass } from '@angular/common';
 import {
   Placement,
@@ -26,6 +26,7 @@ import {
   offset,
   shift,
 } from '@floating-ui/dom';
+import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -35,72 +36,46 @@ import {
   imports: [NgClass],
   selector: 'flowbite-dropdown',
   templateUrl: './dropdown.component.html',
+  providers: [SignalStoreService<DropdownState>],
 })
 export class DropdownComponent extends BaseComponent implements AfterViewInit {
-  protected override contentClasses?: Record<
-    keyof properties.DropdownClass,
-    string
-  > = undefined;
-  //#region properties
-  protected $label = 'Dropdown';
-  protected $isOpen: keyof FlowbiteBoolean = 'disabled';
-  protected $position: keyof properties.DropdownPositions = 'bottom-center';
-  protected $customStyle: Partial<properties.DropdownBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
-  /** @default Dropdown */
-  public get label(): string {
-    return this.$label;
-  }
-  @Input() public set label(value: string) {
-    this.$label = value;
-    this.fetchClass();
-  }
+  protected signalStoreService = inject<SignalStoreService<DropdownState>>(
+    SignalStoreService<DropdownState>,
+  );
 
-  /** @default false */
-  public get isOpen(): boolean {
-    return flowbiteBooleanToBoolean(this.$isOpen);
-  }
-  @Input({ transform: booleanAttribute }) public set isOpen(value: boolean) {
-    this.$isOpen = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default bottom-center */
-  public get position(): keyof properties.DropdownPositions {
-    return this.$position;
-  }
-  @Input() public set position(value: keyof properties.DropdownPositions) {
-    this.$position = value;
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.DropdownBaseTheme> {
-    return this.$customStyle;
-  }
-  public set customStyle(value: Partial<properties.DropdownBaseTheme>) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  protected override contentClasses = signal<properties.DropdownClass>(
+    properties.DropdownClassInstance(),
+  );
+  //#region properties
+  public label = input('Dropdown');
+  public isOpen = input(false, { transform: booleanAttribute });
+  public position = input<keyof properties.DropdownPositions>('bottom-center');
+  public customStyle = input<Partial<properties.DropdownBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     if (
-      paramNotNull(this.$label, this.$isOpen, this.$position, this.$customStyle)
+      paramNotNull(
+        this.label(),
+        this.isOpen(),
+        this.position(),
+        this.customStyle(),
+      )
     ) {
       const propertyClass = properties.getClasses({
-        label: this.$label,
-        isOpen: this.$isOpen,
-        placement: this.$position,
-        customStyle: this.$customStyle,
+        label: this.label(),
+        isOpen: booleanToFlowbiteBoolean(
+          this.signalStoreService.select('isOpen')(),
+        ),
+        placement: this.position(),
+        customStyle: this.customStyle(),
       });
 
-      this.contentClasses = propertyClass;
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion
@@ -110,12 +85,14 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   width = 0;
 
   toggle() {
-    this.isOpen = !this.isOpen;
+    this.signalStoreService.set('isOpen', {
+      isOpen: !this.signalStoreService.select('isOpen')(),
+    });
   }
 
   calculatePosition() {
     computePosition(this.button.nativeElement, this.dropdown.nativeElement, {
-      placement: this.convertPosition(this.position),
+      placement: this.convertPosition(this.position()),
       middleware: [offset(8), flip(), shift()],
     }).then(({ x, y }: { x: number; y: number }) => {
       this.dropdown.nativeElement.style.left = x + 'px';
@@ -125,8 +102,15 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    afterNextRender(
+      () => {
+        this.signalStoreService.set('isOpen', { isOpen: this.isOpen() });
+      },
+      { injector: this.injector },
+    );
+
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (!this.isOpen) return;
+      if (!this.signalStoreService.select('isOpen')()) return;
       this.calculatePosition();
     });
   }
@@ -136,10 +120,10 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&
-      this.isOpen &&
+      this.signalStoreService.select('isOpen')() &&
       !this.button.nativeElement.contains(event.target)
     ) {
-      this.isOpen = false;
+      this.signalStoreService.set('isOpen', { isOpen: false });
     }
   }
 

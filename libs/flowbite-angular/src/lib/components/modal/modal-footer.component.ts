@@ -3,7 +3,7 @@ import { BaseComponent } from '../base.component';
 import { ModalComponent } from './modal.component';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -13,38 +13,23 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.ModalFooterClass,
-    string
-  > = undefined;
-  //#region properties
-  protected $customStyle: Partial<properties.ModalFooterBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.ModalFooterBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.ModalFooterBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
+  protected modalComponent = inject<ModalComponent>(ModalComponent);
 
-  constructor(public modal: ModalComponent) {
-    super();
-  }
+  protected override contentClasses = signal<properties.ModalFooterClass>(
+    properties.ModalFooterClassInstance(),
+  );
+  //#region properties
+  public customStyle = input<Partial<properties.ModalFooterBaseTheme>>({});
+  //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
+    if (paramNotNull(this.customStyle())) {
       const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
+        customStyle: this.customStyle(),
       });
 
-      this.contentClasses = propertyClass;
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion

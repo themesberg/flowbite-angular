@@ -1,4 +1,8 @@
-import { FlowbiteBoolean, FlowbiteColors } from '../../common/flowbite.theme';
+import {
+  FlowbiteBoolean,
+  FlowbiteClass,
+  FlowbiteColors,
+} from '../../common/flowbite.theme';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -55,9 +59,12 @@ export const navbarTheme: NavbarBaseTheme = {
   },
 };
 
-export interface NavbarClass {
-  navbarClass: string;
+export interface NavbarClass extends FlowbiteClass {
   contentClass: string;
+}
+
+export function NavbarClassInstance(): NavbarClass {
+  return { contentClass: '', rootClass: '' };
 }
 
 export function getClasses(properties: NavbarProperties): NavbarClass {
@@ -67,7 +74,7 @@ export function getClasses(properties: NavbarProperties): NavbarClass {
   );
 
   const output: NavbarClass = {
-    navbarClass: twMerge(
+    rootClass: twMerge(
       theme.root.base,
       theme.root.color!['gray'],
       theme.root.rounded![properties.rounded],

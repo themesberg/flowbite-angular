@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -36,10 +37,19 @@ export const modalHeaderTheme: ModalHeaderBaseTheme = {
   },
 };
 
-export interface ModalHeaderClass {
+export interface ModalHeaderClass extends FlowbiteClass {
   modalHeaderClass: string;
   modalHeaderTitleClass: string;
   modalHeaderButtonClass: string;
+}
+
+export function ModalHeaderClassInstance(): ModalHeaderClass {
+  return {
+    modalHeaderButtonClass: '',
+    modalHeaderClass: '',
+    modalHeaderTitleClass: '',
+    rootClass: '',
+  };
 }
 
 export function getClasses(
@@ -51,6 +61,7 @@ export function getClasses(
   );
 
   const output: ModalHeaderClass = {
+    rootClass: '',
     modalHeaderClass: twMerge(theme.root.base),
     modalHeaderTitleClass: twMerge(theme.title.base),
     modalHeaderButtonClass: twMerge(theme.button.base),

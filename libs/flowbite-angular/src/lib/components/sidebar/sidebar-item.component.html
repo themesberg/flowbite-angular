@@ -1,19 +1,19 @@
 <a
-  [ngClass]="contentClasses!.sidebarClass"
-  [routerLink]="link"
+  [ngClass]="contentClasses().sidebarClass"
+  [routerLink]="link()"
   routerLinkActive="bg-gray-200 dark:bg-gray-700"
   [routerLinkActiveOptions]="{ exact: true }">
   <span
     class="flex-shrink-0"
-    [innerHTML]="icon! | sanitizeHtml"
+    [innerHTML]="icon()! | sanitizeHtml"
     *ngIf="!!icon"></span>
   <span
-    [ngClass]="contentClasses!.sidebarIconClass"
+    [ngClass]="contentClasses().sidebarIconClass"
     [class.ml-3]="!!icon"
-    *ngIf="sidebarService.collapsed() === false">
+    *ngIf="!signalStoreService.select('isCollapsed')()">
     <ng-content></ng-content>
   </span>
-  <flowbite-badge *ngIf="sidebarService.collapsed() === false && label"
-    >{{ label }}</flowbite-badge
+  <flowbite-badge *ngIf="!signalStoreService.select('isCollapsed')() && label()"
+    >{{ label() }}</flowbite-badge
   >
 </a>

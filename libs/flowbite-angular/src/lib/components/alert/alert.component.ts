@@ -26,48 +26,46 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 export class AlertComponent extends BaseComponent implements OnInit {
   @HostBinding('role') protected hostRoleValue = 'alert';
 
-  protected override contentClassesSignal = signal<properties.AlertClass>(
+  protected override contentClasses = signal<properties.AlertClass>(
     properties.AlertClassInstance(),
   );
 
   //#region properties
   public color = input<keyof properties.AlertColors>('blue');
-  public rounded = input(true, { transform: booleanAttribute });
-  public borderAccent = input(false, { transform: booleanAttribute });
+  public isRounded = input(true, { transform: booleanAttribute });
+  public isBorderAccent = input(false, { transform: booleanAttribute });
   public customStyle = input<Partial<properties.AlertBaseTheme>>({});
 
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);
   public dismiss = input<() => void | undefined>();
+  //#endregion
 
   //#region BaseComponent implementation
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  protected override fetchClass(): void {}
+  protected override fetchClass(): void {
+    if (
+      paramNotNull(
+        this.color(),
+        booleanToFlowbiteBoolean(this.isRounded()),
+        booleanToFlowbiteBoolean(this.isBorderAccent()),
+        this.customStyle(),
+      )
+    ) {
+      const propertyClass = properties.getClasses({
+        color: this.color(),
+        borderAccent: booleanToFlowbiteBoolean(this.isBorderAccent()),
+        rounded: booleanToFlowbiteBoolean(this.isRounded()),
+        customStyle: this.customStyle(),
+      });
+
+      this.contentClasses.set(propertyClass);
+    }
+  }
   //#endregion
 
   protected callDismiss() {
     const func = this.dismiss();
 
     if (func) func();
-  }
-
-  protected override fetchClassSignal(): void {
-    if (
-      paramNotNull(
-        this.color(),
-        booleanToFlowbiteBoolean(this.rounded()),
-        booleanToFlowbiteBoolean(this.borderAccent()),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        color: this.color(),
-        borderAccent: booleanToFlowbiteBoolean(this.borderAccent()),
-        rounded: booleanToFlowbiteBoolean(this.rounded()),
-        customStyle: this.customStyle(),
-      });
-
-      this.contentClassesSignal.set(propertyClass);
-    }
   }
 }

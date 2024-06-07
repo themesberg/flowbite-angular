@@ -1,5 +1,6 @@
 import {
   FlowbiteBoolean,
+  FlowbiteClass,
   FlowbiteColors,
   FlowbitePositions,
   FlowbiteSizes,
@@ -121,8 +122,10 @@ export const indicatorTheme: IndicatorBaseTheme = {
   },
 };
 
-export interface indicatorClass {
-  root: string;
+export type indicatorClass = FlowbiteClass;
+
+export function IndicatorClassInstance(): indicatorClass {
+  return { rootClass: '' };
 }
 
 export function getClasses(properties: IndicatorProperties): indicatorClass {
@@ -132,7 +135,7 @@ export function getClasses(properties: IndicatorProperties): indicatorClass {
   );
 
   const output: indicatorClass = {
-    root: twMerge(
+    rootClass: twMerge(
       theme.root.base,
       theme.root.border![properties.border],
       theme.root.color![properties.color],

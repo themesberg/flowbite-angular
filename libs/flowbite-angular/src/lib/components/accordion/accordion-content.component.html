@@ -1,3 +1,5 @@
-<div [ngClass]="contentClasses!.root" *ngIf="accordionPanel.open">
+<div
+  [ngClass]="contentClasses().root"
+  *ngIf="signalStoreService.select('isOpen')()">
   <ng-content></ng-content>
 </div>

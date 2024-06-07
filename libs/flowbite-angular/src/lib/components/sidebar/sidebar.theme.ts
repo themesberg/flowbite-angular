@@ -1,4 +1,4 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -35,9 +35,13 @@ export const sidebarTheme: SidebarBaseTheme = {
   },
 };
 
-export interface SidebarClass {
+export interface SidebarClass extends FlowbiteClass {
   sidebarClass: string;
   sidebarContentClass: string;
+}
+
+export function SidebarClassInstance(): SidebarClass {
+  return { rootClass: '', sidebarClass: '', sidebarContentClass: '' };
 }
 
 export function getClasses(properties: SidebarProperties): SidebarClass {
@@ -47,6 +51,7 @@ export function getClasses(properties: SidebarProperties): SidebarClass {
   );
 
   const output: SidebarClass = {
+    rootClass: '',
     sidebarClass: twMerge(theme.root.base),
     sidebarContentClass: twMerge(
       theme.content.base,

@@ -1,5 +1,3 @@
-<nav [ngClass]="contentClasses!.navbarClass">
-  <div [ngClass]="contentClasses!.contentClass">
-    <ng-content />
-  </div>
-</nav>
+<div [ngClass]="contentClasses().contentClass">
+  <ng-content />
+</div>

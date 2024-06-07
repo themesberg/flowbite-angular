@@ -86,14 +86,14 @@ export function getClasses(properties: AlertProperties): AlertClass {
   const output: AlertClass = {
     rootClass: twMerge(
       theme.root.base,
-      theme.root.border![properties.borderAccent],
-      theme.root.color![properties.color],
-      theme.root.rounded![properties.rounded],
+      theme.root.border?.[properties.borderAccent],
+      theme.root.color?.[properties.color],
+      theme.root.rounded?.[properties.rounded],
     ),
     alertClass: '',
     alertButtonClass: twMerge(
       theme.button.base,
-      theme.button.color![properties.color],
+      theme.button.color?.[properties.color],
     ),
   };
 

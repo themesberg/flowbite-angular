@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -20,15 +21,17 @@ export const modalBodyTheme: ModalBodyBaseTheme = {
   },
 };
 
-export interface ModalBodyClass {
-  root: string;
+export type ModalBodyClass = FlowbiteClass;
+
+export function ModalBodyClassInstance(): ModalBodyClass {
+  return { rootClass: '' };
 }
 
 export function getClasses(properties: ModalBodyProperties): ModalBodyClass {
   const theme = mergeTheme(modalBodyTheme, properties.customStyle);
 
   const output: ModalBodyClass = {
-    root: twMerge(theme.root.base),
+    rootClass: twMerge(theme.root.base),
   };
 
   return output;

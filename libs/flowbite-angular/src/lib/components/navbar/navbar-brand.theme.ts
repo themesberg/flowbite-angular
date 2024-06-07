@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -20,8 +21,12 @@ export const navbarBrandTheme: NavbarBrandBaseTheme = {
   },
 };
 
-export interface NavbarBrandClass {
+export interface NavbarBrandClass extends FlowbiteClass {
   navbarBrandClass: string;
+}
+
+export function NavbarBrandClassInstance(): NavbarBrandClass {
+  return { navbarBrandClass: '', rootClass: '' };
 }
 
 export function getClasses(
@@ -33,6 +38,7 @@ export function getClasses(
   );
 
   const output: NavbarBrandClass = {
+    rootClass: '',
     navbarBrandClass: twMerge(theme.root.base),
   };
 

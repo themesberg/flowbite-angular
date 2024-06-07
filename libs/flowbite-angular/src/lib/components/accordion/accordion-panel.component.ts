@@ -1,31 +1,26 @@
-import { Component, Input, booleanAttribute } from '@angular/core';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
+import { AccordionPanelState } from '../../services/state/accordion.state';
+import { BaseComponent } from '../base.component';
+import { Component, booleanAttribute, inject, input } from '@angular/core';
+import { SignalStoreService } from '../../services/signal-store.service';
 
 @Component({
   standalone: true,
   imports: [],
   selector: 'flowbite-accordion-panel',
   templateUrl: './accordion-panel.component.html',
+  providers: [SignalStoreService<AccordionPanelState>],
 })
-export class AccordionPanelComponent {
+export class AccordionPanelComponent extends BaseComponent {
+  protected signalStoreService = inject<
+    SignalStoreService<AccordionPanelState>
+  >(SignalStoreService<AccordionPanelState>);
+
   //#region properties
-  protected $open: keyof FlowbiteBoolean = 'disabled';
-  //#endregion
-  //#region getter/setter
-  /** @default false */
-  public get open(): boolean {
-    return flowbiteBooleanToBoolean(this.$open);
-  }
-  @Input({ transform: booleanAttribute }) public set open(value: boolean) {
-    this.$open = booleanToFlowbiteBoolean(value);
-  }
+  protected _open = input(false, { transform: booleanAttribute });
   //#endregion
 
-  toggleVisibility() {
-    this.open = !this.open;
-  }
+  //#region BaseComponent implementation
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  protected override fetchClass(): void {}
+  //#endregion
 }

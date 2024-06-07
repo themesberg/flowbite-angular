@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -20,8 +21,12 @@ export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
   },
 };
 
-export interface DropdownHeaderClass {
+export interface DropdownHeaderClass extends FlowbiteClass {
   root: string;
+}
+
+export function DropdownHeaderClassInstance(): DropdownHeaderClass {
+  return { rootClass: '', root: '' };
 }
 
 export function getClasses(
@@ -33,6 +38,7 @@ export function getClasses(
   );
 
   const output: DropdownHeaderClass = {
+    rootClass: '',
     root: twMerge(theme.root.base),
   };
 

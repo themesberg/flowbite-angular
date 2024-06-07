@@ -1,5 +1,6 @@
 import {
   FlowbiteBoolean,
+  FlowbiteClass,
   FlowbitePositions,
 } from '../../common/flowbite.theme';
 import { mergeTheme } from '../../utils/merge-theme';
@@ -77,12 +78,23 @@ export const dropdownTheme: DropdownBaseTheme = {
   },
 };
 
-export interface DropdownClass {
+export interface DropdownClass extends FlowbiteClass {
   dropdownClass: string;
   spanClass: string;
   containerClass: string;
   contentClass: string;
   subContentClass: string;
+}
+
+export function DropdownClassInstance(): DropdownClass {
+  return {
+    containerClass: '',
+    contentClass: '',
+    dropdownClass: '',
+    rootClass: '',
+    spanClass: '',
+    subContentClass: '',
+  };
 }
 
 export function getClasses(properties: DropdownProperties): DropdownClass {
@@ -92,6 +104,7 @@ export function getClasses(properties: DropdownProperties): DropdownClass {
   );
 
   const output: DropdownClass = {
+    rootClass: '',
     dropdownClass: twMerge(theme.root.base),
     spanClass: twMerge(theme.span.base),
     containerClass: twMerge(

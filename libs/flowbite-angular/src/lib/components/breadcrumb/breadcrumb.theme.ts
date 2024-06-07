@@ -1,3 +1,4 @@
+import { FlowbiteClass } from '../../common';
 import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
@@ -20,8 +21,10 @@ export const breadcrumbTheme: BreadcrumbBaseTheme = {
   },
 };
 
-export interface BreadcrumbClass {
-  root: string;
+export type BreadcrumbClass = FlowbiteClass;
+
+export function BreadcrumbClassInstance(): BreadcrumbClass {
+  return { rootClass: '' };
 }
 
 export function getClasses(properties: BreadcrumbProperties): BreadcrumbClass {
@@ -31,7 +34,7 @@ export function getClasses(properties: BreadcrumbProperties): BreadcrumbClass {
   );
 
   const output: BreadcrumbClass = {
-    root: twMerge(theme.root.base),
+    rootClass: twMerge(theme.root.base),
   };
 
   return output;

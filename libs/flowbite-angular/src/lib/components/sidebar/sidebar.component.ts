@@ -1,15 +1,19 @@
 import * as properties from './sidebar.theme';
 import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
 import { SidebarService } from '../../services';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input, booleanAttribute } from '@angular/core';
+import {
+  Component,
+  booleanAttribute,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { NgClass } from '@angular/common';
+import { SidebarState } from '../../services/state/sidebar.state';
+import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -22,47 +26,32 @@ import { NgClass } from '@angular/common';
   providers: [SidebarService],
 })
 export class SidebarComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.SidebarClass,
-    string
-  > = undefined;
+  protected signalStoreService = inject<SignalStoreService<SidebarState>>(
+    SignalStoreService<SidebarState>,
+  );
+
+  protected override contentClasses = signal<properties.SidebarClass>(
+    properties.SidebarClassInstance(),
+  );
   //#region properties
-  protected $rounded: keyof FlowbiteBoolean = 'disabled';
-  protected $customStyle: Partial<properties.SidebarBaseTheme> = {};
+  public isRounded = input(false, { transform: booleanAttribute });
+  public customStyle = input<Partial<properties.SidebarBaseTheme>>({});
   //#endregion
-  //#region getter/setter
-  /** @default false */
-  public get rounded(): boolean {
-    return flowbiteBooleanToBoolean(this.$rounded);
-  }
-  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
-    this.$rounded = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.SidebarBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(value: Partial<properties.SidebarBaseTheme>) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
-
-  constructor(readonly sidebarService: SidebarService) {
-    super();
-  }
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.$rounded, this.$customStyle)) {
+    if (
+      paramNotNull(
+        booleanToFlowbiteBoolean(this.isRounded()),
+        this.customStyle(),
+      )
+    ) {
       const propertyClass = properties.getClasses({
-        rounded: this.$rounded,
-        customStyle: this.$customStyle,
+        rounded: booleanToFlowbiteBoolean(this.isRounded()),
+        customStyle: this.customStyle(),
       });
 
-      this.contentClasses = propertyClass;
+      this.contentClasses.set(propertyClass);
     }
   }
   //#endregion
