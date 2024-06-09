@@ -225,7 +225,7 @@
         class="flex flex-row justify-center items-start gap-8">
         <button
           type="button"
-          (click)="themeService.setTheme('light')"
+          (click)="themeGlobalSignalStoreService.set('theme', 'light')"
           id="cta.row2.left-content.tabs.item1"
           class="flex flex-col items-center gap-2">
           <div class="relative flex w-12 h-12 bg-primary-700 rounded-lg">
@@ -238,7 +238,7 @@
         </button>
         <button
           type="button"
-          (click)="themeService.setTheme('dark')"
+          (click)="themeGlobalSignalStoreService.set('theme', 'dark')"
           id="cta.row2.left-content.tabs.item2"
           class="flex flex-col items-center gap-2">
           <div

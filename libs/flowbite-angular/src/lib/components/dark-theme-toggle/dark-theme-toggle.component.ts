@@ -52,25 +52,26 @@ export class DarkThemeToggleComponent
   public ngAfterViewInit(): void {
     afterNextRender(
       () => {
+        const localStorageTheme = localStorage.getItem('color-theme');
+
         if (
-          localStorage.getItem('color-theme') === 'dark' ||
-          (!localStorage.getItem('color-theme') &&
+          localStorageTheme === 'dark' ||
+          (!localStorageTheme &&
             window.matchMedia('(prefers-color-scheme: dark)').matches)
         ) {
           this.themeGlobalSignalStoreService.set('theme', 'dark');
           document.documentElement.classList.add('dark');
         } else {
-          this.themeGlobalSignalStoreService.set('theme', 'dark');
+          this.themeGlobalSignalStoreService.set('theme', 'light');
           document.documentElement.classList.remove('dark');
         }
 
         effect(
           () => {
-            localStorage.setItem(
-              'color-theme',
-              this.themeGlobalSignalStoreService.select('theme')(),
-            );
-            this.themeGlobalSignalStoreService.select('theme')() === 'dark'
+            const theme = this.themeGlobalSignalStoreService.select('theme')();
+
+            localStorage.setItem('color-theme', theme);
+            theme === 'dark'
               ? document.documentElement.classList.add('dark')
               : document.documentElement.classList.remove('dark');
           },
