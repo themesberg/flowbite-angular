@@ -1,19 +1,20 @@
 import * as properties from './accordion.theme';
-import { BaseComponent } from '../base.component';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import { AccordionState } from '../../services/state/accordion.state';
+import { BaseComponent } from '../base.component';
+import { SignalStoreService } from '../../services/signal-store.service';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+
 import {
   Component,
   OnInit,
   booleanAttribute,
+  effect,
   inject,
   input,
   signal,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/accordion/
@@ -26,16 +27,16 @@ import { SignalStoreService } from '../../services/signal-store.service';
   providers: [SignalStoreService<AccordionState>],
 })
 export class AccordionComponent extends BaseComponent implements OnInit {
-  protected accordionSignalStoreService = inject<
-    SignalStoreService<AccordionState>
-  >(SignalStoreService<AccordionState>);
+  protected accordionService = inject<SignalStoreService<AccordionState>>(
+    SignalStoreService<AccordionState>,
+  );
 
   protected override contentClasses = signal<properties.AccordionClass>(
-    properties.AccordionClassInstance(),
+    properties.AccordionClassInstance,
   );
 
   //#region properties
-  public isFlush = input<boolean, string | boolean>(false, {
+  public isFlush = input<boolean, string | boolean>(true, {
     transform: booleanAttribute,
   });
   public customStyle = input<Partial<properties.AccordionBaseTheme>>({});
@@ -43,29 +44,25 @@ export class AccordionComponent extends BaseComponent implements OnInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        booleanToFlowbiteBoolean(
-          this.accordionSignalStoreService.select('isFlush')(),
-        ),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        flush: booleanToFlowbiteBoolean(
-          this.accordionSignalStoreService.select('isFlush')(),
-        ),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      flush: booleanToFlowbiteBoolean(
+        this.accordionService.select('isFlush')(),
+      ),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 
   public override ngOnInit(): void {
-    this.accordionSignalStoreService.set('isFlush', this.isFlush());
-
     super.ngOnInit();
+
+    effect(
+      () => {
+        this.accordionService.set('isFlush', this.isFlush());
+      },
+      { injector: this.injector, allowSignalWrites: true },
+    );
   }
 }

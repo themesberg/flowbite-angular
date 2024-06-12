@@ -34,10 +34,10 @@ export interface NavbarItemClass extends FlowbiteClass {
   navbarItemClass: string;
 }
 
-export function NavbarItemClassInstance(): NavbarItemClass {
-  return { navbarItemClass: '', rootClass: '' };
-}
-
+export const NavbarItemClassInstance: NavbarItemClass = {
+  navbarItemClass: '',
+  rootClass: '',
+};
 export function getClasses(properties: NabvarItemProperties): NavbarItemClass {
   const theme: NavbarItemBaseTheme = mergeTheme(
     navbarItemTheme,
@@ -48,7 +48,7 @@ export function getClasses(properties: NabvarItemProperties): NavbarItemClass {
     rootClass: '',
     navbarItemClass: twMerge(
       theme.root.base,
-      theme.root.color![properties.color],
+      theme.root.color?.[properties.color],
     ),
   };
 

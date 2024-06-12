@@ -254,9 +254,10 @@ export interface ButtonClass extends FlowbiteClass {
   spanClass: string;
 }
 
-export function ButtonClassInstance(): ButtonClass {
-  return { rootClass: '', spanClass: '' };
-}
+export const ButtonClassInstance: ButtonClass = {
+  rootClass: '',
+  spanClass: '',
+};
 
 export function getClasses(properties: ButtonProperties): ButtonClass {
   const theme: ButtonBaseTheme = mergeTheme(
@@ -267,22 +268,22 @@ export function getClasses(properties: ButtonProperties): ButtonClass {
   const output: ButtonClass = {
     rootClass: twMerge(
       properties.gradientDuoTone && properties.outline == 'outline'
-        ? theme.root.base!['span']
-        : `${theme.root.base!['default']} ${theme.root.size![properties.size]}`,
+        ? theme.root.base?.['span']
+        : `${theme.root.base?.['default']} ${theme.root.size?.[properties.size]}`,
       properties.gradientDuoTone
-        ? theme.root.gradientDuoTone![properties.gradientDuoTone][
+        ? theme.root.gradientDuoTone?.[properties.gradientDuoTone][
             properties.outline
           ]
         : properties.gradientMonochrome
-          ? theme.root.gradientMonochrome![properties.gradientMonochrome]
-          : theme.root.color![properties.color][properties.outline],
-      theme.root.pill![properties.pill],
-      theme.root.disabled![properties.disabled],
+          ? theme.root.gradientMonochrome?.[properties.gradientMonochrome]
+          : theme.root.color?.[properties.color][properties.outline],
+      theme.root.pill?.[properties.pill],
+      theme.root.disabled?.[properties.disabled],
     ),
     spanClass: twMerge(
       theme.span.base,
-      theme.span.pill![properties.pill],
-      theme.span.size![properties.size],
+      theme.span.pill?.[properties.pill],
+      theme.span.size?.[properties.size],
     ),
   };
 

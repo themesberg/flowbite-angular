@@ -1,8 +1,8 @@
 import * as properties from './dropdown.theme';
 
 import { BaseComponent } from '../base.component';
+import { DropdownState } from '../../services/state/dropdown.state';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import {
   AfterViewInit,
@@ -16,7 +16,6 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { DropdownState } from '../../services/state/dropdown.state';
 import { NgClass } from '@angular/common';
 import {
   Placement,
@@ -47,7 +46,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   >(SignalStoreService<DropdownState>);
 
   protected override contentClasses = signal<properties.DropdownClass>(
-    properties.DropdownClassInstance(),
+    properties.DropdownClassInstance,
   );
 
   //#region properties
@@ -61,25 +60,16 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        this.label(),
-        this.isOpen(),
-        this.position(),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        label: this.label(),
-        isOpen: booleanToFlowbiteBoolean(
-          this.dropdownSignalStoreService.select('isOpen')(),
-        ),
-        placement: this.position(),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      label: this.label(),
+      isOpen: booleanToFlowbiteBoolean(
+        this.dropdownSignalStoreService.select('isOpen')(),
+      ),
+      placement: this.position(),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 

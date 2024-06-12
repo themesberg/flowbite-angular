@@ -1,6 +1,6 @@
 import * as properties from './breadcrumb-item.theme';
+
 import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, input, signal } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
@@ -13,7 +13,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 })
 export class BreadcrumbItemComponent extends BaseComponent {
   protected override contentClasses = signal<properties.BreadcrumbItemClass>(
-    properties.BreadcrumbItemClassInstance(),
+    properties.BreadcrumbItemClassInstance,
   );
 
   //#region properties
@@ -23,14 +23,12 @@ export class BreadcrumbItemComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        href: this.href(),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      href: this.href(),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

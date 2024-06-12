@@ -48,9 +48,11 @@ export interface BreadcrumbItemClass extends FlowbiteClass {
   contentClass: string;
 }
 
-export function BreadcrumbItemClassInstance(): BreadcrumbItemClass {
-  return { rootClass: '', breadcrumbIconClass: '', contentClass: '' };
-}
+export const BreadcrumbItemClassInstance: BreadcrumbItemClass = {
+  breadcrumbIconClass: '',
+  contentClass: '',
+  rootClass: '',
+};
 
 export function getClasses(
   properties: BreadcrumbItemProperties,

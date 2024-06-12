@@ -1,7 +1,7 @@
 import * as properties from './button.theme';
+
 import { BaseComponent } from '../base.component';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import {
   Component,
@@ -25,7 +25,7 @@ export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
 
   protected override contentClasses = signal<properties.ButtonClass>(
-    properties.ButtonClassInstance(),
+    properties.ButtonClassInstance,
   );
 
   //#region properties
@@ -49,29 +49,18 @@ export class ButtonComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass() {
-    if (
-      paramNotNull(
-        this.color(),
-        booleanToFlowbiteBoolean(this.isDisabled()),
-        this.fill(),
-        booleanToFlowbiteBoolean(this.isPill()),
-        this.size(),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        color: this.color(),
-        disabled: booleanToFlowbiteBoolean(this.isDisabled()),
-        outline: this.fill(),
-        pill: booleanToFlowbiteBoolean(this.isPill()),
-        size: this.size(),
-        gradientMonochrome: this.gradientMonochrome(),
-        gradientDuoTone: this.gradientDuoTone(),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      color: this.color(),
+      disabled: booleanToFlowbiteBoolean(this.isDisabled()),
+      outline: this.fill(),
+      pill: booleanToFlowbiteBoolean(this.isPill()),
+      size: this.size(),
+      gradientMonochrome: this.gradientMonochrome(),
+      gradientDuoTone: this.gradientDuoTone(),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

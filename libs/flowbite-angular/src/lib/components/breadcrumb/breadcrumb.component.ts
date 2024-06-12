@@ -1,6 +1,6 @@
 import * as properties from './breadcrumb.theme';
+
 import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, HostBinding, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -18,7 +18,7 @@ export class BreadcrumbComponent extends BaseComponent {
   @HostBinding('aria-label') protected hostAriaLabelValue = 'Breadcrumb';
 
   protected override contentClasses = signal<properties.BreadcrumbClass>(
-    properties.BreadcrumbClassInstance(),
+    properties.BreadcrumbClassInstance,
   );
 
   //#region properties
@@ -27,13 +27,11 @@ export class BreadcrumbComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

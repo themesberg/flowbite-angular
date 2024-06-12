@@ -23,9 +23,9 @@ export const dropdownDividerTheme: DropdownDividerBaseTheme = {
 
 export type DropdownDividerClass = FlowbiteClass;
 
-export function DropdownDividerClassInstance(): DropdownDividerClass {
-  return { rootClass: '' };
-}
+export const DropdownDividerClassInstance: DropdownDividerClass = {
+  rootClass: '',
+};
 
 export function getClasses(
   properties: DropdownDividerProperties,

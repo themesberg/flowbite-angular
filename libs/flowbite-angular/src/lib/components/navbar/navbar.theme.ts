@@ -63,10 +63,10 @@ export interface NavbarClass extends FlowbiteClass {
   contentClass: string;
 }
 
-export function NavbarClassInstance(): NavbarClass {
-  return { contentClass: '', rootClass: '' };
-}
-
+export const NavbarClassInstance: NavbarClass = {
+  contentClass: '',
+  rootClass: '',
+};
 export function getClasses(properties: NavbarProperties): NavbarClass {
   const theme: NavbarBaseTheme = mergeTheme(
     navbarTheme,
@@ -76,10 +76,10 @@ export function getClasses(properties: NavbarProperties): NavbarClass {
   const output: NavbarClass = {
     rootClass: twMerge(
       theme.root.base,
-      theme.root.color!['gray'],
-      theme.root.rounded![properties.rounded],
-      theme.root.border![properties.border],
-      theme.root.fixed![properties.fixed],
+      theme.root.color?.['gray'],
+      theme.root.rounded?.[properties.rounded],
+      theme.root.border?.[properties.border],
+      theme.root.fixed?.[properties.fixed],
     ),
     contentClass: twMerge(theme.content.base),
   };

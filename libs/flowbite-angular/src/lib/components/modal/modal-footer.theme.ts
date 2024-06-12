@@ -23,9 +23,9 @@ export const modalFooterTheme: ModalFooterBaseTheme = {
 
 export type ModalFooterClass = FlowbiteClass;
 
-export function ModalFooterClassInstance(): ModalFooterClass {
-  return { rootClass: '' };
-}
+export const ModalFooterClassInstance: ModalFooterClass = {
+  rootClass: '',
+};
 
 export function getClasses(
   properties: ModalFooterProperties,

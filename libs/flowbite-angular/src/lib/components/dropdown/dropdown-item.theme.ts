@@ -23,9 +23,9 @@ export const dropdownItemTheme: DropdownItemBaseTheme = {
 
 export type DropdownItemClass = FlowbiteClass;
 
-export function DropdownItemClassInstance(): DropdownItemClass {
-  return { rootClass: '' };
-}
+export const DropdownItemClassInstance: DropdownItemClass = {
+  rootClass: '',
+};
 
 export function getClasses(
   properties: DropdownItemProperties,

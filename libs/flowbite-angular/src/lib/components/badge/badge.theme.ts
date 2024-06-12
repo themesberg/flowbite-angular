@@ -80,9 +80,9 @@ export const badgeTheme: BadgeBaseTheme = {
 
 export type BadgeClass = FlowbiteClass;
 
-export function BadgeClassInstance(): BadgeClass {
-  return { rootClass: '' };
-}
+export const BadgeClassInstance: FlowbiteClass = {
+  rootClass: '',
+};
 
 export function getClasses(properties: BadgeProperties): BadgeClass {
   const theme: BadgeBaseTheme = mergeTheme(badgeTheme, properties.customStyle);

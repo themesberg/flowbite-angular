@@ -40,9 +40,9 @@ export const accordionTitleTheme: AccordionTitleBaseTheme = {
 
 export type AccordionTitleClass = FlowbiteClass;
 
-export function AccordionTitleClassInstance(): AccordionTitleClass {
-  return { rootClass: '' };
-}
+export const AccordionTitleClassInstance: AccordionTitleClass = {
+  rootClass: '',
+};
 
 export function getClass(
   properties: AccordionTitleProperties,

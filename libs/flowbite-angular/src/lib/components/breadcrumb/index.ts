@@ -5,6 +5,7 @@ export {
   BreadcrumbBaseTheme,
   BreadcrumbRootTheme,
   breadcrumbTheme,
+  BreadcrumbClassInstance,
 } from './breadcrumb.theme';
 
 export { BreadcrumbItemComponent } from './breadcrumb-item.component';
@@ -15,4 +16,5 @@ export {
   BreadcrumbIconRootTheme,
   BreadcrumbItemContentTheme,
   breadcrumbItemTheme,
+  BreadcrumbItemClassInstance,
 } from './breadcrumb-item.theme';

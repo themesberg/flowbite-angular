@@ -1,7 +1,9 @@
 import * as properties from './navbar.theme';
+
 import { BaseComponent } from '../base.component';
+import { NavbarState } from '../../services/state/navbar.state';
+import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import {
   Component,
@@ -10,9 +12,7 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { NavbarState } from '../../services/state/navbar.state';
 import { NgClass } from '@angular/common';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -30,7 +30,7 @@ export class NavbarComponent extends BaseComponent {
   );
 
   protected override contentClasses = signal<properties.NavbarClass>(
-    properties.NavbarClassInstance(),
+    properties.NavbarClassInstance,
   );
 
   //#region properties
@@ -48,23 +48,14 @@ export class NavbarComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        booleanToFlowbiteBoolean(this.isRounded()),
-        booleanToFlowbiteBoolean(this.hasBorder()),
-        booleanToFlowbiteBoolean(this.isFixed()),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        border: booleanToFlowbiteBoolean(this.isRounded()),
-        rounded: booleanToFlowbiteBoolean(this.hasBorder()),
-        fixed: booleanToFlowbiteBoolean(this.isFixed()),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      border: booleanToFlowbiteBoolean(this.isRounded()),
+      rounded: booleanToFlowbiteBoolean(this.hasBorder()),
+      fixed: booleanToFlowbiteBoolean(this.isFixed()),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

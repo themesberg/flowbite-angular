@@ -40,9 +40,11 @@ export interface SidebarClass extends FlowbiteClass {
   sidebarContentClass: string;
 }
 
-export function SidebarClassInstance(): SidebarClass {
-  return { rootClass: '', sidebarClass: '', sidebarContentClass: '' };
-}
+export const SidebarClassInstance: SidebarClass = {
+  rootClass: '',
+  sidebarClass: '',
+  sidebarContentClass: '',
+};
 
 export function getClasses(properties: SidebarProperties): SidebarClass {
   const theme: SidebarBaseTheme = mergeTheme(
@@ -55,7 +57,7 @@ export function getClasses(properties: SidebarProperties): SidebarClass {
     sidebarClass: twMerge(theme.root.base),
     sidebarContentClass: twMerge(
       theme.content.base,
-      theme.content.rounded![properties.rounded],
+      theme.content.rounded?.[properties.rounded],
     ),
   };
 

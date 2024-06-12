@@ -22,9 +22,9 @@ export const darkThemeToggleTheme: DarkThemeToggleBaseTheme = {
 
 export type DarkThemeToggleClass = FlowbiteClass;
 
-export function DarkThemeToggleClassInstance(): DarkThemeToggleClass {
-  return { rootClass: '' };
-}
+export const DarkThemeToggleClassInstance: DarkThemeToggleClass = {
+  rootClass: '',
+};
 
 export function getClasses(
   properties: DarkThemeToggleProperties,

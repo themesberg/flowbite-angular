@@ -6,6 +6,7 @@ export {
   SidebarRootTheme,
   SidebarContentRootTheme,
   sidebarTheme,
+  SidebarClassInstance,
 } from './sidebar.theme';
 export { SidebarItemComponent } from './sidebar-item.component';
 export {
@@ -15,6 +16,7 @@ export {
   SidebarItemRootTheme,
   SidebarItemIconRootTheme,
   sidebarItemTheme,
+  SidebarItemClassInstance,
 } from './sidebar-item.theme';
 export { SidebarItemGroupComponent } from './sidebar-item-group.component';
 export {
@@ -23,4 +25,5 @@ export {
   SidebarItemGroupBaseTheme,
   SidebarItemGroupRootTheme,
   sidebarItemGroupTheme,
+  SidebarItemGroupClassInstance,
 } from './sidebar-item-group.theme';

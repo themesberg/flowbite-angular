@@ -29,9 +29,9 @@ export const accordionTheme: AccordionBaseTheme = {
 
 export type AccordionClass = FlowbiteClass;
 
-export function AccordionClassInstance(): AccordionClass {
-  return { rootClass: '' };
-}
+export const AccordionClassInstance: AccordionClass = {
+  rootClass: '',
+};
 
 export function getClasses(properties: AccordionProperties): AccordionClass {
   const theme: AccordionBaseTheme = mergeTheme(

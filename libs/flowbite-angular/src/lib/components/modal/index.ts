@@ -9,6 +9,7 @@ export {
   ModalContainerRootTheme,
   ModalContentRootTheme,
   modalTheme,
+  ModalClassInstance,
 } from './modal.theme';
 export { ModalHeaderComponent } from './modal-header.component';
 export {
@@ -19,6 +20,7 @@ export {
   ModalHeaderButtonRootTheme,
   ModalHeaderTitleRootTheme,
   modalHeaderTheme,
+  ModalHeaderClassInstance,
 } from './modal-header.theme';
 export { ModalBodyComponent } from './modal-body.component';
 export {
@@ -27,6 +29,7 @@ export {
   ModalBodyBaseTheme,
   ModalBodyRootTheme,
   modalBodyTheme,
+  ModalBodyClassInstance,
 } from './modal-body.theme';
 export { ModalFooterComponent } from './modal-footer.component';
 export {
@@ -35,4 +38,5 @@ export {
   ModalFooterBaseTheme,
   ModalFooterRootTheme,
   modalFooterTheme,
+  ModalFooterClassInstance,
 } from './modal-footer.theme';

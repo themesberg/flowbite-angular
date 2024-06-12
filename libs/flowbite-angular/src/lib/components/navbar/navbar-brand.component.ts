@@ -1,6 +1,6 @@
 import * as properties from './navbar-brand.theme';
+
 import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -14,7 +14,7 @@ import { NgClass } from '@angular/common';
 })
 export class NavbarBrandComponent extends BaseComponent {
   protected override contentClasses = signal<properties.NavbarBrandClass>(
-    properties.NavbarBrandClassInstance(),
+    properties.NavbarBrandClassInstance,
   );
 
   //#region properties
@@ -24,13 +24,11 @@ export class NavbarBrandComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

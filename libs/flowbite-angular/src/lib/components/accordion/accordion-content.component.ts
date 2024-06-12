@@ -1,11 +1,11 @@
 import * as properties from './accordion-content.theme';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { AccordionPanelState } from '../../services/state/accordion.state';
+import { BaseComponent } from '../base.component';
+import { SignalStoreService } from '../../services/signal-store.service';
+
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 @Component({
   standalone: true,
@@ -19,7 +19,7 @@ export class AccordionContentComponent extends BaseComponent {
   >(SignalStoreService<AccordionPanelState>);
 
   protected override contentClasses = signal<properties.AccordionContentClass>(
-    properties.AccordionContentClassInstance(),
+    properties.AccordionContentClassInstance,
   );
 
   //#region properties
@@ -28,13 +28,11 @@ export class AccordionContentComponent extends BaseComponent {
 
   //#region  BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

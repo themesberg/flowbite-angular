@@ -86,16 +86,14 @@ export interface DropdownClass extends FlowbiteClass {
   subContentClass: string;
 }
 
-export function DropdownClassInstance(): DropdownClass {
-  return {
-    containerClass: '',
-    contentClass: '',
-    dropdownClass: '',
-    rootClass: '',
-    spanClass: '',
-    subContentClass: '',
-  };
-}
+export const DropdownClassInstance: DropdownClass = {
+  containerClass: '',
+  contentClass: '',
+  dropdownClass: '',
+  rootClass: '',
+  spanClass: '',
+  subContentClass: '',
+};
 
 export function getClasses(properties: DropdownProperties): DropdownClass {
   const theme: DropdownBaseTheme = mergeTheme(
@@ -109,8 +107,8 @@ export function getClasses(properties: DropdownProperties): DropdownClass {
     spanClass: twMerge(theme.span.base),
     containerClass: twMerge(
       theme.container.base,
-      theme.container.opened![properties.isOpen],
-      theme.container.placement![properties.placement],
+      theme.container.opened?.[properties.isOpen],
+      theme.container.placement?.[properties.placement],
     ),
     contentClass: twMerge(theme.content.base),
     subContentClass: twMerge(theme.subContent.base),

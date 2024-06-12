@@ -1,7 +1,7 @@
 import * as properties from './badge.theme';
+
 import { BaseComponent } from '../base.component';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import {
   Component,
@@ -27,7 +27,7 @@ export class BadgeComponent extends BaseComponent {
   protected router = inject(Router);
 
   protected override contentClasses = signal<properties.BadgeClass>(
-    properties.BadgeClassInstance(),
+    properties.BadgeClassInstance,
   );
 
   //#region properties
@@ -45,26 +45,16 @@ export class BadgeComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        this.color(),
-        this.size(),
-        booleanToFlowbiteBoolean(this.isIconOnly()),
-        booleanToFlowbiteBoolean(this.isPill()),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        color: this.color(),
-        size: this.size(),
-        isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
-        isPill: booleanToFlowbiteBoolean(this.isPill()),
-        href: this.href(),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      color: this.color(),
+      size: this.size(),
+      isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
+      isPill: booleanToFlowbiteBoolean(this.isPill()),
+      href: this.href(),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 

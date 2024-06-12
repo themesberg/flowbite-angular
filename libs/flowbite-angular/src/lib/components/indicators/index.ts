@@ -6,4 +6,5 @@ export {
   IndicatorBaseTheme,
   IndicatorRootTheme,
   indicatorTheme,
+  IndicatorClassInstance,
 } from './indicators.theme';

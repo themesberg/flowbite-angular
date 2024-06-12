@@ -7,4 +7,5 @@ export {
   BadgeBaseTheme,
   BadgeRootTheme,
   badgeTheme,
+  BadgeClassInstance,
 } from './badge.theme';

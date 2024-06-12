@@ -1,7 +1,7 @@
 import * as properties from './modal-footer.theme';
+
 import { BaseComponent } from '../base.component';
 import { ModalComponent } from './modal.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -16,7 +16,7 @@ export class ModalFooterComponent extends BaseComponent {
   protected modalComponent = inject<ModalComponent>(ModalComponent);
 
   protected override contentClasses = signal<properties.ModalFooterClass>(
-    properties.ModalFooterClassInstance(),
+    properties.ModalFooterClassInstance,
   );
 
   //#region properties
@@ -25,13 +25,11 @@ export class ModalFooterComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

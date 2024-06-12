@@ -1,7 +1,6 @@
 import * as properties from './dropdown-item.theme';
 import { BaseComponent } from '../base.component';
 import { DropdownComponent } from './dropdown.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -16,7 +15,7 @@ export class DropdownItemComponent extends BaseComponent {
   protected dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
   protected override contentClasses = signal<properties.DropdownItemClass>(
-    properties.DropdownItemClassInstance(),
+    properties.DropdownItemClassInstance,
   );
 
   //#region properties
@@ -25,13 +24,11 @@ export class DropdownItemComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

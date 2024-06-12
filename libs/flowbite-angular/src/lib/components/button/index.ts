@@ -12,4 +12,5 @@ export {
   ButtonRootTheme,
   SpanRootTheme,
   buttonTheme,
+  ButtonClassInstance,
 } from './button.theme';

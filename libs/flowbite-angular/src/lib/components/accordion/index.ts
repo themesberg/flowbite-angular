@@ -5,6 +5,7 @@ export {
   AccordionBaseTheme,
   AccordionRootTheme,
   accordionTheme,
+  AccordionClassInstance,
 } from './accordion.theme';
 export { AccordionContentComponent } from './accordion-content.component';
 export {
@@ -13,6 +14,7 @@ export {
   AccordionContentBaseTheme,
   AccordionContentRootTheme,
   accordionContentTheme,
+  AccordionContentClassInstance,
 } from './accordion-content.theme';
 export { AccordionPanelComponent } from './accordion-panel.component';
 export {
@@ -28,4 +30,5 @@ export {
   AccordionTitleBaseTheme,
   AccordionTitleRootTheme,
   accordionTitleTheme,
+  AccordionTitleClassInstance,
 } from './accordion-title.theme';

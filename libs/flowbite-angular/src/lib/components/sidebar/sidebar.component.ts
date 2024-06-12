@@ -1,7 +1,9 @@
 import * as properties from './sidebar.theme';
+
 import { BaseComponent } from '../base.component';
+import { SidebarState } from '../../services/state/sidebar.state';
+import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import {
   Component,
@@ -11,8 +13,6 @@ import {
   signal,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { SidebarState } from '../../services/state/sidebar.state';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -30,7 +30,7 @@ export class SidebarComponent extends BaseComponent {
   >(SignalStoreService<SidebarState>);
 
   protected override contentClasses = signal<properties.SidebarClass>(
-    properties.SidebarClassInstance(),
+    properties.SidebarClassInstance,
   );
 
   //#region properties
@@ -42,19 +42,12 @@ export class SidebarComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        booleanToFlowbiteBoolean(this.isRounded()),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        rounded: booleanToFlowbiteBoolean(this.isRounded()),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      rounded: booleanToFlowbiteBoolean(this.isRounded()),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

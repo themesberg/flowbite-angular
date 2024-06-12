@@ -23,9 +23,9 @@ export const modalBodyTheme: ModalBodyBaseTheme = {
 
 export type ModalBodyClass = FlowbiteClass;
 
-export function ModalBodyClassInstance(): ModalBodyClass {
-  return { rootClass: '' };
-}
+export const ModalBodyClassInstance: ModalBodyClass = {
+  rootClass: '',
+};
 
 export function getClasses(properties: ModalBodyProperties): ModalBodyClass {
   const theme = mergeTheme(modalBodyTheme, properties.customStyle);

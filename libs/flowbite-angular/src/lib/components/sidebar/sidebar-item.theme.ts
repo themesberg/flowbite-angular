@@ -37,9 +37,11 @@ export interface SidebarItemClass extends FlowbiteClass {
   sidebarIconClass: string;
 }
 
-export function SidebarItemClassInstance(): SidebarItemClass {
-  return { rootClass: '', sidebarClass: '', sidebarIconClass: '' };
-}
+export const SidebarItemClassInstance: SidebarItemClass = {
+  rootClass: '',
+  sidebarClass: '',
+  sidebarIconClass: '',
+};
 
 export function getClasses(
   properties: SidebarItemProperties,

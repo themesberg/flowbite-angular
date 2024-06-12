@@ -1,7 +1,7 @@
 import * as properties from './alert.theme';
+
 import { BaseComponent } from '../base.component';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import {
   Component,
@@ -27,7 +27,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   @HostBinding('role') protected hostRoleValue = 'alert';
 
   protected override contentClasses = signal<properties.AlertClass>(
-    properties.AlertClassInstance(),
+    properties.AlertClassInstance,
   );
 
   //#region properties
@@ -45,23 +45,14 @@ export class AlertComponent extends BaseComponent implements OnInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        this.color(),
-        booleanToFlowbiteBoolean(this.isRounded()),
-        booleanToFlowbiteBoolean(this.isBorderAccent()),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        color: this.color(),
-        borderAccent: booleanToFlowbiteBoolean(this.isBorderAccent()),
-        rounded: booleanToFlowbiteBoolean(this.isRounded()),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      color: this.color(),
+      borderAccent: booleanToFlowbiteBoolean(this.isBorderAccent()),
+      rounded: booleanToFlowbiteBoolean(this.isRounded()),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 

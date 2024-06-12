@@ -1,6 +1,6 @@
 import * as properties from './modal-body.theme';
+
 import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
 })
 export class ModalBodyComponent extends BaseComponent {
   protected override contentClasses = signal<properties.ModalBodyClass>(
-    properties.ModalBodyClassInstance(),
+    properties.ModalBodyClassInstance,
   );
 
   //#region properties
@@ -22,13 +22,11 @@ export class ModalBodyComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

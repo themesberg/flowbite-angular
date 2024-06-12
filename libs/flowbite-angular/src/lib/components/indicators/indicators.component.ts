@@ -1,11 +1,10 @@
 import * as properties from './indicators.theme';
 import { BaseComponent } from '../base.component';
 import { FlowbitePositions, FlowbiteSizes } from '../../common/flowbite.theme';
-import { paramNotNull } from '../../utils/param.util';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import { Component, booleanAttribute, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 /**
  * @see https://flowbite.com/docs/components/indicators/
@@ -18,7 +17,7 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 })
 export class IndicatorComponent extends BaseComponent {
   protected override contentClasses = signal<properties.indicatorClass>(
-    properties.IndicatorClassInstance(),
+    properties.IndicatorClassInstance,
   );
 
   //#region properties
@@ -48,34 +47,20 @@ export class IndicatorComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        booleanToFlowbiteBoolean(this.hasBorder()),
-        this.color(),
-        booleanToFlowbiteBoolean(this.isDisabled()),
-        booleanToFlowbiteBoolean(this.hasOffset()),
-        booleanToFlowbiteBoolean(this.isOutline()),
-        booleanToFlowbiteBoolean(this.isPill()),
-        booleanToFlowbiteBoolean(this.isRounded()),
-        this.size(),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        border: booleanToFlowbiteBoolean(this.hasBorder()),
-        color: this.color(),
-        disabled: booleanToFlowbiteBoolean(this.isDisabled()),
-        offset: booleanToFlowbiteBoolean(this.hasOffset()),
-        outline: booleanToFlowbiteBoolean(this.isOutline()),
-        pill: booleanToFlowbiteBoolean(this.isPill()),
-        rounded: booleanToFlowbiteBoolean(this.isRounded()),
-        size: this.size(),
-        placement: this.placement(),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      border: booleanToFlowbiteBoolean(this.hasBorder()),
+      color: this.color(),
+      disabled: booleanToFlowbiteBoolean(this.isDisabled()),
+      offset: booleanToFlowbiteBoolean(this.hasOffset()),
+      outline: booleanToFlowbiteBoolean(this.isOutline()),
+      pill: booleanToFlowbiteBoolean(this.isPill()),
+      rounded: booleanToFlowbiteBoolean(this.isRounded()),
+      size: this.size(),
+      placement: this.placement(),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

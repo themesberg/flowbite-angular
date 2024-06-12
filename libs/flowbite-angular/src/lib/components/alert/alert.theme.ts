@@ -75,9 +75,10 @@ export interface AlertClass extends FlowbiteClass {
   alertButtonClass: string;
 }
 
-export function AlertClassInstance(): AlertClass {
-  return { rootClass: '', alertButtonClass: '' };
-}
+export const AlertClassInstance: AlertClass = {
+  alertButtonClass: '',
+  rootClass: '',
+};
 
 export function getClasses(properties: AlertProperties): AlertClass {
   const theme: AlertBaseTheme = mergeTheme(alertTheme, properties.customStyle);

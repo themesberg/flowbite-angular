@@ -23,9 +23,9 @@ export const accordionContentTheme: AccordionContentBaseTheme = {
 
 export type AccordionContentClass = FlowbiteClass;
 
-export function AccordionContentClassInstance(): AccordionContentClass {
-  return { rootClass: '' };
-}
+export const AccordionContentClassInstance: AccordionContentClass = {
+  rootClass: '',
+};
 
 export function getClasses(
   properties: AccordionContentProperties,

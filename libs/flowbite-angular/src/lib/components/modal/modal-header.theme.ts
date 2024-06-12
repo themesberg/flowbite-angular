@@ -43,14 +43,12 @@ export interface ModalHeaderClass extends FlowbiteClass {
   modalHeaderButtonClass: string;
 }
 
-export function ModalHeaderClassInstance(): ModalHeaderClass {
-  return {
-    modalHeaderButtonClass: '',
-    modalHeaderClass: '',
-    modalHeaderTitleClass: '',
-    rootClass: '',
-  };
-}
+export const ModalHeaderClassInstance: ModalHeaderClass = {
+  modalHeaderButtonClass: '',
+  modalHeaderClass: '',
+  modalHeaderTitleClass: '',
+  rootClass: '',
+};
 
 export function getClasses(
   properties: ModalHeaderProperties,

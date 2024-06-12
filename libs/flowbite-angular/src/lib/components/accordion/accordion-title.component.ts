@@ -1,4 +1,5 @@
 import * as properties from './accordion-title.theme';
+
 import {
   AccordionPanelState,
   AccordionState,
@@ -6,7 +7,6 @@ import {
 import { BaseComponent } from '../base.component';
 import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -26,7 +26,7 @@ export class AccordionTitleComponent extends BaseComponent {
   >(SignalStoreService<AccordionState>);
 
   protected override contentClasses = signal<properties.AccordionTitleClass>(
-    properties.AccordionTitleClassInstance(),
+    properties.AccordionTitleClassInstance,
   );
 
   //#region properties
@@ -35,29 +35,17 @@ export class AccordionTitleComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        booleanToFlowbiteBoolean(
-          this.accordionSignalStoreService.select('isFlush')(),
-        ),
-        booleanToFlowbiteBoolean(
-          this.accordionPanelSignalStoreService.select('isOpen')(),
-        ),
-        this.customStyle(),
-      )
-    ) {
-      const propertyClass = properties.getClass({
-        customStyle: this.customStyle(),
-        isFlush: booleanToFlowbiteBoolean(
-          this.accordionSignalStoreService.select('isFlush')(),
-        ),
-        isOpen: booleanToFlowbiteBoolean(
-          this.accordionPanelSignalStoreService.select('isOpen')(),
-        ),
-      });
+    const propertyClass = properties.getClass({
+      customStyle: this.customStyle(),
+      isFlush: booleanToFlowbiteBoolean(
+        this.accordionSignalStoreService.select('isFlush')(),
+      ),
+      isOpen: booleanToFlowbiteBoolean(
+        this.accordionPanelSignalStoreService.select('isOpen')(),
+      ),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 

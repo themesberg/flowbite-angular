@@ -89,14 +89,12 @@ export interface ModalClass extends FlowbiteClass {
   modalContentClass: string;
 }
 
-export function ModalClassInstance(): ModalClass {
-  return {
-    modalClass: '',
-    modalContainerClass: '',
-    modalContentClass: '',
-    rootClass: '',
-  };
-}
+export const ModalClassInstance: ModalClass = {
+  modalClass: '',
+  modalContainerClass: '',
+  modalContentClass: '',
+  rootClass: '',
+};
 
 export function getClasses(properties: ModalProperties): ModalClass {
   const theme: ModalBaseTheme = mergeTheme(modalTheme, properties.customStyle);
@@ -105,11 +103,11 @@ export function getClasses(properties: ModalProperties): ModalClass {
     rootClass: '',
     modalClass: twMerge(
       theme.root.base,
-      theme.root.position![properties.position],
+      theme.root.position?.[properties.position],
     ),
     modalContainerClass: twMerge(
       theme.container.base,
-      theme.container.size![properties.size],
+      theme.container.size?.[properties.size],
     ),
     modalContentClass: twMerge(theme.content.base),
   };

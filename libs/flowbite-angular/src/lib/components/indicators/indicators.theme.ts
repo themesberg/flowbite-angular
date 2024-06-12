@@ -124,9 +124,9 @@ export const indicatorTheme: IndicatorBaseTheme = {
 
 export type indicatorClass = FlowbiteClass;
 
-export function IndicatorClassInstance(): indicatorClass {
-  return { rootClass: '' };
-}
+export const IndicatorClassInstance: indicatorClass = {
+  rootClass: '',
+};
 
 export function getClasses(properties: IndicatorProperties): indicatorClass {
   const theme: IndicatorBaseTheme = mergeTheme(

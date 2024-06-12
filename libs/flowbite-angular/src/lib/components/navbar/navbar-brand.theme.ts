@@ -25,9 +25,10 @@ export interface NavbarBrandClass extends FlowbiteClass {
   navbarBrandClass: string;
 }
 
-export function NavbarBrandClassInstance(): NavbarBrandClass {
-  return { navbarBrandClass: '', rootClass: '' };
-}
+export const NavbarBrandClassInstance: NavbarBrandClass = {
+  navbarBrandClass: '',
+  rootClass: '',
+};
 
 export function getClasses(
   properties: NavbarBrandProperties,

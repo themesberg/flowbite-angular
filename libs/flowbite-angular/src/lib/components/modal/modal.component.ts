@@ -1,6 +1,8 @@
 import * as properties from './modal.theme';
+
 import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import { ModalState } from '../../services/state/modal.state';
+import { SignalStoreService } from '../../services/signal-store.service';
 
 import {
   AfterViewInit,
@@ -12,9 +14,7 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { ModalState } from '../../services/state/modal.state';
 import { NgClass } from '@angular/common';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -32,7 +32,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   );
 
   protected override contentClasses = signal<properties.ModalClass>(
-    properties.ModalClassInstance(),
+    properties.ModalClassInstance,
   );
 
   //#region properties
@@ -49,15 +49,13 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.size(), this.position(), this.customStyle())) {
-      const propertyClass = properties.getClasses({
-        size: this.size(),
-        position: this.position(),
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      size: this.size(),
+      position: this.position(),
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 

@@ -23,9 +23,9 @@ export const breadcrumbTheme: BreadcrumbBaseTheme = {
 
 export type BreadcrumbClass = FlowbiteClass;
 
-export function BreadcrumbClassInstance(): BreadcrumbClass {
-  return { rootClass: '' };
-}
+export const BreadcrumbClassInstance: BreadcrumbClass = {
+  rootClass: '',
+};
 
 export function getClasses(properties: BreadcrumbProperties): BreadcrumbClass {
   const theme: BreadcrumbBaseTheme = mergeTheme(

@@ -25,9 +25,10 @@ export interface DropdownHeaderClass extends FlowbiteClass {
   root: string;
 }
 
-export function DropdownHeaderClassInstance(): DropdownHeaderClass {
-  return { rootClass: '', root: '' };
-}
+export const DropdownHeaderClassInstance: DropdownHeaderClass = {
+  root: '',
+  rootClass: '',
+};
 
 export function getClasses(
   properties: DropdownHeaderProperties,

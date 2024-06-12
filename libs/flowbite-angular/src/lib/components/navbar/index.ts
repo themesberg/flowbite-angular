@@ -7,6 +7,7 @@ export {
   NavbarRootTheme,
   NavbarContentTheme,
   navbarTheme,
+  NavbarClassInstance,
 } from './navbar.theme';
 export { NavbarBrandComponent } from './navbar-brand.component';
 export {
@@ -15,6 +16,7 @@ export {
   NavbarBrandBaseTheme,
   NavbarBrandRootTheme,
   navbarBrandTheme,
+  NavbarBrandClassInstance,
 } from './navbar-brand.theme';
 export { NavbarContentComponent } from './navbar-content.component';
 export {
@@ -24,6 +26,7 @@ export {
   NavbarContentRootTheme,
   NavBarContentListTheme,
   navbarContentTheme,
+  NavbarContentClassInstance,
 } from './navbar-content.theme';
 export { NavbarItemComponent } from './navbar-item.component';
 export {
@@ -33,5 +36,6 @@ export {
   NavbarItemBaseTheme,
   NavbarItemRootTheme,
   navbarItemTheme,
+  NavbarItemClassInstance,
 } from './navbar-item.theme';
 export { NavbarToggleComponent } from './navbar-toggle.component';

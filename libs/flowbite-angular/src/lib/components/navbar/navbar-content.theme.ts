@@ -34,9 +34,11 @@ export interface NavbarContentClass extends FlowbiteClass {
   navbarContentListClass: string;
 }
 
-export function NavbarContentClassInstance(): NavbarContentClass {
-  return { navbarContentClass: '', navbarContentListClass: '', rootClass: '' };
-}
+export const NavbarContentClassInstance: NavbarContentClass = {
+  navbarContentClass: '',
+  navbarContentListClass: '',
+  rootClass: '',
+};
 
 export function getClasses(
   properties: NavbarContentProperties,

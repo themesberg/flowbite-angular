@@ -7,4 +7,5 @@ export {
   AlertRootTheme,
   AlertButtonTheme,
   alertTheme,
+  AlertClassInstance,
 } from './alert.theme';

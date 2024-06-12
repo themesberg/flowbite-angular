@@ -10,6 +10,7 @@ export {
   DropdownSpanTheme,
   DropdownSubContentTheme,
   dropdownTheme,
+  DropdownClassInstance,
 } from './dropdown.theme';
 export { DropdownItemComponent } from './dropdown-item.component';
 export {
@@ -18,6 +19,7 @@ export {
   DropdownItemBaseTheme,
   DropdownItemRootTheme,
   dropdownItemTheme,
+  DropdownItemClassInstance,
 } from './dropdown-item.theme';
 export { DropdownDividerComponent } from './dropdown-divider.component';
 export {
@@ -26,6 +28,7 @@ export {
   DropdownDividerBaseTheme,
   DropdownDividerRootTheme,
   dropdownDividerTheme,
+  DropdownDividerClassInstance,
 } from './dropdown-divider.theme';
 export { DropdownHeaderComponent } from './dropdown-header.component';
 export {
@@ -34,4 +37,5 @@ export {
   DropdownHeaderBaseTheme,
   DropdownHeaderRootTheme,
   dropdownHeaderTheme,
+  DropdownHeaderClassInstance,
 } from './dropdown-header.theme';

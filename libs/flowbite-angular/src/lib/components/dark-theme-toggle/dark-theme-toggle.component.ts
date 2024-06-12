@@ -1,6 +1,8 @@
 import * as properties from './dark-theme-toggle.theme';
+
 import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import { GlobalSignalStoreService } from '../../services/global-signal-store.service';
+import { ThemeState } from '../../services/state/theme.state';
 
 import {
   AfterViewInit,
@@ -12,9 +14,7 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { GlobalSignalStoreService } from '../../services/global-signal-store.service';
 import { NgClass, NgIf } from '@angular/common';
-import { ThemeState } from '../../services/state/theme.state';
 
 @Component({
   standalone: true,
@@ -31,7 +31,7 @@ export class DarkThemeToggleComponent
   >(GlobalSignalStoreService<ThemeState>);
 
   protected override contentClasses = signal<properties.DarkThemeToggleClass>(
-    properties.DarkThemeToggleClassInstance(),
+    properties.DarkThemeToggleClassInstance,
   );
 
   //#region properties
@@ -40,13 +40,11 @@ export class DarkThemeToggleComponent
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull()) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.customStyle(),
-      });
+    const propertyClass = properties.getClasses({
+      customStyle: this.customStyle(),
+    });
 
-      this.contentClasses.set(propertyClass);
-    }
+    this.contentClasses.set(propertyClass);
   }
   //#endregion
 

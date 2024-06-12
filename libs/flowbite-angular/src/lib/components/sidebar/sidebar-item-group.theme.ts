@@ -24,9 +24,10 @@ export interface SidebarItemGroupClass extends FlowbiteClass {
   root: string;
 }
 
-export function SidebarItemGroupClassInstance(): SidebarItemGroupClass {
-  return { root: '', rootClass: '' };
-}
+export const SidebarItemGroupClassInstance: SidebarItemGroupClass = {
+  root: '',
+  rootClass: '',
+};
 
 export function getClasses(
   properties: SidebarItemGroupProperties,
