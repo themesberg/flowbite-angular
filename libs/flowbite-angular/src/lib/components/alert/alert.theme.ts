@@ -72,12 +72,11 @@ export const alertTheme: AlertBaseTheme = {
 };
 
 export interface AlertClass extends FlowbiteClass {
-  alertClass: string;
   alertButtonClass: string;
 }
 
 export function AlertClassInstance(): AlertClass {
-  return { rootClass: '', alertClass: '', alertButtonClass: '' };
+  return { rootClass: '', alertButtonClass: '' };
 }
 
 export function getClasses(properties: AlertProperties): AlertClass {
@@ -90,7 +89,6 @@ export function getClasses(properties: AlertProperties): AlertClass {
       theme.root.color?.[properties.color],
       theme.root.rounded?.[properties.rounded],
     ),
-    alertClass: '',
     alertButtonClass: twMerge(
       theme.button.base,
       theme.button.color?.[properties.color],

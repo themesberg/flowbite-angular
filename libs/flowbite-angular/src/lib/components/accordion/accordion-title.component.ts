@@ -1,21 +1,15 @@
 import * as properties from './accordion-title.theme';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
-
 import {
   AccordionPanelState,
   AccordionState,
 } from '../../services/state/accordion.state';
-import {
-  Component,
-  afterNextRender,
-  effect,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { NgClass } from '@angular/common';
+import { BaseComponent } from '../base.component';
 import { SignalStoreService } from '../../services/signal-store.service';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { paramNotNull } from '../../utils/param.util';
+
+import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -36,16 +30,30 @@ export class AccordionTitleComponent extends BaseComponent {
   );
 
   //#region properties
-  protected customStyle = input<Partial<properties.AccordionTitleBaseTheme>>(
-    {},
-  );
+  public customStyle = input<Partial<properties.AccordionTitleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    if (paramNotNull(this.customStyle())) {
+    if (
+      paramNotNull(
+        booleanToFlowbiteBoolean(
+          this.accordionSignalStoreService.select('isFlush')(),
+        ),
+        booleanToFlowbiteBoolean(
+          this.accordionPanelSignalStoreService.select('isOpen')(),
+        ),
+        this.customStyle(),
+      )
+    ) {
       const propertyClass = properties.getClass({
         customStyle: this.customStyle(),
+        isFlush: booleanToFlowbiteBoolean(
+          this.accordionSignalStoreService.select('isFlush')(),
+        ),
+        isOpen: booleanToFlowbiteBoolean(
+          this.accordionPanelSignalStoreService.select('isOpen')(),
+        ),
       });
 
       this.contentClasses.set(propertyClass);
@@ -53,20 +61,10 @@ export class AccordionTitleComponent extends BaseComponent {
   }
   //#endregion
 
-  protected toggleVisibility(): void {
-    afterNextRender(
-      () => {
-        effect(
-          () => {
-            this.accordionPanelSignalStoreService.set(
-              'isOpen',
-              !this.accordionPanelSignalStoreService.select('isOpen')(),
-            );
-          },
-          { injector: this.injector },
-        );
-      },
-      { injector: this.injector },
-    );
+  @HostListener('click')
+  protected onClick(): void {
+    const isOpen = this.accordionPanelSignalStoreService.select('isOpen')();
+
+    this.accordionPanelSignalStoreService.set('isOpen', !isOpen);
   }
 }

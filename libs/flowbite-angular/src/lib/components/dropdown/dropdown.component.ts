@@ -52,7 +52,9 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
 
   //#region properties
   public label = input('Dropdown');
-  public isOpen = input(false, { transform: booleanAttribute });
+  public isOpen = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public position = input<keyof properties.DropdownPositions>('bottom-center');
   public customStyle = input<Partial<properties.DropdownBaseTheme>>({});
   //#endregion

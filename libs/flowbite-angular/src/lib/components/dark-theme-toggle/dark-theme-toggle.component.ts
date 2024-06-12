@@ -5,6 +5,7 @@ import { paramNotNull } from '../../utils/param.util';
 import {
   AfterViewInit,
   Component,
+  HostListener,
   afterNextRender,
   effect,
   inject,
@@ -82,7 +83,8 @@ export class DarkThemeToggleComponent
     );
   }
 
-  protected toggleTheme() {
+  @HostListener('click')
+  protected onClick() {
     if (this.themeGlobalSignalStoreService.select('theme')() === 'light')
       this.themeGlobalSignalStoreService.set('theme', 'dark');
     else this.themeGlobalSignalStoreService.set('theme', 'light');

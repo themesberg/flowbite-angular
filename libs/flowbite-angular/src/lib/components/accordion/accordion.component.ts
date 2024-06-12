@@ -5,11 +5,9 @@ import { paramNotNull } from '../../utils/param.util';
 
 import { AccordionState } from '../../services/state/accordion.state';
 import {
-  AfterViewInit,
   Component,
-  afterNextRender,
+  OnInit,
   booleanAttribute,
-  effect,
   inject,
   input,
   signal,
@@ -27,7 +25,7 @@ import { SignalStoreService } from '../../services/signal-store.service';
   templateUrl: './accordion.component.html',
   providers: [SignalStoreService<AccordionState>],
 })
-export class AccordionComponent extends BaseComponent implements AfterViewInit {
+export class AccordionComponent extends BaseComponent implements OnInit {
   protected accordionSignalStoreService = inject<
     SignalStoreService<AccordionState>
   >(SignalStoreService<AccordionState>);
@@ -37,17 +35,26 @@ export class AccordionComponent extends BaseComponent implements AfterViewInit {
   );
 
   //#region properties
-  public isFlush = input(false, { transform: booleanAttribute });
+  public isFlush = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public customStyle = input<Partial<properties.AccordionBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     if (
-      paramNotNull(booleanToFlowbiteBoolean(this.isFlush()), this.customStyle())
+      paramNotNull(
+        booleanToFlowbiteBoolean(
+          this.accordionSignalStoreService.select('isFlush')(),
+        ),
+        this.customStyle(),
+      )
     ) {
       const propertyClass = properties.getClasses({
-        flush: booleanToFlowbiteBoolean(this.isFlush()),
+        flush: booleanToFlowbiteBoolean(
+          this.accordionSignalStoreService.select('isFlush')(),
+        ),
         customStyle: this.customStyle(),
       });
 
@@ -56,17 +63,9 @@ export class AccordionComponent extends BaseComponent implements AfterViewInit {
   }
   //#endregion
 
-  public ngAfterViewInit(): void {
-    afterNextRender(
-      () => {
-        effect(
-          () => {
-            this.accordionSignalStoreService.set('isFlush', this.isFlush());
-          },
-          { injector: this.injector },
-        );
-      },
-      { injector: this.injector },
-    );
+  public override ngOnInit(): void {
+    this.accordionSignalStoreService.set('isFlush', this.isFlush());
+
+    super.ngOnInit();
   }
 }

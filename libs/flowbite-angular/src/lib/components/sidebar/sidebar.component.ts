@@ -34,7 +34,9 @@ export class SidebarComponent extends BaseComponent {
   );
 
   //#region properties
-  public isRounded = input(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public customStyle = input<Partial<properties.SidebarBaseTheme>>({});
   //#endregion
 

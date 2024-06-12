@@ -1,5 +1,3 @@
-<div
-  [ngClass]="contentClasses().root"
-  *ngIf="accordionPanelSignalStoreService.select('isOpen')()">
+<ng-container *ngIf="accordionPanelSignalStoreService.select('isOpen')()">
   <ng-content></ng-content>
-</div>
+</ng-container>

@@ -38,8 +38,12 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   //#region properties
   public size = input<keyof properties.ModalSizes>('md');
   public position = input<keyof properties.ModalPositions>('center');
-  public isDismissable = input(false, { transform: booleanAttribute });
-  public isOpen = input(false, { transform: booleanAttribute });
+  public isDismissable = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public isOpen = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public customStyle = input<Partial<properties.ModalBaseTheme>>({});
   //#endregion
 

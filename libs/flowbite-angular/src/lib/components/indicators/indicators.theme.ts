@@ -137,18 +137,18 @@ export function getClasses(properties: IndicatorProperties): indicatorClass {
   const output: indicatorClass = {
     rootClass: twMerge(
       theme.root.base,
-      theme.root.border![properties.border],
-      theme.root.color![properties.color],
-      theme.root.disabled![properties.disabled],
+      theme.root.border?.[properties.border],
+      theme.root.color?.[properties.color],
+      theme.root.disabled?.[properties.disabled],
       properties.placement &&
         properties.offset == 'enabled' &&
-        theme.root.offset![properties.placement],
-      theme.root.outline![properties.outline],
-      theme.root.pill![properties.pill],
+        theme.root.offset?.[properties.placement],
+      theme.root.outline?.[properties.outline],
+      theme.root.pill?.[properties.pill],
       properties.placement &&
-        'absolute ' + theme.root.placement![properties.placement],
-      theme.root.rounded![properties.rounded],
-      theme.root.size![properties.size],
+        'absolute ' + theme.root.placement?.[properties.placement],
+      theme.root.rounded?.[properties.rounded],
+      theme.root.size?.[properties.size],
     ),
   };
 

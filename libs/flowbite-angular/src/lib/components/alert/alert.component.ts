@@ -33,7 +33,9 @@ export class AlertComponent extends BaseComponent implements OnInit {
   //#region properties
   public color = input<keyof properties.AlertColors>('blue');
   public isRounded = input(true, { transform: booleanAttribute });
-  public isBorderAccent = input(false, { transform: booleanAttribute });
+  public isBorderAccent = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public customStyle = input<Partial<properties.AlertBaseTheme>>({});
 
   public icon = input<TemplateRef<unknown> | null>(null);

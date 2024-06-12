@@ -17,16 +17,14 @@ export interface AccordionContentRootTheme {
 
 export const accordionContentTheme: AccordionContentBaseTheme = {
   root: {
-    base: 'py-5 px-5 dark:bg-gray-900',
+    base: 'block py-5 px-5 dark:bg-gray-900',
   },
 };
 
-export interface AccordionContentClass extends FlowbiteClass {
-  root: string;
-}
+export type AccordionContentClass = FlowbiteClass;
 
 export function AccordionContentClassInstance(): AccordionContentClass {
-  return { root: '', rootClass: '' };
+  return { rootClass: '' };
 }
 
 export function getClasses(
@@ -38,8 +36,7 @@ export function getClasses(
   );
 
   const output: AccordionContentClass = {
-    rootClass: '',
-    root: twMerge(theme.root.base),
+    rootClass: twMerge(theme.root.base),
   };
 
   return output;

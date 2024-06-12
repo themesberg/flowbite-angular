@@ -34,9 +34,15 @@ export class NavbarComponent extends BaseComponent {
   );
 
   //#region properties
-  public isRounded = input(false, { transform: booleanAttribute });
-  public hasBorder = input(false, { transform: booleanAttribute });
-  public isFixed = input(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public hasBorder = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public isFixed = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public customStyle = input<Partial<properties.NavbarBaseTheme>>({});
   //#endregion
 

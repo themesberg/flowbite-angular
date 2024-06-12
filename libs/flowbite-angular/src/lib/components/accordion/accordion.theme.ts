@@ -27,12 +27,10 @@ export const accordionTheme: AccordionBaseTheme = {
   },
 };
 
-export interface AccordionClass extends FlowbiteClass {
-  root: string;
-}
+export type AccordionClass = FlowbiteClass;
 
 export function AccordionClassInstance(): AccordionClass {
-  return { root: '', rootClass: '' };
+  return { rootClass: '' };
 }
 
 export function getClasses(properties: AccordionProperties): AccordionClass {
@@ -42,8 +40,7 @@ export function getClasses(properties: AccordionProperties): AccordionClass {
   );
 
   const output: AccordionClass = {
-    rootClass: '',
-    root: twMerge(theme.root.base, theme.root.flush![properties.flush]),
+    rootClass: twMerge(theme.root.base, theme.root.flush?.[properties.flush]),
   };
 
   return output;

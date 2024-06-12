@@ -22,12 +22,24 @@ export class IndicatorComponent extends BaseComponent {
   );
 
   //#region properties
-  public isPill = input(false, { transform: booleanAttribute });
-  public isOutline = input(false, { transform: booleanAttribute });
-  public isDisabled = input(false, { transform: booleanAttribute });
-  public hasOffset = input(false, { transform: booleanAttribute });
-  public isRounded = input(false, { transform: booleanAttribute });
-  public hasBorder = input(false, { transform: booleanAttribute });
+  public isPill = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public isOutline = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public isDisabled = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public hasOffset = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public isRounded = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public hasBorder = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public color = input<keyof properties.IndicatorColors>('gray');
   public size = input<keyof FlowbiteSizes>('md');
   public placement = input<keyof FlowbitePositions | undefined>(undefined);

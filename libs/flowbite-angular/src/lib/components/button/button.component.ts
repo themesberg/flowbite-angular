@@ -31,9 +31,13 @@ export class ButtonComponent extends BaseComponent {
   //#region properties
   public color = input<keyof properties.ButtonColors>('info');
   public size = input<keyof properties.ButtonSizes>('md');
-  public isPill = input(false, { transform: booleanAttribute });
+  public isPill = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public fill = input<keyof properties.ButtonFill>('solid');
-  public isDisabled = input(false, { transform: booleanAttribute });
+  public isDisabled = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public gradientMonochrome = input<
     keyof properties.ButtonMonochromeColors | undefined
   >(undefined);

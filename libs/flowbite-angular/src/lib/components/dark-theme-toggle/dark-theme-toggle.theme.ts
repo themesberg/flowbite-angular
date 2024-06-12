@@ -16,16 +16,14 @@ export interface DarkThemeToggleButtonTheme {
 
 export const darkThemeToggleTheme: DarkThemeToggleBaseTheme = {
   button: {
-    base: 'rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
+    base: 'cursor-pointer rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
   },
 };
 
-export interface DarkThemeToggleClass extends FlowbiteClass {
-  darkThemeToggleButtonClass: string;
-}
+export type DarkThemeToggleClass = FlowbiteClass;
 
 export function DarkThemeToggleClassInstance(): DarkThemeToggleClass {
-  return { rootClass: '', darkThemeToggleButtonClass: '' };
+  return { rootClass: '' };
 }
 
 export function getClasses(
@@ -37,8 +35,7 @@ export function getClasses(
   );
 
   const output: DarkThemeToggleClass = {
-    rootClass: '',
-    darkThemeToggleButtonClass: twMerge(theme.button.base),
+    rootClass: twMerge(theme.button.base),
   };
 
   return output;

@@ -33,8 +33,12 @@ export class BadgeComponent extends BaseComponent {
   //#region properties
   public color = input<keyof properties.BadgeColors>('blue');
   public size = input<keyof properties.BadgeSizes>('xs');
-  public isIconOnly = input(false, { transform: booleanAttribute });
-  public isPill = input(false, { transform: booleanAttribute });
+  public isIconOnly = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public isPill = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
   public href = input<string | undefined>(undefined);
   public customStyle = input<Partial<properties.BadgeBaseTheme>>({});
   //#endregion
