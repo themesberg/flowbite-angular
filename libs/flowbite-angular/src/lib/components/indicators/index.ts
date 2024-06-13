@@ -5,6 +5,8 @@ export {
   IndicatorColors,
   IndicatorBaseTheme,
   IndicatorRootTheme,
+  IndicatorPositions,
+  IndicatorSizes,
   indicatorTheme,
   IndicatorClassInstance,
 } from './indicators.theme';

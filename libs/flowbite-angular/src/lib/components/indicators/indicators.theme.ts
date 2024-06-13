@@ -26,6 +26,27 @@ export interface IndicatorColors
   > {
   [key: string]: string;
 }
+
+export interface IndicatorSizes
+  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+  [key: string]: string;
+}
+
+export interface IndicatorPositions
+  extends Pick<
+    FlowbitePositions,
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'center-left'
+    | 'center'
+    | 'center-right'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right'
+  > {
+  [key: string]: string;
+}
 //#endregion
 
 export interface IndicatorProperties {
@@ -36,8 +57,8 @@ export interface IndicatorProperties {
   rounded: keyof FlowbiteBoolean;
   border: keyof FlowbiteBoolean;
   color: keyof IndicatorColors;
-  size: keyof FlowbiteSizes;
-  placement?: keyof FlowbitePositions;
+  size: keyof IndicatorSizes;
+  placement?: keyof IndicatorPositions;
   customStyle: Partial<IndicatorBaseTheme>;
 }
 
@@ -50,12 +71,12 @@ export interface IndicatorRootTheme {
   pill: Record<keyof FlowbiteBoolean, string>;
   outline: Record<keyof FlowbiteBoolean, string>;
   disabled: Record<keyof FlowbiteBoolean, string>;
-  offset: Record<keyof FlowbitePositions, string>;
+  offset: Record<keyof IndicatorPositions, string>;
   rounded: Record<keyof FlowbiteBoolean, string>;
   border: Record<keyof FlowbiteBoolean, string>;
   color: Record<keyof IndicatorColors, string>;
-  size: Record<keyof FlowbiteSizes, string>;
-  placement: Record<keyof FlowbitePositions, string>;
+  size: Record<keyof IndicatorSizes, string>;
+  placement: Record<keyof IndicatorPositions, string>;
 }
 
 export const indicatorTheme: IndicatorBaseTheme = {

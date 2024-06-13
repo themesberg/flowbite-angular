@@ -40,8 +40,10 @@ export class IndicatorComponent extends BaseComponent {
     transform: booleanAttribute,
   });
   public color = input<keyof properties.IndicatorColors>('gray');
-  public size = input<keyof FlowbiteSizes>('md');
-  public placement = input<keyof FlowbitePositions | undefined>(undefined);
+  public size = input<keyof properties.IndicatorSizes>('md');
+  public placement = input<keyof properties.IndicatorPositions | undefined>(
+    undefined,
+  );
   public customStyle = input<Partial<properties.IndicatorBaseTheme>>({});
   //#endregion
 
