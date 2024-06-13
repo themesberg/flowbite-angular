@@ -8,6 +8,7 @@ import { SignalStoreService } from '../../services/signal-store.service';
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SidebarItemThemeService } from './sidebar-item.theme.service';
 
 @Component({
   standalone: true,
@@ -23,6 +24,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar-item.component.html',
 })
 export class SidebarItemComponent extends BaseComponent {
+  protected themeService = inject(SidebarItemThemeService);
   protected sidebarSignalStoreService = inject<
     SignalStoreService<SidebarState>
   >(SignalStoreService<SidebarState>);
@@ -40,7 +42,7 @@ export class SidebarItemComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       icon: this.icon(),
       link: this.link(),
       label: this.label(),

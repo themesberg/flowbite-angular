@@ -4,6 +4,7 @@ import {
   AccordionPanelState,
   AccordionState,
 } from '../../services/state/accordion.state';
+import { AccordionTitleThemeService } from './accordion-title.theme.service';
 import { BaseComponent } from '../base.component';
 import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
@@ -18,6 +19,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
+  protected themeService = inject(AccordionTitleThemeService);
   protected accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
@@ -35,7 +37,7 @@ export class AccordionTitleComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClass({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
       isFlush: booleanToFlowbiteBoolean(
         this.accordionSignalStoreService.select('isFlush')(),

@@ -3,9 +3,6 @@ import {
   FlowbiteClass,
   FlowbiteColors,
 } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 //#region Component theme option
 export interface AlertColors
@@ -81,22 +78,3 @@ export const AlertClassInstance: AlertClass = {
   alertButtonClass: '',
   rootClass: '',
 };
-
-export function getClasses(properties: AlertProperties): AlertClass {
-  const theme: AlertBaseTheme = mergeTheme(alertTheme, properties.customStyle);
-
-  const output: AlertClass = {
-    rootClass: twMerge(
-      theme.root.base,
-      theme.root.border?.[properties.borderAccent],
-      theme.root.color?.[properties.color],
-      theme.root.rounded?.[properties.rounded],
-    ),
-    alertButtonClass: twMerge(
-      theme.button.base,
-      theme.button.color?.[properties.color],
-    ),
-  };
-
-  return output;
-}

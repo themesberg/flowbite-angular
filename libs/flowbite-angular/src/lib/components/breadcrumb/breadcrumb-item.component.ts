@@ -1,8 +1,9 @@
 import * as properties from './breadcrumb-item.theme';
 
 import { BaseComponent } from '../base.component';
+import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
 
-import { Component, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
@@ -12,6 +13,8 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './breadcrumb-item.component.html',
 })
 export class BreadcrumbItemComponent extends BaseComponent {
+  protected themeService = inject(BreadcrumbItemThemeService);
+
   protected override contentClasses = signal<properties.BreadcrumbItemClass>(
     properties.BreadcrumbItemClassInstance,
   );
@@ -23,7 +26,7 @@ export class BreadcrumbItemComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       href: this.href(),
       customStyle: this.customStyle(),
     });

@@ -2,6 +2,7 @@ import * as properties from './modal-header.theme';
 
 import { BaseComponent } from '../base.component';
 import { ModalComponent } from './modal.component';
+import { ModalHeaderThemeService } from './modal-header.theme.service';
 
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -13,6 +14,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-header.component.html',
 })
 export class ModalHeaderComponent extends BaseComponent {
+  protected themeService = inject(ModalHeaderThemeService);
   protected modalComponent = inject<ModalComponent>(ModalComponent);
 
   protected override contentClasses = signal<properties.ModalHeaderClass>(
@@ -25,7 +27,7 @@ export class ModalHeaderComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

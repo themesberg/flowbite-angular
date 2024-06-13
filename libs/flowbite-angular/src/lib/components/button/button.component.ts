@@ -1,12 +1,14 @@
 import * as properties from './button.theme';
 
 import { BaseComponent } from '../base.component';
+import { ButtonThemeService } from './button.theme.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import {
   Component,
   HostBinding,
   booleanAttribute,
+  inject,
   input,
   signal,
 } from '@angular/core';
@@ -23,6 +25,8 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 })
 export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
+
+  protected themeService = inject(ButtonThemeService);
 
   protected override contentClasses = signal<properties.ButtonClass>(
     properties.ButtonClassInstance,
@@ -49,7 +53,7 @@ export class ButtonComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass() {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       color: this.color(),
       disabled: booleanToFlowbiteBoolean(this.isDisabled()),
       outline: this.fill(),

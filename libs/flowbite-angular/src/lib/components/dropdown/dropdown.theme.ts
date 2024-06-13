@@ -3,9 +3,6 @@ import {
   FlowbiteClass,
   FlowbitePositions,
 } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 //#region Component theme option
 export interface DropdownPositions
@@ -96,25 +93,3 @@ export const DropdownClassInstance: DropdownClass = {
   spanClass: '',
   subContentClass: '',
 };
-
-export function getClasses(properties: DropdownProperties): DropdownClass {
-  const theme: DropdownBaseTheme = mergeTheme(
-    dropdownTheme,
-    properties.customStyle,
-  );
-
-  const output: DropdownClass = {
-    rootClass: '',
-    dropdownClass: twMerge(theme.root.base),
-    spanClass: twMerge(theme.span.base),
-    containerClass: twMerge(
-      theme.container.base,
-      theme.container.opened?.[properties.isOpen],
-      theme.container.placement?.[properties.placement],
-    ),
-    contentClass: twMerge(theme.content.base),
-    subContentClass: twMerge(theme.subContent.base),
-  };
-
-  return output;
-}

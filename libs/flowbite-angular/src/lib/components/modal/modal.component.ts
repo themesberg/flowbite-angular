@@ -14,6 +14,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { ModalThemeService } from './modal.theme.service';
 import { NgClass } from '@angular/common';
 
 /**
@@ -27,6 +28,7 @@ import { NgClass } from '@angular/common';
   providers: [SignalStoreService<ModalState>],
 })
 export class ModalComponent extends BaseComponent implements AfterViewInit {
+  protected themeService = inject(ModalThemeService);
   protected signalStoreService = inject<SignalStoreService<ModalState>>(
     SignalStoreService<ModalState>,
   );
@@ -49,7 +51,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       size: this.size(),
       position: this.position(),
       customStyle: this.customStyle(),

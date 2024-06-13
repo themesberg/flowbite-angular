@@ -3,9 +3,6 @@ import {
   FlowbiteClass,
   FlowbiteColors,
 } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 //#region Component theme option
 export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
@@ -69,22 +66,3 @@ export const NavbarClassInstance: NavbarClass = {
   contentClass: '',
   rootClass: '',
 };
-export function getClasses(properties: NavbarProperties): NavbarClass {
-  const theme: NavbarBaseTheme = mergeTheme(
-    navbarTheme,
-    properties.customStyle,
-  );
-
-  const output: NavbarClass = {
-    rootClass: twMerge(
-      theme.root.base,
-      theme.root.color?.['gray'],
-      theme.root.rounded?.[properties.rounded],
-      theme.root.border?.[properties.border],
-      theme.root.fixed?.[properties.fixed],
-    ),
-    contentClass: twMerge(theme.content.base),
-  };
-
-  return output;
-}

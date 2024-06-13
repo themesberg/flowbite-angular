@@ -1,7 +1,4 @@
 import { FlowbiteClass, FlowbiteColors } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 //#region Component theme option
 export interface NavbarItemColors extends Pick<FlowbiteColors, 'blue'> {
@@ -40,19 +37,3 @@ export const NavbarItemClassInstance: NavbarItemClass = {
   navbarItemClass: '',
   rootClass: '',
 };
-export function getClasses(properties: NabvarItemProperties): NavbarItemClass {
-  const theme: NavbarItemBaseTheme = mergeTheme(
-    navbarItemTheme,
-    properties.customStyle,
-  );
-
-  const output: NavbarItemClass = {
-    rootClass: '',
-    navbarItemClass: twMerge(
-      theme.root.base,
-      theme.root.color?.[properties.color],
-    ),
-  };
-
-  return output;
-}

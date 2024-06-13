@@ -1,6 +1,7 @@
 import * as properties from './dropdown-divider.theme';
 import { BaseComponent } from '../base.component';
 import { DropdownComponent } from './dropdown.component';
+import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
 
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -12,6 +13,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent extends BaseComponent {
+  protected themeService = inject(DropdownDividerThemeService);
   protected dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
   protected override contentClasses = signal<properties.DropdownDividerClass>(
@@ -24,7 +26,7 @@ export class DropdownDividerComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

@@ -1,7 +1,4 @@
 import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export interface BreadcrumbItemProperties {
   href?: string;
@@ -53,22 +50,3 @@ export const BreadcrumbItemClassInstance: BreadcrumbItemClass = {
   contentClass: '',
   rootClass: '',
 };
-
-export function getClasses(
-  properties: BreadcrumbItemProperties,
-): BreadcrumbItemClass {
-  const theme: BreadcrumbItemBaseTheme = mergeTheme(
-    breadcrumbItemTheme,
-    properties.customStyle,
-  );
-
-  const output: BreadcrumbItemClass = {
-    rootClass: twMerge(theme.root.base),
-    breadcrumbIconClass: twMerge(theme.icon.base),
-    contentClass: twMerge(
-      theme.item.base?.[properties.href ? 'enabled' : 'disabled'],
-    ),
-  };
-
-  return output;
-}

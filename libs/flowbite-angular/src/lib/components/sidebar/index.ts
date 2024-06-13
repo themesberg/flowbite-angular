@@ -8,6 +8,11 @@ export {
   sidebarTheme,
   SidebarClassInstance,
 } from './sidebar.theme';
+export {
+  FLOWBITE_SIDEBAR_THEME_TOKEN,
+  SidebarThemeService,
+} from './sidebar.theme.service';
+
 export { SidebarItemComponent } from './sidebar-item.component';
 export {
   SidebarItemProperties,
@@ -18,6 +23,11 @@ export {
   sidebarItemTheme,
   SidebarItemClassInstance,
 } from './sidebar-item.theme';
+export {
+  FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
+  SidebarItemThemeService,
+} from './sidebar-item.theme.service';
+
 export { SidebarItemGroupComponent } from './sidebar-item-group.component';
 export {
   SidebarItemGroupProperties,

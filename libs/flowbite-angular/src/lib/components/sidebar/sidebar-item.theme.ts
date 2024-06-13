@@ -1,7 +1,4 @@
 import { FlowbiteClass } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export interface SidebarItemProperties {
   icon: string | undefined;
@@ -42,20 +39,3 @@ export const SidebarItemClassInstance: SidebarItemClass = {
   sidebarClass: '',
   sidebarIconClass: '',
 };
-
-export function getClasses(
-  properties: SidebarItemProperties,
-): SidebarItemClass {
-  const theme: SidebarItemBaseTheme = mergeTheme(
-    sidebarItemTheme,
-    properties.customStyle,
-  );
-
-  const output: SidebarItemClass = {
-    rootClass: '',
-    sidebarClass: twMerge(theme.root.base),
-    sidebarIconClass: twMerge(theme.icon.base),
-  };
-
-  return output;
-}

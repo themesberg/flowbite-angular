@@ -2,6 +2,7 @@ import * as properties from './navbar.theme';
 
 import { BaseComponent } from '../base.component';
 import { NavbarState } from '../../services/state/navbar.state';
+import { NavbarThemeService } from './navbar.theme.service';
 import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
@@ -25,6 +26,7 @@ import { NgClass } from '@angular/common';
   providers: [SignalStoreService<NavbarState>],
 })
 export class NavbarComponent extends BaseComponent {
+  protected themeService = inject(NavbarThemeService);
   protected narbarSignalStoreService = inject<SignalStoreService<NavbarState>>(
     SignalStoreService<NavbarState>,
   );
@@ -48,7 +50,7 @@ export class NavbarComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       border: booleanToFlowbiteBoolean(this.isRounded()),
       rounded: booleanToFlowbiteBoolean(this.hasBorder()),
       fixed: booleanToFlowbiteBoolean(this.isFixed()),

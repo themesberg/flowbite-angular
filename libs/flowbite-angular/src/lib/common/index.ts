@@ -11,3 +11,5 @@ export {
   FlowbiteTheme,
   FlowbiteClass,
 } from './flowbite.theme';
+export { FlowbiteThemeService } from './flowbite.theme.service';
+export { initFlowbite } from './flowbite.theme.init';

@@ -1,7 +1,4 @@
 import { FlowbiteClass } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export interface NavbarContentProperties {
   customStyle: Partial<NavbarContentBaseTheme>;
@@ -39,20 +36,3 @@ export const NavbarContentClassInstance: NavbarContentClass = {
   navbarContentListClass: '',
   rootClass: '',
 };
-
-export function getClasses(
-  properties: NavbarContentProperties,
-): NavbarContentClass {
-  const theme: NavbarContentBaseTheme = mergeTheme(
-    navbarContentTheme,
-    properties.customStyle,
-  );
-
-  const output: NavbarContentClass = {
-    rootClass: '',
-    navbarContentClass: twMerge(theme.root.base),
-    navbarContentListClass: twMerge(theme.list.base),
-  };
-
-  return output;
-}

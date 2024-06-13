@@ -1,5 +1,6 @@
 import * as properties from './accordion-content.theme';
 
+import { AccordionContentThemeService } from './accordion-content.theme.service';
 import { AccordionPanelState } from '../../services/state/accordion.state';
 import { BaseComponent } from '../base.component';
 import { SignalStoreService } from '../../services/signal-store.service';
@@ -14,6 +15,7 @@ import { NgClass, NgIf } from '@angular/common';
   templateUrl: './accordion-content.component.html',
 })
 export class AccordionContentComponent extends BaseComponent {
+  protected themeService = inject(AccordionContentThemeService);
   protected accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
@@ -28,7 +30,7 @@ export class AccordionContentComponent extends BaseComponent {
 
   //#region  BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

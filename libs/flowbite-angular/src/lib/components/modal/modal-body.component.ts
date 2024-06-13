@@ -1,8 +1,9 @@
 import * as properties from './modal-body.theme';
 
 import { BaseComponent } from '../base.component';
+import { ModalBodyThemeService } from './modal-body.theme.service';
 
-import { Component, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -12,6 +13,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
+  protected themeService = inject(ModalBodyThemeService);
+
   protected override contentClasses = signal<properties.ModalBodyClass>(
     properties.ModalBodyClassInstance,
   );
@@ -22,7 +25,7 @@ export class ModalBodyComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

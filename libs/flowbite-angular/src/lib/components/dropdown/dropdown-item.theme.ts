@@ -1,7 +1,4 @@
 import { FlowbiteClass } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export interface DropdownItemProperties {
   customStyle: Partial<DropdownItemBaseTheme>;
@@ -26,18 +23,3 @@ export type DropdownItemClass = FlowbiteClass;
 export const DropdownItemClassInstance: DropdownItemClass = {
   rootClass: '',
 };
-
-export function getClasses(
-  properties: DropdownItemProperties,
-): DropdownItemClass {
-  const theme: DropdownItemBaseTheme = mergeTheme(
-    dropdownItemTheme,
-    properties.customStyle,
-  );
-
-  const output: DropdownItemClass = {
-    rootClass: twMerge(theme.root.base),
-  };
-
-  return output;
-}

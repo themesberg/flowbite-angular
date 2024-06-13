@@ -1,7 +1,4 @@
 import { FlowbiteClass } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export interface AccordionContentProperties {
   customStyle: Partial<AccordionContentBaseTheme>;
@@ -26,18 +23,3 @@ export type AccordionContentClass = FlowbiteClass;
 export const AccordionContentClassInstance: AccordionContentClass = {
   rootClass: '',
 };
-
-export function getClasses(
-  properties: AccordionContentProperties,
-): AccordionContentClass {
-  const theme: AccordionContentBaseTheme = mergeTheme(
-    accordionContentTheme,
-    properties.customStyle,
-  );
-
-  const output: AccordionContentClass = {
-    rootClass: twMerge(theme.root.base),
-  };
-
-  return output;
-}

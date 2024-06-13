@@ -26,18 +26,3 @@ export type ModalFooterClass = FlowbiteClass;
 export const ModalFooterClassInstance: ModalFooterClass = {
   rootClass: '',
 };
-
-export function getClasses(
-  properties: ModalFooterProperties,
-): ModalFooterClass {
-  const theme: ModalFooterBaseTheme = mergeTheme(
-    modalFooterTheme,
-    properties.customStyle,
-  );
-
-  const output: ModalFooterClass = {
-    rootClass: twMerge(theme.root.base),
-  };
-
-  return output;
-}

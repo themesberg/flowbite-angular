@@ -3,6 +3,7 @@ import * as properties from './badge.theme';
 import { BaseComponent } from '../base.component';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
+import { BadgeThemeService } from './badge.theme.service';
 import {
   Component,
   HostListener,
@@ -24,6 +25,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './badge.component.html',
 })
 export class BadgeComponent extends BaseComponent {
+  protected themeService = inject(BadgeThemeService);
   protected router = inject(Router);
 
   protected override contentClasses = signal<properties.BadgeClass>(
@@ -45,7 +47,7 @@ export class BadgeComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       color: this.color(),
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),

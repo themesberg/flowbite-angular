@@ -13,6 +13,7 @@ import {
   signal,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { SidebarThemeService } from './sidebar.theme.service';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -25,6 +26,7 @@ import { NgClass } from '@angular/common';
   providers: [SignalStoreService<SidebarState>],
 })
 export class SidebarComponent extends BaseComponent {
+  protected themeService = inject(SidebarThemeService);
   protected sidebarSignalStoreService = inject<
     SignalStoreService<SidebarState>
   >(SignalStoreService<SidebarState>);
@@ -42,7 +44,7 @@ export class SidebarComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       rounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });

@@ -1,8 +1,9 @@
 import * as properties from './navbar-brand.theme';
 
 import { BaseComponent } from '../base.component';
+import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 
-import { Component, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -13,6 +14,7 @@ import { NgClass } from '@angular/common';
   styleUrl: './navbar-brand.component.css',
 })
 export class NavbarBrandComponent extends BaseComponent {
+  protected themeService = inject(NavbarBrandThemeService);
   protected override contentClasses = signal<properties.NavbarBrandClass>(
     properties.NavbarBrandClassInstance,
   );
@@ -24,7 +26,7 @@ export class NavbarBrandComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

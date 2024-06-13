@@ -3,9 +3,6 @@ import {
   FlowbitePositions,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 //#region Component theme option
 export interface ModalSizes
@@ -97,22 +94,3 @@ export const ModalClassInstance: ModalClass = {
   modalContentClass: '',
   rootClass: '',
 };
-
-export function getClasses(properties: ModalProperties): ModalClass {
-  const theme: ModalBaseTheme = mergeTheme(modalTheme, properties.customStyle);
-
-  const output: ModalClass = {
-    rootClass: '',
-    modalClass: twMerge(
-      theme.root.base,
-      theme.root.position?.[properties.position],
-    ),
-    modalContainerClass: twMerge(
-      theme.container.base,
-      theme.container.size?.[properties.size],
-    ),
-    modalContentClass: twMerge(theme.content.base),
-  };
-
-  return output;
-}

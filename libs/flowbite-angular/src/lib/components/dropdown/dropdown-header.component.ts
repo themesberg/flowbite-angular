@@ -1,6 +1,7 @@
 import * as properties from './dropdown-header.theme';
 import { BaseComponent } from '../base.component';
 import { DropdownComponent } from './dropdown.component';
+import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 
 import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -12,6 +13,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-header.component.html',
 })
 export class DropdownHeaderComponent extends BaseComponent {
+  protected themeService = inject(DropdownHeaderThemeService);
   protected dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
   protected override contentClasses = signal<properties.DropdownHeaderClass>(
@@ -24,7 +26,7 @@ export class DropdownHeaderComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

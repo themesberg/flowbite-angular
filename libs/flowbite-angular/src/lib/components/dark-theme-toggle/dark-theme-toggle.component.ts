@@ -1,6 +1,7 @@
 import * as properties from './dark-theme-toggle.theme';
 
 import { BaseComponent } from '../base.component';
+import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 import { GlobalSignalStoreService } from '../../services/global-signal-store.service';
 import { ThemeState } from '../../services/state/theme.state';
 
@@ -26,6 +27,7 @@ export class DarkThemeToggleComponent
   extends BaseComponent
   implements AfterViewInit
 {
+  protected themeService = inject(DarkThemeToggleThemeService);
   protected readonly themeGlobalSignalStoreService = inject<
     GlobalSignalStoreService<ThemeState>
   >(GlobalSignalStoreService<ThemeState>);
@@ -40,7 +42,7 @@ export class DarkThemeToggleComponent
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

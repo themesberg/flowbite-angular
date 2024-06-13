@@ -2,6 +2,8 @@ import * as properties from './dropdown.theme';
 
 import { BaseComponent } from '../base.component';
 import { DropdownState } from '../../services/state/dropdown.state';
+import { DropdownThemeService } from './dropdown.theme.service';
+import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import {
@@ -25,7 +27,6 @@ import {
   offset,
   shift,
 } from '@floating-ui/dom';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -41,6 +42,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
+  protected themeService = inject(DropdownThemeService);
   protected dropdownSignalStoreService = inject<
     SignalStoreService<DropdownState>
   >(SignalStoreService<DropdownState>);
@@ -60,7 +62,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       label: this.label(),
       isOpen: booleanToFlowbiteBoolean(
         this.dropdownSignalStoreService.select('isOpen')(),

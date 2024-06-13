@@ -1,9 +1,15 @@
 import * as properties from './indicators.theme';
 import { BaseComponent } from '../base.component';
-import { FlowbitePositions, FlowbiteSizes } from '../../common/flowbite.theme';
+import { IndicatorThemeService } from './indicators.theme.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
-import { Component, booleanAttribute, input, signal } from '@angular/core';
+import {
+  Component,
+  booleanAttribute,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { NgClass } from '@angular/common';
 
 /**
@@ -16,6 +22,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent extends BaseComponent {
+  protected themeService = inject(IndicatorThemeService);
+
   protected override contentClasses = signal<properties.indicatorClass>(
     properties.IndicatorClassInstance,
   );
@@ -49,7 +57,7 @@ export class IndicatorComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       border: booleanToFlowbiteBoolean(this.hasBorder()),
       color: this.color(),
       disabled: booleanToFlowbiteBoolean(this.isDisabled()),

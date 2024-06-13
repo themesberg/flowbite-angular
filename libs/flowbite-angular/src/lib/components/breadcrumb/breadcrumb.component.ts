@@ -1,8 +1,9 @@
 import * as properties from './breadcrumb.theme';
 
 import { BaseComponent } from '../base.component';
+import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
-import { Component, HostBinding, input, signal } from '@angular/core';
+import { Component, HostBinding, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 /**
@@ -17,6 +18,8 @@ import { NgClass } from '@angular/common';
 export class BreadcrumbComponent extends BaseComponent {
   @HostBinding('aria-label') protected hostAriaLabelValue = 'Breadcrumb';
 
+  protected themeService = inject(BreadcrumbThemeService);
+
   protected override contentClasses = signal<properties.BreadcrumbClass>(
     properties.BreadcrumbClassInstance,
   );
@@ -27,7 +30,7 @@ export class BreadcrumbComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

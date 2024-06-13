@@ -1,7 +1,4 @@
 import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export interface SidebarProperties {
   rounded: keyof FlowbiteBoolean;
@@ -45,21 +42,3 @@ export const SidebarClassInstance: SidebarClass = {
   sidebarClass: '',
   sidebarContentClass: '',
 };
-
-export function getClasses(properties: SidebarProperties): SidebarClass {
-  const theme: SidebarBaseTheme = mergeTheme(
-    sidebarTheme,
-    properties.customStyle,
-  );
-
-  const output: SidebarClass = {
-    rootClass: '',
-    sidebarClass: twMerge(theme.root.base),
-    sidebarContentClass: twMerge(
-      theme.content.base,
-      theme.content.rounded?.[properties.rounded],
-    ),
-  };
-
-  return output;
-}

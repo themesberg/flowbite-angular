@@ -3,12 +3,14 @@ import * as properties from './alert.theme';
 import { BaseComponent } from '../base.component';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
+import { AlertThemeService } from './alert.theme.service';
 import {
   Component,
   HostBinding,
   OnInit,
   TemplateRef,
   booleanAttribute,
+  inject,
   input,
   signal,
 } from '@angular/core';
@@ -25,6 +27,8 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 })
 export class AlertComponent extends BaseComponent implements OnInit {
   @HostBinding('role') protected hostRoleValue = 'alert';
+
+  protected themeService = inject(AlertThemeService);
 
   protected override contentClasses = signal<properties.AlertClass>(
     properties.AlertClassInstance,
@@ -45,7 +49,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       color: this.color(),
       borderAccent: booleanToFlowbiteBoolean(this.isBorderAccent()),
       rounded: booleanToFlowbiteBoolean(this.isRounded()),

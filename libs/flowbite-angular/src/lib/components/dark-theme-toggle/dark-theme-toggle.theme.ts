@@ -1,6 +1,4 @@
 import { FlowbiteClass } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
-import { twMerge } from 'tailwind-merge';
 
 export interface DarkThemeToggleProperties {
   customStyle: Partial<DarkThemeToggleBaseTheme>;
@@ -25,18 +23,3 @@ export type DarkThemeToggleClass = FlowbiteClass;
 export const DarkThemeToggleClassInstance: DarkThemeToggleClass = {
   rootClass: '',
 };
-
-export function getClasses(
-  properties: DarkThemeToggleProperties,
-): DarkThemeToggleClass {
-  const theme: DarkThemeToggleBaseTheme = mergeTheme(
-    darkThemeToggleTheme,
-    properties.customStyle,
-  );
-
-  const output: DarkThemeToggleClass = {
-    rootClass: twMerge(theme.button.base),
-  };
-
-  return output;
-}

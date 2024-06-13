@@ -1,7 +1,7 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import { FlowbiteClass } from '../../common';
 
 export interface AccordionPanelProperties {
-  open: keyof FlowbiteBoolean;
+  customStyle: Partial<AccordionPanelBaseTheme>;
 }
 
 export interface AccordionPanelBaseTheme {
@@ -12,5 +12,14 @@ export interface AccordionPanelRootTheme {
   base: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface AccordionPanelClass {}
+export const accordionPanelTheme: AccordionPanelBaseTheme = {
+  root: {
+    base: '',
+  },
+};
+
+export type AccordionPanelClass = FlowbiteClass;
+
+export const AccordionPanelClassInstance: AccordionPanelClass = {
+  rootClass: '',
+};
