@@ -1,3 +1,4 @@
+import { Combination } from '../../common/flowbite.type';
 import { FlowbiteBoolean, FlowbiteClass } from '../../common';
 
 export interface AccordionTitleProperties {
@@ -12,16 +13,13 @@ export interface AccordionTitleBaseTheme {
 
 export interface AccordionTitleRootTheme {
   base: string;
-  isFlushToIsOpen: Record<
-    keyof FlowbiteBoolean,
-    Record<keyof FlowbiteBoolean, string>
-  >;
+  flushAndOpen: Combination<keyof FlowbiteBoolean, keyof FlowbiteBoolean>;
 }
 
 export const accordionTitleTheme: AccordionTitleBaseTheme = {
   root: {
     base: 'cursor-pointer flex w-full items-center justify-between py-5 px-5 text-left font-medium text-gray-500 dark:text-gray-400',
-    isFlushToIsOpen: {
+    flushAndOpen: {
       enabled: {
         enabled: 'text-gray-900 dark:text-white',
         disabled: '',

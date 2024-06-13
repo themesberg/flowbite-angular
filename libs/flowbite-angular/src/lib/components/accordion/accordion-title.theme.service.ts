@@ -28,7 +28,7 @@ export class AccordionTitleThemeService
     const output: AccordionTitleClass = {
       rootClass: twMerge(
         theme.root.base,
-        theme.root.isFlushToIsOpen?.[properties.isFlush][properties.isOpen],
+        theme.root.flushAndOpen?.[properties.isFlush][properties.isOpen],
       ),
     };
 
