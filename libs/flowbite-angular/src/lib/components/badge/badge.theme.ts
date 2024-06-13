@@ -4,45 +4,41 @@ import {
   FlowbiteColors,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 //#region Component theme option
-export interface BadgeColors
-  extends Pick<
-    FlowbiteColors,
-    'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
-  > {
+export type BadgeColors = Pick<
+  FlowbiteColors,
+  'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
+> & {
   [key: string]: string;
-}
+};
 
-export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {
+export type BadgeSizes = Pick<FlowbiteSizes, 'xs' | 'sm'> & {
   [key: string]: string;
-}
+};
 //#endregion
 
-export interface BadgeProperties {
+export type BadgeProperties = {
   color: keyof BadgeColors;
   size: keyof BadgeSizes;
   isIconOnly: keyof FlowbiteBoolean;
   isPill: keyof FlowbiteBoolean;
   href?: string;
   customStyle: Partial<BadgeBaseTheme>;
-}
+};
 
-export interface BadgeBaseTheme {
+export type BadgeBaseTheme = {
   root: Partial<BadgeRootTheme>;
-}
+};
 
-export interface BadgeRootTheme {
+export type BadgeRootTheme = {
   base: string;
   color: Record<keyof BadgeColors, string>;
   size: Record<keyof BadgeSizes, string>;
   pill: Record<keyof FlowbiteBoolean, string>;
   iconOnly: Record<keyof FlowbiteBoolean, string>;
   href: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
 export const badgeTheme: BadgeBaseTheme = {
   root: {

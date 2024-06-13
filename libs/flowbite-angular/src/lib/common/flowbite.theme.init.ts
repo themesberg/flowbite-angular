@@ -34,6 +34,9 @@ import {
   FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
   FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
   FLOWBITE_NAVBAR_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_THEME_TOKEN,
   IndicatorThemeService,
   ModalBodyThemeService,
   ModalFooterThemeService,
@@ -43,6 +46,9 @@ import {
   NavbarContentThemeService,
   NavbarItemThemeService,
   NavbarThemeService,
+  SidebarItemGroupThemeService,
+  SidebarItemThemeService,
+  SidebarThemeService,
   accordionContentTheme,
   accordionTheme,
   accordionTitleTheme,
@@ -65,6 +71,9 @@ import {
   navbarContentTheme,
   navbarItemTheme,
   navbarTheme,
+  sidebarItemGroupTheme,
+  sidebarItemTheme,
+  sidebarTheme,
 } from '../components';
 import {
   AlertThemeService,
@@ -168,6 +177,18 @@ export function initFlowbite(): EnvironmentProviders {
       provide: NavbarThemeService,
       useClass: NavbarThemeService,
     },
+    {
+      provide: SidebarItemGroupThemeService,
+      useClass: SidebarItemGroupThemeService,
+    },
+    {
+      provide: SidebarItemThemeService,
+      useClass: SidebarItemThemeService,
+    },
+    {
+      provide: SidebarThemeService,
+      useClass: SidebarThemeService,
+    },
   ]);
 
   const themeProviders = makeEnvironmentProviders([
@@ -259,6 +280,18 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_NAVBAR_THEME_TOKEN,
       useValue: navbarTheme,
+    },
+    {
+      provide: FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
+      useValue: sidebarItemGroupTheme,
+    },
+    {
+      provide: FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
+      useValue: sidebarItemTheme,
+    },
+    {
+      provide: FLOWBITE_SIDEBAR_THEME_TOKEN,
+      useValue: sidebarTheme,
     },
   ]);
 

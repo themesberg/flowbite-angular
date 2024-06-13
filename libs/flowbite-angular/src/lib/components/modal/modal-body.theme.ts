@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface ModalBodyProperties {
+export type ModalBodyProperties = {
   customStyle: Partial<ModalBodyBaseTheme>;
-}
+};
 
-export interface ModalBodyBaseTheme {
+export type ModalBodyBaseTheme = {
   root: Partial<ModalBodyRootTheme>;
-}
+};
 
-export interface ModalBodyRootTheme {
+export type ModalBodyRootTheme = {
   base: string;
-}
+};
 
 export const modalBodyTheme: ModalBodyBaseTheme = {
   root: {

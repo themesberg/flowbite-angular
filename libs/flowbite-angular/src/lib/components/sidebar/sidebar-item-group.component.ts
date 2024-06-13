@@ -1,7 +1,9 @@
 import * as properties from './sidebar-item-group.theme';
-import { BaseComponent } from '../base.component';
 
-import { Component, input, signal } from '@angular/core';
+import { BaseComponent } from '../base.component';
+import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
+
+import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -11,6 +13,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './sidebar-item-group.component.html',
 })
 export class SidebarItemGroupComponent extends BaseComponent {
+  protected themeService = inject(SidebarItemGroupThemeService);
+
   protected override contentClasses = signal<properties.SidebarItemGroupClass>(
     properties.SidebarItemGroupClassInstance,
   );
@@ -21,7 +25,7 @@ export class SidebarItemGroupComponent extends BaseComponent {
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
-    const propertyClass = properties.getClasses({
+    const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
 

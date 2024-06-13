@@ -7,46 +7,46 @@ import {
 } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface IndicatorColors
-  extends Pick<
-    FlowbiteColors,
-    | 'gray'
-    | 'dark'
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'purple'
-    | 'indigo'
-    | 'yellow'
-    | 'teal'
-    | 'gray'
-  > {
+export type IndicatorColors = Pick<
+  FlowbiteColors,
+  | 'gray'
+  | 'dark'
+  | 'blue'
+  | 'green'
+  | 'red'
+  | 'purple'
+  | 'indigo'
+  | 'yellow'
+  | 'teal'
+  | 'gray'
+> & {
   [key: string]: string;
-}
+};
 
-export interface IndicatorSizes
-  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+export type IndicatorSizes = Pick<
+  FlowbiteSizes,
+  'xs' | 'sm' | 'md' | 'lg' | 'xl'
+> & {
   [key: string]: string;
-}
+};
 
-export interface IndicatorPositions
-  extends Pick<
-    FlowbitePositions,
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right'
-  > {
+export type IndicatorPositions = Pick<
+  FlowbitePositions,
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'center-left'
+  | 'center'
+  | 'center-right'
+  | 'bottom-left'
+  | 'bottom-center'
+  | 'bottom-right'
+> & {
   [key: string]: string;
-}
+};
 //#endregion
 
-export interface IndicatorProperties {
+export type IndicatorProperties = {
   pill: keyof FlowbiteBoolean;
   outline: keyof FlowbiteBoolean;
   disabled: keyof FlowbiteBoolean;
@@ -57,13 +57,13 @@ export interface IndicatorProperties {
   size: keyof IndicatorSizes;
   placement?: keyof IndicatorPositions;
   customStyle: Partial<IndicatorBaseTheme>;
-}
+};
 
-export interface IndicatorBaseTheme {
+export type IndicatorBaseTheme = {
   root: Partial<IndicatorRootTheme>;
-}
+};
 
-export interface IndicatorRootTheme {
+export type IndicatorRootTheme = {
   base: string;
   pill: Record<keyof FlowbiteBoolean, string>;
   outline: Record<keyof FlowbiteBoolean, string>;
@@ -74,7 +74,7 @@ export interface IndicatorRootTheme {
   color: Record<keyof IndicatorColors, string>;
   size: Record<keyof IndicatorSizes, string>;
   placement: Record<keyof IndicatorPositions, string>;
-}
+};
 
 export const indicatorTheme: IndicatorBaseTheme = {
   root: {

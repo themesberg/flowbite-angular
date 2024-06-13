@@ -1,18 +1,18 @@
 import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
 
-export interface AccordionProperties {
+export type AccordionProperties = {
   flush: keyof FlowbiteBoolean;
   customStyle: Partial<AccordionBaseTheme>;
-}
+};
 
-export interface AccordionBaseTheme {
+export type AccordionBaseTheme = {
   root: Partial<AccordionRootTheme>;
-}
+};
 
-export interface AccordionRootTheme {
+export type AccordionRootTheme = {
   base: string;
   flush: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
 export const accordionTheme: AccordionBaseTheme = {
   root: {

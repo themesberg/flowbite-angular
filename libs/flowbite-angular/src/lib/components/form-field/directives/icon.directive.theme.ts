@@ -2,17 +2,17 @@ import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface IconDirectiveProperties {
+export type IconDirectiveProperties = {
   customStyle: Partial<IconDirectiveBaseTheme>;
-}
+};
 
-export interface IconDirectiveBaseTheme {
+export type IconDirectiveBaseTheme = {
   root: Partial<IconDirectiveRootTheme>;
-}
+};
 
-export interface IconDirectiveRootTheme {
+export type IconDirectiveRootTheme = {
   base: string;
-}
+};
 
 export const iconDirectiveTheme: IconDirectiveBaseTheme = {
   root: {
@@ -20,9 +20,9 @@ export const iconDirectiveTheme: IconDirectiveBaseTheme = {
   },
 };
 
-export interface IconDirectiveClass {
+export type IconDirectiveClass = {
   root: string;
-}
+};
 
 export function getClasses(
   properties: IconDirectiveProperties,

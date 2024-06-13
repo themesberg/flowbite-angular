@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface NavbarBrandProperties {
+export type NavbarBrandProperties = {
   customStyle: Partial<NavbarBrandBaseTheme>;
-}
+};
 
-export interface NavbarBrandBaseTheme {
+export type NavbarBrandBaseTheme = {
   root: Partial<NavbarBrandRootTheme>;
-}
+};
 
-export interface NavbarBrandRootTheme {
+export type NavbarBrandRootTheme = {
   base: string;
-}
+};
 
 export const navbarBrandTheme: NavbarBrandBaseTheme = {
   root: {
@@ -18,9 +18,9 @@ export const navbarBrandTheme: NavbarBrandBaseTheme = {
   },
 };
 
-export interface NavbarBrandClass extends FlowbiteClass {
+export type NavbarBrandClass = FlowbiteClass & {
   navbarBrandClass: string;
-}
+};
 
 export const NavbarBrandClassInstance: NavbarBrandClass = {
   navbarBrandClass: '',

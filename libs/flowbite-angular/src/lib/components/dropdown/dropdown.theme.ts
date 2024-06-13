@@ -5,49 +5,51 @@ import {
 } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface DropdownPositions
-  extends Pick<FlowbitePositions, 'bottom-center' | 'top-center'> {
+export type DropdownPositions = Pick<
+  FlowbitePositions,
+  'bottom-center' | 'top-center'
+> & {
   'left-center': string;
   'right-center': string;
-}
+};
 //#endregion
 
-export interface DropdownProperties {
+export type DropdownProperties = {
   label: string;
   isOpen: keyof FlowbiteBoolean;
   placement: keyof DropdownPositions;
   customStyle: Partial<DropdownBaseTheme>;
-}
+};
 
-export interface DropdownBaseTheme {
+export type DropdownBaseTheme = {
   root: Partial<DropdownRootTheme>;
   span: Partial<DropdownSpanTheme>;
   container: Partial<DropdownContainerTheme>;
   content: Partial<DropdownContentTheme>;
   subContent: Partial<DropdownSubContentTheme>;
-}
+};
 
-export interface DropdownRootTheme {
+export type DropdownRootTheme = {
   base: string;
-}
+};
 
-export interface DropdownSpanTheme {
+export type DropdownSpanTheme = {
   base: string;
-}
+};
 
-export interface DropdownContainerTheme {
+export type DropdownContainerTheme = {
   base: string;
   opened: Record<keyof FlowbiteBoolean, string>;
   placement: Record<keyof DropdownPositions, string>;
-}
+};
 
-export interface DropdownContentTheme {
+export type DropdownContentTheme = {
   base: string;
-}
+};
 
-export interface DropdownSubContentTheme {
+export type DropdownSubContentTheme = {
   base: string;
-}
+};
 
 export const dropdownTheme: DropdownBaseTheme = {
   root: {
@@ -77,13 +79,13 @@ export const dropdownTheme: DropdownBaseTheme = {
   },
 };
 
-export interface DropdownClass extends FlowbiteClass {
+export type DropdownClass = FlowbiteClass & {
   dropdownClass: string;
   spanClass: string;
   containerClass: string;
   contentClass: string;
   subContentClass: string;
-}
+};
 
 export const DropdownClassInstance: DropdownClass = {
   containerClass: '',

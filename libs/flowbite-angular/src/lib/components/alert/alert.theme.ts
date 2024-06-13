@@ -5,35 +5,37 @@ import {
 } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface AlertColors
-  extends Pick<FlowbiteColors, 'blue' | 'red' | 'green' | 'yellow' | 'gray'> {
+export type AlertColors = Pick<
+  FlowbiteColors,
+  'blue' | 'red' | 'green' | 'yellow' | 'gray'
+> & {
   [key: string]: string;
-}
+};
 //#endregion
 
-export interface AlertProperties {
+export type AlertProperties = {
   color: keyof AlertColors;
   rounded: keyof FlowbiteBoolean;
   borderAccent: keyof FlowbiteBoolean;
   customStyle: Partial<AlertBaseTheme>;
-}
+};
 
-export interface AlertBaseTheme {
+export type AlertBaseTheme = {
   root: Partial<AlertRootTheme>;
   button: Partial<AlertButtonTheme>;
-}
+};
 
-export interface AlertRootTheme {
+export type AlertRootTheme = {
   base: string;
   color: Record<keyof AlertColors, string>;
   border: Record<keyof FlowbiteBoolean, string>;
   rounded: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
-export interface AlertButtonTheme {
+export type AlertButtonTheme = {
   base: string;
   color: Record<keyof AlertColors, string>;
-}
+};
 
 export const alertTheme: AlertBaseTheme = {
   root: {
@@ -70,9 +72,9 @@ export const alertTheme: AlertBaseTheme = {
   },
 };
 
-export interface AlertClass extends FlowbiteClass {
+export type AlertClass = FlowbiteClass & {
   alertButtonClass: string;
-}
+};
 
 export const AlertClassInstance: AlertClass = {
   alertButtonClass: '',

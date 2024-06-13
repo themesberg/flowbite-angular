@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface DropdownItemProperties {
+export type DropdownItemProperties = {
   customStyle: Partial<DropdownItemBaseTheme>;
-}
+};
 
-export interface DropdownItemBaseTheme {
+export type DropdownItemBaseTheme = {
   root: Partial<DropdownItemRootTheme>;
-}
+};
 
-export interface DropdownItemRootTheme {
+export type DropdownItemRootTheme = {
   base: string;
-}
+};
 
 export const dropdownItemTheme: DropdownItemBaseTheme = {
   root: {

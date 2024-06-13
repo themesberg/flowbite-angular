@@ -1,24 +1,24 @@
 import { FlowbiteClass } from '../../common';
 
-export interface SidebarItemProperties {
+export type SidebarItemProperties = {
   icon: string | undefined;
   link: string | undefined;
   label: string | undefined;
   customStyle: Partial<SidebarItemBaseTheme>;
-}
+};
 
-export interface SidebarItemBaseTheme {
+export type SidebarItemBaseTheme = {
   root: Partial<SidebarItemRootTheme>;
   icon: Partial<SidebarItemIconRootTheme>;
-}
+};
 
-export interface SidebarItemRootTheme {
+export type SidebarItemRootTheme = {
   base: string;
-}
+};
 
-export interface SidebarItemIconRootTheme {
+export type SidebarItemIconRootTheme = {
   base: string;
-}
+};
 
 export const sidebarItemTheme: SidebarItemBaseTheme = {
   root: {
@@ -29,10 +29,10 @@ export const sidebarItemTheme: SidebarItemBaseTheme = {
   },
 };
 
-export interface SidebarItemClass extends FlowbiteClass {
+export type SidebarItemClass = FlowbiteClass & {
   sidebarClass: string;
   sidebarIconClass: string;
-}
+};
 
 export const SidebarItemClassInstance: SidebarItemClass = {
   rootClass: '',

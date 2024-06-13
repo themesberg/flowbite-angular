@@ -2,17 +2,17 @@ import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface AddonDirectiveProperties {
+export type AddonDirectiveProperties = {
   customStyle: Partial<AddonDirectiveBaseTheme>;
-}
+};
 
-export interface AddonDirectiveBaseTheme {
+export type AddonDirectiveBaseTheme = {
   root: Partial<AddonDirectiveRootTheme>;
-}
+};
 
-export interface AddonDirectiveRootTheme {
+export type AddonDirectiveRootTheme = {
   base: string;
-}
+};
 
 export const addonDirectiveTheme: AddonDirectiveBaseTheme = {
   root: {
@@ -20,9 +20,9 @@ export const addonDirectiveTheme: AddonDirectiveBaseTheme = {
   },
 };
 
-export interface AddonDirectiveClass {
+export type AddonDirectiveClass = {
   root: string;
-}
+};
 
 export function getClasses(
   properties: AddonDirectiveProperties,

@@ -1,27 +1,27 @@
 import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
 
-export interface BreadcrumbItemProperties {
+export type BreadcrumbItemProperties = {
   href?: string;
   customStyle: Partial<BreadcrumbItemBaseTheme>;
-}
+};
 
-export interface BreadcrumbItemBaseTheme {
+export type BreadcrumbItemBaseTheme = {
   root: Partial<BreadcrumbItemRootTheme>;
   icon: Partial<BreadcrumbIconRootTheme>;
   item: Partial<BreadcrumbItemContentTheme>;
-}
+};
 
-export interface BreadcrumbItemRootTheme {
+export type BreadcrumbItemRootTheme = {
   base: string;
-}
+};
 
-export interface BreadcrumbIconRootTheme {
+export type BreadcrumbIconRootTheme = {
   base: string;
-}
+};
 
-export interface BreadcrumbItemContentTheme {
+export type BreadcrumbItemContentTheme = {
   base: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
 export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
   root: {
@@ -40,10 +40,10 @@ export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
   },
 };
 
-export interface BreadcrumbItemClass extends FlowbiteClass {
+export type BreadcrumbItemClass = FlowbiteClass & {
   breadcrumbIconClass: string;
   contentClass: string;
-}
+};
 
 export const BreadcrumbItemClassInstance: BreadcrumbItemClass = {
   breadcrumbIconClass: '',

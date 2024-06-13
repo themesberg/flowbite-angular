@@ -5,53 +5,51 @@ import {
 } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface ModalSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
+export type ModalSizes = Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> & {
   [key: string]: string;
-}
+};
 
-export interface ModalPositions
-  extends Pick<
-    FlowbitePositions,
-    | 'center'
-    | 'top-left'
-    | 'top-right'
-    | 'bottom-left'
-    | 'bottom-right'
-    | 'top-center'
-    | 'bottom-center'
-    | 'center-left'
-    | 'center-right'
-  > {
+export type ModalPositions = Pick<
+  FlowbitePositions,
+  | 'center'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'top-center'
+  | 'bottom-center'
+  | 'center-left'
+  | 'center-right'
+> & {
   [key: string]: string;
-}
+};
 //#endregion
 
-export interface ModalProperties {
+export type ModalProperties = {
   size: keyof ModalSizes;
   position: keyof ModalPositions;
   customStyle: Partial<ModalBaseTheme>;
-}
+};
 
-export interface ModalBaseTheme {
+export type ModalBaseTheme = {
   root: Partial<ModalRootTheme>;
   container: Partial<ModalContainerRootTheme>;
   content: Partial<ModalContentRootTheme>;
-}
+};
 
-export interface ModalRootTheme {
+export type ModalRootTheme = {
   base: string;
   position: Record<keyof ModalPositions, string>;
-}
+};
 
-export interface ModalContainerRootTheme {
+export type ModalContainerRootTheme = {
   base: string;
   size: Record<keyof ModalSizes, string>;
-}
+};
 
-export interface ModalContentRootTheme {
+export type ModalContentRootTheme = {
   base: string;
-}
+};
 
 export const modalTheme: ModalBaseTheme = {
   root: {
@@ -82,11 +80,11 @@ export const modalTheme: ModalBaseTheme = {
   },
 };
 
-export interface ModalClass extends FlowbiteClass {
+export type ModalClass = FlowbiteClass & {
   modalClass: string;
   modalContainerClass: string;
   modalContentClass: string;
-}
+};
 
 export const ModalClassInstance: ModalClass = {
   modalClass: '',

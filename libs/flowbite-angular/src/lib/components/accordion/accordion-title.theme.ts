@@ -1,20 +1,20 @@
 import { Combination } from '../../common/flowbite.type';
 import { FlowbiteBoolean, FlowbiteClass } from '../../common';
 
-export interface AccordionTitleProperties {
+export type AccordionTitleProperties = {
   isOpen: keyof FlowbiteBoolean;
   isFlush: keyof FlowbiteBoolean;
   customStyle: Partial<AccordionTitleBaseTheme>;
-}
+};
 
-export interface AccordionTitleBaseTheme {
+export type AccordionTitleBaseTheme = {
   root: Partial<AccordionTitleRootTheme>;
-}
+};
 
-export interface AccordionTitleRootTheme {
+export type AccordionTitleRootTheme = {
   base: string;
   flushAndOpen: Combination<keyof FlowbiteBoolean, keyof FlowbiteBoolean>;
-}
+};
 
 export const accordionTitleTheme: AccordionTitleBaseTheme = {
   root: {

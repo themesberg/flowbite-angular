@@ -2,19 +2,19 @@ export type FlowbiteHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type FlowbiteTheme = 'dark' | 'light';
 
-export interface FlowbiteBoolean {
+export type FlowbiteBoolean = {
   enabled: string;
   disabled: string;
-}
+};
 
-export interface FlowbiteStateColors {
+export type FlowbiteStateColors = {
   info: string;
   failure: string;
   success: string;
   warning: string;
-}
+};
 
-export interface FlowbiteColors extends FlowbiteStateColors {
+export type FlowbiteColors = FlowbiteStateColors & {
   [key: string]: string;
   blue: string;
   cyan: string;
@@ -29,19 +29,18 @@ export interface FlowbiteColors extends FlowbiteStateColors {
   red: string;
   teal: string;
   yellow: string;
-}
+};
 
-export interface FlowbiteGradientColors
-  extends Omit<FlowbiteStateColors, 'warning'> {
+export type FlowbiteGradientColors = Omit<FlowbiteStateColors, 'warning'> & {
   [key: string]: string;
   cyan: string;
   lime: string;
   pink: string;
   purple: string;
   teal: string;
-}
+};
 
-export interface FlowbiteGradientDuoToneColors {
+export type FlowbiteGradientDuoToneColors = {
   cyanToBlue: string;
   greenToBlue: string;
   pinkToOrange: string;
@@ -49,9 +48,9 @@ export interface FlowbiteGradientDuoToneColors {
   purpleToPink: string;
   redToYellow: string;
   tealToLime: string;
-}
+};
 
-export interface FlowbitePositions {
+export type FlowbitePositions = {
   'bottom-left': string;
   'bottom-right': string;
   'bottom-center': string;
@@ -61,20 +60,20 @@ export interface FlowbitePositions {
   'center-left': string;
   center: string;
   'center-right': string;
-}
+};
 
-export interface FlowbiteSizes {
+export type FlowbiteSizes = {
   xs: string;
   sm: string;
   md: string;
   lg: string;
   xl: string;
-}
+};
 
-export interface FlowbiteContentPositions {
+export type FlowbiteContentPositions = {
   center: string;
-}
+};
 
-export interface FlowbiteClass {
+export type FlowbiteClass = {
   rootClass: string;
-}
+};

@@ -1,19 +1,16 @@
 import { FlowbiteClass } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
 
-import { twMerge } from 'tailwind-merge';
-
-export interface ModalFooterProperties {
+export type ModalFooterProperties = {
   customStyle: Partial<ModalFooterBaseTheme>;
-}
+};
 
-export interface ModalFooterBaseTheme {
+export type ModalFooterBaseTheme = {
   root: Partial<ModalFooterRootTheme>;
-}
+};
 
-export interface ModalFooterRootTheme {
+export type ModalFooterRootTheme = {
   base: string;
-}
+};
 
 export const modalFooterTheme: ModalFooterBaseTheme = {
   root: {

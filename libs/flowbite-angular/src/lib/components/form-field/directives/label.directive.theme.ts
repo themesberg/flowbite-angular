@@ -7,27 +7,27 @@ import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface LabelDirectiveProperties {
+export type LabelDirectiveProperties = {
   disabled: keyof FlowbiteBoolean;
   validate?: keyof FormFieldValidations;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
   customStyle: Partial<LabelDirectiveBaseTheme>;
-}
+};
 
-export interface LabelDirectiveBaseTheme {
+export type LabelDirectiveBaseTheme = {
   default: LabelDirectiveRootTheme;
   floatingLabel: Record<
     keyof FormFieldFloatingLabelTypes,
     LabelDirectiveRootTheme
   >;
-}
+};
 
-export interface LabelDirectiveRootTheme {
+export type LabelDirectiveRootTheme = {
   base: string;
   default: string;
   disabled?: Record<keyof FlowbiteBoolean, string>;
   validation: Record<keyof FormFieldValidations, string>;
-}
+};
 
 export const labelDirectiveTheme: LabelDirectiveBaseTheme = {
   default: {
@@ -84,9 +84,9 @@ export const labelDirectiveTheme: LabelDirectiveBaseTheme = {
   },
 };
 
-export interface LabelDirectiveClass {
+export type LabelDirectiveClass = {
   root: string;
-}
+};
 
 export function getClasses(
   properties: LabelDirectiveProperties,

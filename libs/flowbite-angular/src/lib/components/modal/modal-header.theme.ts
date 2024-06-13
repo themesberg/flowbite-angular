@@ -1,26 +1,26 @@
 import { FlowbiteClass } from '../../common';
 
-export interface ModalHeaderProperties {
+export type ModalHeaderProperties = {
   customStyle: Partial<ModalHeaderBaseTheme>;
-}
+};
 
-export interface ModalHeaderBaseTheme {
+export type ModalHeaderBaseTheme = {
   root: Partial<ModalHeaderRootTheme>;
   title: Partial<ModalHeaderTitleRootTheme>;
   button: Partial<ModalHeaderButtonRootTheme>;
-}
+};
 
-export interface ModalHeaderRootTheme {
+export type ModalHeaderRootTheme = {
   base: string;
-}
+};
 
-export interface ModalHeaderTitleRootTheme {
+export type ModalHeaderTitleRootTheme = {
   base: string;
-}
+};
 
-export interface ModalHeaderButtonRootTheme {
+export type ModalHeaderButtonRootTheme = {
   base: string;
-}
+};
 
 export const modalHeaderTheme: ModalHeaderBaseTheme = {
   root: {
@@ -34,11 +34,11 @@ export const modalHeaderTheme: ModalHeaderBaseTheme = {
   },
 };
 
-export interface ModalHeaderClass extends FlowbiteClass {
+export type ModalHeaderClass = FlowbiteClass & {
   modalHeaderClass: string;
   modalHeaderTitleClass: string;
   modalHeaderButtonClass: string;
-}
+};
 
 export const ModalHeaderClassInstance: ModalHeaderClass = {
   modalHeaderButtonClass: '',

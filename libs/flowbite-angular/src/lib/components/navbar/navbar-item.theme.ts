@@ -1,24 +1,24 @@
 import { FlowbiteClass, FlowbiteColors } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface NavbarItemColors extends Pick<FlowbiteColors, 'blue'> {
+export type NavbarItemColors = Pick<FlowbiteColors, 'blue'> & {
   [key: string]: string;
-}
+};
 //#endregion
 
-export interface NabvarItemProperties {
+export type NabvarItemProperties = {
   color: keyof NavbarItemColors;
   customStyle: Partial<NavbarItemBaseTheme>;
-}
+};
 
-export interface NavbarItemBaseTheme {
+export type NavbarItemBaseTheme = {
   root: Partial<NavbarItemRootTheme>;
-}
+};
 
-export interface NavbarItemRootTheme {
+export type NavbarItemRootTheme = {
   base: string;
   color: Record<keyof NavbarItemColors, string>;
-}
+};
 
 export const navbarItemTheme: NavbarItemBaseTheme = {
   root: {
@@ -29,9 +29,9 @@ export const navbarItemTheme: NavbarItemBaseTheme = {
   },
 };
 
-export interface NavbarItemClass extends FlowbiteClass {
+export type NavbarItemClass = FlowbiteClass & {
   navbarItemClass: string;
-}
+};
 
 export const NavbarItemClassInstance: NavbarItemClass = {
   navbarItemClass: '',

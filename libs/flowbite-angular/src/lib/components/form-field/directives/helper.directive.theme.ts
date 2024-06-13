@@ -3,19 +3,19 @@ import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface HelperDirectiveProperties {
+export type HelperDirectiveProperties = {
   validate?: keyof FormFieldValidations;
   customStyle: Partial<HelperDirectiveBaseTheme>;
-}
+};
 
-export interface HelperDirectiveBaseTheme {
+export type HelperDirectiveBaseTheme = {
   root: Partial<HelperDirectiveRootTheme>;
-}
+};
 
-export interface HelperDirectiveRootTheme {
+export type HelperDirectiveRootTheme = {
   base: string;
   validation: Record<keyof FormFieldValidations, string>;
-}
+};
 
 export const helperDirectiveTheme: HelperDirectiveBaseTheme = {
   root: {
@@ -27,9 +27,9 @@ export const helperDirectiveTheme: HelperDirectiveBaseTheme = {
   },
 };
 
-export interface HelperDirectiveClass {
+export type HelperDirectiveClass = {
   root: string;
-}
+};
 
 export function getClasses(
   properties: HelperDirectiveProperties,

@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface BreadcrumbProperties {
+export type BreadcrumbProperties = {
   customStyle: Partial<BreadcrumbBaseTheme>;
-}
+};
 
-export interface BreadcrumbBaseTheme {
+export type BreadcrumbBaseTheme = {
   root: Partial<BreadcrumbRootTheme>;
-}
+};
 
-export interface BreadcrumbRootTheme {
+export type BreadcrumbRootTheme = {
   base: string;
-}
+};
 
 export const breadcrumbTheme: BreadcrumbBaseTheme = {
   root: {

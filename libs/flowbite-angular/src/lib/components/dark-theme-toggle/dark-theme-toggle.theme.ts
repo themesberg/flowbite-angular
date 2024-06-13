@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface DarkThemeToggleProperties {
+export type DarkThemeToggleProperties = {
   customStyle: Partial<DarkThemeToggleBaseTheme>;
-}
+};
 
-export interface DarkThemeToggleBaseTheme {
+export type DarkThemeToggleBaseTheme = {
   button: Partial<DarkThemeToggleButtonTheme>;
-}
+};
 
-export interface DarkThemeToggleButtonTheme {
+export type DarkThemeToggleButtonTheme = {
   base: string;
-}
+};
 
 export const darkThemeToggleTheme: DarkThemeToggleBaseTheme = {
   button: {

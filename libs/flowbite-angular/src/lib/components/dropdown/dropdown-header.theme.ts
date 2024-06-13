@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface DropdownHeaderProperties {
+export type DropdownHeaderProperties = {
   customStyle: Partial<DropdownHeaderBaseTheme>;
-}
+};
 
-export interface DropdownHeaderBaseTheme {
+export type DropdownHeaderBaseTheme = {
   root: Partial<DropdownHeaderRootTheme>;
-}
+};
 
-export interface DropdownHeaderRootTheme {
+export type DropdownHeaderRootTheme = {
   base: string;
-}
+};
 
 export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
   root: {
@@ -18,9 +18,9 @@ export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
   },
 };
 
-export interface DropdownHeaderClass extends FlowbiteClass {
+export type DropdownHeaderClass = FlowbiteClass & {
   root: string;
-}
+};
 
 export const DropdownHeaderClassInstance: DropdownHeaderClass = {
   root: '',

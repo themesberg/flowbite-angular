@@ -1,23 +1,23 @@
 import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
 
-export interface SidebarProperties {
+export type SidebarProperties = {
   rounded: keyof FlowbiteBoolean;
   customStyle: Partial<SidebarBaseTheme>;
-}
+};
 
-export interface SidebarBaseTheme {
+export type SidebarBaseTheme = {
   root: Partial<SidebarRootTheme>;
   content: Partial<SidebarContentRootTheme>;
-}
+};
 
-export interface SidebarRootTheme {
+export type SidebarRootTheme = {
   base: string;
-}
+};
 
-export interface SidebarContentRootTheme {
+export type SidebarContentRootTheme = {
   base: string;
   rounded: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
 export const sidebarTheme: SidebarBaseTheme = {
   root: {
@@ -32,10 +32,10 @@ export const sidebarTheme: SidebarBaseTheme = {
   },
 };
 
-export interface SidebarClass extends FlowbiteClass {
+export type SidebarClass = FlowbiteClass & {
   sidebarClass: string;
   sidebarContentClass: string;
-}
+};
 
 export const SidebarClassInstance: SidebarClass = {
   rootClass: '',

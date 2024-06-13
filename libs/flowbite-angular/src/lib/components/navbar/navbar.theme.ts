@@ -5,34 +5,34 @@ import {
 } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
+export type NavbarColors = Pick<FlowbiteColors, 'gray'> & {
   [key: string]: string;
-}
+};
 //#endregion
 
-export interface NavbarProperties {
+export type NavbarProperties = {
   rounded: keyof FlowbiteBoolean;
   border: keyof FlowbiteBoolean;
   fixed: keyof FlowbiteBoolean;
   customStyle: Partial<NavbarBaseTheme>;
-}
+};
 
-export interface NavbarBaseTheme {
+export type NavbarBaseTheme = {
   root: Partial<NavbarRootTheme>;
   content: Partial<NavbarContentTheme>;
-}
+};
 
-export interface NavbarRootTheme {
+export type NavbarRootTheme = {
   base: string;
   color: Record<keyof NavbarColors, string>;
   rounded: Record<keyof FlowbiteBoolean, string>;
   border: Record<keyof FlowbiteBoolean, string>;
   fixed: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
-export interface NavbarContentTheme {
+export type NavbarContentTheme = {
   base: string;
-}
+};
 
 export const navbarTheme: NavbarBaseTheme = {
   root: {
@@ -58,9 +58,9 @@ export const navbarTheme: NavbarBaseTheme = {
   },
 };
 
-export interface NavbarClass extends FlowbiteClass {
+export type NavbarClass = FlowbiteClass & {
   contentClass: string;
-}
+};
 
 export const NavbarClassInstance: NavbarClass = {
   contentClass: '',

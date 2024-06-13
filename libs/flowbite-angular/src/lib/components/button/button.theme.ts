@@ -8,62 +8,54 @@ import {
 } from '../../common/flowbite.theme';
 
 //#region Component theme option
-export interface ButtonColors
-  extends Pick<
-    FlowbiteColors,
-    | 'dark'
-    | 'failure'
-    | 'gray'
-    | 'info'
-    | 'light'
-    | 'purple'
-    | 'success'
-    | 'warning'
-  > {
+export type ButtonColors = Pick<
+  FlowbiteColors,
+  | 'dark'
+  | 'failure'
+  | 'gray'
+  | 'info'
+  | 'light'
+  | 'purple'
+  | 'success'
+  | 'warning'
+> & {
   [key: string]: string;
-}
+};
 
-export interface ButtonMonochromeColors
-  extends Pick<
-    FlowbiteGradientColors,
-    | 'info'
-    | 'success'
-    | 'cyan'
-    | 'teal'
-    | 'lime'
-    | 'failure'
-    | 'pink'
-    | 'purple'
-  > {
+export type ButtonMonochromeColors = Pick<
+  FlowbiteGradientColors,
+  'info' | 'success' | 'cyan' | 'teal' | 'lime' | 'failure' | 'pink' | 'purple'
+> & {
   [key: string]: string;
-}
+};
 
-export interface ButtonDuoToneColors
-  extends Pick<
-    FlowbiteGradientDuoToneColors,
-    | 'purpleToBlue'
-    | 'cyanToBlue'
-    | 'greenToBlue'
-    | 'purpleToPink'
-    | 'pinkToOrange'
-    | 'tealToLime'
-    | 'redToYellow'
-  > {
+export type ButtonDuoToneColors = Pick<
+  FlowbiteGradientDuoToneColors,
+  | 'purpleToBlue'
+  | 'cyanToBlue'
+  | 'greenToBlue'
+  | 'purpleToPink'
+  | 'pinkToOrange'
+  | 'tealToLime'
+  | 'redToYellow'
+> & {
   [key: string]: string;
-}
+};
 
-export interface ButtonSizes
-  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+export type ButtonSizes = Pick<
+  FlowbiteSizes,
+  'xs' | 'sm' | 'md' | 'lg' | 'xl'
+> & {
   [key: string]: string;
-}
+};
 
-export interface ButtonFill {
+export type ButtonFill = {
   solid: string;
   outline: string;
-}
+};
 //#endregion
 
-export interface ButtonProperties {
+export type ButtonProperties = {
   color: keyof ButtonColors;
   gradientMonochrome?: keyof ButtonMonochromeColors;
   gradientDuoTone?: keyof ButtonDuoToneColors;
@@ -72,14 +64,14 @@ export interface ButtonProperties {
   outline: keyof ButtonFill;
   disabled: keyof FlowbiteBoolean;
   customStyle: Partial<ButtonBaseTheme>;
-}
+};
 
-export interface ButtonBaseTheme {
+export type ButtonBaseTheme = {
   root: Partial<ButtonRootTheme>;
   span: Partial<SpanRootTheme>;
-}
+};
 
-export interface ButtonRootTheme {
+export type ButtonRootTheme = {
   base: Record<keyof ButtonBaseClass, string>;
   color: Record<keyof ButtonColors, Record<keyof ButtonFill, string>>;
   gradientMonochrome?: Record<keyof FlowbiteGradientColors, string>;
@@ -90,18 +82,18 @@ export interface ButtonRootTheme {
   size: Record<keyof ButtonSizes, string>;
   pill: Record<keyof FlowbiteBoolean, string>;
   disabled: Record<keyof FlowbiteBoolean, string>;
-}
+};
 
-export interface SpanRootTheme {
+export type SpanRootTheme = {
   base: string;
   pill: Record<keyof FlowbiteBoolean, string>;
   size: Record<keyof ButtonSizes, string>;
-}
+};
 
-export interface ButtonBaseClass {
+export type ButtonBaseClass = {
   default: string;
   span: string;
-}
+};
 
 export const buttonTheme: ButtonBaseTheme = {
   root: {
@@ -249,9 +241,9 @@ export const buttonTheme: ButtonBaseTheme = {
   },
 };
 
-export interface ButtonClass extends FlowbiteClass {
+export type ButtonClass = FlowbiteClass & {
   spanClass: string;
-}
+};
 
 export const ButtonClassInstance: ButtonClass = {
   rootClass: '',

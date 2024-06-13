@@ -1,16 +1,16 @@
 import { FlowbiteClass } from '../../common';
 
-export interface AccordionPanelProperties {
+export type AccordionPanelProperties = {
   customStyle: Partial<AccordionPanelBaseTheme>;
-}
+};
 
-export interface AccordionPanelBaseTheme {
+export type AccordionPanelBaseTheme = {
   root: Partial<AccordionPanelRootTheme>;
-}
+};
 
-export interface AccordionPanelRootTheme {
+export type AccordionPanelRootTheme = {
   base: string;
-}
+};
 
 export const accordionPanelTheme: AccordionPanelBaseTheme = {
   root: {

@@ -37,3 +37,7 @@ export {
   sidebarItemGroupTheme,
   SidebarItemGroupClassInstance,
 } from './sidebar-item-group.theme';
+export {
+  FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
+  SidebarItemGroupThemeService,
+} from './sidebar-item-group.theme.service';

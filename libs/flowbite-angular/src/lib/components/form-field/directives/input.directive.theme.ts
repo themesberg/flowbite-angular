@@ -9,31 +9,31 @@ import { mergeTheme } from '../../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface InputDirectiveProperties {
+export type InputDirectiveProperties = {
   size: keyof FormFieldSizes;
   disabled: keyof FlowbiteBoolean;
   validate?: keyof FormFieldValidations;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
   prefix?: keyof FormFieldPrefixes;
   customStyle: Partial<InputDirectiveBaseTheme>;
-}
+};
 
-export interface InputDirectiveBaseTheme {
+export type InputDirectiveBaseTheme = {
   default: InputDirectiveRootTheme;
   floatingLabel: Record<
     keyof FormFieldFloatingLabelTypes,
     InputDirectiveRootTheme
   >;
-}
+};
 
-export interface InputDirectiveRootTheme {
+export type InputDirectiveRootTheme = {
   base: string;
   default: string;
   size: Record<keyof FormFieldSizes, string>;
   disabled: Record<keyof FlowbiteBoolean, string>;
   validation: Record<keyof FormFieldValidations, string>;
   prefix?: Record<keyof FormFieldPrefixes, string>;
-}
+};
 
 export const inputDirectiveTheme: InputDirectiveBaseTheme = {
   default: {
@@ -128,9 +128,9 @@ export const inputDirectiveTheme: InputDirectiveBaseTheme = {
   },
 };
 
-export interface InputDirectiveClass {
+export type InputDirectiveClass = {
   root: string;
-}
+};
 
 export function getClasses(
   properties: InputDirectiveProperties,
