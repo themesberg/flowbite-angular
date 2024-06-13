@@ -7,6 +7,14 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface DropdownPositions
+  extends Pick<FlowbitePositions, 'bottom-center' | 'top-center'> {
+  'left-center': string;
+  'right-center': string;
+}
+//#endregion
+
 export interface DropdownProperties {
   label: string;
   isOpen: keyof FlowbiteBoolean;
@@ -42,12 +50,6 @@ export interface DropdownContentTheme {
 
 export interface DropdownSubContentTheme {
   base: string;
-}
-
-export interface DropdownPositions
-  extends Pick<FlowbitePositions, 'bottom-center' | 'top-center'> {
-  'left-center': string;
-  'right-center': string;
 }
 
 export const dropdownTheme: DropdownBaseTheme = {

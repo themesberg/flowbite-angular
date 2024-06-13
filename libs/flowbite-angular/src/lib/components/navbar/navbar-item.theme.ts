@@ -3,6 +3,12 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface NavbarItemColors extends Pick<FlowbiteColors, 'blue'> {
+  [key: string]: string;
+}
+//#endregion
+
 export interface NabvarItemProperties {
   color: keyof NavbarItemColors;
   customStyle: Partial<NavbarItemBaseTheme>;
@@ -15,10 +21,6 @@ export interface NavbarItemBaseTheme {
 export interface NavbarItemRootTheme {
   base: string;
   color: Record<keyof NavbarItemColors, string>;
-}
-
-export interface NavbarItemColors extends Pick<FlowbiteColors, 'blue'> {
-  [key: string]: string;
 }
 
 export const navbarItemTheme: NavbarItemBaseTheme = {

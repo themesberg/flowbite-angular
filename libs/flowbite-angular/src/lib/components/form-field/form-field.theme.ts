@@ -1,14 +1,6 @@
 import { FlowbiteBoolean, FlowbiteSizes } from '../../common/flowbite.theme';
 
-export interface FormFieldProperties {
-  type: keyof FormFieldTypes;
-  floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  size: keyof FormFieldSizes;
-  disabled: keyof FlowbiteBoolean;
-  validate?: keyof FormFieldValidations;
-  prefix?: keyof FormFieldPrefixes;
-}
-
+//#region Component theme option
 export interface FormFieldTypes {
   email: string;
   password: string;
@@ -25,12 +17,6 @@ export interface FormFieldFloatingLabelTypes {
   fill: string;
   outline: string;
 }
-
-export interface FormFieldSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
-  [key: string]: string;
-}
-
 export interface FormFieldValidations {
   success: string;
   error: string;
@@ -39,4 +25,18 @@ export interface FormFieldValidations {
 export interface FormFieldPrefixes {
   addon: string;
   icon: string;
+}
+export interface FormFieldSizes
+  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
+  [key: string]: string;
+}
+//#endregion
+
+export interface FormFieldProperties {
+  type: keyof FormFieldTypes;
+  floatingLabelType?: keyof FormFieldFloatingLabelTypes;
+  size: keyof FormFieldSizes;
+  disabled: keyof FlowbiteBoolean;
+  validate?: keyof FormFieldValidations;
+  prefix?: keyof FormFieldPrefixes;
 }

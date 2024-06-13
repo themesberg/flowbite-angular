@@ -36,7 +36,7 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   );
 
   //#region properties
-  public isFlush = input<boolean, string | boolean>(true, {
+  public isFlush = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
   public customStyle = input<Partial<properties.AccordionBaseTheme>>({});

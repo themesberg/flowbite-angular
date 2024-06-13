@@ -7,6 +7,13 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface AlertColors
+  extends Pick<FlowbiteColors, 'blue' | 'red' | 'green' | 'yellow' | 'gray'> {
+  [key: string]: string;
+}
+//#endregion
+
 export interface AlertProperties {
   color: keyof AlertColors;
   rounded: keyof FlowbiteBoolean;
@@ -29,11 +36,6 @@ export interface AlertRootTheme {
 export interface AlertButtonTheme {
   base: string;
   color: Record<keyof AlertColors, string>;
-}
-
-export interface AlertColors
-  extends Pick<FlowbiteColors, 'blue' | 'red' | 'green' | 'yellow' | 'gray'> {
-  [key: string]: string;
 }
 
 export const alertTheme: AlertBaseTheme = {

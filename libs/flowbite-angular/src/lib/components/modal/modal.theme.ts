@@ -7,6 +7,29 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface ModalSizes
+  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
+  [key: string]: string;
+}
+
+export interface ModalPositions
+  extends Pick<
+    FlowbitePositions,
+    | 'center'
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top-center'
+    | 'bottom-center'
+    | 'center-left'
+    | 'center-right'
+  > {
+  [key: string]: string;
+}
+//#endregion
+
 export interface ModalProperties {
   size: keyof ModalSizes;
   position: keyof ModalPositions;
@@ -31,27 +54,6 @@ export interface ModalContainerRootTheme {
 
 export interface ModalContentRootTheme {
   base: string;
-}
-
-export interface ModalSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
-  [key: string]: string;
-}
-
-export interface ModalPositions
-  extends Pick<
-    FlowbitePositions,
-    | 'center'
-    | 'top-left'
-    | 'top-right'
-    | 'bottom-left'
-    | 'bottom-right'
-    | 'top-center'
-    | 'bottom-center'
-    | 'center-left'
-    | 'center-right'
-  > {
-  [key: string]: string;
 }
 
 export const modalTheme: ModalBaseTheme = {

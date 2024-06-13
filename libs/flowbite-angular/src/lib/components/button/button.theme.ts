@@ -10,41 +10,7 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
-export interface ButtonProperties {
-  color: keyof ButtonColors;
-  gradientMonochrome?: keyof ButtonMonochromeColors;
-  gradientDuoTone?: keyof ButtonDuoToneColors;
-  size: keyof ButtonSizes;
-  pill: keyof FlowbiteBoolean;
-  outline: keyof ButtonFill;
-  disabled: keyof FlowbiteBoolean;
-  customStyle: Partial<ButtonBaseTheme>;
-}
-
-export interface ButtonBaseTheme {
-  root: Partial<ButtonRootTheme>;
-  span: Partial<SpanRootTheme>;
-}
-
-export interface ButtonRootTheme {
-  base: Record<keyof ButtonBaseClass, string>;
-  color: Record<keyof ButtonColors, Record<keyof ButtonFill, string>>;
-  gradientMonochrome?: Record<keyof FlowbiteGradientColors, string>;
-  gradientDuoTone?: Record<
-    keyof ButtonDuoToneColors,
-    Record<keyof ButtonFill, string>
-  >;
-  size: Record<keyof ButtonSizes, string>;
-  pill: Record<keyof FlowbiteBoolean, string>;
-  disabled: Record<keyof FlowbiteBoolean, string>;
-}
-
-export interface SpanRootTheme {
-  base: string;
-  pill: Record<keyof FlowbiteBoolean, string>;
-  size: Record<keyof ButtonSizes, string>;
-}
-
+//#region Component theme option
 export interface ButtonColors
   extends Pick<
     FlowbiteColors,
@@ -97,6 +63,42 @@ export interface ButtonSizes
 export interface ButtonFill {
   solid: string;
   outline: string;
+}
+//#endregion
+
+export interface ButtonProperties {
+  color: keyof ButtonColors;
+  gradientMonochrome?: keyof ButtonMonochromeColors;
+  gradientDuoTone?: keyof ButtonDuoToneColors;
+  size: keyof ButtonSizes;
+  pill: keyof FlowbiteBoolean;
+  outline: keyof ButtonFill;
+  disabled: keyof FlowbiteBoolean;
+  customStyle: Partial<ButtonBaseTheme>;
+}
+
+export interface ButtonBaseTheme {
+  root: Partial<ButtonRootTheme>;
+  span: Partial<SpanRootTheme>;
+}
+
+export interface ButtonRootTheme {
+  base: Record<keyof ButtonBaseClass, string>;
+  color: Record<keyof ButtonColors, Record<keyof ButtonFill, string>>;
+  gradientMonochrome?: Record<keyof FlowbiteGradientColors, string>;
+  gradientDuoTone?: Record<
+    keyof ButtonDuoToneColors,
+    Record<keyof ButtonFill, string>
+  >;
+  size: Record<keyof ButtonSizes, string>;
+  pill: Record<keyof FlowbiteBoolean, string>;
+  disabled: Record<keyof FlowbiteBoolean, string>;
+}
+
+export interface SpanRootTheme {
+  base: string;
+  pill: Record<keyof FlowbiteBoolean, string>;
+  size: Record<keyof ButtonSizes, string>;
 }
 
 export interface ButtonBaseClass {

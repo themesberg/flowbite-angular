@@ -7,6 +7,12 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
+  [key: string]: string;
+}
+//#endregion
+
 export interface NavbarProperties {
   rounded: keyof FlowbiteBoolean;
   border: keyof FlowbiteBoolean;
@@ -29,10 +35,6 @@ export interface NavbarRootTheme {
 
 export interface NavbarContentTheme {
   base: string;
-}
-
-export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
-  [key: string]: string;
 }
 
 export const navbarTheme: NavbarBaseTheme = {

@@ -8,6 +8,20 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface BadgeColors
+  extends Pick<
+    FlowbiteColors,
+    'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
+  > {
+  [key: string]: string;
+}
+
+export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {
+  [key: string]: string;
+}
+//#endregion
+
 export interface BadgeProperties {
   color: keyof BadgeColors;
   size: keyof BadgeSizes;
@@ -28,18 +42,6 @@ export interface BadgeRootTheme {
   pill: Record<keyof FlowbiteBoolean, string>;
   iconOnly: Record<keyof FlowbiteBoolean, string>;
   href: Record<keyof FlowbiteBoolean, string>;
-}
-
-export interface BadgeColors
-  extends Pick<
-    FlowbiteColors,
-    'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
-  > {
-  [key: string]: string;
-}
-
-export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {
-  [key: string]: string;
 }
 
 export const badgeTheme: BadgeBaseTheme = {

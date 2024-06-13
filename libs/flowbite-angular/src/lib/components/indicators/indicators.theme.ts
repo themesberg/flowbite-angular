@@ -9,6 +9,25 @@ import { mergeTheme } from '../../utils/merge-theme';
 
 import { twMerge } from 'tailwind-merge';
 
+//#region Component theme option
+export interface IndicatorColors
+  extends Pick<
+    FlowbiteColors,
+    | 'gray'
+    | 'dark'
+    | 'blue'
+    | 'green'
+    | 'red'
+    | 'purple'
+    | 'indigo'
+    | 'yellow'
+    | 'teal'
+    | 'gray'
+  > {
+  [key: string]: string;
+}
+//#endregion
+
 export interface IndicatorProperties {
   pill: keyof FlowbiteBoolean;
   outline: keyof FlowbiteBoolean;
@@ -37,23 +56,6 @@ export interface IndicatorRootTheme {
   color: Record<keyof IndicatorColors, string>;
   size: Record<keyof FlowbiteSizes, string>;
   placement: Record<keyof FlowbitePositions, string>;
-}
-
-export interface IndicatorColors
-  extends Pick<
-    FlowbiteColors,
-    | 'gray'
-    | 'dark'
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'purple'
-    | 'indigo'
-    | 'yellow'
-    | 'teal'
-    | 'gray'
-  > {
-  [key: string]: string;
 }
 
 export const indicatorTheme: IndicatorBaseTheme = {
