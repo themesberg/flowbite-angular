@@ -13,7 +13,11 @@ export type AccordionTitleBaseTheme = {
 
 export type AccordionTitleRootTheme = {
   base: string;
-  flushAndOpen: Combination<keyof FlowbiteBoolean, keyof FlowbiteBoolean>;
+  flushAndOpen: Combination<
+    keyof FlowbiteBoolean,
+    keyof FlowbiteBoolean,
+    string
+  >;
 };
 
 export const accordionTitleTheme: AccordionTitleBaseTheme = {

@@ -1,3 +1,4 @@
+import { Combination } from '../../common/flowbite.type';
 import {
   FlowbiteBoolean,
   FlowbiteClass,
@@ -73,11 +74,12 @@ export type ButtonBaseTheme = {
 
 export type ButtonRootTheme = {
   base: Record<keyof ButtonBaseClass, string>;
-  color: Record<keyof ButtonColors, Record<keyof ButtonFill, string>>;
+  color: Combination<keyof ButtonColors, keyof ButtonFill, string>;
   gradientMonochrome?: Record<keyof FlowbiteGradientColors, string>;
-  gradientDuoTone?: Record<
+  gradientDuoTone?: Combination<
     keyof ButtonDuoToneColors,
-    Record<keyof ButtonFill, string>
+    keyof ButtonFill,
+    string
   >;
   size: Record<keyof ButtonSizes, string>;
   pill: Record<keyof FlowbiteBoolean, string>;
