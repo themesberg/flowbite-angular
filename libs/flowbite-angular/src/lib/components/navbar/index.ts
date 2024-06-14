@@ -59,3 +59,15 @@ export {
 } from './navbar-item.theme.service';
 
 export { NavbarToggleComponent } from './navbar-toggle.component';
+export {
+  NavbarToggleBaseTheme,
+  NavbarToggleClass,
+  NavbarToggleClassInstance,
+  NavbarToggleProperties,
+  NavbarToggleRootTheme,
+  navbarToogleTheme,
+} from './navbar-toggle.theme';
+export {
+  FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
+  NavbarToggleThemeService,
+} from './navbar-toggle.theme.service';

@@ -26,8 +26,7 @@ export class NavbarContentThemeService
     );
 
     const output: NavbarContentClass = {
-      rootClass: '',
-      navbarContentClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base, theme.root.open?.[properties.isOpen]),
       navbarContentListClass: twMerge(theme.list.base),
     };
 

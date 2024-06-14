@@ -2,8 +2,10 @@ import * as properties from './navbar-content.theme';
 
 import { BaseComponent } from '../base.component';
 import { NavbarContentThemeService } from './navbar-content.theme.service';
+import { NavbarState, SignalStoreService } from '../../services';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -11,10 +13,13 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   templateUrl: './navbar-content.component.html',
-  styleUrl: './navbar-content.component.css',
 })
-export class NavbarContentComponent extends BaseComponent {
+export class NavbarContentComponent extends BaseComponent implements OnInit {
   protected themeService = inject(NavbarContentThemeService);
+  protected navbarService = inject<SignalStoreService<NavbarState>>(
+    SignalStoreService<NavbarState>,
+  );
+
   protected override contentClasses = signal<properties.NavbarContentClass>(
     properties.NavbarContentClassInstance,
   );
@@ -26,6 +31,9 @@ export class NavbarContentComponent extends BaseComponent {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
+      isOpen: booleanToFlowbiteBoolean(
+        this.navbarService.select('isCollapsed')(),
+      ),
       customStyle: this.customStyle(),
     });
 

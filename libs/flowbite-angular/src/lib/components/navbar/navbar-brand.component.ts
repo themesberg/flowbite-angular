@@ -11,7 +11,6 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   templateUrl: './navbar-brand.component.html',
-  styleUrl: './navbar-brand.component.css',
 })
 export class NavbarBrandComponent extends BaseComponent {
   protected themeService = inject(NavbarBrandThemeService);

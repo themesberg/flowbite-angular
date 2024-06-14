@@ -2,8 +2,9 @@ import * as properties from './navbar-item.theme';
 
 import { BaseComponent } from '../base.component';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
+import { NavbarState, SignalStoreService } from '../../services';
 
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -11,10 +12,13 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   templateUrl: './navbar-item.component.html',
-  styleUrl: './navbar-item.component.css',
 })
 export class NavbarItemComponent extends BaseComponent {
   protected themeService = inject(NavbarItemThemeService);
+  protected navbarService = inject<SignalStoreService<NavbarState>>(
+    SignalStoreService<NavbarState>,
+  );
+
   protected override contentClasses = signal<properties.NavbarItemClass>(
     properties.NavbarItemClassInstance,
   );
@@ -35,4 +39,9 @@ export class NavbarItemComponent extends BaseComponent {
     this.contentClasses.set(propertyClass);
   }
   //#endregion
+
+  @HostListener('click')
+  protected onClick(): void {
+    this.navbarService.set('isCollapsed', false);
+  }
 }
