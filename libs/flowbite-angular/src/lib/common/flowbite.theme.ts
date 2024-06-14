@@ -15,7 +15,6 @@ export type FlowbiteStateColors = {
 };
 
 export type FlowbiteColors = FlowbiteStateColors & {
-  [key: string]: string;
   blue: string;
   cyan: string;
   dark: string;
@@ -32,7 +31,6 @@ export type FlowbiteColors = FlowbiteStateColors & {
 };
 
 export type FlowbiteGradientColors = Omit<FlowbiteStateColors, 'warning'> & {
-  [key: string]: string;
   cyan: string;
   lime: string;
   pink: string;

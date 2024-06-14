@@ -26,9 +26,7 @@ export type ButtonColors = Pick<
 export type ButtonMonochromeColors = Pick<
   FlowbiteGradientColors,
   'info' | 'success' | 'cyan' | 'teal' | 'lime' | 'failure' | 'pink' | 'purple'
-> & {
-  [key: string]: string;
-};
+>;
 
 export type ButtonDuoToneColors = Pick<
   FlowbiteGradientDuoToneColors,
@@ -39,9 +37,7 @@ export type ButtonDuoToneColors = Pick<
   | 'pinkToOrange'
   | 'tealToLime'
   | 'redToYellow'
-> & {
-  [key: string]: string;
-};
+>;
 
 export type ButtonSizes = Pick<
   FlowbiteSizes,
@@ -53,6 +49,11 @@ export type ButtonSizes = Pick<
 export type ButtonFill = {
   solid: string;
   outline: string;
+};
+
+export type ButtonTypes = {
+  default: string;
+  span: string;
 };
 //#endregion
 
@@ -73,7 +74,7 @@ export type ButtonBaseTheme = {
 };
 
 export type ButtonRootTheme = {
-  base: Record<keyof ButtonBaseClass, string>;
+  base: Record<keyof ButtonTypes, string>;
   color: Combination<keyof ButtonColors, keyof ButtonFill, string>;
   gradientMonochrome?: Record<keyof FlowbiteGradientColors, string>;
   gradientDuoTone?: Combination<
@@ -90,11 +91,6 @@ export type SpanRootTheme = {
   base: string;
   pill: Record<keyof FlowbiteBoolean, string>;
   size: Record<keyof ButtonSizes, string>;
-};
-
-export type ButtonBaseClass = {
-  default: string;
-  span: string;
 };
 
 export const buttonTheme: ButtonBaseTheme = {

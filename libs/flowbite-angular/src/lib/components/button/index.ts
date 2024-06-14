@@ -2,7 +2,7 @@ export { ButtonComponent } from './button.component';
 export {
   ButtonProperties,
   ButtonClass,
-  ButtonBaseClass,
+  ButtonTypes,
   ButtonColors,
   ButtonDuoToneColors,
   ButtonFill,
