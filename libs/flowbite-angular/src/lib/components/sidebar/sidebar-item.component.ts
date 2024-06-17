@@ -1,14 +1,17 @@
 import * as properties from './sidebar-item.theme';
+
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base.component';
+import { FlowbiteLink } from '../../common/flowbite.type';
+import { LinkRouter } from '../../services';
 import { SanitizeHtmlPipe } from '../../pipes';
+import { SidebarItemThemeService } from './sidebar-item.theme.service';
 import { SidebarState } from '../../services/state/sidebar.state';
 import { SignalStoreService } from '../../services/signal-store.service';
 
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SidebarItemThemeService } from './sidebar-item.theme.service';
 
 @Component({
   standalone: true,
@@ -28,6 +31,7 @@ export class SidebarItemComponent extends BaseComponent {
   protected sidebarSignalStoreService = inject<
     SignalStoreService<SidebarState>
   >(SignalStoreService<SidebarState>);
+  protected linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.SidebarItemClass>(
     properties.SidebarItemClassInstance,
@@ -35,7 +39,7 @@ export class SidebarItemComponent extends BaseComponent {
 
   //#region properties
   public icon = input<string | undefined>(undefined);
-  public link = input<string | undefined>(undefined);
+  public link = input<FlowbiteLink | undefined>(undefined);
   public label = input<string | undefined>(undefined);
   public customStyle = input<Partial<properties.SidebarItemBaseTheme>>({});
   //#endregion
@@ -52,4 +56,9 @@ export class SidebarItemComponent extends BaseComponent {
     this.contentClasses.set(propertyClass);
   }
   //#endregion
+
+  @HostListener('click')
+  protected async onClick(): Promise<void> {
+    await this.linkRouter.navigate(this.link());
+  }
 }

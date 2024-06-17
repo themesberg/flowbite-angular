@@ -51,9 +51,9 @@ export class NavbarComponent extends BaseComponent {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      border: booleanToFlowbiteBoolean(this.isRounded()),
-      rounded: booleanToFlowbiteBoolean(this.hasBorder()),
-      fixed: booleanToFlowbiteBoolean(this.isFixed()),
+      hasBorder: booleanToFlowbiteBoolean(this.isRounded()),
+      isRounded: booleanToFlowbiteBoolean(this.hasBorder()),
+      isFixed: booleanToFlowbiteBoolean(this.isFixed()),
       customStyle: this.customStyle(),
     });
 

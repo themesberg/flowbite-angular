@@ -1,12 +1,5 @@
-<div
-  tabindex="-1"
-  aria-hidden="true"
-  [className]="contentClasses().modalClass"
-  [ngClass]="{ hidden: !signalStoreService.select('isOpen')()}"
-  (click)="onBackdropClick($event)">
-  <div [ngClass]="contentClasses().modalContainerClass">
-    <div [ngClass]="contentClasses().modalContentClass">
-      <ng-content></ng-content>
-    </div>
+<div [ngClass]="contentClasses().modalContainerClass">
+  <div [ngClass]="contentClasses().modalContentClass">
+    <ng-content />
   </div>
 </div>

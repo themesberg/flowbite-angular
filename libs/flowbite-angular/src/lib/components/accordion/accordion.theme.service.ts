@@ -24,7 +24,10 @@ export class AccordionThemeService
     );
 
     const output: AccordionClass = {
-      rootClass: twMerge(theme.root.base, theme.root.flush?.[properties.flush]),
+      rootClass: twMerge(
+        theme.root.base,
+        theme.root.isFlush?.[properties.isFlush],
+      ),
     };
 
     return output;

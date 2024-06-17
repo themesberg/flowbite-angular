@@ -35,14 +35,12 @@ export const modalHeaderTheme: ModalHeaderBaseTheme = {
 };
 
 export type ModalHeaderClass = FlowbiteClass & {
-  modalHeaderClass: string;
   modalHeaderTitleClass: string;
   modalHeaderButtonClass: string;
 };
 
 export const ModalHeaderClassInstance: ModalHeaderClass = {
   modalHeaderButtonClass: '',
-  modalHeaderClass: '',
   modalHeaderTitleClass: '',
   rootClass: '',
 };

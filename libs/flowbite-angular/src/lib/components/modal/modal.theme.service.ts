@@ -21,9 +21,9 @@ export class ModalThemeService
     );
 
     const output: ModalClass = {
-      rootClass: '',
-      modalClass: twMerge(
+      rootClass: twMerge(
         theme.root.base,
+        theme.root.isOpen?.[properties.isOpen],
         theme.root.position?.[properties.position],
       ),
       modalContainerClass: twMerge(

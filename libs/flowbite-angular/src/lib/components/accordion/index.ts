@@ -32,6 +32,8 @@ export {
   AccordionPanelClass,
   AccordionPanelBaseTheme,
   AccordionPanelRootTheme,
+  AccordionPanelClassInstance,
+  accordionPanelTheme,
 } from './accordion-panel.theme';
 export {
   AccordionPanelThemeService,

@@ -11,9 +11,9 @@ export type NavbarColors = Pick<FlowbiteColors, 'gray'> & {
 //#endregion
 
 export type NavbarProperties = {
-  rounded: keyof FlowbiteBoolean;
-  border: keyof FlowbiteBoolean;
-  fixed: keyof FlowbiteBoolean;
+  isRounded: keyof FlowbiteBoolean;
+  hasBorder: keyof FlowbiteBoolean;
+  isFixed: keyof FlowbiteBoolean;
   customStyle: Partial<NavbarBaseTheme>;
 };
 
@@ -25,9 +25,9 @@ export type NavbarBaseTheme = {
 export type NavbarRootTheme = {
   base: string;
   color: Record<keyof NavbarColors, string>;
-  rounded: Record<keyof FlowbiteBoolean, string>;
-  border: Record<keyof FlowbiteBoolean, string>;
-  fixed: Record<keyof FlowbiteBoolean, string>;
+  isRounded: Record<keyof FlowbiteBoolean, string>;
+  hasBorder: Record<keyof FlowbiteBoolean, string>;
+  isFixed: Record<keyof FlowbiteBoolean, string>;
 };
 
 export type NavbarContentTheme = {
@@ -40,15 +40,15 @@ export const navbarTheme: NavbarBaseTheme = {
     color: {
       gray: 'bg-white border-gray-200 dark:border-gray-700 dark:bg-gray-800',
     },
-    rounded: {
+    isRounded: {
       enabled: 'rounded',
       disabled: '',
     },
-    border: {
+    hasBorder: {
       enabled: 'border',
       disabled: '',
     },
-    fixed: {
+    isFixed: {
       enabled: 'sticky w-full z-20 top-0 start-0 border-b',
       disabled: '',
     },

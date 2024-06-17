@@ -1,9 +1,11 @@
 import * as properties from './badge.theme';
 
+import { BadgeThemeService } from './badge.theme.service';
 import { BaseComponent } from '../base.component';
+import { FlowbiteLink } from '../../common/flowbite.type';
+import { LinkRouter } from '../../services/link-router.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
-import { BadgeThemeService } from './badge.theme.service';
 import {
   Component,
   HostListener,
@@ -13,7 +15,7 @@ import {
   signal,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 /**
  * @see https://flowbite.com/docs/components/badge/
@@ -26,7 +28,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class BadgeComponent extends BaseComponent {
   protected themeService = inject(BadgeThemeService);
-  protected router = inject(Router);
+  protected linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.BadgeClass>(
     properties.BadgeClassInstance,
@@ -41,7 +43,7 @@ export class BadgeComponent extends BaseComponent {
   public isPill = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public href = input<string | undefined>(undefined);
+  public link = input<FlowbiteLink | undefined>(undefined);
   public customStyle = input<Partial<properties.BadgeBaseTheme>>({});
   //#endregion
 
@@ -52,7 +54,7 @@ export class BadgeComponent extends BaseComponent {
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
       isPill: booleanToFlowbiteBoolean(this.isPill()),
-      href: this.href(),
+      link: this.link(),
       customStyle: this.customStyle(),
     });
 
@@ -61,9 +63,7 @@ export class BadgeComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected onClick(): void {
-    const url = this.href();
-
-    if (url) this.router.navigateByUrl(url);
+  protected async onClick(): Promise<void> {
+    await this.linkRouter.navigate(this.link());
   }
 }

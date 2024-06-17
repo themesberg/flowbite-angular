@@ -24,8 +24,7 @@ export class NavbarBrandThemeService
     );
 
     const output: NavbarBrandClass = {
-      rootClass: '',
-      navbarBrandClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base),
     };
 
     return output;

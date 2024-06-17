@@ -14,15 +14,12 @@ export type NavbarBrandRootTheme = {
 
 export const navbarBrandTheme: NavbarBrandBaseTheme = {
   root: {
-    base: 'flex items-center space-x-3 rtl:space-x-reverse',
+    base: 'cursor-pointer flex items-center space-x-3 rtl:space-x-reverse',
   },
 };
 
-export type NavbarBrandClass = FlowbiteClass & {
-  navbarBrandClass: string;
-};
+export type NavbarBrandClass = FlowbiteClass;
 
 export const NavbarBrandClassInstance: NavbarBrandClass = {
-  navbarBrandClass: '',
   rootClass: '',
 };

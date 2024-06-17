@@ -47,12 +47,12 @@ export type IndicatorPositions = Pick<
 //#endregion
 
 export type IndicatorProperties = {
-  pill: keyof FlowbiteBoolean;
-  outline: keyof FlowbiteBoolean;
-  disabled: keyof FlowbiteBoolean;
-  offset: keyof FlowbiteBoolean;
-  rounded: keyof FlowbiteBoolean;
-  border: keyof FlowbiteBoolean;
+  isPill: keyof FlowbiteBoolean;
+  isOutline: keyof FlowbiteBoolean;
+  isDisabled: keyof FlowbiteBoolean;
+  hasOffset: keyof FlowbiteBoolean;
+  isRounded: keyof FlowbiteBoolean;
+  hasBorder: keyof FlowbiteBoolean;
   color: keyof IndicatorColors;
   size: keyof IndicatorSizes;
   placement?: keyof IndicatorPositions;
@@ -65,12 +65,12 @@ export type IndicatorBaseTheme = {
 
 export type IndicatorRootTheme = {
   base: string;
-  pill: Record<keyof FlowbiteBoolean, string>;
-  outline: Record<keyof FlowbiteBoolean, string>;
-  disabled: Record<keyof FlowbiteBoolean, string>;
-  offset: Record<keyof IndicatorPositions, string>;
-  rounded: Record<keyof FlowbiteBoolean, string>;
-  border: Record<keyof FlowbiteBoolean, string>;
+  isPill: Record<keyof FlowbiteBoolean, string>;
+  isOutline: Record<keyof FlowbiteBoolean, string>;
+  isDisabled: Record<keyof FlowbiteBoolean, string>;
+  hasOffset: Record<keyof IndicatorPositions, string>;
+  isRounded: Record<keyof FlowbiteBoolean, string>;
+  hasBorder: Record<keyof FlowbiteBoolean, string>;
   color: Record<keyof IndicatorColors, string>;
   size: Record<keyof IndicatorSizes, string>;
   placement: Record<keyof IndicatorPositions, string>;
@@ -79,7 +79,7 @@ export type IndicatorRootTheme = {
 export const indicatorTheme: IndicatorBaseTheme = {
   root: {
     base: 'flex-shrink-0',
-    border: {
+    hasBorder: {
       enabled: 'border-2 border-white dark:border-gray-800',
       disabled: '',
     },
@@ -94,11 +94,11 @@ export const indicatorTheme: IndicatorBaseTheme = {
       yellow: 'bg-yellow-300',
       teal: 'bg-teal-500',
     },
-    disabled: {
+    isDisabled: {
       enabled: '',
       disabled: '',
     },
-    offset: {
+    hasOffset: {
       'top-left': '-translate-x-1/3 -translate-y-1/3',
       'top-center': '-translate-y-1/3',
       'top-right': 'translate-x-1/3 -translate-y-1/3',
@@ -120,15 +120,15 @@ export const indicatorTheme: IndicatorBaseTheme = {
       'bottom-center': 'bottom-0 left-1/2 -translate-x-1/2',
       'bottom-right': 'bottom-0 right-0',
     },
-    outline: {
+    isOutline: {
       enabled: '',
       disabled: '',
     },
-    pill: {
+    isPill: {
       enabled: '',
       disabled: '',
     },
-    rounded: {
+    isRounded: {
       enabled: 'rounded',
       disabled: 'rounded-full',
     },

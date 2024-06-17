@@ -23,9 +23,9 @@ export class AlertThemeService
     const output: AlertClass = {
       rootClass: twMerge(
         theme.root.base,
-        theme.root.border?.[properties.borderAccent],
+        theme.root.hasBorderAccent?.[properties.hasBorderAccent],
         theme.root.color?.[properties.color],
-        theme.root.rounded?.[properties.rounded],
+        theme.root.isRounded?.[properties.isRounded],
       ),
       alertButtonClass: twMerge(
         theme.button.base,

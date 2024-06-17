@@ -28,7 +28,7 @@
   [style.display]="dropdownSignalStoreService.select('isOpen')() ? 'block' : 'none'">
   <div [ngClass]="contentClasses().contentClass">
     <ul [ngClass]="contentClasses().subContentClass">
-      <ng-content></ng-content>
+      <ng-content />
     </ul>
   </div>
 </div>

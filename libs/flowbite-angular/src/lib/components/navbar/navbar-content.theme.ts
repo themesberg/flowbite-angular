@@ -12,7 +12,7 @@ export type NavbarContentBaseTheme = {
 
 export type NavbarContentRootTheme = {
   base: string;
-  open: Record<keyof FlowbiteBoolean, string>;
+  isOpen: Record<keyof FlowbiteBoolean, string>;
 };
 
 export type NavBarContentListTheme = {
@@ -22,7 +22,7 @@ export type NavBarContentListTheme = {
 export const navbarContentTheme: NavbarContentBaseTheme = {
   root: {
     base: 'w-full md:block md:w-auto order-last md:order-none',
-    open: {
+    isOpen: {
       enabled: '',
       disabled: 'hidden',
     },

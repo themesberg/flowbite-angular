@@ -24,11 +24,7 @@ export class NavbarItemThemeService
     );
 
     const output: NavbarItemClass = {
-      rootClass: '',
-      navbarItemClass: twMerge(
-        theme.root.base,
-        theme.root.color?.[properties.color],
-      ),
+      rootClass: twMerge(theme.root.base, theme.root.color?.[properties.color]),
     };
 
     return output;

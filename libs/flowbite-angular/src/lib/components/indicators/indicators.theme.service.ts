@@ -26,17 +26,17 @@ export class IndicatorThemeService
     const output: indicatorClass = {
       rootClass: twMerge(
         theme.root.base,
-        theme.root.border?.[properties.border],
+        theme.root.hasBorder?.[properties.hasBorder],
         theme.root.color?.[properties.color],
-        theme.root.disabled?.[properties.disabled],
+        theme.root.isDisabled?.[properties.isDisabled],
         properties.placement &&
-          properties.offset == 'enabled' &&
-          theme.root.offset?.[properties.placement],
-        theme.root.outline?.[properties.outline],
-        theme.root.pill?.[properties.pill],
+          properties.hasOffset == 'enabled' &&
+          theme.root.hasOffset?.[properties.placement],
+        theme.root.isOutline?.[properties.isOutline],
+        theme.root.isPill?.[properties.isPill],
         properties.placement &&
           'absolute ' + theme.root.placement?.[properties.placement],
-        theme.root.rounded?.[properties.rounded],
+        theme.root.isRounded?.[properties.isRounded],
         theme.root.size?.[properties.size],
       ),
     };

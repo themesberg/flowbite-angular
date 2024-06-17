@@ -1,5 +1,5 @@
 /**
- * Merge to objects into one
+ * Merge two objects into one
  * @param target Object to be merged
  * @param source Object to be merged
  * @returns The merged object

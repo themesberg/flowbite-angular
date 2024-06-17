@@ -3,6 +3,7 @@ import {
   AccordionPanelThemeService,
   AccordionThemeService,
   AccordionTitleThemeService,
+  AlertThemeService,
   BadgeThemeService,
   BreadcrumbItemThemeService,
   BreadcrumbThemeService,
@@ -16,6 +17,7 @@ import {
   FLOWBITE_ACCORDION_PANEL_THEME_TOKEN,
   FLOWBITE_ACCORDION_THEME_TOKEN,
   FLOWBITE_ACCORDION_TITLE_THEME_TOKEN,
+  FLOWBITE_ALERT_THEME_TOKEN,
   FLOWBITE_BADGE_THEME_TOKEN,
   FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN,
   FLOWBITE_BREADCRUMB_THEME_TOKEN,
@@ -38,6 +40,7 @@ import {
   FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
   FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
   FLOWBITE_SIDEBAR_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
   IndicatorThemeService,
   ModalBodyThemeService,
   ModalFooterThemeService,
@@ -51,7 +54,9 @@ import {
   SidebarItemGroupThemeService,
   SidebarItemThemeService,
   SidebarThemeService,
+  SidebarToggleThemeService,
   accordionContentTheme,
+  accordionPanelTheme,
   accordionTheme,
   accordionTitleTheme,
   alertTheme,
@@ -77,12 +82,9 @@ import {
   sidebarItemGroupTheme,
   sidebarItemTheme,
   sidebarTheme,
+  sidebarToggleTheme,
 } from '../components';
-import {
-  AlertThemeService,
-  FLOWBITE_ALERT_THEME_TOKEN,
-} from '../components/alert/alert.theme.service';
-import { accordionPanelTheme } from '../components/accordion/accordion-panel.theme';
+import { FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR } from '.';
 
 import { EnvironmentProviders, makeEnvironmentProviders } from '@angular/core';
 
@@ -193,6 +195,10 @@ export function initFlowbite(): EnvironmentProviders {
       useClass: SidebarItemThemeService,
     },
     {
+      provide: SidebarToggleThemeService,
+      useClass: SidebarToggleThemeService,
+    },
+    {
       provide: SidebarThemeService,
       useClass: SidebarThemeService,
     },
@@ -301,10 +307,25 @@ export function initFlowbite(): EnvironmentProviders {
       useValue: sidebarItemTheme,
     },
     {
+      provide: FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
+      useValue: sidebarToggleTheme,
+    },
+    {
       provide: FLOWBITE_SIDEBAR_THEME_TOKEN,
       useValue: sidebarTheme,
     },
   ]);
 
-  return makeEnvironmentProviders([serviceProviders, themeProviders]);
+  const settingsProviders = makeEnvironmentProviders([
+    {
+      provide: FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR,
+      useValue: true,
+    },
+  ]);
+
+  return makeEnvironmentProviders([
+    serviceProviders,
+    themeProviders,
+    settingsProviders,
+  ]);
 }

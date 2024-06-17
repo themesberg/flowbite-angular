@@ -26,11 +26,10 @@ export class BreadcrumbItemThemeService
     );
 
     const output: BreadcrumbItemClass = {
-      rootClass: twMerge(theme.root.base),
-      breadcrumbIconClass: twMerge(theme.icon.base),
-      contentClass: twMerge(
-        theme.item.base?.[properties.href ? 'enabled' : 'disabled'],
+      rootClass: twMerge(
+        theme.root.base?.[properties.link ? 'enabled' : 'disabled'],
       ),
+      breadcrumbIconClass: twMerge(theme.icon.base),
     };
 
     return output;

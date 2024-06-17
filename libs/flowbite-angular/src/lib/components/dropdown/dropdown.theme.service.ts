@@ -29,7 +29,7 @@ export class DropdownThemeService
       spanClass: twMerge(theme.span.base),
       containerClass: twMerge(
         theme.container.base,
-        theme.container.opened?.[properties.isOpen],
+        theme.container.isOpen?.[properties.isOpen],
         theme.container.placement?.[properties.placement],
       ),
       contentClass: twMerge(theme.content.base),

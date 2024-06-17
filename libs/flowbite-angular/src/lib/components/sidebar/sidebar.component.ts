@@ -45,7 +45,7 @@ export class SidebarComponent extends BaseComponent {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      rounded: booleanToFlowbiteBoolean(this.isRounded()),
+      isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
 

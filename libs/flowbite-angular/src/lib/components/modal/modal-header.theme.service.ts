@@ -24,8 +24,7 @@ export class ModalHeaderThemeService
     );
 
     const output: ModalHeaderClass = {
-      rootClass: '',
-      modalHeaderClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base),
       modalHeaderTitleClass: twMerge(theme.title.base),
       modalHeaderButtonClass: twMerge(theme.button.base),
     };

@@ -2,8 +2,10 @@ import * as properties from './breadcrumb-item.theme';
 
 import { BaseComponent } from '../base.component';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
+import { FlowbiteLink } from '../../common/flowbite.type';
+import { LinkRouter } from '../../services';
 
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 @Component({
@@ -14,24 +16,30 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 })
 export class BreadcrumbItemComponent extends BaseComponent {
   protected themeService = inject(BreadcrumbItemThemeService);
+  protected linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.BreadcrumbItemClass>(
     properties.BreadcrumbItemClassInstance,
   );
 
   //#region properties
-  public href = input<string | undefined>(undefined);
+  public link = input<FlowbiteLink | undefined>(undefined);
   public customStyle = input<Partial<properties.BreadcrumbItemBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      href: this.href(),
+      link: this.link(),
       customStyle: this.customStyle(),
     });
 
     this.contentClasses.set(propertyClass);
   }
   //#endregion
+
+  @HostListener('click')
+  protected async onClick(): Promise<void> {
+    await this.linkRouter.navigate(this.link());
+  }
 }

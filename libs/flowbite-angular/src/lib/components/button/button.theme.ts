@@ -62,9 +62,9 @@ export type ButtonProperties = {
   gradientMonochrome?: keyof ButtonMonochromeColors;
   gradientDuoTone?: keyof ButtonDuoToneColors;
   size: keyof ButtonSizes;
-  pill: keyof FlowbiteBoolean;
+  isPill: keyof FlowbiteBoolean;
   outline: keyof ButtonFill;
-  disabled: keyof FlowbiteBoolean;
+  isDisabled: keyof FlowbiteBoolean;
   customStyle: Partial<ButtonBaseTheme>;
 };
 
@@ -83,13 +83,13 @@ export type ButtonRootTheme = {
     string
   >;
   size: Record<keyof ButtonSizes, string>;
-  pill: Record<keyof FlowbiteBoolean, string>;
-  disabled: Record<keyof FlowbiteBoolean, string>;
+  isPill: Record<keyof FlowbiteBoolean, string>;
+  isDisabled: Record<keyof FlowbiteBoolean, string>;
 };
 
 export type SpanRootTheme = {
   base: string;
-  pill: Record<keyof FlowbiteBoolean, string>;
+  isPill: Record<keyof FlowbiteBoolean, string>;
   size: Record<keyof ButtonSizes, string>;
 };
 
@@ -97,8 +97,8 @@ export const buttonTheme: ButtonBaseTheme = {
   root: {
     base: {
       default:
-        'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
-      span: 'group inline-flex relative items-center justify-center p-0.5 font-medium overflow-hidden',
+        'cursor-pointer group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
+      span: 'cursor-pointer group inline-flex relative items-center justify-center p-0.5 font-medium overflow-hidden',
     },
     color: {
       dark: {
@@ -150,7 +150,7 @@ export const buttonTheme: ButtonBaseTheme = {
           'text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900',
       },
     },
-    disabled: {
+    isDisabled: {
       enabled: 'cursor-not-allowed opacity-50',
       disabled: '',
     },
@@ -218,14 +218,14 @@ export const buttonTheme: ButtonBaseTheme = {
       lg: 'text-base py-3 px-5',
       xl: 'text-base px-6 py-3.5',
     },
-    pill: {
+    isPill: {
       enabled: 'rounded-full',
       disabled: 'rounded-lg',
     },
   },
   span: {
-    base: 'relative inline-flex items-center bg-white transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900',
-    pill: {
+    base: 'cursor-pointer relative inline-flex items-center bg-white transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900',
+    isPill: {
       enabled: 'rounded-full',
       disabled: 'rounded-md',
     },

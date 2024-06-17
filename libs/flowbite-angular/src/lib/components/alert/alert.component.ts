@@ -1,9 +1,9 @@
 import * as properties from './alert.theme';
 
+import { AlertThemeService } from './alert.theme.service';
 import { BaseComponent } from '../base.component';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
-import { AlertThemeService } from './alert.theme.service';
 import {
   Component,
   HostBinding,
@@ -37,7 +37,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   //#region properties
   public color = input<keyof properties.AlertColors>('blue');
   public isRounded = input(true, { transform: booleanAttribute });
-  public isBorderAccent = input<boolean, string | boolean>(false, {
+  public hasBorderAccent = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
   public customStyle = input<Partial<properties.AlertBaseTheme>>({});
@@ -51,8 +51,8 @@ export class AlertComponent extends BaseComponent implements OnInit {
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
-      borderAccent: booleanToFlowbiteBoolean(this.isBorderAccent()),
-      rounded: booleanToFlowbiteBoolean(this.isRounded()),
+      hasBorderAccent: booleanToFlowbiteBoolean(this.hasBorderAccent()),
+      isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
 

@@ -4,6 +4,7 @@ import {
   FlowbiteColors,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
+import { FlowbiteLink } from '../../common/flowbite.type';
 
 //#region Component theme option
 export type BadgeColors = Pick<
@@ -23,7 +24,7 @@ export type BadgeProperties = {
   size: keyof BadgeSizes;
   isIconOnly: keyof FlowbiteBoolean;
   isPill: keyof FlowbiteBoolean;
-  href?: string;
+  link?: FlowbiteLink;
   customStyle: Partial<BadgeBaseTheme>;
 };
 
@@ -35,9 +36,9 @@ export type BadgeRootTheme = {
   base: string;
   color: Record<keyof BadgeColors, string>;
   size: Record<keyof BadgeSizes, string>;
-  pill: Record<keyof FlowbiteBoolean, string>;
-  iconOnly: Record<keyof FlowbiteBoolean, string>;
-  href: Record<keyof FlowbiteBoolean, string>;
+  isPill: Record<keyof FlowbiteBoolean, string>;
+  isIconOnly: Record<keyof FlowbiteBoolean, string>;
+  link: Record<keyof FlowbiteBoolean, string>;
 };
 
 export const badgeTheme: BadgeBaseTheme = {
@@ -61,15 +62,15 @@ export const badgeTheme: BadgeBaseTheme = {
       xs: 'text-xs p-1',
       sm: 'text-sm p-1.5',
     },
-    pill: {
+    isPill: {
       enabled: 'rounded-full',
       disabled: 'rounded',
     },
-    href: {
+    link: {
       enabled: 'group cursor-pointer',
       disabled: '',
     },
-    iconOnly: {
+    isIconOnly: {
       enabled: '',
       disabled: 'px-2 py-0.5',
     },

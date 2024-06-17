@@ -1,8 +1,9 @@
 import * as properties from './navbar-item.theme';
 
 import { BaseComponent } from '../base.component';
+import { FlowbiteLink } from '../../common/flowbite.type';
+import { LinkRouter, NavbarState, SignalStoreService } from '../../services';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
-import { NavbarState, SignalStoreService } from '../../services';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
@@ -18,6 +19,7 @@ export class NavbarItemComponent extends BaseComponent {
   protected navbarService = inject<SignalStoreService<NavbarState>>(
     SignalStoreService<NavbarState>,
   );
+  protected linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.NavbarItemClass>(
     properties.NavbarItemClassInstance,
@@ -26,7 +28,7 @@ export class NavbarItemComponent extends BaseComponent {
   //#region properties
   public color = input<keyof properties.NavbarItemColors>('blue');
   public customStyle = input<Partial<properties.NavbarItemBaseTheme>>({});
-  public href = input<string | undefined>(undefined);
+  public link = input<FlowbiteLink | undefined>(undefined);
   //#endregion
 
   //#region BaseComponent implementation
@@ -43,5 +45,7 @@ export class NavbarItemComponent extends BaseComponent {
   @HostListener('click')
   protected onClick(): void {
     this.navbarService.set('isCollapsed', false);
+
+    this.linkRouter.navigate(this.link());
   }
 }

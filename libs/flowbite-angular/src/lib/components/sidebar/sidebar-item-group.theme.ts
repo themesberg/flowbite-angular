@@ -18,11 +18,8 @@ export const sidebarItemGroupTheme: SidebarItemGroupBaseTheme = {
   },
 };
 
-export type SidebarItemGroupClass = FlowbiteClass & {
-  root: string;
-};
+export type SidebarItemGroupClass = FlowbiteClass;
 
 export const SidebarItemGroupClassInstance: SidebarItemGroupClass = {
-  root: '',
   rootClass: '',
 };

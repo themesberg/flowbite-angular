@@ -1,4 +1,5 @@
 import {
+  FlowbiteBoolean,
   FlowbiteClass,
   FlowbitePositions,
   FlowbiteSizes,
@@ -26,6 +27,7 @@ export type ModalPositions = Pick<
 //#endregion
 
 export type ModalProperties = {
+  isOpen: keyof FlowbiteBoolean;
   size: keyof ModalSizes;
   position: keyof ModalPositions;
   customStyle: Partial<ModalBaseTheme>;
@@ -39,6 +41,7 @@ export type ModalBaseTheme = {
 
 export type ModalRootTheme = {
   base: string;
+  isOpen: Record<keyof FlowbiteBoolean, string>;
   position: Record<keyof ModalPositions, string>;
 };
 
@@ -54,6 +57,10 @@ export type ModalContentRootTheme = {
 export const modalTheme: ModalBaseTheme = {
   root: {
     base: 'fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex',
+    isOpen: {
+      enabled: '',
+      disabled: 'hidden',
+    },
     position: {
       'top-left': 'items-start justify-start',
       'top-center': 'items-start justify-center',
@@ -81,13 +88,11 @@ export const modalTheme: ModalBaseTheme = {
 };
 
 export type ModalClass = FlowbiteClass & {
-  modalClass: string;
   modalContainerClass: string;
   modalContentClass: string;
 };
 
 export const ModalClassInstance: ModalClass = {
-  modalClass: '',
   modalContainerClass: '',
   modalContentClass: '',
   rootClass: '',

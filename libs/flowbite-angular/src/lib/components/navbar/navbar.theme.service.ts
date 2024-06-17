@@ -24,9 +24,9 @@ export class NavbarThemeService
       rootClass: twMerge(
         theme.root.base,
         theme.root.color?.['gray'],
-        theme.root.rounded?.[properties.rounded],
-        theme.root.border?.[properties.border],
-        theme.root.fixed?.[properties.fixed],
+        theme.root.isRounded?.[properties.isRounded],
+        theme.root.hasBorder?.[properties.hasBorder],
+        theme.root.isFixed?.[properties.isFixed],
       ),
       contentClass: twMerge(theme.content.base),
     };

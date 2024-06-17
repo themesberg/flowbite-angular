@@ -31,12 +31,12 @@ export class ButtonThemeService
           : properties.gradientMonochrome
             ? theme.root.gradientMonochrome?.[properties.gradientMonochrome]
             : theme.root.color?.[properties.color][properties.outline],
-        theme.root.pill?.[properties.pill],
-        theme.root.disabled?.[properties.disabled],
+        theme.root.isPill?.[properties.isPill],
+        theme.root.isDisabled?.[properties.isDisabled],
       ),
       spanClass: twMerge(
         theme.span.base,
-        theme.span.pill?.[properties.pill],
+        theme.span.isPill?.[properties.isPill],
         theme.span.size?.[properties.size],
       ),
     };

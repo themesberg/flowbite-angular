@@ -1,12 +1,12 @@
 <div class="flex items-center">
   <ng-container [ngTemplateOutlet]="icon()"></ng-container>
   <div>
-    <ng-content></ng-content>
+    <ng-content />
   </div>
   <button
     type="button"
     [ngClass]="contentClasses()!.alertButtonClass"
-    *ngIf="dismiss"
+    *ngIf="dismiss()"
     aria-label="Close"
     (click)="callDismiss()">
     <span class="sr-only">Close</span>

@@ -25,13 +25,13 @@ export class BadgeThemeService
         theme.root.base,
         theme.root.color?.[properties.color],
         theme.root.size?.[properties.size],
-        theme.root.pill?.[
+        theme.root.isPill?.[
           properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
             ? 'enabled'
             : properties.isPill
         ],
-        theme.root.iconOnly?.[properties.isIconOnly],
-        theme.root.href?.[properties.href ? 'enabled' : 'disabled'],
+        theme.root.isIconOnly?.[properties.isIconOnly],
+        theme.root.link?.[properties.link ? 'enabled' : 'disabled'],
       ),
     };
 

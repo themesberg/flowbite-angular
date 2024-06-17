@@ -7,6 +7,7 @@ import { SignalStoreService } from '../../services/signal-store.service';
 import {
   AfterViewInit,
   Component,
+  HostBinding,
   HostListener,
   afterNextRender,
   booleanAttribute,
@@ -16,6 +17,7 @@ import {
 } from '@angular/core';
 import { ModalThemeService } from './modal.theme.service';
 import { NgClass } from '@angular/common';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -28,6 +30,8 @@ import { NgClass } from '@angular/common';
   providers: [SignalStoreService<ModalState>],
 })
 export class ModalComponent extends BaseComponent implements AfterViewInit {
+  @HostBinding('tabindex') protected tabIndex = '-1';
+
   protected themeService = inject(ModalThemeService);
   protected signalStoreService = inject<SignalStoreService<ModalState>>(
     SignalStoreService<ModalState>,
@@ -52,6 +56,9 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
+      isOpen: booleanToFlowbiteBoolean(
+        this.signalStoreService.select('isOpen')(),
+      ),
       size: this.size(),
       position: this.position(),
       customStyle: this.customStyle(),
@@ -118,6 +125,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
     }
   }
 
+  @HostListener('click', ['$event'])
   onBackdropClick(event: MouseEvent) {
     if (event.target == event.currentTarget && this.isDismissable()) {
       this.close();

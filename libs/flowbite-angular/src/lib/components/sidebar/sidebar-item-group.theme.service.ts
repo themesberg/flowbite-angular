@@ -28,8 +28,7 @@ export class SidebarItemGroupThemeService
     );
 
     const output: SidebarItemGroupClass = {
-      rootClass: '',
-      root: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base),
     };
 
     return output;

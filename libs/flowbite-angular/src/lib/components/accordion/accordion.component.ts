@@ -47,7 +47,7 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      flush: booleanToFlowbiteBoolean(
+      isFlush: booleanToFlowbiteBoolean(
         this.accordionService.select('isFlush')(),
       ),
       customStyle: this.customStyle(),

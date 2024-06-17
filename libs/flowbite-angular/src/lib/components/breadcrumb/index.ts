@@ -18,7 +18,6 @@ export {
   BreadcrumbItemClass,
   BreadcrumbItemBaseTheme,
   BreadcrumbIconRootTheme,
-  BreadcrumbItemContentTheme,
   breadcrumbItemTheme,
   BreadcrumbItemClassInstance,
 } from './breadcrumb-item.theme';

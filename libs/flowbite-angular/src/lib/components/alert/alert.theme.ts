@@ -15,8 +15,8 @@ export type AlertColors = Pick<
 
 export type AlertProperties = {
   color: keyof AlertColors;
-  rounded: keyof FlowbiteBoolean;
-  borderAccent: keyof FlowbiteBoolean;
+  isRounded: keyof FlowbiteBoolean;
+  hasBorderAccent: keyof FlowbiteBoolean;
   customStyle: Partial<AlertBaseTheme>;
 };
 
@@ -28,8 +28,8 @@ export type AlertBaseTheme = {
 export type AlertRootTheme = {
   base: string;
   color: Record<keyof AlertColors, string>;
-  border: Record<keyof FlowbiteBoolean, string>;
-  rounded: Record<keyof FlowbiteBoolean, string>;
+  hasBorderAccent: Record<keyof FlowbiteBoolean, string>;
+  isRounded: Record<keyof FlowbiteBoolean, string>;
 };
 
 export type AlertButtonTheme = {
@@ -49,11 +49,11 @@ export const alertTheme: AlertBaseTheme = {
         'text-yellow-700 bg-yellow-100 border-yellow-500 dark:bg-yellow-200 dark:text-yellow-800',
       gray: 'text-gray-700 bg-gray-100 border-gray-500 dark:bg-gray-700 dark:text-gray-300',
     },
-    border: {
+    hasBorderAccent: {
       enabled: 'border-t-4',
       disabled: '',
     },
-    rounded: {
+    isRounded: {
       enabled: 'rounded-lg',
       disabled: '',
     },

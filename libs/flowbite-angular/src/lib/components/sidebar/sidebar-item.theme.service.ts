@@ -24,8 +24,7 @@ export class SidebarItemThemeService
     );
 
     const output: SidebarItemClass = {
-      rootClass: '',
-      sidebarClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base),
       sidebarIconClass: twMerge(theme.icon.base),
     };
 

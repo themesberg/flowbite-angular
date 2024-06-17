@@ -1,9 +1,11 @@
 import * as properties from './navbar-brand.theme';
 
 import { BaseComponent } from '../base.component';
+import { FlowbiteLink } from '../../common/flowbite.type';
+import { LinkRouter } from '../../services';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -14,13 +16,15 @@ import { NgClass } from '@angular/common';
 })
 export class NavbarBrandComponent extends BaseComponent {
   protected themeService = inject(NavbarBrandThemeService);
+  protected linkRouter = inject(LinkRouter);
+
   protected override contentClasses = signal<properties.NavbarBrandClass>(
     properties.NavbarBrandClassInstance,
   );
 
   //#region properties
   public customStyle = input<Partial<properties.NavbarBrandBaseTheme>>({});
-  public href = input<string | undefined>(undefined);
+  public link = input<FlowbiteLink | undefined>(undefined);
   //#endregion
 
   //#region BaseComponent implementation
@@ -32,4 +36,9 @@ export class NavbarBrandComponent extends BaseComponent {
     this.contentClasses.set(propertyClass);
   }
   //#endregion
+
+  @HostListener('click')
+  protected async onClick(): Promise<void> {
+    await this.linkRouter.navigate(this.link());
+  }
 }

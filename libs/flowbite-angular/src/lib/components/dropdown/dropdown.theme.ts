@@ -39,7 +39,7 @@ export type DropdownSpanTheme = {
 
 export type DropdownContainerTheme = {
   base: string;
-  opened: Record<keyof FlowbiteBoolean, string>;
+  isOpen: Record<keyof FlowbiteBoolean, string>;
   placement: Record<keyof DropdownPositions, string>;
 };
 
@@ -60,7 +60,7 @@ export const dropdownTheme: DropdownBaseTheme = {
   },
   container: {
     base: 'z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 min-w-fit absolute',
-    opened: {
+    isOpen: {
       enabled: 'block',
       disabled: 'hidden',
     },

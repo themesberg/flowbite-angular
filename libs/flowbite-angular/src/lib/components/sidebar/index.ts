@@ -4,7 +4,6 @@ export {
   SidebarClass,
   SidebarBaseTheme,
   SidebarRootTheme,
-  SidebarContentRootTheme,
   sidebarTheme,
   SidebarClassInstance,
 } from './sidebar.theme';
@@ -41,3 +40,17 @@ export {
   FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
   SidebarItemGroupThemeService,
 } from './sidebar-item-group.theme.service';
+
+export { SidebarToggleComponent } from './sidebar-toggle.component';
+export {
+  SidebarToggleBaseTheme,
+  SidebarToggleClass,
+  SidebarToggleClassInstance,
+  SidebarToggleProperties,
+  SidebarToggleRootTheme,
+  sidebarToggleTheme,
+} from './sidebar-toggle.theme';
+export {
+  FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
+  SidebarToggleThemeService,
+} from './sidebar-toggle.theme.service';

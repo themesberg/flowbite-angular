@@ -55,9 +55,9 @@ export class ButtonComponent extends BaseComponent {
   protected override fetchClass() {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
-      disabled: booleanToFlowbiteBoolean(this.isDisabled()),
+      isDisabled: booleanToFlowbiteBoolean(this.isDisabled()),
       outline: this.fill(),
-      pill: booleanToFlowbiteBoolean(this.isPill()),
+      isPill: booleanToFlowbiteBoolean(this.isPill()),
       size: this.size(),
       gradientMonochrome: this.gradientMonochrome(),
       gradientDuoTone: this.gradientDuoTone(),

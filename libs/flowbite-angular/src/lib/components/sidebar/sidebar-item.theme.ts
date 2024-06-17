@@ -1,8 +1,9 @@
 import { FlowbiteClass } from '../../common';
+import { FlowbiteLink } from '../../common/flowbite.type';
 
 export type SidebarItemProperties = {
   icon: string | undefined;
-  link: string | undefined;
+  link?: FlowbiteLink;
   label: string | undefined;
   customStyle: Partial<SidebarItemBaseTheme>;
 };
@@ -30,12 +31,10 @@ export const sidebarItemTheme: SidebarItemBaseTheme = {
 };
 
 export type SidebarItemClass = FlowbiteClass & {
-  sidebarClass: string;
   sidebarIconClass: string;
 };
 
 export const SidebarItemClassInstance: SidebarItemClass = {
   rootClass: '',
-  sidebarClass: '',
   sidebarIconClass: '',
 };

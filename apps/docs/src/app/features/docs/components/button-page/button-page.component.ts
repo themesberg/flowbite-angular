@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
 export class ButtonPageComponent {
   badgeCustomTheme: Partial<BadgeBaseTheme> = {
     root: {
-      iconOnly: {
+      isIconOnly: {
         enabled: 'py-0',
         disabled: '',
       },

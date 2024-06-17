@@ -24,11 +24,9 @@ export class SidebarThemeService
     );
 
     const output: SidebarClass = {
-      rootClass: '',
-      sidebarClass: twMerge(theme.root.base),
-      sidebarContentClass: twMerge(
-        theme.content.base,
-        theme.content.rounded?.[properties.rounded],
+      rootClass: twMerge(
+        theme.root.base,
+        theme.root.isRounded?.[properties.isRounded],
       ),
     };
 
