@@ -6,6 +6,7 @@ import {
   HostBinding,
   Injector,
   OnInit,
+  afterNextRender,
   effect,
   inject,
   signal,
@@ -18,14 +19,19 @@ import {
 })
 export abstract class BaseComponent implements OnInit {
   @HostBinding('attr.flowbite-id')
-  public flowbiteId!: Guid;
+  public flowbiteId = signal<Guid>(new Guid(Guid.empty));
 
   protected injector = inject(Injector);
 
   protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   public ngOnInit(): void {
-    this.flowbiteId = generateId();
+    afterNextRender(
+      () => {
+        this.flowbiteId.set(generateId());
+      },
+      { injector: this.injector },
+    );
 
     effect(
       () => {
