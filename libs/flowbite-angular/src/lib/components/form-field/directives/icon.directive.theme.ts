@@ -1,6 +1,4 @@
-import { mergeTheme } from '../../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
+import { FlowbiteClass } from '../../../common';
 
 export type IconDirectiveProperties = {
   customStyle: Partial<IconDirectiveBaseTheme>;
@@ -20,21 +18,8 @@ export const iconDirectiveTheme: IconDirectiveBaseTheme = {
   },
 };
 
-export type IconDirectiveClass = {
-  root: string;
+export type IconDirectiveClass = FlowbiteClass;
+
+export const iconDirectiveClassInstance: IconDirectiveClass = {
+  rootClass: '',
 };
-
-export function getClasses(
-  properties: IconDirectiveProperties,
-): IconDirectiveClass {
-  const theme: IconDirectiveBaseTheme = mergeTheme(
-    iconDirectiveTheme,
-    properties.customStyle,
-  );
-
-  const output: IconDirectiveClass = {
-    root: twMerge(theme.root.base),
-  };
-
-  return output;
-}

@@ -1,23 +1,32 @@
 import * as properties from './addon.directive.theme';
-import { BaseInputDirective } from './base-input.directive';
-import generateID from '../../../utils/id.generator';
 
-import { Directive, Input } from '@angular/core';
+import { AddonDirectiveThemeService } from './addon.directive.theme.service';
+import { BaseInputDirective } from './base-input.directive';
+
+import { Directive, inject, input, signal } from '@angular/core';
 
 @Directive({
   standalone: true,
   selector: '[flowbiteAddon]',
 })
 export class AddonDirective extends BaseInputDirective {
-  @Input() customStyle: Partial<properties.AddonDirectiveBaseTheme> = {};
+  protected themeService = inject(AddonDirectiveThemeService);
 
-  override _id = generateID();
+  protected override contentClasses = signal<properties.AddonDirectiveClass>(
+    properties.addonDirectiveClassInstance,
+  );
 
-  override handleClasses(): void {
-    const propertyClass = properties.getClasses({
-      customStyle: this.customStyle,
+  //#region properties
+  public customStyle = input<Partial<properties.AddonDirectiveBaseTheme>>({});
+  //#endregion
+
+  //#region BaseInputDirective implementation
+  override fetchClass(): void {
+    const propertyClass = this.themeService.getClasses({
+      customStyle: this.customStyle(),
     });
 
-    this._class = propertyClass.root;
+    this.contentClasses.set(propertyClass);
   }
+  //#endregion
 }

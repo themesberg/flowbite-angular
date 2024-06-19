@@ -1,4 +1,4 @@
-import { FlowbiteBoolean } from '../../../common/flowbite.theme';
+import { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
   FormFieldPrefixes,
@@ -128,59 +128,8 @@ export const inputDirectiveTheme: InputDirectiveBaseTheme = {
   },
 };
 
-export type InputDirectiveClass = {
-  root: string;
+export type InputDirectiveClass = FlowbiteClass;
+
+export const inputDirectiveClassInstance: InputDirectiveClass = {
+  rootClass: '',
 };
-
-export function getClasses(
-  properties: InputDirectiveProperties,
-): InputDirectiveClass {
-  const theme: InputDirectiveBaseTheme = mergeTheme(
-    inputDirectiveTheme,
-    properties.customStyle,
-  );
-
-  const output: InputDirectiveClass = {
-    root: twMerge(
-      properties.floatingLabelType &&
-        theme.floatingLabel[properties.floatingLabelType].base,
-      properties.floatingLabelType &&
-        properties.validate &&
-        theme.floatingLabel[properties.floatingLabelType].validation[
-          properties.validate
-        ],
-      properties.floatingLabelType &&
-        !properties.validate &&
-        properties.disabled &&
-        theme.floatingLabel[properties.floatingLabelType].disabled[
-          properties.disabled
-        ],
-      properties.floatingLabelType &&
-        !properties.validate &&
-        (!properties.disabled || properties.disabled === 'disabled') &&
-        theme.floatingLabel[properties.floatingLabelType].default,
-      properties.floatingLabelType &&
-        theme.floatingLabel[properties.floatingLabelType].size![
-          properties.size
-        ],
-
-      !properties.floatingLabelType && theme.default.base,
-      !properties.floatingLabelType &&
-        properties.validate &&
-        theme.default.validation[properties.validate],
-      !properties.floatingLabelType &&
-        !properties.validate &&
-        properties.disabled &&
-        theme.default.disabled[properties.disabled],
-      !properties.floatingLabelType &&
-        !properties.validate &&
-        (!properties.disabled || properties.disabled === 'disabled') &&
-        theme.default.default,
-      !properties.floatingLabelType &&
-        theme.default.prefix![properties.prefix!],
-      !properties.floatingLabelType && theme.default.size[properties.size],
-    ),
-  };
-
-  return output;
-}

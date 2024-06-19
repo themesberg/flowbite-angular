@@ -1,7 +1,5 @@
+import { FlowbiteClass } from '../../../common';
 import { FormFieldValidations } from '../form-field.theme';
-import { mergeTheme } from '../../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export type HelperDirectiveProperties = {
   validate?: keyof FormFieldValidations;
@@ -27,24 +25,8 @@ export const helperDirectiveTheme: HelperDirectiveBaseTheme = {
   },
 };
 
-export type HelperDirectiveClass = {
-  root: string;
+export type HelperDirectiveClass = FlowbiteClass;
+
+export const helperDirectiveClassInstance: HelperDirectiveClass = {
+  rootClass: '',
 };
-
-export function getClasses(
-  properties: HelperDirectiveProperties,
-): HelperDirectiveClass {
-  const theme: HelperDirectiveBaseTheme = mergeTheme(
-    helperDirectiveTheme,
-    properties.customStyle,
-  );
-
-  const output: HelperDirectiveClass = {
-    root: twMerge(
-      theme.root.base,
-      theme.root.validation && theme.root.validation![properties.validate!],
-    ),
-  };
-
-  return output;
-}

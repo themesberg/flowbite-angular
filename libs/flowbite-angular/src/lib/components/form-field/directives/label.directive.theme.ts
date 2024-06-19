@@ -1,11 +1,8 @@
-import { FlowbiteBoolean } from '../../../common/flowbite.theme';
+import { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
   FormFieldValidations,
 } from '../form-field.theme';
-import { mergeTheme } from '../../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export type LabelDirectiveProperties = {
   disabled: keyof FlowbiteBoolean;
@@ -84,40 +81,8 @@ export const labelDirectiveTheme: LabelDirectiveBaseTheme = {
   },
 };
 
-export type LabelDirectiveClass = {
-  root: string;
+export type LabelDirectiveClass = FlowbiteClass;
+
+export const labelDirectiveClassInstance: LabelDirectiveClass = {
+  rootClass: '',
 };
-
-export function getClasses(
-  properties: LabelDirectiveProperties,
-): LabelDirectiveClass {
-  const theme: LabelDirectiveBaseTheme = mergeTheme(
-    labelDirectiveTheme,
-    properties.customStyle,
-  );
-
-  const output: LabelDirectiveClass = {
-    root: twMerge(
-      properties.floatingLabelType &&
-        theme.floatingLabel[properties.floatingLabelType].base,
-      properties.floatingLabelType &&
-        properties.validate &&
-        theme.floatingLabel[properties.floatingLabelType].validation[
-          properties.validate
-        ],
-      properties.floatingLabelType &&
-        !properties.validate &&
-        theme.floatingLabel[properties.floatingLabelType].default,
-
-      !properties.floatingLabelType && theme.default.base,
-      !properties.floatingLabelType &&
-        properties.validate &&
-        theme.default.validation[properties.validate],
-      !properties.floatingLabelType &&
-        !properties.validate &&
-        theme.default.default,
-    ),
-  };
-
-  return output;
-}

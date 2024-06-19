@@ -2,7 +2,7 @@
  * Thanks for the Guid class
  * https://gist.github.com/emptyother/1fd97db034ef848f38eca3354fa9ee90
  */
-class Guid {
+export class Guid {
   private value: string = this.empty;
 
   constructor(value?: string) {
@@ -40,6 +40,6 @@ class Guid {
   }
 }
 
-export default function generateId(): string {
-  return Guid.newGuid().toString();
+export default function generateId(): Guid {
+  return Guid.newGuid();
 }

@@ -1,6 +1,4 @@
-import { mergeTheme } from '../../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
+import { FlowbiteClass } from '../../../common';
 
 export type AddonDirectiveProperties = {
   customStyle: Partial<AddonDirectiveBaseTheme>;
@@ -20,21 +18,8 @@ export const addonDirectiveTheme: AddonDirectiveBaseTheme = {
   },
 };
 
-export type AddonDirectiveClass = {
-  root: string;
+export type AddonDirectiveClass = FlowbiteClass;
+
+export const addonDirectiveClassInstance: AddonDirectiveClass = {
+  rootClass: '',
 };
-
-export function getClasses(
-  properties: AddonDirectiveProperties,
-): AddonDirectiveClass {
-  const theme: AddonDirectiveBaseTheme = mergeTheme(
-    addonDirectiveTheme,
-    properties.customStyle,
-  );
-
-  const output: AddonDirectiveClass = {
-    root: twMerge(theme.root.base),
-  };
-
-  return output;
-}

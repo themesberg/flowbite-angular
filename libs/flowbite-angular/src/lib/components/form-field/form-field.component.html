@@ -1,5 +1,5 @@
 <ng-container
-  *ngIf="(_properties | async)?.floatingLabelType as floatingLabelType; else nonFloatingTemplate">
+  *ngIf="floatingLabelType() as floatingLabelType; else nonFloatingTemplate">
   <div
     [ngClass]="{
       relative: floatingLabelType,
@@ -12,8 +12,7 @@
 </ng-container>
 <ng-template #nonFloatingTemplate>
   <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
-  <ng-container
-    *ngIf="(_properties | async)?.prefix as prefixType; else inputTemplate">
+  <ng-container *ngIf="prefix() as prefixType; else inputTemplate">
     <ng-container *ngIf="prefixType === 'icon'; else inputWithAddon">
       <div class="relative">
         <div

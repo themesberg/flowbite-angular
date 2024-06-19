@@ -1,12 +1,15 @@
+import { FlowbiteClass } from '../common';
+import generateId from '../utils/id.generator';
+
 import {
   Component,
+  HostBinding,
   Injector,
   OnInit,
   effect,
   inject,
   signal,
 } from '@angular/core';
-import { FlowbiteClass } from '../common';
 
 @Component({
   template: '',
@@ -14,7 +17,11 @@ import { FlowbiteClass } from '../common';
   host: { '[class]': 'contentClasses()?.rootClass' },
 })
 export abstract class BaseComponent implements OnInit {
+  @HostBinding('attr.flowbite-id')
+  public flowbiteId = generateId();
+
   protected injector = inject(Injector);
+
   protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   public ngOnInit(): void {

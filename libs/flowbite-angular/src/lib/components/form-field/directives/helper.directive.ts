@@ -1,30 +1,36 @@
 import * as properties from './helper.directive.theme';
-import { BaseInputDirective } from './base-input.directive';
-import { FormFieldValidations } from '../form-field.theme';
-import generateID from '../../../utils/id.generator';
 
-import { Directive, Input } from '@angular/core';
+import { BaseInputDirective } from './base-input.directive';
+import { HelperDirectiveThemeService } from './helper.directive.theme.service';
+
+import { Directive, inject, input, signal } from '@angular/core';
+import { FormFieldValidations } from '../form-field.theme';
 
 @Directive({
   standalone: true,
   selector: '[flowbiteHelper]',
 })
 export class HelperDirective extends BaseInputDirective {
-  @Input() customStyle: Partial<properties.HelperDirectiveBaseTheme> = {};
-  override _id = generateID();
-  _validate?: keyof FormFieldValidations;
+  protected themeService = inject(HelperDirectiveThemeService);
 
-  @Input() set validate(validate: keyof FormFieldValidations) {
-    this._validate = validate;
-    this.handleClasses();
-  }
+  protected override contentClasses = signal<properties.HelperDirectiveClass>(
+    properties.helperDirectiveClassInstance,
+  );
 
-  override handleClasses(): void {
-    const propertyClass = properties.getClasses({
-      validate: this._validate,
-      customStyle: this.customStyle,
+  //#region properties
+  public validate = input<keyof FormFieldValidations | undefined>(undefined);
+
+  public customStyle = input<Partial<properties.HelperDirectiveBaseTheme>>({});
+  //#endregion
+
+  //#region BaseInputDirective implementation
+  override fetchClass(): void {
+    const propertyClass = this.themeService.getClasses({
+      validate: this.validate(),
+      customStyle: this.customStyle(),
     });
 
-    this._class = propertyClass.root;
+    this.contentClasses.set(propertyClass);
   }
+  //#endregion
 }

@@ -1,25 +1,32 @@
-import { Directive, HostBinding, Input, OnInit } from '@angular/core';
+import { FlowbiteClass } from '../../../common';
+
+import {
+  Directive,
+  Injector,
+  OnInit,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
 
 @Directive({
   standalone: true,
+  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
+  host: { '[class]': 'contentClasses()?.rootClass' },
 })
 export abstract class BaseInputDirective implements OnInit {
-  _classes: string[] = [];
-  _class = '';
+  protected injector = inject(Injector);
 
-  @HostBinding('class') get classes() {
-    if (this._class) return this._class;
-
-    return [...this._classes];
-  }
-  @HostBinding('id') get id() {
-    return this._id;
-  }
-  @Input() _id!: string;
+  protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   ngOnInit(): void {
-    this.handleClasses();
+    effect(
+      () => {
+        this.fetchClass();
+      },
+      { injector: this.injector, allowSignalWrites: true },
+    );
   }
 
-  abstract handleClasses(): void;
+  abstract fetchClass(): void;
 }

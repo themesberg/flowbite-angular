@@ -1,4 +1,8 @@
-import { FlowbiteBoolean, FlowbiteSizes } from '../../common/flowbite.theme';
+import {
+  FlowbiteBoolean,
+  FlowbiteClass,
+  FlowbiteSizes,
+} from '../../common/flowbite.theme';
 
 //#region Component theme option
 export type FormFieldTypes = {
@@ -38,4 +42,25 @@ export type FormFieldProperties = {
   disabled: keyof FlowbiteBoolean;
   validate?: keyof FormFieldValidations;
   prefix?: keyof FormFieldPrefixes;
+  customStyle: Partial<FormFieldBaseTheme>;
+};
+
+export type FormFieldBaseTheme = {
+  root: Partial<FormFieldRootTheme>;
+};
+
+export type FormFieldRootTheme = {
+  base: string;
+};
+
+export const formFieldTheme: FormFieldBaseTheme = {
+  root: {
+    base: '',
+  },
+};
+
+export type FormFieldClass = FlowbiteClass;
+
+export const FormFieldClassInstance: FormFieldClass = {
+  rootClass: '',
 };

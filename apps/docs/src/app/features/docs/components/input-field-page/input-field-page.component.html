@@ -2,46 +2,48 @@
   <flowbite-demo-example title="Input fields" [codes]="[examples[0]]">
     <form>
       <div class="mb-6 grid gap-6 md:grid-cols-2">
-        <flowbite-form-field>
-          <label flowbiteLabel>First Name</label>
+        <flowbite-form-field #input1>
+          <label flowbiteLabel [for]="input1">First Name</label>
           <input flowbiteInput placeholder="John" />
         </flowbite-form-field>
-        <flowbite-form-field>
-          <label flowbiteLabel>Last Name</label>
+        <flowbite-form-field #input2>
+          <label flowbiteLabel [for]="input2">Last Name</label>
           <input flowbiteInput placeholder="Doe" />
         </flowbite-form-field>
-        <flowbite-form-field>
-          <label flowbiteLabel>Company</label>
+        <flowbite-form-field #input3>
+          <label flowbiteLabel [for]="input3">Company</label>
           <input flowbiteInput placeholder="Flowbite" />
         </flowbite-form-field>
-        <flowbite-form-field type="number">
-          <label flowbiteLabel>Phone Number</label>
+        <flowbite-form-field #input4 type="number">
+          <label flowbiteLabel [for]="input4">Phone Number</label>
           <input flowbiteInput placeholder="123-45-678" />
         </flowbite-form-field>
-        <flowbite-form-field>
-          <label flowbiteLabel>Website URL</label>
+        <flowbite-form-field #input5>
+          <label flowbiteLabel [for]="input5">Website URL</label>
           <input flowbiteInput placeholder="flowbite.com" />
         </flowbite-form-field>
-        <flowbite-form-field>
-          <label flowbiteLabel>Unique visitors (per month)</label>
+        <flowbite-form-field #input6>
+          <label flowbiteLabel [for]="input6"
+            >Unique visitors (per month)</label
+          >
           <input flowbiteInput />
         </flowbite-form-field>
       </div>
       <div class="mb-6">
-        <flowbite-form-field>
-          <label flowbiteLabel>Email address</label>
+        <flowbite-form-field #input7>
+          <label flowbiteLabel [for]="input7">Email address</label>
           <input flowbiteInput placeholder="john.doe@company.com" />
         </flowbite-form-field>
       </div>
       <div class="mb-6">
-        <flowbite-form-field type="password">
-          <label flowbiteLabel>Password</label>
+        <flowbite-form-field #input8 type="password">
+          <label flowbiteLabel [for]="input8">Password</label>
           <input flowbiteInput placeholder="•••••••••" required />
         </flowbite-form-field>
       </div>
       <div class="mb-6">
-        <flowbite-form-field type="password">
-          <label flowbiteLabel>Confirm Password</label>
+        <flowbite-form-field #input9 type="password">
+          <label flowbiteLabel [for]="input9">Confirm Password</label>
           <input flowbiteInput placeholder="•••••••••" required />
         </flowbite-form-field>
       </div>
@@ -68,42 +70,42 @@
   </flowbite-demo-example>
   <flowbite-demo-example title="Input Sizes" [codes]="[examples[1]]">
     <div class="mb-6">
-      <flowbite-form-field size="lg">
-        <label flowbiteLabel>Large Input</label>
+      <flowbite-form-field #input10 size="lg">
+        <label flowbiteLabel [for]="input10">Large Input</label>
         <input flowbiteInput />
       </flowbite-form-field>
     </div>
     <div class="mb-6">
-      <flowbite-form-field size="md">
-        <label flowbiteLabel>Default Input</label>
+      <flowbite-form-field #input11 size="md">
+        <label flowbiteLabel [for]="input11">Default Input</label>
         <input flowbiteInput />
       </flowbite-form-field>
     </div>
-    <flowbite-form-field size="sm">
-      <label flowbiteLabel>Small Input</label>
+    <flowbite-form-field #input12 size="sm">
+      <label flowbiteLabel [for]="input12">Small Input</label>
       <input flowbiteInput />
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Disabled Inputs" [codes]="[examples[2]]">
-    <flowbite-form-field disabled>
-      <label flowbiteLabel>Disabled input</label>
+    <flowbite-form-field #input13 disabled>
+      <label flowbiteLabel [for]="input13">Disabled input</label>
       <input flowbiteInput />
     </flowbite-form-field>
-    <flowbite-form-field disabled>
-      <label flowbiteLabel>Disabled readonly input</label>
+    <flowbite-form-field #input14 disabled>
+      <label flowbiteLabel [for]="input14">Disabled readonly input</label>
       <input flowbiteInput readonly />
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Validation" [codes]="[examples[3]]">
-    <flowbite-form-field validate="success">
-      <label flowbiteLabel>Success Input</label>
+    <flowbite-form-field #input15 validate="success">
+      <label flowbiteLabel [for]="input15">Success Input</label>
       <input flowbiteInput />
       <p class="text-sm" flowbiteHelper>
         <span class="font-medium">Well done!</span> Some success message.
       </p>
     </flowbite-form-field>
-    <flowbite-form-field validate="error">
-      <label flowbiteLabel>Error Input</label>
+    <flowbite-form-field #input16 validate="error">
+      <label flowbiteLabel [for]="input16">Error Input</label>
       <input flowbiteInput />
       <p flowbiteHelper>
         <span class="font-medium">Oh, snapp!</span> Some error message.
@@ -111,8 +113,8 @@
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Input Group" [codes]="[examples[4]]">
-    <flowbite-form-field>
-      <label flowbiteLabel>Your Email</label>
+    <flowbite-form-field #input17>
+      <label flowbiteLabel [for]="input17">Your Email</label>
       <svg
         flowbiteIcon
         aria-hidden="true"
@@ -126,15 +128,15 @@
       </svg>
       <input flowbiteInput placeholder="name@flowbite.com" />
     </flowbite-form-field>
-    <flowbite-form-field>
-      <label flowbiteLabel>Username</label>
+    <flowbite-form-field #input18>
+      <label flowbiteLabel [for]="input18">Username</label>
       <span flowbiteAddon>&#64;</span>
       <input flowbiteInput placeholder="elonmusk" />
     </flowbite-form-field>
   </flowbite-demo-example>
   <flowbite-demo-example title="Helper Text" [codes]="[examples[5]]">
-    <flowbite-form-field>
-      <label flowbiteLabel>Your Email</label>
+    <flowbite-form-field #input19>
+      <label flowbiteLabel [for]="input19">Your Email</label>
       <input flowbiteInput placeholder="name@flowbite.com" />
       <p flowbiteHelper>
         We’ll never share your details. Read our

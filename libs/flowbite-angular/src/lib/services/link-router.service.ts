@@ -19,11 +19,16 @@ export class LinkRouter {
     let routerResult = false;
 
     if (link) {
-      if (typeof link === 'string') {
-        routerResult = await this.router.navigateByUrl(link);
-      } else {
-        routerResult = await this.router.navigate(link.commands, link.extras);
+      const linkString = this.flowbiteLinkToString(link);
+
+      if (this.isRedirectionToAnotherSite(linkString)) {
+        window.location.href = linkString;
+        return true;
       }
+
+      routerResult = await this.router.navigateByUrl(linkString, {
+        onSameUrlNavigation: 'reload',
+      });
 
       this.showErrorAlert(routerResult);
     }
@@ -35,5 +40,16 @@ export class LinkRouter {
     if (!routerReturnValue && this.displayErrorSetting) {
       alert('Error while navigating to the link');
     }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private flowbiteLinkToString(link: any[] | string): string {
+    if (typeof link === 'string') return link;
+
+    return link.join('');
+  }
+
+  private isRedirectionToAnotherSite(link: string): boolean {
+    return link.startsWith('http');
   }
 }

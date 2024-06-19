@@ -1,5 +1,3 @@
-import { NavigationExtras } from '@angular/router';
-
 export type Combination<
   T extends string | number | symbol,
   U extends string | number | symbol,
@@ -10,10 +8,5 @@ export type Combination<
   };
 };
 
-export type FlowbiteLink =
-  | {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      commands: any[];
-      extras?: NavigationExtras | undefined;
-    }
-  | string;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type FlowbiteLink = string | any[] | null | undefined;

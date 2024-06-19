@@ -1,50 +1,60 @@
 import * as properties from './label.directive.theme';
+
 import { BaseInputDirective } from './base-input.directive';
-import { FlowbiteBoolean } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
   FormFieldValidations,
 } from '../form-field.theme';
+import { LabelDirectiveThemeService } from './label.directive.theme.service';
 
-import { Directive, HostBinding, Input } from '@angular/core';
+import {
+  Directive,
+  HostBinding,
+  booleanAttribute,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+import { FormFieldComponent } from '../form-field.component';
+import { booleanToFlowbiteBoolean } from '../../../utils/boolean.util';
 
 @Directive({
   standalone: true,
   selector: 'label[flowbiteLabel]',
 })
 export class LabelDirective extends BaseInputDirective {
-  _parentId = '';
-  _disabled: keyof FlowbiteBoolean = 'disabled';
-  _validate?: keyof FormFieldValidations;
-  _floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  @Input() customStyle: Partial<properties.LabelDirectiveBaseTheme> = {};
-
-  @HostBinding('attr.for') get for() {
-    return this._parentId;
+  @HostBinding('attr.for') get forComponentId() {
+    return this.for.flowbiteId;
   }
 
-  @Input() set parentId(id: string) {
-    this._parentId = id;
-  }
-  @Input() set validate(validate: keyof FormFieldValidations) {
-    this._validate = validate;
-    this.handleClasses();
-  }
-  @Input() set floatingLabelType(
-    floatingLabelType: keyof FormFieldFloatingLabelTypes,
-  ) {
-    this._floatingLabelType = floatingLabelType;
-    this.handleClasses();
-  }
+  protected themeService = inject(LabelDirectiveThemeService);
+  protected for = inject(FormFieldComponent);
 
-  override handleClasses(): void {
-    const propertyClass = properties.getClasses({
-      disabled: this._disabled,
-      validate: this._validate,
-      floatingLabelType: this._floatingLabelType,
-      customStyle: this.customStyle,
+  protected override contentClasses = signal<properties.LabelDirectiveClass>(
+    properties.labelDirectiveClassInstance,
+  );
+
+  //#region properties
+  public validate = input<keyof FormFieldValidations | undefined>(undefined);
+  public idDisabled = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public floatingLabelType = input<
+    keyof FormFieldFloatingLabelTypes | undefined
+  >(undefined);
+  public customStyle = input<Partial<properties.LabelDirectiveBaseTheme>>({});
+  //#endregion
+
+  //#region BaseInputDirective implementation
+  override fetchClass(): void {
+    const propertyClass = this.themeService.getClasses({
+      disabled: booleanToFlowbiteBoolean(this.idDisabled()),
+      validate: this.validate(),
+      floatingLabelType: this.floatingLabelType(),
+      customStyle: this.customStyle(),
     });
 
-    this._class = propertyClass.root;
+    this.contentClasses.set(propertyClass);
   }
+  //#endregion
 }
