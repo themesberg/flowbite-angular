@@ -1,5 +1,5 @@
 import { FlowbiteClass } from '../common';
-import generateId from '../utils/id.generator';
+import { Guid, generateId } from '../utils/id.generator';
 
 import {
   Component,
@@ -18,13 +18,15 @@ import {
 })
 export abstract class BaseComponent implements OnInit {
   @HostBinding('attr.flowbite-id')
-  public flowbiteId = generateId();
+  public flowbiteId!: Guid;
 
   protected injector = inject(Injector);
 
   protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   public ngOnInit(): void {
+    this.flowbiteId = generateId();
+
     effect(
       () => {
         this.fetchClass();

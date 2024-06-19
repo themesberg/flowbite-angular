@@ -40,6 +40,6 @@ export class Guid {
   }
 }
 
-export default function generateId(): Guid {
+export function generateId(): Guid {
   return Guid.newGuid();
 }
