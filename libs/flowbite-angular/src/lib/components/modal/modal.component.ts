@@ -32,10 +32,10 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 export class ModalComponent extends BaseComponent implements AfterViewInit {
   @HostBinding('tabindex') protected tabIndex = '-1';
 
-  protected themeService = inject(ModalThemeService);
-  protected signalStoreService = inject<SignalStoreService<ModalState>>(
-    SignalStoreService<ModalState>,
-  );
+  protected readonly themeService = inject(ModalThemeService);
+  protected readonly signalStoreService = inject<
+    SignalStoreService<ModalState>
+  >(SignalStoreService<ModalState>);
 
   protected override contentClasses = signal<properties.ModalClass>(
     properties.ModalClassInstance,

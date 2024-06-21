@@ -15,8 +15,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar-content.component.html',
 })
 export class NavbarContentComponent extends BaseComponent implements OnInit {
-  protected themeService = inject(NavbarContentThemeService);
-  protected navbarService = inject<SignalStoreService<NavbarState>>(
+  protected readonly themeService = inject(NavbarContentThemeService);
+  protected readonly navbarService = inject<SignalStoreService<NavbarState>>(
     SignalStoreService<NavbarState>,
   );
 

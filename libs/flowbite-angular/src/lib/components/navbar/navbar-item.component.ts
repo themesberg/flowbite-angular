@@ -15,11 +15,11 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar-item.component.html',
 })
 export class NavbarItemComponent extends BaseComponent {
-  protected themeService = inject(NavbarItemThemeService);
-  protected navbarService = inject<SignalStoreService<NavbarState>>(
+  protected readonly themeService = inject(NavbarItemThemeService);
+  protected readonly navbarService = inject<SignalStoreService<NavbarState>>(
     SignalStoreService<NavbarState>,
   );
-  protected linkRouter = inject(LinkRouter);
+  protected readonly linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.NavbarItemClass>(
     properties.NavbarItemClassInstance,

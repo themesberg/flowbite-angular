@@ -12,7 +12,7 @@ export const FLOWBITE_ALERT_THEME_TOKEN = new InjectionToken<AlertBaseTheme>(
 export class AlertThemeService
   implements FlowbiteThemeService<AlertProperties>
 {
-  private baseTheme = inject(FLOWBITE_ALERT_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_ALERT_THEME_TOKEN);
 
   public getClasses(properties: AlertProperties): AlertClass {
     const theme: AlertBaseTheme = mergeTheme(

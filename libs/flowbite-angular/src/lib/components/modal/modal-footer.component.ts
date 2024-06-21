@@ -14,8 +14,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
-  protected themeService = inject(ModalFooterThemeService);
-  protected modalComponent = inject<ModalComponent>(ModalComponent);
+  protected readonly themeService = inject(ModalFooterThemeService);
+  protected readonly modalComponent = inject<ModalComponent>(ModalComponent);
 
   protected override contentClasses = signal<properties.ModalFooterClass>(
     properties.ModalFooterClassInstance,

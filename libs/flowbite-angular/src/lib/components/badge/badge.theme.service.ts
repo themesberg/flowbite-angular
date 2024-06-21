@@ -12,7 +12,7 @@ export const FLOWBITE_BADGE_THEME_TOKEN = new InjectionToken<BadgeBaseTheme>(
 export class BadgeThemeService
   implements FlowbiteThemeService<BadgeProperties>
 {
-  private baseTheme = inject(FLOWBITE_BADGE_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_BADGE_THEME_TOKEN);
 
   public getClasses(properties: BadgeProperties): BadgeClass {
     const theme: BadgeBaseTheme = mergeTheme(

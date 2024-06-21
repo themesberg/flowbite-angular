@@ -17,7 +17,7 @@ export const FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN =
 export class IconDirectiveThemeService
   implements FlowbiteThemeService<IconDirectiveProperties>
 {
-  private baseTheme = inject(FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN);
 
   public getClasses(properties: IconDirectiveProperties): IconDirectiveClass {
     const theme: IconDirectiveBaseTheme = mergeTheme(

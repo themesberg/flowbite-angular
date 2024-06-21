@@ -15,7 +15,7 @@ export const FLOWBITE_SIDEBAR_THEME_TOKEN =
 export class SidebarThemeService
   implements FlowbiteThemeService<SidebarProperties>
 {
-  private baseTheme = inject(FLOWBITE_SIDEBAR_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_SIDEBAR_THEME_TOKEN);
 
   public getClasses(properties: SidebarProperties): SidebarClass {
     const theme: SidebarBaseTheme = mergeTheme(

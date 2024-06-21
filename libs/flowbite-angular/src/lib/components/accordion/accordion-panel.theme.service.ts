@@ -18,7 +18,7 @@ export const FLOWBITE_ACCORDION_PANEL_THEME_TOKEN =
 export class AccordionPanelThemeService
   implements FlowbiteThemeService<AccordionPanelProperties>
 {
-  private baseTheme = inject(FLOWBITE_ACCORDION_PANEL_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_ACCORDION_PANEL_THEME_TOKEN);
 
   public getClasses(properties: AccordionPanelProperties): AccordionClass {
     const theme: AccordionPanelBaseTheme = mergeTheme(

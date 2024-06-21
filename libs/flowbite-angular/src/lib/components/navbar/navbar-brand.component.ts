@@ -15,8 +15,8 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar-brand.component.html',
 })
 export class NavbarBrandComponent extends BaseComponent {
-  protected themeService = inject(NavbarBrandThemeService);
-  protected linkRouter = inject(LinkRouter);
+  protected readonly themeService = inject(NavbarBrandThemeService);
+  protected readonly linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.NavbarBrandClass>(
     properties.NavbarBrandClassInstance,

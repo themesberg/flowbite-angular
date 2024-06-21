@@ -12,7 +12,7 @@ export const FLOWBITE_MODAL_THEME_TOKEN = new InjectionToken<ModalBaseTheme>(
 export class ModalThemeService
   implements FlowbiteThemeService<ModalProperties>
 {
-  private baseTheme = inject(FLOWBITE_MODAL_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_MODAL_THEME_TOKEN);
 
   public getClasses(properties: ModalProperties): ModalClass {
     const theme: ModalBaseTheme = mergeTheme(

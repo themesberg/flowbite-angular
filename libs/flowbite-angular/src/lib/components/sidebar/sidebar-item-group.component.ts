@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './sidebar-item-group.component.html',
 })
 export class SidebarItemGroupComponent extends BaseComponent {
-  protected themeService = inject(SidebarItemGroupThemeService);
+  protected readonly themeService = inject(SidebarItemGroupThemeService);
 
   protected override contentClasses = signal<properties.SidebarItemGroupClass>(
     properties.SidebarItemGroupClassInstance,

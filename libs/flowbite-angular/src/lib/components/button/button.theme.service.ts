@@ -11,7 +11,7 @@ export const FLOWBITE_BUTTON_THEME_TOKEN = new InjectionToken<ButtonBaseTheme>(
 export class ButtonThemeService
   implements FlowbiteThemeService<ButtonProperties>
 {
-  private baseTheme = inject(FLOWBITE_BUTTON_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_BUTTON_THEME_TOKEN);
 
   public getClasses(properties: ButtonProperties): ButtonClass {
     const theme: ButtonBaseTheme = mergeTheme(

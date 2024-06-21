@@ -22,8 +22,8 @@ import {
   providers: [SignalStoreService<AccordionPanelState>],
 })
 export class AccordionPanelComponent extends BaseComponent implements OnInit {
-  protected themeService = inject(AccordionPanelThemeService);
-  protected accordionPanelSignalStoreService = inject<
+  protected readonly themeService = inject(AccordionPanelThemeService);
+  protected readonly accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
 

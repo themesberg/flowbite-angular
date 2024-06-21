@@ -17,7 +17,7 @@ export const FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN =
 export class AddonDirectiveThemeService
   implements FlowbiteThemeService<AddonDirectiveProperties>
 {
-  private baseTheme = inject(FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN);
 
   public getClasses(properties: AddonDirectiveProperties): AddonDirectiveClass {
     const theme: AddonDirectiveBaseTheme = mergeTheme(

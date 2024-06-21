@@ -16,7 +16,7 @@ export const FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN =
 export class NavbarToggleThemeService
   implements FlowbiteThemeService<NavbarToggleProperties>
 {
-  private baseTheme = inject(FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN);
 
   public getClasses(properties: NavbarToggleProperties): NavbarToggleClass {
     const theme = mergeTheme(this.baseTheme, properties.customStyle);

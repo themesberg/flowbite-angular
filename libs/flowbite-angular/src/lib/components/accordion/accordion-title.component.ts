@@ -19,11 +19,11 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  protected themeService = inject(AccordionTitleThemeService);
-  protected accordionPanelSignalStoreService = inject<
+  protected readonly themeService = inject(AccordionTitleThemeService);
+  protected readonly accordionPanelSignalStoreService = inject<
     SignalStoreService<AccordionPanelState>
   >(SignalStoreService<AccordionPanelState>);
-  protected accordionSignalStoreService = inject<
+  protected readonly accordionSignalStoreService = inject<
     SignalStoreService<AccordionState>
   >(SignalStoreService<AccordionState>);
 

@@ -1,3 +1,4 @@
+import { BundledLanguage } from 'shiki/langs';
 import {
   ButtonComponent,
   ModalBodyComponent,
@@ -26,7 +27,7 @@ import { DemoPageComponent } from '../../../../common/demo-page/demo-page.compon
 export class ModalPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button (click)="this.modal.open()">Open modal</flowbite-button>
 <flowbite-modal #modal [dismissable]="true" [size]="'md'" [isOpen]="false">
@@ -47,7 +48,7 @@ export class ModalPageComponent {
             `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <div class="flex flex-row gap-1">
     <flowbite-button (click)="this.modalSmall.open()">Small</flowbite-button>
@@ -118,7 +119,7 @@ export class ModalPageComponent {
             `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button (click)="modal.open()">Open modal</flowbite-button>
 <flowbite-modal #modal [dismissable]="true">
@@ -139,7 +140,7 @@ export class ModalPageComponent {
             `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button (click)="formModal.open()">Open modal</flowbite-button>
 <flowbite-modal #formModal [dismissable]="true">
@@ -173,7 +174,7 @@ export class ModalPageComponent {
             `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button (click)="modal.open()">Open modal</flowbite-button>
 <flowbite-modal #modal position="'top-center'">

@@ -17,7 +17,7 @@ export const FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN =
 export class DropdownDividerThemeService
   implements FlowbiteThemeService<DropdownDividerProperties>
 {
-  private baseTheme = inject(FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN);
 
   public getClasses(
     properties: DropdownDividerProperties,

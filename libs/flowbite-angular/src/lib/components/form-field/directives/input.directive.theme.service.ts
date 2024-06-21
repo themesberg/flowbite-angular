@@ -17,7 +17,7 @@ export const FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN =
 export class InputDirectiveThemeService
   implements FlowbiteThemeService<InputDirectiveProperties>
 {
-  private baseTheme = inject(FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN);
 
   public getClasses(properties: InputDirectiveProperties): InputDirectiveClass {
     const theme: InputDirectiveBaseTheme = mergeTheme(

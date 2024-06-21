@@ -17,7 +17,7 @@ export const FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN =
 export class BreadcrumbItemThemeService
   implements FlowbiteThemeService<BreadcrumbItemProperties>
 {
-  private baseTheme = inject(FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN);
 
   public getClasses(properties: BreadcrumbItemProperties): BreadcrumbItemClass {
     const theme: BreadcrumbItemBaseTheme = mergeTheme(

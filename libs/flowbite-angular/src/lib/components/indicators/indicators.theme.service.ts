@@ -15,7 +15,7 @@ export const FLOWBITE_INDICATOR_THEME_TOKEN =
 export class IndicatorThemeService
   implements FlowbiteThemeService<IndicatorProperties>
 {
-  private baseTheme = inject(FLOWBITE_INDICATOR_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_INDICATOR_THEME_TOKEN);
 
   public getClasses(properties: IndicatorProperties): indicatorClass {
     const theme: IndicatorBaseTheme = mergeTheme(

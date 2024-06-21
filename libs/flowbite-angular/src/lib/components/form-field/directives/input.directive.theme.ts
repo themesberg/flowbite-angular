@@ -5,9 +5,6 @@ import {
   FormFieldSizes,
   FormFieldValidations,
 } from '../form-field.theme';
-import { mergeTheme } from '../../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
 
 export type InputDirectiveProperties = {
   size: keyof FormFieldSizes;
@@ -56,9 +53,9 @@ export const inputDirectiveTheme: InputDirectiveBaseTheme = {
     },
     validation: {
       success:
-        'bg-green-50 border-green-500 text-green-900 placeholder-green-700 dark:placeholder-green-500 dark:text-green-400 dark:border-green-500 focus:ring-green-500 focus:border-green-500',
+        'text-gray-900 border-green-600 dark:text-white dark:border-green-500 dark:focus:border-green-500 focus:border-green-600 bg-green-50 dark:bg-gray-700',
       error:
-        'bg-red-50 border-red-500 text-red-900 placeholder-red-700 dark:placeholder-red-500 dark:text-red-500 dark:border-red-500 focus:ring-red-500 focus:border-red-500',
+        'text-gray-900 border-red-600 dark:text-white dark:border-red-500 dark:focus:border-red-500 focus:border-red-600 bg-red-50 dark:bg-gray-700',
     },
   },
   floatingLabel: {

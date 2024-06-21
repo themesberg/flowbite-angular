@@ -17,7 +17,7 @@ export const FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN =
 export class DropdownItemThemeService
   implements FlowbiteThemeService<DropdownItemProperties>
 {
-  private baseTheme = inject(FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN);
 
   public getClasses(properties: DropdownItemProperties): DropdownItemClass {
     const theme: DropdownItemBaseTheme = mergeTheme(

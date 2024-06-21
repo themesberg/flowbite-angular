@@ -26,8 +26,8 @@ import { SidebarThemeService } from './sidebar.theme.service';
   providers: [SignalStoreService<SidebarState>],
 })
 export class SidebarComponent extends BaseComponent {
-  protected themeService = inject(SidebarThemeService);
-  protected sidebarSignalStoreService = inject<
+  protected readonly themeService = inject(SidebarThemeService);
+  protected readonly sidebarSignalStoreService = inject<
     SignalStoreService<SidebarState>
   >(SignalStoreService<SidebarState>);
 

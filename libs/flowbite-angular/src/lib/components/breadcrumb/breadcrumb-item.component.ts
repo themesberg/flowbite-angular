@@ -15,8 +15,8 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './breadcrumb-item.component.html',
 })
 export class BreadcrumbItemComponent extends BaseComponent {
-  protected themeService = inject(BreadcrumbItemThemeService);
-  protected linkRouter = inject(LinkRouter);
+  protected readonly themeService = inject(BreadcrumbItemThemeService);
+  protected readonly linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.BreadcrumbItemClass>(
     properties.BreadcrumbItemClassInstance,

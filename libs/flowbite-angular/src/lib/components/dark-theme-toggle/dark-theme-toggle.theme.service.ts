@@ -17,7 +17,7 @@ export const FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN =
 export class DarkThemeToggleThemeService
   implements FlowbiteThemeService<DarkThemeToggleProperties>
 {
-  private baseTheme = inject(FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN);
 
   public getClasses(
     properties: DarkThemeToggleProperties,

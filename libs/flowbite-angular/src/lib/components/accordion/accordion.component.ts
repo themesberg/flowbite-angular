@@ -28,10 +28,10 @@ import { NgClass } from '@angular/common';
   providers: [SignalStoreService<AccordionState>],
 })
 export class AccordionComponent extends BaseComponent implements OnInit {
-  protected themeService = inject(AccordionThemeService);
-  protected accordionService = inject<SignalStoreService<AccordionState>>(
-    SignalStoreService<AccordionState>,
-  );
+  protected readonly themeService = inject(AccordionThemeService);
+  protected readonly accordionService = inject<
+    SignalStoreService<AccordionState>
+  >(SignalStoreService<AccordionState>);
 
   protected override contentClasses = signal<properties.AccordionClass>(
     properties.AccordionClassInstance,

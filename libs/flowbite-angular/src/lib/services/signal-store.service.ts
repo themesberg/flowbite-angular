@@ -16,7 +16,7 @@ export class SignalStoreService<T> {
     this._state.update((currentValue) => ({ ...currentValue, [key]: data }));
   }
 
-  public setState(partialState: Partial<T>) {
-    this._state.update((currentValue) => ({ ...currentValue, partialState }));
+  public setState(state: T) {
+    this._state.set(state);
   }
 }

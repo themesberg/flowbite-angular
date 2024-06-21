@@ -17,7 +17,7 @@ export const FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN =
 export class SidebarToggleThemeService
   implements FlowbiteThemeService<SidebarToggleProperties>
 {
-  private baseTheme = inject(FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN);
 
   public getClasses(properties: SidebarToggleProperties): SidebarToggleClass {
     const theme = mergeTheme(this.baseTheme, properties.customStyle);

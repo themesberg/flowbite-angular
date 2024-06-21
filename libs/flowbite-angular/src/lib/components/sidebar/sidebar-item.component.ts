@@ -27,11 +27,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar-item.component.html',
 })
 export class SidebarItemComponent extends BaseComponent {
-  protected themeService = inject(SidebarItemThemeService);
-  protected sidebarSignalStoreService = inject<
+  protected readonly themeService = inject(SidebarItemThemeService);
+  protected readonly sidebarSignalStoreService = inject<
     SignalStoreService<SidebarState>
   >(SignalStoreService<SidebarState>);
-  protected linkRouter = inject(LinkRouter);
+  protected readonly linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.SidebarItemClass>(
     properties.SidebarItemClassInstance,

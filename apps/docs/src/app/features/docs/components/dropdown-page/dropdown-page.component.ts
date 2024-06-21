@@ -1,3 +1,4 @@
+import { BundledLanguage } from 'shiki/langs';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
 
@@ -25,7 +26,7 @@ import {
 export class DropdownPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-dropdown>
     <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
@@ -35,7 +36,7 @@ export class DropdownPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-dropdown>
     <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
@@ -46,7 +47,7 @@ export class DropdownPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-dropdown>
     <flowbite-dropdown-header>
@@ -64,7 +65,7 @@ export class DropdownPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
 
       code: `
 <flowbite-dropdown [position]="'top-start'" [label]="'Top start'">

@@ -6,10 +6,10 @@
     [ngClass]="[codeClassName ?? '']">
     <div class="flex h-full w-full flex-col justify-center gap-6 p-6">
       <ng-content></ng-content>
-      <flowbite-prism
+      <flowbite-shiki
         *ngFor="let code of codes"
         [code]="code.code.trim()"
-        [language]="code.language"></flowbite-prism>
+        [language]="code.language"></flowbite-shiki>
     </div>
   </div>
 </div>

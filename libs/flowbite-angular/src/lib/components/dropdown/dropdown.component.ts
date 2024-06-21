@@ -42,8 +42,8 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
-  protected themeService = inject(DropdownThemeService);
-  protected dropdownSignalStoreService = inject<
+  protected readonly themeService = inject(DropdownThemeService);
+  protected readonly dropdownSignalStoreService = inject<
     SignalStoreService<DropdownState>
   >(SignalStoreService<DropdownState>);
 

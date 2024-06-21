@@ -19,9 +19,13 @@ import {
 })
 export abstract class BaseComponent implements OnInit {
   @HostBinding('attr.flowbite-id')
-  public flowbiteId = signal<Guid>(new Guid(Guid.empty));
+  protected get getFlowbiteId() {
+    return this.flowbiteId();
+  }
 
-  protected injector = inject(Injector);
+  public readonly flowbiteId = signal<Guid>(new Guid(Guid.empty));
+
+  protected readonly injector = inject(Injector);
 
   protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 

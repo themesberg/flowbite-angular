@@ -1,3 +1,4 @@
+import { BundledLanguage } from 'shiki/langs';
 import {
   ButtonComponent,
   FormFieldComponent,
@@ -25,7 +26,7 @@ import { DemoPageComponent } from '../../../../common/demo-page/demo-page.compon
 export class InputFieldPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <form>
   <div class="mb-6 grid gap-6 md:grid-cols-2">
@@ -85,7 +86,7 @@ export class InputFieldPageComponent {
 </form>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <div class="mb-6">
   <flowbite-form-field size="large">
@@ -107,7 +108,7 @@ export class InputFieldPageComponent {
 </flowbite-form-field>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field disabled>
   <label flowbiteLabel>Disabled input</label>
@@ -120,7 +121,7 @@ export class InputFieldPageComponent {
       `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field validation="success">
   <label flowbiteLabel>Success Input</label>
@@ -139,7 +140,7 @@ export class InputFieldPageComponent {
 </flowbite-form-field>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -154,7 +155,7 @@ export class InputFieldPageComponent {
      `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>

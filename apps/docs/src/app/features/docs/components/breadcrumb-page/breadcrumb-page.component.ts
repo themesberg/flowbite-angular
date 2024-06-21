@@ -1,4 +1,5 @@
 import { BreadcrumbComponent, BreadcrumbItemComponent } from 'flowbite-angular';
+import { BundledLanguage } from 'shiki/langs';
 import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
@@ -17,7 +18,7 @@ import { DemoPageComponent } from '../../../../common/demo-page/demo-page.compon
 export class BreadcrumbPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-breadcrumb>
   <flowbite-breadcrumb-item href="#">
@@ -30,7 +31,7 @@ export class BreadcrumbPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-breadcrumb class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <flowbite-breadcrumb-item href="#">

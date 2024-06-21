@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
-  protected themeService = inject(ModalBodyThemeService);
+  protected readonly themeService = inject(ModalBodyThemeService);
 
   protected override contentClasses = signal<properties.ModalBodyClass>(
     properties.ModalBodyClassInstance,

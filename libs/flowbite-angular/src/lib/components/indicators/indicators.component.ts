@@ -22,7 +22,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent extends BaseComponent {
-  protected themeService = inject(IndicatorThemeService);
+  protected readonly themeService = inject(IndicatorThemeService);
 
   protected override contentClasses = signal<properties.indicatorClass>(
     properties.IndicatorClassInstance,

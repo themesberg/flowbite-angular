@@ -110,6 +110,11 @@ import {
   FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN,
   LabelDirectiveThemeService,
 } from '../components/form-field/directives/label.directive.theme.service';
+import {
+  FLOWBITE_SCROLL_TOP_THEME_TOKEN,
+  ScrollTopThemeService,
+  scrollTopTheme,
+} from '../components/scroll-top';
 import { addonDirectiveTheme } from '../components/form-field/directives/addon.directive.theme';
 import { helperDirectiveTheme } from '../components/form-field/directives/helper.directive.theme';
 import { iconDirectiveTheme } from '../components/form-field/directives/icon.directive.theme';
@@ -219,6 +224,10 @@ export function initFlowbite(): EnvironmentProviders {
       useClass: NavbarThemeService,
     },
     {
+      provide: ScrollTopThemeService,
+      useClass: ScrollTopThemeService,
+    },
+    {
       provide: SidebarItemGroupThemeService,
       useClass: SidebarItemGroupThemeService,
     },
@@ -244,7 +253,7 @@ export function initFlowbite(): EnvironmentProviders {
     },
     {
       provide: InputDirectiveThemeService,
-      useClass: AddonDirectiveThemeService,
+      useClass: InputDirectiveThemeService,
     },
     {
       provide: LabelDirectiveThemeService,
@@ -252,7 +261,7 @@ export function initFlowbite(): EnvironmentProviders {
     },
     {
       provide: HelperDirectiveThemeService,
-      useClass: LabelDirectiveThemeService,
+      useClass: HelperDirectiveThemeService,
     },
   ]);
 
@@ -353,6 +362,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_NAVBAR_THEME_TOKEN,
       useValue: navbarTheme,
+    },
+    {
+      provide: FLOWBITE_SCROLL_TOP_THEME_TOKEN,
+      useValue: scrollTopTheme,
     },
     {
       provide: FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,

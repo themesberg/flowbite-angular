@@ -28,7 +28,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 export class AlertComponent extends BaseComponent implements OnInit {
   @HostBinding('role') protected hostRoleValue = 'alert';
 
-  protected themeService = inject(AlertThemeService);
+  protected readonly themeService = inject(AlertThemeService);
 
   protected override contentClasses = signal<properties.AlertClass>(
     properties.AlertClassInstance,

@@ -15,7 +15,7 @@ export const FLOWBITE_MODAL_FOOTER_THEME_TOKEN =
 export class ModalFooterThemeService
   implements FlowbiteThemeService<ModalFooterProperties>
 {
-  private baseTheme = inject(FLOWBITE_MODAL_FOOTER_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_MODAL_FOOTER_THEME_TOKEN);
 
   public getClasses(properties: ModalFooterProperties): ModalFooterClass {
     const theme: ModalFooterBaseTheme = mergeTheme(

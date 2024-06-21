@@ -14,8 +14,8 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './sidebar-toggle.component.html',
 })
 export class SidebarToggleComponent extends BaseComponent {
-  protected themeService = inject(SidebarToggleThemeService);
-  protected sidebarService = inject<SignalStoreService<SidebarState>>(
+  protected readonly themeService = inject(SidebarToggleThemeService);
+  protected readonly sidebarService = inject<SignalStoreService<SidebarState>>(
     SignalStoreService<SidebarState>,
   );
 

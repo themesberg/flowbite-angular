@@ -26,10 +26,10 @@ import { NgClass } from '@angular/common';
   providers: [SignalStoreService<NavbarState>],
 })
 export class NavbarComponent extends BaseComponent {
-  protected themeService = inject(NavbarThemeService);
-  protected narbarSignalStoreService = inject<SignalStoreService<NavbarState>>(
-    SignalStoreService<NavbarState>,
-  );
+  protected readonly themeService = inject(NavbarThemeService);
+  protected readonly narbarSignalStoreService = inject<
+    SignalStoreService<NavbarState>
+  >(SignalStoreService<NavbarState>);
 
   protected override contentClasses = signal<properties.NavbarClass>(
     properties.NavbarClassInstance,

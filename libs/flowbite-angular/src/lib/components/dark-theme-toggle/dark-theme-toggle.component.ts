@@ -27,7 +27,7 @@ export class DarkThemeToggleComponent
   extends BaseComponent
   implements AfterViewInit
 {
-  protected themeService = inject(DarkThemeToggleThemeService);
+  protected readonly themeService = inject(DarkThemeToggleThemeService);
   protected readonly themeGlobalSignalStoreService = inject<
     GlobalSignalStoreService<ThemeState>
   >(GlobalSignalStoreService<ThemeState>);

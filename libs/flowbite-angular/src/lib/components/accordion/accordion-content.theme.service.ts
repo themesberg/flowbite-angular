@@ -17,7 +17,7 @@ export const FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN =
 export class AccordionContentThemeService
   implements FlowbiteThemeService<AccordionContentProperties>
 {
-  private baseTheme = inject(FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN);
 
   public getClasses(
     properties: AccordionContentProperties,

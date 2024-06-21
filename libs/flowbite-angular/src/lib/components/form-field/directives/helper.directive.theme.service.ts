@@ -17,7 +17,7 @@ export const FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN =
 export class HelperDirectiveThemeService
   implements FlowbiteThemeService<HelperDirectiveProperties>
 {
-  private baseTheme = inject(FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN);
 
   public getClasses(
     properties: HelperDirectiveProperties,

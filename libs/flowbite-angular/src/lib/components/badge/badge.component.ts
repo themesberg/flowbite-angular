@@ -27,8 +27,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './badge.component.html',
 })
 export class BadgeComponent extends BaseComponent {
-  protected themeService = inject(BadgeThemeService);
-  protected linkRouter = inject(LinkRouter);
+  protected readonly themeService = inject(BadgeThemeService);
+  protected readonly linkRouter = inject(LinkRouter);
 
   protected override contentClasses = signal<properties.BadgeClass>(
     properties.BadgeClassInstance,

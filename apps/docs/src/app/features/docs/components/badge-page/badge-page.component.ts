@@ -1,4 +1,5 @@
 import { BadgeComponent } from 'flowbite-angular';
+import { BundledLanguage } from 'shiki/langs';
 import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
@@ -12,7 +13,7 @@ import { DemoPageComponent } from '../../../../common/demo-page/demo-page.compon
 export class BadgePageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-badge>Default</flowbite-badge>
 <flowbite-badge color="dark">Dark</flowbite-badge>
@@ -25,7 +26,7 @@ export class BadgePageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-badge size="sm">Default</flowbite-badge>
 <flowbite-badge color="dark" size="sm">Dark</flowbite-badge>
@@ -38,19 +39,19 @@ export class BadgePageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-badge href="/badges">Default</flowbite-badge>
 <flowbite-badge href="/badges" size="sm">Default</flowbite-badge>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-badge><svg>...</svg> 2 minutes ago</flowbite-badge>
 <flowbite-badge color="dark"><svg>...</svg> 3 days ago</flowbite-badge>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-badge [iconOnly]="true"><svg>...</svg></flowbite-badge>
 <flowbite-badge [iconOnly]="true" color="dark"><svg>...</svg></flowbite-badge>

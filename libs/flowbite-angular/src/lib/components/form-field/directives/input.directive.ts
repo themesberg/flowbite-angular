@@ -1,23 +1,10 @@
 import * as properties from './input.directive.theme';
 
 import { BaseInputDirective } from './base-input.directive';
-import {
-  FormFieldFloatingLabelTypes,
-  FormFieldPrefixes,
-  FormFieldSizes,
-  FormFieldValidations,
-} from '../form-field.theme';
 import { InputDirectiveThemeService } from './input.directive.theme.service';
 import { booleanToFlowbiteBoolean } from '../../../utils/boolean.util';
 
-import {
-  Directive,
-  HostBinding,
-  booleanAttribute,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
+import { Directive, HostBinding, inject, input, signal } from '@angular/core';
 
 @Directive({
   standalone: true,
@@ -25,36 +12,29 @@ import {
 })
 export class InputDirective extends BaseInputDirective {
   @HostBinding('attr.disabled') get getIsDisabled() {
-    return this.isDisabled() || null;
+    return this.stateService.select('isDisabled')() || null;
   }
 
-  protected themeService = inject(InputDirectiveThemeService);
+  protected readonly themeService = inject(InputDirectiveThemeService);
 
   protected override contentClasses = signal<properties.InputDirectiveClass>(
     properties.inputDirectiveClassInstance,
   );
 
   //#region properties
-  public size = input<keyof FormFieldSizes>('md');
-  public isDisabled = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public validate = input<keyof FormFieldValidations | undefined>(undefined);
-  public floatingLabelType = input<
-    keyof FormFieldFloatingLabelTypes | undefined
-  >(undefined);
-  public prefix = input<keyof FormFieldPrefixes | undefined>(undefined);
   public customStyle = input<Partial<properties.InputDirectiveBaseTheme>>({});
   //#endregion
 
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      disabled: booleanToFlowbiteBoolean(this.isDisabled()),
-      size: this.size(),
-      validate: this.validate(),
-      prefix: this.prefix(),
-      floatingLabelType: this.floatingLabelType(),
+      disabled: booleanToFlowbiteBoolean(
+        this.stateService.select('isDisabled')(),
+      ),
+      size: this.stateService.select('size')(),
+      validate: this.stateService.select('validate')(),
+      prefix: this.stateService.select('prefix')(),
+      floatingLabelType: this.stateService.select('floatingLabelType')(),
       customStyle: this.customStyle(),
     });
 

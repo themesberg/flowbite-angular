@@ -17,7 +17,7 @@ export const FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN =
 export class SidebarItemGroupThemeService
   implements FlowbiteThemeService<SidebarItemGroupProperties>
 {
-  private baseTheme = inject(FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN);
 
   public getClasses(
     properties: SidebarItemGroupProperties,

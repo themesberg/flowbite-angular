@@ -1,3 +1,4 @@
+import { BundledLanguage } from 'shiki/langs';
 import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
@@ -22,7 +23,7 @@ import {
 export class FloatingLabelPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <flowbite-form-field floatingLabelType="filled">
@@ -41,7 +42,7 @@ export class FloatingLabelPageComponent {
     `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <flowbite-form-field floatingLabelType="filled" disabled>
@@ -60,7 +61,7 @@ export class FloatingLabelPageComponent {
       `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <flowbite-form-field floatingLabelType="filled" validation="success">
@@ -115,7 +116,7 @@ export class FloatingLabelPageComponent {
       `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <flowbite-form-field floatingLabelType="filled" size="small">
@@ -146,7 +147,7 @@ export class FloatingLabelPageComponent {
       `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field floatingLabelType="filled">
   <label flowbiteLabel>Floating helper</label>

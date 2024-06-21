@@ -14,8 +14,8 @@ import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
   templateUrl: './navbar-toggle.component.html',
 })
 export class NavbarToggleComponent extends BaseComponent {
-  protected themeService = inject(NavbarToggleThemeService);
-  protected navbarService = inject<SignalStoreService<NavbarState>>(
+  protected readonly themeService = inject(NavbarToggleThemeService);
+  protected readonly navbarService = inject<SignalStoreService<NavbarState>>(
     SignalStoreService<NavbarState>,
   );
 

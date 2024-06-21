@@ -14,8 +14,9 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-item.component.html',
 })
 export class DropdownItemComponent extends BaseComponent {
-  protected themeService = inject(DropdownItemThemeService);
-  protected dropdownComponent = inject<DropdownComponent>(DropdownComponent);
+  protected readonly themeService = inject(DropdownItemThemeService);
+  protected readonly dropdownComponent =
+    inject<DropdownComponent>(DropdownComponent);
 
   protected override contentClasses = signal<properties.DropdownItemClass>(
     properties.DropdownItemClassInstance,

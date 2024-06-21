@@ -12,7 +12,7 @@ export const FLOWBITE_NAVBAR_THEME_TOKEN = new InjectionToken<NavbarBaseTheme>(
 export class NavbarThemeService
   implements FlowbiteThemeService<NavbarProperties>
 {
-  private baseTheme = inject(FLOWBITE_NAVBAR_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_NAVBAR_THEME_TOKEN);
 
   public getClasses(properties: NavbarProperties): NavbarClass {
     const theme: NavbarBaseTheme = mergeTheme(
@@ -28,7 +28,6 @@ export class NavbarThemeService
         theme.root.hasBorder?.[properties.hasBorder],
         theme.root.isFixed?.[properties.isFixed],
       ),
-      contentClass: twMerge(theme.content.base),
     };
 
     return output;

@@ -17,7 +17,7 @@ export const FLOWBITE_ACCORDION_TITLE_THEME_TOKEN =
 export class AccordionTitleThemeService
   implements FlowbiteThemeService<AccordionTitleProperties>
 {
-  private baseTheme = inject(FLOWBITE_ACCORDION_TITLE_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_ACCORDION_TITLE_THEME_TOKEN);
 
   public getClasses(properties: AccordionTitleProperties): AccordionTitleClass {
     const theme: AccordionTitleBaseTheme = mergeTheme(

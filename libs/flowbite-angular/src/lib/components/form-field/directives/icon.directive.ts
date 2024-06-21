@@ -10,7 +10,7 @@ import { Directive, inject, input, signal } from '@angular/core';
   selector: '[flowbiteIcon]',
 })
 export class IconDirective extends BaseInputDirective {
-  protected themeService = inject(IconDirectiveThemeService);
+  protected readonly themeService = inject(IconDirectiveThemeService);
 
   protected override contentClasses = signal<properties.IconDirectiveClass>(
     properties.iconDirectiveClassInstance,

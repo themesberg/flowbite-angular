@@ -6,6 +6,7 @@ import {
   NavbarContentComponent,
   NavbarItemComponent,
   NavbarToggleComponent,
+  ScrollTopComponent,
 } from 'flowbite-angular';
 import { RouterOutlet } from '@angular/router';
 
@@ -19,6 +20,7 @@ import { RouterOutlet } from '@angular/router';
     NavbarItemComponent,
     DarkThemeToggleComponent,
     NavbarToggleComponent,
+    ScrollTopComponent,
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',

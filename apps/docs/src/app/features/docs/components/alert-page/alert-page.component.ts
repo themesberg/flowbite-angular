@@ -2,6 +2,7 @@ import { DemoExampleComponent } from '../../../../common/demo-example/demo-examp
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
 
 import { AlertComponent } from 'flowbite-angular';
+import { BundledLanguage } from 'shiki/langs';
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,7 +14,7 @@ import { Component } from '@angular/core';
 export class AlertPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-alert>
   <span class="font-medium">Info alert!</span> Change a few things up
@@ -22,7 +23,7 @@ export class AlertPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-alert [icon]="icon" color="red">
   <span class="font-medium">Info alert!</span> Change a few things up
@@ -31,11 +32,11 @@ export class AlertPageComponent {
 <ng-template #icon><svg>...</svg></ng-template>`,
     },
     {
-      language: 'ts',
+      language: 'ts' as BundledLanguage,
       code: `onDismiss = () => alert('Alert dismissed!');`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-alert color="green" [dismiss]="onDismiss">
   <span class="font-medium">Info alert!</span> Change a few things up
@@ -43,7 +44,7 @@ export class AlertPageComponent {
 </flowbite-alert>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-alert
   color="yellow"
@@ -55,7 +56,7 @@ export class AlertPageComponent {
 </flowbite-alert>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-alert [icon]="icon" [additionalContent]="additionalContent">
   <h3 class="text-lg font-medium text-blue-700 dark:text-blue-800">

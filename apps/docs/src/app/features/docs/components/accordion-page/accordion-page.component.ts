@@ -8,6 +8,7 @@ import {
   AccordionPanelComponent,
   AccordionTitleComponent,
 } from 'flowbite-angular';
+import { BundledLanguage } from 'shiki/langs';
 
 @Component({
   standalone: true,
@@ -25,7 +26,7 @@ import {
 export class AccordionPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-accordion>
   <flowbite-accordion-panel [open]="true">

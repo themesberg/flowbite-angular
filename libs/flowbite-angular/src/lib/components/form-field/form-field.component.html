@@ -1,9 +1,8 @@
-<ng-container
-  *ngIf="floatingLabelType() as floatingLabelType; else nonFloatingTemplate">
+<ng-container *ngIf="floatingLabelType(); else nonFloatingTemplate">
   <div
     [ngClass]="{
-      relative: floatingLabelType,
-      'z-0': floatingLabelType === 'standard'
+      relative: floatingLabelType(),
+      'z-0': floatingLabelType() === 'standard'
     }">
     <ng-container *ngTemplateOutlet="inputTemplate"></ng-container>
     <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
@@ -12,8 +11,8 @@
 </ng-container>
 <ng-template #nonFloatingTemplate>
   <ng-container *ngTemplateOutlet="labelTemplate"></ng-container>
-  <ng-container *ngIf="prefix() as prefixType; else inputTemplate">
-    <ng-container *ngIf="prefixType === 'icon'; else inputWithAddon">
+  <ng-container *ngIf="prefix(); else inputTemplate">
+    <ng-container *ngIf="prefix() === 'icon'; else inputWithAddon">
       <div class="relative">
         <div
           class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

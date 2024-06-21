@@ -13,8 +13,9 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent extends BaseComponent {
-  protected themeService = inject(DropdownDividerThemeService);
-  protected dropdownComponent = inject<DropdownComponent>(DropdownComponent);
+  protected readonly themeService = inject(DropdownDividerThemeService);
+  protected readonly dropdownComponent =
+    inject<DropdownComponent>(DropdownComponent);
 
   protected override contentClasses = signal<properties.DropdownDividerClass>(
     properties.DropdownDividerClassInstance,

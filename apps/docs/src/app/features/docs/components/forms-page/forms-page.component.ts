@@ -1,6 +1,8 @@
+import { BundledLanguage } from 'shiki/langs';
 import {
   ButtonComponent,
   FormFieldComponent,
+  HelperDirective,
   InputDirective,
   LabelDirective,
 } from 'flowbite-angular';
@@ -17,6 +19,7 @@ import { DemoPageComponent } from '../../../../common/demo-page/demo-page.compon
     ButtonComponent,
     LabelDirective,
     InputDirective,
+    HelperDirective,
   ],
   selector: 'flowbite-forms-page',
   templateUrl: './form-page.component.html',
@@ -24,7 +27,7 @@ import { DemoPageComponent } from '../../../../common/demo-page/demo-page.compon
 export class FormsPageComponent {
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <form>
   <div class="mb-6">
@@ -43,7 +46,7 @@ export class FormsPageComponent {
 </form>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <form>
   <div class="mb-6 w-full">
@@ -96,7 +99,7 @@ export class FormsPageComponent {
 </form>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field size="large">
   <label flowbiteLabel>Large Input</label>
@@ -113,7 +116,7 @@ export class FormsPageComponent {
     },
 
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field disabled>
   <label flowbiteLabel>Disabled Input</label>
@@ -125,7 +128,7 @@ export class FormsPageComponent {
 </flowbite-form-field>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -135,7 +138,7 @@ export class FormsPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -145,7 +148,7 @@ export class FormsPageComponent {
     `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -157,7 +160,7 @@ export class FormsPageComponent {
 </flowbite-form-field>`,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-form-field validation="success">
   <label flowbiteLabel>Success Input</label>

@@ -15,7 +15,7 @@ export const FLOWBITE_MODAL_HEADER_THEME_TOKEN =
 export class ModalHeaderThemeService
   implements FlowbiteThemeService<ModalHeaderProperties>
 {
-  private baseTheme = inject(FLOWBITE_MODAL_HEADER_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_MODAL_HEADER_THEME_TOKEN);
 
   public getClasses(properties: ModalHeaderProperties): ModalHeaderClass {
     const theme: ModalHeaderBaseTheme = mergeTheme(

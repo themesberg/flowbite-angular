@@ -15,7 +15,7 @@ export const FLOWBITE_NAVBAR_ITEM_THEME_TOKEN =
 export class NavbarItemThemeService
   implements FlowbiteThemeService<NabvarItemProperties>
 {
-  private baseTheme = inject(FLOWBITE_NAVBAR_ITEM_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_NAVBAR_ITEM_THEME_TOKEN);
 
   public getClasses(properties: NabvarItemProperties): NavbarItemClass {
     const theme: NavbarItemBaseTheme = mergeTheme(

@@ -26,7 +26,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
 
-  protected themeService = inject(ButtonThemeService);
+  protected readonly themeService = inject(ButtonThemeService);
 
   protected override contentClasses = signal<properties.ButtonClass>(
     properties.ButtonClassInstance,

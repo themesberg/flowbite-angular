@@ -5,6 +5,7 @@ module.exports = {
     join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
     './libs/flowbite-angular/src/**/!(*.stories|*.spec).{ts,html}',
   ],
+  safelist: ['p-4', 'overflow-x-auto'],
   darkMode: 'class',
   theme: {
     extend: {

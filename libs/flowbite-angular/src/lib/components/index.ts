@@ -9,4 +9,5 @@ export * from './form-field';
 export * from './indicators';
 export * from './modal';
 export * from './navbar';
+export * from './scroll-top';
 export * from './sidebar';

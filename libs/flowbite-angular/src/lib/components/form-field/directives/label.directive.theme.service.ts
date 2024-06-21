@@ -17,7 +17,7 @@ export const FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN =
 export class LabelDirectiveThemeService
   implements FlowbiteThemeService<LabelDirectiveProperties>
 {
-  private baseTheme = inject(FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN);
+  private readonly baseTheme = inject(FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN);
 
   public getClasses(properties: LabelDirectiveProperties): LabelDirectiveClass {
     const theme: LabelDirectiveBaseTheme = mergeTheme(

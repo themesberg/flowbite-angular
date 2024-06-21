@@ -1,4 +1,6 @@
 import { FlowbiteClass } from '../../../common';
+import { FormFieldState } from '../../../services/state/form-field.state';
+import { SignalStoreService } from '../../../services';
 
 import {
   Directive,
@@ -15,7 +17,10 @@ import {
   host: { '[class]': 'contentClasses()?.rootClass' },
 })
 export abstract class BaseInputDirective implements OnInit {
-  protected injector = inject(Injector);
+  protected readonly injector = inject(Injector);
+  protected readonly stateService = inject<SignalStoreService<FormFieldState>>(
+    SignalStoreService<FormFieldState>,
+  );
 
   protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 

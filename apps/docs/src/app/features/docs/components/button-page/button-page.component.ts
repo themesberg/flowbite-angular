@@ -6,6 +6,7 @@ import {
   BadgeComponent,
   ButtonComponent,
 } from 'flowbite-angular';
+import { BundledLanguage } from 'shiki/langs';
 import { Component } from '@angular/core';
 
 @Component({
@@ -31,7 +32,7 @@ export class ButtonPageComponent {
 
   examples = [
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button>Default</flowbite-button>
 <flowbite-button color="gray">Gray</flowbite-button>
@@ -44,7 +45,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button [pill]="true" color="gray">Gray</flowbite-button>
 <flowbite-button [pill]="true" color="dark">Dark</flowbite-button>
@@ -56,7 +57,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button gradientMonochrome="info">Info</flowbite-button>
 <flowbite-button gradientMonochrome="success">Success</flowbite-button>
@@ -69,7 +70,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button gradientDuoTone="purpleToBlue">
   Purple to Blue
@@ -95,7 +96,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button [outline]="true" gradientDuoTone="purpleToBlue">
   Purple to Blue
@@ -121,7 +122,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button [outline]="true">Default</flowbite-button>
 <flowbite-button [outline]="true" color="dark">Dark</flowbite-button>
@@ -132,7 +133,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button size="xs">Extra small</flowbite-button>
 <flowbite-button size="sm">Small</flowbite-button>
@@ -142,7 +143,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button>
   <svg class="mr-2 -ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
@@ -155,7 +156,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button>
   Messages
@@ -164,7 +165,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button>
   <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -181,7 +182,7 @@ export class ButtonPageComponent {
 `,
     },
     {
-      language: 'html',
+      language: 'html' as BundledLanguage,
       code: `
 <flowbite-button [disabled]="true">Disabled button</flowbite-button>
 `,

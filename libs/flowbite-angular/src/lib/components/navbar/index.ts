@@ -5,7 +5,6 @@ export {
   NavbarColors,
   NavbarBaseTheme,
   NavbarRootTheme,
-  NavbarContentTheme,
   navbarTheme,
   NavbarClassInstance,
 } from './navbar.theme';

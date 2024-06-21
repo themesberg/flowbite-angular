@@ -19,7 +19,6 @@ export type NavbarProperties = {
 
 export type NavbarBaseTheme = {
   root: Partial<NavbarRootTheme>;
-  content: Partial<NavbarContentTheme>;
 };
 
 export type NavbarRootTheme = {
@@ -30,15 +29,11 @@ export type NavbarRootTheme = {
   isFixed: Record<keyof FlowbiteBoolean, string>;
 };
 
-export type NavbarContentTheme = {
-  base: string;
-};
-
 export const navbarTheme: NavbarBaseTheme = {
   root: {
-    base: 'bg-white border-gray-200 dark:bg-gray-900',
+    base: 'flex flex-wrap items-center justify-between p-4',
     color: {
-      gray: 'bg-white border-gray-200 dark:border-gray-700 dark:bg-gray-800',
+      gray: 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700',
     },
     isRounded: {
       enabled: 'rounded',
@@ -53,16 +48,10 @@ export const navbarTheme: NavbarBaseTheme = {
       disabled: '',
     },
   },
-  content: {
-    base: 'max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4',
-  },
 };
 
-export type NavbarClass = FlowbiteClass & {
-  contentClass: string;
-};
+export type NavbarClass = FlowbiteClass;
 
 export const NavbarClassInstance: NavbarClass = {
-  contentClass: '',
   rootClass: '',
 };
