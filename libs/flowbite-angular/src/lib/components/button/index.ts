@@ -9,7 +9,6 @@ export {
   ButtonMonochromeColors,
   ButtonSizes,
   ButtonBaseTheme,
-  ButtonRootTheme,
   SpanRootTheme,
   buttonTheme,
   ButtonClassInstance,

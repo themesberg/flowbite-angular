@@ -4,7 +4,7 @@ import {
   DropdownProperties,
 } from './dropdown.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -25,7 +25,7 @@ export class DropdownThemeService
 
     const output: DropdownClass = {
       rootClass: '',
-      dropdownClass: twMerge(theme.root.base),
+      dropdownClass: twMerge(theme.base),
       spanClass: twMerge(theme.span.base),
       containerClass: twMerge(
         theme.container.base,

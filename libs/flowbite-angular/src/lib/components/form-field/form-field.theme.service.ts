@@ -4,7 +4,7 @@ import {
   FormFieldClass,
   FormFieldProperties,
 } from './form-field.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -24,7 +24,7 @@ export class FormFieldThemeService
     );
 
     const output: FormFieldClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.base),
     };
 
     return output;

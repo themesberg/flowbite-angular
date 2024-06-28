@@ -5,7 +5,6 @@ export {
   ModalPositions,
   ModalSizes,
   ModalBaseTheme,
-  ModalRootTheme,
   ModalContainerRootTheme,
   ModalContentRootTheme,
   modalTheme,
@@ -21,7 +20,6 @@ export {
   ModalHeaderProperties,
   ModalHeaderClass,
   ModalHeaderBaseTheme,
-  ModalHeaderRootTheme,
   ModalHeaderButtonRootTheme,
   ModalHeaderTitleRootTheme,
   modalHeaderTheme,
@@ -37,7 +35,6 @@ export {
   ModalBodyProperties,
   ModalBodyClass,
   ModalBodyBaseTheme,
-  ModalBodyRootTheme,
   modalBodyTheme,
   ModalBodyClassInstance,
 } from './modal-body.theme';
@@ -51,7 +48,6 @@ export {
   ModalFooterProperties,
   ModalFooterClass,
   ModalFooterBaseTheme,
-  ModalFooterRootTheme,
   modalFooterTheme,
   ModalFooterClassInstance,
 } from './modal-footer.theme';

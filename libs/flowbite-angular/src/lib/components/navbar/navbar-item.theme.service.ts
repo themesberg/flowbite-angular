@@ -4,7 +4,7 @@ import {
   NavbarItemBaseTheme,
   NavbarItemClass,
 } from './navbar-item.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -24,7 +24,7 @@ export class NavbarItemThemeService
     );
 
     const output: NavbarItemClass = {
-      rootClass: twMerge(theme.root.base, theme.root.color?.[properties.color]),
+      rootClass: twMerge(theme.base, theme.color?.[properties.color]),
     };
 
     return output;

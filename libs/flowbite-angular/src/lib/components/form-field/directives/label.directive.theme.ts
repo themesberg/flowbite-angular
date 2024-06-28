@@ -1,39 +1,35 @@
+import { DeepPartial } from '../../../common';
 import { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
   FormFieldValidations,
 } from '../form-field.theme';
+import { createTheme } from '../../../utils/theme/create-theme';
 
-export type LabelDirectiveProperties = {
+export interface LabelDirectiveProperties {
   disabled: keyof FlowbiteBoolean;
   validate?: keyof FormFieldValidations;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  customStyle: Partial<LabelDirectiveBaseTheme>;
-};
+  customStyle: DeepPartial<LabelDirectiveBaseTheme>;
+}
 
-export type LabelDirectiveBaseTheme = {
-  default: LabelDirectiveRootTheme;
-  floatingLabel: Record<
-    keyof FormFieldFloatingLabelTypes,
-    LabelDirectiveRootTheme
-  >;
-};
-
-export type LabelDirectiveRootTheme = {
+export interface LabelDirectiveBaseTheme {
   base: string;
   default: string;
-  disabled?: Record<keyof FlowbiteBoolean, string>;
-  validation: Record<keyof FormFieldValidations, string>;
-};
+  disabled?: FlowbiteBoolean;
+  validation: FormFieldValidations;
+  floatingLabel: Record<
+    keyof FormFieldFloatingLabelTypes,
+    Omit<LabelDirectiveBaseTheme, 'floatingLabel'>
+  >;
+}
 
-export const labelDirectiveTheme: LabelDirectiveBaseTheme = {
-  default: {
-    base: 'block mb-2 text-sm font-medium',
-    default: 'text-gray-900 dark:text-white',
-    validation: {
-      success: 'text-green-700 dark:text-green-500',
-      error: 'text-red-700 dark:text-red-500',
-    },
+export const labelDirectiveTheme: LabelDirectiveBaseTheme = createTheme({
+  base: 'block mb-2 text-sm font-medium',
+  default: 'text-gray-900 dark:text-white',
+  validation: {
+    success: 'text-green-700 dark:text-green-500',
+    error: 'text-red-700 dark:text-red-500',
   },
   floatingLabel: {
     standard: {
@@ -79,7 +75,7 @@ export const labelDirectiveTheme: LabelDirectiveBaseTheme = {
       },
     },
   },
-};
+});
 
 export type LabelDirectiveClass = FlowbiteClass;
 

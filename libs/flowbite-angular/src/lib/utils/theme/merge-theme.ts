@@ -1,3 +1,6 @@
+import { cloneDeep } from './clone-deep';
+import { isObject } from './is-object';
+
 /**
  * Merge two objects into one
  * @param target Object to be merged
@@ -30,24 +33,4 @@ export function mergeTheme<T extends object, S extends object>(
   }
 
   return output;
-}
-
-function isObject(item: unknown): item is Record<string, unknown> {
-  return (
-    item !== null && typeof item === 'object' && item.constructor === Object
-  );
-}
-
-function cloneDeep<T>(source: T): T {
-  if (!isObject(source)) {
-    return source;
-  }
-
-  const output: Record<string, unknown> = {};
-
-  for (const key in source) {
-    output[key] = cloneDeep(source[key]);
-  }
-
-  return output as T;
 }

@@ -1,26 +1,21 @@
-import { FlowbiteClass } from '../../common';
+import { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type DropdownHeaderProperties = {
-  customStyle: Partial<DropdownHeaderBaseTheme>;
-};
+export interface DropdownHeaderProperties {
+  customStyle: DeepPartial<DropdownHeaderBaseTheme>;
+}
 
-export type DropdownHeaderBaseTheme = {
-  root: Partial<DropdownHeaderRootTheme>;
-};
-
-export type DropdownHeaderRootTheme = {
+export interface DropdownHeaderBaseTheme {
   base: string;
-};
+}
 
-export const dropdownHeaderTheme: DropdownHeaderBaseTheme = {
-  root: {
-    base: 'block py-2 px-4 text-sm text-gray-700 dark:text-gray-200',
-  },
-};
+export const dropdownHeaderTheme: DropdownHeaderBaseTheme = createTheme({
+  base: 'block py-2 px-4 text-sm text-gray-700 dark:text-gray-200',
+});
 
-export type DropdownHeaderClass = FlowbiteClass & {
+export interface DropdownHeaderClass extends FlowbiteClass {
   root: string;
-};
+}
 
 export const DropdownHeaderClassInstance: DropdownHeaderClass = {
   root: '',

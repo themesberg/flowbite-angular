@@ -5,9 +5,3 @@ export function booleanToFlowbiteBoolean(
 ): keyof FlowbiteBoolean {
   return value ? 'enabled' : 'disabled';
 }
-
-export function flowbiteBooleanToBoolean(
-  value: keyof FlowbiteBoolean,
-): boolean {
-  return value === 'enabled';
-}

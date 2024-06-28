@@ -13,13 +13,13 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent extends BaseComponent {
-  protected readonly themeService = inject(DropdownDividerThemeService);
-  protected readonly dropdownComponent =
-    inject<DropdownComponent>(DropdownComponent);
-
   protected override contentClasses = signal<properties.DropdownDividerClass>(
     properties.DropdownDividerClassInstance,
   );
+
+  protected readonly themeService = inject(DropdownDividerThemeService);
+  protected readonly dropdownComponent =
+    inject<DropdownComponent>(DropdownComponent);
 
   //#region properties
   public customStyle = input<Partial<properties.DropdownDividerBaseTheme>>({});

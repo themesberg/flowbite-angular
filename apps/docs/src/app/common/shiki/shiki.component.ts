@@ -23,6 +23,7 @@ export class ShikiComponent {
       pre(node) {
         this.addClassToHast(node, 'p-4');
         this.addClassToHast(node, 'overflow-x-auto');
+        this.addClassToHast(node, 'rounded-md');
       },
     },
   ];

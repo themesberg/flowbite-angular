@@ -12,6 +12,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
 /**
@@ -26,11 +27,11 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
 
-  protected readonly themeService = inject(ButtonThemeService);
-
   protected override contentClasses = signal<properties.ButtonClass>(
     properties.ButtonClassInstance,
   );
+
+  protected readonly themeService = inject(ButtonThemeService);
 
   //#region properties
   public color = input<keyof properties.ButtonColors>('info');
@@ -48,7 +49,7 @@ export class ButtonComponent extends BaseComponent {
   public gradientDuoTone = input<
     keyof properties.ButtonDuoToneColors | undefined
   >(undefined);
-  public customStyle = input<Partial<properties.ButtonBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.ButtonBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

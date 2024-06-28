@@ -18,6 +18,5 @@ import {
     SidebarToggleComponent,
   ],
   templateUrl: './docs.component.html',
-  styleUrl: './docs.component.css',
 })
 export class DocsComponent {}

@@ -1,9 +1,7 @@
 import * as properties from './navbar.theme';
 
 import { BaseComponent } from '../base.component';
-import { NavbarState } from '../../services/state/navbar.state';
 import { NavbarThemeService } from './navbar.theme.service';
-import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import {
@@ -13,6 +11,8 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
+import { NavbarStateService } from '../../services';
 import { NgClass } from '@angular/common';
 
 /**
@@ -23,17 +23,27 @@ import { NgClass } from '@angular/common';
   imports: [NgClass],
   selector: 'flowbite-navbar',
   templateUrl: './navbar.component.html',
-  providers: [SignalStoreService<NavbarState>],
+  providers: [
+    {
+      provide: NavbarStateService,
+      useFactory: () => {
+        const service = inject(NavbarStateService, {
+          skipSelf: true,
+          optional: true,
+        });
+        return service || new NavbarStateService();
+      },
+    },
+  ],
 })
 export class NavbarComponent extends BaseComponent {
-  protected readonly themeService = inject(NavbarThemeService);
-  protected readonly narbarSignalStoreService = inject<
-    SignalStoreService<NavbarState>
-  >(SignalStoreService<NavbarState>);
-
   protected override contentClasses = signal<properties.NavbarClass>(
     properties.NavbarClassInstance,
   );
+
+  protected readonly themeService = inject(NavbarThemeService);
+  protected readonly navbarStateService: NavbarStateService =
+    inject(NavbarStateService);
 
   //#region properties
   public isRounded = input<boolean, string | boolean>(false, {
@@ -45,7 +55,7 @@ export class NavbarComponent extends BaseComponent {
   public isFixed = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<Partial<properties.NavbarBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.NavbarBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

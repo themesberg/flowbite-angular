@@ -14,11 +14,9 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common/flowbite.type';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 
-/**
- * @see https://flowbite.com/docs/components/alerts/
- */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet],
@@ -28,11 +26,11 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 export class AlertComponent extends BaseComponent implements OnInit {
   @HostBinding('role') protected hostRoleValue = 'alert';
 
-  protected readonly themeService = inject(AlertThemeService);
-
   protected override contentClasses = signal<properties.AlertClass>(
     properties.AlertClassInstance,
   );
+
+  protected readonly themeService = inject(AlertThemeService);
 
   //#region properties
   public color = input<keyof properties.AlertColors>('blue');
@@ -40,7 +38,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   public hasBorderAccent = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<Partial<properties.AlertBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.AlertBaseTheme>>({});
 
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);

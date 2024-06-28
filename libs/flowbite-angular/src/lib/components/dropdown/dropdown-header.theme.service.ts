@@ -4,7 +4,7 @@ import {
   DropdownHeaderProperties,
 } from './dropdown-header.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -27,7 +27,7 @@ export class DropdownHeaderThemeService
 
     const output: DropdownHeaderClass = {
       rootClass: '',
-      root: twMerge(theme.root.base),
+      root: twMerge(theme.base),
     };
 
     return output;

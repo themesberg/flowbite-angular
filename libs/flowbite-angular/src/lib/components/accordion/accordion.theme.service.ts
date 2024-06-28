@@ -4,7 +4,7 @@ import {
   AccordionProperties,
 } from './accordion.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 import { twMerge } from 'tailwind-merge';
 
 import { InjectionToken, inject } from '@angular/core';
@@ -24,10 +24,7 @@ export class AccordionThemeService
     );
 
     const output: AccordionClass = {
-      rootClass: twMerge(
-        theme.root.base,
-        theme.root.isFlush?.[properties.isFlush],
-      ),
+      rootClass: twMerge(theme.base, theme.isFlush[properties.isFlush]),
     };
 
     return output;

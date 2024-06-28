@@ -4,6 +4,7 @@ import { BaseInputDirective } from './base-input.directive';
 import { InputDirectiveThemeService } from './input.directive.theme.service';
 import { booleanToFlowbiteBoolean } from '../../../utils/boolean.util';
 
+import { DeepPartial } from '../../../common';
 import { Directive, HostBinding, inject, input, signal } from '@angular/core';
 
 @Directive({
@@ -12,29 +13,32 @@ import { Directive, HostBinding, inject, input, signal } from '@angular/core';
 })
 export class InputDirective extends BaseInputDirective {
   @HostBinding('attr.disabled') get getIsDisabled() {
-    return this.stateService.select('isDisabled')() || null;
+    return this.formFieldStateService.select('isDisabled')() || null;
   }
-
-  protected readonly themeService = inject(InputDirectiveThemeService);
 
   protected override contentClasses = signal<properties.InputDirectiveClass>(
     properties.inputDirectiveClassInstance,
   );
 
+  protected readonly themeService = inject(InputDirectiveThemeService);
+
   //#region properties
-  public customStyle = input<Partial<properties.InputDirectiveBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.InputDirectiveBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       disabled: booleanToFlowbiteBoolean(
-        this.stateService.select('isDisabled')(),
+        this.formFieldStateService.select('isDisabled')(),
       ),
-      size: this.stateService.select('size')(),
-      validate: this.stateService.select('validate')(),
-      prefix: this.stateService.select('prefix')(),
-      floatingLabelType: this.stateService.select('floatingLabelType')(),
+      size: this.formFieldStateService.select('size')(),
+      validate: this.formFieldStateService.select('validate')(),
+      prefix: this.formFieldStateService.select('prefix')(),
+      floatingLabelType:
+        this.formFieldStateService.select('floatingLabelType')(),
       customStyle: this.customStyle(),
     });
 

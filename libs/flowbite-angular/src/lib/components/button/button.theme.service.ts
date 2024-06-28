@@ -1,6 +1,6 @@
 import { ButtonBaseTheme, ButtonClass, ButtonProperties } from './button.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -22,17 +22,17 @@ export class ButtonThemeService
     const output: ButtonClass = {
       rootClass: twMerge(
         properties.gradientDuoTone && properties.outline == 'outline'
-          ? theme.root.base?.['span']
-          : `${theme.root.base?.['default']} ${theme.root.size?.[properties.size]}`,
+          ? theme.base?.['span']
+          : `${theme.base?.['default']} ${theme.size?.[properties.size]}`,
         properties.gradientDuoTone
-          ? theme.root.gradientDuoTone?.[properties.gradientDuoTone][
+          ? theme.gradientDuoTone?.[properties.gradientDuoTone][
               properties.outline
             ]
           : properties.gradientMonochrome
-            ? theme.root.gradientMonochrome?.[properties.gradientMonochrome]
-            : theme.root.color?.[properties.color][properties.outline],
-        theme.root.isPill?.[properties.isPill],
-        theme.root.isDisabled?.[properties.isDisabled],
+            ? theme.gradientMonochrome[properties.gradientMonochrome]
+            : theme.color?.[properties.color][properties.outline],
+        theme.isPill?.[properties.isPill],
+        theme.isDisabled?.[properties.isDisabled],
       ),
       spanClass: twMerge(
         theme.span.base,

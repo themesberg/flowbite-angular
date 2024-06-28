@@ -4,7 +4,7 @@ import {
   SidebarItemClass,
   SidebarItemProperties,
 } from './sidebar-item.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -24,7 +24,7 @@ export class SidebarItemThemeService
     );
 
     const output: SidebarItemClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.base),
       sidebarIconClass: twMerge(theme.icon.base),
     };
 

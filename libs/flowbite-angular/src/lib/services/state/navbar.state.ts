@@ -1,3 +1,9 @@
+import { Injectable } from '@angular/core';
+import { SignalStoreService } from '../signal-store.service';
+
 export interface NavbarState {
-  isCollapsed: boolean;
+  isOpen: boolean;
 }
+
+@Injectable()
+export class NavbarStateService extends SignalStoreService<NavbarState> {}

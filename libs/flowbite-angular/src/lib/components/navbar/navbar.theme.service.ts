@@ -1,6 +1,6 @@
 import { FlowbiteThemeService } from '../../common';
 import { NavbarBaseTheme, NavbarClass, NavbarProperties } from './navbar.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -22,11 +22,11 @@ export class NavbarThemeService
 
     const output: NavbarClass = {
       rootClass: twMerge(
-        theme.root.base,
-        theme.root.color?.['gray'],
-        theme.root.isRounded?.[properties.isRounded],
-        theme.root.hasBorder?.[properties.hasBorder],
-        theme.root.isFixed?.[properties.isFixed],
+        theme.base,
+        theme.color?.['gray'],
+        theme.isRounded?.[properties.isRounded],
+        theme.hasBorder?.[properties.hasBorder],
+        theme.isFixed?.[properties.isFixed],
       ),
     };
 

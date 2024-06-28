@@ -3,6 +3,7 @@ import * as properties from './helper.directive.theme';
 import { BaseInputDirective } from './base-input.directive';
 import { HelperDirectiveThemeService } from './helper.directive.theme.service';
 
+import { DeepPartial } from '../../../common';
 import { Directive, inject, input, signal } from '@angular/core';
 
 @Directive({
@@ -10,20 +11,22 @@ import { Directive, inject, input, signal } from '@angular/core';
   selector: '[flowbiteHelper]',
 })
 export class HelperDirective extends BaseInputDirective {
-  protected readonly themeService = inject(HelperDirectiveThemeService);
-
   protected override contentClasses = signal<properties.HelperDirectiveClass>(
     properties.helperDirectiveClassInstance,
   );
 
+  protected readonly themeService = inject(HelperDirectiveThemeService);
+
   //#region properties
-  public customStyle = input<Partial<properties.HelperDirectiveBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.HelperDirectiveBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      validate: this.stateService.select('validate')(),
+      validate: this.formFieldStateService.select('validate')(),
       customStyle: this.customStyle(),
     });
 

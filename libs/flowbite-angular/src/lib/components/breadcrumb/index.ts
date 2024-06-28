@@ -3,7 +3,6 @@ export {
   BreadcrumbProperties,
   BreadcrumbClass,
   BreadcrumbBaseTheme,
-  BreadcrumbRootTheme,
   breadcrumbTheme,
   BreadcrumbClassInstance,
 } from './breadcrumb.theme';

@@ -4,7 +4,6 @@ export {
   NavbarClass,
   NavbarColors,
   NavbarBaseTheme,
-  NavbarRootTheme,
   navbarTheme,
   NavbarClassInstance,
 } from './navbar.theme';
@@ -18,7 +17,6 @@ export {
   NavbarBrandProperties,
   NavbarBrandClass,
   NavbarBrandBaseTheme,
-  NavbarBrandRootTheme,
   navbarBrandTheme,
   NavbarBrandClassInstance,
 } from './navbar-brand.theme';
@@ -32,7 +30,6 @@ export {
   NavbarContentProperties,
   NavbarContentClass,
   NavbarContentBaseTheme,
-  NavbarContentRootTheme,
   NavBarContentListTheme,
   navbarContentTheme,
   NavbarContentClassInstance,
@@ -48,7 +45,6 @@ export {
   NavbarItemClass,
   NavbarItemColors,
   NavbarItemBaseTheme,
-  NavbarItemRootTheme,
   navbarItemTheme,
   NavbarItemClassInstance,
 } from './navbar-item.theme';
@@ -63,7 +59,6 @@ export {
   NavbarToggleClass,
   NavbarToggleClassInstance,
   NavbarToggleProperties,
-  NavbarToggleRootTheme,
   navbarToogleTheme,
 } from './navbar-toggle.theme';
 export {

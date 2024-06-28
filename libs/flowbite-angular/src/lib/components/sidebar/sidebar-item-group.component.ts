@@ -3,24 +3,55 @@ import * as properties from './sidebar-item-group.theme';
 import { BaseComponent } from '../base.component';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
 
-import { Component, inject, input, signal } from '@angular/core';
-import { NgClass } from '@angular/common';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  booleanAttribute,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+import { DeepPartial } from '../../common';
+import { NgClass, NgIf } from '@angular/common';
+import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
 
 @Component({
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgIf],
   selector: 'flowbite-sidebar-item-group',
   templateUrl: './sidebar-item-group.component.html',
+  providers: [
+    {
+      provide: SidebarItemGroupStateService,
+      useFactory: () => {
+        const service = inject(SidebarItemGroupStateService, {
+          skipSelf: true,
+          optional: true,
+        });
+        return service || new SidebarItemGroupStateService();
+      },
+    },
+  ],
 })
-export class SidebarItemGroupComponent extends BaseComponent {
-  protected readonly themeService = inject(SidebarItemGroupThemeService);
-
+export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   protected override contentClasses = signal<properties.SidebarItemGroupClass>(
     properties.SidebarItemGroupClassInstance,
   );
 
+  protected readonly sidebarItemGroupStateService: SidebarItemGroupStateService =
+    inject(SidebarItemGroupStateService);
+  protected readonly themeService = inject(SidebarItemGroupThemeService);
+
   //#region properties
-  public customStyle = input<Partial<properties.SidebarItemGroupBaseTheme>>({});
+  public isOpen = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
+  public title = input.required<string>();
+  public customStyle = input<DeepPartial<properties.SidebarItemGroupBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseComponent implementation
@@ -32,4 +63,21 @@ export class SidebarItemGroupComponent extends BaseComponent {
     this.contentClasses.set(propertyClass);
   }
   //#endregion
+
+  protected onClick(): void {
+    const isOpen = this.sidebarItemGroupStateService.select('isOpen')();
+
+    this.sidebarItemGroupStateService.set('isOpen', !isOpen);
+  }
+
+  public override ngOnInit(): void {
+    super.ngOnInit();
+
+    effect(
+      () => {
+        this.sidebarItemGroupStateService.set('isOpen', this.isOpen());
+      },
+      { injector: this.injector, allowSignalWrites: true },
+    );
+  }
 }

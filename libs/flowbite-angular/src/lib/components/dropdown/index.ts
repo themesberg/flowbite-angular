@@ -4,7 +4,6 @@ export {
   DropdownClass,
   DropdownPositions,
   DropdownBaseTheme,
-  DropdownRootTheme,
   DropdownContainerTheme,
   DropdownContentTheme,
   DropdownSpanTheme,
@@ -22,7 +21,6 @@ export {
   DropdownItemProperties,
   DropdownItemClass,
   DropdownItemBaseTheme,
-  DropdownItemRootTheme,
   dropdownItemTheme,
   DropdownItemClassInstance,
 } from './dropdown-item.theme';
@@ -36,7 +34,6 @@ export {
   DropdownDividerProperties,
   DropdownDividerClass,
   DropdownDividerBaseTheme,
-  DropdownDividerRootTheme,
   dropdownDividerTheme,
   DropdownDividerClassInstance,
 } from './dropdown-divider.theme';
@@ -50,7 +47,6 @@ export {
   DropdownHeaderProperties,
   DropdownHeaderClass,
   DropdownHeaderBaseTheme,
-  DropdownHeaderRootTheme,
   dropdownHeaderTheme,
   DropdownHeaderClassInstance,
 } from './dropdown-header.theme';

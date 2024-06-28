@@ -1,28 +1,42 @@
-import { FlowbiteBoolean, FlowbiteClass } from '../../common';
+import {
+  DeepPartial,
+  FlowbiteClass,
+  FlowbiteColors,
+  FlowbiteSizes,
+} from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type SidebarToggleProperties = {
-  isCollapsed: keyof FlowbiteBoolean;
-  customStyle: Partial<SidebarToggleBaseTheme>;
-};
+//#region region Component theme option
+export interface SidebarToggleColors extends Pick<FlowbiteColors, 'gray'> {
+  [key: string]: string;
+}
 
-export type SidebarToggleBaseTheme = {
-  root: Partial<SidebarToggleRootTheme>;
-};
+export interface SidebarToggleSizes extends Pick<FlowbiteSizes, 'sm'> {
+  [key: string]: string;
+}
+//#endregion
 
-export type SidebarToggleRootTheme = {
+export interface SidebarToggleProperties {
+  color: keyof SidebarToggleColors;
+  size: keyof SidebarToggleSizes;
+  customStyle: DeepPartial<SidebarToggleBaseTheme>;
+}
+
+export interface SidebarToggleBaseTheme {
   base: string;
-  isCollapsed: Record<keyof FlowbiteBoolean, string>;
-};
+  color: SidebarToggleColors;
+  size: SidebarToggleSizes;
+}
 
-export const sidebarToggleTheme: SidebarToggleBaseTheme = {
-  root: {
-    base: 'cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
-    isCollapsed: {
-      enabled: 'w-16',
-      disabled: 'w-64',
-    },
+export const sidebarToggleTheme: SidebarToggleBaseTheme = createTheme({
+  base: 'cursor-pointer inline-flex items-center p-2 justify-center rounded-lg focus:outline-none focus:ring-2',
+  color: {
+    gray: 'text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
   },
-};
+  size: {
+    sm: 'text-sm',
+  },
+});
 
 export type SidebarToggleClass = FlowbiteClass;
 

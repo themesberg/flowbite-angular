@@ -4,6 +4,7 @@ import { BaseComponent } from '../base.component';
 import { ModalBodyThemeService } from './modal-body.theme.service';
 
 import { Component, inject, input, signal } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -13,14 +14,14 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
-  protected readonly themeService = inject(ModalBodyThemeService);
-
   protected override contentClasses = signal<properties.ModalBodyClass>(
     properties.ModalBodyClassInstance,
   );
 
+  protected readonly themeService = inject(ModalBodyThemeService);
+
   //#region properties
-  public customStyle = input<Partial<properties.ModalBodyBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.ModalBodyBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

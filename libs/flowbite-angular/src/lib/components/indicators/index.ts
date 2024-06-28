@@ -4,7 +4,6 @@ export {
   indicatorClass,
   IndicatorColors,
   IndicatorBaseTheme,
-  IndicatorRootTheme,
   IndicatorPositions,
   IndicatorSizes,
   indicatorTheme,

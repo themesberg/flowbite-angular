@@ -4,7 +4,7 @@ import {
   SidebarClass,
   SidebarProperties,
 } from './sidebar.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -25,8 +25,9 @@ export class SidebarThemeService
 
     const output: SidebarClass = {
       rootClass: twMerge(
-        theme.root.base,
-        theme.root.isRounded?.[properties.isRounded],
+        theme.base,
+        theme.isRounded?.[properties.isRounded],
+        theme.isOpen?.[properties.isOpen],
       ),
     };
 

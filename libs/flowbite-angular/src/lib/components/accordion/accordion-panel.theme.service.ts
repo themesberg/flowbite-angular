@@ -5,7 +5,7 @@ import {
   AccordionPanelProperties,
 } from './accordion-panel.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -27,7 +27,7 @@ export class AccordionPanelThemeService
     );
 
     const output: AccordionPanelClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.base),
     };
 
     return output;

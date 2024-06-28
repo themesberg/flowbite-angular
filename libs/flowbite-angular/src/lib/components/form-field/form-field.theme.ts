@@ -1,11 +1,13 @@
+import { DeepPartial } from '../../common';
 import {
   FlowbiteBoolean,
   FlowbiteClass,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
+import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
-export type FormFieldTypes = {
+export interface FormFieldTypes {
   email: string;
   password: string;
   file: string;
@@ -14,50 +16,45 @@ export type FormFieldTypes = {
   tel: string;
   text: string;
   url: string;
-};
+}
 
-export type FormFieldFloatingLabelTypes = {
+export interface FormFieldFloatingLabelTypes {
   standard: string;
   fill: string;
   outline: string;
-};
-export type FormFieldValidations = {
+}
+export interface FormFieldValidations {
   success: string;
   error: string;
-};
+}
 
-export type FormFieldPrefixes = {
+export interface FormFieldPrefixes {
   addon: string;
   icon: string;
-};
-export type FormFieldSizes = Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> & {
+}
+export interface FormFieldSizes
+  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
   [key: string]: string;
-};
+}
 //#endregion
 
-export type FormFieldProperties = {
+export interface FormFieldProperties {
   type: keyof FormFieldTypes;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
   size: keyof FormFieldSizes;
   disabled: keyof FlowbiteBoolean;
   validate?: keyof FormFieldValidations;
   prefix?: keyof FormFieldPrefixes;
-  customStyle: Partial<FormFieldBaseTheme>;
-};
+  customStyle: DeepPartial<FormFieldBaseTheme>;
+}
 
-export type FormFieldBaseTheme = {
-  root: Partial<FormFieldRootTheme>;
-};
-
-export type FormFieldRootTheme = {
+export interface FormFieldBaseTheme {
   base: string;
-};
+}
 
-export const formFieldTheme: FormFieldBaseTheme = {
-  root: {
-    base: '',
-  },
-};
+export const formFieldTheme: FormFieldBaseTheme = createTheme({
+  base: '',
+});
 
 export type FormFieldClass = FlowbiteClass;
 

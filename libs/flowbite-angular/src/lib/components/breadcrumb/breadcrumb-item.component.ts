@@ -2,7 +2,7 @@ import * as properties from './breadcrumb-item.theme';
 
 import { BaseComponent } from '../base.component';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
-import { FlowbiteLink } from '../../common/flowbite.type';
+import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { LinkRouter } from '../../services';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
@@ -15,16 +15,18 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './breadcrumb-item.component.html',
 })
 export class BreadcrumbItemComponent extends BaseComponent {
-  protected readonly themeService = inject(BreadcrumbItemThemeService);
-  protected readonly linkRouter = inject(LinkRouter);
-
   protected override contentClasses = signal<properties.BreadcrumbItemClass>(
     properties.BreadcrumbItemClassInstance,
   );
 
+  protected readonly themeService = inject(BreadcrumbItemThemeService);
+  protected readonly linkRouter = inject(LinkRouter);
+
   //#region properties
   public link = input<FlowbiteLink | undefined>(undefined);
-  public customStyle = input<Partial<properties.BreadcrumbItemBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.BreadcrumbItemBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseComponent implementation

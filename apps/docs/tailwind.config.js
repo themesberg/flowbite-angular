@@ -3,9 +3,9 @@ const { join } = require('path');
 module.exports = {
   content: [
     join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
-    './libs/flowbite-angular/src/**/!(*.stories|*.spec).{ts,html}',
+    './apps/docs/src/**/!(*.stories|*.spec).{ts,html}',
   ],
-  safelist: ['p-4', 'overflow-x-auto'],
+  safelist: ['p-4', 'overflow-x-auto', 'rounded-md'],
   darkMode: 'class',
   theme: {
     extend: {

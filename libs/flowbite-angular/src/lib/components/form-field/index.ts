@@ -10,7 +10,6 @@ export {
   FormFieldValidations,
   FormFieldClass,
   FormFieldBaseTheme,
-  FormFieldRootTheme,
   FormFieldClassInstance,
   formFieldTheme,
 } from './form-field.theme';

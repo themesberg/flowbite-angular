@@ -2,12 +2,11 @@ import * as properties from './sidebar-item.theme';
 
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base.component';
-import { FlowbiteLink } from '../../common/flowbite.type';
+import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { LinkRouter } from '../../services';
 import { SanitizeHtmlPipe } from '../../pipes';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
-import { SidebarState } from '../../services/state/sidebar.state';
-import { SignalStoreService } from '../../services/signal-store.service';
+import { SidebarStateService } from '../../services/state/sidebar.state';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
@@ -27,21 +26,20 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar-item.component.html',
 })
 export class SidebarItemComponent extends BaseComponent {
-  protected readonly themeService = inject(SidebarItemThemeService);
-  protected readonly sidebarSignalStoreService = inject<
-    SignalStoreService<SidebarState>
-  >(SignalStoreService<SidebarState>);
-  protected readonly linkRouter = inject(LinkRouter);
-
   protected override contentClasses = signal<properties.SidebarItemClass>(
     properties.SidebarItemClassInstance,
   );
+
+  protected readonly themeService = inject(SidebarItemThemeService);
+  protected readonly sidebarStateService: SidebarStateService =
+    inject(SidebarStateService);
+  protected readonly linkRouter = inject(LinkRouter);
 
   //#region properties
   public icon = input<string | undefined>(undefined);
   public link = input<FlowbiteLink | undefined>(undefined);
   public label = input<string | undefined>(undefined);
-  public customStyle = input<Partial<properties.SidebarItemBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.SidebarItemBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

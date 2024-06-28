@@ -1,15 +1,15 @@
 import * as properties from './accordion-title.theme';
 
 import {
-  AccordionPanelState,
-  AccordionState,
-} from '../../services/state/accordion.state';
+  AccordionPanelStateService,
+  AccordionStateService,
+} from '../../services';
 import { AccordionTitleThemeService } from './accordion-title.theme.service';
 import { BaseComponent } from '../base.component';
-import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -19,20 +19,21 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  protected readonly themeService = inject(AccordionTitleThemeService);
-  protected readonly accordionPanelSignalStoreService = inject<
-    SignalStoreService<AccordionPanelState>
-  >(SignalStoreService<AccordionPanelState>);
-  protected readonly accordionSignalStoreService = inject<
-    SignalStoreService<AccordionState>
-  >(SignalStoreService<AccordionState>);
-
   protected override contentClasses = signal<properties.AccordionTitleClass>(
     properties.AccordionTitleClassInstance,
   );
 
+  protected readonly themeService = inject(AccordionTitleThemeService);
+  protected readonly accordionPanelStateService: AccordionPanelStateService =
+    inject(AccordionPanelStateService);
+  protected readonly accordionStateService: AccordionStateService = inject(
+    AccordionStateService,
+  );
+
   //#region properties
-  public customStyle = input<Partial<properties.AccordionTitleBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.AccordionTitleBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseComponent implementation
@@ -40,10 +41,10 @@ export class AccordionTitleComponent extends BaseComponent {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
       isFlush: booleanToFlowbiteBoolean(
-        this.accordionSignalStoreService.select('isFlush')(),
+        this.accordionStateService.select('isFlush')(),
       ),
       isOpen: booleanToFlowbiteBoolean(
-        this.accordionPanelSignalStoreService.select('isOpen')(),
+        this.accordionPanelStateService.select('isOpen')(),
       ),
     });
 
@@ -53,8 +54,8 @@ export class AccordionTitleComponent extends BaseComponent {
 
   @HostListener('click')
   protected onClick(): void {
-    const isOpen = this.accordionPanelSignalStoreService.select('isOpen')();
+    const isOpen = this.accordionPanelStateService.select('isOpen')();
 
-    this.accordionPanelSignalStoreService.set('isOpen', !isOpen);
+    this.accordionPanelStateService.set('isOpen', !isOpen);
   }
 }

@@ -5,7 +5,7 @@ import {
   NavbarToggleClass,
   NavbarToggleProperties,
 } from './navbar-toggle.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN =
@@ -22,7 +22,7 @@ export class NavbarToggleThemeService
     const theme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: NavbarToggleClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.base),
     };
 
     return output;

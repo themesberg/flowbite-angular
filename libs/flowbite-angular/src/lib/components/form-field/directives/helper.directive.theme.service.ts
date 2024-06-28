@@ -4,7 +4,7 @@ import {
   HelperDirectiveClass,
   HelperDirectiveProperties,
 } from './helper.directive.theme';
-import { mergeTheme } from '../../../utils/merge-theme';
+import { mergeTheme } from '../../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -29,8 +29,8 @@ export class HelperDirectiveThemeService
 
     const output: HelperDirectiveClass = {
       rootClass: twMerge(
-        theme.root.base,
-        properties.validate && theme.root.validation?.[properties.validate],
+        theme.base,
+        properties.validate && theme.validation?.[properties.validate],
       ),
     };
 

@@ -3,6 +3,7 @@ import {
   AccordionPanelThemeService,
   AccordionThemeService,
   AccordionTitleThemeService,
+  AddonDirectiveThemeService,
   AlertThemeService,
   BadgeThemeService,
   BreadcrumbItemThemeService,
@@ -23,6 +24,11 @@ import {
   FLOWBITE_BREADCRUMB_THEME_TOKEN,
   FLOWBITE_BUTTON_THEME_TOKEN,
   FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
+  FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN,
+  FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN,
+  FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN,
+  FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN,
+  FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN,
   FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN,
   FLOWBITE_DROPDOWN_HEADER_THEME_TOKEN,
   FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN,
@@ -38,12 +44,17 @@ import {
   FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
   FLOWBITE_NAVBAR_THEME_TOKEN,
   FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
+  FLOWBITE_SCROLL_TOP_THEME_TOKEN,
   FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
   FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
   FLOWBITE_SIDEBAR_THEME_TOKEN,
   FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
   FormFieldThemeService,
+  HelperDirectiveThemeService,
+  IconDirectiveThemeService,
   IndicatorThemeService,
+  InputDirectiveThemeService,
+  LabelDirectiveThemeService,
   ModalBodyThemeService,
   ModalFooterThemeService,
   ModalHeaderThemeService,
@@ -53,6 +64,7 @@ import {
   NavbarItemThemeService,
   NavbarThemeService,
   NavbarToggleThemeService,
+  ScrollTopThemeService,
   SidebarItemGroupThemeService,
   SidebarItemThemeService,
   SidebarThemeService,
@@ -61,6 +73,7 @@ import {
   accordionPanelTheme,
   accordionTheme,
   accordionTitleTheme,
+  addonDirectiveTheme,
   alertTheme,
   badgeTheme,
   breadcrumbItemTheme,
@@ -72,7 +85,11 @@ import {
   dropdownItemTheme,
   dropdownTheme,
   formFieldTheme,
+  helperDirectiveTheme,
+  iconDirectiveTheme,
   indicatorTheme,
+  inputDirectiveTheme,
+  labelDirectiveTheme,
   modalBodyTheme,
   modalFooterTheme,
   modalHeaderTheme,
@@ -82,6 +99,7 @@ import {
   navbarItemTheme,
   navbarTheme,
   navbarToogleTheme,
+  scrollTopTheme,
   sidebarItemGroupTheme,
   sidebarItemTheme,
   sidebarTheme,
@@ -89,37 +107,7 @@ import {
 } from '../components';
 import { FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR } from '.';
 
-import {
-  AddonDirectiveThemeService,
-  FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN,
-} from '../components/form-field/directives/addon.directive.theme.service';
 import { EnvironmentProviders, makeEnvironmentProviders } from '@angular/core';
-import {
-  FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN,
-  HelperDirectiveThemeService,
-} from '../components/form-field/directives/helper.directive.theme.service';
-import {
-  FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN,
-  IconDirectiveThemeService,
-} from '../components/form-field/directives/icon.directive.theme.service';
-import {
-  FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN,
-  InputDirectiveThemeService,
-} from '../components/form-field/directives/input.directive.theme.service';
-import {
-  FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN,
-  LabelDirectiveThemeService,
-} from '../components/form-field/directives/label.directive.theme.service';
-import {
-  FLOWBITE_SCROLL_TOP_THEME_TOKEN,
-  ScrollTopThemeService,
-  scrollTopTheme,
-} from '../components/scroll-top';
-import { addonDirectiveTheme } from '../components/form-field/directives/addon.directive.theme';
-import { helperDirectiveTheme } from '../components/form-field/directives/helper.directive.theme';
-import { iconDirectiveTheme } from '../components/form-field/directives/icon.directive.theme';
-import { inputDirectiveTheme } from '../components/form-field/directives/input.directive.theme';
-import { labelDirectiveTheme } from '../components/form-field/directives/label.directive.theme';
 
 export function initFlowbite(): EnvironmentProviders {
   const serviceProviders = makeEnvironmentProviders([

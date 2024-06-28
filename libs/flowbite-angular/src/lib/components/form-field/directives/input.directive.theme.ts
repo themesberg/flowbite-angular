@@ -1,3 +1,4 @@
+import { DeepPartial } from '../../../common';
 import { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
 import {
   FormFieldFloatingLabelTypes,
@@ -5,58 +6,53 @@ import {
   FormFieldSizes,
   FormFieldValidations,
 } from '../form-field.theme';
+import { createTheme } from '../../../utils/theme/create-theme';
 
-export type InputDirectiveProperties = {
+export interface InputDirectiveProperties {
   size: keyof FormFieldSizes;
   disabled: keyof FlowbiteBoolean;
   validate?: keyof FormFieldValidations;
   floatingLabelType?: keyof FormFieldFloatingLabelTypes;
   prefix?: keyof FormFieldPrefixes;
-  customStyle: Partial<InputDirectiveBaseTheme>;
-};
+  customStyle: DeepPartial<InputDirectiveBaseTheme>;
+}
 
-export type InputDirectiveBaseTheme = {
-  default: InputDirectiveRootTheme;
-  floatingLabel: Record<
-    keyof FormFieldFloatingLabelTypes,
-    InputDirectiveRootTheme
-  >;
-};
-
-export type InputDirectiveRootTheme = {
+export interface InputDirectiveBaseTheme {
   base: string;
   default: string;
-  size: Record<keyof FormFieldSizes, string>;
-  disabled: Record<keyof FlowbiteBoolean, string>;
-  validation: Record<keyof FormFieldValidations, string>;
-  prefix?: Record<keyof FormFieldPrefixes, string>;
-};
+  size: FormFieldSizes;
+  disabled: FlowbiteBoolean;
+  validation: FormFieldValidations;
+  prefix?: FormFieldPrefixes;
+  floatingLabel: Record<
+    keyof FormFieldFloatingLabelTypes,
+    Omit<InputDirectiveBaseTheme, 'floatingLabel'>
+  >;
+}
 
-export const inputDirectiveTheme: InputDirectiveBaseTheme = {
-  default: {
-    base: 'border rounded-lg block w-full focus:outline-none',
-    default:
-      'focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white',
-    disabled: {
-      enabled:
-        'cursor-not-allowed bg-gray-100 border-gray-300 text-gray-900 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:placeholder-gray-400',
-      disabled: '',
-    },
-    prefix: {
-      addon: 'rounded-none rounded-r-lg flex-1 min-w-0',
-      icon: 'pl-10',
-    },
-    size: {
-      sm: 'text-xs p-2',
-      md: 'text-sm p-2.5',
-      lg: 'text-md p-4',
-    },
-    validation: {
-      success:
-        'text-gray-900 border-green-600 dark:text-white dark:border-green-500 dark:focus:border-green-500 focus:border-green-600 bg-green-50 dark:bg-gray-700',
-      error:
-        'text-gray-900 border-red-600 dark:text-white dark:border-red-500 dark:focus:border-red-500 focus:border-red-600 bg-red-50 dark:bg-gray-700',
-    },
+export const inputDirectiveTheme: InputDirectiveBaseTheme = createTheme({
+  base: 'border rounded-lg block w-full focus:outline-none',
+  default:
+    'focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white',
+  disabled: {
+    enabled:
+      'cursor-not-allowed bg-gray-100 border-gray-300 text-gray-900 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:placeholder-gray-400',
+    disabled: '',
+  },
+  prefix: {
+    addon: 'rounded-none rounded-r-lg flex-1 min-w-0',
+    icon: 'pl-10',
+  },
+  size: {
+    sm: 'text-xs p-2',
+    md: 'text-sm p-2.5',
+    lg: 'text-md p-4',
+  },
+  validation: {
+    success:
+      'text-gray-900 border-green-600 dark:text-white dark:border-green-500 dark:focus:border-green-500 focus:border-green-600 bg-green-50 dark:bg-gray-700',
+    error:
+      'text-gray-900 border-red-600 dark:text-white dark:border-red-500 dark:focus:border-red-500 focus:border-red-600 bg-red-50 dark:bg-gray-700',
   },
   floatingLabel: {
     standard: {
@@ -123,7 +119,7 @@ export const inputDirectiveTheme: InputDirectiveBaseTheme = {
       },
     },
   },
-};
+});
 
 export type InputDirectiveClass = FlowbiteClass;
 

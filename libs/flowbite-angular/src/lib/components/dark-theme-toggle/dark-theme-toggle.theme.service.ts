@@ -4,7 +4,7 @@ import {
   DarkThemeToggleProperties,
 } from './dark-theme-toggle.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -28,7 +28,7 @@ export class DarkThemeToggleThemeService
     );
 
     const output: DarkThemeToggleClass = {
-      rootClass: twMerge(theme.button.base),
+      rootClass: twMerge(theme.base),
     };
 
     return output;

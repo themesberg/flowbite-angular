@@ -2,7 +2,7 @@ import * as properties from './dark-theme-toggle.theme';
 
 import { BaseComponent } from '../base.component';
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
-import { GlobalSignalStoreService } from '../../services/global-signal-store.service';
+import { GlobalSignalStoreService } from '../../services';
 import { ThemeState } from '../../services/state/theme.state';
 
 import {
@@ -15,6 +15,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass, NgIf } from '@angular/common';
 
 @Component({
@@ -27,17 +28,19 @@ export class DarkThemeToggleComponent
   extends BaseComponent
   implements AfterViewInit
 {
-  protected readonly themeService = inject(DarkThemeToggleThemeService);
-  protected readonly themeGlobalSignalStoreService = inject<
-    GlobalSignalStoreService<ThemeState>
-  >(GlobalSignalStoreService<ThemeState>);
-
   protected override contentClasses = signal<properties.DarkThemeToggleClass>(
     properties.DarkThemeToggleClassInstance,
   );
 
+  protected readonly themeService = inject(DarkThemeToggleThemeService);
+  protected readonly themeStateService = inject<
+    GlobalSignalStoreService<ThemeState>
+  >(GlobalSignalStoreService<ThemeState>);
+
   //#region properties
-  public customStyle = input<Partial<properties.DarkThemeToggleBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.DarkThemeToggleBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseComponent implementation
@@ -60,16 +63,16 @@ export class DarkThemeToggleComponent
           (!localStorageTheme &&
             window.matchMedia('(prefers-color-scheme: dark)').matches)
         ) {
-          this.themeGlobalSignalStoreService.set('theme', 'dark');
+          this.themeStateService.set('theme', 'dark');
           document.documentElement.classList.add('dark');
         } else {
-          this.themeGlobalSignalStoreService.set('theme', 'light');
+          this.themeStateService.set('theme', 'light');
           document.documentElement.classList.remove('dark');
         }
 
         effect(
           () => {
-            const theme = this.themeGlobalSignalStoreService.select('theme')();
+            const theme = this.themeStateService.select('theme')();
 
             localStorage.setItem('color-theme', theme);
             theme === 'dark'
@@ -85,8 +88,8 @@ export class DarkThemeToggleComponent
 
   @HostListener('click')
   protected onClick() {
-    if (this.themeGlobalSignalStoreService.select('theme')() === 'light')
-      this.themeGlobalSignalStoreService.set('theme', 'dark');
-    else this.themeGlobalSignalStoreService.set('theme', 'light');
+    if (this.themeStateService.select('theme')() === 'light')
+      this.themeStateService.set('theme', 'dark');
+    else this.themeStateService.set('theme', 'light');
   }
 }

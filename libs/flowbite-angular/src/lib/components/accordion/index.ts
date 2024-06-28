@@ -3,9 +3,9 @@ export {
   AccordionProperties,
   AccordionClass,
   AccordionBaseTheme,
-  AccordionRootTheme,
   accordionTheme,
   AccordionClassInstance,
+  AccordionColors,
 } from './accordion.theme';
 export {
   AccordionThemeService,
@@ -17,7 +17,6 @@ export {
   AccordionContentProperties,
   AccordionContentClass,
   AccordionContentBaseTheme,
-  AccordionContentRootTheme,
   accordionContentTheme,
   AccordionContentClassInstance,
 } from './accordion-content.theme';
@@ -31,7 +30,6 @@ export {
   AccordionPanelProperties,
   AccordionPanelClass,
   AccordionPanelBaseTheme,
-  AccordionPanelRootTheme,
   AccordionPanelClassInstance,
   accordionPanelTheme,
 } from './accordion-panel.theme';
@@ -45,7 +43,6 @@ export {
   AccordionTitleProperties,
   AccordionTitleClass,
   AccordionTitleBaseTheme,
-  AccordionTitleRootTheme,
   accordionTitleTheme,
   AccordionTitleClassInstance,
 } from './accordion-title.theme';

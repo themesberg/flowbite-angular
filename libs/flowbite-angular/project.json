@@ -10,7 +10,8 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/flowbite-angular"],
       "options": {
-        "project": "libs/flowbite-angular/ng-package.json"
+        "project": "libs/flowbite-angular/ng-package.json",
+        "tailwindConfig": "libs/flowbite-angular/tailwind.config.js"
       },
       "configurations": {
         "production": {

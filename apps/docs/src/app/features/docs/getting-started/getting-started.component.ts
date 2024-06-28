@@ -1,11 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'flowbite-getting-started',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterOutlet],
   templateUrl: './getting-started.component.html',
-  styleUrl: './getting-started.component.css',
 })
 export class GettingStartedComponent {}

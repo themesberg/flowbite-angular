@@ -4,7 +4,8 @@ import { BaseComponent } from '../base.component';
 
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
-import { NavbarState, SignalStoreService } from '../../services';
+import { DeepPartial } from '../../common';
+import { NavbarStateService } from '../../services';
 import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
 
 @Component({
@@ -14,17 +15,16 @@ import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
   templateUrl: './navbar-toggle.component.html',
 })
 export class NavbarToggleComponent extends BaseComponent {
-  protected readonly themeService = inject(NavbarToggleThemeService);
-  protected readonly navbarService = inject<SignalStoreService<NavbarState>>(
-    SignalStoreService<NavbarState>,
-  );
-
   protected override contentClasses = signal<properties.NavbarToggleClass>(
     properties.NavbarToggleClassInstance,
   );
 
+  protected readonly themeService = inject(NavbarToggleThemeService);
+  protected readonly navbarStateService =
+    inject<NavbarStateService>(NavbarStateService);
+
   //#region properties
-  public customStyle = input<Partial<properties.NavbarToggleBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.NavbarToggleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -39,8 +39,8 @@ export class NavbarToggleComponent extends BaseComponent {
 
   @HostListener('click')
   protected onClick(): void {
-    const isCollapsed = this.navbarService.select('isCollapsed')();
+    const isCollapsed = this.navbarStateService.select('isOpen')();
 
-    this.navbarService.set('isCollapsed', !isCollapsed);
+    this.navbarStateService.set('isOpen', !isCollapsed);
   }
 }

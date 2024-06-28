@@ -3,7 +3,6 @@ export {
   DarkThemeToggleProperties,
   DarkThemeToggleClass,
   DarkThemeToggleBaseTheme,
-  DarkThemeToggleButtonTheme,
   darkThemeToggleTheme,
   DarkThemeToggleClassInstance,
 } from './dark-theme-toggle.theme';

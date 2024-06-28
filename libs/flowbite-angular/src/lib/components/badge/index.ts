@@ -5,7 +5,6 @@ export {
   BadgeColors,
   BadgeSizes,
   BadgeBaseTheme,
-  BadgeRootTheme,
   badgeTheme,
   BadgeClassInstance,
 } from './badge.theme';

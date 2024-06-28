@@ -1,38 +1,33 @@
+import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { FlowbiteClass } from '../../common';
-import { FlowbiteLink } from '../../common/flowbite.type';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type SidebarItemProperties = {
+export interface SidebarItemProperties {
   icon: string | undefined;
   link?: FlowbiteLink;
   label: string | undefined;
-  customStyle: Partial<SidebarItemBaseTheme>;
-};
+  customStyle: DeepPartial<SidebarItemBaseTheme>;
+}
 
-export type SidebarItemBaseTheme = {
-  root: Partial<SidebarItemRootTheme>;
-  icon: Partial<SidebarItemIconRootTheme>;
-};
-
-export type SidebarItemRootTheme = {
+export interface SidebarItemBaseTheme {
   base: string;
-};
+  icon: DeepPartial<SidebarItemIconRootTheme>;
+}
 
-export type SidebarItemIconRootTheme = {
+export interface SidebarItemIconRootTheme {
   base: string;
-};
+}
 
-export const sidebarItemTheme: SidebarItemBaseTheme = {
-  root: {
-    base: 'group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700',
-  },
+export const sidebarItemTheme: SidebarItemBaseTheme = createTheme({
+  base: 'group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700',
   icon: {
     base: 'flex-1 whitespace-nowrap',
   },
-};
+});
 
-export type SidebarItemClass = FlowbiteClass & {
+export interface SidebarItemClass extends FlowbiteClass {
   sidebarIconClass: string;
-};
+}
 
 export const SidebarItemClassInstance: SidebarItemClass = {
   rootClass: '',

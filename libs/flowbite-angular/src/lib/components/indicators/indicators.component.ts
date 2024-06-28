@@ -10,6 +10,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
 
 /**
@@ -22,11 +23,11 @@ import { NgClass } from '@angular/common';
   templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent extends BaseComponent {
-  protected readonly themeService = inject(IndicatorThemeService);
-
   protected override contentClasses = signal<properties.indicatorClass>(
     properties.IndicatorClassInstance,
   );
+
+  protected readonly themeService = inject(IndicatorThemeService);
 
   //#region properties
   public isPill = input<boolean, string | boolean>(false, {
@@ -52,7 +53,7 @@ export class IndicatorComponent extends BaseComponent {
   public placement = input<keyof properties.IndicatorPositions | undefined>(
     undefined,
   );
-  public customStyle = input<Partial<properties.IndicatorBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.IndicatorBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

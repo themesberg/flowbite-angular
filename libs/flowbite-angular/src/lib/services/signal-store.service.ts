@@ -1,6 +1,5 @@
 import { Injectable, Signal, computed, signal } from '@angular/core';
 
-@Injectable()
 export class SignalStoreService<T> {
   private _state = signal({} as T);
 
@@ -20,3 +19,6 @@ export class SignalStoreService<T> {
     this._state.set(state);
   }
 }
+
+@Injectable({ providedIn: 'root' })
+export class GlobalSignalStoreService<T> extends SignalStoreService<T> {}

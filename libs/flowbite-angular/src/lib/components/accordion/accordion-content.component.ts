@@ -1,11 +1,11 @@
 import * as properties from './accordion-content.theme';
 
 import { AccordionContentThemeService } from './accordion-content.theme.service';
-import { AccordionPanelState } from '../../services/state/accordion.state';
+import { AccordionPanelStateService } from '../../services';
 import { BaseComponent } from '../base.component';
-import { SignalStoreService } from '../../services/signal-store.service';
 
 import { Component, inject, input, signal } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass, NgIf } from '@angular/common';
 
 @Component({
@@ -15,20 +15,21 @@ import { NgClass, NgIf } from '@angular/common';
   templateUrl: './accordion-content.component.html',
 })
 export class AccordionContentComponent extends BaseComponent {
-  protected readonly themeService = inject(AccordionContentThemeService);
-  protected readonly accordionPanelSignalStoreService = inject<
-    SignalStoreService<AccordionPanelState>
-  >(SignalStoreService<AccordionPanelState>);
-
   protected override contentClasses = signal<properties.AccordionContentClass>(
     properties.AccordionContentClassInstance,
   );
 
+  protected readonly themeService = inject(AccordionContentThemeService);
+  protected readonly accordionPanelStateService: AccordionPanelStateService =
+    inject(AccordionPanelStateService);
+
   //#region properties
-  public customStyle = input<Partial<properties.AccordionContentBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.AccordionContentBaseTheme>>(
+    {},
+  );
   //#endregion
 
-  //#region  BaseComponent implementation
+  //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),

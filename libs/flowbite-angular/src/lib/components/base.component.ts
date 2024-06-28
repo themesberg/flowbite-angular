@@ -14,8 +14,6 @@ import {
 
 @Component({
   template: '',
-  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
-  host: { '[class]': 'contentClasses()?.rootClass' },
 })
 export abstract class BaseComponent implements OnInit {
   @HostBinding('attr.flowbite-id')
@@ -23,11 +21,15 @@ export abstract class BaseComponent implements OnInit {
     return this.flowbiteId();
   }
 
+  @HostBinding('class')
+  protected get getHostClass() {
+    return this.contentClasses()?.rootClass;
+  }
+
   public readonly flowbiteId = signal<Guid>(new Guid(Guid.empty));
+  protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   protected readonly injector = inject(Injector);
-
-  protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   public ngOnInit(): void {
     afterNextRender(

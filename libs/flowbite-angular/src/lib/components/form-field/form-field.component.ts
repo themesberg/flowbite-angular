@@ -1,9 +1,8 @@
 import * as properties from './form-field.theme';
 
 import { BaseComponent } from '../base.component';
-import { FormFieldState } from '../../services/state/form-field.state';
+import { FormFieldStateService } from '../../services/state/form-field.state';
 import { FormFieldThemeService } from './form-field.theme.service';
-import { SignalStoreService } from '../../services';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import { AsyncPipe, NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
@@ -15,22 +14,34 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
 
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, AsyncPipe, NgTemplateOutlet],
   selector: 'flowbite-form-field',
   templateUrl: './form-field.component.html',
-  providers: [SignalStoreService<FormFieldState>],
+  providers: [
+    {
+      provide: FormFieldStateService,
+      useFactory: () => {
+        const service = inject(FormFieldStateService, {
+          skipSelf: true,
+          optional: true,
+        });
+        return service || new FormFieldStateService();
+      },
+    },
+  ],
 })
 export class FormFieldComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(FormFieldThemeService);
-  protected readonly stateService = inject<SignalStoreService<FormFieldState>>(
-    SignalStoreService<FormFieldState>,
-  );
-
   protected override contentClasses = signal<properties.FormFieldClass>(
     properties.FormFieldClassInstance,
+  );
+
+  protected readonly themeService = inject(FormFieldThemeService);
+  protected readonly formsFieldStateService: FormFieldStateService = inject(
+    FormFieldStateService,
   );
 
   //#region properties
@@ -48,7 +59,7 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
   public prefix = input<keyof properties.FormFieldPrefixes | undefined>(
     undefined,
   );
-  public customStyle = input<Partial<properties.FormFieldBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.FormFieldBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -68,7 +79,7 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.stateService.setState({
+    this.formsFieldStateService.setState({
       type: this.type(),
       floatingLabelType: this.floatingLabelType(),
       size: this.size(),

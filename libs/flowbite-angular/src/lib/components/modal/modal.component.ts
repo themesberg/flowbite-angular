@@ -1,8 +1,7 @@
 import * as properties from './modal.theme';
 
 import { BaseComponent } from '../base.component';
-import { ModalState } from '../../services/state/modal.state';
-import { SignalStoreService } from '../../services/signal-store.service';
+import { ModalStateService } from '../../services/state/modal.state';
 
 import {
   AfterViewInit,
@@ -15,6 +14,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { ModalThemeService } from './modal.theme.service';
 import { NgClass } from '@angular/common';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
@@ -27,19 +27,29 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
   imports: [NgClass],
   selector: 'flowbite-modal',
   templateUrl: './modal.component.html',
-  providers: [SignalStoreService<ModalState>],
+  providers: [
+    {
+      provide: ModalStateService,
+      useFactory: () => {
+        const service = inject(ModalStateService, {
+          skipSelf: true,
+          optional: true,
+        });
+        return service || new ModalStateService();
+      },
+    },
+  ],
 })
 export class ModalComponent extends BaseComponent implements AfterViewInit {
   @HostBinding('tabindex') protected tabIndex = '-1';
 
-  protected readonly themeService = inject(ModalThemeService);
-  protected readonly signalStoreService = inject<
-    SignalStoreService<ModalState>
-  >(SignalStoreService<ModalState>);
-
   protected override contentClasses = signal<properties.ModalClass>(
     properties.ModalClassInstance,
   );
+
+  protected readonly themeService = inject(ModalThemeService);
+  protected readonly modalStateService: ModalStateService =
+    inject(ModalStateService);
 
   //#region properties
   public size = input<keyof properties.ModalSizes>('md');
@@ -50,14 +60,14 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   public isOpen = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<Partial<properties.ModalBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.ModalBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isOpen: booleanToFlowbiteBoolean(
-        this.signalStoreService.select('isOpen')(),
+        this.modalStateService.select('isOpen')(),
       ),
       size: this.size(),
       position: this.position(),
@@ -71,33 +81,33 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
     afterNextRender(
       () => {
-        this.signalStoreService.set('isOpen', this.isOpen());
+        this.modalStateService.set('isOpen', this.isOpen());
       },
       { injector: this.injector },
     );
   }
 
   open() {
-    this.signalStoreService.set('isOpen', true);
+    this.modalStateService.set('isOpen', true);
     this.changeBackdrop();
   }
 
   close() {
-    this.signalStoreService.set('isOpen', false);
+    this.modalStateService.set('isOpen', false);
     this.changeBackdrop();
   }
 
   toggle() {
-    this.signalStoreService.set(
+    this.modalStateService.set(
       'isOpen',
-      this.signalStoreService.select('isOpen')(),
+      this.modalStateService.select('isOpen')(),
     );
     this.changeBackdrop();
   }
 
   // If isOpen changes, add or remove backdrop
   changeBackdrop() {
-    if (this.signalStoreService.select('isOpen')()) {
+    if (this.modalStateService.select('isOpen')()) {
       const blurDiv = document.createElement('div');
       blurDiv.classList.add(
         'bg-gray-900',

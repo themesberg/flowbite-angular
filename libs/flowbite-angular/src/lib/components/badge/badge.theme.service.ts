@@ -1,6 +1,6 @@
 import { BadgeBaseTheme, BadgeClass, BadgeProperties } from './badge.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -22,16 +22,16 @@ export class BadgeThemeService
 
     const output: BadgeClass = {
       rootClass: twMerge(
-        theme.root.base,
-        theme.root.color?.[properties.color],
-        theme.root.size?.[properties.size],
-        theme.root.isPill?.[
+        theme.base,
+        theme.color?.[properties.color],
+        theme.size?.[properties.size],
+        theme.isPill?.[
           properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
             ? 'enabled'
             : properties.isPill
         ],
-        theme.root.isIconOnly?.[properties.isIconOnly],
-        theme.root.link?.[properties.link ? 'enabled' : 'disabled'],
+        theme.isIconOnly?.[properties.isIconOnly],
+        theme.link?.[properties.link ? 'enabled' : 'disabled'],
       ),
     };
 

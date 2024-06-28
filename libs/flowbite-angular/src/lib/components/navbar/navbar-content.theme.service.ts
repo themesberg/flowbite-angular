@@ -4,7 +4,7 @@ import {
   NavbarContentClass,
   NavbarContentProperties,
 } from './navbar-content.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -26,10 +26,7 @@ export class NavbarContentThemeService
     );
 
     const output: NavbarContentClass = {
-      rootClass: twMerge(
-        theme.root.base,
-        theme.root.isOpen?.[properties.isOpen],
-      ),
+      rootClass: twMerge(theme.base, theme.isOpen?.[properties.isOpen]),
       navbarContentListClass: twMerge(theme.list.base),
     };
 

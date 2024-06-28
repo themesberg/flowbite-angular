@@ -4,7 +4,7 @@ import {
   AccordionTitleProperties,
 } from './accordion-title.theme';
 import { FlowbiteThemeService } from '../../common';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 import { twMerge } from 'tailwind-merge';
 
 import { InjectionToken, inject } from '@angular/core';
@@ -27,8 +27,8 @@ export class AccordionTitleThemeService
 
     const output: AccordionTitleClass = {
       rootClass: twMerge(
-        theme.root.base,
-        theme.root.flushAndOpen?.[properties.isFlush][properties.isOpen],
+        theme.base,
+        theme.flushAndOpen[properties.isFlush][properties.isOpen],
       ),
     };
 

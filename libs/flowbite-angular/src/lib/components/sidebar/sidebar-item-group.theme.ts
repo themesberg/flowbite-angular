@@ -1,22 +1,17 @@
-import { FlowbiteClass } from '../../common';
+import { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type SidebarItemGroupProperties = {
-  customStyle: Partial<SidebarItemGroupBaseTheme>;
-};
+export interface SidebarItemGroupProperties {
+  customStyle: DeepPartial<SidebarItemGroupBaseTheme>;
+}
 
-export type SidebarItemGroupBaseTheme = {
-  root: Partial<SidebarItemGroupRootTheme>;
-};
-
-export type SidebarItemGroupRootTheme = {
+export interface SidebarItemGroupBaseTheme {
   base: string;
-};
+}
 
-export const sidebarItemGroupTheme: SidebarItemGroupBaseTheme = {
-  root: {
-    base: 'flex flex-col space-y-2',
-  },
-};
+export const sidebarItemGroupTheme: SidebarItemGroupBaseTheme = createTheme({
+  base: 'flex flex-col py-2 font-semibold cursor-pointer',
+});
 
 export type SidebarItemGroupClass = FlowbiteClass;
 

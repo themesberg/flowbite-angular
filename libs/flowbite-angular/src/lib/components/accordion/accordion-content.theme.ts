@@ -1,21 +1,15 @@
-import { FlowbiteClass } from '../../common';
+import { DeepPartial, FlowbiteClass } from '../../common';
 
-export type AccordionContentProperties = {
-  customStyle: Partial<AccordionContentBaseTheme>;
-};
+export interface AccordionContentProperties {
+  customStyle: DeepPartial<AccordionContentBaseTheme>;
+}
 
-export type AccordionContentBaseTheme = {
-  root: Partial<AccordionContentRootTheme>;
-};
-
-export type AccordionContentRootTheme = {
+export interface AccordionContentBaseTheme {
   base: string;
-};
+}
 
 export const accordionContentTheme: AccordionContentBaseTheme = {
-  root: {
-    base: 'block py-5 px-5 dark:bg-gray-900',
-  },
+  base: 'block py-5 px-5 dark:bg-gray-900',
 };
 
 export type AccordionContentClass = FlowbiteClass;

@@ -1,11 +1,11 @@
 import * as properties from './sidebar-toggle.theme';
 
 import { BaseComponent } from '../base.component';
-import { SidebarState, SignalStoreService } from '../../services';
+import { SidebarStateService } from '../../services';
 import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { DeepPartial } from '../../common';
 
 @Component({
   standalone: true,
@@ -14,25 +14,27 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './sidebar-toggle.component.html',
 })
 export class SidebarToggleComponent extends BaseComponent {
-  protected readonly themeService = inject(SidebarToggleThemeService);
-  protected readonly sidebarService = inject<SignalStoreService<SidebarState>>(
-    SignalStoreService<SidebarState>,
-  );
-
   protected override contentClasses = signal<properties.SidebarToggleClass>(
     properties.SidebarToggleClassInstance,
   );
 
+  protected readonly themeService = inject(SidebarToggleThemeService);
+  protected readonly sidebarStateService: SidebarStateService =
+    inject(SidebarStateService);
+
   //#region properties
-  public customStyle = input<Partial<properties.SidebarToggleBaseTheme>>({});
+  public color = input<keyof properties.SidebarToggleColors>('gray');
+  public size = input<keyof properties.SidebarToggleSizes>('sm');
+  public customStyle = input<DeepPartial<properties.SidebarToggleBaseTheme>>(
+    {},
+  );
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      isCollapsed: booleanToFlowbiteBoolean(
-        this.sidebarService.select('isCollapsed')(),
-      ),
+      color: this.color(),
+      size: this.size(),
       customStyle: this.customStyle(),
     });
 
@@ -42,8 +44,8 @@ export class SidebarToggleComponent extends BaseComponent {
 
   @HostListener('click')
   protected onClick(): void {
-    const isCollapsed = this.sidebarService.select('isCollapsed')();
+    const isOpen = this.sidebarStateService.select('isOpen')();
 
-    this.sidebarService.set('isCollapsed', !isCollapsed);
+    this.sidebarStateService.set('isOpen', !isOpen);
   }
 }

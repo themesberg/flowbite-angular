@@ -4,7 +4,7 @@ import {
   ModalBodyClass,
   ModalBodyProperties,
 } from './modal-body.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -21,7 +21,7 @@ export class ModalBodyThemeService
     const theme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: ModalBodyClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.base),
     };
 
     return output;

@@ -5,6 +5,7 @@ import { DropdownComponent } from './dropdown.component';
 import { DropdownItemThemeService } from './dropdown-item.theme.service';
 
 import { Component, inject, input, signal } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -14,16 +15,16 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-item.component.html',
 })
 export class DropdownItemComponent extends BaseComponent {
-  protected readonly themeService = inject(DropdownItemThemeService);
-  protected readonly dropdownComponent =
-    inject<DropdownComponent>(DropdownComponent);
-
   protected override contentClasses = signal<properties.DropdownItemClass>(
     properties.DropdownItemClassInstance,
   );
 
+  protected readonly themeService = inject(DropdownItemThemeService);
+  protected readonly dropdownComponent =
+    inject<DropdownComponent>(DropdownComponent);
+
   //#region properties
-  public customStyle = input<Partial<properties.DropdownItemBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.DropdownItemBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

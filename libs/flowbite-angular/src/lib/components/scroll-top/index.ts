@@ -3,9 +3,10 @@ export {
   ScrollTopBaseTheme,
   ScrollTopClass,
   ScrollTopProperties,
-  ScrollTopRootTheme,
   scrollTopClassInstance,
   scrollTopTheme,
+  ScrollTopColors,
+  ScrollTopPositions,
 } from './scroll-top.theme';
 export {
   FLOWBITE_SCROLL_TOP_THEME_TOKEN,

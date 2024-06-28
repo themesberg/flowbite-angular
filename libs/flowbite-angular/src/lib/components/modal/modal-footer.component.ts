@@ -5,6 +5,7 @@ import { ModalComponent } from './modal.component';
 import { ModalFooterThemeService } from './modal-footer.theme.service';
 
 import { Component, inject, input, signal } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -14,15 +15,15 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
-  protected readonly themeService = inject(ModalFooterThemeService);
-  protected readonly modalComponent = inject<ModalComponent>(ModalComponent);
-
   protected override contentClasses = signal<properties.ModalFooterClass>(
     properties.ModalFooterClassInstance,
   );
 
+  protected readonly themeService = inject(ModalFooterThemeService);
+  protected readonly modalComponent = inject<ModalComponent>(ModalComponent);
+
   //#region properties
-  public customStyle = input<Partial<properties.ModalFooterBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.ModalFooterBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

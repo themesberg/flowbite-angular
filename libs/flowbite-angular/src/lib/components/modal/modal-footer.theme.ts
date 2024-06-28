@@ -1,22 +1,17 @@
-import { FlowbiteClass } from '../../common';
+import { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type ModalFooterProperties = {
-  customStyle: Partial<ModalFooterBaseTheme>;
-};
+export interface ModalFooterProperties {
+  customStyle: DeepPartial<ModalFooterBaseTheme>;
+}
 
-export type ModalFooterBaseTheme = {
-  root: Partial<ModalFooterRootTheme>;
-};
-
-export type ModalFooterRootTheme = {
+export interface ModalFooterBaseTheme {
   base: string;
-};
+}
 
-export const modalFooterTheme: ModalFooterBaseTheme = {
-  root: {
-    base: 'flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600',
-  },
-};
+export const modalFooterTheme: ModalFooterBaseTheme = createTheme({
+  base: 'flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600',
+});
 
 export type ModalFooterClass = FlowbiteClass;
 

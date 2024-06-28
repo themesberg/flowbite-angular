@@ -4,7 +4,7 @@ import {
   SidebarToggleClass,
   SidebarToggleProperties,
 } from './sidebar-toggle.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -24,8 +24,9 @@ export class SidebarToggleThemeService
 
     const output: SidebarToggleClass = {
       rootClass: twMerge(
-        theme.root.base,
-        theme.root.isCollapsed?.[properties.isCollapsed],
+        theme.base,
+        theme.color?.[properties.color],
+        theme.size?.[properties.color],
       ),
     };
 

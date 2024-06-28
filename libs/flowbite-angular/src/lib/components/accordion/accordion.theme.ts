@@ -1,31 +1,38 @@
-import { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
+import { DeepPartial } from '../../common';
+import {
+  FlowbiteBoolean,
+  FlowbiteClass,
+  FlowbiteColors,
+} from '../../common/flowbite.theme';
+import { createClass } from '../../utils/theme/create-class';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type AccordionProperties = {
+//#region region Component theme option
+export interface AccordionColors extends Pick<FlowbiteColors, 'gray'> {
+  [key: string]: string;
+}
+//#endregion
+
+export interface AccordionProperties {
   isFlush: keyof FlowbiteBoolean;
-  customStyle: Partial<AccordionBaseTheme>;
-};
+  customStyle: DeepPartial<AccordionBaseTheme>;
+}
 
-export type AccordionBaseTheme = {
-  root: Partial<AccordionRootTheme>;
-};
-
-export type AccordionRootTheme = {
+export interface AccordionBaseTheme {
   base: string;
-  isFlush: Record<keyof FlowbiteBoolean, string>;
-};
+  isFlush: FlowbiteBoolean;
+}
 
-export const accordionTheme: AccordionBaseTheme = {
-  root: {
-    base: 'divide-y divide-gray-200 overflow-hidden border-gray-200 dark:divide-gray-700 dark:border-gray-700',
-    isFlush: {
-      enabled: 'border-b',
-      disabled: 'rounded-lg border',
-    },
+export const accordionTheme: AccordionBaseTheme = createTheme({
+  base: 'divide-y overflow-hidden',
+  isFlush: {
+    enabled: 'border-b',
+    disabled: 'rounded-lg border',
   },
-};
+});
 
 export type AccordionClass = FlowbiteClass;
 
-export const AccordionClassInstance: AccordionClass = {
+export const AccordionClassInstance = createClass<AccordionClass>({
   rootClass: '',
-};
+});

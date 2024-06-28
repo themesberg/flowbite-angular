@@ -4,7 +4,7 @@ import {
   LabelDirectiveClass,
   LabelDirectiveProperties,
 } from './label.directive.theme';
-import { mergeTheme } from '../../../utils/merge-theme';
+import { mergeTheme } from '../../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -38,13 +38,11 @@ export class LabelDirectiveThemeService
           !properties.validate &&
           theme.floatingLabel[properties.floatingLabelType].default,
 
-        !properties.floatingLabelType && theme.default.base,
+        !properties.floatingLabelType && theme.base,
         !properties.floatingLabelType &&
           properties.validate &&
-          theme.default.validation[properties.validate],
-        !properties.floatingLabelType &&
-          !properties.validate &&
-          theme.default.default,
+          theme.validation[properties.validate],
+        !properties.floatingLabelType && !properties.validate && theme.default,
       ),
     };
 

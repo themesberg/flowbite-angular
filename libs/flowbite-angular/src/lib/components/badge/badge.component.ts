@@ -2,7 +2,7 @@ import * as properties from './badge.theme';
 
 import { BadgeThemeService } from './badge.theme.service';
 import { BaseComponent } from '../base.component';
-import { FlowbiteLink } from '../../common/flowbite.type';
+import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { LinkRouter } from '../../services/link-router.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
@@ -27,12 +27,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './badge.component.html',
 })
 export class BadgeComponent extends BaseComponent {
-  protected readonly themeService = inject(BadgeThemeService);
-  protected readonly linkRouter = inject(LinkRouter);
-
   protected override contentClasses = signal<properties.BadgeClass>(
     properties.BadgeClassInstance,
   );
+
+  protected readonly themeService = inject(BadgeThemeService);
+  protected readonly linkRouter = inject(LinkRouter);
 
   //#region properties
   public color = input<keyof properties.BadgeColors>('blue');
@@ -44,7 +44,7 @@ export class BadgeComponent extends BaseComponent {
     transform: booleanAttribute,
   });
   public link = input<FlowbiteLink | undefined>(undefined);
-  public customStyle = input<Partial<properties.BadgeBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.BadgeBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

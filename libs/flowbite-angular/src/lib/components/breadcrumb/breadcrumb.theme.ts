@@ -1,22 +1,17 @@
-import { FlowbiteClass } from '../../common';
+import { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type BreadcrumbProperties = {
-  customStyle: Partial<BreadcrumbBaseTheme>;
-};
+export interface BreadcrumbProperties {
+  customStyle: DeepPartial<BreadcrumbBaseTheme>;
+}
 
-export type BreadcrumbBaseTheme = {
-  root: Partial<BreadcrumbRootTheme>;
-};
-
-export type BreadcrumbRootTheme = {
+export interface BreadcrumbBaseTheme {
   base: string;
-};
+}
 
-export const breadcrumbTheme: BreadcrumbBaseTheme = {
-  root: {
-    base: 'flex items-center',
-  },
-};
+export const breadcrumbTheme: BreadcrumbBaseTheme = createTheme({
+  base: 'flex items-center',
+});
 
 export type BreadcrumbClass = FlowbiteClass;
 

@@ -1,11 +1,10 @@
 import * as properties from './accordion.theme';
 
-import { AccordionState } from '../../services/state/accordion.state';
 import { AccordionThemeService } from './accordion.theme.service';
 import { BaseComponent } from '../base.component';
-import { SignalStoreService } from '../../services/signal-store.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
+import { AccordionStateService } from '../../services';
 import {
   Component,
   OnInit,
@@ -15,6 +14,7 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
 
 /**
@@ -25,30 +25,41 @@ import { NgClass } from '@angular/common';
   imports: [NgClass],
   selector: 'flowbite-accordion',
   templateUrl: './accordion.component.html',
-  providers: [SignalStoreService<AccordionState>],
+  providers: [
+    {
+      provide: AccordionStateService,
+      useFactory: () => {
+        const service = inject(AccordionStateService, {
+          skipSelf: true,
+          optional: true,
+        });
+        return service || new AccordionStateService();
+      },
+    },
+  ],
 })
 export class AccordionComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(AccordionThemeService);
-  protected readonly accordionService = inject<
-    SignalStoreService<AccordionState>
-  >(SignalStoreService<AccordionState>);
-
   protected override contentClasses = signal<properties.AccordionClass>(
     properties.AccordionClassInstance,
+  );
+
+  protected readonly themeService = inject(AccordionThemeService);
+  protected readonly accordionStateService: AccordionStateService = inject(
+    AccordionStateService,
   );
 
   //#region properties
   public isFlush = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<Partial<properties.AccordionBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.AccordionBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isFlush: booleanToFlowbiteBoolean(
-        this.accordionService.select('isFlush')(),
+        this.accordionStateService.select('isFlush')(),
       ),
       customStyle: this.customStyle(),
     });
@@ -62,7 +73,7 @@ export class AccordionComponent extends BaseComponent implements OnInit {
 
     effect(
       () => {
-        this.accordionService.set('isFlush', this.isFlush());
+        this.accordionStateService.set('isFlush', this.isFlush());
       },
       { injector: this.injector, allowSignalWrites: true },
     );

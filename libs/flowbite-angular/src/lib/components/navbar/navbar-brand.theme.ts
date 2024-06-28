@@ -1,22 +1,17 @@
-import { FlowbiteClass } from '../../common';
+import { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-export type NavbarBrandProperties = {
-  customStyle: Partial<NavbarBrandBaseTheme>;
-};
+export interface NavbarBrandProperties {
+  customStyle: DeepPartial<NavbarBrandBaseTheme>;
+}
 
-export type NavbarBrandBaseTheme = {
-  root: Partial<NavbarBrandRootTheme>;
-};
-
-export type NavbarBrandRootTheme = {
+export interface NavbarBrandBaseTheme {
   base: string;
-};
+}
 
-export const navbarBrandTheme: NavbarBrandBaseTheme = {
-  root: {
-    base: 'cursor-pointer flex items-center space-x-3 rtl:space-x-reverse',
-  },
-};
+export const navbarBrandTheme: NavbarBrandBaseTheme = createTheme({
+  base: 'cursor-pointer flex items-center space-x-3 rtl:space-x-reverse',
+});
 
 export type NavbarBrandClass = FlowbiteClass;
 

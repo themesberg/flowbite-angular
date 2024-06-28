@@ -3,7 +3,6 @@ export {
   AddonDirectiveBaseTheme,
   AddonDirectiveClass,
   AddonDirectiveProperties,
-  AddonDirectiveRootTheme,
   addonDirectiveClassInstance,
   addonDirectiveTheme,
 } from './addon.directive.theme';
@@ -19,7 +18,6 @@ export {
   HelperDirectiveBaseTheme,
   HelperDirectiveClass,
   HelperDirectiveProperties,
-  HelperDirectiveRootTheme,
   helperDirectiveClassInstance,
   helperDirectiveTheme,
 } from './helper.directive.theme';
@@ -33,7 +31,6 @@ export {
   IconDirectiveBaseTheme,
   IconDirectiveClass,
   IconDirectiveProperties,
-  IconDirectiveRootTheme,
   iconDirectiveClassInstance,
   iconDirectiveTheme,
 } from './icon.directive.theme';
@@ -47,7 +44,6 @@ export {
   InputDirectiveBaseTheme,
   InputDirectiveClass,
   InputDirectiveProperties,
-  InputDirectiveRootTheme,
   inputDirectiveClassInstance,
   inputDirectiveTheme,
 } from './input.directive.theme';
@@ -61,7 +57,6 @@ export {
   LabelDirectiveBaseTheme,
   LabelDirectiveClass,
   LabelDirectiveProperties,
-  LabelDirectiveRootTheme,
   labelDirectiveClassInstance,
   labelDirectiveTheme,
 } from './label.directive.theme';

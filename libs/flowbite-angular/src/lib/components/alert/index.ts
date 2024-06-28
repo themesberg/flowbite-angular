@@ -4,7 +4,6 @@ export {
   AlertClass,
   AlertColors,
   AlertBaseTheme,
-  AlertRootTheme,
   AlertButtonTheme,
   alertTheme,
   AlertClassInstance,

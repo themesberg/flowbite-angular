@@ -10,3 +10,9 @@ export type Combination<
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type FlowbiteLink = string | any[] | null | undefined;
+
+export type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;

@@ -1,29 +1,24 @@
-import { FlowbiteClass } from '../../../common';
+import { DeepPartial, FlowbiteClass } from '../../../common';
 import { FormFieldValidations } from '../form-field.theme';
+import { createTheme } from '../../../utils/theme/create-theme';
 
-export type HelperDirectiveProperties = {
+export interface HelperDirectiveProperties {
   validate?: keyof FormFieldValidations;
-  customStyle: Partial<HelperDirectiveBaseTheme>;
-};
+  customStyle: DeepPartial<HelperDirectiveBaseTheme>;
+}
 
-export type HelperDirectiveBaseTheme = {
-  root: Partial<HelperDirectiveRootTheme>;
-};
-
-export type HelperDirectiveRootTheme = {
+export interface HelperDirectiveBaseTheme {
   base: string;
-  validation: Record<keyof FormFieldValidations, string>;
-};
+  validation: FormFieldValidations;
+}
 
-export const helperDirectiveTheme: HelperDirectiveBaseTheme = {
-  root: {
-    base: 'mt-2 text-xs text-gray-500 dark:text-gray-400',
-    validation: {
-      success: 'text-green-600 dark:text-green-400',
-      error: 'text-red-600 dark:text-red-400',
-    },
+export const helperDirectiveTheme: HelperDirectiveBaseTheme = createTheme({
+  base: 'mt-2 text-xs text-gray-500 dark:text-gray-400',
+  validation: {
+    success: 'text-green-600 dark:text-green-400',
+    error: 'text-red-600 dark:text-red-400',
   },
-};
+});
 
 export type HelperDirectiveClass = FlowbiteClass;
 

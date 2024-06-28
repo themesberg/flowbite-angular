@@ -3,7 +3,6 @@ export {
   SidebarProperties,
   SidebarClass,
   SidebarBaseTheme,
-  SidebarRootTheme,
   sidebarTheme,
   SidebarClassInstance,
 } from './sidebar.theme';
@@ -17,7 +16,6 @@ export {
   SidebarItemProperties,
   SidebarItemClass,
   SidebarItemBaseTheme,
-  SidebarItemRootTheme,
   SidebarItemIconRootTheme,
   sidebarItemTheme,
   SidebarItemClassInstance,
@@ -32,7 +30,6 @@ export {
   SidebarItemGroupProperties,
   SidebarItemGroupClass,
   SidebarItemGroupBaseTheme,
-  SidebarItemGroupRootTheme,
   sidebarItemGroupTheme,
   SidebarItemGroupClassInstance,
 } from './sidebar-item-group.theme';
@@ -47,8 +44,9 @@ export {
   SidebarToggleClass,
   SidebarToggleClassInstance,
   SidebarToggleProperties,
-  SidebarToggleRootTheme,
   sidebarToggleTheme,
+  SidebarToggleColors,
+  SidebarToggleSizes,
 } from './sidebar-toggle.theme';
 export {
   FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,

@@ -4,7 +4,7 @@ import {
   InputDirectiveClass,
   InputDirectiveProperties,
 } from './input.directive.theme';
-import { mergeTheme } from '../../../utils/merge-theme';
+import { mergeTheme } from '../../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -49,22 +49,22 @@ export class InputDirectiveThemeService
             properties.size
           ],
 
-        !properties.floatingLabelType && theme.default.base,
+        !properties.floatingLabelType && theme.base,
         !properties.floatingLabelType &&
           properties.validate &&
-          theme.default.validation[properties.validate],
+          theme.validation[properties.validate],
         !properties.floatingLabelType &&
           !properties.validate &&
           properties.disabled &&
-          theme.default.disabled[properties.disabled],
+          theme.disabled[properties.disabled],
         !properties.floatingLabelType &&
           !properties.validate &&
           (!properties.disabled || properties.disabled === 'disabled') &&
-          theme.default.default,
+          theme.default,
         !properties.floatingLabelType &&
           properties.prefix &&
-          theme.default.prefix?.[properties.prefix],
-        !properties.floatingLabelType && theme.default.size[properties.size],
+          theme.prefix?.[properties.prefix],
+        !properties.floatingLabelType && theme.size[properties.size],
       ),
     };
 

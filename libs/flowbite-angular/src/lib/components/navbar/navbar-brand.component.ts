@@ -1,7 +1,7 @@
 import * as properties from './navbar-brand.theme';
 
 import { BaseComponent } from '../base.component';
-import { FlowbiteLink } from '../../common/flowbite.type';
+import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { LinkRouter } from '../../services';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 
@@ -15,15 +15,15 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar-brand.component.html',
 })
 export class NavbarBrandComponent extends BaseComponent {
-  protected readonly themeService = inject(NavbarBrandThemeService);
-  protected readonly linkRouter = inject(LinkRouter);
-
   protected override contentClasses = signal<properties.NavbarBrandClass>(
     properties.NavbarBrandClassInstance,
   );
 
+  protected readonly themeService = inject(NavbarBrandThemeService);
+  protected readonly linkRouter = inject(LinkRouter);
+
   //#region properties
-  public customStyle = input<Partial<properties.NavbarBrandBaseTheme>>({});
+  public customStyle = input<DeepPartial<properties.NavbarBrandBaseTheme>>({});
   public link = input<FlowbiteLink | undefined>(undefined);
   //#endregion
 

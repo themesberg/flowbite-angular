@@ -4,7 +4,7 @@ import {
   IndicatorProperties,
   indicatorClass,
 } from './indicators.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import { mergeTheme } from '../../utils/theme/merge-theme';
 
 import { InjectionToken, inject } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -25,19 +25,19 @@ export class IndicatorThemeService
 
     const output: indicatorClass = {
       rootClass: twMerge(
-        theme.root.base,
-        theme.root.hasBorder?.[properties.hasBorder],
-        theme.root.color?.[properties.color],
-        theme.root.isDisabled?.[properties.isDisabled],
+        theme.base,
+        theme.hasBorder?.[properties.hasBorder],
+        theme.color?.[properties.color],
+        theme.isDisabled?.[properties.isDisabled],
         properties.placement &&
           properties.hasOffset == 'enabled' &&
-          theme.root.hasOffset?.[properties.placement],
-        theme.root.isOutline?.[properties.isOutline],
-        theme.root.isPill?.[properties.isPill],
+          theme.hasOffset?.[properties.placement],
+        theme.isOutline?.[properties.isOutline],
+        theme.isPill?.[properties.isPill],
         properties.placement &&
-          'absolute ' + theme.root.placement?.[properties.placement],
-        theme.root.isRounded?.[properties.isRounded],
-        theme.root.size?.[properties.size],
+          'absolute ' + theme.placement?.[properties.placement],
+        theme.isRounded?.[properties.isRounded],
+        theme.size?.[properties.size],
       ),
     };
 
