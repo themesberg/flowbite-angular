@@ -1,4 +1,4 @@
-import { DeepPartial, FlowbiteClass } from '../../common';
+import type { DeepPartial, FlowbiteClass } from '../../common';
 
 export interface AccordionContentProperties {
   customStyle: DeepPartial<AccordionContentBaseTheme>;

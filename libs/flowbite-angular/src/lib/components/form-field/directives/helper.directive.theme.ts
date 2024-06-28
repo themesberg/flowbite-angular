@@ -1,6 +1,6 @@
-import { DeepPartial, FlowbiteClass } from '../../../common';
-import { FormFieldValidations } from '../form-field.theme';
+import type { DeepPartial, FlowbiteClass } from '../../../common';
 import { createTheme } from '../../../utils/theme/create-theme';
+import type { FormFieldValidations } from '../form-field.theme';
 
 export interface HelperDirectiveProperties {
   validate?: keyof FormFieldValidations;

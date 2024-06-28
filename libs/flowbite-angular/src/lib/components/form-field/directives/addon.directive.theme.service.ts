@@ -1,29 +1,19 @@
-import {
-  AddonDirectiveBaseTheme,
-  AddonDirectiveClass,
-  AddonDirectiveProperties,
-} from './addon.directive.theme';
-import { FlowbiteThemeService } from '../../../common';
+import type { FlowbiteThemeService } from '../../../common';
 import { mergeTheme } from '../../../utils/theme/merge-theme';
+import type { AddonDirectiveBaseTheme, AddonDirectiveClass, AddonDirectiveProperties } from './addon.directive.theme';
 
-import { InjectionToken, inject } from '@angular/core';
+import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN =
-  new InjectionToken<AddonDirectiveBaseTheme>(
-    'FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN',
-  );
+export const FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN = new InjectionToken<AddonDirectiveBaseTheme>(
+  'FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN',
+);
 
-export class AddonDirectiveThemeService
-  implements FlowbiteThemeService<AddonDirectiveProperties>
-{
+export class AddonDirectiveThemeService implements FlowbiteThemeService<AddonDirectiveProperties> {
   private readonly baseTheme = inject(FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN);
 
   public getClasses(properties: AddonDirectiveProperties): AddonDirectiveClass {
-    const theme: AddonDirectiveBaseTheme = mergeTheme(
-      this.baseTheme,
-      properties.customStyle,
-    );
+    const theme: AddonDirectiveBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: AddonDirectiveClass = {
       rootClass: twMerge(theme.base),

@@ -1,4 +1,5 @@
-import { Injectable, Signal, computed, signal } from '@angular/core';
+import type { Signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 export class SignalStoreService<T> {
   private _state = signal({} as T);

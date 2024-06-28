@@ -1,4 +1,4 @@
-export {
+export type {
   FlowbiteBoolean,
   FlowbiteColors,
   FlowbiteContentPositions,
@@ -13,5 +13,5 @@ export {
 } from './flowbite.theme';
 export { FlowbiteThemeService } from './flowbite.theme.service';
 export { initFlowbite } from './flowbite.theme.init';
-export { Combination, FlowbiteLink, DeepPartial } from './flowbite.type';
+export type { Combination, FlowbiteLink, DeepPartial } from './flowbite.type';
 export { FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR } from './flowbite.settings';

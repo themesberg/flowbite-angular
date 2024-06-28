@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
-
 import { SignalStoreService } from './signal-store.service';
+
+import { TestBed } from '@angular/core/testing';
 
 describe('SignalStoreService', () => {
   let service: SignalStoreService<unknown>;

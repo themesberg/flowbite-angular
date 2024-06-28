@@ -1,8 +1,9 @@
 import { ShikiComponent } from '../shiki/shiki.component';
 
-import { BundledLanguage } from 'shiki/langs';
-import { Component, Input } from '@angular/core';
+import type { BundledLanguage } from 'shiki/langs';
+
 import { NgClass, NgFor } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   standalone: true,

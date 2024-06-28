@@ -1,5 +1,4 @@
-import { Combination, DeepPartial } from '../../common/flowbite.type';
-import {
+import type {
   FlowbiteBoolean,
   FlowbiteClass,
   FlowbiteColors,
@@ -7,52 +6,26 @@ import {
   FlowbiteGradientDuoToneColors,
   FlowbiteSizes,
 } from '../../common/flowbite.theme';
+import type { Combination, DeepPartial } from '../../common/flowbite.type';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface ButtonColors
-  extends Pick<
-    FlowbiteColors,
-    | 'dark'
-    | 'failure'
-    | 'gray'
-    | 'info'
-    | 'light'
-    | 'purple'
-    | 'success'
-    | 'warning'
-  > {
+  extends Pick<FlowbiteColors, 'dark' | 'failure' | 'gray' | 'info' | 'light' | 'purple' | 'success' | 'warning'> {
   [key: string]: string;
 }
 
 export interface ButtonMonochromeColors
-  extends Pick<
-    FlowbiteGradientColors,
-    | 'info'
-    | 'success'
-    | 'cyan'
-    | 'teal'
-    | 'lime'
-    | 'failure'
-    | 'pink'
-    | 'purple'
-  > {
+  extends Pick<FlowbiteGradientColors, 'info' | 'success' | 'cyan' | 'teal' | 'lime' | 'failure' | 'pink' | 'purple'> {
   [key: string]: string;
 }
 
 export type ButtonDuoToneColors = Pick<
   FlowbiteGradientDuoToneColors,
-  | 'purpleToBlue'
-  | 'cyanToBlue'
-  | 'greenToBlue'
-  | 'purpleToPink'
-  | 'pinkToOrange'
-  | 'tealToLime'
-  | 'redToYellow'
+  'purpleToBlue' | 'cyanToBlue' | 'greenToBlue' | 'purpleToPink' | 'pinkToOrange' | 'tealToLime' | 'redToYellow'
 >;
 
-export interface ButtonSizes
-  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+export interface ButtonSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
@@ -82,11 +55,7 @@ export interface ButtonBaseTheme {
   base: ButtonTypes;
   color: Combination<keyof ButtonColors, keyof ButtonFill, string>;
   gradientMonochrome: ButtonMonochromeColors;
-  gradientDuoTone: Combination<
-    keyof ButtonDuoToneColors,
-    keyof ButtonFill,
-    string
-  >;
+  gradientDuoTone: Combination<keyof ButtonDuoToneColors, keyof ButtonFill, string>;
   size: ButtonSizes;
   isPill: FlowbiteBoolean;
   isDisabled: FlowbiteBoolean;

@@ -1,26 +1,14 @@
 export { BreadcrumbComponent } from './breadcrumb.component';
-export {
-  BreadcrumbProperties,
-  BreadcrumbClass,
-  BreadcrumbBaseTheme,
-  breadcrumbTheme,
-  BreadcrumbClassInstance,
-} from './breadcrumb.theme';
-export {
-  BreadcrumbThemeService,
-  FLOWBITE_BREADCRUMB_THEME_TOKEN,
-} from './breadcrumb.theme.service';
+export type { BreadcrumbProperties, BreadcrumbClass, BreadcrumbBaseTheme } from './breadcrumb.theme';
+export { breadcrumbTheme, BreadcrumbClassInstance } from './breadcrumb.theme';
+export { BreadcrumbThemeService, FLOWBITE_BREADCRUMB_THEME_TOKEN } from './breadcrumb.theme.service';
 
 export { BreadcrumbItemComponent } from './breadcrumb-item.component';
-export {
+export type {
   BreadcrumbItemProperties,
   BreadcrumbItemClass,
   BreadcrumbItemBaseTheme,
   BreadcrumbIconRootTheme,
-  breadcrumbItemTheme,
-  BreadcrumbItemClassInstance,
 } from './breadcrumb-item.theme';
-export {
-  BreadcrumbItemThemeService,
-  FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN,
-} from './breadcrumb-item.theme.service';
+export { breadcrumbItemTheme, BreadcrumbItemClassInstance } from './breadcrumb-item.theme';
+export { BreadcrumbItemThemeService, FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN } from './breadcrumb-item.theme.service';

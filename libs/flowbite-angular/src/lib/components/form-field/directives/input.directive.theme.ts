@@ -1,12 +1,12 @@
-import { DeepPartial } from '../../../common';
-import { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
-import {
+import type { DeepPartial } from '../../../common';
+import type { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
+import { createTheme } from '../../../utils/theme/create-theme';
+import type {
   FormFieldFloatingLabelTypes,
   FormFieldPrefixes,
   FormFieldSizes,
   FormFieldValidations,
 } from '../form-field.theme';
-import { createTheme } from '../../../utils/theme/create-theme';
 
 export interface InputDirectiveProperties {
   size: keyof FormFieldSizes;
@@ -24,10 +24,7 @@ export interface InputDirectiveBaseTheme {
   disabled: FlowbiteBoolean;
   validation: FormFieldValidations;
   prefix?: FormFieldPrefixes;
-  floatingLabel: Record<
-    keyof FormFieldFloatingLabelTypes,
-    Omit<InputDirectiveBaseTheme, 'floatingLabel'>
-  >;
+  floatingLabel: Record<keyof FormFieldFloatingLabelTypes, Omit<InputDirectiveBaseTheme, 'floatingLabel'>>;
 }
 
 export const inputDirectiveTheme: InputDirectiveBaseTheme = createTheme({

@@ -1,16 +1,12 @@
-import * as properties from './accordion-title.theme';
-
-import {
-  AccordionPanelStateService,
-  AccordionStateService,
-} from '../../services';
-import { AccordionTitleThemeService } from './accordion-title.theme.service';
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common';
+import { AccordionPanelStateService, AccordionStateService } from '../../services';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './accordion-title.theme';
+import { AccordionTitleThemeService } from './accordion-title.theme.service';
 
-import { Component, HostListener, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -19,33 +15,22 @@ import { NgClass } from '@angular/common';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.AccordionTitleClass>(
-    properties.AccordionTitleClassInstance,
-  );
+  protected override contentClasses = signal<properties.AccordionTitleClass>(properties.AccordionTitleClassInstance);
 
   protected readonly themeService = inject(AccordionTitleThemeService);
-  protected readonly accordionPanelStateService: AccordionPanelStateService =
-    inject(AccordionPanelStateService);
-  protected readonly accordionStateService: AccordionStateService = inject(
-    AccordionStateService,
-  );
+  protected readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
+  protected readonly accordionStateService: AccordionStateService = inject(AccordionStateService);
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.AccordionTitleBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.AccordionTitleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
-      isFlush: booleanToFlowbiteBoolean(
-        this.accordionStateService.select('isFlush')(),
-      ),
-      isOpen: booleanToFlowbiteBoolean(
-        this.accordionPanelStateService.select('isOpen')(),
-      ),
+      isFlush: booleanToFlowbiteBoolean(this.accordionStateService.select('isFlush')()),
+      isOpen: booleanToFlowbiteBoolean(this.accordionPanelStateService.select('isOpen')()),
     });
 
     this.contentClasses.set(propertyClass);

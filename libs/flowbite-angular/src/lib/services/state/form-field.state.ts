@@ -1,12 +1,13 @@
-import {
+import type {
   FormFieldFloatingLabelTypes,
   FormFieldPrefixes,
   FormFieldSizes,
   FormFieldTypes,
   FormFieldValidations,
 } from '../../components';
-import { Injectable } from '@angular/core';
 import { SignalStoreService } from '../signal-store.service';
+
+import { Injectable } from '@angular/core';
 
 export interface FormFieldState {
   type: keyof FormFieldTypes;

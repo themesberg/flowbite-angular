@@ -2,7 +2,7 @@ import { ComponentsComponent } from './components/components.component';
 import { CustomizeComponent } from './customize/customize.component';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 
-import { Routes } from '@angular/router';
+import type { Routes } from '@angular/router';
 
 export default [
   {

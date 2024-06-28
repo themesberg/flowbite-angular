@@ -2,7 +2,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { LicenseComponent } from './license/license.component';
 import { QuickstartComponent } from './quickstart/quickstart.component';
 
-import { Routes } from '@angular/router';
+import type { Routes } from '@angular/router';
 
 export default [
   {

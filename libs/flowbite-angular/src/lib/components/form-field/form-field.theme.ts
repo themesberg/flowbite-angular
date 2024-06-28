@@ -1,9 +1,5 @@
-import { DeepPartial } from '../../common';
-import {
-  FlowbiteBoolean,
-  FlowbiteClass,
-  FlowbiteSizes,
-} from '../../common/flowbite.theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteBoolean, FlowbiteClass, FlowbiteSizes } from '../../common/flowbite.theme';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
@@ -32,8 +28,7 @@ export interface FormFieldPrefixes {
   addon: string;
   icon: string;
 }
-export interface FormFieldSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
+export interface FormFieldSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
   [key: string]: string;
 }
 //#endregion

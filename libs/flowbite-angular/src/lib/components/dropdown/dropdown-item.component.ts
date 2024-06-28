@@ -1,12 +1,11 @@
-import * as properties from './dropdown-item.theme';
-
+import type { DeepPartial } from '../../common';
 import { BaseComponent } from '../base.component';
-import { DropdownComponent } from './dropdown.component';
+import * as properties from './dropdown-item.theme';
 import { DropdownItemThemeService } from './dropdown-item.theme.service';
+import { DropdownComponent } from './dropdown.component';
 
-import { Component, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -15,13 +14,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-item.component.html',
 })
 export class DropdownItemComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.DropdownItemClass>(
-    properties.DropdownItemClassInstance,
-  );
+  protected override contentClasses = signal<properties.DropdownItemClass>(properties.DropdownItemClassInstance);
 
   protected readonly themeService = inject(DropdownItemThemeService);
-  protected readonly dropdownComponent =
-    inject<DropdownComponent>(DropdownComponent);
+  protected readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.DropdownItemBaseTheme>>({});

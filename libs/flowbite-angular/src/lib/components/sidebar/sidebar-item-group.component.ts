@@ -1,21 +1,12 @@
-import * as properties from './sidebar-item-group.theme';
-
+import type { DeepPartial } from '../../common';
+import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
 import { BaseComponent } from '../base.component';
+import * as properties from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
 
-import {
-  Component,
-  HostListener,
-  OnInit,
-  booleanAttribute,
-  effect,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass, NgIf } from '@angular/common';
-import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
+import type { OnInit } from '@angular/core';
+import { booleanAttribute, Component, effect, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -40,8 +31,7 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
     properties.SidebarItemGroupClassInstance,
   );
 
-  protected readonly sidebarItemGroupStateService: SidebarItemGroupStateService =
-    inject(SidebarItemGroupStateService);
+  protected readonly sidebarItemGroupStateService: SidebarItemGroupStateService = inject(SidebarItemGroupStateService);
   protected readonly themeService = inject(SidebarItemGroupThemeService);
 
   //#region properties
@@ -49,9 +39,7 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
     transform: booleanAttribute,
   });
   public title = input.required<string>();
-  public customStyle = input<DeepPartial<properties.SidebarItemGroupBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.SidebarItemGroupBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

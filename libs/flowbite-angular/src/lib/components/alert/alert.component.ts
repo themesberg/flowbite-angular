@@ -1,21 +1,12 @@
-import * as properties from './alert.theme';
-
-import { AlertThemeService } from './alert.theme.service';
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common/flowbite.type';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './alert.theme';
+import { AlertThemeService } from './alert.theme.service';
 
-import {
-  Component,
-  HostBinding,
-  OnInit,
-  TemplateRef,
-  booleanAttribute,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common/flowbite.type';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import type { OnInit, TemplateRef } from '@angular/core';
+import { booleanAttribute, Component, HostBinding, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -26,9 +17,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 export class AlertComponent extends BaseComponent implements OnInit {
   @HostBinding('role') protected hostRoleValue = 'alert';
 
-  protected override contentClasses = signal<properties.AlertClass>(
-    properties.AlertClassInstance,
-  );
+  protected override contentClasses = signal<properties.AlertClass>(properties.AlertClassInstance);
 
   protected readonly themeService = inject(AlertThemeService);
 

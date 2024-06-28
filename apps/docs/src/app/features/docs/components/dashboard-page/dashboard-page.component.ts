@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { components } from '../../../../common/components';
 
 import { NgClass, NgFor } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { components } from '../../../../common/components';
 
 @Component({
   standalone: true,

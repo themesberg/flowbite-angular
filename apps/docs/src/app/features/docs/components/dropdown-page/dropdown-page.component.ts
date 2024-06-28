@@ -1,14 +1,15 @@
-import { BundledLanguage } from 'shiki/langs';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
 
-import { Component } from '@angular/core';
 import {
   DropdownComponent,
   DropdownDividerComponent,
   DropdownHeaderComponent,
   DropdownItemComponent,
 } from 'flowbite-angular';
+import type { BundledLanguage } from 'shiki/langs';
+
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,

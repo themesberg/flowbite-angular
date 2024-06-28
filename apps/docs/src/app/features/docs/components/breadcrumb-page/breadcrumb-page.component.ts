@@ -1,17 +1,14 @@
-import { BreadcrumbComponent, BreadcrumbItemComponent } from 'flowbite-angular';
-import { BundledLanguage } from 'shiki/langs';
-import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
 
+import { BreadcrumbComponent, BreadcrumbItemComponent } from 'flowbite-angular';
+import type { BundledLanguage } from 'shiki/langs';
+
+import { Component } from '@angular/core';
+
 @Component({
   standalone: true,
-  imports: [
-    DemoPageComponent,
-    DemoExampleComponent,
-    BreadcrumbComponent,
-    BreadcrumbItemComponent,
-  ],
+  imports: [DemoPageComponent, DemoExampleComponent, BreadcrumbComponent, BreadcrumbItemComponent],
   selector: 'flowbite-breadcrumb-page',
   templateUrl: './breadcrumb-page.component.html',
 })

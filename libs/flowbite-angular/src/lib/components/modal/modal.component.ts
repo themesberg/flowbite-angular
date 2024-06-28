@@ -1,23 +1,22 @@
-import * as properties from './modal.theme';
-
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common';
 import { ModalStateService } from '../../services/state/modal.state';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './modal.theme';
+import { ModalThemeService } from './modal.theme.service';
 
+import { NgClass } from '@angular/common';
+import type { AfterViewInit } from '@angular/core';
 import {
-  AfterViewInit,
+  afterNextRender,
+  booleanAttribute,
   Component,
   HostBinding,
   HostListener,
-  afterNextRender,
-  booleanAttribute,
   inject,
   input,
   signal,
 } from '@angular/core';
-import { DeepPartial } from '../../common';
-import { ModalThemeService } from './modal.theme.service';
-import { NgClass } from '@angular/common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -43,13 +42,10 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 export class ModalComponent extends BaseComponent implements AfterViewInit {
   @HostBinding('tabindex') protected tabIndex = '-1';
 
-  protected override contentClasses = signal<properties.ModalClass>(
-    properties.ModalClassInstance,
-  );
+  protected override contentClasses = signal<properties.ModalClass>(properties.ModalClassInstance);
 
   protected readonly themeService = inject(ModalThemeService);
-  protected readonly modalStateService: ModalStateService =
-    inject(ModalStateService);
+  protected readonly modalStateService: ModalStateService = inject(ModalStateService);
 
   //#region properties
   public size = input<keyof properties.ModalSizes>('md');
@@ -66,9 +62,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   //#region BaseComponent implementation
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(
-        this.modalStateService.select('isOpen')(),
-      ),
+      isOpen: booleanToFlowbiteBoolean(this.modalStateService.select('isOpen')()),
       size: this.size(),
       position: this.position(),
       customStyle: this.customStyle(),
@@ -98,10 +92,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   }
 
   toggle() {
-    this.modalStateService.set(
-      'isOpen',
-      this.modalStateService.select('isOpen')(),
-    );
+    this.modalStateService.set('isOpen', this.modalStateService.select('isOpen')());
     this.changeBackdrop();
   }
 
@@ -109,14 +100,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   changeBackdrop() {
     if (this.modalStateService.select('isOpen')()) {
       const blurDiv = document.createElement('div');
-      blurDiv.classList.add(
-        'bg-gray-900',
-        'bg-opacity-50',
-        'dark:bg-opacity-80',
-        'fixed',
-        'inset-0',
-        'z-40',
-      );
+      blurDiv.classList.add('bg-gray-900', 'bg-opacity-50', 'dark:bg-opacity-80', 'fixed', 'inset-0', 'z-40');
       blurDiv.id = 'blurDiv';
       document.body.appendChild(blurDiv);
     } else {
@@ -127,9 +111,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
     }
   }
 
-  @HostListener('document:keydown', ['$event']) onKeydownHandler(
-    event: KeyboardEvent,
-  ) {
+  @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       this.close();
     }

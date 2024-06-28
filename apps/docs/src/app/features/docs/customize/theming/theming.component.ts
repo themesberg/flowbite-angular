@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { ShikiComponent } from '../../../../common/shiki/shiki.component';
+
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-theming',

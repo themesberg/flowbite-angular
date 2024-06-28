@@ -1,22 +1,15 @@
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
 
-import {
-  BadgeBaseTheme,
-  BadgeComponent,
-  ButtonComponent,
-} from 'flowbite-angular';
-import { BundledLanguage } from 'shiki/langs';
+import type { BadgeBaseTheme } from 'flowbite-angular';
+import { BadgeComponent, ButtonComponent } from 'flowbite-angular';
+import type { BundledLanguage } from 'shiki/langs';
+
 import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [
-    DemoPageComponent,
-    DemoExampleComponent,
-    ButtonComponent,
-    BadgeComponent,
-  ],
+  imports: [DemoPageComponent, DemoExampleComponent, ButtonComponent, BadgeComponent],
   selector: 'flowbite-button-page',
   templateUrl: './button-page.component.html',
 })

@@ -1,21 +1,13 @@
-import * as properties from './sidebar.theme';
-
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services/state/sidebar.state';
-import { SidebarThemeService } from './sidebar.theme.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './sidebar.theme';
+import { SidebarThemeService } from './sidebar.theme.service';
 
-import {
-  Component,
-  OnInit,
-  booleanAttribute,
-  effect,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import type { OnInit } from '@angular/core';
+import { booleanAttribute, Component, effect, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -40,13 +32,10 @@ import { NgClass } from '@angular/common';
   ],
 })
 export class SidebarComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.SidebarClass>(
-    properties.SidebarClassInstance,
-  );
+  protected override contentClasses = signal<properties.SidebarClass>(properties.SidebarClassInstance);
 
   protected readonly themeService = inject(SidebarThemeService);
-  protected readonly sidebarStateService: SidebarStateService =
-    inject(SidebarStateService);
+  protected readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
 
   //#region properties
   public isOpen = input<boolean, string | boolean>(false, {
@@ -62,9 +51,7 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
-      isOpen: booleanToFlowbiteBoolean(
-        this.sidebarStateService.select('isOpen')(),
-      ),
+      isOpen: booleanToFlowbiteBoolean(this.sidebarStateService.select('isOpen')()),
       customStyle: this.customStyle(),
     });
 

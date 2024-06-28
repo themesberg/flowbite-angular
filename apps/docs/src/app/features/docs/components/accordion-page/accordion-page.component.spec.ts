@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AccordionPageComponent } from './accordion-page.component';
+
+import type { ComponentFixture } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 describe('AccordionPageComponent', () => {
   let component: AccordionPageComponent;

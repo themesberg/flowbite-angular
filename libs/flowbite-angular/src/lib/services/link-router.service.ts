@@ -1,18 +1,14 @@
-import {
-  FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR,
-  FlowbiteLink,
-} from '../common';
+import type { FlowbiteLink } from '../common';
+import { FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR } from '../common';
 
-import { Injectable, inject } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LinkRouter {
-  private readonly displayErrorSetting = inject(
-    FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR,
-  );
+  private readonly displayErrorSetting = inject(FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR);
   private readonly router = inject(Router);
 
   public async navigate(link?: FlowbiteLink): Promise<boolean> {
@@ -42,7 +38,6 @@ export class LinkRouter {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private flowbiteLinkToString(link: any[] | string): string {
     if (typeof link === 'string') return link;
 

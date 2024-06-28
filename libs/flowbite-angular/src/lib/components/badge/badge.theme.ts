@@ -1,18 +1,10 @@
-import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import {
-  FlowbiteBoolean,
-  FlowbiteClass,
-  FlowbiteColors,
-  FlowbiteSizes,
-} from '../../common/flowbite.theme';
+import type { FlowbiteBoolean, FlowbiteClass, FlowbiteColors, FlowbiteSizes } from '../../common/flowbite.theme';
+import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface BadgeColors
-  extends Pick<
-    FlowbiteColors,
-    'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
-  > {
+  extends Pick<FlowbiteColors, 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'> {
   [key: string]: string;
 }
 

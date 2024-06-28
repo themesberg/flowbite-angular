@@ -1,15 +1,9 @@
-import { DeepPartial } from '../../common';
-import {
-  FlowbiteBoolean,
-  FlowbiteClass,
-  FlowbitePositions,
-  FlowbiteSizes,
-} from '../../common/flowbite.theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteBoolean, FlowbiteClass, FlowbitePositions, FlowbiteSizes } from '../../common/flowbite.theme';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
-export interface ModalSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
+export interface ModalSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 

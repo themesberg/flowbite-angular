@@ -1,14 +1,9 @@
-import { DeepPartial } from '../../common';
-import {
-  FlowbiteBoolean,
-  FlowbiteClass,
-  FlowbitePositions,
-} from '../../common/flowbite.theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteBoolean, FlowbiteClass, FlowbitePositions } from '../../common/flowbite.theme';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
-export interface DropdownPositions
-  extends Pick<FlowbitePositions, 'bottom-center' | 'top-center'> {
+export interface DropdownPositions extends Pick<FlowbitePositions, 'bottom-center' | 'top-center'> {
   'left-center': string;
   'right-center': string;
 }

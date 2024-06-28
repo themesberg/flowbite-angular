@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
 const { join } = require('path');
 const sharedTailwindConfig = require('../../libs/flowbite-angular/tailwind.config');
@@ -5,10 +10,7 @@ const sharedTailwindConfig = require('../../libs/flowbite-angular/tailwind.confi
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   presets: [sharedTailwindConfig],
-  content: [
-    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
-    ...createGlobPatternsForDependencies(__dirname),
-  ],
+  content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
   safelist: ['p-4', 'overflow-x-auto', 'rounded-md'],
   theme: {
     extend: {

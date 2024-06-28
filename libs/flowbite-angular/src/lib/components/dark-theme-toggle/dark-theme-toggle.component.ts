@@ -1,22 +1,13 @@
-import * as properties from './dark-theme-toggle.theme';
-
-import { BaseComponent } from '../base.component';
-import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
+import type { DeepPartial } from '../../common';
 import { GlobalSignalStoreService } from '../../services';
-import { ThemeState } from '../../services/state/theme.state';
+import type { ThemeState } from '../../services/state/theme.state';
+import { BaseComponent } from '../base.component';
+import * as properties from './dark-theme-toggle.theme';
+import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
-import {
-  AfterViewInit,
-  Component,
-  HostListener,
-  afterNextRender,
-  effect,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass, NgIf } from '@angular/common';
+import type { AfterViewInit } from '@angular/core';
+import { afterNextRender, Component, effect, HostListener, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -24,23 +15,16 @@ import { NgClass, NgIf } from '@angular/common';
   selector: 'flowbite-dark-theme-toggle',
   templateUrl: './dark-theme-toggle.component.html',
 })
-export class DarkThemeToggleComponent
-  extends BaseComponent
-  implements AfterViewInit
-{
-  protected override contentClasses = signal<properties.DarkThemeToggleClass>(
-    properties.DarkThemeToggleClassInstance,
-  );
+export class DarkThemeToggleComponent extends BaseComponent implements AfterViewInit {
+  protected override contentClasses = signal<properties.DarkThemeToggleClass>(properties.DarkThemeToggleClassInstance);
 
   protected readonly themeService = inject(DarkThemeToggleThemeService);
-  protected readonly themeStateService = inject<
-    GlobalSignalStoreService<ThemeState>
-  >(GlobalSignalStoreService<ThemeState>);
+  protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
+    GlobalSignalStoreService<ThemeState>,
+  );
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.DarkThemeToggleBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.DarkThemeToggleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -60,8 +44,7 @@ export class DarkThemeToggleComponent
 
         if (
           localStorageTheme === 'dark' ||
-          (!localStorageTheme &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)
+          (!localStorageTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
         ) {
           this.themeStateService.set('theme', 'dark');
           document.documentElement.classList.add('dark');
@@ -88,8 +71,7 @@ export class DarkThemeToggleComponent
 
   @HostListener('click')
   protected onClick() {
-    if (this.themeStateService.select('theme')() === 'light')
-      this.themeStateService.set('theme', 'dark');
+    if (this.themeStateService.select('theme')() === 'light') this.themeStateService.set('theme', 'dark');
     else this.themeStateService.set('theme', 'light');
   }
 }

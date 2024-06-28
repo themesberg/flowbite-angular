@@ -1,11 +1,10 @@
-import * as properties from './label.directive.theme';
-
-import { BaseInputDirective } from './base-input.directive';
-import { FormFieldComponent } from '../form-field.component';
-import { LabelDirectiveThemeService } from './label.directive.theme.service';
+import type { DeepPartial } from '../../../common';
 import { booleanToFlowbiteBoolean } from '../../../utils/boolean.util';
+import { FormFieldComponent } from '../form-field.component';
+import { BaseInputDirective } from './base-input.directive';
+import * as properties from './label.directive.theme';
+import { LabelDirectiveThemeService } from './label.directive.theme.service';
 
-import { DeepPartial } from '../../../common';
 import { Directive, HostBinding, inject, input, signal } from '@angular/core';
 
 @Directive({
@@ -17,28 +16,21 @@ export class LabelDirective extends BaseInputDirective {
     return this.for.flowbiteId();
   }
 
-  protected override contentClasses = signal<properties.LabelDirectiveClass>(
-    properties.labelDirectiveClassInstance,
-  );
+  protected override contentClasses = signal<properties.LabelDirectiveClass>(properties.labelDirectiveClassInstance);
 
   protected readonly themeService = inject(LabelDirectiveThemeService);
   protected readonly for = inject(FormFieldComponent);
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.LabelDirectiveBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.LabelDirectiveBaseTheme>>({});
   //#endregion
 
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      disabled: booleanToFlowbiteBoolean(
-        this.formFieldStateService.select('isDisabled')(),
-      ),
+      disabled: booleanToFlowbiteBoolean(this.formFieldStateService.select('isDisabled')()),
       validate: this.formFieldStateService.select('validate')(),
-      floatingLabelType:
-        this.formFieldStateService.select('floatingLabelType')(),
+      floatingLabelType: this.formFieldStateService.select('floatingLabelType')(),
       customStyle: this.customStyle(),
     });
 

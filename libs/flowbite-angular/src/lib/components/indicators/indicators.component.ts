@@ -1,17 +1,11 @@
-import * as properties from './indicators.theme';
-import { BaseComponent } from '../base.component';
-import { IndicatorThemeService } from './indicators.theme.service';
+import type { DeepPartial } from '../../common';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './indicators.theme';
+import { IndicatorThemeService } from './indicators.theme.service';
 
-import {
-  Component,
-  booleanAttribute,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/indicators/
@@ -23,9 +17,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.indicatorClass>(
-    properties.IndicatorClassInstance,
-  );
+  protected override contentClasses = signal<properties.indicatorClass>(properties.IndicatorClassInstance);
 
   protected readonly themeService = inject(IndicatorThemeService);
 
@@ -50,9 +42,7 @@ export class IndicatorComponent extends BaseComponent {
   });
   public color = input<keyof properties.IndicatorColors>('gray');
   public size = input<keyof properties.IndicatorSizes>('md');
-  public placement = input<keyof properties.IndicatorPositions | undefined>(
-    undefined,
-  );
+  public placement = input<keyof properties.IndicatorPositions | undefined>(undefined);
   public customStyle = input<DeepPartial<properties.IndicatorBaseTheme>>({});
   //#endregion
 

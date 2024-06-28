@@ -1,81 +1,44 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "sort-imports-es6-autofix"],
+  "ignorePatterns": ["!**/*"],
+  "plugins": ["@nx", "@typescript-eslint"],
+  "extends": ["plugin:@angular-eslint/recommended", "plugin:@typescript-eslint/recommended-type-checked", "prettier"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": [
-        "plugin:@nx/angular",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:prettier/recommended"
-      ],
-      "rules": {
-        "sort-imports-es6-autofix/sort-imports-es6": [
-          2,
-          {
-            "ignoreCase": false,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-          }
-        ],
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ],
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "flowbite",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "flowbite",
-            "style": "kebab-case"
-          }
-        ]
-      }
-    },
-    {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
+      "plugins": [],
+      "extends": [],
       "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
+        // eslint
+        "no-extra-semi": 0,
+        "comma-dangle": 0,
+        "no-empty-function": 0,
+        // typescript-eslint
+        "@typescript-eslint/comma-dangle": 0,
+        "@typescript-eslint/no-extra-semi": 2,
+        "@typescript-eslint/lines-around-comment": 1,
+        "@typescript-eslint/member-delimiter-style": 2,
+        "@typescript-eslint/member-ordering": [
+          1,
+          {
+            "default": ["signature", "field", "constructor", "method"]
+          }
+        ],
+        "@typescript-eslint/no-empty-function": 1,
+        "@typescript-eslint/no-explicit-any": 1,
+        "@typescript-eslint/no-unnecessary-condition": 2,
+        "@typescript-eslint/no-unsafe-assignment": 0,
+        "@typescript-eslint/no-unsafe-call": 0,
+        "@typescript-eslint/no-unsafe-argument": 0,
+        "@typescript-eslint/no-unsafe-member-access": 0,
+        "@typescript-eslint/no-floating-promises": 0,
+        "@typescript-eslint/consistent-type-imports": 2,
+        "@typescript-eslint/consistent-type-exports": 2,
+        "@typescript-eslint/no-namespace": 0,
+        // nx
+        "@nx/dependency-checks": 2,
+        "@nx/enforce-module-boundaries": 2
       }
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
-      }
-    },
-    {
-      "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
-      "rules": {}
-    },
-    {
-      "files": ["*.html"],
-      "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": ["plugin:prettier/recommended"],
-      "rules": {}
     }
   ]
 }

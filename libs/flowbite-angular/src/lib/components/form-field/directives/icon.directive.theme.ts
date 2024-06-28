@@ -1,4 +1,4 @@
-import { DeepPartial, FlowbiteClass } from '../../../common';
+import type { DeepPartial, FlowbiteClass } from '../../../common';
 import { createTheme } from '../../../utils/theme/create-theme';
 
 export interface IconDirectiveProperties {

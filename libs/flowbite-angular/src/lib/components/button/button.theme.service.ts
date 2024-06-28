@@ -1,44 +1,31 @@
-import { ButtonBaseTheme, ButtonClass, ButtonProperties } from './button.theme';
-import { FlowbiteThemeService } from '../../common';
+import type { FlowbiteThemeService } from '../../common';
 import { mergeTheme } from '../../utils/theme/merge-theme';
+import type { ButtonBaseTheme, ButtonClass, ButtonProperties } from './button.theme';
 
-import { InjectionToken, inject } from '@angular/core';
+import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_BUTTON_THEME_TOKEN = new InjectionToken<ButtonBaseTheme>(
-  'FLOWBITE_BUTTON_THEME_TOKEN',
-);
-export class ButtonThemeService
-  implements FlowbiteThemeService<ButtonProperties>
-{
+export const FLOWBITE_BUTTON_THEME_TOKEN = new InjectionToken<ButtonBaseTheme>('FLOWBITE_BUTTON_THEME_TOKEN');
+export class ButtonThemeService implements FlowbiteThemeService<ButtonProperties> {
   private readonly baseTheme = inject(FLOWBITE_BUTTON_THEME_TOKEN);
 
   public getClasses(properties: ButtonProperties): ButtonClass {
-    const theme: ButtonBaseTheme = mergeTheme(
-      this.baseTheme,
-      properties.customStyle,
-    );
+    const theme: ButtonBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: ButtonClass = {
       rootClass: twMerge(
         properties.gradientDuoTone && properties.outline == 'outline'
-          ? theme.base?.['span']
-          : `${theme.base?.['default']} ${theme.size?.[properties.size]}`,
+          ? theme.base['span']
+          : `${theme.base['default']} ${theme.size[properties.size]}`,
         properties.gradientDuoTone
-          ? theme.gradientDuoTone?.[properties.gradientDuoTone][
-              properties.outline
-            ]
+          ? theme.gradientDuoTone[properties.gradientDuoTone][properties.outline]
           : properties.gradientMonochrome
             ? theme.gradientMonochrome[properties.gradientMonochrome]
-            : theme.color?.[properties.color][properties.outline],
-        theme.isPill?.[properties.isPill],
-        theme.isDisabled?.[properties.isDisabled],
+            : theme.color[properties.color][properties.outline],
+        theme.isPill[properties.isPill],
+        theme.isDisabled[properties.isDisabled],
       ),
-      spanClass: twMerge(
-        theme.span.base,
-        theme.span.isPill?.[properties.isPill],
-        theme.span.size?.[properties.size],
-      ),
+      spanClass: twMerge(theme.span.base, theme.span.isPill?.[properties.isPill], theme.span.size?.[properties.size]),
     };
 
     return output;

@@ -1,7 +1,5 @@
-import { FlowbiteBoolean } from '../common/flowbite.theme';
+import type { FlowbiteBoolean } from '../common/flowbite.theme';
 
-export function booleanToFlowbiteBoolean(
-  value: boolean,
-): keyof FlowbiteBoolean {
+export function booleanToFlowbiteBoolean(value: boolean): keyof FlowbiteBoolean {
   return value ? 'enabled' : 'disabled';
 }

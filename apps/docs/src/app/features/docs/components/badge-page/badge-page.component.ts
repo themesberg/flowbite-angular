@@ -1,8 +1,10 @@
-import { BadgeComponent } from 'flowbite-angular';
-import { BundledLanguage } from 'shiki/langs';
-import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
+
+import { BadgeComponent } from 'flowbite-angular';
+import type { BundledLanguage } from 'shiki/langs';
+
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,

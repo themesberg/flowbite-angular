@@ -1,5 +1,7 @@
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Pipe, PipeTransform } from '@angular/core';
+import type { PipeTransform } from '@angular/core';
+import { Pipe } from '@angular/core';
+import type { SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Pipe({
   standalone: true,

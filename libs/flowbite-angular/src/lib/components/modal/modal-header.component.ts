@@ -1,12 +1,11 @@
-import * as properties from './modal-header.theme';
-
+import type { DeepPartial } from '../../common';
 import { BaseComponent } from '../base.component';
-import { ModalComponent } from './modal.component';
+import * as properties from './modal-header.theme';
 import { ModalHeaderThemeService } from './modal-header.theme.service';
+import { ModalComponent } from './modal.component';
 
-import { Component, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -15,9 +14,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-header.component.html',
 })
 export class ModalHeaderComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ModalHeaderClass>(
-    properties.ModalHeaderClassInstance,
-  );
+  protected override contentClasses = signal<properties.ModalHeaderClass>(properties.ModalHeaderClassInstance);
 
   protected readonly modalStateService = inject(ModalHeaderThemeService);
   protected readonly modalComponent = inject<ModalComponent>(ModalComponent);

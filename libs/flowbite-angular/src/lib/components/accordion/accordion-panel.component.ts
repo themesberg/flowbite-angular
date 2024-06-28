@@ -1,18 +1,11 @@
-import * as properties from './accordion-panel.theme';
-
+import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services/state/accordion.state';
-import { AccordionPanelThemeService } from './accordion-panel.theme.service';
 import { BaseComponent } from '../base.component';
+import * as properties from './accordion-panel.theme';
+import { AccordionPanelThemeService } from './accordion-panel.theme.service';
 
-import {
-  Component,
-  OnInit,
-  booleanAttribute,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common';
+import type { OnInit } from '@angular/core';
+import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -33,21 +26,16 @@ import { DeepPartial } from '../../common';
   ],
 })
 export class AccordionPanelComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.AccordionPanelClass>(
-    properties.AccordionPanelClassInstance,
-  );
+  protected override contentClasses = signal<properties.AccordionPanelClass>(properties.AccordionPanelClassInstance);
 
   protected readonly themeService = inject(AccordionPanelThemeService);
-  protected readonly accordionPanelStateService: AccordionPanelStateService =
-    inject(AccordionPanelStateService);
+  protected readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
 
   //#region properties
   public isOpen = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<DeepPartial<properties.AccordionPanelBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.AccordionPanelBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

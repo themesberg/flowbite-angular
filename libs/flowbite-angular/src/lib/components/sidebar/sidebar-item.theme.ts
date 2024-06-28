@@ -1,5 +1,5 @@
-import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import { FlowbiteClass } from '../../common';
+import type { FlowbiteClass } from '../../common';
+import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { createTheme } from '../../utils/theme/create-theme';
 
 export interface SidebarItemProperties {

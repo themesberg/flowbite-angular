@@ -1,10 +1,9 @@
-import * as properties from './scroll-top.theme';
-
+import type { DeepPartial } from '../../common';
 import { BaseComponent } from '../base.component';
+import * as properties from './scroll-top.theme';
 import { ScrollTopThemeService } from './scroll-top.theme.service';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 
 @Component({
   selector: 'flowbite-scroll-top',
@@ -13,9 +12,7 @@ import { DeepPartial } from '../../common';
   templateUrl: './scroll-top.component.html',
 })
 export class ScrollTopComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ScrollTopClass>(
-    properties.scrollTopClassInstance,
-  );
+  protected override contentClasses = signal<properties.ScrollTopClass>(properties.scrollTopClassInstance);
 
   protected readonly themeService = inject(ScrollTopThemeService);
 

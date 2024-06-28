@@ -1,3 +1,4 @@
+import type { ThemeState } from 'flowbite-angular';
 import {
   BreadcrumbComponent,
   BreadcrumbItemComponent,
@@ -5,7 +6,6 @@ import {
   FormFieldComponent,
   GlobalSignalStoreService,
   InputDirective,
-  ThemeState,
 } from 'flowbite-angular';
 
 import { Component, inject } from '@angular/core';
@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  protected themeGlobalSignalStoreService = inject<
-    GlobalSignalStoreService<ThemeState>
-  >(GlobalSignalStoreService<ThemeState>);
+  protected themeGlobalSignalStoreService = inject<GlobalSignalStoreService<ThemeState>>(
+    GlobalSignalStoreService<ThemeState>,
+  );
 }

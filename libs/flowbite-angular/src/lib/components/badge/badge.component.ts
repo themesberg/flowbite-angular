@@ -1,20 +1,12 @@
-import * as properties from './badge.theme';
-
-import { BadgeThemeService } from './badge.theme.service';
-import { BaseComponent } from '../base.component';
-import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { LinkRouter } from '../../services/link-router.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './badge.theme';
+import { BadgeThemeService } from './badge.theme.service';
 
-import {
-  Component,
-  HostListener,
-  booleanAttribute,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
 import { NgClass } from '@angular/common';
+import { booleanAttribute, Component, HostListener, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 /**
@@ -27,9 +19,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './badge.component.html',
 })
 export class BadgeComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.BadgeClass>(
-    properties.BadgeClassInstance,
-  );
+  protected override contentClasses = signal<properties.BadgeClass>(properties.BadgeClassInstance);
 
   protected readonly themeService = inject(BadgeThemeService);
   protected readonly linkRouter = inject(LinkRouter);

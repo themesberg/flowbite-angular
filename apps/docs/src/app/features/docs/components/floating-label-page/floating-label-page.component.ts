@@ -1,22 +1,14 @@
-import { BundledLanguage } from 'shiki/langs';
-import { Component } from '@angular/core';
 import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
-import {
-  FormFieldComponent,
-  InputDirective,
-  LabelDirective,
-} from 'flowbite-angular';
+
+import { FormFieldComponent, InputDirective, LabelDirective } from 'flowbite-angular';
+import type { BundledLanguage } from 'shiki/langs';
+
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [
-    DemoPageComponent,
-    DemoExampleComponent,
-    FormFieldComponent,
-    LabelDirective,
-    InputDirective,
-  ],
+  imports: [DemoPageComponent, DemoExampleComponent, FormFieldComponent, LabelDirective, InputDirective],
   selector: 'flowbite-floating-label-page',
   templateUrl: './floating-label-page.component.html',
 })

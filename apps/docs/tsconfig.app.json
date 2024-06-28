@@ -7,6 +7,6 @@
     "useDefineForClassFields": false
   },
   "files": ["src/main.ts"],
-  "include": ["src/**/*.d.ts"],
+  "include": ["src/**/*.d.ts", "tailwind.config.js"],
   "exclude": ["**/*.test.ts", "**/*.spec.ts", "jest.config.ts"]
 }

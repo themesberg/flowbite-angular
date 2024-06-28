@@ -1,10 +1,10 @@
-import * as properties from './dropdown-header.theme';
 import { BaseComponent } from '../base.component';
-import { DropdownComponent } from './dropdown.component';
+import * as properties from './dropdown-header.theme';
 import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
+import { DropdownComponent } from './dropdown.component';
 
-import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -13,13 +13,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-header.component.html',
 })
 export class DropdownHeaderComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.DropdownHeaderClass>(
-    properties.DropdownHeaderClassInstance,
-  );
+  protected override contentClasses = signal<properties.DropdownHeaderClass>(properties.DropdownHeaderClassInstance);
 
   protected readonly themeService = inject(DropdownHeaderThemeService);
-  protected readonly dropdownComponent =
-    inject<DropdownComponent>(DropdownComponent);
+  protected readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
   //#region properties
   public customStyle = input<Partial<properties.DropdownHeaderBaseTheme>>({});

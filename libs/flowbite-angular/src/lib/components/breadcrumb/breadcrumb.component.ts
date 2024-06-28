@@ -1,11 +1,10 @@
-import * as properties from './breadcrumb.theme';
-
+import type { DeepPartial } from '../../common';
 import { BaseComponent } from '../base.component';
+import * as properties from './breadcrumb.theme';
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
-import { Component, HostBinding, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { Component, HostBinding, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -19,9 +18,7 @@ import { NgClass } from '@angular/common';
 export class BreadcrumbComponent extends BaseComponent {
   @HostBinding('aria-label') protected hostAriaLabelValue = 'Breadcrumb';
 
-  protected override contentClasses = signal<properties.BreadcrumbClass>(
-    properties.BreadcrumbClassInstance,
-  );
+  protected override contentClasses = signal<properties.BreadcrumbClass>(properties.BreadcrumbClassInstance);
 
   protected readonly themeService = inject(BreadcrumbThemeService);
 

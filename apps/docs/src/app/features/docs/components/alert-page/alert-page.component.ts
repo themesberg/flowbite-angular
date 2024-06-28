@@ -2,7 +2,8 @@ import { DemoExampleComponent } from '../../../../common/demo-example/demo-examp
 import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
 
 import { AlertComponent } from 'flowbite-angular';
-import { BundledLanguage } from 'shiki/langs';
+import type { BundledLanguage } from 'shiki/langs';
+
 import { Component } from '@angular/core';
 
 @Component({

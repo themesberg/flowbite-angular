@@ -1,11 +1,10 @@
-import * as properties from './sidebar-toggle.theme';
-
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services';
+import { BaseComponent } from '../base.component';
+import * as properties from './sidebar-toggle.theme';
 import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
 
 import { Component, HostListener, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 
 @Component({
   standalone: true,
@@ -14,20 +13,15 @@ import { DeepPartial } from '../../common';
   templateUrl: './sidebar-toggle.component.html',
 })
 export class SidebarToggleComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.SidebarToggleClass>(
-    properties.SidebarToggleClassInstance,
-  );
+  protected override contentClasses = signal<properties.SidebarToggleClass>(properties.SidebarToggleClassInstance);
 
   protected readonly themeService = inject(SidebarToggleThemeService);
-  protected readonly sidebarStateService: SidebarStateService =
-    inject(SidebarStateService);
+  protected readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
 
   //#region properties
   public color = input<keyof properties.SidebarToggleColors>('gray');
   public size = input<keyof properties.SidebarToggleSizes>('sm');
-  public customStyle = input<DeepPartial<properties.SidebarToggleBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.SidebarToggleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

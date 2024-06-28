@@ -1,10 +1,10 @@
-import * as properties from './dropdown-divider.theme';
 import { BaseComponent } from '../base.component';
-import { DropdownComponent } from './dropdown.component';
+import * as properties from './dropdown-divider.theme';
 import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
+import { DropdownComponent } from './dropdown.component';
 
-import { Component, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -13,13 +13,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.DropdownDividerClass>(
-    properties.DropdownDividerClassInstance,
-  );
+  protected override contentClasses = signal<properties.DropdownDividerClass>(properties.DropdownDividerClassInstance);
 
   protected readonly themeService = inject(DropdownDividerThemeService);
-  protected readonly dropdownComponent =
-    inject<DropdownComponent>(DropdownComponent);
+  protected readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
   //#region properties
   public customStyle = input<Partial<properties.DropdownDividerBaseTheme>>({});

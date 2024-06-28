@@ -1,32 +1,25 @@
-import * as properties from './dropdown.theme';
-
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common';
 import { DropdownStateService } from '../../services/state/dropdown.state';
-import { DropdownThemeService } from './dropdown.theme.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './dropdown.theme';
+import { DropdownThemeService } from './dropdown.theme.service';
 
+import { NgClass } from '@angular/common';
+import type { AfterViewInit } from '@angular/core';
 import {
-  AfterViewInit,
+  afterNextRender,
+  booleanAttribute,
   Component,
   ElementRef,
   HostListener,
-  ViewChild,
-  afterNextRender,
-  booleanAttribute,
   inject,
   input,
   signal,
+  ViewChild,
 } from '@angular/core';
-import { DeepPartial } from '../../common';
-import { NgClass } from '@angular/common';
-import {
-  Placement,
-  autoUpdate,
-  computePosition,
-  flip,
-  offset,
-  shift,
-} from '@floating-ui/dom';
+import type { Placement } from '@floating-ui/dom';
+import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -53,13 +46,10 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
-  protected override contentClasses = signal<properties.DropdownClass>(
-    properties.DropdownClassInstance,
-  );
+  protected override contentClasses = signal<properties.DropdownClass>(properties.DropdownClassInstance);
 
   protected readonly themeService = inject(DropdownThemeService);
-  protected readonly dropdownStateService: DropdownStateService =
-    inject(DropdownStateService);
+  protected readonly dropdownStateService: DropdownStateService = inject(DropdownStateService);
 
   //#region properties
   public label = input('Dropdown');
@@ -74,9 +64,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   protected override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       label: this.label(),
-      isOpen: booleanToFlowbiteBoolean(
-        this.dropdownStateService.select('isOpen')(),
-      ),
+      isOpen: booleanToFlowbiteBoolean(this.dropdownStateService.select('isOpen')()),
       placement: this.position(),
       customStyle: this.customStyle(),
     });
@@ -90,10 +78,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   width = 0;
 
   toggle() {
-    this.dropdownStateService.set(
-      'isOpen',
-      !this.dropdownStateService.select('isOpen')(),
-    );
+    this.dropdownStateService.set('isOpen', !this.dropdownStateService.select('isOpen')());
   }
 
   calculatePosition() {

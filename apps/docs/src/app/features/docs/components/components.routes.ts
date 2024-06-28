@@ -12,7 +12,7 @@ import { InputFieldPageComponent } from './input-field-page/input-field-page.com
 import { ModalPageComponent } from './modal-page/modal-page.component';
 import { SidebarPageComponent } from './sidebar-page/sidebar-page.component';
 
-import { Routes } from '@angular/router';
+import type { Routes } from '@angular/router';
 
 export default [
   {

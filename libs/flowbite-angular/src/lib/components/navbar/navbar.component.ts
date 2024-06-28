@@ -1,19 +1,12 @@
-import * as properties from './navbar.theme';
-
-import { BaseComponent } from '../base.component';
-import { NavbarThemeService } from './navbar.theme.service';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-
-import {
-  Component,
-  booleanAttribute,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { DeepPartial } from '../../common';
+import type { DeepPartial } from '../../common';
 import { NavbarStateService } from '../../services';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base.component';
+import * as properties from './navbar.theme';
+import { NavbarThemeService } from './navbar.theme.service';
+
 import { NgClass } from '@angular/common';
+import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -37,13 +30,10 @@ import { NgClass } from '@angular/common';
   ],
 })
 export class NavbarComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.NavbarClass>(
-    properties.NavbarClassInstance,
-  );
+  protected override contentClasses = signal<properties.NavbarClass>(properties.NavbarClassInstance);
 
   protected readonly themeService = inject(NavbarThemeService);
-  protected readonly navbarStateService: NavbarStateService =
-    inject(NavbarStateService);
+  protected readonly navbarStateService: NavbarStateService = inject(NavbarStateService);
 
   //#region properties
   public isRounded = input<boolean, string | boolean>(false, {

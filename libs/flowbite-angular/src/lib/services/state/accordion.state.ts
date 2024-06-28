@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
 import { SignalStoreService } from '../signal-store.service';
+
+import { Injectable } from '@angular/core';
 
 export interface AccordionState {
   isFlush: boolean;

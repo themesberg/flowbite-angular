@@ -1,7 +1,7 @@
 export * from './directives';
 
 export { FormFieldComponent } from './form-field.component';
-export {
+export type {
   FormFieldProperties,
   FormFieldFloatingLabelTypes,
   FormFieldPrefixes,
@@ -10,10 +10,6 @@ export {
   FormFieldValidations,
   FormFieldClass,
   FormFieldBaseTheme,
-  FormFieldClassInstance,
-  formFieldTheme,
 } from './form-field.theme';
-export {
-  FormFieldThemeService,
-  FLOWBITE_FORM_FIELD_THEME_TOKEN,
-} from './form-field.theme.service';
+export { FormFieldClassInstance, formFieldTheme } from './form-field.theme';
+export { FormFieldThemeService, FLOWBITE_FORM_FIELD_THEME_TOKEN } from './form-field.theme.service';

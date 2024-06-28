@@ -1,11 +1,10 @@
-import * as properties from './modal-body.theme';
-
+import type { DeepPartial } from '../../common';
 import { BaseComponent } from '../base.component';
+import * as properties from './modal-body.theme';
 import { ModalBodyThemeService } from './modal-body.theme.service';
 
-import { Component, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -14,9 +13,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ModalBodyClass>(
-    properties.ModalBodyClassInstance,
-  );
+  protected override contentClasses = signal<properties.ModalBodyClass>(properties.ModalBodyClassInstance);
 
   protected readonly themeService = inject(ModalBodyThemeService);
 

@@ -1,4 +1,4 @@
-import { FlowbiteClass } from '../../common';
+import type { FlowbiteClass } from '../../common';
 import { createTheme } from '../../utils/theme/create-theme';
 
 export interface DropdownDividerProperties {

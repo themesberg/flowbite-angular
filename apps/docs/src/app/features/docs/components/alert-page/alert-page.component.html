@@ -1,38 +1,47 @@
 <flowbite-demo-page>
-  <flowbite-demo-example title="Default Badge" [codes]="[examples[0]]">
+  <flowbite-demo-example
+    title="Default Badge"
+    [codes]="[examples[0]]">
     <flowbite-alert>
-      <span class="font-medium">Info alert!</span> Change a few things up and
-      try submitting again.
+      <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
     </flowbite-alert>
   </flowbite-demo-example>
-  <flowbite-demo-example title="Alerts with icon" [codes]="[examples[1]]">
-    <flowbite-alert [icon]="icon" color="red">
-      <span class="font-medium">Info alert!</span> Change a few things up and
-      try submitting again.
+  <flowbite-demo-example
+    title="Alerts with icon"
+    [codes]="[examples[1]]">
+    <flowbite-alert
+      [icon]="icon"
+      color="red">
+      <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
     </flowbite-alert>
   </flowbite-demo-example>
   <flowbite-demo-example
     title="Dismissible alerts"
     [codes]="[examples[2], examples[3]]">
-    <flowbite-alert color="green" [dismiss]="onDismiss">
-      <span class="font-medium">Info alert!</span> Change a few things up and
-      try submitting again.
+    <flowbite-alert
+      color="green"
+      [dismiss]="onDismiss">
+      <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
     </flowbite-alert>
   </flowbite-demo-example>
-  <flowbite-demo-example title="Border accent" [codes]="[examples[4]]">
-    <flowbite-alert color="yellow" borderAccent rounded="false">
-      <span class="font-medium">Info alert!</span> Change a few things up and
-      try submitting again.
+  <flowbite-demo-example
+    title="Border accent"
+    [codes]="[examples[4]]">
+    <flowbite-alert
+      color="yellow"
+      borderAccent
+      rounded="false">
+      <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
     </flowbite-alert>
   </flowbite-demo-example>
-  <flowbite-demo-example title="Additional content" [codes]="[examples[5]]">
+  <flowbite-demo-example
+    title="Additional content"
+    [codes]="[examples[5]]">
     <flowbite-alert
       color="gray"
       [icon]="icon"
       [additionalContent]="additionalContent">
-      <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">
-        This is an info alert
-      </h3>
+      <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
     </flowbite-alert>
   </flowbite-demo-example>
   <ng-template #icon>
@@ -53,9 +62,8 @@
   </ng-template>
   <ng-template #additionalContent>
     <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
-      More info about this info alert goes here. This example text is going to
-      run a bit longer so that you can see how spacing within an alert works
-      with this kind of content.
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
+      spacing within an alert works with this kind of content.
     </div>
     <div class="flex">
       <button

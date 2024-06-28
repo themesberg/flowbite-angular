@@ -1,12 +1,11 @@
-import * as properties from './accordion-content.theme';
-
-import { AccordionContentThemeService } from './accordion-content.theme.service';
+import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services';
 import { BaseComponent } from '../base.component';
+import * as properties from './accordion-content.theme';
+import { AccordionContentThemeService } from './accordion-content.theme.service';
 
-import { Component, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass, NgIf } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -20,13 +19,10 @@ export class AccordionContentComponent extends BaseComponent {
   );
 
   protected readonly themeService = inject(AccordionContentThemeService);
-  protected readonly accordionPanelStateService: AccordionPanelStateService =
-    inject(AccordionPanelStateService);
+  protected readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.AccordionContentBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.AccordionContentBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

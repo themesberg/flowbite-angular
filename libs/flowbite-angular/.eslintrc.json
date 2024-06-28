@@ -1,5 +1,30 @@
 {
   "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
-  "overrides": []
+  "parserOptions": {
+    "project": "./libs/flowbite-angular/tsconfig(.*)?.json"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "flowbite",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "flowbite",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    }
+  ]
 }

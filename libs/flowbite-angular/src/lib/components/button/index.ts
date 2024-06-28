@@ -1,5 +1,5 @@
 export { ButtonComponent } from './button.component';
-export {
+export type {
   ButtonProperties,
   ButtonClass,
   ButtonTypes,
@@ -10,10 +10,6 @@ export {
   ButtonSizes,
   ButtonBaseTheme,
   SpanRootTheme,
-  buttonTheme,
-  ButtonClassInstance,
 } from './button.theme';
-export {
-  ButtonThemeService,
-  FLOWBITE_BUTTON_THEME_TOKEN,
-} from './button.theme.service';
+export { buttonTheme, ButtonClassInstance } from './button.theme';
+export { ButtonThemeService, FLOWBITE_BUTTON_THEME_TOKEN } from './button.theme.service';

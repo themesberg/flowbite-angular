@@ -1,10 +1,9 @@
-import * as properties from './input.directive.theme';
-
-import { BaseInputDirective } from './base-input.directive';
-import { InputDirectiveThemeService } from './input.directive.theme.service';
+import type { DeepPartial } from '../../../common';
 import { booleanToFlowbiteBoolean } from '../../../utils/boolean.util';
+import { BaseInputDirective } from './base-input.directive';
+import * as properties from './input.directive.theme';
+import { InputDirectiveThemeService } from './input.directive.theme.service';
 
-import { DeepPartial } from '../../../common';
 import { Directive, HostBinding, inject, input, signal } from '@angular/core';
 
 @Directive({
@@ -16,29 +15,22 @@ export class InputDirective extends BaseInputDirective {
     return this.formFieldStateService.select('isDisabled')() || null;
   }
 
-  protected override contentClasses = signal<properties.InputDirectiveClass>(
-    properties.inputDirectiveClassInstance,
-  );
+  protected override contentClasses = signal<properties.InputDirectiveClass>(properties.inputDirectiveClassInstance);
 
   protected readonly themeService = inject(InputDirectiveThemeService);
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.InputDirectiveBaseTheme>>(
-    {},
-  );
+  public customStyle = input<DeepPartial<properties.InputDirectiveBaseTheme>>({});
   //#endregion
 
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      disabled: booleanToFlowbiteBoolean(
-        this.formFieldStateService.select('isDisabled')(),
-      ),
+      disabled: booleanToFlowbiteBoolean(this.formFieldStateService.select('isDisabled')()),
       size: this.formFieldStateService.select('size')(),
       validate: this.formFieldStateService.select('validate')(),
       prefix: this.formFieldStateService.select('prefix')(),
-      floatingLabelType:
-        this.formFieldStateService.select('floatingLabelType')(),
+      floatingLabelType: this.formFieldStateService.select('floatingLabelType')(),
       customStyle: this.customStyle(),
     });
 

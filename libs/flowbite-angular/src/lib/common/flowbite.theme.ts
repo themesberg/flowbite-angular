@@ -30,8 +30,7 @@ export interface FlowbiteColors extends FlowbiteStateColors {
   yellow: string;
 }
 
-export interface FlowbiteGradientColors
-  extends Omit<FlowbiteStateColors, 'warning'> {
+export interface FlowbiteGradientColors extends Omit<FlowbiteStateColors, 'warning'> {
   cyan: string;
   lime: string;
   pink: string;

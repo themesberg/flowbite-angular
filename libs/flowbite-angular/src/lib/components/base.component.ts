@@ -1,16 +1,8 @@
-import { FlowbiteClass } from '../common';
-import { Guid, generateId } from '../utils/id.generator';
+import type { FlowbiteClass } from '../common';
+import { generateId, Guid } from '../utils/id.generator';
 
-import {
-  Component,
-  HostBinding,
-  Injector,
-  OnInit,
-  afterNextRender,
-  effect,
-  inject,
-  signal,
-} from '@angular/core';
+import type { OnInit } from '@angular/core';
+import { afterNextRender, Component, effect, HostBinding, inject, Injector, signal } from '@angular/core';
 
 @Component({
   template: '',
@@ -23,7 +15,7 @@ export abstract class BaseComponent implements OnInit {
 
   @HostBinding('class')
   protected get getHostClass() {
-    return this.contentClasses()?.rootClass;
+    return this.contentClasses().rootClass;
   }
 
   public readonly flowbiteId = signal<Guid>(new Guid(Guid.empty));

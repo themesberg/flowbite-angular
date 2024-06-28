@@ -1,12 +1,11 @@
-import * as properties from './navbar-item.theme';
-
-import { BaseComponent } from '../base.component';
-import { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { LinkRouter, NavbarStateService } from '../../services';
+import { BaseComponent } from '../base.component';
+import * as properties from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
 
-import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-item',
@@ -15,13 +14,10 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar-item.component.html',
 })
 export class NavbarItemComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.NavbarItemClass>(
-    properties.NavbarItemClassInstance,
-  );
+  protected override contentClasses = signal<properties.NavbarItemClass>(properties.NavbarItemClassInstance);
 
   protected readonly themeService = inject(NavbarItemThemeService);
-  protected readonly navbarStateService =
-    inject<NavbarStateService>(NavbarStateService);
+  protected readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
   protected readonly linkRouter = inject(LinkRouter);
 
   //#region properties

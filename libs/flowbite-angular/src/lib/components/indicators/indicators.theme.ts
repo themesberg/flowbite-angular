@@ -1,5 +1,5 @@
-import { DeepPartial } from '../../common';
-import {
+import type { DeepPartial } from '../../common';
+import type {
   FlowbiteBoolean,
   FlowbiteClass,
   FlowbiteColors,
@@ -10,24 +10,11 @@ import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface IndicatorColors
-  extends Pick<
-    FlowbiteColors,
-    | 'gray'
-    | 'dark'
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'purple'
-    | 'indigo'
-    | 'yellow'
-    | 'teal'
-    | 'gray'
-  > {
+  extends Pick<FlowbiteColors, 'gray' | 'dark' | 'blue' | 'green' | 'red' | 'purple' | 'indigo' | 'yellow' | 'teal'> {
   [key: string]: string;
 }
 
-export interface IndicatorSizes
-  extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+export interface IndicatorSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 

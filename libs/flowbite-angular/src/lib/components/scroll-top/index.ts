@@ -1,14 +1,10 @@
 export { ScrollTopComponent } from './scroll-top.component';
-export {
+export type {
   ScrollTopBaseTheme,
   ScrollTopClass,
   ScrollTopProperties,
-  scrollTopClassInstance,
-  scrollTopTheme,
   ScrollTopColors,
   ScrollTopPositions,
 } from './scroll-top.theme';
-export {
-  FLOWBITE_SCROLL_TOP_THEME_TOKEN,
-  ScrollTopThemeService,
-} from './scroll-top.theme.service';
+export { scrollTopClassInstance, scrollTopTheme } from './scroll-top.theme';
+export { FLOWBITE_SCROLL_TOP_THEME_TOKEN, ScrollTopThemeService } from './scroll-top.theme.service';

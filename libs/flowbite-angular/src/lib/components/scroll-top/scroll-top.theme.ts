@@ -1,17 +1,8 @@
-import {
-  DeepPartial,
-  FlowbiteClass,
-  FlowbiteColors,
-  FlowbitePositions,
-} from '../../common';
+import type { DeepPartial, FlowbiteClass, FlowbiteColors, FlowbitePositions } from '../../common';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region region Component theme option
-export interface ScrollTopColors
-  extends Pick<
-    FlowbiteColors,
-    'blue' | 'gray' | 'green' | 'lime' | 'purple' | 'red'
-  > {
+export interface ScrollTopColors extends Pick<FlowbiteColors, 'blue' | 'gray' | 'green' | 'lime' | 'purple' | 'red'> {
   [key: string]: string;
 }
 

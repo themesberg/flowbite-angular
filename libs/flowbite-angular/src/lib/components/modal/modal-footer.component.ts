@@ -1,12 +1,11 @@
-import * as properties from './modal-footer.theme';
-
+import type { DeepPartial } from '../../common';
 import { BaseComponent } from '../base.component';
-import { ModalComponent } from './modal.component';
+import * as properties from './modal-footer.theme';
 import { ModalFooterThemeService } from './modal-footer.theme.service';
+import { ModalComponent } from './modal.component';
 
-import { Component, inject, input, signal } from '@angular/core';
-import { DeepPartial } from '../../common';
 import { NgClass } from '@angular/common';
+import { Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -15,9 +14,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ModalFooterClass>(
-    properties.ModalFooterClassInstance,
-  );
+  protected override contentClasses = signal<properties.ModalFooterClass>(properties.ModalFooterClassInstance);
 
   protected readonly themeService = inject(ModalFooterThemeService);
   protected readonly modalComponent = inject<ModalComponent>(ModalComponent);

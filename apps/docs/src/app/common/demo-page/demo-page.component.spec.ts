@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DemoPageComponent } from './demo-page.component';
+
+import type { ComponentFixture } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 describe('DemoPageComponent', () => {
   let component: DemoPageComponent;

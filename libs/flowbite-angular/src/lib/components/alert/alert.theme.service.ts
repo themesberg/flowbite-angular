@@ -1,28 +1,17 @@
-import { FlowbiteThemeService } from '../../common/flowbite.theme.service';
+import type { FlowbiteThemeService } from '../../common/flowbite.theme.service';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type {
-  AlertBaseTheme,
-  AlertClass,
-  AlertProperties,
-} from './alert.theme';
+import type { AlertBaseTheme, AlertClass, AlertProperties } from './alert.theme';
 
-import { InjectionToken, inject } from '@angular/core';
+import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_ALERT_THEME_TOKEN = new InjectionToken<AlertBaseTheme>(
-  'FLOWBITE_ALERT_THEME_TOKEN',
-);
+export const FLOWBITE_ALERT_THEME_TOKEN = new InjectionToken<AlertBaseTheme>('FLOWBITE_ALERT_THEME_TOKEN');
 
-export class AlertThemeService
-  implements FlowbiteThemeService<AlertProperties>
-{
+export class AlertThemeService implements FlowbiteThemeService<AlertProperties> {
   private readonly baseTheme = inject(FLOWBITE_ALERT_THEME_TOKEN);
 
   public getClasses(properties: AlertProperties): AlertClass {
-    const theme: AlertBaseTheme = mergeTheme(
-      this.baseTheme,
-      properties.customStyle,
-    );
+    const theme: AlertBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: AlertClass = {
       rootClass: twMerge(
@@ -31,10 +20,7 @@ export class AlertThemeService
         theme.color[properties.color],
         theme.isRounded[properties.isRounded],
       ),
-      closeButtonClass: twMerge(
-        theme.closeButton.base,
-        theme.closeButton.color[properties.color],
-      ),
+      closeButtonClass: twMerge(theme.closeButton.base, theme.closeButton.color[properties.color]),
     };
 
     return output;

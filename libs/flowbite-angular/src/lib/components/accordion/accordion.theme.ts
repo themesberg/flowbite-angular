@@ -1,9 +1,5 @@
-import { DeepPartial } from '../../common';
-import {
-  FlowbiteBoolean,
-  FlowbiteClass,
-  FlowbiteColors,
-} from '../../common/flowbite.theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from '../../common/flowbite.theme';
 import { createClass } from '../../utils/theme/create-class';
 import { createTheme } from '../../utils/theme/create-theme';
 

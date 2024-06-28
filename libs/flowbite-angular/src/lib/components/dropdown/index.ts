@@ -1,5 +1,5 @@
 export { DropdownComponent } from './dropdown.component';
-export {
+export type {
   DropdownProperties,
   DropdownClass,
   DropdownPositions,
@@ -8,49 +8,25 @@ export {
   DropdownContentTheme,
   DropdownSpanTheme,
   DropdownSubContentTheme,
-  dropdownTheme,
-  DropdownClassInstance,
 } from './dropdown.theme';
-export {
-  DropdownThemeService,
-  FLOWBITE_DROPDOWN_THEME_TOKEN,
-} from './dropdown.theme.service';
+export { dropdownTheme, DropdownClassInstance } from './dropdown.theme';
+export { DropdownThemeService, FLOWBITE_DROPDOWN_THEME_TOKEN } from './dropdown.theme.service';
 
 export { DropdownItemComponent } from './dropdown-item.component';
-export {
-  DropdownItemProperties,
-  DropdownItemClass,
-  DropdownItemBaseTheme,
-  dropdownItemTheme,
-  DropdownItemClassInstance,
-} from './dropdown-item.theme';
-export {
-  DropdownItemThemeService,
-  FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN,
-} from './dropdown-item.theme.service';
+export type { DropdownItemProperties, DropdownItemClass, DropdownItemBaseTheme } from './dropdown-item.theme';
+export { dropdownItemTheme, DropdownItemClassInstance } from './dropdown-item.theme';
+export { DropdownItemThemeService, FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN } from './dropdown-item.theme.service';
 
 export { DropdownDividerComponent } from './dropdown-divider.component';
-export {
+export type {
   DropdownDividerProperties,
   DropdownDividerClass,
   DropdownDividerBaseTheme,
-  dropdownDividerTheme,
-  DropdownDividerClassInstance,
 } from './dropdown-divider.theme';
-export {
-  DropdownDividerThemeService,
-  FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN,
-} from './dropdown-divider.theme.service';
+export { dropdownDividerTheme, DropdownDividerClassInstance } from './dropdown-divider.theme';
+export { DropdownDividerThemeService, FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN } from './dropdown-divider.theme.service';
 
 export { DropdownHeaderComponent } from './dropdown-header.component';
-export {
-  DropdownHeaderProperties,
-  DropdownHeaderClass,
-  DropdownHeaderBaseTheme,
-  dropdownHeaderTheme,
-  DropdownHeaderClassInstance,
-} from './dropdown-header.theme';
-export {
-  DropdownHeaderThemeService,
-  FLOWBITE_DROPDOWN_HEADER_THEME_TOKEN,
-} from './dropdown-header.theme.service';
+export type { DropdownHeaderProperties, DropdownHeaderClass, DropdownHeaderBaseTheme } from './dropdown-header.theme';
+export { dropdownHeaderTheme, DropdownHeaderClassInstance } from './dropdown-header.theme';
+export { DropdownHeaderThemeService, FLOWBITE_DROPDOWN_HEADER_THEME_TOKEN } from './dropdown-header.theme.service';

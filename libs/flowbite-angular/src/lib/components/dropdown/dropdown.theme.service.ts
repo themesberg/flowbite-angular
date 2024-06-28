@@ -1,27 +1,17 @@
-import {
-  DropdownBaseTheme,
-  DropdownClass,
-  DropdownProperties,
-} from './dropdown.theme';
-import { FlowbiteThemeService } from '../../common';
+import type { FlowbiteThemeService } from '../../common';
 import { mergeTheme } from '../../utils/theme/merge-theme';
+import type { DropdownBaseTheme, DropdownClass, DropdownProperties } from './dropdown.theme';
 
-import { InjectionToken, inject } from '@angular/core';
+import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_DROPDOWN_THEME_TOKEN =
-  new InjectionToken<DropdownBaseTheme>('FLOWBITE_DROPDOWN_THEME_TOKEN');
+export const FLOWBITE_DROPDOWN_THEME_TOKEN = new InjectionToken<DropdownBaseTheme>('FLOWBITE_DROPDOWN_THEME_TOKEN');
 
-export class DropdownThemeService
-  implements FlowbiteThemeService<DropdownProperties>
-{
+export class DropdownThemeService implements FlowbiteThemeService<DropdownProperties> {
   private readonly baseTheme = inject(FLOWBITE_DROPDOWN_THEME_TOKEN);
 
   public getClasses(properties: DropdownProperties): DropdownClass {
-    const theme: DropdownBaseTheme = mergeTheme(
-      this.baseTheme,
-      properties.customStyle,
-    );
+    const theme: DropdownBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: DropdownClass = {
       rootClass: '',

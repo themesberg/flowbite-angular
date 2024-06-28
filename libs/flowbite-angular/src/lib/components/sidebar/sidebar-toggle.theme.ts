@@ -1,9 +1,4 @@
-import {
-  DeepPartial,
-  FlowbiteClass,
-  FlowbiteColors,
-  FlowbiteSizes,
-} from '../../common';
+import type { DeepPartial, FlowbiteClass, FlowbiteColors, FlowbiteSizes } from '../../common';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region region Component theme option
