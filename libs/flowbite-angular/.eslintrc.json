@@ -6,7 +6,7 @@
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": ["*.ts", "*.js", "*.jsx"],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",

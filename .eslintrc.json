@@ -5,7 +5,7 @@
   "extends": ["plugin:@angular-eslint/recommended", "plugin:@typescript-eslint/recommended-type-checked", "prettier"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": ["*.ts"],
       "plugins": [],
       "extends": [],
       "rules": {
