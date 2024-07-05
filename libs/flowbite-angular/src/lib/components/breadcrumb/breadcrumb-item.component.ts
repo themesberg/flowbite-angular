@@ -1,5 +1,5 @@
 import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import { LinkRouter } from '../../services';
+import { FlowbiteLinkRouter } from '../../services';
 import { BaseComponent } from '../base.component';
 import * as properties from './breadcrumb-item.theme';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
@@ -17,7 +17,7 @@ export class BreadcrumbItemComponent extends BaseComponent {
   protected override contentClasses = signal<properties.BreadcrumbItemClass>(properties.BreadcrumbItemClassInstance);
 
   protected readonly themeService = inject(BreadcrumbItemThemeService);
-  protected readonly linkRouter = inject(LinkRouter);
+  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   //#region properties
   public link = input<FlowbiteLink | undefined>(undefined);
@@ -37,6 +37,6 @@ export class BreadcrumbItemComponent extends BaseComponent {
 
   @HostListener('click')
   protected async onClick(): Promise<void> {
-    await this.linkRouter.navigate(this.link());
+    await this.flowbiteLinkRouter.navigate(this.link());
   }
 }

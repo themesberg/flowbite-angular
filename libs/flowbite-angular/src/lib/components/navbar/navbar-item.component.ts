@@ -1,5 +1,5 @@
 import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import { LinkRouter, NavbarStateService } from '../../services';
+import { FlowbiteLinkRouter, NavbarStateService } from '../../services';
 import { BaseComponent } from '../base.component';
 import * as properties from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
@@ -18,7 +18,7 @@ export class NavbarItemComponent extends BaseComponent {
 
   protected readonly themeService = inject(NavbarItemThemeService);
   protected readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
-  protected readonly linkRouter = inject(LinkRouter);
+  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   //#region properties
   public color = input<keyof properties.NavbarItemColors>('blue');
@@ -41,6 +41,6 @@ export class NavbarItemComponent extends BaseComponent {
   protected onClick(): void {
     this.navbarStateService.set('isOpen', false);
 
-    this.linkRouter.navigate(this.link());
+    this.flowbiteLinkRouter.navigate(this.link());
   }
 }

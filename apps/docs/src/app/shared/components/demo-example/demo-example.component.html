@@ -1,0 +1,16 @@
+<div class="flex flex-col gap-2">
+  <span class="text-2xl font-bold">{{ title() }}</span>
+  <span class="text-base">{{ subtitle() }}</span>
+  <div
+    class="flex w-full rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800"
+    [ngClass]="[codeClassName() ?? '']">
+    <div class="flex h-full w-full flex-col justify-center gap-6 p-6">
+      <ng-content />
+      @for (code of codes(); track $index) {
+        <flowbite-shiki
+          [code]="code.code.trim()"
+          [language]="code.language" />
+      }
+    </div>
+  </div>
+</div>

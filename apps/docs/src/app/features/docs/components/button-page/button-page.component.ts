@@ -1,9 +1,9 @@
-import { DemoExampleComponent } from '../../../../common/demo-example/demo-example.component';
-import { DemoPageComponent } from '../../../../common/demo-page/demo-page.component';
+import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
+import { DemoPageComponent } from '../../../../shared/components/demo-page/demo-page.component';
 
 import type { BadgeBaseTheme } from 'flowbite-angular';
 import { BadgeComponent, ButtonComponent } from 'flowbite-angular';
-import type { BundledLanguage } from 'shiki/langs';
+import type { BundledLanguage } from 'shiki/bundle-web.mjs';
 
 import { Component } from '@angular/core';
 

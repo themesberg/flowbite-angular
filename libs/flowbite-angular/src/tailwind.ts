@@ -1,9 +1,11 @@
+// prettier-ignore
 /*
  * Thanks to flowbite-react for this file
  * https://github.com/themesberg/flowbite-react/blob/main/packages/ui/src/tailwind.ts
  */
 
 interface Content {
+
   /**
    * Path to `node_modules` where `flowbite-angular` is installed
    *
@@ -29,7 +31,6 @@ interface Content {
    *
    * @default "./"
    */
-
   base?: string;
 }
 

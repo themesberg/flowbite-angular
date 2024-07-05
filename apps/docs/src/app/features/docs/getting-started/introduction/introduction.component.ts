@@ -1,4 +1,4 @@
-import { ShikiComponent } from '../../../../common/shiki/shiki.component';
+import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
 
 import { Component } from '@angular/core';
 

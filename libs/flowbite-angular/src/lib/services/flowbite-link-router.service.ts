@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
-export class LinkRouter {
+export class FlowbiteLinkRouter {
   private readonly displayErrorSetting = inject(FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR);
   private readonly router = inject(Router);
 

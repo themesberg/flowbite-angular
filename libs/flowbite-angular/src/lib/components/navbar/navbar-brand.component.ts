@@ -1,5 +1,5 @@
 import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import { LinkRouter } from '../../services';
+import { FlowbiteLinkRouter } from '../../services';
 import { BaseComponent } from '../base.component';
 import * as properties from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
@@ -17,7 +17,7 @@ export class NavbarBrandComponent extends BaseComponent {
   protected override contentClasses = signal<properties.NavbarBrandClass>(properties.NavbarBrandClassInstance);
 
   protected readonly themeService = inject(NavbarBrandThemeService);
-  protected readonly linkRouter = inject(LinkRouter);
+  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.NavbarBrandBaseTheme>>({});
@@ -36,6 +36,6 @@ export class NavbarBrandComponent extends BaseComponent {
 
   @HostListener('click')
   protected async onClick(): Promise<void> {
-    await this.linkRouter.navigate(this.link());
+    await this.flowbiteLinkRouter.navigate(this.link());
   }
 }

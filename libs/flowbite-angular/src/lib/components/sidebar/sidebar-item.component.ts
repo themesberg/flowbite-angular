@@ -1,6 +1,6 @@
 import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
 import { SanitizeHtmlPipe } from '../../pipes';
-import { LinkRouter } from '../../services';
+import { FlowbiteLinkRouter } from '../../services';
 import { SidebarStateService } from '../../services/state/sidebar.state';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base.component';
@@ -22,7 +22,7 @@ export class SidebarItemComponent extends BaseComponent {
 
   protected readonly themeService = inject(SidebarItemThemeService);
   protected readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
-  protected readonly linkRouter = inject(LinkRouter);
+  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   //#region properties
   public icon = input<string | undefined>(undefined);
@@ -46,6 +46,6 @@ export class SidebarItemComponent extends BaseComponent {
 
   @HostListener('click')
   protected async onClick(): Promise<void> {
-    await this.linkRouter.navigate(this.link());
+    await this.flowbiteLinkRouter.navigate(this.link());
   }
 }

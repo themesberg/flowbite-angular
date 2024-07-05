@@ -1,7 +1,6 @@
 import type { ThemeState } from 'flowbite-angular';
 import { GlobalSignalStoreService, SanitizeHtmlPipe } from 'flowbite-angular';
-import type { BundledLanguage, ShikiTransformer } from 'shiki';
-import { codeToHtml } from 'shiki';
+import { codeToHtml, type BundledLanguage, type ShikiTransformer } from 'shiki/bundle-web.mjs';
 
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, computed, inject, input } from '@angular/core';
@@ -13,9 +12,12 @@ import { Component, computed, inject, input } from '@angular/core';
   templateUrl: './shiki.component.html',
 })
 export class ShikiComponent {
-  protected readonly themesignalService = inject<GlobalSignalStoreService<ThemeState>>(
+  protected readonly themeSignalService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
   );
+
+  public code = input.required<string>();
+  public language = input.required<BundledLanguage>();
 
   static shikiTransformers: ShikiTransformer[] = [
     {
@@ -27,13 +29,10 @@ export class ShikiComponent {
     },
   ];
 
-  public code = input.required<string>();
-  public language = input.required<BundledLanguage>();
-
   public displayCode = computed<Promise<string>>(() => {
     return codeToHtml(this.code(), {
       lang: this.language(),
-      theme: this.themesignalService.select('theme')() === 'light' ? 'material-theme-lighter' : 'material-theme',
+      theme: this.themeSignalService.select('theme')() === 'light' ? 'material-theme-lighter' : 'material-theme',
       transformers: ShikiComponent.shikiTransformers,
     });
   });
