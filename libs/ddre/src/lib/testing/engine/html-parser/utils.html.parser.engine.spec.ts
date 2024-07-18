@@ -1,4 +1,4 @@
-import { stringArrayToString } from './utils.html.parser.engine';
+import { stringArrayToString } from '../../../public_api';
 
 describe('utils.html.parser.engine', () => {
   it('should give one string from string array', () => {

@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { DDREEngineInput } from '../../core';
-import { InvalidInputError } from '../../core/errors/invalid-input.error';
-import { AComponent } from '../../testing/a.component';
-import { parseInputToArrayString } from './core.html.parser.engine';
+import type { DDREEngineInput } from '../../../public_api';
+import { InvalidInputError, parseInputToArrayString } from '../../../public_api';
+import { AComponent } from '../../a.component';
 
 describe('core.html.parser.engine', () => {
   it('should give HTML p tag', () => {

@@ -1,6 +1,6 @@
-import type { DDREEngineInput } from '../../core';
-import { AComponent } from '../../testing/a.component';
-import { getString } from './entry.html.parser.engine';
+import type { DDREEngineInput } from '../../../public_api';
+import { getString } from '../../../public_api';
+import { AComponent } from '../../a.component';
 
 describe('entry.html.parser.engine', () => {
   it('should give formatted HTML as string', () => {
