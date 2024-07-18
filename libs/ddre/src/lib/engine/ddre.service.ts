@@ -17,7 +17,7 @@ export class DDREService {
   public generateString<T>(input: DDREEngineInput<T>): DDREEngineOutput {
     return {
       plainHtml: getString(input),
-      compiledHtml: undefined,
+      compiledHtml: undefined, //TODO: Implement logic for compiledHtml
     };
   }
 }
