@@ -16,7 +16,7 @@
         // typescript-eslint
         "@typescript-eslint/comma-dangle": 0,
         "@typescript-eslint/no-extra-semi": 2,
-        "@typescript-eslint/lines-around-comment": 1,
+        "@typescript-eslint/lines-around-comment": 0,
         "@typescript-eslint/member-delimiter-style": 2,
         "@typescript-eslint/member-ordering": [
           1,

@@ -1,0 +1,28 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "parserOptions": {
+    "project": "./libs/ddre/tsconfig(.*)?.json"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.js", "*.jsx"],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    }
+  ]
+}

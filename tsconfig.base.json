@@ -17,7 +17,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "paths": {
-      "flowbite-angular": ["libs/flowbite-angular/src/index.ts"]
+      "flowbite-angular": ["libs/flowbite-angular/src/index.ts"],
+      "flowbite-angular/ddre": ["libs/ddre/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

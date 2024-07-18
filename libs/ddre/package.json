@@ -1,0 +1,9 @@
+{
+  "name": "flowbiteÃ-angular/ddre",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "peerDependencies": {
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0"
+  }
+}
