@@ -6,7 +6,7 @@ import { parseInputToArrayString } from './core.html.parser.engine';
 
 describe('core.html.parser.engine', () => {
   it('should give HTML p tag', () => {
-    const source: DDREEngineInput<any> = '<p>Hello World !</p>';
+    const source: DDREEngineInput<AComponent> = '<p>Hello World !</p>';
 
     const expectedResult = ['<p>Hello World !</p>'];
 
@@ -16,13 +16,13 @@ describe('core.html.parser.engine', () => {
   });
 
   it('should give basic component tag', () => {
-    const source: DDREEngineInput<any> = {
+    const source: DDREEngineInput<AComponent> = {
       component: AComponent,
       content: '<p>Hello World !</p>',
       context: [],
     };
 
-    const expectedResult = ['<a>', '<p>Hello World !</p>', '</a>'];
+    const expectedResult = ['<a>', '  <p>Hello World !</p>', '</a>'];
 
     const givenResult = parseInputToArrayString(source);
 
@@ -36,11 +36,11 @@ describe('core.html.parser.engine', () => {
       context: [],
     };
 
-    expect(parseInputToArrayString(source)).toThrow(InvalidInputError);
+    expect(() => parseInputToArrayString(source)).toThrow(InvalidInputError);
   });
 
   it('should create more advanced components', () => {
-    const source: DDREEngineInput<any> = {
+    const source: DDREEngineInput<AComponent> = {
       component: AComponent,
       context: [],
       content: [
