@@ -7,7 +7,7 @@
   <flowbite-badge color="indigo">Indigo</flowbite-badge>
   <flowbite-badge color="purple">Purple</flowbite-badge>
   <flowbite-badge color="pink">Pink</flowbite-badge>
-  @for (item of examples.defaultBadgeExample; track $index) {
+  @for (item of examples.defaultBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -23,7 +23,7 @@
   <flowbite-badge color="indigo" size="sm">Indigo</flowbite-badge>
   <flowbite-badge color="purple" size="sm">Purple</flowbite-badge>
   <flowbite-badge color="pink" size="sm">Pink</flowbite-badge>
-  @for (item of examples.largeBadgeExample; track $index) {
+  @for (item of examples.largeBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -33,7 +33,7 @@
 <flowbite-demo-example title="Badge as link">
   <flowbite-badge link="/docs/components/badge']">Default</flowbite-badge>
   <flowbite-badge link="/docs/components/badge" size="sm">Default</flowbite-badge>
-  @for (item of examples.linkBadgeExample; track $index) {
+  @for (item of examples.linkBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -54,7 +54,7 @@
     </svg>
     3 days ago
   </flowbite-badge>
-  @for (item of examples.iconBadgeExample; track $index) {
+  @for (item of examples.iconBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -83,7 +83,7 @@
       <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
     </svg>
   </flowbite-badge>
-  @for (item of examples.iconOnlyBadgeExemple; track $index) {
+  @for (item of examples.iconOnlyBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"

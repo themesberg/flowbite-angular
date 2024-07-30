@@ -1,6 +1,6 @@
 import type { Example } from './examples';
 
-export const defaultAccordionExample: Example[] = [
+export const defaultAccordion: Example[] = [
   {
     language: 'html',
     code: `

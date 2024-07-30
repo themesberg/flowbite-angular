@@ -1,6 +1,6 @@
 import type { Example } from './examples';
 
-export const defaultBadgeExample: Example[] = [
+export const defaultBadge: Example[] = [
   {
     language: 'html',
     code: `
@@ -15,7 +15,7 @@ export const defaultBadgeExample: Example[] = [
       `,
   },
 ];
-export const largeBadgeExample: Example[] = [
+export const largeBadge: Example[] = [
   {
     language: 'html',
     code: `
@@ -30,7 +30,7 @@ export const largeBadgeExample: Example[] = [
 `,
   },
 ];
-export const linkBadgeExample: Example[] = [
+export const linkBadge: Example[] = [
   {
     language: 'html',
     code: `
@@ -38,7 +38,7 @@ export const linkBadgeExample: Example[] = [
 <flowbite-badge link="/docs/components/badge" size="sm">Default</flowbite-badge>`,
   },
 ];
-export const iconBadgeExample: Example[] = [
+export const iconBadge: Example[] = [
   {
     language: 'html',
     code: `
@@ -57,7 +57,7 @@ export const iconBadgeExample: Example[] = [
       `,
   },
 ];
-export const iconOnlyBadgeExemple: Example[] = [
+export const iconOnlyBadge: Example[] = [
   {
     language: 'html',
     code: `

@@ -15,7 +15,7 @@ import { Component, HostBinding } from '@angular/core';
 })
 export class BadgePageComponent {
   @HostBinding('class')
-  protected hostClass = 'flex flex-col gap-8';
+  protected readonly hostClass = 'flex flex-col gap-8';
 
-  protected examples = examples;
+  protected readonly examples = examples;
 }
