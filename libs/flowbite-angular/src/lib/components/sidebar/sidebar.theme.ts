@@ -15,7 +15,7 @@ export interface SidebarBaseTheme {
 }
 
 export const sidebarTheme: SidebarBaseTheme = createTheme({
-  base: 'flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
+  base: 'shrink-0 flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
   isRounded: {
     enabled: 'rounded',
     disabled: '',

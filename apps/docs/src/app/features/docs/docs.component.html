@@ -1,4 +1,4 @@
-<div class="flex flex-row">
+<div class="flex flex-row p-4 2xl:mx-60 2xl:my-8 gap-4">
   <flowbite-sidebar>
     <flowbite-sidebar-item-group title="GETTING STARTED">
       <flowbite-sidebar-item [link]="['/docs', '/getting-started', '/introduction']">
@@ -26,7 +26,5 @@
     <flowbite-sidebar-item-group title="FORMS"></flowbite-sidebar-item-group>
   </flowbite-sidebar>
 
-  <div class="container px-4 xl:px-8">
-    <router-outlet />
-  </div>
+  <router-outlet />
 </div>

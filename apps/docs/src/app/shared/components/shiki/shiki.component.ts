@@ -3,7 +3,7 @@ import { GlobalSignalStoreService, SanitizeHtmlPipe } from 'flowbite-angular';
 import { codeToHtml, type BundledLanguage, type ShikiTransformer } from 'shiki/bundle-web.mjs';
 
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, HostBinding, inject, input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -12,6 +12,11 @@ import { Component, computed, inject, input } from '@angular/core';
   templateUrl: './shiki.component.html',
 })
 export class ShikiComponent {
+  @HostBinding('class')
+  protected get hostClass() {
+    return 'overflow-x-auto';
+  }
+
   protected readonly themeSignalService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
   );
@@ -23,14 +28,14 @@ export class ShikiComponent {
     {
       pre(node) {
         this.addClassToHast(node, 'p-4');
-        this.addClassToHast(node, 'overflow-x-auto');
         this.addClassToHast(node, 'rounded-md');
+        this.addClassToHast(node, 'overflow-x-auto');
       },
     },
   ];
 
   public displayCode = computed<Promise<string>>(() => {
-    return codeToHtml(this.code(), {
+    return codeToHtml(this.code().trim(), {
       lang: this.language(),
       theme: this.themeSignalService.select('theme')() === 'light' ? 'material-theme-lighter' : 'material-theme',
       transformers: ShikiComponent.shikiTransformers,
