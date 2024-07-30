@@ -1,4 +1,10 @@
 import {
+  AccordionComponent,
+  AccordionContentComponent,
+  AccordionPanelComponent,
+  AccordionPanelStateService,
+  AccordionStateService,
+  AccordionTitleComponent,
   DarkThemeToggleComponent,
   NavbarBrandComponent,
   NavbarComponent,
@@ -9,8 +15,10 @@ import {
   SidebarStateService,
   SidebarToggleComponent,
 } from 'flowbite-angular';
+import { DDREService } from 'flowbite-angular/ddre';
 
-import { Component } from '@angular/core';
+import type { AfterViewInit } from '@angular/core';
+import { Component, EnvironmentInjector, Inject, Injector, ViewChild, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -28,6 +36,35 @@ import { RouterOutlet } from '@angular/router';
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
-  providers: [SidebarStateService],
+  providers: [SidebarStateService, AccordionPanelStateService, AccordionStateService],
+  // eslint-disable-next-line @angular-eslint/no-host-metadata-property
+  host: { ngSkipHydration: 'true' },
 })
-export class AppComponent {}
+export class AppComponent implements AfterViewInit {
+  @ViewChild('azerty', { read: ViewContainerRef }) vcr!: ViewContainerRef;
+  constructor(
+    @Inject(DDREService) protected DDREEngineService: DDREService,
+    @Inject(EnvironmentInjector) protected environmentInjector: EnvironmentInjector,
+    @Inject(Injector) protected injector: Injector,
+  ) {}
+
+  ngAfterViewInit(): void {
+    this.DDREEngineService.generateString(
+      {
+        component: AccordionComponent,
+        content: {
+          component: AccordionPanelComponent,
+          content: [
+            {
+              component: AccordionTitleComponent,
+              content: 'hello world !',
+            },
+            { component: AccordionContentComponent, content: 'aze' },
+          ],
+        },
+      },
+      this.vcr,
+      this.injector,
+    );
+  }
+}
