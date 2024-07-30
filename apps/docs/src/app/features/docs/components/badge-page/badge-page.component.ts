@@ -5,7 +5,7 @@ import * as examples from '../../../examples/badge.examples';
 
 import { BadgeComponent } from 'flowbite-angular';
 
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -14,5 +14,8 @@ import { Component } from '@angular/core';
   templateUrl: './badge-page.component.html',
 })
 export class BadgePageComponent {
+  @HostBinding('class')
+  protected hostClass = 'flex flex-col gap-8';
+
   protected examples = examples;
 }
