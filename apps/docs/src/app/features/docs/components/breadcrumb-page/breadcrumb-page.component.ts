@@ -1,5 +1,4 @@
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
-import { DemoPageComponent } from '../../../../shared/components/demo-page/demo-page.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
 import * as examples from '../../../examples/breadcrumbs.example';
 
@@ -9,7 +8,7 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [DemoPageComponent, DemoExampleComponent, BreadcrumbComponent, BreadcrumbItemComponent, ShikiComponent],
+  imports: [DemoExampleComponent, BreadcrumbComponent, BreadcrumbItemComponent, ShikiComponent],
   selector: 'flowbite-breadcrumb-page',
   templateUrl: './breadcrumb-page.component.html',
 })

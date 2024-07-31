@@ -1,5 +1,4 @@
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
-import { DemoPageComponent } from '../../../../shared/components/demo-page/demo-page.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
 import * as examples from '../../../examples/alert.example';
 
@@ -9,7 +8,7 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [DemoPageComponent, DemoExampleComponent, AlertComponent, ShikiComponent],
+  imports: [DemoExampleComponent, AlertComponent, ShikiComponent],
   selector: 'flowbite-alert-page',
   templateUrl: './alert-page.component.html',
 })

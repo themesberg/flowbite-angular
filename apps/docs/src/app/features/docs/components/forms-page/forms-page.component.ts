@@ -1,5 +1,4 @@
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
-import { DemoPageComponent } from '../../../../shared/components/demo-page/demo-page.component';
 
 import { ButtonComponent, FormFieldComponent, HelperDirective, InputDirective, LabelDirective } from 'flowbite-angular';
 import type { BundledLanguage } from 'shiki/bundle-web.mjs';
@@ -8,15 +7,7 @@ import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [
-    DemoPageComponent,
-    DemoExampleComponent,
-    FormFieldComponent,
-    ButtonComponent,
-    LabelDirective,
-    InputDirective,
-    HelperDirective,
-  ],
+  imports: [DemoExampleComponent, FormFieldComponent, ButtonComponent, LabelDirective, InputDirective, HelperDirective],
   selector: 'flowbite-forms-page',
   templateUrl: './form-page.component.html',
 })

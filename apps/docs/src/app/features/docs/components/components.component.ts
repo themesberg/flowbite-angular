@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,4 +7,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './components.component.html',
 })
-export class ComponentsComponent {}
+export class ComponentsComponent {
+  @HostBinding('class')
+  protected readonly hostClass = 'w-full';
+}

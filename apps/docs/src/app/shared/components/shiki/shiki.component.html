@@ -2,7 +2,7 @@
   <span [innerHTML]="(displayCode() | async) || '' | sanitizeHtml"></span>
 } @placeholder (minimum 250ms) {
   <div
-    class="flex justify-center"
+    class="flex justify-center overflow-y-clip"
     role="status">
     <svg
       aria-hidden="true"
