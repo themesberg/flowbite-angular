@@ -1,0 +1,45 @@
+<flowbite-demo-example title="Default Badge">
+  <flowbite-iframe link="frames/badge/default" />
+  @for (item of examples.defaultBadge; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Large badge">
+  <flowbite-iframe link="frames/badge/large" />
+  @for (item of examples.largeBadge; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Badge as link">
+  <flowbite-iframe link="frames/badge/link" />
+  @for (item of examples.linkBadge; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Badge with icon">
+  <flowbite-iframe link="frames/badge/icon" />
+  @for (item of examples.iconBadge; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Badge with icon only">
+  <flowbite-iframe link="frames/badge/icon-only" />
+  @for (item of examples.iconOnlyBadge; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>

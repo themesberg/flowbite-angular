@@ -6,4 +6,3 @@
 .angular
 
 /.nx/cache
-/apps/docs/src/app/features/docs/components/**/*component.html

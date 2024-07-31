@@ -1,0 +1,45 @@
+<flowbite-demo-example title="Default Badge">
+  <flowbite-iframe link="frames/alert/default" />
+  @for (item of examples.defaultAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Alerts with icon">
+  <flowbite-iframe link="frames/alert/icon" />
+  @for (item of examples.iconAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Dismissible alerts">
+  <flowbite-iframe link="frames/alert/dismissable" />
+  @for (item of examples.dismissableAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Border accent">
+  <flowbite-iframe link="frames/alert/border" />
+  @for (item of examples.borderAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Additional content">
+  <flowbite-iframe link="frames/alert/additional-content" />
+  @for (item of examples.additionalContentAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>

@@ -1,18 +1,22 @@
-import { DocsComponent } from './features/docs/docs.component';
-import { HomeComponent } from './features/home/home.component';
-import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { NotFoundComponent } from './ui/shared/components/not-found/not-found.component';
+import { UiComponent } from './ui/ui.component';
 
 import type { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'ui',
+    pathMatch: 'full',
   },
   {
-    path: 'docs',
-    component: DocsComponent,
-    loadChildren: () => import('./features/docs/docs.routes'),
+    path: 'ui',
+    component: UiComponent,
+    loadChildren: () => import('./ui/app.routes'),
+  },
+  {
+    path: 'frames',
+    loadChildren: () => import('./frames/frames.routes'),
   },
   {
     path: '**',

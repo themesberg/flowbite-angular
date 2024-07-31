@@ -1,0 +1,11 @@
+<flowbite-demo-example title="Default accordion">
+  <flowbite-iframe
+    height="350"
+    link="frames/accordion/default" />
+  @for (item of examples.defaultAccordion; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [code]="item.code" />
+  }
+</flowbite-demo-example>
