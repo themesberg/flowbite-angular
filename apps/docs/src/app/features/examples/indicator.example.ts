@@ -4,15 +4,15 @@ export const defaultIndicator: Example[] = [
   {
     language: 'html',
     code: `
-<flowbite-indicator></flowbite-indicator>
-<flowbite-indicator color="gray"></flowbite-indicator>
-<flowbite-indicator color="blue"></flowbite-indicator>
-<flowbite-indicator color="green"></flowbite-indicator>
-<flowbite-indicator color="red"></flowbite-indicator>
-<flowbite-indicator color="purple" ></flowbite-indicator>
-<flowbite-indicator color="indigo"></flowbite-indicator>
-<flowbite-indicator color="yellow"></flowbite-indicator>
-<flowbite-indicator color="teal"></flowbite-indicator>
+<flowbite-indicator />
+<flowbite-indicator color="gray" />
+<flowbite-indicator color="blue" />
+<flowbite-indicator color="green" />
+<flowbite-indicator color="red" />
+<flowbite-indicator color="purple" />
+<flowbite-indicator color="indigo" />
+<flowbite-indicator color="yellow" />
+<flowbite-indicator color="teal" />
     `,
   },
 ];
@@ -49,15 +49,15 @@ export const positionedIndicator: Example[] = [
     language: 'html',
     code: `
 <div class="w-56 h-56 relative bg-gray-300 borer border-gray-500 rounded-lg dark:bg-gray-900 dark:border-gray-700">
-  <flowbite-indicator placement="top-left" color="gray"></flowbite-indicator>
-  <flowbite-indicator placement="top-center" color="blue"></flowbite-indicator>
-  <flowbite-indicator placement="top-right" color="green"></flowbite-indicator>
-  <flowbite-indicator placement="center-left" color="red"></flowbite-indicator>
-  <flowbite-indicator placement="center" color="purple" ></flowbite-indicator>
-  <flowbite-indicator placement="center-right" color="indigo"></flowbite-indicator>
-  <flowbite-indicator placement="bottom-left" color="yellow"></flowbite-indicator>
-  <flowbite-indicator placement="bottom-center" color="teal"></flowbite-indicator>
-  <flowbite-indicator placement="bottom-right" color="dark"></flowbite-indicator>
+  <flowbite-indicator placement="top-left" color="gray" />
+  <flowbite-indicator placement="top-center" color="blue" />
+  <flowbite-indicator placement="top-right" color="green" />
+  <flowbite-indicator placement="center-left" color="red" />
+  <flowbite-indicator placement="center" color="purple" />
+  <flowbite-indicator placement="center-right" color="indigo" />
+  <flowbite-indicator placement="bottom-left" color="yellow" />
+  <flowbite-indicator placement="bottom-center" color="teal" />
+  <flowbite-indicator placement="bottom-right" color="dark" />
 </div>
     `,
   },
