@@ -4,7 +4,7 @@ export const defaultAccordion: Example[] = [
   {
     language: 'html',
     code: `
-<flowbite-accordion>
+<flowbite-accordion class="w-full">
   <flowbite-accordion-panel isOpen>
     <flowbite-accordion-title>What is Flowbite ?</flowbite-accordion-title>
     <flowbite-accordion-content>

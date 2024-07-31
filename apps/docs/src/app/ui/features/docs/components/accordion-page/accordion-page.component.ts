@@ -1,4 +1,4 @@
-import { FlowbiteIFrameComponent } from '../../../../../frames/iframe.component';
+import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import * as examples from '../../../../examples/accordion.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
@@ -21,7 +21,7 @@ import { Component, HostBinding } from '@angular/core';
     AccordionTitleComponent,
     AccordionContentComponent,
     ShikiComponent,
-    FlowbiteIFrameComponent,
+    FlowbiteIFrameWrapperComponent,
   ],
   selector: 'flowbite-accordion-page',
   templateUrl: './accordion-page.component.html',

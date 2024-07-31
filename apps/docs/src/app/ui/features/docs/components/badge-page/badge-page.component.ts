@@ -1,4 +1,4 @@
-import { FlowbiteIFrameComponent } from '../../../../../frames/iframe.component';
+import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import * as examples from '../../../../examples/badge.examples';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
@@ -9,7 +9,7 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [DemoExampleComponent, BadgeComponent, ShikiComponent, FlowbiteIFrameComponent],
+  imports: [DemoExampleComponent, BadgeComponent, ShikiComponent, FlowbiteIFrameWrapperComponent],
   selector: 'flowbite-badge-page',
   templateUrl: './badge-page.component.html',
 })

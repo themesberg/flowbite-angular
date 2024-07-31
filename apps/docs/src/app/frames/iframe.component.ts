@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   template: `
     <iframe
       [src]="sanitizer.bypassSecurityTrustResourceUrl(link())"
-      class="w-full h-0 mx-auto bg-white dark:bg-gray-900 iframe-code"
+      class="w-full h-0 mx-auto bg-white iframe-code"
       frameborder="0"
       style="height: {{ height() }}px"></iframe>
   `,

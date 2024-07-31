@@ -1,4 +1,4 @@
-import { FlowbiteIFrameComponent } from '../../../../../frames/iframe.component';
+import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import * as examples from '../../../../examples/alert.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
@@ -9,7 +9,7 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [DemoExampleComponent, AlertComponent, ShikiComponent, FlowbiteIFrameComponent],
+  imports: [DemoExampleComponent, AlertComponent, ShikiComponent, FlowbiteIFrameWrapperComponent],
   selector: 'flowbite-alert-page',
   templateUrl: './alert-page.component.html',
 })

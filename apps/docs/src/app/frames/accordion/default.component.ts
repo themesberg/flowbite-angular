@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
   ],
   template: `
     <flowbite-frame-display>
-      <flowbite-accordion>
+      <flowbite-accordion class="w-full">
         <flowbite-accordion-panel isOpen>
           <flowbite-accordion-title>What is Flowbite ?</flowbite-accordion-title>
           <flowbite-accordion-content>
