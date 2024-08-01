@@ -1,3 +1,4 @@
+import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import * as examples from '../../../../examples/dropdown.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
@@ -20,6 +21,7 @@ import { Component, HostBinding } from '@angular/core';
     DropdownDividerComponent,
     DropdownHeaderComponent,
     ShikiComponent,
+    FlowbiteIFrameWrapperComponent,
   ],
   selector: 'flowbite-dropdown-page',
   templateUrl: './dropdown-page.component.html',

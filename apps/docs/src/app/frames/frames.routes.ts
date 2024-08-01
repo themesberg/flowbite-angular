@@ -24,6 +24,10 @@ export default [
     loadChildren: () => import('./button/button.routes'),
   },
   {
+    path: 'dropdown',
+    loadChildren: () => import('./dropdown/dropdown.routes'),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
