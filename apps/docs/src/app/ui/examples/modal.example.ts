@@ -205,7 +205,7 @@ export const formModal: Example[] = [
       </div>
     </form>
   </flowbite-modal-body>
-  </flowbite-modal>
+</flowbite-modal>
     `,
   },
 ];

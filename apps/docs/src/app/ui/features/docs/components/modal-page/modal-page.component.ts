@@ -1,3 +1,4 @@
+import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import * as examples from '../../../../examples/modal.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
@@ -22,6 +23,7 @@ import { Component, HostBinding } from '@angular/core';
     ModalBodyComponent,
     ModalFooterComponent,
     ShikiComponent,
+    FlowbiteIFrameWrapperComponent,
   ],
   selector: 'flowbite-modal-page',
   templateUrl: './modal-page.component.html',

@@ -28,6 +28,14 @@ export default [
     loadChildren: () => import('./dropdown/dropdown.routes'),
   },
   {
+    path: 'indicator',
+    loadChildren: () => import('./indicator/indicator.routes'),
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.routes'),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },

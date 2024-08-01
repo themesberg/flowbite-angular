@@ -1,3 +1,4 @@
+import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import * as examples from '../../../../examples/indicator.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
 import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
@@ -8,7 +9,7 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [DemoExampleComponent, IndicatorComponent, ButtonComponent, ShikiComponent],
+  imports: [DemoExampleComponent, IndicatorComponent, ButtonComponent, ShikiComponent, FlowbiteIFrameWrapperComponent],
   selector: 'flowbite-indicator-page',
   templateUrl: './indicator-page.component.html',
 })

@@ -5,7 +5,7 @@ import { DropdownComponent, DropdownHeaderComponent, DropdownItemComponent } fro
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-frame-button-header',
+  selector: 'flowbite-frame-dropdown-header',
   standalone: true,
   imports: [DropdownComponent, DropdownItemComponent, DropdownHeaderComponent, FlowbiteFrameDisplayComponent],
   template: `

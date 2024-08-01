@@ -5,7 +5,7 @@ import { DropdownComponent, DropdownItemComponent } from 'flowbite-angular';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-frame-button-placed',
+  selector: 'flowbite-frame-dropdown-placed',
   standalone: true,
   imports: [DropdownComponent, DropdownItemComponent, FlowbiteFrameDisplayComponent],
   template: `
