@@ -34,7 +34,7 @@ export const linkBadge: Example[] = [
   {
     language: 'html',
     code: `
-<flowbite-badge link="/docs/components/badge']">Default</flowbite-badge>
+<flowbite-badge link="/docs/components/badge">Default</flowbite-badge>
 <flowbite-badge link="/docs/components/badge" size="sm">Default</flowbite-badge>`,
   },
 ];
