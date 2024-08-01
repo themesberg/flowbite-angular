@@ -16,6 +16,14 @@ export default [
     loadChildren: () => import('./badge/badge.routes'),
   },
   {
+    path: 'breadcrumb',
+    loadChildren: () => import('./breadcrumb/breadcrumb.routes'),
+  },
+  {
+    path: 'button',
+    loadChildren: () => import('./button/button.routes'),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
