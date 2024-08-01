@@ -1,24 +1,40 @@
+import { IframeCachedSrcDirective } from './iframe-cached-src.directive';
+
 import type { FlowbiteTheme } from 'flowbite-angular';
 
-import type { AfterViewInit } from '@angular/core';
-import { ChangeDetectorRef, Component, ElementRef, inject, input, numberAttribute, ViewChild } from '@angular/core';
+import { NgClass } from '@angular/common';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  inject,
+  input,
+  model,
+  numberAttribute,
+  ViewChild,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'flowbite-iframe',
   standalone: true,
-  imports: [],
+  imports: [NgClass, IframeCachedSrcDirective],
   template: `
     <iframe
-      [src]="sanitizer.bypassSecurityTrustResourceUrl(link())"
-      class="w-full h-0 mx-auto bg-white iframe-code"
+      flowbiteIframeChachedSrc
+      [cachedSrc]="link()"
+      class="w-full mx-auto iframe-code"
+      [ngClass]="{
+        'max-w-md': width() == 'md',
+        'max-w-sm': width() === 'sm',
+      }"
       frameborder="0"
-      style="height: {{ height() }}px"
+      loading="lazy"
       (load)="callOnLoadAction()"
       #iframe></iframe>
   `,
 })
-export class FlowbiteIFrameComponent implements AfterViewInit {
+export class FlowbiteIFrameComponent {
   @ViewChild('iframe', { static: false })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected iframe!: ElementRef<any>;
@@ -27,12 +43,9 @@ export class FlowbiteIFrameComponent implements AfterViewInit {
   protected readonly changeDetectorRef = inject(ChangeDetectorRef);
 
   public link = input.required<string>();
-  public height = input<number, unknown>(150, { transform: numberAttribute });
+  public height = input.required<number, unknown>({ transform: numberAttribute });
+  public width = model.required<'sm' | 'md' | 'lg'>();
   public onLoadAction = input<() => void>();
-
-  public ngAfterViewInit(): void {
-    this.changeDetectorRef.detach();
-  }
 
   public setTheme(theme: FlowbiteTheme): void {
     if (theme === 'light') this.iframe.nativeElement.contentDocument.documentElement.classList.remove('dark');

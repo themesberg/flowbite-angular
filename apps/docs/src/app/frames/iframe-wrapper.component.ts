@@ -1,17 +1,34 @@
 import { FlowbiteIFrameComponent } from './iframe.component';
 
-import type { ThemeState } from 'flowbite-angular';
+import type { FlowbiteTheme, ThemeState } from 'flowbite-angular';
 import { ButtonComponent, GlobalSignalStoreService } from 'flowbite-angular';
 
+import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
-import { afterNextRender, Component, effect, inject, Injector, input, numberAttribute, ViewChild } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  effect,
+  inject,
+  Injector,
+  input,
+  numberAttribute,
+  signal,
+  untracked,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'flowbite-iframe-wrapper',
   standalone: true,
-  imports: [FlowbiteIFrameComponent, ButtonComponent],
+  imports: [FlowbiteIFrameComponent, ButtonComponent, NgClass],
   template: `
-    <div class="flex flex-col grow">
+    <div
+      class="flex flex-col grow rounded-t-xl"
+      [ngClass]="{
+        'bg-white': contentThemeMode() === 'light',
+        'bg-gray-900': contentThemeMode() === 'dark',
+      }">
       <div
         class="flex flex-row justify-between items-center rounded-t-xl p-6 border-b bg-gray-50 border-b-gray-200 dark:bg-gray-800 dark:border-b-gray-700 dark:text-gray-400">
         <span>
@@ -56,11 +73,12 @@ import { afterNextRender, Component, effect, inject, Injector, input, numberAttr
             Show on Github
           </flowbite-button>
         </span>
-        <span class="flex flex-row gap-2">
+        <span class="hidden gap-2 lg:flex lg:flex-row">
           <flowbite-button
             color="light"
             size="sm"
-            isPill>
+            isPill
+            (click)="iframe.width.set('lg')">
             <svg
               width="16"
               height="16"
@@ -78,7 +96,8 @@ import { afterNextRender, Component, effect, inject, Injector, input, numberAttr
           <flowbite-button
             color="light"
             size="sm"
-            isPill>
+            isPill
+            (click)="iframe.width.set('md')">
             <svg
               width="16"
               height="16"
@@ -96,7 +115,8 @@ import { afterNextRender, Component, effect, inject, Injector, input, numberAttr
           <flowbite-button
             color="light"
             size="sm"
-            isPill>
+            isPill
+            (click)="iframe.width.set('sm')">
             <svg
               width="16"
               height="16"
@@ -117,7 +137,7 @@ import { afterNextRender, Component, effect, inject, Injector, input, numberAttr
             color="light"
             size="sm"
             isPill
-            (click)="iframe.setTheme('light')">
+            (click)="setContentThemeMode('light')">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -137,7 +157,7 @@ import { afterNextRender, Component, effect, inject, Injector, input, numberAttr
             color="light"
             size="sm"
             isPill
-            (click)="iframe.setTheme('dark')">
+            (click)="setContentThemeMode('dark')">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -156,6 +176,7 @@ import { afterNextRender, Component, effect, inject, Injector, input, numberAttr
         [link]="link()"
         [height]="height()"
         [onLoadAction]="onIframeLoaded"
+        width="lg"
         #iframe />
     </div>
   `,
@@ -169,6 +190,8 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
     GlobalSignalStoreService<ThemeState>,
   );
 
+  protected contentThemeMode = signal<FlowbiteTheme | undefined>(undefined);
+
   public link = input.required<string>();
   public githubLink = input<string>();
   public height = input<number, unknown>(150, { transform: numberAttribute });
@@ -178,9 +201,11 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
       () => {
         effect(
           () => {
+            this.contentThemeMode.set(this.themeStateService.select('theme')());
+
             this.onIframeLoaded();
           },
-          { injector: this.injector },
+          { injector: this.injector, allowSignalWrites: true },
         );
       },
       { injector: this.injector },
@@ -188,8 +213,13 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
   }
 
   protected onIframeLoaded = () => {
-    const theme = this.themeStateService.select('theme')();
+    const theme = untracked(() => this.contentThemeMode());
 
-    this.iframe.setTheme(theme);
+    this.setContentThemeMode(theme || this.themeStateService.select('theme')());
   };
+
+  protected setContentThemeMode(mode: FlowbiteTheme): void {
+    this.iframe.setTheme(mode);
+    this.contentThemeMode.set(mode);
+  }
 }
