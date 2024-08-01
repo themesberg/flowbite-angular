@@ -1,8 +1,10 @@
 import { FlowbiteIFrameComponent } from './iframe.component';
 
-import { ButtonComponent } from 'flowbite-angular';
+import type { ThemeState } from 'flowbite-angular';
+import { ButtonComponent, GlobalSignalStoreService } from 'flowbite-angular';
 
-import { Component, input, numberAttribute } from '@angular/core';
+import type { AfterViewInit } from '@angular/core';
+import { afterNextRender, Component, effect, inject, Injector, input, numberAttribute, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'flowbite-iframe-wrapper',
@@ -11,7 +13,7 @@ import { Component, input, numberAttribute } from '@angular/core';
   template: `
     <div class="flex flex-col grow">
       <div
-        class="flex flex-row justify-between items-center rounded-t-xl p-6 mb-2 border-b bg-gray-50 border-b-gray-200 dark:bg-gray-800 dark:border-b-gray-700 dark:text-gray-400">
+        class="flex flex-row justify-between items-center rounded-t-xl p-6 border-b bg-gray-50 border-b-gray-200 dark:bg-gray-800 dark:border-b-gray-700 dark:text-gray-400">
         <span>
           <flowbite-button
             color="light"
@@ -114,7 +116,8 @@ import { Component, input, numberAttribute } from '@angular/core';
           <flowbite-button
             color="light"
             size="sm"
-            isPill>
+            isPill
+            (click)="iframe.setTheme('light')">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -133,7 +136,8 @@ import { Component, input, numberAttribute } from '@angular/core';
           <flowbite-button
             color="light"
             size="sm"
-            isPill>
+            isPill
+            (click)="iframe.setTheme('dark')">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -150,12 +154,42 @@ import { Component, input, numberAttribute } from '@angular/core';
       </div>
       <flowbite-iframe
         [link]="link()"
-        [height]="height()" />
+        [height]="height()"
+        [onLoadAction]="onIframeLoaded"
+        #iframe />
     </div>
   `,
 })
-export class FlowbiteIFrameWrapperComponent {
+export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
+  @ViewChild(FlowbiteIFrameComponent)
+  protected readonly iframe!: FlowbiteIFrameComponent;
+
+  protected readonly injector = inject(Injector);
+  protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
+    GlobalSignalStoreService<ThemeState>,
+  );
+
   public link = input.required<string>();
   public githubLink = input<string>();
   public height = input<number, unknown>(150, { transform: numberAttribute });
+
+  public ngAfterViewInit(): void {
+    afterNextRender(
+      () => {
+        effect(
+          () => {
+            this.onIframeLoaded();
+          },
+          { injector: this.injector },
+        );
+      },
+      { injector: this.injector },
+    );
+  }
+
+  protected onIframeLoaded = () => {
+    const theme = this.themeStateService.select('theme')();
+
+    this.iframe.setTheme(theme);
+  };
 }
