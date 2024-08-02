@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
       <flowbite-modal
         #positionedModal
         dismissable
-        position="top-center">
+        position="top-right">
         <flowbite-modal-header>Terms of Service</flowbite-modal-header>
         <flowbite-modal-body>
           <p class="mb-2 text-gray-500 dark:text-gray-400">

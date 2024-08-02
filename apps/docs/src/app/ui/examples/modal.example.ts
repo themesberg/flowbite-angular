@@ -219,7 +219,7 @@ export const positionedModal: Example[] = [
   {
     language: 'html',
     code: `
-<flowbite-modal #positionedModal dismissable position="top-center">
+<flowbite-modal #positionedModal dismissable position="top-right">
   <flowbite-modal-header>Terms of Service</flowbite-modal-header>
   <flowbite-modal-body>
     <p class="mb-2 text-gray-500 dark:text-gray-400">

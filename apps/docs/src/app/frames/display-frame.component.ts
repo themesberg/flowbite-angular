@@ -7,7 +7,7 @@ import { booleanAttribute, Component, HostBinding, input } from '@angular/core';
   imports: [NgClass],
   template: `
     <div
-      class="flex items-center justify-around grow gap-3"
+      class="flex items-center justify-around h-full grow gap-3"
       [ngClass]="{
         'flex-col': orientation() === 'col',
         'flex-row': orientation() === 'row',

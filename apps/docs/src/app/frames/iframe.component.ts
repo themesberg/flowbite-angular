@@ -30,6 +30,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       }"
       frameborder="0"
       loading="lazy"
+      style="height: {{ height() }}px"
       (load)="callOnLoadAction()"
       #iframe></iframe>
   `,
