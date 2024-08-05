@@ -2,7 +2,7 @@
   <flowbite-iframe-wrapper
     link="frames/badge/default"
     height="80" />
-  @for (item of examples.defaultBadge; track $index) {
+  @for (item of exampleService.defaultBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -13,7 +13,7 @@
   <flowbite-iframe-wrapper
     link="frames/badge/large"
     height="85" />
-  @for (item of examples.largeBadge; track $index) {
+  @for (item of exampleService.largeBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -24,7 +24,7 @@
   <flowbite-iframe-wrapper
     link="frames/badge/link"
     height="80" />
-  @for (item of examples.linkBadge; track $index) {
+  @for (item of exampleService.linkBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -35,7 +35,7 @@
   <flowbite-iframe-wrapper
     link="frames/badge/icon"
     height="80" />
-  @for (item of examples.iconBadge; track $index) {
+  @for (item of exampleService.iconBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -46,7 +46,7 @@
   <flowbite-iframe-wrapper
     link="frames/badge/icon-only"
     height="90" />
-  @for (item of examples.iconOnlyBadge; track $index) {
+  @for (item of exampleService.iconOnlyBadge; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"

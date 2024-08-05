@@ -2,7 +2,7 @@
   <flowbite-iframe-wrapper
     link="frames/dropdown/default"
     height="200" />
-  @for (item of examples.defaultDropdown; track $index) {
+  @for (item of exampleService.defaultDropdown; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -13,7 +13,7 @@
   <flowbite-iframe-wrapper
     link="frames/dropdown/divider"
     height="200" />
-  @for (item of examples.dividerDropdown; track $index) {
+  @for (item of exampleService.dividerDropdown; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -24,7 +24,7 @@
   <flowbite-iframe-wrapper
     link="frames/dropdown/header"
     height="215" />
-  @for (item of examples.headerDropdown; track $index) {
+  @for (item of exampleService.headerDropdown; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -35,7 +35,7 @@
   <flowbite-iframe-wrapper
     link="frames/dropdown/placed"
     height="200" />
-  @for (item of examples.placedDropdown; track $index) {
+  @for (item of exampleService.placedDropdown; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"

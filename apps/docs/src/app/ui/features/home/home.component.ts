@@ -5,6 +5,7 @@ import {
   ButtonComponent,
   FormFieldComponent,
   GlobalSignalStoreService,
+  IconComponent,
   InputDirective,
 } from 'flowbite-angular';
 
@@ -21,6 +22,7 @@ import { RouterLink } from '@angular/router';
     FormFieldComponent,
     InputDirective,
     RouterLink,
+    IconComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

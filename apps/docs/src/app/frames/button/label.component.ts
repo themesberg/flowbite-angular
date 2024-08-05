@@ -8,17 +8,6 @@ import { Component } from '@angular/core';
   selector: 'flowbite-frame-button-label',
   standalone: true,
   imports: [ButtonComponent, BadgeComponent, FlowbiteFrameDisplayComponent],
-  template: `
-    <flowbite-frame-display>
-      <flowbite-button>
-        Messages
-        <flowbite-badge
-          isIconOnly
-          class="ml-2"
-          >2</flowbite-badge
-        >
-      </flowbite-button>
-    </flowbite-frame-display>
-  `,
+  templateUrl: '../../../assets/examples/button/label.component.html',
 })
 export class FlowbiteFrameButtonLabelComponent {}

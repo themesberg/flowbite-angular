@@ -1,5 +1,6 @@
 import {
   DarkThemeToggleComponent,
+  IconComponent,
   NavbarBrandComponent,
   NavbarComponent,
   NavbarContentComponent,
@@ -25,9 +26,10 @@ import { RouterOutlet } from '@angular/router';
     NavbarToggleComponent,
     SidebarToggleComponent,
     ScrollTopComponent,
+    IconComponent,
   ],
   selector: 'flowbite-ui',
   templateUrl: './ui.component.html',
-  providers: [SidebarStateService],
+  providers: [SidebarStateService, IconComponent],
 })
 export class UiComponent {}

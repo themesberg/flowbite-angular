@@ -17,6 +17,7 @@
     }
   ],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

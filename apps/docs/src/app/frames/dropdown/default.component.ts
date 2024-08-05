@@ -8,14 +8,6 @@ import { Component } from '@angular/core';
   selector: 'flowbite-frame-dropdown-default',
   standalone: true,
   imports: [DropdownComponent, DropdownItemComponent, FlowbiteFrameDisplayComponent],
-  template: `
-    <flowbite-frame-display>
-      <flowbite-dropdown>
-        <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
-        <flowbite-dropdown-item>Item 2</flowbite-dropdown-item>
-        <flowbite-dropdown-item>Item 3</flowbite-dropdown-item>
-      </flowbite-dropdown>
-    </flowbite-frame-display>
-  `,
+  templateUrl: '../../../assets/examples/dropdown/default.component.html',
 })
 export class FlowbiteFrameDropdownDefaultComponent {}

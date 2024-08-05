@@ -2,7 +2,8 @@
   <flowbite-iframe-wrapper
     height="460"
     link="frames/accordion/default" />
-  @for (item of examples.defaultAccordion; track $index) {
+
+  @for (item of exampleService.defaultAccordion; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"

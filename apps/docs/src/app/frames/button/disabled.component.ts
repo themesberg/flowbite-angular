@@ -8,10 +8,6 @@ import { Component } from '@angular/core';
   selector: 'flowbite-frame-button-disabled',
   standalone: true,
   imports: [ButtonComponent, FlowbiteFrameDisplayComponent],
-  template: `
-    <flowbite-frame-display>
-      <flowbite-button isDisabled>Disabled button</flowbite-button>
-    </flowbite-frame-display>
-  `,
+  templateUrl: '../../../assets/examples/button/disabled.component.html',
 })
 export class FlowbiteFrameButtonDisabledComponent {}

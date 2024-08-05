@@ -4,6 +4,7 @@ import { codeToHtml, type BundledLanguage, type ShikiTransformer } from 'shiki/b
 
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, computed, HostBinding, inject, input } from '@angular/core';
+import { firstValueFrom, type Observable } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -21,7 +22,7 @@ export class ShikiComponent {
     GlobalSignalStoreService<ThemeState>,
   );
 
-  public code = input.required<string>();
+  public code = input.required<Observable<string>>();
   public language = input.required<BundledLanguage>();
 
   static shikiTransformers: ShikiTransformer[] = [
@@ -34,8 +35,8 @@ export class ShikiComponent {
     },
   ];
 
-  public displayCode = computed<Promise<string>>(() => {
-    return codeToHtml(this.code().trim(), {
+  public displayCode = computed<Promise<string>>(async () => {
+    return codeToHtml((await firstValueFrom(this.code())).trim(), {
       lang: this.language(),
       theme: this.themeSignalService.select('theme')() === 'light' ? 'material-theme-lighter' : 'material-theme',
       transformers: ShikiComponent.shikiTransformers,

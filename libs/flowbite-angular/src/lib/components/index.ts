@@ -6,6 +6,7 @@ export * from './button';
 export * from './dark-theme-toggle';
 export * from './dropdown';
 export * from './form-field';
+export * from './icon';
 export * from './indicators';
 export * from './modal';
 export * from './navbar';

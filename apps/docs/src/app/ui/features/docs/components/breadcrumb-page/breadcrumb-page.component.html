@@ -2,7 +2,7 @@
   <flowbite-iframe-wrapper
     link="frames/breadcrumb/default"
     height="90" />
-  @for (item of examples.defaultBreadcrumb; track $index) {
+  @for (item of exampleService.defaultBreadcrumb; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"

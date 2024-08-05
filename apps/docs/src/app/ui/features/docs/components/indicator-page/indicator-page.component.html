@@ -4,7 +4,7 @@
   <flowbite-iframe-wrapper
     link="frames/indicator/default"
     height="80" />
-  @for (item of examples.defaultIndicator; track $index) {
+  @for (item of exampleService.defaultIndicator; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -17,7 +17,7 @@
   <flowbite-iframe-wrapper
     link="frames/indicator/legend"
     height="90" />
-  @for (item of examples.legendIndicator; track $index) {
+  @for (item of exampleService.legendIndicator; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -30,7 +30,7 @@
   <flowbite-iframe-wrapper
     link="frames/indicator/count"
     height="110" />
-  @for (item of examples.countIndicator; track $index) {
+  @for (item of exampleService.countIndicator; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -43,7 +43,7 @@
   <flowbite-iframe-wrapper
     link="frames/indicator/positioned"
     height="300" />
-  @for (item of examples.positionedIndicator; track $index) {
+  @for (item of exampleService.positionedIndicator; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"

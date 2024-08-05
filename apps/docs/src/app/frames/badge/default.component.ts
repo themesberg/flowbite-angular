@@ -8,17 +8,6 @@ import { Component } from '@angular/core';
   selector: 'flowbite-frame-badge-default',
   standalone: true,
   imports: [BadgeComponent, FlowbiteFrameDisplayComponent],
-  template: `
-    <flowbite-frame-display>
-      <flowbite-badge>Default</flowbite-badge>
-      <flowbite-badge color="dark">Dark</flowbite-badge>
-      <flowbite-badge color="red">Red</flowbite-badge>
-      <flowbite-badge color="green">Green</flowbite-badge>
-      <flowbite-badge color="yellow">Yellow</flowbite-badge>
-      <flowbite-badge color="indigo">Indigo</flowbite-badge>
-      <flowbite-badge color="purple">Purple</flowbite-badge>
-      <flowbite-badge color="pink">Pink</flowbite-badge>
-    </flowbite-frame-display>
-  `,
+  templateUrl: '../../../assets/examples/badge/default.component.html',
 })
 export class FlowbiteFrameBadgeDefaultComponent {}
