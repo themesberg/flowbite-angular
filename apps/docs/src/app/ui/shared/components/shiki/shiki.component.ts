@@ -4,7 +4,7 @@ import { codeToHtml, type BundledLanguage, type ShikiTransformer } from 'shiki/b
 
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, computed, HostBinding, inject, input } from '@angular/core';
-import { firstValueFrom, type Observable } from 'rxjs';
+import { firstValueFrom, of, type Observable } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -22,7 +22,9 @@ export class ShikiComponent {
     GlobalSignalStoreService<ThemeState>,
   );
 
-  public code = input.required<Observable<string>>();
+  public code = input.required<Observable<string>, Observable<string> | string>({
+    transform: (value: Observable<string> | string) => (typeof value === 'string' ? of(value) : value),
+  });
   public language = input.required<BundledLanguage>();
 
   static shikiTransformers: ShikiTransformer[] = [
