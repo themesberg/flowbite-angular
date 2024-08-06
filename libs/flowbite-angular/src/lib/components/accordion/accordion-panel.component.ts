@@ -11,7 +11,7 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   standalone: true,
   imports: [],
   selector: 'flowbite-accordion-panel',
-  templateUrl: './accordion-panel.component.html',
+  template: `<ng-content />`,
   providers: [
     {
       provide: AccordionPanelStateService,
@@ -26,8 +26,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class AccordionPanelComponent extends BaseComponent implements OnInit {
-  public readonly themeService = inject(AccordionPanelThemeService);
-  public readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
+  protected readonly themeService = inject(AccordionPanelThemeService);
+  protected readonly accordionPanelStateService = inject(AccordionPanelStateService);
 
   public override contentClasses = signal<properties.AccordionPanelClass>(properties.AccordionPanelClassInstance);
 

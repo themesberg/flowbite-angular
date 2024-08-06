@@ -11,11 +11,15 @@ import { Component, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgIf, NgClass],
   selector: 'flowbite-accordion-content',
-  templateUrl: './accordion-content.component.html',
+  template: `
+    <ng-container *ngIf="accordionPanelStateService.select('isOpen')()">
+      <ng-content />
+    </ng-container>
+  `,
 })
 export class AccordionContentComponent extends BaseComponent {
-  public readonly themeService = inject(AccordionContentThemeService);
-  public readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
+  protected readonly themeService = inject(AccordionContentThemeService);
+  protected readonly accordionPanelStateService = inject(AccordionPanelStateService);
 
   public override contentClasses = signal<properties.AccordionContentClass>(properties.AccordionContentClassInstance);
 

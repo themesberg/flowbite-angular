@@ -11,11 +11,11 @@ import { Component, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-modal-footer',
-  templateUrl: './modal-footer.component.html',
+  template: `<ng-content />`,
 })
 export class ModalFooterComponent extends BaseComponent {
-  public readonly themeService = inject(ModalFooterThemeService);
-  public readonly modalComponent = inject<ModalComponent>(ModalComponent);
+  protected readonly themeService = inject(ModalFooterThemeService);
+  protected readonly modalComponent = inject(ModalComponent);
 
   public override contentClasses = signal<properties.ModalFooterClass>(properties.ModalFooterClassInstance);
 

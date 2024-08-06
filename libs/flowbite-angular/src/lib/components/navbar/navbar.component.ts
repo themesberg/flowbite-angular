@@ -15,7 +15,7 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-navbar',
-  templateUrl: './navbar.component.html',
+  template: `<ng-content />`,
   providers: [
     {
       provide: NavbarStateService,
@@ -30,8 +30,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class NavbarComponent extends BaseComponent {
-  public readonly themeService = inject(NavbarThemeService);
-  public readonly navbarStateService: NavbarStateService = inject(NavbarStateService);
+  protected readonly themeService = inject(NavbarThemeService);
+  protected readonly navbarStateService = inject(NavbarStateService);
 
   public override contentClasses = signal<properties.NavbarClass>(properties.NavbarClassInstance);
 

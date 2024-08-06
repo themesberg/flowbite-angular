@@ -10,11 +10,16 @@ import { Component, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-dropdown-header',
-  templateUrl: './dropdown-header.component.html',
+  template: `
+    <div [ngClass]="contentClasses().root">
+      <ng-content />
+    </div>
+    <div class="my-1 h-px bg-gray-100 dark:bg-gray-600"></div>
+  `,
 })
 export class DropdownHeaderComponent extends BaseComponent {
-  public readonly themeService = inject(DropdownHeaderThemeService);
-  public readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
+  protected readonly themeService = inject(DropdownHeaderThemeService);
+  protected readonly dropdownComponent = inject(DropdownComponent);
 
   public override contentClasses = signal<properties.DropdownHeaderClass>(properties.DropdownHeaderClassInstance);
 

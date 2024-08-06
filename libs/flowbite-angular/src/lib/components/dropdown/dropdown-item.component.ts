@@ -11,11 +11,11 @@ import { Component, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-dropdown-item',
-  templateUrl: './dropdown-item.component.html',
+  template: `<ng-content />`,
 })
 export class DropdownItemComponent extends BaseComponent {
-  public readonly themeService = inject(DropdownItemThemeService);
-  public readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
+  protected readonly themeService = inject(DropdownItemThemeService);
+  protected readonly dropdownComponent = inject(DropdownComponent);
 
   public override contentClasses = signal<properties.DropdownItemClass>(properties.DropdownItemClassInstance);
 

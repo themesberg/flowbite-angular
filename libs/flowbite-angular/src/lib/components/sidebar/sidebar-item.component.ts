@@ -15,11 +15,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [NgIf, NgClass, RouterLink, RouterLinkActive, SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
-  templateUrl: './sidebar-item.component.html',
+  template: `
+    <span
+      class="flex-shrink-0"
+      [innerHTML]="icon()! | sanitizeHtml"
+      *ngIf="icon()"></span>
+    <span
+      [ngClass]="contentClasses().sidebarIconClass"
+      [class.ml-3]="icon()">
+      <ng-content />
+    </span>
+    <flowbite-badge *ngIf="label()"> {{ label() }} </flowbite-badge>
+  `,
 })
 export class SidebarItemComponent extends BaseComponent {
-  public readonly themeService = inject(SidebarItemThemeService);
-  public readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
+  protected readonly themeService = inject(SidebarItemThemeService);
+  protected readonly sidebarStateService = inject(SidebarStateService);
   public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   public override contentClasses = signal<properties.SidebarItemClass>(properties.SidebarItemClassInstance);

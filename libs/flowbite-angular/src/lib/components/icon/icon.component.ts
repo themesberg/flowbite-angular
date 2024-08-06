@@ -13,8 +13,7 @@ import { take } from 'rxjs';
 @Component({
   selector: 'flowbite-icon',
   standalone: true,
-  imports: [],
-  templateUrl: './icon.component.html',
+  template: `<ng-content />`,
 })
 export class IconComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<FlowbiteClass>({ rootClass: '' });

@@ -16,7 +16,7 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-sidebar',
-  templateUrl: './sidebar.component.html',
+  template: `<ng-content />`,
   providers: [
     {
       provide: SidebarStateService,
@@ -32,8 +32,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class SidebarComponent extends BaseComponent implements OnInit {
-  public readonly themeService = inject(SidebarThemeService);
-  public readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
+  protected readonly themeService = inject(SidebarThemeService);
+  protected readonly sidebarStateService = inject(SidebarStateService);
 
   public override contentClasses = signal<properties.SidebarClass>(properties.SidebarClassInstance);
 

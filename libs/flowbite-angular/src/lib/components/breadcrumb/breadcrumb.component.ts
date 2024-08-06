@@ -13,12 +13,12 @@ import { Component, HostBinding, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-breadcrumb',
-  templateUrl: './breadcrumb.component.html',
+  template: `<ng-content />`,
 })
 export class BreadcrumbComponent extends BaseComponent {
   @HostBinding('attr.aria-label') ariaLabel = 'breadcrumb';
 
-  public readonly themeService = inject(BreadcrumbThemeService);
+  protected readonly themeService = inject(BreadcrumbThemeService);
 
   public override contentClasses = signal<properties.BreadcrumbClass>(properties.BreadcrumbClassInstance);
 

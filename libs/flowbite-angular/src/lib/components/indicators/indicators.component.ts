@@ -14,10 +14,10 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-indicator',
-  templateUrl: './indicators.component.html',
+  template: `<ng-content />`,
 })
 export class IndicatorComponent extends BaseComponent {
-  public readonly themeService = inject(IndicatorThemeService);
+  protected readonly themeService = inject(IndicatorThemeService);
 
   public override contentClasses = signal<properties.indicatorClass>(properties.IndicatorClassInstance);
 

@@ -18,10 +18,10 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [NgClass, RouterLink],
   selector: 'flowbite-badge',
-  templateUrl: './badge.component.html',
+  template: `<ng-content />`,
 })
 export class BadgeComponent extends BaseComponent implements RoutableInterface {
-  public readonly themeService = inject(BadgeThemeService);
+  protected readonly themeService = inject(BadgeThemeService);
   public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   public override contentClasses = signal<BadgeClass>(BadgeClassInstance);

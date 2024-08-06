@@ -25,7 +25,13 @@ import {
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-modal',
-  templateUrl: './modal.component.html',
+  template: `
+    <div [ngClass]="contentClasses().modalContainerClass">
+      <div [ngClass]="contentClasses().modalContentClass">
+        <ng-content />
+      </div>
+    </div>
+  `,
   providers: [
     {
       provide: ModalStateService,
@@ -42,8 +48,8 @@ import {
 export class ModalComponent extends BaseComponent implements AfterViewInit {
   @HostBinding('tabindex') tabIndex = '-1';
 
-  public readonly themeService = inject(ModalThemeService);
-  public readonly modalStateService: ModalStateService = inject(ModalStateService);
+  protected readonly themeService = inject(ModalThemeService);
+  protected readonly modalStateService = inject(ModalStateService);
 
   public override contentClasses = signal<properties.ModalClass>(properties.ModalClassInstance);
 

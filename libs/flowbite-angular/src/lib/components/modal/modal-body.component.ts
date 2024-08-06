@@ -10,10 +10,10 @@ import { Component, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-modal-body',
-  templateUrl: './modal-body.component.html',
+  template: `<ng-content />`,
 })
 export class ModalBodyComponent extends BaseComponent {
-  public readonly themeService = inject(ModalBodyThemeService);
+  protected readonly themeService = inject(ModalBodyThemeService);
 
   public override contentClasses = signal<properties.ModalBodyClass>(properties.ModalBodyClassInstance);
 

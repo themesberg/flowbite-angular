@@ -11,11 +11,11 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   selector: 'flowbite-navbar-item',
   standalone: true,
   imports: [NgClass],
-  templateUrl: './navbar-item.component.html',
+  template: `<ng-content />`,
 })
 export class NavbarItemComponent extends BaseComponent {
-  public readonly themeService = inject(NavbarItemThemeService);
-  public readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
+  protected readonly themeService = inject(NavbarItemThemeService);
+  protected readonly navbarStateService = inject(NavbarStateService);
   public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   public override contentClasses = signal<properties.NavbarItemClass>(properties.NavbarItemClassInstance);

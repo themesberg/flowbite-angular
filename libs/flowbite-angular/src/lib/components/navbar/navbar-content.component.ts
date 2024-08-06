@@ -13,11 +13,15 @@ import { Component, inject, input, signal } from '@angular/core';
   selector: 'flowbite-navbar-content',
   standalone: true,
   imports: [NgClass],
-  templateUrl: './navbar-content.component.html',
+  template: `
+    <div [ngClass]="contentClasses().navbarContentListClass">
+      <ng-content />
+    </div>
+  `,
 })
 export class NavbarContentComponent extends BaseComponent implements OnInit {
-  public readonly themeStateService = inject(NavbarContentThemeService);
-  public readonly navbarService = inject<NavbarStateService>(NavbarStateService);
+  protected readonly themeStateService = inject(NavbarContentThemeService);
+  protected readonly navbarService = inject(NavbarStateService);
 
   public override contentClasses = signal<properties.NavbarContentClass>(properties.NavbarContentClassInstance);
 

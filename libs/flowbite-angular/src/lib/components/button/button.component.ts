@@ -14,12 +14,26 @@ import { booleanAttribute, Component, HostBinding, inject, input, signal } from 
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet],
   selector: 'flowbite-button',
-  templateUrl: './button.component.html',
+  template: `
+    <span
+      *ngIf="gradientDuoTone() && fill() === 'outline'; else default"
+      [ngClass]="contentClasses().spanClass">
+      <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
+    </span>
+
+    <ng-template #default>
+      <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
+    </ng-template>
+
+    <ng-template #contentOutlet>
+      <ng-content />
+    </ng-template>
+  `,
 })
 export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
 
-  public readonly themeService = inject(ButtonThemeService);
+  protected readonly themeService = inject(ButtonThemeService);
 
   public override contentClasses = signal<properties.ButtonClass>(properties.ButtonClassInstance);
 
