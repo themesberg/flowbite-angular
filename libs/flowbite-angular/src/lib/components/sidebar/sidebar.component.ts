@@ -7,7 +7,7 @@ import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, effect, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -32,23 +32,19 @@ import { booleanAttribute, Component, effect, inject, input, signal } from '@ang
   ],
 })
 export class SidebarComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.SidebarClass>(properties.SidebarClassInstance);
+  public readonly themeService = inject(SidebarThemeService);
+  public readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
 
-  protected readonly themeService = inject(SidebarThemeService);
-  protected readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
+  public override contentClasses = signal<properties.SidebarClass>(properties.SidebarClassInstance);
 
   //#region properties
-  public isOpen = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isRounded = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<properties.SidebarBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       isOpen: booleanToFlowbiteBoolean(this.sidebarStateService.select('isOpen')()),
@@ -60,13 +56,8 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    super.ngOnInit();
+    this.sidebarStateService.set('isOpen', this.isOpen());
 
-    effect(
-      () => {
-        this.sidebarStateService.set('isOpen', this.isOpen());
-      },
-      { injector: this.injector, allowSignalWrites: true },
-    );
+    super.ngOnInit();
   }
 }

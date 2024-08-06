@@ -7,7 +7,7 @@ import { AccordionThemeService } from './accordion.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, effect, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/accordion/
@@ -31,10 +31,10 @@ import { booleanAttribute, Component, effect, inject, input, signal } from '@ang
   ],
 })
 export class AccordionComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.AccordionClass>(properties.AccordionClassInstance);
+  public readonly themeService = inject(AccordionThemeService);
+  public readonly accordionStateService: AccordionStateService = inject(AccordionStateService);
 
-  protected readonly themeService = inject(AccordionThemeService);
-  protected readonly accordionStateService: AccordionStateService = inject(AccordionStateService);
+  public override contentClasses = signal<properties.AccordionClass>(properties.AccordionClassInstance);
 
   //#region properties
   public isFlush = input<boolean, string | boolean>(false, {
@@ -44,7 +44,7 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isFlush: booleanToFlowbiteBoolean(this.accordionStateService.select('isFlush')()),
       customStyle: this.customStyle(),
@@ -55,13 +55,8 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    super.ngOnInit();
+    this.accordionStateService.set('isFlush', this.isFlush());
 
-    effect(
-      () => {
-        this.accordionStateService.set('isFlush', this.isFlush());
-      },
-      { injector: this.injector, allowSignalWrites: true },
-    );
+    super.ngOnInit();
   }
 }

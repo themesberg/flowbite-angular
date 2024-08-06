@@ -1,8 +1,10 @@
 import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { RoutableInterface } from '../../interfaces';
 import { FlowbiteLinkRouter } from '../../services/flowbite-link-router.service';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './badge.theme';
+import type { BadgeBaseTheme, BadgeClass, BadgeColors, BadgeSizes } from './badge.theme';
+import { BadgeClassInstance } from './badge.theme';
 import { BadgeThemeService } from './badge.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -18,33 +20,29 @@ import { RouterLink } from '@angular/router';
   selector: 'flowbite-badge',
   templateUrl: './badge.component.html',
 })
-export class BadgeComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.BadgeClass>(properties.BadgeClassInstance);
+export class BadgeComponent extends BaseComponent implements RoutableInterface {
+  public readonly themeService = inject(BadgeThemeService);
+  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
-  protected readonly themeService = inject(BadgeThemeService);
-  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
+  public override contentClasses = signal<BadgeClass>(BadgeClassInstance);
 
   //#region properties
-  public color = input<keyof properties.BadgeColors>('blue');
-  public size = input<keyof properties.BadgeSizes>('xs');
-  public isIconOnly = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isPill = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public link = input<FlowbiteLink | undefined>(undefined);
-  public customStyle = input<DeepPartial<properties.BadgeBaseTheme>>({});
+  public color = input<keyof BadgeColors>('blue');
+  public size = input<keyof BadgeSizes>('xs');
+  public isIconOnly = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isPill = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public href = input<FlowbiteLink | undefined>(undefined);
+  public customStyle = input<DeepPartial<BadgeBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
       isPill: booleanToFlowbiteBoolean(this.isPill()),
-      link: this.link(),
+      link: this.href(),
       customStyle: this.customStyle(),
     });
 
@@ -53,7 +51,7 @@ export class BadgeComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected async onClick(): Promise<void> {
-    await this.flowbiteLinkRouter.navigate(this.link());
+  public async onNavigate(): Promise<void> {
+    await this.flowbiteLinkRouter.navigate(this.href());
   }
 }

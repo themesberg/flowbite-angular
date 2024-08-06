@@ -15,11 +15,11 @@ import { booleanAttribute, Component, HostBinding, inject, input, signal } from 
   templateUrl: './alert.component.html',
 })
 export class AlertComponent extends BaseComponent implements OnInit {
-  @HostBinding('role') protected hostRoleValue = 'alert';
+  @HostBinding('attr.role') role = 'alert';
 
-  protected override contentClasses = signal<properties.AlertClass>(properties.AlertClassInstance);
+  public readonly themeService = inject(AlertThemeService);
 
-  protected readonly themeService = inject(AlertThemeService);
+  public override contentClasses = signal<properties.AlertClass>(properties.AlertClassInstance);
 
   //#region properties
   public color = input<keyof properties.AlertColors>('blue');
@@ -28,14 +28,13 @@ export class AlertComponent extends BaseComponent implements OnInit {
     transform: booleanAttribute,
   });
   public customStyle = input<DeepPartial<properties.AlertBaseTheme>>({});
-
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);
   public dismiss = input<() => void | undefined>();
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
       hasBorderAccent: booleanToFlowbiteBoolean(this.hasBorderAccent()),
@@ -47,7 +46,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   }
   //#endregion
 
-  protected callDismiss() {
+  public callDismiss() {
     const func = this.dismiss();
 
     if (func) func();

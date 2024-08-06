@@ -46,10 +46,10 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
-  protected override contentClasses = signal<properties.DropdownClass>(properties.DropdownClassInstance);
+  public readonly themeService = inject(DropdownThemeService);
+  public readonly dropdownStateService: DropdownStateService = inject(DropdownStateService);
 
-  protected readonly themeService = inject(DropdownThemeService);
-  protected readonly dropdownStateService: DropdownStateService = inject(DropdownStateService);
+  public override contentClasses = signal<properties.DropdownClass>(properties.DropdownClassInstance);
 
   //#region properties
   public label = input('Dropdown');
@@ -61,7 +61,7 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       label: this.label(),
       isOpen: booleanToFlowbiteBoolean(this.dropdownStateService.select('isOpen')()),

@@ -2,11 +2,12 @@
  * Thanks to Angular Material for Icon part of this library : https://github.com/angular/components
  */
 
+import type { FlowbiteClass } from '../../common';
 import { BaseComponent } from '../base.component';
 import { IconRegistry } from './icon-registry';
 
 import type { OnInit } from '@angular/core';
-import { Component, effect, ElementRef, inject, input } from '@angular/core';
+import { Component, effect, ElementRef, inject, input, signal } from '@angular/core';
 import { take } from 'rxjs';
 
 @Component({
@@ -16,8 +17,10 @@ import { take } from 'rxjs';
   templateUrl: './icon.component.html',
 })
 export class IconComponent extends BaseComponent implements OnInit {
-  protected _elementRef = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>);
-  protected _iconRegistry = inject(IconRegistry);
+  public override contentClasses = signal<FlowbiteClass>({ rootClass: '' });
+
+  public _elementRef = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>);
+  public _iconRegistry = inject(IconRegistry);
 
   public svgIcon = input.required<string>();
 
@@ -32,7 +35,7 @@ export class IconComponent extends BaseComponent implements OnInit {
     );
   }
 
-  protected override fetchClass(): void {}
+  public override fetchClass(): void {}
 
   private _splitIconName(iconName: string): [string, string] {
     if (!iconName) {

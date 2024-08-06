@@ -14,17 +14,17 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './navbar-toggle.component.html',
 })
 export class NavbarToggleComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.NavbarToggleClass>(properties.NavbarToggleClassInstance);
+  public readonly themeService = inject(NavbarToggleThemeService);
+  public readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
 
-  protected readonly themeService = inject(NavbarToggleThemeService);
-  protected readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
+  public override contentClasses = signal<properties.NavbarToggleClass>(properties.NavbarToggleClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.NavbarToggleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
@@ -34,7 +34,7 @@ export class NavbarToggleComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected onClick(): void {
+  public onClick(): void {
     const isCollapsed = this.navbarStateService.select('isOpen')();
 
     this.navbarStateService.set('isOpen', !isCollapsed);

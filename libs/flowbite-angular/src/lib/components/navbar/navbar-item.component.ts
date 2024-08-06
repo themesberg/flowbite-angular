@@ -14,11 +14,11 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './navbar-item.component.html',
 })
 export class NavbarItemComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.NavbarItemClass>(properties.NavbarItemClassInstance);
+  public readonly themeService = inject(NavbarItemThemeService);
+  public readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
+  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
-  protected readonly themeService = inject(NavbarItemThemeService);
-  protected readonly navbarStateService = inject<NavbarStateService>(NavbarStateService);
-  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
+  public override contentClasses = signal<properties.NavbarItemClass>(properties.NavbarItemClassInstance);
 
   //#region properties
   public color = input<keyof properties.NavbarItemColors>('blue');
@@ -27,7 +27,7 @@ export class NavbarItemComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
       customStyle: this.customStyle(),
@@ -38,7 +38,7 @@ export class NavbarItemComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected onClick(): void {
+  public onClick(): void {
     this.navbarStateService.set('isOpen', false);
 
     this.flowbiteLinkRouter.navigate(this.link());

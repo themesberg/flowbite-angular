@@ -6,7 +6,7 @@ import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, effect, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -27,23 +27,19 @@ import { booleanAttribute, Component, effect, inject, input, signal } from '@ang
   ],
 })
 export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.SidebarItemGroupClass>(
-    properties.SidebarItemGroupClassInstance,
-  );
+  public readonly sidebarItemGroupStateService: SidebarItemGroupStateService = inject(SidebarItemGroupStateService);
+  public readonly themeService = inject(SidebarItemGroupThemeService);
 
-  protected readonly sidebarItemGroupStateService: SidebarItemGroupStateService = inject(SidebarItemGroupStateService);
-  protected readonly themeService = inject(SidebarItemGroupThemeService);
+  public override contentClasses = signal<properties.SidebarItemGroupClass>(properties.SidebarItemGroupClassInstance);
 
   //#region properties
-  public isOpen = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public title = input.required<string>();
   public customStyle = input<DeepPartial<properties.SidebarItemGroupBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
@@ -52,20 +48,15 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   }
   //#endregion
 
-  protected onClick(): void {
+  public onClick(): void {
     const isOpen = this.sidebarItemGroupStateService.select('isOpen')();
 
     this.sidebarItemGroupStateService.set('isOpen', !isOpen);
   }
 
   public override ngOnInit(): void {
-    super.ngOnInit();
+    this.sidebarItemGroupStateService.set('isOpen', this.isOpen());
 
-    effect(
-      () => {
-        this.sidebarItemGroupStateService.set('isOpen', this.isOpen());
-      },
-      { injector: this.injector, allowSignalWrites: true },
-    );
+    super.ngOnInit();
   }
 }

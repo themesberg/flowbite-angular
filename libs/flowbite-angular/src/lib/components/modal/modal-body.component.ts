@@ -13,16 +13,16 @@ import { Component, inject, input, signal } from '@angular/core';
   templateUrl: './modal-body.component.html',
 })
 export class ModalBodyComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ModalBodyClass>(properties.ModalBodyClassInstance);
+  public readonly themeService = inject(ModalBodyThemeService);
 
-  protected readonly themeService = inject(ModalBodyThemeService);
+  public override contentClasses = signal<properties.ModalBodyClass>(properties.ModalBodyClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.ModalBodyBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });

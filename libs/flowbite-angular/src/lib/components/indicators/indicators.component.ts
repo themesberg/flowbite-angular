@@ -17,29 +17,17 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   templateUrl: './indicators.component.html',
 })
 export class IndicatorComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.indicatorClass>(properties.IndicatorClassInstance);
+  public readonly themeService = inject(IndicatorThemeService);
 
-  protected readonly themeService = inject(IndicatorThemeService);
+  public override contentClasses = signal<properties.indicatorClass>(properties.IndicatorClassInstance);
 
   //#region properties
-  public isPill = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isOutline = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isDisabled = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public hasOffset = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isRounded = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public hasBorder = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public isPill = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isOutline = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isDisabled = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public hasOffset = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public color = input<keyof properties.IndicatorColors>('gray');
   public size = input<keyof properties.IndicatorSizes>('md');
   public placement = input<keyof properties.IndicatorPositions | undefined>(undefined);
@@ -47,7 +35,7 @@ export class IndicatorComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
       color: this.color(),

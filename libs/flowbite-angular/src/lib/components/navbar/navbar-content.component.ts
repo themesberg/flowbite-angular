@@ -16,17 +16,17 @@ import { Component, inject, input, signal } from '@angular/core';
   templateUrl: './navbar-content.component.html',
 })
 export class NavbarContentComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.NavbarContentClass>(properties.NavbarContentClassInstance);
+  public readonly themeStateService = inject(NavbarContentThemeService);
+  public readonly navbarService = inject<NavbarStateService>(NavbarStateService);
 
-  protected readonly themeStateService = inject(NavbarContentThemeService);
-  protected readonly navbarService = inject<NavbarStateService>(NavbarStateService);
+  public override contentClasses = signal<properties.NavbarContentClass>(properties.NavbarContentClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.NavbarContentBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeStateService.getClasses({
       isOpen: booleanToFlowbiteBoolean(this.navbarService.select('isOpen')()),
       customStyle: this.customStyle(),

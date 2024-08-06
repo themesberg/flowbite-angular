@@ -1,4 +1,5 @@
 import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { RoutableInterface } from '../../interfaces';
 import { FlowbiteLinkRouter } from '../../services';
 import { BaseComponent } from '../base.component';
 import * as properties from './breadcrumb-item.theme';
@@ -13,21 +14,21 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   selector: 'flowbite-breadcrumb-item',
   templateUrl: './breadcrumb-item.component.html',
 })
-export class BreadcrumbItemComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.BreadcrumbItemClass>(properties.BreadcrumbItemClassInstance);
+export class BreadcrumbItemComponent extends BaseComponent implements RoutableInterface {
+  public readonly themeService = inject(BreadcrumbItemThemeService);
+  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
-  protected readonly themeService = inject(BreadcrumbItemThemeService);
-  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
+  public override contentClasses = signal<properties.BreadcrumbItemClass>(properties.BreadcrumbItemClassInstance);
 
   //#region properties
-  public link = input<FlowbiteLink | undefined>(undefined);
+  public href = input<FlowbiteLink | undefined>(undefined);
   public customStyle = input<DeepPartial<properties.BreadcrumbItemBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      link: this.link(),
+      link: this.href(),
       customStyle: this.customStyle(),
     });
 
@@ -36,7 +37,7 @@ export class BreadcrumbItemComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected async onClick(): Promise<void> {
-    await this.flowbiteLinkRouter.navigate(this.link());
+  public async onNavigate(): Promise<void> {
+    await this.flowbiteLinkRouter.navigate(this.href());
   }
 }

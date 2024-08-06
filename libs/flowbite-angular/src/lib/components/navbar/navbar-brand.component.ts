@@ -14,10 +14,10 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './navbar-brand.component.html',
 })
 export class NavbarBrandComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.NavbarBrandClass>(properties.NavbarBrandClassInstance);
+  public readonly themeService = inject(NavbarBrandThemeService);
+  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
-  protected readonly themeService = inject(NavbarBrandThemeService);
-  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
+  public override contentClasses = signal<properties.NavbarBrandClass>(properties.NavbarBrandClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.NavbarBrandBaseTheme>>({});
@@ -25,7 +25,7 @@ export class NavbarBrandComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
@@ -35,7 +35,7 @@ export class NavbarBrandComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected async onClick(): Promise<void> {
+  public async onClick(): Promise<void> {
     await this.flowbiteLinkRouter.navigate(this.link());
   }
 }

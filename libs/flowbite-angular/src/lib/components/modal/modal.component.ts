@@ -40,27 +40,23 @@ import {
   ],
 })
 export class ModalComponent extends BaseComponent implements AfterViewInit {
-  @HostBinding('tabindex') protected tabIndex = '-1';
+  @HostBinding('tabindex') tabIndex = '-1';
 
-  protected override contentClasses = signal<properties.ModalClass>(properties.ModalClassInstance);
+  public readonly themeService = inject(ModalThemeService);
+  public readonly modalStateService: ModalStateService = inject(ModalStateService);
 
-  protected readonly themeService = inject(ModalThemeService);
-  protected readonly modalStateService: ModalStateService = inject(ModalStateService);
+  public override contentClasses = signal<properties.ModalClass>(properties.ModalClassInstance);
 
   //#region properties
   public size = input<keyof properties.ModalSizes>('md');
   public position = input<keyof properties.ModalPositions>('center');
-  public isDismissable = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isOpen = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public isDismissable = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<properties.ModalBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isOpen: booleanToFlowbiteBoolean(this.modalStateService.select('isOpen')()),
       size: this.size(),

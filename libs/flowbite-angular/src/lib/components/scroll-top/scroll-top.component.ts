@@ -12,9 +12,9 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './scroll-top.component.html',
 })
 export class ScrollTopComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ScrollTopClass>(properties.scrollTopClassInstance);
+  public readonly themeService = inject(ScrollTopThemeService);
 
-  protected readonly themeService = inject(ScrollTopThemeService);
+  public override contentClasses = signal<properties.ScrollTopClass>(properties.scrollTopClassInstance);
 
   //#region properties
   public color = input<keyof properties.ScrollTopColors>('red');
@@ -23,7 +23,7 @@ export class ScrollTopComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implemenation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
       position: this.position(),
@@ -35,7 +35,7 @@ export class ScrollTopComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected onClick(): void {
+  public onClick(): void {
     window.scrollTo(window.scrollX, 0);
   }
 }

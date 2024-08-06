@@ -16,19 +16,19 @@ import { afterNextRender, Component, effect, HostListener, inject, input, signal
   templateUrl: './dark-theme-toggle.component.html',
 })
 export class DarkThemeToggleComponent extends BaseComponent implements AfterViewInit {
-  protected override contentClasses = signal<properties.DarkThemeToggleClass>(properties.DarkThemeToggleClassInstance);
-
-  protected readonly themeService = inject(DarkThemeToggleThemeService);
-  protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
+  public readonly themeService = inject(DarkThemeToggleThemeService);
+  public readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
   );
+
+  public override contentClasses = signal<properties.DarkThemeToggleClass>(properties.DarkThemeToggleClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.DarkThemeToggleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
@@ -70,7 +70,7 @@ export class DarkThemeToggleComponent extends BaseComponent implements AfterView
   }
 
   @HostListener('click')
-  protected onClick() {
+  public onClick() {
     if (this.themeStateService.select('theme')() === 'light') this.themeStateService.set('theme', 'dark');
     else this.themeStateService.set('theme', 'light');
   }

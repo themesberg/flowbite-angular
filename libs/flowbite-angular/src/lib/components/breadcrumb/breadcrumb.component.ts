@@ -16,18 +16,18 @@ import { Component, HostBinding, inject, input, signal } from '@angular/core';
   templateUrl: './breadcrumb.component.html',
 })
 export class BreadcrumbComponent extends BaseComponent {
-  @HostBinding('aria-label') protected hostAriaLabelValue = 'Breadcrumb';
+  @HostBinding('attr.aria-label') ariaLabel = 'breadcrumb';
 
-  protected override contentClasses = signal<properties.BreadcrumbClass>(properties.BreadcrumbClassInstance);
+  public readonly themeService = inject(BreadcrumbThemeService);
 
-  protected readonly themeService = inject(BreadcrumbThemeService);
+  public override contentClasses = signal<properties.BreadcrumbClass>(properties.BreadcrumbClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.BreadcrumbBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });

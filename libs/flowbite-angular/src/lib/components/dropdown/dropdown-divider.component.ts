@@ -13,17 +13,17 @@ import { Component, inject, input, signal } from '@angular/core';
   templateUrl: './dropdown-divider.component.html',
 })
 export class DropdownDividerComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.DropdownDividerClass>(properties.DropdownDividerClassInstance);
+  public readonly themeService = inject(DropdownDividerThemeService);
+  public readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
-  protected readonly themeService = inject(DropdownDividerThemeService);
-  protected readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
+  public override contentClasses = signal<properties.DropdownDividerClass>(properties.DropdownDividerClassInstance);
 
   //#region properties
   public customStyle = input<Partial<properties.DropdownDividerBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });

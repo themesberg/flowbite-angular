@@ -18,11 +18,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './sidebar-item.component.html',
 })
 export class SidebarItemComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.SidebarItemClass>(properties.SidebarItemClassInstance);
+  public readonly themeService = inject(SidebarItemThemeService);
+  public readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
+  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
-  protected readonly themeService = inject(SidebarItemThemeService);
-  protected readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
-  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
+  public override contentClasses = signal<properties.SidebarItemClass>(properties.SidebarItemClassInstance);
 
   //#region properties
   public icon = input<string | undefined>(undefined);
@@ -32,7 +32,7 @@ export class SidebarItemComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       icon: this.icon(),
       link: this.link(),
@@ -45,7 +45,7 @@ export class SidebarItemComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected async onClick(): Promise<void> {
+  public async onClick(): Promise<void> {
     await this.flowbiteLinkRouter.navigate(this.link());
   }
 }

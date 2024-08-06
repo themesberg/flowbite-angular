@@ -30,26 +30,20 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class NavbarComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.NavbarClass>(properties.NavbarClassInstance);
+  public readonly themeService = inject(NavbarThemeService);
+  public readonly navbarStateService: NavbarStateService = inject(NavbarStateService);
 
-  protected readonly themeService = inject(NavbarThemeService);
-  protected readonly navbarStateService: NavbarStateService = inject(NavbarStateService);
+  public override contentClasses = signal<properties.NavbarClass>(properties.NavbarClassInstance);
 
   //#region properties
-  public isRounded = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public hasBorder = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
-  public isFixed = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isFixed = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<properties.NavbarBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       hasBorder: booleanToFlowbiteBoolean(this.isRounded()),
       isRounded: booleanToFlowbiteBoolean(this.hasBorder()),

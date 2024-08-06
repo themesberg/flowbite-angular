@@ -14,17 +14,17 @@ import { Component, inject, input, signal } from '@angular/core';
   templateUrl: './modal-footer.component.html',
 })
 export class ModalFooterComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.ModalFooterClass>(properties.ModalFooterClassInstance);
+  public readonly themeService = inject(ModalFooterThemeService);
+  public readonly modalComponent = inject<ModalComponent>(ModalComponent);
 
-  protected readonly themeService = inject(ModalFooterThemeService);
-  protected readonly modalComponent = inject<ModalComponent>(ModalComponent);
+  public override contentClasses = signal<properties.ModalFooterClass>(properties.ModalFooterClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.ModalFooterBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });

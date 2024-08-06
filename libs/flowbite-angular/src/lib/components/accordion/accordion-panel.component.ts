@@ -26,10 +26,10 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class AccordionPanelComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.AccordionPanelClass>(properties.AccordionPanelClassInstance);
+  public readonly themeService = inject(AccordionPanelThemeService);
+  public readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
 
-  protected readonly themeService = inject(AccordionPanelThemeService);
-  protected readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
+  public override contentClasses = signal<properties.AccordionPanelClass>(properties.AccordionPanelClassInstance);
 
   //#region properties
   public isOpen = input<boolean, string | boolean>(false, {
@@ -39,7 +39,7 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });

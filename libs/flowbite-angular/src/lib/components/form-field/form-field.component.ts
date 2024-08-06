@@ -28,10 +28,10 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class FormFieldComponent extends BaseComponent implements OnInit {
-  protected override contentClasses = signal<properties.FormFieldClass>(properties.FormFieldClassInstance);
+  public readonly themeService = inject(FormFieldThemeService);
+  public readonly formsFieldStateService: FormFieldStateService = inject(FormFieldStateService);
 
-  protected readonly themeService = inject(FormFieldThemeService);
-  protected readonly formsFieldStateService: FormFieldStateService = inject(FormFieldStateService);
+  public override contentClasses = signal<properties.FormFieldClass>(properties.FormFieldClassInstance);
 
   //#region properties
   public type = input<keyof properties.FormFieldTypes>('text');
@@ -46,7 +46,7 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       type: this.type(),
       floatingLabelType: this.floatingLabelType(),

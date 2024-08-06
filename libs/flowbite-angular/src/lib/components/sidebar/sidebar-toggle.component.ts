@@ -13,10 +13,10 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './sidebar-toggle.component.html',
 })
 export class SidebarToggleComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.SidebarToggleClass>(properties.SidebarToggleClassInstance);
+  public readonly themeService = inject(SidebarToggleThemeService);
+  public readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
 
-  protected readonly themeService = inject(SidebarToggleThemeService);
-  protected readonly sidebarStateService: SidebarStateService = inject(SidebarStateService);
+  public override contentClasses = signal<properties.SidebarToggleClass>(properties.SidebarToggleClassInstance);
 
   //#region properties
   public color = input<keyof properties.SidebarToggleColors>('gray');
@@ -25,7 +25,7 @@ export class SidebarToggleComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
       size: this.size(),
@@ -37,7 +37,7 @@ export class SidebarToggleComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected onClick(): void {
+  public onClick(): void {
     const isOpen = this.sidebarStateService.select('isOpen')();
 
     this.sidebarStateService.set('isOpen', !isOpen);

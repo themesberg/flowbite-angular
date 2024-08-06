@@ -19,9 +19,9 @@ import { booleanAttribute, Component, HostBinding, inject, input, signal } from 
 export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
 
-  protected override contentClasses = signal<properties.ButtonClass>(properties.ButtonClassInstance);
+  public readonly themeService = inject(ButtonThemeService);
 
-  protected readonly themeService = inject(ButtonThemeService);
+  public override contentClasses = signal<properties.ButtonClass>(properties.ButtonClassInstance);
 
   //#region properties
   public color = input<keyof properties.ButtonColors>('info');
@@ -39,7 +39,7 @@ export class ButtonComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass() {
+  public override fetchClass() {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
       isDisabled: booleanToFlowbiteBoolean(this.isDisabled()),

@@ -13,17 +13,17 @@ import { Component, inject, input, signal } from '@angular/core';
   templateUrl: './dropdown-header.component.html',
 })
 export class DropdownHeaderComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.DropdownHeaderClass>(properties.DropdownHeaderClassInstance);
+  public readonly themeService = inject(DropdownHeaderThemeService);
+  public readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
 
-  protected readonly themeService = inject(DropdownHeaderThemeService);
-  protected readonly dropdownComponent = inject<DropdownComponent>(DropdownComponent);
+  public override contentClasses = signal<properties.DropdownHeaderClass>(properties.DropdownHeaderClassInstance);
 
   //#region properties
   public customStyle = input<Partial<properties.DropdownHeaderBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });

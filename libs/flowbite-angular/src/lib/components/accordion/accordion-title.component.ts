@@ -15,18 +15,18 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   templateUrl: './accordion-title.component.html',
 })
 export class AccordionTitleComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.AccordionTitleClass>(properties.AccordionTitleClassInstance);
+  public readonly themeService = inject(AccordionTitleThemeService);
+  public readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
+  public readonly accordionStateService: AccordionStateService = inject(AccordionStateService);
 
-  protected readonly themeService = inject(AccordionTitleThemeService);
-  protected readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
-  protected readonly accordionStateService: AccordionStateService = inject(AccordionStateService);
+  public override contentClasses = signal<properties.AccordionTitleClass>(properties.AccordionTitleClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.AccordionTitleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
       isFlush: booleanToFlowbiteBoolean(this.accordionStateService.select('isFlush')()),
@@ -38,7 +38,7 @@ export class AccordionTitleComponent extends BaseComponent {
   //#endregion
 
   @HostListener('click')
-  protected onClick(): void {
+  public onClick(): void {
     const isOpen = this.accordionPanelStateService.select('isOpen')();
 
     this.accordionPanelStateService.set('isOpen', !isOpen);

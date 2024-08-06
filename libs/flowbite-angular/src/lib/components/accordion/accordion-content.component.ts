@@ -14,19 +14,17 @@ import { Component, inject, input, signal } from '@angular/core';
   templateUrl: './accordion-content.component.html',
 })
 export class AccordionContentComponent extends BaseComponent {
-  protected override contentClasses = signal<properties.AccordionContentClass>(
-    properties.AccordionContentClassInstance,
-  );
+  public readonly themeService = inject(AccordionContentThemeService);
+  public readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
 
-  protected readonly themeService = inject(AccordionContentThemeService);
-  protected readonly accordionPanelStateService: AccordionPanelStateService = inject(AccordionPanelStateService);
+  public override contentClasses = signal<properties.AccordionContentClass>(properties.AccordionContentClassInstance);
 
   //#region properties
   public customStyle = input<DeepPartial<properties.AccordionContentBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
+  public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
