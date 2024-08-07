@@ -11,7 +11,7 @@ import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface ButtonColors
-  extends Pick<FlowbiteColors, 'dark' | 'failure' | 'gray' | 'info' | 'light' | 'purple' | 'success' | 'warning'> {
+  extends Pick<FlowbiteColors, 'info' | 'failure' | 'success' | 'warning' | 'dark' | 'light' | 'purple'> {
   [key: string]: string;
 }
 
@@ -46,7 +46,7 @@ export interface ButtonProperties {
   gradientDuoTone?: keyof ButtonDuoToneColors;
   size: keyof ButtonSizes;
   isPill: keyof FlowbiteBoolean;
-  outline: keyof ButtonFill;
+  fill: keyof ButtonFill;
   isDisabled: keyof FlowbiteBoolean;
   customStyle: DeepPartial<ButtonBaseTheme>;
 }
@@ -86,12 +86,6 @@ export const buttonTheme: ButtonBaseTheme = createTheme({
         'text-white bg-red-700 border border-transparent hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
       outline:
         'text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900',
-    },
-    gray: {
-      solid:
-        'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-2',
-      outline:
-        'text-gray-900 bg-transparent border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-2',
     },
     info: {
       solid:

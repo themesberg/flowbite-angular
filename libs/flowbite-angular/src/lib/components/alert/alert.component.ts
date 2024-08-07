@@ -26,7 +26,7 @@ import { DomSanitizer } from '@angular/platform-browser';
         [ngClass]="contentClasses()!.closeButtonClass"
         *ngIf="dismiss()"
         aria-label="Close"
-        (click)="callDismiss()">
+        (click)="onButtonClick()">
         <span class="sr-only">Close</span>
         <flowbite-icon
           svgIcon="flowbite-angular:close"
@@ -46,11 +46,9 @@ export class AlertComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<properties.AlertClass>(properties.AlertClassInstance);
 
   //#region properties
-  public color = input<keyof properties.AlertColors>('blue');
-  public isRounded = input(true, { transform: booleanAttribute });
-  public hasBorderAccent = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public color = input<keyof properties.AlertColors>('info');
+  public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public hasBorderAccent = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<properties.AlertBaseTheme>>({});
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);
@@ -61,8 +59,8 @@ export class AlertComponent extends BaseComponent implements OnInit {
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
+      hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
       hasBorderAccent: booleanToFlowbiteBoolean(this.hasBorderAccent()),
-      isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
 
@@ -80,7 +78,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
     );
   }
 
-  public callDismiss() {
+  public onButtonClick() {
     const func = this.dismiss();
 
     if (func) func();

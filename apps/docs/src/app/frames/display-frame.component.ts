@@ -7,7 +7,7 @@ import { booleanAttribute, Component, HostBinding, input } from '@angular/core';
   imports: [NgClass],
   template: `
     <div
-      class="flex items-center justify-around h-full grow gap-3"
+      class="flex items-center justify-around h-full w-full grow gap-3"
       [ngClass]="{
         'flex-col': orientation() === 'col',
         'flex-row': orientation() === 'row',
@@ -21,7 +21,7 @@ export class FlowbiteFrameDisplayComponent {
   @HostBinding('class')
   protected get hostBaseClass() {
     return `
-        flex pb-4 gap-3 justify-around items-center m-6
+        flex gap-3 justify-around items-center m-6
         ${this.orientation() === 'col' ? 'flex-col' : 'flex-row'}
         ${this.wrap() ? 'flex-wrap' : ''}
     `;

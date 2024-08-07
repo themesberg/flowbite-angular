@@ -14,14 +14,14 @@ export class ButtonThemeService implements FlowbiteThemeService<ButtonProperties
 
     const output: ButtonClass = {
       rootClass: twMerge(
-        properties.gradientDuoTone && properties.outline == 'outline'
+        properties.gradientDuoTone && properties.fill == 'outline'
           ? theme.base['span']
           : `${theme.base['default']} ${theme.size[properties.size]}`,
         properties.gradientDuoTone
-          ? theme.gradientDuoTone[properties.gradientDuoTone][properties.outline]
+          ? theme.gradientDuoTone[properties.gradientDuoTone][properties.fill]
           : properties.gradientMonochrome
             ? theme.gradientMonochrome[properties.gradientMonochrome]
-            : theme.color[properties.color][properties.outline],
+            : theme.color[properties.color][properties.fill],
         theme.isPill[properties.isPill],
         theme.isDisabled[properties.isDisabled],
       ),

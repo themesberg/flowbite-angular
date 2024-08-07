@@ -1,55 +1,44 @@
-<flowbite-demo-example title="Default Badge">
+<flowbite-demo-example title="Default alert">
   <flowbite-iframe-wrapper
     link="frames/alert/default"
-    height="115" />
+    height="400" />
   @for (item of exampleService.defaultAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
-      [code]="item.code" />
+      [codeAsync]="item.code" />
   }
 </flowbite-demo-example>
 <flowbite-demo-example title="Alerts with icon">
   <flowbite-iframe-wrapper
     link="frames/alert/icon"
-    height="120" />
+    height="450" />
   @for (item of exampleService.iconAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
-      [code]="item.code" />
+      [codeAsync]="item.code" />
   }
 </flowbite-demo-example>
-<flowbite-demo-example title="Dismissible alerts">
-  <flowbite-iframe-wrapper
-    link="frames/alert/dismissable"
-    height="120" />
-  @for (item of exampleService.dismissableAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [code]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Border accent">
+<flowbite-demo-example title="Bordered alerts">
   <flowbite-iframe-wrapper
     link="frames/alert/border"
-    height="115" />
+    height="420" />
   @for (item of exampleService.borderAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
-      [code]="item.code" />
+      [codeAsync]="item.code" />
   }
 </flowbite-demo-example>
 <flowbite-demo-example title="Additional content">
   <flowbite-iframe-wrapper
     link="frames/alert/additional-content"
-    height="215" />
+    height="1050" />
   @for (item of exampleService.additionalContentAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
-      [code]="item.code" />
+      [codeAsync]="item.code" />
   }
 </flowbite-demo-example>

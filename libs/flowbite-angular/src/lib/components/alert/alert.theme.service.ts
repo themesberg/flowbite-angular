@@ -18,7 +18,7 @@ export class AlertThemeService implements FlowbiteThemeService<AlertProperties> 
         theme.base,
         theme.hasBorderAccent[properties.hasBorderAccent],
         theme.color[properties.color],
-        theme.isRounded[properties.isRounded],
+        theme.hasBorder[properties.hasBorder],
       ),
       closeButtonClass: twMerge(theme.closeButton.base, theme.closeButton.color[properties.color]),
     };

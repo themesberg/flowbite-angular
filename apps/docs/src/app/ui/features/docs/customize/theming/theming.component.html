@@ -1,6 +1,6 @@
 <div class="grid gap-5 md:gap-8">
-  <div class="grid gap-4 pb-4 border-b border-b-gray-200">
-    <h1 class="leading-tight text-3xl font-extrabold text-gray-900 dark:text-white">Flowbite Angular - Theming.</h1>
+  <div class="grid gap-4 border-b border-b-gray-200 pb-4">
+    <h1 class="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white">Flowbite Angular - Theming.</h1>
     <p class="text-lg font-medium text-gray-700 dark:text-gray-400">
       Use the theming options from the TailwindCSS configuration file to override the default utility classes from
       Flowbite Angular and change colors, fonts, and the default class values.
@@ -15,7 +15,7 @@
     </p>
     <flowbite-shiki
       language="javascript"
-      code="
+      codeAsync="
 module.exports = {
   theme: {
     colors: {
@@ -48,7 +48,7 @@ module.exports = {
   </div>
 
   <div class="grid gap-4">
-    <h2 class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">Theme structure</h2>
+    <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">Theme structure</h2>
     <p class="text-base font-normal text-gray-600 dark:text-gray-400">
       Some of the more widely used
       <code class="text-primary-600 dark:text-primary-500">theme</code> keys are
@@ -59,20 +59,20 @@ module.exports = {
     <p class="text-base font-normal text-gray-600 dark:text-gray-400">
       You can read all of the
       <a
-        class="underline font-medium decoration-primary-600 dark:decoration-primary-500"
+        class="decoration-primary-600 dark:decoration-primary-500 font-medium underline"
         href="https://tailwindcss.com/docs/theme#configuration-reference">
         configurable keys on Tailwind CSS.
       </a>
     </p>
 
-    <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Breakpoints</h3>
+    <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Breakpoints</h3>
     <p class="text-base font-normal text-gray-600 dark:text-gray-400">
       Use the
       <code class="text-primary-600 dark:text-primary-500">screens</code> key to update the responsive breakpoints.
     </p>
     <flowbite-shiki
       language="javascript"
-      code="
+      codeAsync="
 module.exports = {
   theme: {
     screens: {
@@ -86,14 +86,14 @@ module.exports = {
 };
 " />
 
-    <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Colors</h3>
+    <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Colors</h3>
     <p class="text-base font-normal text-gray-600 dark:text-gray-400">
       Use the
       <code class="text-primary-600 dark:text-primary-500">colors</code> key to update the responsive breakpoints.
     </p>
     <flowbite-shiki
       language="javascript"
-      code="
+      codeAsync="
 module.exports = {
   theme: {
     colors: {
@@ -115,14 +115,14 @@ module.exports = {
 " />
   </div>
 
-  <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Fonts</h3>
+  <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Fonts</h3>
   <p class="text-base font-normal text-gray-600 dark:text-gray-400">
     Use the
     <code class="text-primary-600 dark:text-primary-500">colors</code> key to update the responsive breakpoints.
   </p>
   <flowbite-shiki
     language="javascript"
-    code="
+    codeAsync="
 module.exports = {
   theme: {
     fontFamily: {
@@ -132,14 +132,14 @@ module.exports = {
 };
 " />
 
-  <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Spacing</h3>
+  <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Spacing</h3>
   <p class="text-base font-normal text-gray-600 dark:text-gray-400">
     Use the
     <code class="text-primary-600 dark:text-primary-500">spacing</code> key to update the responsive breakpoints.
   </p>
   <flowbite-shiki
     language="javascript"
-    code="
+    codeAsync="
 module.exports = {
   theme: {
     spacing: {
@@ -184,7 +184,7 @@ module.exports = {
 " />
 
   <div class="grid gap-4">
-    <h2 class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">Customizing the theme</h2>
+    <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">Customizing the theme</h2>
     <p class="text-base font-normal text-gray-600 dark:text-gray-400">
       By default, the configuration file will set the base utility classes from TailwindCSS. However, you can customize
       them by using the
@@ -192,7 +192,7 @@ module.exports = {
       object.
     </p>
 
-    <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Extending</h3>
+    <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Extending</h3>
     <p class="text-base font-normal text-gray-600 dark:text-gray-400">
       Use the
       <code class="text-primary-600 dark:text-primary-500">extends</code> object if you want to keep the values from the
@@ -204,7 +204,7 @@ module.exports = {
     </p>
     <flowbite-shiki
       language="javascript"
-      code="
+      codeAsync="
 module.exports = {
   theme: {
     extend: {
@@ -217,7 +217,7 @@ module.exports = {
 " />
   </div>
 
-  <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Overriding</h3>
+  <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Overriding</h3>
   <p class="text-base font-normal text-gray-600 dark:text-gray-400">
     Alternatively, you can also completely override certain settings.
   </p>
@@ -227,7 +227,7 @@ module.exports = {
   </p>
   <flowbite-shiki
     language="javascript"
-    code="
+    codeAsync="
 module.exports = {
   theme: {
     opacity: {
@@ -245,7 +245,7 @@ module.exports = {
   <p class="text-base font-normal text-gray-600 dark:text-gray-400">
     Please read the official
     <a
-      class="underline font-medium decoration-primary-600 dark:decoration-primary-500"
+      class="decoration-primary-600 dark:decoration-primary-500 font-medium underline"
       href="https://tailwindcss.com/docs/theme">
       Tailwind CSS Theming
     </a>

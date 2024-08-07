@@ -1,6 +1,6 @@
 <div class="grid gap-5 md:gap-8">
-  <div class="grid gap-4 pb-4 border-b border-b-gray-200">
-    <h1 class="leading-tight text-3xl font-extrabold text-gray-900 dark:text-white">Flowbite Angular - Quickstart.</h1>
+  <div class="grid gap-4 border-b border-b-gray-200 pb-4">
+    <h1 class="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white">Flowbite Angular - Quickstart.</h1>
     <p class="text-lg font-medium text-gray-700 dark:text-gray-400">
       Get started with Flowbite Angular by including it into your project using NPM.
     </p>
@@ -8,18 +8,18 @@
 
   <div class="grid gap-4">
     <div class="grid gap-4">
-      <h2 class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">Introduction</h2>
+      <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">Introduction</h2>
       <p class="text-base font-normal text-gray-600 dark:text-gray-400">
         Flowbite Angular can easily be integrated into your project using NPM. It functions as a common Angular library.
       </p>
     </div>
 
     <div class="grid gap-4">
-      <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Require via NPM.</h3>
+      <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Require via NPM.</h3>
       <p class="text-base font-normal text-gray-600 dark:text-gray-400">Make sure that TailwindCSS is installed.</p>
       <flowbite-shiki
         language="bash"
-        code="
+        codeAsync="
 npm install tailwindcss
 " />
       <p class="text-base font-normal text-gray-600 dark:text-gray-400">
@@ -27,13 +27,13 @@ npm install tailwindcss
       </p>
       <flowbite-shiki
         language="bash"
-        code="
+        codeAsync="
 npm install flowbite-angular
 " />
     </div>
 
     <div class="grid gap-4">
-      <h3 class="leading-tight text-xl font-bold text-gray-900 dark:text-white">Init function</h3>
+      <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Init function</h3>
       <p class="text-base font-normal text-gray-600 dark:text-gray-400">
         By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to
         call the init function inside the provider's list of your application.
@@ -42,13 +42,13 @@ npm install flowbite-angular
         For more informations about styling, check the
         <a
           href="#"
-          class="font-medium underline decoration-primary-600 dark:decoration-primary-500">
+          class="decoration-primary-600 dark:decoration-primary-500 font-medium underline">
           styling page.
         </a>
       </p>
       <flowbite-shiki
         language="typescript"
-        code="
+        codeAsync="
 import { ApplicationConfig } from '@angular/core';
 import { initFlowbite } from 'flowbite-angular';
 

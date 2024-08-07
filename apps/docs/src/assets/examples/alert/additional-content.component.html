@@ -1,36 +1,167 @@
-<flowbite-frame-display>
+<flowbite-frame-display orientation="col">
+  <flowbite-alert [additionalContent]="defaultAdditionalContent">
+    <h3 class="text-lg font-medium">This is an info alert</h3>
+  </flowbite-alert>
   <flowbite-alert
-    color="gray"
-    [icon]="icon"
-    [additionalContent]="additionalContent">
+    color="info"
+    [additionalContent]="blueAdditionalContent">
+    <h3 class="text-lg font-medium">This is an info alert</h3>
+  </flowbite-alert>
+  <flowbite-alert
+    color="failure"
+    [additionalContent]="redAdditionalContent">
+    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+  </flowbite-alert>
+  <flowbite-alert
+    color="success"
+    [additionalContent]="greenAdditionalContent">
+    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+  </flowbite-alert>
+  <flowbite-alert
+    color="warning"
+    [additionalContent]="yellowAdditionalContent">
+    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+  </flowbite-alert>
+  <flowbite-alert
+    color="dark"
+    [additionalContent]="darkAdditionalContent">
     <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
   </flowbite-alert>
 
-  <ng-template #icon>
-    <flowbite-icon
-      svgIcon="outline:info-circle"
-      class="mr-3 inline h-5 w-5 flex-shrink-0" />
+  <ng-template #defaultAdditionalContent>
+    <div class="mt-2 mb-4 text-sm">
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
+      spacing within an alert works with this kind of content.
+    </div>
+    <div class="flex">
+      <flowbite-button
+        class="mr-2"
+        size="xs">
+        <flowbite-icon
+          svgIcon="outline:eye"
+          class="-ml-0.5 mr-2 h-4 w-4" />
+        View more
+      </flowbite-button>
+      <flowbite-button
+        fill="outline"
+        size="xs">
+        Dismiss
+      </flowbite-button>
+    </div>
   </ng-template>
-
-  <ng-template #additionalContent>
+  <ng-template #blueAdditionalContent>
     <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
       More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
       spacing within an alert works with this kind of content.
     </div>
     <div class="flex">
-      <button
-        type="button"
-        class="mr-2 inline-flex items-center rounded-lg bg-gray-700 px-3 py-1.5 text-center text-xs font-medium text-gray-100 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:bg-gray-100 dark:text-gray-700 dark:hover:bg-gray-200">
+      <flowbite-button
+        color="info"
+        class="mr-2"
+        size="xs">
         <flowbite-icon
           svgIcon="outline:eye"
           class="-ml-0.5 mr-2 h-4 w-4" />
         View more
-      </button>
-      <button
-        type="button"
-        class="rounded-lg border border-gray-700 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-gray-700 hover:bg-gray-800 hover:text-white focus:ring-4 focus:ring-gray-300 dark:border-gray-100 dark:text-gray-100 dark:hover:text-white">
+      </flowbite-button>
+      <flowbite-button
+        color="info"
+        fill="outline"
+        size="xs">
         Dismiss
-      </button>
+      </flowbite-button>
+    </div>
+  </ng-template>
+  <ng-template #redAdditionalContent>
+    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
+      spacing within an alert works with this kind of content.
+    </div>
+    <div class="flex">
+      <flowbite-button
+        color="failure"
+        class="mr-2"
+        size="xs">
+        <flowbite-icon
+          svgIcon="outline:eye"
+          class="-ml-0.5 mr-2 h-4 w-4" />
+        View more
+      </flowbite-button>
+      <flowbite-button
+        color="failure"
+        fill="outline"
+        size="xs">
+        Dismiss
+      </flowbite-button>
+    </div>
+  </ng-template>
+  <ng-template #greenAdditionalContent>
+    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
+      spacing within an alert works with this kind of content.
+    </div>
+    <div class="flex">
+      <flowbite-button
+        color="success"
+        class="mr-2"
+        size="xs">
+        <flowbite-icon
+          svgIcon="outline:eye"
+          class="-ml-0.5 mr-2 h-4 w-4" />
+        View more
+      </flowbite-button>
+      <flowbite-button
+        color="success"
+        fill="outline"
+        size="xs">
+        Dismiss
+      </flowbite-button>
+    </div>
+  </ng-template>
+  <ng-template #yellowAdditionalContent>
+    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
+      spacing within an alert works with this kind of content.
+    </div>
+    <div class="flex">
+      <flowbite-button
+        color="warning"
+        class="mr-2"
+        size="xs">
+        <flowbite-icon
+          svgIcon="outline:eye"
+          class="-ml-0.5 mr-2 h-4 w-4" />
+        View more
+      </flowbite-button>
+      <flowbite-button
+        color="warning"
+        fill="outline"
+        size="xs">
+        Dismiss
+      </flowbite-button>
+    </div>
+  </ng-template>
+  <ng-template #darkAdditionalContent>
+    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
+      spacing within an alert works with this kind of content.
+    </div>
+    <div class="flex">
+      <flowbite-button
+        color="dark"
+        class="mr-2"
+        size="xs">
+        <flowbite-icon
+          svgIcon="outline:eye"
+          class="-ml-0.5 mr-2 h-4 w-4" />
+        View more
+      </flowbite-button>
+      <flowbite-button
+        color="dark"
+        fill="outline"
+        size="xs">
+        Dismiss
+      </flowbite-button>
     </div>
   </ng-template>
 </flowbite-frame-display>
