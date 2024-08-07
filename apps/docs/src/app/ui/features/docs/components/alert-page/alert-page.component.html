@@ -34,6 +34,18 @@
       [codeAsync]="item.code" />
   }
 </flowbite-demo-example>
+<flowbite-demo-example title="Dismissable alerts">
+  <flowbite-iframe-wrapper
+    link="frames/alert/dismissable"
+    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/dismissable.component.html"
+    height="360" />
+  @for (item of exampleService.dismissableAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [codeAsync]="item.code" />
+  }
+</flowbite-demo-example>
 <flowbite-demo-example title="Border accent">
   <flowbite-iframe-wrapper
     link="frames/alert/border-accent"

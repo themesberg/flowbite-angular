@@ -53,4 +53,17 @@ export class AlertExampleService {
       }),
     },
   ];
+
+  public readonly dismissableAlert: Example[] = [
+    {
+      language: 'html',
+      code: this.httpClient.get('assets/examples/alert/dismissable.component.html', {
+        responseType: 'text',
+      }),
+    },
+    {
+      language: 'typescript',
+      code: 'onDismiss = () => alert("Alert have been dismissed");',
+    },
+  ];
 }

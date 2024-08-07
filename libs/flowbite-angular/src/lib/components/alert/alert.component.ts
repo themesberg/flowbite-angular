@@ -24,9 +24,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       <button
         type="button"
         [ngClass]="contentClasses()!.closeButtonClass"
-        *ngIf="dismiss()"
+        *ngIf="isDismissable()"
         aria-label="Close"
-        (click)="onButtonClick()">
+        (click)="onDismissClick()">
         <span class="sr-only">Close</span>
         <flowbite-icon
           svgIcon="flowbite-angular:close"
@@ -52,7 +52,8 @@ export class AlertComponent extends BaseComponent implements OnInit {
   public customStyle = input<DeepPartial<properties.AlertBaseTheme>>({});
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);
-  public dismiss = input<() => void | undefined>();
+  public isDismissable = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public onDismiss = input<() => void | undefined>();
   //#endregion
 
   //#region BaseComponent implementation
@@ -78,8 +79,8 @@ export class AlertComponent extends BaseComponent implements OnInit {
     );
   }
 
-  public onButtonClick() {
-    const func = this.dismiss();
+  public onDismissClick() {
+    const func = this.onDismiss();
 
     if (func) func();
   }
