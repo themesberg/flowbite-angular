@@ -1,7 +1,8 @@
 <flowbite-demo-example title="Default alert">
   <flowbite-iframe-wrapper
     link="frames/alert/default"
-    height="400" />
+    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/default.component.html"
+    height="330" />
   @for (item of exampleService.defaultAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
@@ -12,7 +13,8 @@
 <flowbite-demo-example title="Alerts with icon">
   <flowbite-iframe-wrapper
     link="frames/alert/icon"
-    height="450" />
+    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/icon.component.html"
+    height="370" />
   @for (item of exampleService.iconAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
@@ -23,8 +25,21 @@
 <flowbite-demo-example title="Bordered alerts">
   <flowbite-iframe-wrapper
     link="frames/alert/border"
-    height="420" />
+    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/border.component.html"
+    height="340" />
   @for (item of exampleService.borderAlert; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [codeAsync]="item.code" />
+  }
+</flowbite-demo-example>
+<flowbite-demo-example title="Border accent">
+  <flowbite-iframe-wrapper
+    link="frames/alert/border-accent"
+    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/border-accent.component.html"
+    height="350" />
+  @for (item of exampleService.borderAccentAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"
       [language]="item.language"
@@ -34,7 +49,8 @@
 <flowbite-demo-example title="Additional content">
   <flowbite-iframe-wrapper
     link="frames/alert/additional-content"
-    height="1050" />
+    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/additional-content.component.html"
+    height="860" />
   @for (item of exampleService.additionalContentAlert; track $index) {
     <flowbite-shiki
       ngProjectAs="code-example"

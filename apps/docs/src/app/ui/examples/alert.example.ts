@@ -36,6 +36,15 @@ export class AlertExampleService {
     },
   ];
 
+  public readonly borderAccentAlert: Example[] = [
+    {
+      language: 'html',
+      code: this.httpClient.get('assets/examples/alert/border-accent.component.html', {
+        responseType: 'text',
+      }),
+    },
+  ];
+
   public readonly additionalContentAlert: Example[] = [
     {
       language: 'html',

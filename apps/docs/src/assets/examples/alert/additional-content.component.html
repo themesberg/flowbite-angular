@@ -1,61 +1,37 @@
 <flowbite-frame-display orientation="col">
-  <flowbite-alert [additionalContent]="defaultAdditionalContent">
-    <h3 class="text-lg font-medium">This is an info alert</h3>
-  </flowbite-alert>
   <flowbite-alert
     color="info"
-    [additionalContent]="blueAdditionalContent">
+    [additionalContent]="infoAdditionalContent">
     <h3 class="text-lg font-medium">This is an info alert</h3>
   </flowbite-alert>
   <flowbite-alert
     color="failure"
-    [additionalContent]="redAdditionalContent">
-    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+    [additionalContent]="failureAdditionalContent">
+    <h3 class="text-lg font-medium">This is an failure alert</h3>
   </flowbite-alert>
   <flowbite-alert
     color="success"
-    [additionalContent]="greenAdditionalContent">
-    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+    [additionalContent]="successAdditionalContent">
+    <h3 class="text-lg font-medium">This is an success alert</h3>
   </flowbite-alert>
   <flowbite-alert
     color="warning"
-    [additionalContent]="yellowAdditionalContent">
-    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+    [additionalContent]="warningAdditionalContent">
+    <h3 class="text-lg font-medium">This is an warning alert</h3>
   </flowbite-alert>
   <flowbite-alert
     color="dark"
     [additionalContent]="darkAdditionalContent">
-    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-100">This is an info alert</h3>
+    <h3 class="text-lg font-medium">This is an dark alert</h3>
   </flowbite-alert>
 
-  <ng-template #defaultAdditionalContent>
+  <ng-template #infoAdditionalContent>
     <div class="mt-2 mb-4 text-sm">
       More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
       spacing within an alert works with this kind of content.
     </div>
     <div class="flex">
       <flowbite-button
-        class="mr-2"
-        size="xs">
-        <flowbite-icon
-          svgIcon="outline:eye"
-          class="-ml-0.5 mr-2 h-4 w-4" />
-        View more
-      </flowbite-button>
-      <flowbite-button
-        fill="outline"
-        size="xs">
-        Dismiss
-      </flowbite-button>
-    </div>
-  </ng-template>
-  <ng-template #blueAdditionalContent>
-    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
-      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
-      spacing within an alert works with this kind of content.
-    </div>
-    <div class="flex">
-      <flowbite-button
         color="info"
         class="mr-2"
         size="xs">
@@ -72,8 +48,8 @@
       </flowbite-button>
     </div>
   </ng-template>
-  <ng-template #redAdditionalContent>
-    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+  <ng-template #failureAdditionalContent>
+    <div class="mt-2 mb-4 text-sm">
       More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
       spacing within an alert works with this kind of content.
     </div>
@@ -95,8 +71,8 @@
       </flowbite-button>
     </div>
   </ng-template>
-  <ng-template #greenAdditionalContent>
-    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+  <ng-template #successAdditionalContent>
+    <div class="mt-2 mb-4 text-sm">
       More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
       spacing within an alert works with this kind of content.
     </div>
@@ -118,8 +94,8 @@
       </flowbite-button>
     </div>
   </ng-template>
-  <ng-template #yellowAdditionalContent>
-    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+  <ng-template #warningAdditionalContent>
+    <div class="mt-2 mb-4 text-sm">
       More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
       spacing within an alert works with this kind of content.
     </div>
@@ -142,7 +118,7 @@
     </div>
   </ng-template>
   <ng-template #darkAdditionalContent>
-    <div class="mt-2 mb-4 text-sm text-gray-700 dark:text-gray-100">
+    <div class="mt-2 mb-4 text-sm">
       More info about this info alert goes here. This example text is going to run a bit longer so that you can see how
       spacing within an alert works with this kind of content.
     </div>

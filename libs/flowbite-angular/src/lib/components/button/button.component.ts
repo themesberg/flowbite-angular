@@ -44,9 +44,7 @@ export class ButtonComponent extends BaseComponent {
     transform: booleanAttribute,
   });
   public fill = input<keyof properties.ButtonFill>('solid');
-  public isDisabled = input<boolean, string | boolean>(false, {
-    transform: booleanAttribute,
-  });
+  public isDisabled = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public gradientMonochrome = input<keyof properties.ButtonMonochromeColors | undefined>(undefined);
   public gradientDuoTone = input<keyof properties.ButtonDuoToneColors | undefined>(undefined);
   public customStyle = input<DeepPartial<properties.ButtonBaseTheme>>({});

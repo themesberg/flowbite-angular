@@ -1,4 +1,5 @@
 import { FlowbiteFrameAlertAdditionalContentComponent } from './additional-content.component';
+import { FlowbiteFrameAlertBorderAccentComponent } from './border-accent.component';
 import { FlowbiteFrameAlertBorderComponent } from './border.component';
 import { FlowbiteFrameAlertDefaultComponent } from './default.component';
 import { FlowbiteFrameAlertIconComponent } from './icon.component';
@@ -9,6 +10,10 @@ export default [
   {
     path: 'additional-content',
     component: FlowbiteFrameAlertAdditionalContentComponent,
+  },
+  {
+    path: 'border-accent',
+    component: FlowbiteFrameAlertBorderAccentComponent,
   },
   {
     path: 'border',

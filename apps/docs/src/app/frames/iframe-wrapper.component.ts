@@ -1,7 +1,7 @@
 import { FlowbiteIFrameComponent } from './iframe.component';
 
-import type { FlowbiteTheme, ThemeState } from 'flowbite-angular';
-import { ButtonComponent, GlobalSignalStoreService, IconComponent } from 'flowbite-angular';
+import type { FlowbiteLink, FlowbiteTheme, ThemeState } from 'flowbite-angular';
+import { ButtonComponent, FlowbiteLinkRouter, GlobalSignalStoreService, IconComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
@@ -34,7 +34,9 @@ import {
         <span>
           <flowbite-button
             color="light"
-            size="sm">
+            size="sm"
+            [isDisabled]="githubLink() === undefined ? 'true' : 'false'"
+            (click)="onGithubLinkClicked()">
             <flowbite-icon
               svgIcon="solid:github"
               class="mr-2 w-4 h-4" />
@@ -108,11 +110,12 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
   protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
   );
+  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   protected contentThemeMode = signal<FlowbiteTheme | undefined>(undefined);
 
   public link = input.required<string>();
-  public githubLink = input<string>();
+  public githubLink = input<FlowbiteLink | undefined>(undefined);
   public height = input<number, unknown>(150, { transform: numberAttribute });
 
   public ngAfterViewInit(): void {
@@ -140,5 +143,9 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
   protected setContentThemeMode(mode: FlowbiteTheme): void {
     this.iframe.setTheme(mode);
     this.contentThemeMode.set(mode);
+  }
+
+  protected async onGithubLinkClicked(): Promise<void> {
+    await this.flowbiteLinkRouter.navigate(this.githubLink());
   }
 }
