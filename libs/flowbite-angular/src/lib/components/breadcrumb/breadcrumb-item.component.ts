@@ -1,6 +1,5 @@
-import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import type { RoutableInterface } from '../../interfaces';
-import { FlowbiteLinkRouter } from '../../services';
+import type { DeepPartial } from '../../common/flowbite.type';
+import { RoutableDirective } from '../../directives';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
@@ -9,7 +8,7 @@ import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -22,24 +21,29 @@ import { DomSanitizer } from '@angular/platform-browser';
       svgIcon="flowbite-angular:chevron-right" />
     <ng-content />
   `,
+  hostDirectives: [
+    {
+      directive: RoutableDirective,
+      inputs: ['href'],
+    },
+  ],
 })
-export class BreadcrumbItemComponent extends BaseComponent implements OnInit, RoutableInterface {
+export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
+  protected readonly routableDirective = inject(RoutableDirective);
   protected readonly themeService = inject(BreadcrumbItemThemeService);
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
-  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   public override contentClasses = signal<properties.BreadcrumbItemClass>(properties.BreadcrumbItemClassInstance);
 
   //#region properties
-  public href = input<FlowbiteLink | undefined>(undefined);
   public customStyle = input<DeepPartial<properties.BreadcrumbItemBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      link: this.href(),
+      link: this.routableDirective.href(),
       customStyle: this.customStyle(),
     });
 
@@ -55,10 +59,5 @@ export class BreadcrumbItemComponent extends BaseComponent implements OnInit, Ro
       'chevron-right',
       this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_RIGHT_SVG_ICON),
     );
-  }
-
-  @HostListener('click')
-  public async onNavigate(): Promise<void> {
-    await this.flowbiteLinkRouter.navigate(this.href());
   }
 }

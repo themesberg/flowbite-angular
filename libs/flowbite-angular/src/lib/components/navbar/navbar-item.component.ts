@@ -1,5 +1,6 @@
-import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import { FlowbiteLinkRouter, NavbarStateService } from '../../services';
+import type { DeepPartial } from '../../common/flowbite.type';
+import { RoutableDirective } from '../../directives';
+import { NavbarStateService } from '../../services';
 import { BaseComponent } from '../base.component';
 import * as properties from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
@@ -12,18 +13,22 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   template: `<ng-content />`,
+  hostDirectives: [
+    {
+      directive: RoutableDirective,
+      inputs: ['href'],
+    },
+  ],
 })
 export class NavbarItemComponent extends BaseComponent {
   protected readonly themeService = inject(NavbarItemThemeService);
   protected readonly navbarStateService = inject(NavbarStateService);
-  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   public override contentClasses = signal<properties.NavbarItemClass>(properties.NavbarItemClassInstance);
 
   //#region properties
   public color = input<keyof properties.NavbarItemColors>('blue');
   public customStyle = input<DeepPartial<properties.NavbarItemBaseTheme>>({});
-  public link = input<FlowbiteLink | undefined>(undefined);
   //#endregion
 
   //#region BaseComponent implementation
@@ -40,7 +45,5 @@ export class NavbarItemComponent extends BaseComponent {
   @HostListener('click')
   public onClick(): void {
     this.navbarStateService.set('isOpen', false);
-
-    this.flowbiteLinkRouter.navigate(this.link());
   }
 }

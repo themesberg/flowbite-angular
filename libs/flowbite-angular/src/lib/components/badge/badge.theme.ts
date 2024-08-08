@@ -56,7 +56,7 @@ export const badgeTheme: BadgeBaseTheme = createTheme({
     disabled: 'rounded',
   },
   link: {
-    enabled: 'group cursor-pointer',
+    enabled: 'group',
     disabled: '',
   },
   isIconOnly: {

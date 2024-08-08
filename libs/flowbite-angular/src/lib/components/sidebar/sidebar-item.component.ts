@@ -1,6 +1,6 @@
-import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/flowbite.type';
+import { RoutableDirective } from '../../directives';
 import { SanitizeHtmlPipe } from '../../pipes';
-import { FlowbiteLinkRouter } from '../../services';
 import { SidebarStateService } from '../../services/state/sidebar.state';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base.component';
@@ -8,7 +8,7 @@ import * as properties from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -27,17 +27,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     </span>
     <flowbite-badge *ngIf="label()"> {{ label() }} </flowbite-badge>
   `,
+  hostDirectives: [
+    {
+      directive: RoutableDirective,
+      inputs: ['href'],
+    },
+  ],
 })
 export class SidebarItemComponent extends BaseComponent {
+  protected readonly routableDirective = inject(RoutableDirective);
   protected readonly themeService = inject(SidebarItemThemeService);
   protected readonly sidebarStateService = inject(SidebarStateService);
-  public readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   public override contentClasses = signal<properties.SidebarItemClass>(properties.SidebarItemClassInstance);
 
   //#region properties
   public icon = input<string | undefined>(undefined);
-  public link = input<FlowbiteLink | undefined>(undefined);
   public label = input<string | undefined>(undefined);
   public customStyle = input<DeepPartial<properties.SidebarItemBaseTheme>>({});
   //#endregion
@@ -46,7 +51,7 @@ export class SidebarItemComponent extends BaseComponent {
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       icon: this.icon(),
-      link: this.link(),
+      link: this.routableDirective.href(),
       label: this.label(),
       customStyle: this.customStyle(),
     });
@@ -54,9 +59,4 @@ export class SidebarItemComponent extends BaseComponent {
     this.contentClasses.set(propertyClass);
   }
   //#endregion
-
-  @HostListener('click')
-  public async onClick(): Promise<void> {
-    await this.flowbiteLinkRouter.navigate(this.link());
-  }
 }
