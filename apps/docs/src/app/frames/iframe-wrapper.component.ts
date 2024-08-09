@@ -1,7 +1,7 @@
 import { FlowbiteIFrameComponent } from './iframe.component';
 
-import type { FlowbiteLink, FlowbiteTheme, ThemeState } from 'flowbite-angular';
-import { ButtonComponent, FlowbiteLinkRouter, GlobalSignalStoreService, IconComponent } from 'flowbite-angular';
+import type { FlowbiteTheme, ThemeState } from 'flowbite-angular';
+import { ButtonComponent, GlobalSignalStoreService, IconComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
@@ -110,12 +110,11 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
   protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
   );
-  protected readonly flowbiteLinkRouter = inject(FlowbiteLinkRouter);
 
   protected contentThemeMode = signal<FlowbiteTheme | undefined>(undefined);
 
   public link = input.required<string>();
-  public githubLink = input<FlowbiteLink | undefined>(undefined);
+  public githubLink = input<string>();
   public height = input<number, unknown>(150, { transform: numberAttribute });
 
   public ngAfterViewInit(): void {
@@ -145,7 +144,11 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
     this.contentThemeMode.set(mode);
   }
 
-  protected async onGithubLinkClicked(): Promise<void> {
-    await this.flowbiteLinkRouter.navigate(this.githubLink());
+  protected onGithubLinkClicked(): void {
+    const redirectUrl = this.githubLink();
+
+    if (redirectUrl) {
+      window.open(redirectUrl, '_blank');
+    }
   }
 }

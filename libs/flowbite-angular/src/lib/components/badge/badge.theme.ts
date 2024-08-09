@@ -1,5 +1,5 @@
 import type { FlowbiteBoolean, FlowbiteClass, FlowbiteColors, FlowbiteSizes } from '../../common/flowbite.theme';
-import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { DeepPartial, RouterLinkParameter } from '../../common/flowbite.type';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
@@ -18,7 +18,7 @@ export interface BadgeProperties {
   size: keyof BadgeSizes;
   isIconOnly: keyof FlowbiteBoolean;
   isPill: keyof FlowbiteBoolean;
-  link?: FlowbiteLink;
+  link: RouterLinkParameter;
   customStyle: DeepPartial<BadgeBaseTheme>;
 }
 
@@ -56,7 +56,7 @@ export const badgeTheme: BadgeBaseTheme = createTheme({
     disabled: 'rounded',
   },
   link: {
-    enabled: 'group',
+    enabled: 'group cursor-pointer',
     disabled: '',
   },
   isIconOnly: {

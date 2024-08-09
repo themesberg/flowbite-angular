@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common/flowbite.type';
-import { RoutableDirective } from '../../directives';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
@@ -10,6 +9,7 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import { Component, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -23,13 +23,13 @@ import { DomSanitizer } from '@angular/platform-browser';
   `,
   hostDirectives: [
     {
-      directive: RoutableDirective,
-      inputs: ['href'],
+      directive: RouterLink,
+      inputs: ['routerLink'],
     },
   ],
 })
 export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
-  protected readonly routableDirective = inject(RoutableDirective);
+  protected readonly routerLink = inject(RouterLink);
   protected readonly themeService = inject(BreadcrumbItemThemeService);
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
@@ -43,7 +43,7 @@ export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      link: this.routableDirective.href(),
+      link: this.routerLink.urlTree,
       customStyle: this.customStyle(),
     });
 

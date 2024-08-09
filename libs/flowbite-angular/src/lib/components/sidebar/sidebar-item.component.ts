@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common/flowbite.type';
-import { RoutableDirective } from '../../directives';
 import { SanitizeHtmlPipe } from '../../pipes';
 import { SidebarStateService } from '../../services/state/sidebar.state';
+import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base.component';
 import * as properties from './sidebar-item.theme';
@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, RouterLink, RouterLinkActive, SanitizeHtmlPipe, BadgeComponent],
+  imports: [NgIf, NgClass, RouterLinkActive, SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
     <span
@@ -29,13 +29,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   `,
   hostDirectives: [
     {
-      directive: RoutableDirective,
-      inputs: ['href'],
+      directive: RouterLink,
+      inputs: routerLinkInputs,
     },
   ],
 })
 export class SidebarItemComponent extends BaseComponent {
-  protected readonly routableDirective = inject(RoutableDirective);
+  protected readonly routerLink = inject(RouterLink);
   protected readonly themeService = inject(SidebarItemThemeService);
   protected readonly sidebarStateService = inject(SidebarStateService);
 
@@ -51,7 +51,7 @@ export class SidebarItemComponent extends BaseComponent {
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       icon: this.icon(),
-      link: this.routableDirective.href(),
+      link: this.routerLink.urlTree,
       label: this.label(),
       customStyle: this.customStyle(),
     });

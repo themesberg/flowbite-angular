@@ -1,12 +1,13 @@
 import type { DeepPartial } from '../../common/flowbite.type';
-import { RoutableDirective } from '../../directives';
 import { NavbarStateService } from '../../services';
+import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base.component';
 import * as properties from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
 
 import { NgClass } from '@angular/common';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'flowbite-navbar-item',
@@ -15,8 +16,8 @@ import { Component, HostListener, inject, input, signal } from '@angular/core';
   template: `<ng-content />`,
   hostDirectives: [
     {
-      directive: RoutableDirective,
-      inputs: ['href'],
+      directive: RouterLink,
+      inputs: routerLinkInputs,
     },
   ],
 })

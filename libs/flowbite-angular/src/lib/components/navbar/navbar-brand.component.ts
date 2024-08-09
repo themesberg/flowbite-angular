@@ -1,11 +1,12 @@
-import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
-import { RoutableDirective } from '../../directives';
+import type { DeepPartial } from '../../common/flowbite.type';
+import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base.component';
 import * as properties from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'flowbite-navbar-brand',
@@ -14,8 +15,8 @@ import { Component, inject, input, signal } from '@angular/core';
   template: `<ng-content />`,
   hostDirectives: [
     {
-      directive: RoutableDirective,
-      inputs: ['href'],
+      directive: RouterLink,
+      inputs: routerLinkInputs,
     },
   ],
 })
@@ -26,7 +27,6 @@ export class NavbarBrandComponent extends BaseComponent {
 
   //#region properties
   public customStyle = input<DeepPartial<properties.NavbarBrandBaseTheme>>({});
-  public link = input<FlowbiteLink | undefined>(undefined);
   //#endregion
 
   //#region BaseComponent implementation

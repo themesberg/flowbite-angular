@@ -1,9 +1,9 @@
 import type { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
-import type { DeepPartial, FlowbiteLink } from '../../common/flowbite.type';
+import type { DeepPartial, RouterLinkParameter } from '../../common/flowbite.type';
 import { createTheme } from '../../utils/theme/create-theme';
 
 export interface BreadcrumbItemProperties {
-  link?: FlowbiteLink;
+  link: RouterLinkParameter;
   customStyle: DeepPartial<BreadcrumbItemBaseTheme>;
 }
 

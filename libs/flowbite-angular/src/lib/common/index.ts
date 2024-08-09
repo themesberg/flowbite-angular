@@ -13,5 +13,5 @@ export type {
 } from './flowbite.theme';
 export { FlowbiteThemeService } from './flowbite.theme.service';
 export { initFlowbite } from './flowbite.theme.init';
-export type { Combination, FlowbiteLink, DeepPartial } from './flowbite.type';
+export type { Combination, DeepPartial } from './flowbite.type';
 export { FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR } from './flowbite.settings';

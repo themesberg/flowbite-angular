@@ -106,11 +106,6 @@ import {
   sidebarToggleTheme,
   SidebarToggleThemeService,
 } from '../components';
-import {
-  FLOWBITE_DIRECTIVE_ROUTABLE_THEME_TOKEN,
-  routableDirectiveTheme,
-  RoutableDirectiveThemeService,
-} from '../directives';
 
 import type { EnvironmentProviders } from '@angular/core';
 import { makeEnvironmentProviders } from '@angular/core';
@@ -257,10 +252,6 @@ export function initFlowbite(): EnvironmentProviders {
       provide: HelperDirectiveThemeService,
       useClass: HelperDirectiveThemeService,
     },
-    {
-      provide: RoutableDirectiveThemeService,
-      useClass: RoutableDirectiveThemeService,
-    },
   ]);
 
   const themeProviders = makeEnvironmentProviders([
@@ -400,10 +391,6 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN,
       useValue: inputDirectiveTheme,
-    },
-    {
-      provide: FLOWBITE_DIRECTIVE_ROUTABLE_THEME_TOKEN,
-      useValue: routableDirectiveTheme,
     },
   ]);
 
