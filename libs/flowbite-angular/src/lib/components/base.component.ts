@@ -2,11 +2,10 @@ import type { FlowbiteClass } from '../common';
 import { generateId, Guid } from '../utils/id.generator';
 
 import type { OnInit, Signal } from '@angular/core';
-import { afterNextRender, Component, effect, HostBinding, inject, Injector, signal } from '@angular/core';
+import { afterNextRender, Directive, effect, HostBinding, inject, Injector, signal } from '@angular/core';
 
-@Component({
+@Directive({
   standalone: true,
-  template: '',
 })
 export abstract class BaseComponent implements OnInit {
   @HostBinding('class')
