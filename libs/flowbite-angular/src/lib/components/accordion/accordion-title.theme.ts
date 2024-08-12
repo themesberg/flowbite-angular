@@ -1,8 +1,10 @@
 import type { FlowbiteBoolean, FlowbiteClass } from '../../common';
-import type { Combination, DeepPartial } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/flowbite.type';
 import { createTheme } from '../../utils/theme/create-theme';
+import type { AccordionColors } from './accordion.theme';
 
 export interface AccordionTitleProperties {
+  color: keyof AccordionColors;
   isOpen: keyof FlowbiteBoolean;
   isFlush: keyof FlowbiteBoolean;
   customStyle: DeepPartial<AccordionTitleBaseTheme>;
@@ -10,26 +12,31 @@ export interface AccordionTitleProperties {
 
 export interface AccordionTitleBaseTheme {
   base: string;
-  flushAndOpen: Combination<keyof FlowbiteBoolean, keyof FlowbiteBoolean, string>;
+  color: AccordionColors;
+  isFlush: FlowbiteBoolean;
+  isOpen: FlowbiteBoolean;
 }
 
 export const accordionTitleTheme: AccordionTitleBaseTheme = createTheme({
-  base: 'cursor-pointer flex w-full items-center justify-between py-5 px-5 text-left font-medium text-gray-500 dark:text-gray-400',
-  flushAndOpen: {
-    enabled: {
-      enabled: 'text-gray-900 dark:text-white',
-      disabled: '',
-    },
-    disabled: {
-      enabled:
-        'hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-800 dark:focus:ring-gray-800 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800',
-      disabled: 'hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:hover:bg-gray-800 dark:focus:ring-gray-800',
-    },
+  base: 'cursor-pointer flex items-center p-5 justify-between',
+  color: {
+    primary:
+      'text-primary-900 dark:text-primary-50 border-primary-200 dark:border-primary-700 bg-primary-100 dark:bg-primary-800',
+    blue: 'text-info-900 dark:text-info-50 border-info-200 dark:border-info-700 bg-info-100 dark:bg-info-800',
+    red: 'text-failure-900 dark:text-failure-50 border-failure-200 dark:border-failure-700 bg-failure-100 dark:bg-failure-800',
+    green:
+      'text-success-900 dark:text-success-50 border-success-200 dark:border-success-700 bg-success-100 dark:bg-success-800',
+    yellow:
+      'text-warning-900 dark:text-warning-50 border-warning-200 dark:border-warning-700 bg-warning-100 dark:bg-warning-800',
+  },
+  isFlush: {
+    enabled: '',
+    disabled: 'border',
+  },
+  isOpen: {
+    enabled: '',
+    disabled: 'bg-transparent dark:bg-transparent',
   },
 });
 
 export type AccordionTitleClass = FlowbiteClass;
-
-export const AccordionTitleClassInstance: AccordionTitleClass = {
-  rootClass: '',
-};

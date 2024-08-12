@@ -7,21 +7,15 @@ export interface FlowbiteBoolean {
   disabled: string;
 }
 
-export interface FlowbiteStateColors {
-  info: string;
-  failure: string;
-  success: string;
-  warning: string;
-}
-
-export interface FlowbiteColors extends FlowbiteStateColors {
+export interface FlowbiteColors {
+  primary: string;
+  light: string;
+  dark: string;
   blue: string;
   cyan: string;
-  dark: string;
   gray: string;
   green: string;
   indigo: string;
-  light: string;
   lime: string;
   pink: string;
   purple: string;
@@ -30,7 +24,7 @@ export interface FlowbiteColors extends FlowbiteStateColors {
   yellow: string;
 }
 
-export interface FlowbiteGradientColors extends Omit<FlowbiteStateColors, 'warning'> {
+export interface FlowbiteGradientColors extends Omit<FlowbiteColors, 'warning'> {
   cyan: string;
   lime: string;
   pink: string;

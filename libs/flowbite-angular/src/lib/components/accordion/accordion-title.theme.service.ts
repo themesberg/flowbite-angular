@@ -16,7 +16,12 @@ export class AccordionTitleThemeService implements FlowbiteThemeService<Accordio
     const theme: AccordionTitleBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: AccordionTitleClass = {
-      rootClass: twMerge(theme.base, theme.flushAndOpen[properties.isFlush][properties.isOpen]),
+      rootClass: twMerge(
+        theme.base,
+        theme.color[properties.color],
+        theme.isFlush[properties.isFlush],
+        theme.isOpen[properties.isOpen],
+      ),
     };
 
     return output;

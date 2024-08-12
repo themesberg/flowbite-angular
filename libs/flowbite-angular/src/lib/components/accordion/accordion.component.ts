@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
 import { AccordionStateService } from '../../services';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './accordion.theme';
+import type { AccordionBaseTheme, AccordionClass, AccordionColors } from './accordion.theme';
 import { AccordionThemeService } from './accordion.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -34,18 +35,20 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   protected readonly themeService = inject(AccordionThemeService);
   protected readonly accordionStateService = inject(AccordionStateService);
 
-  public override contentClasses = signal<properties.AccordionClass>(properties.AccordionClassInstance);
+  public override contentClasses = signal<AccordionClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public color = input<keyof AccordionColors>('light');
   public isFlush = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<DeepPartial<properties.AccordionBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
+      color: this.accordionStateService.select('color')(),
       isFlush: booleanToFlowbiteBoolean(this.accordionStateService.select('isFlush')()),
       customStyle: this.customStyle(),
     });
@@ -55,7 +58,10 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.accordionStateService.set('isFlush', this.isFlush());
+    this.accordionStateService.setState({
+      isFlush: this.isFlush(),
+      color: this.color(),
+    });
 
     super.ngOnInit();
   }

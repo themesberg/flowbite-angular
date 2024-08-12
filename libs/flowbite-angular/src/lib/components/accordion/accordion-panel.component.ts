@@ -1,7 +1,8 @@
 import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services/state/accordion.state';
+import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import * as properties from './accordion-panel.theme';
+import type { AccordionPanelBaseTheme, AccordionPanelClass } from './accordion-panel.theme';
 import { AccordionPanelThemeService } from './accordion-panel.theme.service';
 
 import type { OnInit } from '@angular/core';
@@ -29,13 +30,13 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   protected readonly themeService = inject(AccordionPanelThemeService);
   protected readonly accordionPanelStateService = inject(AccordionPanelStateService);
 
-  public override contentClasses = signal<properties.AccordionPanelClass>(properties.AccordionPanelClassInstance);
+  public override contentClasses = signal<AccordionPanelClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isOpen = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<DeepPartial<properties.AccordionPanelBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionPanelBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

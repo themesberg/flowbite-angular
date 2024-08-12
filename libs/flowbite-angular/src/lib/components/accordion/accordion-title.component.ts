@@ -1,10 +1,11 @@
 import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService, AccordionStateService } from '../../services';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './accordion-title.theme';
+import type { AccordionTitleBaseTheme, AccordionTitleClass } from './accordion-title.theme';
 import { AccordionTitleThemeService } from './accordion-title.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -33,18 +34,19 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.AccordionTitleClass>(properties.AccordionTitleClassInstance);
+  public override contentClasses = signal<AccordionTitleClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.AccordionTitleBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionTitleBaseTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      customStyle: this.customStyle(),
+      color: this.accordionStateService.select('color')(),
       isFlush: booleanToFlowbiteBoolean(this.accordionStateService.select('isFlush')()),
       isOpen: booleanToFlowbiteBoolean(this.accordionPanelStateService.select('isOpen')()),
+      customStyle: this.customStyle(),
     });
 
     this.contentClasses.set(propertyClass);

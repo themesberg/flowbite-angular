@@ -47,7 +47,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<properties.AlertClass>(properties.AlertClassInstance);
 
   //#region properties
-  public color = input<keyof properties.AlertColors>('info');
+  public color = input<keyof properties.AlertColors>('primary');
   public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public hasBorderAccent = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<properties.AlertBaseTheme>>({});

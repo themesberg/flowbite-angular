@@ -14,20 +14,6 @@ module.exports = {
   safelist: ['p-4', 'overflow-x-auto', 'rounded-md', 'max-w-md', 'max-w-sm', 'bg-gray-100', 'bg-gray-500'],
   theme: {
     extend: {
-      colors: {
-        primary: {
-          50: '#FFF0F1',
-          100: '#FFE1E4',
-          200: '#FFC8CF',
-          300: '#FF9BA8',
-          400: '#FF637B',
-          500: '#FF2C51',
-          600: '#F6083B',
-          700: '#C3002F',
-          800: '#AE0331',
-          900: '#940732',
-        },
-      },
       container: {
         center: true,
       },

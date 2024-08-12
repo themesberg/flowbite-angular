@@ -1,26 +1,26 @@
 <div class="grid gap-5 md:gap-8">
   <div class="grid gap-4 border-b border-b-gray-200 pb-4">
-    <h1>Flowbite Angular - Quickstart.</h1>
-    <p>Get started with Flowbite Angular by including it into your project using NPM.</p>
+    <h1 class="docs">Flowbite Angular - Quickstart.</h1>
+    <p class="docs">Get started with Flowbite Angular by including it into your project using NPM.</p>
   </div>
 
   <div class="grid gap-4">
     <div class="grid gap-4">
-      <h2>Introduction</h2>
-      <p>
+      <h2 class="docs">Introduction</h2>
+      <p class="docs">
         Flowbite Angular can easily be integrated into your project using NPM. It functions as a common Angular library.
       </p>
     </div>
 
     <div class="grid gap-4">
-      <h3>Require via NPM.</h3>
-      <p>Make sure that TailwindCSS is installed.</p>
+      <h3 class="docs">Require via NPM.</h3>
+      <p class="docs">Make sure that TailwindCSS is installed.</p>
       <flowbite-shiki
         language="bash"
         codeAsync="
 npm install tailwindcss
 " />
-      <p>Install Flowbite as a dependency using NPM by running this command:</p>
+      <p class="docs">Install Flowbite as a dependency using NPM by running this command:</p>
       <flowbite-shiki
         language="bash"
         codeAsync="
@@ -29,14 +29,15 @@ npm install flowbite-angular
     </div>
 
     <div class="grid gap-4">
-      <h3>Init function</h3>
-      <p>
+      <h3 class="docs">Init function</h3>
+      <p class="docs">
         By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to
         call the init function inside the provider's list of your application.
       </p>
-      <p>
+      <p class="docs">
         For more informations about styling, check the
         <a
+          class="docs"
           [routerLink]="['../../customize/override-base-style']"
           fragment="override_base_style">
           Override base style.

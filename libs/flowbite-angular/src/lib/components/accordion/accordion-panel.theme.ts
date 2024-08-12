@@ -14,7 +14,3 @@ export const accordionPanelTheme: AccordionPanelBaseTheme = createTheme({
 });
 
 export type AccordionPanelClass = FlowbiteClass;
-
-export const AccordionPanelClassInstance: AccordionPanelClass = {
-  rootClass: '',
-};

@@ -1,8 +1,10 @@
+import type { AccordionColors } from '../../components';
 import { SignalStoreService } from '../signal-store.service';
 
 import { Injectable } from '@angular/core';
 
 export interface AccordionState {
+  color: keyof AccordionColors;
   isFlush: boolean;
 }
 

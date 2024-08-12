@@ -9,47 +9,47 @@
   }
 
   /* anchor */
-  a {
+  a.docs {
     @apply text-base font-medium underline text-gray-600 dark:text-gray-400 decoration-primary-600 dark:decoration-primary-500;
   }
 
   /* Heading */
-  h1 {
+  h1.docs {
     @apply text-3xl font-extrabold leading-tight text-gray-900 dark:text-white;
   }
 
-  h2 {
+  h2.docs {
     @apply text-2xl font-bold leading-tight text-gray-900 dark:text-white;
   }
 
-  h3 {
+  h3.docs {
     @apply text-xl font-bold leading-tight text-gray-900 dark:text-white;
   }
 
-  h4 {
+  h4.docs {
     @apply text-lg font-bold leading-tight text-gray-900 dark:text-white;
   }
 
-  h5 {
+  h5.docs {
     @apply text-base font-bold leading-tight text-gray-900 dark:text-white;
   }
 
   /* List */
-  ul {
+  ul.docs {
     @apply text-base font-normal text-gray-600 dark:text-gray-400;
   }
 
   /* Paragraph */
-  p {
+  p.docs {
     @apply text-base font-normal text-gray-600 dark:text-gray-400;
   }
 
-  p.subtitle {
+  p.docs.subtitle {
     @apply text-lg font-medium text-gray-700 dark:text-gray-400;
   }
 
   /* span */
-  span.highlight {
+  span.docs.highlight {
     @apply text-primary-600 dark:text-primary-500;
   }
 }

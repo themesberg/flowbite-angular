@@ -1,12 +1,12 @@
 <div class="grid gap-5 md:gap-8">
   <div class="grid gap-4 border-b border-b-gray-200 pb-4">
-    <h1>Flowbite Angular - Overrinding base component style.</h1>
-    <p class="subtitle">Customize flowbite-angular's component style by override their default style.</p>
+    <h1 class="docs">Flowbite Angular - Overrinding base component style.</h1>
+    <p class="docs subtitle">Customize flowbite-angular's component style by override their default style.</p>
   </div>
 
   <div class="grid gap-4">
-    <h3>Init function</h3>
-    <p>
+    <h3 class="docs">Init function</h3>
+    <p class="docs">
       By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to call
       the init function inside the provider's list of your application.
     </p>
@@ -25,59 +25,65 @@ export const appConfig: ApplicationConfig = {
   </div>
 
   <div class="grid gap-4">
-    <h3 id="override_base_style">Override base style</h3>
-    <p>
-      Behind the scene, <span class="highlight">initFlowbite()</span> setup a bunch of InjectionToken, later used as
-      base style in flowbite-angular component.
+    <h3
+      class="docs"
+      id="override_base_style">
+      Override base style
+    </h3>
+    <p class="docs">
+      Behind the scene, <span class="docs highlight">initFlowbite()</span> setup a bunch of InjectionToken, later used
+      as base style in flowbite-angular component.
       <br />
       You can override base style by setting, after
-      <span class="highlight">initFlowbite()</span>, some new values for <span class="highlight">InjectionToken</span>.
-      Each <span class="highlight">InjectionToken</span> are named as follow :
+      <span class="docs highlight">initFlowbite()</span>, some new values for
+      <span class="docs highlight">InjectionToken</span>. Each <span class="docs highlight">InjectionToken</span> are
+      named as follow :
     </p>
-    <ul class="list-disc list-inside">
+    <ul class="docs list-disc list-inside">
       <li>
         COMPONENT :
-        <code>FLOWBITE_<span class="highlight">COMPONENT_NAME</span>_THEME_TOKEN</code>
+        <code>FLOWBITE_<span class="docs highlight">COMPONENT_NAME</span>_THEME_TOKEN</code>
       </li>
       <li>
         DIRECTIVE :
-        <code> FLOWBITE_DIRECTIVE_<span class="highlight">DIRECTIVE_NAME</span>_THEME_TOKEN </code>
+        <code> FLOWBITE_DIRECTIVE_<span class="docs highlight">DIRECTIVE_NAME</span>_THEME_TOKEN </code>
       </li>
     </ul>
 
     <p>
-      Each <span class="highlight">InjectionToken</span> are linked to a <span class="highlight">default value</span>.
-      Each <span class="highlight">default values</span> are named as follow :
+      Each <span class="docs highlight">InjectionToken</span> are linked to a
+      <span class="docs highlight">default value</span>. Each <span class="docs highlight">default values</span> are
+      named as follow :
     </p>
-    <ul class="list-disc list-inside">
+    <ul class="docs list-disc list-inside">
       <li>
         COMPONENT :
-        <code><span class="highlight">componentName</span>Theme</code>
+        <code><span class="docs highlight">componentName</span>Theme</code>
       </li>
       <li>
         DIRECTIVE :
-        <code><span class="highlight">directiveName</span>DirectiveTheme</code>
+        <code><span class="docs highlight">directiveName</span>DirectiveTheme</code>
       </li>
     </ul>
 
-    <p>
+    <p class="docs">
       In order to combine both base style and component (or directive) parameter, flowbite-angular uses
-      <span class="highlight">ThemeServices</span>, one for each component. As default style, they can be override. Each
-      <span class="highlight">ThemeServices</span> are named as follow :
+      <span class="docs highlight">ThemeServices</span>, one for each component. As default style, they can be override.
+      Each <span class="docs highlight">ThemeServices</span> are named as follow :
     </p>
-    <ul class="list-disc list-inside">
+    <ul class="docs list-disc list-inside">
       <li>
         COMPONENT :
-        <code><span class="highlight">ComponentName</span>ThemeService</code>
+        <code><span class="docs highlight">ComponentName</span>ThemeService</code>
       </li>
       <li>
         DIRECTIVE :
-        <code><span class="highlight">DirectiveName</span>DirectiveThemeService</code>
+        <code><span class="docs highlight">DirectiveName</span>DirectiveThemeService</code>
       </li>
     </ul>
 
-    <h4 class="pt-2">Example</h4>
-    <h5>Component</h5>
+    <h4 class="docs pt-2">Example</h4>
+    <h5 class="docs">Component</h5>
     <flowbite-shiki
       language="typescript"
       codeAsync="
@@ -127,7 +133,7 @@ export const appConfig: ApplicationConfig = {
 };
       " />
 
-    <h5>Directive</h5>
+    <h5 class="docs">Directive</h5>
     <flowbite-shiki
       language="typescript"
       codeAsync="

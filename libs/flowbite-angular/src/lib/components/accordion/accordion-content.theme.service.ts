@@ -20,7 +20,7 @@ export class AccordionContentThemeService implements FlowbiteThemeService<Accord
     const theme: AccordionContentBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: AccordionContentClass = {
-      rootClass: twMerge(theme.base),
+      rootClass: twMerge(theme.base, theme.color[properties.color], theme.isOpen[properties.isOpen]),
     };
 
     return output;
