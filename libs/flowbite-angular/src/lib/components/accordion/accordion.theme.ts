@@ -24,10 +24,10 @@ export const accordionTheme: AccordionBaseTheme = createTheme({
   base: 'shadow-sm',
   color: {
     primary: 'border-primary-200 dark:border-primary-700',
-    blue: 'border-info-200 dark:border-info-700',
-    red: 'border-failure-200 dar:border-failure-700',
-    green: 'border-success-200 dark:border-success-700',
-    yellow: 'border-warning-200 dark:border-warning-700',
+    blue: 'border-blue-200 dark:border-blue-700',
+    red: 'border-red-200 dar:border-red-700',
+    green: 'border-green-200 dark:border-green-700',
+    yellow: 'border-yellow-200 dark:border-yellow-700',
   },
   isFlush: {
     enabled: '',

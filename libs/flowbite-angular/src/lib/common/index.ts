@@ -6,7 +6,6 @@ export type {
   FlowbiteGradientDuoToneColors,
   FlowbitePositions,
   FlowbiteSizes,
-  FlowbiteStateColors,
   FlowbiteHeadingLevel,
   FlowbiteTheme,
   FlowbiteClass,
