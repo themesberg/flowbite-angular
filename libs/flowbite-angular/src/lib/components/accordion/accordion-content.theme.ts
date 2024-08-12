@@ -28,7 +28,7 @@ export const accordionContentTheme: AccordionContentTheme = createTheme({
       yellow: 'border-yellow-200 dark:border-yellow-700',
     },
     isOpen: {
-      enabled: 'p-5 border',
+      enabled: 'p-5',
       disabled: '',
     },
   },

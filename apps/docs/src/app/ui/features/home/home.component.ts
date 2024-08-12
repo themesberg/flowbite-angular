@@ -25,7 +25,6 @@ import { RouterLink } from '@angular/router';
     IconComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
 })
 export class HomeComponent {
   protected themeGlobalSignalStoreService = inject<GlobalSignalStoreService<ThemeState>>(

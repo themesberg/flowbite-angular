@@ -24,7 +24,7 @@ export interface AccordionTitleTheme {
 
 export const accordionTitleTheme: AccordionTitleTheme = createTheme({
   root: {
-    base: 'cursor-pointer flex items-center p-5 justify-between',
+    base: 'cursor-pointer flex items-center p-5 justify-between group-first:rounded-t-lg',
     color: {
       primary:
         'text-primary-900 dark:text-primary-50 border-primary-200 dark:border-primary-700 bg-primary-100 dark:bg-primary-800',
@@ -37,7 +37,7 @@ export const accordionTitleTheme: AccordionTitleTheme = createTheme({
     },
     isFlush: {
       enabled: '',
-      disabled: 'border',
+      disabled: '',
     },
     isOpen: {
       enabled: '',

@@ -25,18 +25,18 @@ export interface AccordionTheme {
 
 export const accordionTheme: AccordionTheme = createTheme({
   root: {
-    base: 'shadow-sm',
+    base: 'shadow-sm divide-y',
     color: {
-      primary: 'border-primary-200 dark:border-primary-700',
-      light: 'border-gray-300 dark:border-gray-700',
-      blue: 'border-blue-200 dark:border-blue-700',
-      red: 'border-red-200 dar:border-red-700',
-      green: 'border-green-200 dark:border-green-700',
-      yellow: 'border-yellow-200 dark:border-yellow-700',
+      primary: 'border-primary-200 dark:border-primary-700 divide-primary-200 dark:divide-primary-700',
+      light: 'border-gray-300 dark:border-gray-700 divide-primary-200 dark:divide-primary-700',
+      blue: 'border-blue-200 dark:border-blue-700 divide-primary-200 dark:divide-primary-700',
+      red: 'border-red-200 dar:border-red-700 divide-primary-200 dark:divide-primary-700',
+      green: 'border-green-200 dark:border-green-700 divide-primary-200 dark:divide-primary-700',
+      yellow: 'border-yellow-200 dark:border-yellow-700 divide-primary-200 dark:divide-primary-700',
     },
     isFlush: {
-      enabled: '',
-      disabled: 'border',
+      enabled: 'border-b',
+      disabled: 'rounded-lg border',
     },
   },
 });

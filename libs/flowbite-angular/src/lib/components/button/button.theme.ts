@@ -84,7 +84,7 @@ export const buttonTheme: ButtonTheme = createTheme({
       },
       primary: {
         solid:
-          'text-white bg-primary-700 border border-transparent hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-900',
+          'text-white bg-primary-700 border border-transparent hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-700 dark:hover:bg-primary-800 dark:focus:ring-primary-900',
         outline:
           'text-primary-700 hover:text-white border border-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:border-primary-500 dark:text-primary-500 dark:hover:text-white dark:hover:bg-primary-600 dark:focus:ring-primary-900',
       },

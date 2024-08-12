@@ -13,7 +13,7 @@ export interface AccordionPanelTheme {
 
 export const accordionPanelTheme: AccordionPanelTheme = createTheme({
   root: {
-    base: '',
+    base: 'group',
   },
 });
 
