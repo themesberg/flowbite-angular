@@ -17,7 +17,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [NgClass, IconComponent],
   selector: 'flowbite-accordion-title',
   template: `
-    <h2>
+    <h2 class="font-bold text-lg">
       <ng-content />
     </h2>
     <flowbite-icon

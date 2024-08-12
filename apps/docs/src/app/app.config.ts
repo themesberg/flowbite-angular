@@ -6,12 +6,12 @@ import { IconRegistry, initFlowbite } from 'flowbite-angular';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { APP_INITIALIZER, type ApplicationConfig } from '@angular/core';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(),
-    provideRouter(appRoutes),
+    provideRouter(appRoutes, withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'top' })),
     provideHttpClient(withFetch()),
     initFlowbite(),
     {

@@ -2,6 +2,7 @@ import type { DeepPartial } from '../../common/flowbite.type';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
+import { ButtonComponent } from '../button/button.component';
 import { IconComponent, IconRegistry } from '../icon';
 import * as properties from './alert.theme';
 import { AlertThemeService } from './alert.theme.service';
@@ -13,7 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
+  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent, ButtonComponent],
   selector: 'flowbite-alert',
   template: `
     <div class="flex items-center">
