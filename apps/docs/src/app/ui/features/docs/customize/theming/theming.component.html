@@ -1,17 +1,17 @@
 <div class="grid gap-5 md:gap-8">
   <div class="grid gap-4 border-b border-b-gray-200 pb-4">
-    <h1 class="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white">Flowbite Angular - Theming.</h1>
-    <p class="text-lg font-medium text-gray-700 dark:text-gray-400">
+    <h1>Flowbite Angular - Theming.</h1>
+    <p class="subtitle">
       Use the theming options from the TailwindCSS configuration file to override the default utility classes from
       Flowbite Angular and change colors, fonts, and the default class values.
     </p>
   </div>
 
   <div class="grid gap-4">
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <p>
       You can use the
-      <code class="text-primary-600 dark:text-primary-500">theme</code> object from the configuration file to define any
-      style related classes, such as the color palette, fonts, breakpoints, and more.
+      <span>theme</span> object from the configuration file to define any style related classes, such as the color
+      palette, fonts, breakpoints, and more.
     </p>
     <flowbite-shiki
       language="javascript"
@@ -48,27 +48,27 @@ module.exports = {
   </div>
 
   <div class="grid gap-4">
-    <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">Theme structure</h2>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <h2>Theme structure</h2>
+    <p>
       Some of the more widely used
-      <code class="text-primary-600 dark:text-primary-500">theme</code> keys are
-      <code class="text-primary-600 dark:text-primary-500">screens</code>,
-      <code class="text-primary-600 dark:text-primary-500">colors</code>, and
-      <code class="text-primary-600 dark:text-primary-500">spacing</code> as one of the core utility classes.
+      <span class="highlight">theme</span> keys are <span class="highlight">screens</span>,
+      <span class="highlight">colors</span>, and <span class="highlight">spacing</span> as one of the core utility
+      classes.
     </p>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <p>
       You can read all of the
       <a
-        class="decoration-primary-600 dark:decoration-primary-500 font-medium underline"
-        href="https://tailwindcss.com/docs/theme#configuration-reference">
+        href="https://tailwindcss.com/docs/theme#configuration-reference"
+        target="_blank"
+        rel="noopener">
         configurable keys on Tailwind CSS.
       </a>
     </p>
 
-    <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Breakpoints</h3>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <h3>Breakpoints</h3>
+    <p>
       Use the
-      <code class="text-primary-600 dark:text-primary-500">screens</code> key to update the responsive breakpoints.
+      <span class="highlight">screens</span> key to update the responsive breakpoints.
     </p>
     <flowbite-shiki
       language="javascript"
@@ -86,10 +86,10 @@ module.exports = {
 };
 " />
 
-    <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Colors</h3>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <h3>Colors</h3>
+    <p>
       Use the
-      <code class="text-primary-600 dark:text-primary-500">colors</code> key to update the responsive breakpoints.
+      <span class="highlight">colors</span> key to update the responsive breakpoints.
     </p>
     <flowbite-shiki
       language="javascript"
@@ -115,10 +115,10 @@ module.exports = {
 " />
   </div>
 
-  <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Fonts</h3>
-  <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+  <h3>Fonts</h3>
+  <p>
     Use the
-    <code class="text-primary-600 dark:text-primary-500">colors</code> key to update the responsive breakpoints.
+    <span class="highlight">colors</span> key to update the responsive breakpoints.
   </p>
   <flowbite-shiki
     language="javascript"
@@ -132,10 +132,10 @@ module.exports = {
 };
 " />
 
-  <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Spacing</h3>
-  <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+  <h3>Spacing</h3>
+  <p>
     Use the
-    <code class="text-primary-600 dark:text-primary-500">spacing</code> key to update the responsive breakpoints.
+    <span class="highlight">spacing</span> key to update the responsive breakpoints.
   </p>
   <flowbite-shiki
     language="javascript"
@@ -184,23 +184,23 @@ module.exports = {
 " />
 
   <div class="grid gap-4">
-    <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">Customizing the theme</h2>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <h2>Customizing the theme</h2>
+    <p>
       By default, the configuration file will set the base utility classes from TailwindCSS. However, you can customize
       them by using the
-      <code class="text-primary-600 dark:text-primary-500">extends</code>
+      <span class="highlight">extends</span>
       object.
     </p>
 
-    <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Extending</h3>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <h3>Extending</h3>
+    <p>
       Use the
-      <code class="text-primary-600 dark:text-primary-500">extends</code> object if you want to keep the values from the
-      default settings but you want to extend them with your own.
+      <span class="highlight">extends</span> object if you want to keep the values from the default settings but you
+      want to extend them with your own.
     </p>
-    <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+    <p>
       For example, you can keep all of the default breakpoints, but you may want to add another larger one for the
-      <code class="text-primary-600 dark:text-primary-500">screens</code> key.
+      <span class="highlight">screens</span> key.
     </p>
     <flowbite-shiki
       language="javascript"
@@ -217,13 +217,11 @@ module.exports = {
 " />
   </div>
 
-  <h3 class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Overriding</h3>
-  <p class="text-base font-normal text-gray-600 dark:text-gray-400">
-    Alternatively, you can also completely override certain settings.
-  </p>
-  <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+  <h3>Overriding</h3>
+  <p>Alternatively, you can also completely override certain settings.</p>
+  <p>
     For example, the following code will override all of the
-    <code class="text-primary-600 dark:text-primary-500">opacity</code> settings with your own.
+    <span class="highlight">opacity</span> settings with your own.
   </p>
   <flowbite-shiki
     language="javascript"
@@ -242,11 +240,12 @@ module.exports = {
 }
 " />
 
-  <p class="text-base font-normal text-gray-600 dark:text-gray-400">
+  <p>
     Please read the official
     <a
-      class="decoration-primary-600 dark:decoration-primary-500 font-medium underline"
-      href="https://tailwindcss.com/docs/theme">
+      href="https://tailwindcss.com/docs/theme"
+      target="_blank"
+      rel="noopener">
       Tailwind CSS Theming
     </a>
     documentation if you want a full overview of the theming options.

@@ -43,7 +43,7 @@ export class ShikiComponent implements OnInit {
   ];
 
   public displayCode = computed(() =>
-    codeToHtml(this.code(), {
+    codeToHtml(this.code().trim(), {
       lang: this.language(),
       theme: this.themeSignalService.select('theme')() === 'light' ? 'material-theme-lighter' : 'material-theme',
       transformers: ShikiComponent.shikiTransformers,

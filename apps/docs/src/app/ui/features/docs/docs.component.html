@@ -1,30 +1,31 @@
-<div class="flex flex-row p-4 2xl:mx-60 gap-4">
+<div class="flex flex-row 2xl:mx-60 gap-4">
   <flowbite-sidebar>
     <flowbite-sidebar-item-group title="GETTING STARTED">
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/getting-started/introduction']">
-        Introduction
-      </flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/getting-started/quickstart']">Quickstart</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/getting-started/license']">License</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./getting-started/introduction">Introduction</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./getting-started/quickstart">Quickstart</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./getting-started/license">License</flowbite-sidebar-item>
     </flowbite-sidebar-item-group>
     <flowbite-sidebar-item-group title="CUSTOMIZE">
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/customize/theming']">Theming</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./customize/theming">Theming</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./customize/override-base-style">Override base style</flowbite-sidebar-item>
     </flowbite-sidebar-item-group>
     <flowbite-sidebar-item-group title="COMPONENTS">
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/accordion']">Accordion</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/alert']">Alert</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/badge']">Badge</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/breadcrumb']">Breadcrumb</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/button']">Button</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/dropdown']">Dropdown</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/indicator']">Indicator</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/modal']">Modal</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/navbar']">Navbar</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/scroll-top']">Scroll-top</flowbite-sidebar-item>
-      <flowbite-sidebar-item [routerLink]="['/ui/docs/components/sidebar']">Sidebar</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/accordion">Accordion</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/alert">Alert</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/badge">Badge</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/breadcrumb">Breadcrumb</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/button">Button</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/dropdown">Dropdown</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/indicator">Indicator</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/modal">Modal</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/navbar">Navbar</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/scroll-top">Scroll-top</flowbite-sidebar-item>
+      <flowbite-sidebar-item routerLink="./components/sidebar">Sidebar</flowbite-sidebar-item>
     </flowbite-sidebar-item-group>
     <flowbite-sidebar-item-group title="FORMS"></flowbite-sidebar-item-group>
   </flowbite-sidebar>
 
-  <router-outlet />
+  <section class="p-4">
+    <router-outlet />
+  </section>
 </div>

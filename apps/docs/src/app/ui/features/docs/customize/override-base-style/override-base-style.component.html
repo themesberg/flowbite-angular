@@ -1,0 +1,154 @@
+<div class="grid gap-5 md:gap-8">
+  <div class="grid gap-4 border-b border-b-gray-200 pb-4">
+    <h1>Flowbite Angular - Overrinding base component style.</h1>
+    <p class="subtitle">Customize flowbite-angular's component style by override their default style.</p>
+  </div>
+
+  <div class="grid gap-4">
+    <h3>Init function</h3>
+    <p>
+      By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to call
+      the init function inside the provider's list of your application.
+    </p>
+    <flowbite-shiki
+      language="typescript"
+      codeAsync="
+import { ApplicationConfig } from '@angular/core';
+import { initFlowbite } from 'flowbite-angular';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    initFlowbite(),
+  ],
+};
+" />
+  </div>
+
+  <div class="grid gap-4">
+    <h3>Override base style</h3>
+    <p>
+      Behind the scene, <span class="highlight">initFlowbite()</span> setup a bunch of InjectionToken, later used as
+      base style in flowbite-angular component.
+      <br />
+      You can override base style by setting, after
+      <span class="highlight">initFlowbite()</span>, some new values for <span class="highlight">InjectionToken</span>.
+      Each <span class="highlight">InjectionToken</span> are named as follow :
+    </p>
+    <ul class="list-disc list-inside">
+      <li>
+        COMPONENT :
+        <code>FLOWBITE_<span class="highlight">COMPONENT_NAME</span>_THEME_TOKEN</code>
+      </li>
+      <li>
+        DIRECTIVE :
+        <code> FLOWBITE_DIRECTIVE_<span class="highlight">DIRECTIVE_NAME</span>_THEME_TOKEN </code>
+      </li>
+    </ul>
+
+    <p>
+      Each <span class="highlight">InjectionToken</span> are linked to a <span class="highlight">default value</span>.
+      Each <span class="highlight">default values</span> are named as follow :
+    </p>
+    <ul class="list-disc list-inside">
+      <li>
+        COMPONENT :
+        <code><span class="highlight">componentName</span>Theme</code>
+      </li>
+      <li>
+        DIRECTIVE :
+        <code><span class="highlight">directiveName</span>DirectiveTheme</code>
+      </li>
+    </ul>
+
+    <p>
+      In order to combine both base style and component (or directive) parameter, flowbite-angular uses
+      <span class="highlight">ThemeServices</span>, one for each component. As default style, they can be override. Each
+      <span class="highlight">ThemeServices</span> are named as follow :
+    </p>
+    <ul class="list-disc list-inside">
+      <li>
+        COMPONENT :
+        <code><span class="highlight">ComponentName</span>ThemeService</code>
+      </li>
+      <li>
+        DIRECTIVE :
+        <code><span class="highlight">DirectiveName</span>DirectiveThemeService</code>
+      </li>
+    </ul>
+
+    <h4 class="pt-2">Example</h4>
+    <h5>Component</h5>
+    <flowbite-shiki
+      language="typescript"
+      codeAsync="
+import type { AlertBaseTheme } from 'flowbite-angular';
+import { createTheme, FLOWBITE_ALERT_THEME_TOKEN, initFlowbite } from 'flowbite-angular';
+
+const customAlertTheme: AlertBaseTheme = createTheme({
+  base: 'flex flex-col gap-2 p-4 text-sm rounded-lg',
+  color: {
+    info: 'text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-gray-800 border-blue-300 dark:border-blue-800',
+    failure: 'text-red-800 dark:text-red-400 bg-red-100 dark:bg-gray-800 border-red-300 dark:border-red-800',
+    success: 'text-green-800 dark:text-green-400 bg-green-100 dark:bg-gray-800 border-green-300 dark:border-green-800',
+    warning:
+      'text-yellow-800 dark:text-yellow-300 bg-yellow-100 dark:bg-gray-800 border-yellow-300 dark:border-yellow-800',
+    dark: 'text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600',
+  },
+  hasBorder: {
+    enabled: 'border',
+    disabled: 'border-0',
+  },
+  hasBorderAccent: {
+    enabled: 'border-t-4',
+    disabled: '',
+  },
+  closeButton: {
+    base: '-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-2',
+    color: {
+      info: 'text-blue-500 dark:text-blue-600 hover:bg-blue-200 dark:hover:bg-blue-300',
+      failure: 'text-red-500 dark:text-red-600 hover:bg-red-200 dark:hover:bg-red-300',
+      success: 'text-green-500 dark:text-green-600 hover:bg-green-200 dark:hover:bg-green-300',
+      warning: 'text-yellow-500 dark:text-yellow-600 hover:bg-yellow-200 dark:hover:bg-yellow-300',
+      dark: 'text-gray-500 dark:text-gray-600 hover:bg-gray-200 dark:hover:bg-gray-300',
+    },
+  },
+});
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    initFlowbite(),
+    {
+      provide: FLOWBITE_ALERT_THEME_TOKEN,
+      useValue: customAlertTheme,
+    },
+    ...
+  ],
+};
+      " />
+
+    <h5>Directive</h5>
+    <flowbite-shiki
+      language="typescript"
+      codeAsync="
+import type { IconDirectiveBaseTheme } from 'flowbite-angular';
+import { createTheme, FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN, initFlowbite } from 'flowbite-angular';
+
+const customIconDirectiveTheme: IconDirectiveBaseTheme = createTheme({
+  base: 'w-5 h-5 text-gray-500 dark:text-gray-400',
+});
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    ...
+    initFlowbite(),
+    {
+      provide: FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN,
+      useValue: customIconDirectiveTheme,
+    },
+    ...
+  ],
+};
+      " />
+  </div>
+</div>
