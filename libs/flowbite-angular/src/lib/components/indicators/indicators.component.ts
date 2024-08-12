@@ -35,7 +35,7 @@ export class IndicatorComponent extends BaseComponent {
   public hasOffset = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public color = input<keyof IndicatorColors>('gray');
+  public color = input<keyof IndicatorColors>('dark');
   public size = input<keyof IndicatorSizes>('md');
   public placement = input<keyof IndicatorPositions | undefined>(undefined);
   public customStyle = input<DeepPartial<IndicatorTheme>>({});

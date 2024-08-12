@@ -10,7 +10,10 @@ import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface IndicatorColors
-  extends Pick<FlowbiteColors, 'gray' | 'dark' | 'blue' | 'green' | 'red' | 'purple' | 'indigo' | 'yellow' | 'teal'> {
+  extends Pick<
+    FlowbiteColors,
+    'primary' | 'dark' | 'gray' | 'blue' | 'green' | 'red' | 'purple' | 'indigo' | 'yellow' | 'teal'
+  > {
   [key: string]: string;
 }
 
@@ -71,8 +74,9 @@ export const indicatorTheme: IndicatorTheme = createTheme({
       disabled: '',
     },
     color: {
-      gray: 'bg-gray-200',
       dark: 'bg-gray-900 dark:bg-gray-700',
+      primary: 'bg-primary-500',
+      gray: 'bg-gray-200',
       blue: 'bg-blue-600',
       green: 'bg-green-500',
       red: 'bg-red-500',

@@ -48,7 +48,7 @@ export class AlertComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<AlertClass>(createClass({ rootClass: '', closeButtonClass: '' }));
 
   //#region properties
-  public color = input<keyof AlertColors>('primary');
+  public color = input<keyof AlertColors>('dark');
   public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public hasBorderAccent = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<AlertTheme>>({});

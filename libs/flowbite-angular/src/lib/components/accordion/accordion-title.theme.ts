@@ -28,6 +28,7 @@ export const accordionTitleTheme: AccordionTitleTheme = createTheme({
     color: {
       primary:
         'text-primary-900 dark:text-primary-50 border-primary-200 dark:border-primary-700 bg-primary-100 dark:bg-primary-800',
+      light: 'text-gray-900 dark:text-gray-50 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800',
       blue: 'text-blue-900 dark:text-blue-50 border-blue-200 dark:border-blue-700 bg-blue-100 dark:bg-blue-800',
       red: 'text-red-900 dark:text-red-50 border-red-200 dark:border-red-700 bg-red-100 dark:bg-red-800',
       green: 'text-green-900 dark:text-green-50 border-green-200 dark:border-green-700 bg-green-100 dark:bg-green-800',

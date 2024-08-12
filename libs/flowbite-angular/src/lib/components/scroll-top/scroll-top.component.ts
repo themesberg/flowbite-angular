@@ -26,7 +26,7 @@ export class ScrollTopComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<ScrollTopClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof ScrollTopColors>('red');
+  public color = input<keyof ScrollTopColors>('primary');
   public position = input<keyof ScrollTopPositions>('bottom-right');
   public customStyle = input<DeepPartial<ScrollTopTheme>>({});
   //#endregion

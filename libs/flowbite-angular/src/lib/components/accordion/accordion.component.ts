@@ -38,7 +38,7 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<AccordionClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof AccordionColors>('primary');
+  public color = input<keyof AccordionColors>('light');
   public isFlush = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });

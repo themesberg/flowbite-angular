@@ -11,7 +11,7 @@ import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface ButtonColors
-  extends Pick<FlowbiteColors, 'blue' | 'red' | 'green' | 'yellow' | 'dark' | 'light' | 'purple'> {
+  extends Pick<FlowbiteColors, 'dark' | 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow' | 'purple'> {
   [key: string]: string;
 }
 
@@ -81,6 +81,12 @@ export const buttonTheme: ButtonTheme = createTheme({
           'text-white bg-gray-800 dark:bg-gray-800 border border-transparent dark:border-gray-700 hover:bg-gray-900 dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800 disabled:hover:bg-gray-800 dark:disabled:hover:bg-gray-800',
         outline:
           'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 dark:hover:bg-gray-600 dark:focus:ring-gray-800',
+      },
+      primary: {
+        solid:
+          'text-white bg-primary-700 border border-transparent hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-900',
+        outline:
+          'text-primary-700 hover:text-white border border-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:border-primary-500 dark:text-primary-500 dark:hover:text-white dark:hover:bg-primary-600 dark:focus:ring-primary-900',
       },
       red: {
         solid:

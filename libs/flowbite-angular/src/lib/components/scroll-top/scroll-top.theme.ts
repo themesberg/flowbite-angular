@@ -2,7 +2,8 @@ import type { DeepPartial, FlowbiteClass, FlowbiteColors, FlowbitePositions } fr
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region region Component theme option
-export interface ScrollTopColors extends Pick<FlowbiteColors, 'blue' | 'gray' | 'green' | 'lime' | 'purple' | 'red'> {
+export interface ScrollTopColors
+  extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'gray' | 'green' | 'lime' | 'purple' | 'red'> {
   [key: string]: string;
 }
 
@@ -29,6 +30,8 @@ export const scrollTopTheme: ScrollTopTheme = createTheme({
   root: {
     base: 'cursor-pointer fixed flex flex-row place-items-center p-2 rounded-lg',
     color: {
+      primary: 'bg-primary-100',
+      dark: 'bg-gray-100 dark:bg-gray-800 dark:text-white',
       blue: 'bg-blue-100',
       gray: 'bg-gray-100',
       green: 'bg-green-100',

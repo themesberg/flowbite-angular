@@ -3,7 +3,8 @@ import type { FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from '../../commo
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region region Component theme option
-export interface AccordionColors extends Pick<FlowbiteColors, 'primary' | 'blue' | 'red' | 'green' | 'yellow'> {
+export interface AccordionColors
+  extends Pick<FlowbiteColors, 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow'> {
   [key: string]: string;
 }
 //#endregion
@@ -27,6 +28,7 @@ export const accordionTheme: AccordionTheme = createTheme({
     base: 'shadow-sm',
     color: {
       primary: 'border-primary-200 dark:border-primary-700',
+      light: 'border-gray-300 dark:border-gray-700',
       blue: 'border-blue-200 dark:border-blue-700',
       red: 'border-red-200 dar:border-red-700',
       green: 'border-green-200 dark:border-green-700',
