@@ -1,10 +1,11 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { ButtonComponent } from '../button/button.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './alert.theme';
+import type { AlertClass, AlertColors, AlertTheme } from './alert.theme';
 import { AlertThemeService } from './alert.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
@@ -44,13 +45,13 @@ export class AlertComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.AlertClass>(properties.AlertClassInstance);
+  public override contentClasses = signal<AlertClass>(createClass({ rootClass: '', closeButtonClass: '' }));
 
   //#region properties
-  public color = input<keyof properties.AlertColors>('primary');
+  public color = input<keyof AlertColors>('primary');
   public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public hasBorderAccent = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<properties.AlertBaseTheme>>({});
+  public customStyle = input<DeepPartial<AlertTheme>>({});
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);
   public isDismissable = input<boolean, string | boolean>(false, { transform: booleanAttribute });

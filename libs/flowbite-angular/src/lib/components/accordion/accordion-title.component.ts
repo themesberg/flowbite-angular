@@ -5,7 +5,7 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import type { AccordionTitleBaseTheme, AccordionTitleClass } from './accordion-title.theme';
+import type { AccordionTitleClass, AccordionTitleTheme } from './accordion-title.theme';
 import { AccordionTitleThemeService } from './accordion-title.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -18,7 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [NgClass, IconComponent],
   selector: 'flowbite-accordion-title',
   template: `
-    <h2 class="font-bold text-lg">
+    <h2 [ngClass]="contentClasses().textClass">
       <ng-content />
     </h2>
     <flowbite-icon
@@ -34,10 +34,10 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<AccordionTitleClass>(createClass({ rootClass: '' }));
+  public override contentClasses = signal<AccordionTitleClass>(createClass({ rootClass: '', textClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<AccordionTitleBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionTitleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

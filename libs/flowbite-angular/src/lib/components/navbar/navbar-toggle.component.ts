@@ -1,9 +1,10 @@
 import type { DeepPartial } from '../../common';
 import { NavbarStateService } from '../../services';
+import { createClass } from '../../utils';
 import { BARS_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './navbar-toggle.theme';
+import type { NavbarToggleClass, NavbarToggleTheme } from './navbar-toggle.theme';
 import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
 
 import { CommonModule } from '@angular/common';
@@ -27,10 +28,10 @@ export class NavbarToggleComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.NavbarToggleClass>(properties.NavbarToggleClassInstance);
+  public override contentClasses = signal<NavbarToggleClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.NavbarToggleBaseTheme>>({});
+  public customStyle = input<DeepPartial<NavbarToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

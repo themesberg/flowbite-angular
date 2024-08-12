@@ -3,7 +3,7 @@ import { AccordionPanelStateService, AccordionStateService } from '../../service
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import type { AccordionContentBaseTheme, AccordionContentClass } from './accordion-content.theme';
+import type { AccordionContentClass, AccordionContentTheme } from './accordion-content.theme';
 import { AccordionContentThemeService } from './accordion-content.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
@@ -27,7 +27,7 @@ export class AccordionContentComponent extends BaseComponent {
   public override contentClasses = signal<AccordionContentClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<AccordionContentBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionContentTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

@@ -1,15 +1,11 @@
 import type { FlowbiteThemeService } from '../../common';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type {
-  DarkThemeToggleBaseTheme,
-  DarkThemeToggleClass,
-  DarkThemeToggleProperties,
-} from './dark-theme-toggle.theme';
+import type { DarkThemeToggleClass, DarkThemeToggleProperties, DarkThemeToggleTheme } from './dark-theme-toggle.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN = new InjectionToken<DarkThemeToggleBaseTheme>(
+export const FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN = new InjectionToken<DarkThemeToggleTheme>(
   'FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN',
 );
 
@@ -17,10 +13,10 @@ export class DarkThemeToggleThemeService implements FlowbiteThemeService<DarkThe
   private readonly baseTheme = inject(FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN);
 
   public getClasses(properties: DarkThemeToggleProperties): DarkThemeToggleClass {
-    const theme: DarkThemeToggleBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
+    const theme: DarkThemeToggleTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: DarkThemeToggleClass = {
-      rootClass: twMerge(theme.base),
+      rootClass: twMerge(theme.root.base),
     };
 
     return output;

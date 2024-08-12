@@ -5,29 +5,29 @@ import { createTheme } from '../../utils/theme/create-theme';
 export interface SidebarProperties {
   isOpen: keyof FlowbiteBoolean;
   isRounded: keyof FlowbiteBoolean;
-  customStyle: DeepPartial<SidebarBaseTheme>;
+  customStyle: DeepPartial<SidebarTheme>;
 }
 
-export interface SidebarBaseTheme {
-  base: string;
-  isRounded: FlowbiteBoolean;
-  isOpen: FlowbiteBoolean;
+export interface SidebarTheme {
+  root: {
+    base: string;
+    isRounded: FlowbiteBoolean;
+    isOpen: FlowbiteBoolean;
+  };
 }
 
-export const sidebarTheme: SidebarBaseTheme = createTheme({
-  base: 'shrink-0 flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
-  isRounded: {
-    enabled: 'rounded',
-    disabled: '',
-  },
-  isOpen: {
-    enabled: 'hidden',
-    disabled: 'flex flex-col',
+export const sidebarTheme: SidebarTheme = createTheme({
+  root: {
+    base: 'shrink-0 flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
+    isRounded: {
+      enabled: 'rounded',
+      disabled: '',
+    },
+    isOpen: {
+      enabled: 'hidden',
+      disabled: 'flex flex-col',
+    },
   },
 });
 
 export type SidebarClass = FlowbiteClass;
-
-export const SidebarClassInstance: SidebarClass = {
-  rootClass: '',
-};

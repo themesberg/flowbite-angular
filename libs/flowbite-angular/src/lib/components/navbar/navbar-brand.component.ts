@@ -1,7 +1,8 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './navbar-brand.theme';
+import type { NavbarBrandClass, NavbarBrandTheme } from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -23,10 +24,10 @@ import { RouterLink } from '@angular/router';
 export class NavbarBrandComponent extends BaseComponent {
   protected readonly themeService = inject(NavbarBrandThemeService);
 
-  public override contentClasses = signal<properties.NavbarBrandClass>(properties.NavbarBrandClassInstance);
+  public override contentClasses = signal<NavbarBrandClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.NavbarBrandBaseTheme>>({});
+  public customStyle = input<DeepPartial<NavbarBrandTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

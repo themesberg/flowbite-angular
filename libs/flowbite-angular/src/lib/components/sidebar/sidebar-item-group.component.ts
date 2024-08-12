@@ -1,9 +1,10 @@
 import type { DeepPartial } from '../../common';
 import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
+import { createClass } from '../../utils';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './sidebar-item-group.theme';
+import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
@@ -46,12 +47,12 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.SidebarItemGroupClass>(properties.SidebarItemGroupClassInstance);
+  public override contentClasses = signal<SidebarItemGroupClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public title = input.required<string>();
-  public customStyle = input<DeepPartial<properties.SidebarItemGroupBaseTheme>>({});
+  public customStyle = input<DeepPartial<SidebarItemGroupTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services/state/accordion.state';
 import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import type { AccordionPanelBaseTheme, AccordionPanelClass } from './accordion-panel.theme';
+import type { AccordionPanelClass, AccordionPanelTheme } from './accordion-panel.theme';
 import { AccordionPanelThemeService } from './accordion-panel.theme.service';
 
 import type { OnInit } from '@angular/core';
@@ -36,7 +36,7 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   public isOpen = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<DeepPartial<AccordionPanelBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionPanelTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

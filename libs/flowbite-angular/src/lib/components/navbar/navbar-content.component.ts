@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
 import { NavbarStateService } from '../../services';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './navbar-content.theme';
+import type { NavbarContentClass, NavbarContentTheme } from './navbar-content.theme';
 import { NavbarContentThemeService } from './navbar-content.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -23,10 +24,12 @@ export class NavbarContentComponent extends BaseComponent implements OnInit {
   protected readonly themeStateService = inject(NavbarContentThemeService);
   protected readonly navbarService = inject(NavbarStateService);
 
-  public override contentClasses = signal<properties.NavbarContentClass>(properties.NavbarContentClassInstance);
+  public override contentClasses = signal<NavbarContentClass>(
+    createClass({ navbarContentListClass: '', rootClass: '' }),
+  );
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.NavbarContentBaseTheme>>({});
+  public customStyle = input<DeepPartial<NavbarContentTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

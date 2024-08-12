@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './modal-header.theme';
+import type { ModalHeaderClass, ModalHeaderTheme } from './modal-header.theme';
 import { ModalHeaderThemeService } from './modal-header.theme.service';
 import { ModalComponent } from './modal.component';
 
@@ -37,10 +38,12 @@ export class ModalHeaderComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.ModalHeaderClass>(properties.ModalHeaderClassInstance);
+  public override contentClasses = signal<ModalHeaderClass>(
+    createClass({ modalHeaderButtonClass: '', modalHeaderTitleClass: '', rootClass: '' }),
+  );
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.ModalHeaderBaseTheme>>({});
+  public customStyle = input<DeepPartial<ModalHeaderTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

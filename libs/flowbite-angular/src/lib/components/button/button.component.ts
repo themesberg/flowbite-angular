@@ -1,7 +1,16 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './button.theme';
+import type {
+  ButtonClass,
+  ButtonColors,
+  ButtonDuoToneColors,
+  ButtonFill,
+  ButtonMonochromeColors,
+  ButtonSizes,
+  ButtonTheme,
+} from './button.theme';
 import { ButtonThemeService } from './button.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
@@ -35,19 +44,19 @@ export class ButtonComponent extends BaseComponent {
 
   protected readonly themeService = inject(ButtonThemeService);
 
-  public override contentClasses = signal<properties.ButtonClass>(properties.ButtonClassInstance);
+  public override contentClasses = signal<ButtonClass>(createClass({ rootClass: '', spanClass: '' }));
 
   //#region properties
-  public color = input<keyof properties.ButtonColors>('blue');
-  public size = input<keyof properties.ButtonSizes>('md');
+  public color = input<keyof ButtonColors>('blue');
+  public size = input<keyof ButtonSizes>('md');
   public isPill = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public fill = input<keyof properties.ButtonFill>('solid');
+  public fill = input<keyof ButtonFill>('solid');
   public isDisabled = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public gradientMonochrome = input<keyof properties.ButtonMonochromeColors | undefined>(undefined);
-  public gradientDuoTone = input<keyof properties.ButtonDuoToneColors | undefined>(undefined);
-  public customStyle = input<DeepPartial<properties.ButtonBaseTheme>>({});
+  public gradientMonochrome = input<keyof ButtonMonochromeColors | undefined>(undefined);
+  public gradientDuoTone = input<keyof ButtonDuoToneColors | undefined>(undefined);
+  public customStyle = input<DeepPartial<ButtonTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

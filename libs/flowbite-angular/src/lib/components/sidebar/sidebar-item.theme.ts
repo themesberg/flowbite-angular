@@ -6,20 +6,22 @@ export interface SidebarItemProperties {
   icon: string | undefined;
   link?: RouterLinkParameter;
   label: string | undefined;
-  customStyle: DeepPartial<SidebarItemBaseTheme>;
+  customStyle: DeepPartial<SidebarItemTheme>;
 }
 
-export interface SidebarItemBaseTheme {
-  base: string;
-  icon: DeepPartial<SidebarItemIconRootTheme>;
+export interface SidebarItemTheme {
+  root: {
+    base: string;
+  };
+  icon: {
+    base: string;
+  };
 }
 
-export interface SidebarItemIconRootTheme {
-  base: string;
-}
-
-export const sidebarItemTheme: SidebarItemBaseTheme = createTheme({
-  base: 'group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700',
+export const sidebarItemTheme: SidebarItemTheme = createTheme({
+  root: {
+    base: 'group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700',
+  },
   icon: {
     base: 'flex-1 whitespace-nowrap',
   },
@@ -28,8 +30,3 @@ export const sidebarItemTheme: SidebarItemBaseTheme = createTheme({
 export interface SidebarItemClass extends FlowbiteClass {
   sidebarIconClass: string;
 }
-
-export const SidebarItemClassInstance: SidebarItemClass = {
-  rootClass: '',
-  sidebarIconClass: '',
-};

@@ -3,7 +3,7 @@ import { AccordionStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import type { AccordionBaseTheme, AccordionClass, AccordionColors } from './accordion.theme';
+import type { AccordionClass, AccordionColors, AccordionTheme } from './accordion.theme';
 import { AccordionThemeService } from './accordion.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -38,11 +38,11 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<AccordionClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof AccordionColors>('light');
+  public color = input<keyof AccordionColors>('primary');
   public isFlush = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public customStyle = input<DeepPartial<AccordionBaseTheme>>({});
+  public customStyle = input<DeepPartial<AccordionTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

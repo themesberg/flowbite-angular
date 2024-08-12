@@ -1,10 +1,11 @@
 import type { DeepPartial } from '../../common';
 import { GlobalSignalStoreService } from '../../services';
 import type { ThemeState } from '../../services/state/theme.state';
+import { createClass } from '../../utils';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './dark-theme-toggle.theme';
+import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-toggle.theme';
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
@@ -33,10 +34,10 @@ export class DarkThemeToggleComponent extends BaseComponent implements OnInit, A
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.DarkThemeToggleClass>(properties.DarkThemeToggleClassInstance);
+  public override contentClasses = signal<DarkThemeToggleClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.DarkThemeToggleBaseTheme>>({});
+  public customStyle = input<DeepPartial<DarkThemeToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

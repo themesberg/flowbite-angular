@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { CHEVRON_UP_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './scroll-top.theme';
+import type { ScrollTopClass, ScrollTopColors, ScrollTopPositions, ScrollTopTheme } from './scroll-top.theme';
 import { ScrollTopThemeService } from './scroll-top.theme.service';
 
 import type { OnInit } from '@angular/core';
@@ -22,12 +23,12 @@ export class ScrollTopComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.ScrollTopClass>(properties.scrollTopClassInstance);
+  public override contentClasses = signal<ScrollTopClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof properties.ScrollTopColors>('red');
-  public position = input<keyof properties.ScrollTopPositions>('bottom-right');
-  public customStyle = input<DeepPartial<properties.ScrollTopBaseTheme>>({});
+  public color = input<keyof ScrollTopColors>('red');
+  public position = input<keyof ScrollTopPositions>('bottom-right');
+  public customStyle = input<DeepPartial<ScrollTopTheme>>({});
   //#endregion
 
   //#region BaseComponent implemenation

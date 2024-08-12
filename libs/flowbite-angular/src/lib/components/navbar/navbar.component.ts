@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
 import { NavbarStateService } from '../../services';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './navbar.theme';
+import type { NavbarClass, NavbarTheme } from './navbar.theme';
 import { NavbarThemeService } from './navbar.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -33,13 +34,13 @@ export class NavbarComponent extends BaseComponent {
   protected readonly themeService = inject(NavbarThemeService);
   protected readonly navbarStateService = inject(NavbarStateService);
 
-  public override contentClasses = signal<properties.NavbarClass>(properties.NavbarClassInstance);
+  public override contentClasses = signal<NavbarClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isFixed = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<properties.NavbarBaseTheme>>({});
+  public customStyle = input<DeepPartial<NavbarTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

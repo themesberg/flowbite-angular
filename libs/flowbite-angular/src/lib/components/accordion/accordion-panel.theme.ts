@@ -2,15 +2,19 @@ import type { DeepPartial, FlowbiteClass } from '../../common';
 import { createTheme } from '../../utils/theme/create-theme';
 
 export interface AccordionPanelProperties {
-  customStyle: DeepPartial<AccordionPanelBaseTheme>;
+  customStyle: DeepPartial<AccordionPanelTheme>;
 }
 
-export interface AccordionPanelBaseTheme {
-  base: string;
+export interface AccordionPanelTheme {
+  root: {
+    base: string;
+  };
 }
 
-export const accordionPanelTheme: AccordionPanelBaseTheme = createTheme({
-  base: '',
+export const accordionPanelTheme: AccordionPanelTheme = createTheme({
+  root: {
+    base: '',
+  },
 });
 
 export type AccordionPanelClass = FlowbiteClass;

@@ -1,6 +1,7 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import * as properties from './modal-body.theme';
+import type { ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
 import { ModalBodyThemeService } from './modal-body.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -15,10 +16,10 @@ import { Component, inject, input, signal } from '@angular/core';
 export class ModalBodyComponent extends BaseComponent {
   protected readonly themeService = inject(ModalBodyThemeService);
 
-  public override contentClasses = signal<properties.ModalBodyClass>(properties.ModalBodyClassInstance);
+  public override contentClasses = signal<ModalBodyClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.ModalBodyBaseTheme>>({});
+  public customStyle = input<DeepPartial<ModalBodyTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

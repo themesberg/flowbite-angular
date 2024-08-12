@@ -1,5 +1,6 @@
+import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import * as properties from './dropdown-divider.theme';
+import type { DropdownDividerClass, DropdownDividerTheme } from './dropdown-divider.theme';
 import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
@@ -16,10 +17,10 @@ export class DropdownDividerComponent extends BaseComponent {
   protected readonly themeService = inject(DropdownDividerThemeService);
   protected readonly dropdownComponent = inject(DropdownComponent);
 
-  public override contentClasses = signal<properties.DropdownDividerClass>(properties.DropdownDividerClassInstance);
+  public override contentClasses = signal<DropdownDividerClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<Partial<properties.DropdownDividerBaseTheme>>({});
+  public customStyle = input<Partial<DropdownDividerTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

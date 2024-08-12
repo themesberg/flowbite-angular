@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
 import { ModalStateService } from '../../services/state/modal.state';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './modal.theme';
+import type { ModalClass, ModalPositions, ModalSizes, ModalTheme } from './modal.theme';
 import { ModalThemeService } from './modal.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -51,14 +52,16 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   protected readonly themeService = inject(ModalThemeService);
   protected readonly modalStateService = inject(ModalStateService);
 
-  public override contentClasses = signal<properties.ModalClass>(properties.ModalClassInstance);
+  public override contentClasses = signal<ModalClass>(
+    createClass({ modalContainerClass: '', modalContentClass: '', rootClass: '' }),
+  );
 
   //#region properties
-  public size = input<keyof properties.ModalSizes>('md');
-  public position = input<keyof properties.ModalPositions>('center');
+  public size = input<keyof ModalSizes>('md');
+  public position = input<keyof ModalPositions>('center');
   public isDismissable = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<properties.ModalBaseTheme>>({});
+  public customStyle = input<DeepPartial<ModalTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

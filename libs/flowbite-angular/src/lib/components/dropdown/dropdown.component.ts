@@ -1,10 +1,11 @@
 import type { DeepPartial } from '../../common';
 import { DropdownStateService } from '../../services/state/dropdown.state';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './dropdown.theme';
+import type { DropdownClass, DropdownPositions, DropdownTheme } from './dropdown.theme';
 import { DropdownThemeService } from './dropdown.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -77,15 +78,24 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.DropdownClass>(properties.DropdownClassInstance);
+  public override contentClasses = signal<DropdownClass>(
+    createClass({
+      containerClass: '',
+      contentClass: '',
+      dropdownClass: '',
+      rootClass: '',
+      spanClass: '',
+      subContentClass: '',
+    }),
+  );
 
   //#region properties
   public label = input('Dropdown');
   public isOpen = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
   });
-  public position = input<keyof properties.DropdownPositions>('bottom-center');
-  public customStyle = input<DeepPartial<properties.DropdownBaseTheme>>({});
+  public position = input<keyof DropdownPositions>('bottom-center');
+  public customStyle = input<DeepPartial<DropdownTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -156,7 +166,7 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
     }
   }
 
-  convertPosition(pos: keyof properties.DropdownPositions): Placement {
+  convertPosition(pos: keyof DropdownPositions): Placement {
     switch (pos) {
       case 'top-center':
         return 'top';

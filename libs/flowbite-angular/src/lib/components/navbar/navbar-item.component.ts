@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { NavbarStateService } from '../../services';
+import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './navbar-item.theme';
+import type { NavbarItemClass, NavbarItemColors, NavbarItemTheme } from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -25,11 +26,11 @@ export class NavbarItemComponent extends BaseComponent {
   protected readonly themeService = inject(NavbarItemThemeService);
   protected readonly navbarStateService = inject(NavbarStateService);
 
-  public override contentClasses = signal<properties.NavbarItemClass>(properties.NavbarItemClassInstance);
+  public override contentClasses = signal<NavbarItemClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof properties.NavbarItemColors>('blue');
-  public customStyle = input<DeepPartial<properties.NavbarItemBaseTheme>>({});
+  public color = input<keyof NavbarItemColors>('blue');
+  public customStyle = input<DeepPartial<NavbarItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

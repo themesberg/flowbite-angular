@@ -1,5 +1,6 @@
+import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import * as properties from './dropdown-header.theme';
+import type { DropdownHeaderClass, DropdownHeaderTheme } from './dropdown-header.theme';
 import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
@@ -21,10 +22,10 @@ export class DropdownHeaderComponent extends BaseComponent {
   protected readonly themeService = inject(DropdownHeaderThemeService);
   protected readonly dropdownComponent = inject(DropdownComponent);
 
-  public override contentClasses = signal<properties.DropdownHeaderClass>(properties.DropdownHeaderClassInstance);
+  public override contentClasses = signal<DropdownHeaderClass>(createClass({ root: '', rootClass: '' }));
 
   //#region properties
-  public customStyle = input<Partial<properties.DropdownHeaderBaseTheme>>({});
+  public customStyle = input<Partial<DropdownHeaderTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

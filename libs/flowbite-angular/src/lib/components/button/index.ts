@@ -8,8 +8,7 @@ export type {
   ButtonFill,
   ButtonMonochromeColors,
   ButtonSizes,
-  ButtonBaseTheme,
-  SpanRootTheme,
+  ButtonTheme,
 } from './button.theme';
-export { buttonTheme, ButtonClassInstance } from './button.theme';
+export { buttonTheme } from './button.theme';
 export { ButtonThemeService, FLOWBITE_BUTTON_THEME_TOKEN } from './button.theme.service';

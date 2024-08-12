@@ -1,9 +1,15 @@
 import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services';
+import { createClass } from '../../utils';
 import { BARS_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './sidebar-toggle.theme';
+import type {
+  SidebarToggleClass,
+  SidebarToggleColors,
+  SidebarToggleSizes,
+  SidebarToggleTheme,
+} from './sidebar-toggle.theme';
 import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
 
 import type { OnInit } from '@angular/core';
@@ -22,12 +28,12 @@ export class SidebarToggleComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.SidebarToggleClass>(properties.SidebarToggleClassInstance);
+  public override contentClasses = signal<SidebarToggleClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof properties.SidebarToggleColors>('gray');
-  public size = input<keyof properties.SidebarToggleSizes>('sm');
-  public customStyle = input<DeepPartial<properties.SidebarToggleBaseTheme>>({});
+  public color = input<keyof SidebarToggleColors>('gray');
+  public size = input<keyof SidebarToggleSizes>('sm');
+  public customStyle = input<DeepPartial<SidebarToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

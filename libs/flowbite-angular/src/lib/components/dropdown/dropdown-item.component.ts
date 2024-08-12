@@ -1,6 +1,7 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import * as properties from './dropdown-item.theme';
+import type { DropdownItemClass, DropdownItemTheme } from './dropdown-item.theme';
 import { DropdownItemThemeService } from './dropdown-item.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
@@ -17,10 +18,10 @@ export class DropdownItemComponent extends BaseComponent {
   protected readonly themeService = inject(DropdownItemThemeService);
   protected readonly dropdownComponent = inject(DropdownComponent);
 
-  public override contentClasses = signal<properties.DropdownItemClass>(properties.DropdownItemClassInstance);
+  public override contentClasses = signal<DropdownItemClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.DropdownItemBaseTheme>>({});
+  public customStyle = input<DeepPartial<DropdownItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

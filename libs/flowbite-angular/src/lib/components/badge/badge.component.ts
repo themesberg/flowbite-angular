@@ -1,9 +1,9 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base.component';
-import type { BadgeBaseTheme, BadgeClass, BadgeColors, BadgeSizes } from './badge.theme';
-import { BadgeClassInstance } from './badge.theme';
+import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.theme';
 import { BadgeThemeService } from './badge.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -29,14 +29,14 @@ export class BadgeComponent extends BaseComponent {
   protected readonly routerLink = inject(RouterLink);
   protected readonly themeService = inject(BadgeThemeService);
 
-  public override contentClasses = signal<BadgeClass>(BadgeClassInstance);
+  public override contentClasses = signal<BadgeClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof BadgeColors>('blue');
   public size = input<keyof BadgeSizes>('xs');
   public isIconOnly = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isPill = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<BadgeBaseTheme>>({});
+  public customStyle = input<DeepPartial<BadgeTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

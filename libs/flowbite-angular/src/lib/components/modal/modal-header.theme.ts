@@ -2,25 +2,25 @@ import type { DeepPartial, FlowbiteClass } from '../../common';
 import { createTheme } from '../../utils/theme/create-theme';
 
 export interface ModalHeaderProperties {
-  customStyle: DeepPartial<ModalHeaderBaseTheme>;
+  customStyle: DeepPartial<ModalHeaderTheme>;
 }
 
-export interface ModalHeaderBaseTheme {
-  base: string;
-  title: DeepPartial<ModalHeaderTitleRootTheme>;
-  button: DeepPartial<ModalHeaderButtonRootTheme>;
+export interface ModalHeaderTheme {
+  root: {
+    base: string;
+  };
+  title: {
+    base: string;
+  };
+  button: {
+    base: string;
+  };
 }
 
-export interface ModalHeaderTitleRootTheme {
-  base: string;
-}
-
-export interface ModalHeaderButtonRootTheme {
-  base: string;
-}
-
-export const modalHeaderTheme: ModalHeaderBaseTheme = createTheme({
-  base: 'flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600',
+export const modalHeaderTheme: ModalHeaderTheme = createTheme({
+  root: {
+    base: 'flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600',
+  },
   title: {
     base: 'text-xl font-medium text-gray-900 dark:text-white',
   },
@@ -33,9 +33,3 @@ export interface ModalHeaderClass extends FlowbiteClass {
   modalHeaderTitleClass: string;
   modalHeaderButtonClass: string;
 }
-
-export const ModalHeaderClassInstance: ModalHeaderClass = {
-  modalHeaderButtonClass: '',
-  modalHeaderTitleClass: '',
-  rootClass: '',
-};

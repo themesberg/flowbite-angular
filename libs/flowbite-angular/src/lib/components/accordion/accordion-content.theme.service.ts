@@ -1,15 +1,15 @@
 import type { FlowbiteThemeService } from '../../common';
 import { mergeTheme } from '../../utils/theme/merge-theme';
 import type {
-  AccordionContentBaseTheme,
   AccordionContentClass,
   AccordionContentProperties,
+  AccordionContentTheme,
 } from './accordion-content.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN = new InjectionToken<AccordionContentBaseTheme>(
+export const FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN = new InjectionToken<AccordionContentTheme>(
   'FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN',
 );
 
@@ -17,10 +17,10 @@ export class AccordionContentThemeService implements FlowbiteThemeService<Accord
   private readonly baseTheme = inject(FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN);
 
   public getClasses(properties: AccordionContentProperties): AccordionContentClass {
-    const theme: AccordionContentBaseTheme = mergeTheme(this.baseTheme, properties.customStyle);
+    const theme: AccordionContentTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: AccordionContentClass = {
-      rootClass: twMerge(theme.base, theme.color[properties.color], theme.isOpen[properties.isOpen]),
+      rootClass: twMerge(theme.root.base, theme.root.color[properties.color], theme.root.isOpen[properties.isOpen]),
     };
 
     return output;

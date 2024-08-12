@@ -14,27 +14,27 @@ export interface SidebarToggleSizes extends Pick<FlowbiteSizes, 'sm'> {
 export interface SidebarToggleProperties {
   color: keyof SidebarToggleColors;
   size: keyof SidebarToggleSizes;
-  customStyle: DeepPartial<SidebarToggleBaseTheme>;
+  customStyle: DeepPartial<SidebarToggleTheme>;
 }
 
-export interface SidebarToggleBaseTheme {
-  base: string;
-  color: SidebarToggleColors;
-  size: SidebarToggleSizes;
+export interface SidebarToggleTheme {
+  root: {
+    base: string;
+    color: SidebarToggleColors;
+    size: SidebarToggleSizes;
+  };
 }
 
-export const sidebarToggleTheme: SidebarToggleBaseTheme = createTheme({
-  base: 'cursor-pointer inline-flex items-center p-2 justify-center rounded-lg focus:outline-none focus:ring-2',
-  color: {
-    gray: 'text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
-  },
-  size: {
-    sm: 'text-sm',
+export const sidebarToggleTheme: SidebarToggleTheme = createTheme({
+  root: {
+    base: 'cursor-pointer inline-flex items-center p-2 justify-center rounded-lg focus:outline-none focus:ring-2',
+    color: {
+      gray: 'text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
+    },
+    size: {
+      sm: 'text-sm',
+    },
   },
 });
 
 export type SidebarToggleClass = FlowbiteClass;
-
-export const SidebarToggleClassInstance: SidebarToggleClass = {
-  rootClass: '',
-};

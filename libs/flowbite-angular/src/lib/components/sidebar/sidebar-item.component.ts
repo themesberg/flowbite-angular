@@ -1,10 +1,11 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { SanitizeHtmlPipe } from '../../pipes';
 import { SidebarStateService } from '../../services/state/sidebar.state';
+import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base.component';
-import * as properties from './sidebar-item.theme';
+import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
@@ -39,12 +40,12 @@ export class SidebarItemComponent extends BaseComponent {
   protected readonly themeService = inject(SidebarItemThemeService);
   protected readonly sidebarStateService = inject(SidebarStateService);
 
-  public override contentClasses = signal<properties.SidebarItemClass>(properties.SidebarItemClassInstance);
+  public override contentClasses = signal<SidebarItemClass>(createClass({ rootClass: '', sidebarIconClass: '' }));
 
   //#region properties
   public icon = input<string | undefined>(undefined);
   public label = input<string | undefined>(undefined);
-  public customStyle = input<DeepPartial<properties.SidebarItemBaseTheme>>({});
+  public customStyle = input<DeepPartial<SidebarItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

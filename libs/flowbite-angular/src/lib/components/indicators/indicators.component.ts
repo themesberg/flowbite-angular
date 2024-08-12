@@ -1,7 +1,14 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './indicators.theme';
+import type {
+  indicatorClass,
+  IndicatorColors,
+  IndicatorPositions,
+  IndicatorSizes,
+  IndicatorTheme,
+} from './indicators.theme';
 import { IndicatorThemeService } from './indicators.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -19,7 +26,7 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
 export class IndicatorComponent extends BaseComponent {
   protected readonly themeService = inject(IndicatorThemeService);
 
-  public override contentClasses = signal<properties.indicatorClass>(properties.IndicatorClassInstance);
+  public override contentClasses = signal<indicatorClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isPill = input<boolean, string | boolean>(false, { transform: booleanAttribute });
@@ -28,10 +35,10 @@ export class IndicatorComponent extends BaseComponent {
   public hasOffset = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public color = input<keyof properties.IndicatorColors>('gray');
-  public size = input<keyof properties.IndicatorSizes>('md');
-  public placement = input<keyof properties.IndicatorPositions | undefined>(undefined);
-  public customStyle = input<DeepPartial<properties.IndicatorBaseTheme>>({});
+  public color = input<keyof IndicatorColors>('gray');
+  public size = input<keyof IndicatorSizes>('md');
+  public placement = input<keyof IndicatorPositions | undefined>(undefined);
+  public customStyle = input<DeepPartial<IndicatorTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

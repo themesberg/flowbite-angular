@@ -10,41 +10,43 @@ export interface AlertProperties {
   color: keyof AlertColors;
   hasBorder: keyof FlowbiteBoolean;
   hasBorderAccent: keyof FlowbiteBoolean;
-  customStyle: DeepPartial<AlertBaseTheme>;
+  customStyle: DeepPartial<AlertTheme>;
 }
 
-export interface AlertBaseTheme {
-  base: string;
-  color: AlertColors;
-  hasBorder: FlowbiteBoolean;
-  hasBorderAccent: FlowbiteBoolean;
-  closeButton: AlertButtonTheme;
+export interface AlertTheme {
+  root: {
+    base: string;
+    color: AlertColors;
+    hasBorder: FlowbiteBoolean;
+    hasBorderAccent: FlowbiteBoolean;
+  };
+  closeButton: {
+    base: string;
+    color: AlertColors;
+  };
 }
 
-export interface AlertButtonTheme {
-  base: string;
-  color: AlertColors;
-}
-
-export const alertTheme: AlertBaseTheme = createTheme({
-  base: 'flex flex-col gap-2 p-4 text-sm rounded-lg',
-  color: {
-    primary:
-      'text-primary-800 dark:text-primary-400 bg-primary-50 dark:bg-gray-800 border-primary-300 dark:border-primary-800',
-    dark: 'text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600',
-    blue: 'text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-gray-800 border-blue-300 dark:border-blue-800',
-    red: 'text-red-800 dark:text-red-400 bg-red-100 dark:bg-gray-800 border-red-300 dark:border-red-800',
-    green: 'text-green-800 dark:text-green-400 bg-green-100 dark:bg-gray-800 border-green-300 dark:border-green-800',
-    yellow:
-      'text-yellow-800 dark:text-yellow-300 bg-yellow-100 dark:bg-gray-800 border-yellow-300 dark:border-yellow-800',
-  },
-  hasBorder: {
-    enabled: 'border',
-    disabled: 'border-0',
-  },
-  hasBorderAccent: {
-    enabled: 'border-t-4',
-    disabled: '',
+export const alertTheme: AlertTheme = createTheme({
+  root: {
+    base: 'flex flex-col gap-2 p-4 text-sm rounded-lg',
+    color: {
+      primary:
+        'text-primary-800 dark:text-primary-400 bg-primary-50 dark:bg-gray-800 border-primary-300 dark:border-primary-800',
+      dark: 'text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600',
+      blue: 'text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-gray-800 border-blue-300 dark:border-blue-800',
+      red: 'text-red-800 dark:text-red-400 bg-red-100 dark:bg-gray-800 border-red-300 dark:border-red-800',
+      green: 'text-green-800 dark:text-green-400 bg-green-100 dark:bg-gray-800 border-green-300 dark:border-green-800',
+      yellow:
+        'text-yellow-800 dark:text-yellow-300 bg-yellow-100 dark:bg-gray-800 border-yellow-300 dark:border-yellow-800',
+    },
+    hasBorder: {
+      enabled: 'border',
+      disabled: 'border-0',
+    },
+    hasBorderAccent: {
+      enabled: 'border-t-4',
+      disabled: '',
+    },
   },
   closeButton: {
     base: '-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-2',
@@ -62,8 +64,3 @@ export const alertTheme: AlertBaseTheme = createTheme({
 export interface AlertClass extends FlowbiteClass {
   closeButtonClass: string;
 }
-
-export const AlertClassInstance: AlertClass = {
-  closeButtonClass: '',
-  rootClass: '',
-};

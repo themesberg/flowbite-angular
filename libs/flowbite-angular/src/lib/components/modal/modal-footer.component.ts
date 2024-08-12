@@ -1,6 +1,7 @@
 import type { DeepPartial } from '../../common';
+import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
-import * as properties from './modal-footer.theme';
+import type { ModalFooterClass, ModalFooterTheme } from './modal-footer.theme';
 import { ModalFooterThemeService } from './modal-footer.theme.service';
 import { ModalComponent } from './modal.component';
 
@@ -17,10 +18,10 @@ export class ModalFooterComponent extends BaseComponent {
   protected readonly themeService = inject(ModalFooterThemeService);
   protected readonly modalComponent = inject(ModalComponent);
 
-  public override contentClasses = signal<properties.ModalFooterClass>(properties.ModalFooterClassInstance);
+  public override contentClasses = signal<ModalFooterClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.ModalFooterBaseTheme>>({});
+  public customStyle = input<DeepPartial<ModalFooterTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

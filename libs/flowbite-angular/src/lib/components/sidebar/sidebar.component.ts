@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services/state/sidebar.state';
+import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import * as properties from './sidebar.theme';
+import type { SidebarClass, SidebarTheme } from './sidebar.theme';
 import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -35,12 +36,12 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   protected readonly themeService = inject(SidebarThemeService);
   protected readonly sidebarStateService = inject(SidebarStateService);
 
-  public override contentClasses = signal<properties.SidebarClass>(properties.SidebarClassInstance);
+  public override contentClasses = signal<SidebarClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<properties.SidebarBaseTheme>>({});
+  public customStyle = input<DeepPartial<SidebarTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

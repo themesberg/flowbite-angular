@@ -1,8 +1,9 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { createClass } from '../../utils';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base.component';
 import { IconComponent, IconRegistry } from '../icon';
-import * as properties from './breadcrumb-item.theme';
+import type { BreadcrumbItemClass, BreadcrumbItemTheme } from './breadcrumb-item.theme';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
@@ -34,10 +35,10 @@ export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   protected readonly iconRegistry = inject(IconRegistry);
   protected readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<properties.BreadcrumbItemClass>(properties.BreadcrumbItemClassInstance);
+  public override contentClasses = signal<BreadcrumbItemClass>(createClass({ rootClass: '', breadcrumbIconClass: '' }));
 
   //#region properties
-  public customStyle = input<DeepPartial<properties.BreadcrumbItemBaseTheme>>({});
+  public customStyle = input<DeepPartial<BreadcrumbItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
