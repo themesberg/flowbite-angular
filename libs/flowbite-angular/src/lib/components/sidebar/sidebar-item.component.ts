@@ -9,7 +9,7 @@ import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -60,4 +60,9 @@ export class SidebarItemComponent extends BaseComponent {
     this.contentClasses.set(propertyClass);
   }
   //#endregion
+
+  @HostListener('click')
+  protected onClick(): void {
+    this.sidebarStateService.set('isOpen', false);
+  }
 }
