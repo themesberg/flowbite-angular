@@ -17,7 +17,7 @@ import type { Observable } from 'rxjs';
 })
 export class ShikiComponent implements OnInit {
   @HostBinding('class') get hostClass() {
-    return 'overflow-x-auto';
+    return 'overflow-x-auto z-0';
   }
 
   protected readonly themeSignalService = inject<GlobalSignalStoreService<ThemeState>>(

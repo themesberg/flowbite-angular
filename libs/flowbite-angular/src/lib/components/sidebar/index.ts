@@ -30,3 +30,20 @@ export type {
 } from './sidebar-toggle.theme';
 export { sidebarToggleTheme } from './sidebar-toggle.theme';
 export { FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN, SidebarToggleThemeService } from './sidebar-toggle.theme.service';
+
+export { SidebarPageContentComponent } from './sidebar-page-content.component';
+export type {
+  SidebarPageContentClass,
+  SidebarPageContentProperties,
+  SidebarPageContentTheme,
+} from './sidebar-page-content.theme';
+export { sidebarPageContentTheme } from './sidebar-page-content.theme';
+export {
+  FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
+  SidebarPageContentThemeService,
+} from './sidebar-page-content.theme.service';
+
+export { SidebarMenuComponent } from './sidebar-menu.component';
+export type { SidebarMenuClass, SidebarMenuProperties, SidebarMenuTheme } from './sidebar-menu.theme';
+export { sidebarMenuTheme } from './sidebar-menu.theme';
+export { FLOWBITE_SIDEBAR_MENU_THEME_TOKEN, SidebarMenuThemeService } from './sidebar-menu.theme.service';

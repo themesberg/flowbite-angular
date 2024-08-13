@@ -14,11 +14,7 @@ export class SidebarThemeService implements FlowbiteThemeService<SidebarProperti
     const theme: SidebarTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: SidebarClass = {
-      rootClass: twMerge(
-        theme.root.base,
-        theme.root.isRounded[properties.isRounded],
-        theme.root.isOpen[properties.isOpen],
-      ),
+      rootClass: twMerge(theme.root.base, theme.root.isRounded[properties.isRounded]),
     };
 
     return output;

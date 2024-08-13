@@ -63,6 +63,8 @@ import {
   FLOWBITE_SCROLL_TOP_THEME_TOKEN,
   FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
   FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_MENU_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
   FLOWBITE_SIDEBAR_THEME_TOKEN,
   FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
   formFieldTheme,
@@ -101,6 +103,10 @@ import {
   SidebarItemGroupThemeService,
   sidebarItemTheme,
   SidebarItemThemeService,
+  sidebarMenuTheme,
+  SidebarMenuThemeService,
+  sidebarPageContentTheme,
+  SidebarPageContentThemeService,
   sidebarTheme,
   SidebarThemeService,
   sidebarToggleTheme,
@@ -223,6 +229,14 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: SidebarItemThemeService,
       useClass: SidebarItemThemeService,
+    },
+    {
+      provide: SidebarMenuThemeService,
+      useClass: SidebarMenuThemeService,
+    },
+    {
+      provide: SidebarPageContentThemeService,
+      useClass: SidebarPageContentThemeService,
     },
     {
       provide: SidebarToggleThemeService,
@@ -363,6 +377,14 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
       useValue: sidebarItemTheme,
+    },
+    {
+      provide: FLOWBITE_SIDEBAR_MENU_THEME_TOKEN,
+      useValue: sidebarMenuTheme,
+    },
+    {
+      provide: FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
+      useValue: sidebarPageContentTheme,
     },
     {
       provide: FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,

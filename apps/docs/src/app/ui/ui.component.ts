@@ -11,13 +11,14 @@ import {
   SidebarToggleComponent,
 } from 'flowbite-angular';
 
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
   imports: [
+    NgIf,
     NavbarComponent,
     RouterOutlet,
     NavbarBrandComponent,
@@ -35,4 +36,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class UiComponent {
   protected document = inject(DOCUMENT);
+  protected router = inject(Router);
 }

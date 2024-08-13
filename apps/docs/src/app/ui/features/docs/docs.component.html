@@ -1,5 +1,5 @@
-<div class="flex flex-row 2xl:mx-60 gap-4">
-  <flowbite-sidebar>
+<flowbite-sidebar displayMode="backdrop">
+  <flowbite-sidebar-menu class="xl:!flex">
     <flowbite-sidebar-item-group title="GETTING STARTED">
       <flowbite-sidebar-item routerLink="./getting-started/introduction">Introduction</flowbite-sidebar-item>
       <flowbite-sidebar-item routerLink="./getting-started/quickstart">Quickstart</flowbite-sidebar-item>
@@ -23,9 +23,9 @@
       <flowbite-sidebar-item routerLink="./components/sidebar">Sidebar</flowbite-sidebar-item>
     </flowbite-sidebar-item-group>
     <flowbite-sidebar-item-group title="FORMS"></flowbite-sidebar-item-group>
-  </flowbite-sidebar>
+  </flowbite-sidebar-menu>
 
-  <section class="w-full p-4">
+  <flowbite-sidebar-page-content class="xl:mx-60 p-4">
     <router-outlet />
-  </section>
-</div>
+  </flowbite-sidebar-page-content>
+</flowbite-sidebar>

@@ -3,7 +3,7 @@ import { SidebarStateService } from '../../services/state/sidebar.state';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
-import type { SidebarClass, SidebarTheme } from './sidebar.theme';
+import type { SidebarClass, SidebarDisplayMode, SidebarTheme } from './sidebar.theme';
 import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -39,6 +39,7 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<SidebarClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public displayMode = input<keyof SidebarDisplayMode>('push');
   public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<SidebarTheme>>({});
@@ -47,8 +48,8 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
+      displayMode: this.sidebarStateService.select('displayMode')(),
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
-      isOpen: booleanToFlowbiteBoolean(this.sidebarStateService.select('isOpen')()),
       customStyle: this.customStyle(),
     });
 
@@ -57,8 +58,10 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.sidebarStateService.set('isOpen', this.isOpen());
-
-    super.ngOnInit();
+    this.sidebarStateService.setState({
+      displayMode: this.displayMode(),
+      isOpen: this.isOpen(),
+    }),
+      super.ngOnInit();
   }
 }

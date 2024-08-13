@@ -1,8 +1,10 @@
+import type { SidebarDisplayMode } from '../../components/sidebar/sidebar.theme';
 import { SignalStoreService } from '../signal-store.service';
 
 import { Injectable } from '@angular/core';
 
 export interface SidebarState {
+  displayMode: keyof SidebarDisplayMode;
   isOpen: boolean;
 }
 

@@ -2,8 +2,16 @@ import type { DeepPartial } from '../../common';
 import type { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
 import { createTheme } from '../../utils/theme/create-theme';
 
+//#region Component theme option
+export interface SidebarDisplayMode {
+  push: string;
+  over: string;
+  backdrop: string;
+}
+//endregion
+
 export interface SidebarProperties {
-  isOpen: keyof FlowbiteBoolean;
+  displayMode: keyof SidebarDisplayMode;
   isRounded: keyof FlowbiteBoolean;
   customStyle: DeepPartial<SidebarTheme>;
 }
@@ -12,20 +20,15 @@ export interface SidebarTheme {
   root: {
     base: string;
     isRounded: FlowbiteBoolean;
-    isOpen: FlowbiteBoolean;
   };
 }
 
 export const sidebarTheme: SidebarTheme = createTheme({
   root: {
-    base: 'shrink-0 flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
+    base: 'flex flex-row min-h-full',
     isRounded: {
       enabled: 'rounded',
       disabled: '',
-    },
-    isOpen: {
-      enabled: 'hidden',
-      disabled: 'flex flex-col',
     },
   },
 });
