@@ -17,11 +17,11 @@ export interface SidebarPageContentTheme {
 
 export const sidebarPageContentTheme: SidebarPageContentTheme = createTheme({
   root: {
-    base: 'flex w-full',
+    base: 'flex flex-1',
     displayMode: {
       push: '',
       over: '',
-      backdrop: 'fixed left-0 right-0 z-30 bg-gray-500 bg-opacity-50 blur-md',
+      backdrop: 'sticky left-0 right-0 z-30 bg-gray-500 bg-opacity-50 blur-md',
     },
   },
 });
