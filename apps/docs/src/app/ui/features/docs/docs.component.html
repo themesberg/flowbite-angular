@@ -1,5 +1,7 @@
-<flowbite-sidebar displayMode="backdrop">
-  <flowbite-sidebar-menu class="xl:!flex">
+<flowbite-sidebar
+  class="xl:mx-60"
+  displayMode="backdrop">
+  <flowbite-sidebar-menu class="xl:!flex xl:!bg-transparent">
     <flowbite-sidebar-item-group title="GETTING STARTED">
       <flowbite-sidebar-item routerLink="./getting-started/introduction">Introduction</flowbite-sidebar-item>
       <flowbite-sidebar-item routerLink="./getting-started/quickstart">Quickstart</flowbite-sidebar-item>
@@ -25,7 +27,7 @@
     <flowbite-sidebar-item-group title="FORMS"></flowbite-sidebar-item-group>
   </flowbite-sidebar-menu>
 
-  <flowbite-sidebar-page-content class="xl:mx-60 p-4">
+  <flowbite-sidebar-page-content class="p-4">
     <router-outlet />
   </flowbite-sidebar-page-content>
 </flowbite-sidebar>
