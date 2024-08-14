@@ -2,11 +2,14 @@ import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services/state/accordion.state';
 import { createClass } from '../../utils';
 import { BaseComponent } from '../base.component';
+import { AccordionContentComponent } from './accordion-content.component';
 import type { AccordionPanelClass, AccordionPanelTheme } from './accordion-panel.theme';
 import { AccordionPanelThemeService } from './accordion-panel.theme.service';
+import { AccordionTitleComponent } from './accordion-title.component';
+import { AccordionComponent } from './accordion.component';
 
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -27,8 +30,11 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class AccordionPanelComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(AccordionPanelThemeService);
-  protected readonly accordionPanelStateService = inject(AccordionPanelStateService);
+  public readonly themeService = inject(AccordionPanelThemeService);
+  public readonly stateService = inject(AccordionPanelStateService);
+  public readonly accordionComponent = inject(AccordionComponent);
+  public readonly accordionTitleChild = contentChild.required(AccordionTitleComponent);
+  public readonly accordionContentChild = contentChild.required(AccordionContentComponent);
 
   public override contentClasses = signal<AccordionPanelClass>(createClass({ rootClass: '' }));
 
@@ -50,8 +56,20 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.accordionPanelStateService.set('isOpen', this.isOpen());
+    this.stateService.set('isOpen', this.isOpen());
 
     super.ngOnInit();
+  }
+
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.stateService.select('isOpen')());
+    }
+
+    if (isOpen && untracked(() => !this.accordionComponent.stateService.select('isAlwaysOpen')())) {
+      this.accordionComponent.closeAll();
+    }
+
+    this.stateService.set('isOpen', isOpen);
   }
 }

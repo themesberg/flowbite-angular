@@ -3,12 +3,13 @@ import { AccordionStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
+import { AccordionPanelComponent } from './accordion-panel.component';
 import type { AccordionClass, AccordionColors, AccordionTheme } from './accordion.theme';
 import { AccordionThemeService } from './accordion.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, contentChildren, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/accordion/
@@ -32,12 +33,14 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class AccordionComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(AccordionThemeService);
-  protected readonly accordionStateService = inject(AccordionStateService);
+  public readonly themeService = inject(AccordionThemeService);
+  public readonly stateService = inject(AccordionStateService);
+  public readonly accordionPanelChildren = contentChildren(AccordionPanelComponent);
 
   public override contentClasses = signal<AccordionClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public isAlwaysOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
   public color = input<keyof AccordionColors>('light');
   public isFlush = input<boolean, string | boolean>(false, {
     transform: booleanAttribute,
@@ -48,8 +51,8 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      color: this.accordionStateService.select('color')(),
-      isFlush: booleanToFlowbiteBoolean(this.accordionStateService.select('isFlush')()),
+      color: this.stateService.select('color')(),
+      isFlush: booleanToFlowbiteBoolean(this.stateService.select('isFlush')()),
       customStyle: this.customStyle(),
     });
 
@@ -58,11 +61,16 @@ export class AccordionComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.accordionStateService.setState({
+    this.stateService.setState({
+      isAlwaysOpen: this.isAlwaysOpen(),
       isFlush: this.isFlush(),
       color: this.color(),
     });
 
     super.ngOnInit();
+  }
+
+  public closeAll(): void {
+    this.accordionPanelChildren().forEach((child) => child.toggleVisibility(false));
   }
 }

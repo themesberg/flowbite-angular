@@ -3,17 +3,13 @@ import { SignalStoreService } from '../signal-store.service';
 
 import { Injectable } from '@angular/core';
 
-export interface SidebarState {
+@Injectable()
+export class SidebarStateService extends SignalStoreService<{
   displayMode: keyof SidebarDisplayMode;
   isOpen: boolean;
-}
+}> {}
 
 @Injectable()
-export class SidebarStateService extends SignalStoreService<SidebarState> {}
-
-export interface SidebarItemGroupState {
+export class SidebarItemGroupStateService extends SignalStoreService<{
   isOpen: boolean;
-}
-
-@Injectable()
-export class SidebarItemGroupStateService extends SignalStoreService<SidebarItemGroupState> {}
+}> {}

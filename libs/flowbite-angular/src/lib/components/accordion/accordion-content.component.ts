@@ -1,10 +1,11 @@
 import type { DeepPartial } from '../../common';
-import { AccordionPanelStateService, AccordionStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base.component';
 import type { AccordionContentClass, AccordionContentTheme } from './accordion-content.theme';
 import { AccordionContentThemeService } from './accordion-content.theme.service';
+import { AccordionPanelComponent } from './accordion-panel.component';
+import { AccordionComponent } from './accordion.component';
 
 import { NgClass, NgIf } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
@@ -14,15 +15,15 @@ import { Component, inject, input, signal } from '@angular/core';
   imports: [NgIf, NgClass],
   selector: 'flowbite-accordion-content',
   template: `
-    <ng-container *ngIf="accordionPanelStateService.select('isOpen')()">
+    <ng-container *ngIf="accordionPanelComponent.stateService.select('isOpen')()">
       <ng-content />
     </ng-container>
   `,
 })
 export class AccordionContentComponent extends BaseComponent {
-  protected readonly themeService = inject(AccordionContentThemeService);
-  protected readonly accordionStateService = inject(AccordionStateService);
-  protected readonly accordionPanelStateService = inject(AccordionPanelStateService);
+  public readonly themeService = inject(AccordionContentThemeService);
+  public readonly accordionComponent = inject(AccordionComponent);
+  public readonly accordionPanelComponent = inject(AccordionPanelComponent);
 
   public override contentClasses = signal<AccordionContentClass>(createClass({ rootClass: '' }));
 
@@ -33,8 +34,8 @@ export class AccordionContentComponent extends BaseComponent {
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      color: this.accordionStateService.select('color')(),
-      isOpen: booleanToFlowbiteBoolean(this.accordionPanelStateService.select('isOpen')()),
+      color: this.accordionComponent.stateService.select('color')(),
+      isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.stateService.select('isOpen')()),
       customStyle: this.customStyle(),
     });
 

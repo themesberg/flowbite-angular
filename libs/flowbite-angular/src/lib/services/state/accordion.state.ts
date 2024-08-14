@@ -3,17 +3,14 @@ import { SignalStoreService } from '../signal-store.service';
 
 import { Injectable } from '@angular/core';
 
-export interface AccordionState {
+@Injectable()
+export class AccordionStateService extends SignalStoreService<{
+  isAlwaysOpen: boolean;
   color: keyof AccordionColors;
   isFlush: boolean;
-}
+}> {}
 
 @Injectable()
-export class AccordionStateService extends SignalStoreService<AccordionState> {}
-
-export interface AccordionPanelState {
+export class AccordionPanelStateService extends SignalStoreService<{
   isOpen: boolean;
-}
-
-@Injectable()
-export class AccordionPanelStateService extends SignalStoreService<AccordionPanelState> {}
+}> {}
