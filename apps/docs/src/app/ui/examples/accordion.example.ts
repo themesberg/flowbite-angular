@@ -17,4 +17,13 @@ export class AccordionExampleService {
       }),
     },
   ];
+
+  public readonly alwaysOpenAccordion: Example[] = [
+    {
+      language: 'html',
+      code: this.httpClient.get('assets/examples/accordion/always-open.component.html', {
+        responseType: 'text',
+      }),
+    },
+  ];
 }

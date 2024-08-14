@@ -10,3 +10,15 @@
       [codeAsync]="item.code" />
   }
 </flowbite-demo-example>
+<flowbite-demo-example title="Always open">
+  <flowbite-iframe-wrapper
+    height="460"
+    link="frames/accordion/always-open" />
+
+  @for (item of exampleService.alwaysOpenAccordion; track $index) {
+    <flowbite-shiki
+      ngProjectAs="code-example"
+      [language]="item.language"
+      [codeAsync]="item.code" />
+  }
+</flowbite-demo-example>
