@@ -1,15 +1,11 @@
-import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import { ButtonExampleService } from '../../../../examples/button.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
-import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
-
-import { BadgeComponent, ButtonComponent } from 'flowbite-angular';
 
 import { Component, HostBinding, inject } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [DemoExampleComponent, ButtonComponent, BadgeComponent, ShikiComponent, FlowbiteIFrameWrapperComponent],
+  imports: [DemoExampleComponent],
   selector: 'flowbite-button-page',
   templateUrl: './button-page.component.html',
 })

@@ -1,28 +1,11 @@
-import { FlowbiteIFrameWrapperComponent } from '../../../../../frames/iframe-wrapper.component';
 import { AccordionExampleService } from '../../../../examples/accordion.example';
 import { DemoExampleComponent } from '../../../../shared/components/demo-example/demo-example.component';
-import { ShikiComponent } from '../../../../shared/components/shiki/shiki.component';
-
-import {
-  AccordionComponent,
-  AccordionContentComponent,
-  AccordionPanelComponent,
-  AccordionTitleComponent,
-} from 'flowbite-angular';
 
 import { Component, HostBinding, inject } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [
-    DemoExampleComponent,
-    AccordionComponent,
-    AccordionPanelComponent,
-    AccordionTitleComponent,
-    AccordionContentComponent,
-    ShikiComponent,
-    FlowbiteIFrameWrapperComponent,
-  ],
+  imports: [DemoExampleComponent],
   selector: 'flowbite-accordion-page',
   templateUrl: './accordion-page.component.html',
 })

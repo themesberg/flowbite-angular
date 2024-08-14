@@ -19,4 +19,18 @@ export class AccordionExampleService {
       name: 'accordion/always-open',
     },
   ];
+
+  public readonly colorOptionAccordion: Example[] = [
+    {
+      language: 'html',
+      name: 'accordion/color-option',
+    },
+  ];
+
+  public readonly flushAccordion: Example[] = [
+    {
+      language: 'html',
+      name: 'accordion/flush',
+    },
+  ];
 }
