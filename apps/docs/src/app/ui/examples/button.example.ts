@@ -1,88 +1,85 @@
 import type { Example } from './examples';
 
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ButtonExampleService {
-  protected readonly httpClient = inject(HttpClient);
-
   public readonly defaultButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/default.component.html', { responseType: 'text' }),
+      name: 'button/default',
     },
   ];
 
   public readonly pillButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/pill.component.html', { responseType: 'text' }),
+      name: 'button/pill',
     },
   ];
 
   public readonly gradientMonochromeButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/gradient-monochrome.component.html', { responseType: 'text' }),
+      name: 'button/gradient-monochrome',
     },
   ];
 
   public readonly gradientDuotoneButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/gradient-duotone.component.html', { responseType: 'text' }),
+      name: 'button/gradient-duotone',
     },
   ];
 
   public readonly gradientOutlineButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/gradient-outline.component.html', { responseType: 'text' }),
+      name: 'button/gradient-outline',
     },
   ];
 
   public readonly outlineButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/outline.component.html', { responseType: 'text' }),
+      name: 'button/outline',
     },
   ];
 
   public readonly sizeButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/size.component.html', { responseType: 'text' }),
+      name: 'button/size',
     },
   ];
 
   public readonly iconButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/icon.component.html', { responseType: 'text' }),
+      name: 'button/icon',
     },
   ];
 
   public readonly labelButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/label.component.html', { responseType: 'text' }),
+      name: 'button/label',
     },
   ];
 
   public readonly iconOnlyButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/icon-only.component.html', { responseType: 'text' }),
+      name: 'button/icon-only',
     },
   ];
 
   public readonly disabledButton: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/button/disabled.component.html', { responseType: 'text' }),
+      name: 'button/disabled',
     },
   ];
 }

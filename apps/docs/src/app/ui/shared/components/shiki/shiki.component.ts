@@ -5,7 +5,7 @@ import type { BundledLanguage, ShikiTransformer } from 'shiki/bundle-web.mjs';
 
 import { AsyncPipe, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, computed, effect, HostBinding, inject, Injector, input, signal } from '@angular/core';
+import { Component, computed, HostBinding, inject, Injector, input, signal } from '@angular/core';
 import { of } from 'rxjs';
 import type { Observable } from 'rxjs';
 
@@ -51,11 +51,6 @@ export class ShikiComponent implements OnInit {
   );
 
   public ngOnInit(): void {
-    effect(
-      () => {
-        this.codeAsync().subscribe((value) => this.code.set(value));
-      },
-      { allowSignalWrites: true, injector: this.injector },
-    );
+    this.codeAsync().subscribe((value) => this.code.set(value));
   }
 }

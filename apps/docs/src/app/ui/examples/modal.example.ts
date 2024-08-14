@@ -12,35 +12,35 @@ export class ModalExampleService {
   public readonly defaultModal: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/modal/default.component.html', { responseType: 'text' }),
+      name: 'modal/default',
     },
   ];
 
   public readonly sizeModal: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/modal/size.component.html', { responseType: 'text' }),
+      name: 'modal/size',
     },
   ];
 
   public readonly dismissableModal: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/modal/dismissable.component.html', { responseType: 'text' }),
+      name: 'modal/dismissable',
     },
   ];
 
   public readonly formModal: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/modal/form.component.html', { responseType: 'text' }),
+      name: 'modal/form',
     },
   ];
 
   public readonly positionedModal: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/modal/positioned.component.html', { responseType: 'text' }),
+      name: 'modal/positioned',
     },
   ];
 }

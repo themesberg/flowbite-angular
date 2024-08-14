@@ -12,28 +12,28 @@ export class IndicatorExampleService {
   public readonly defaultIndicator: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/indicator/default.component.html', { responseType: 'text' }),
+      name: 'indicator/default',
     },
   ];
 
   public readonly legendIndicator: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/indicator/legend.component.html', { responseType: 'text' }),
+      name: 'indicator/legend',
     },
   ];
 
   public readonly countIndicator: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/indicator/count.component.html', { responseType: 'text' }),
+      name: 'indicator/count',
     },
   ];
 
   public readonly positionedIndicator: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/indicator/positioned.component.html', { responseType: 'text' }),
+      name: 'indicator/positioned',
     },
   ];
 }

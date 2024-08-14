@@ -1,121 +1,44 @@
-<flowbite-demo-example title="Default button">
-  <flowbite-iframe-wrapper
-    link="frames/button/default"
-    height="100" />
-  @for (item of exampleService.defaultButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Button pills">
-  <flowbite-iframe-wrapper
-    link="frames/button/pill"
-    height="100" />
-  @for (item of exampleService.pillButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Gradient monochrome">
-  <flowbite-iframe-wrapper
-    link="frames/button/gradient-monochrome"
-    height="100" />
-  @for (item of exampleService.gradientMonochromeButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Gradient duo-tone">
-  <flowbite-iframe-wrapper
-    link="frames/button/gradient-duotone"
-    height="100" />
-  @for (item of exampleService.gradientDuotoneButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Gradient outline">
-  <flowbite-iframe-wrapper
-    link="frames/button/gradient-outline"
-    height="105" />
-  @for (item of exampleService.gradientOutlineButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Outline buttons">
-  <flowbite-iframe-wrapper
-    link="frames/button/outline"
-    height="100" />
-  @for (item of exampleService.outlineButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Button sizes">
-  <flowbite-iframe-wrapper
-    link="frames/button/size"
-    height="120" />
-  @for (item of exampleService.sizeButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Buttons with icon">
-  <flowbite-iframe-wrapper
-    link="frames/button/icon"
-    height="110" />
-  @for (item of exampleService.iconButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Button with label">
-  <flowbite-iframe-wrapper
-    link="frames/button/label"
-    height="110" />
-  @for (item of exampleService.labelButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Icon buttons">
-  <flowbite-iframe-wrapper
-    link="frames/button/icon-only"
-    height="110" />
-  @for (item of exampleService.iconOnlyButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Disabled">
-  <flowbite-iframe-wrapper
-    link="frames/button/disabled"
-    height="100" />
-  @for (item of exampleService.disabledButton; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
+<flowbite-demo-example
+  title="Default button"
+  height="100"
+  [examples]="exampleService.defaultButton" />
+<flowbite-demo-example
+  title="Button pills"
+  height="100"
+  [examples]="exampleService.pillButton" />
+<flowbite-demo-example
+  title="Gradient monochrome"
+  height="100"
+  [examples]="exampleService.gradientMonochromeButton" />
+<flowbite-demo-example
+  title="Gradient duo-tone"
+  height="100"
+  [examples]="exampleService.gradientDuotoneButton" />
+<flowbite-demo-example
+  title="Gradient outline"
+  height="105"
+  [examples]="exampleService.gradientOutlineButton" />
+<flowbite-demo-example
+  title="Outline buttons"
+  height="100"
+  [examples]="exampleService.outlineButton" />
+<flowbite-demo-example
+  title="Button sizes"
+  height="120"
+  [examples]="exampleService.sizeButton" />
+<flowbite-demo-example
+  title="Buttons with icon"
+  height="110"
+  [examples]="exampleService.iconButton" />
+<flowbite-demo-example
+  title="Button with label"
+  height="110"
+  [examples]="exampleService.labelButton" />
+<flowbite-demo-example
+  title="Icon buttons"
+  height="110"
+  [examples]="exampleService.iconOnlyButton" />
+<flowbite-demo-example
+  title="Disabled"
+  height="100"
+  [examples]="exampleService.disabledButton" />

@@ -15,7 +15,7 @@ import {
   numberAttribute,
   signal,
   untracked,
-  ViewChild,
+  viewChild,
 } from '@angular/core';
 
 @Component({
@@ -103,8 +103,7 @@ import {
   `,
 })
 export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
-  @ViewChild(FlowbiteIFrameComponent)
-  protected readonly iframe!: FlowbiteIFrameComponent;
+  protected readonly iframe = viewChild.required(FlowbiteIFrameComponent);
 
   protected readonly injector = inject(Injector);
   protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
@@ -140,7 +139,7 @@ export class FlowbiteIFrameWrapperComponent implements AfterViewInit {
   };
 
   protected setContentThemeMode(mode: FlowbiteTheme): void {
-    this.iframe.setTheme(mode);
+    this.iframe().setTheme(mode);
     this.contentThemeMode.set(mode);
   }
 

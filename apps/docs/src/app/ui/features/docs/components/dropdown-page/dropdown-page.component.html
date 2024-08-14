@@ -1,44 +1,16 @@
-<flowbite-demo-example title="Dropdown">
-  <flowbite-iframe-wrapper
-    link="frames/dropdown/default"
-    height="200" />
-  @for (item of exampleService.defaultDropdown; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Dropdown with divider">
-  <flowbite-iframe-wrapper
-    link="frames/dropdown/divider"
-    height="200" />
-  @for (item of exampleService.dividerDropdown; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Dropdown with header">
-  <flowbite-iframe-wrapper
-    link="frames/dropdown/header"
-    height="215" />
-  @for (item of exampleService.headerDropdown; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Dropdown placement">
-  <flowbite-iframe-wrapper
-    link="frames/dropdown/placed"
-    height="200" />
-  @for (item of exampleService.placedDropdown; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
+<flowbite-demo-example
+  title="Dropdown"
+  height="200"
+  [examples]="exampleService.defaultDropdown" />
+<flowbite-demo-example
+  title="Dropdown with divider"
+  height="200"
+  [examples]="exampleService.dividerDropdown" />
+<flowbite-demo-example
+  title="Dropdown with header"
+  height="215"
+  [examples]="exampleService.headerDropdown" />
+<flowbite-demo-example
+  title="Dropdown placement"
+  height="200"
+  [examples]="exampleService.placedDropdown" />

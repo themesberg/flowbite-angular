@@ -1,69 +1,54 @@
 import type { Example } from './examples';
 
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AlertExampleService {
-  protected readonly httpClient = inject(HttpClient);
-
   public readonly defaultAlert: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/alert/default.component.html', {
-        responseType: 'text',
-      }),
+      name: 'alert/default',
     },
   ];
 
   public readonly iconAlert: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/alert/icon.component.html', {
-        responseType: 'text',
-      }),
+      name: 'alert/icon',
     },
   ];
 
   public readonly borderAlert: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/alert/border.component.html', {
-        responseType: 'text',
-      }),
+      name: 'alert/border',
     },
   ];
 
   public readonly borderAccentAlert: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/alert/border-accent.component.html', {
-        responseType: 'text',
-      }),
+      name: 'alert/border-accent',
     },
   ];
 
   public readonly additionalContentAlert: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/alert/additional-content.component.html', {
-        responseType: 'text',
-      }),
+      name: 'alert/additional-content',
     },
   ];
 
   public readonly dismissableAlert: Example[] = [
     {
       language: 'html',
-      code: this.httpClient.get('assets/examples/alert/dismissable.component.html', {
-        responseType: 'text',
-      }),
+      name: 'alert/dismissable',
     },
     {
       language: 'typescript',
-      code: 'onDismiss = () => alert("Alert have been dismissed");',
+      rawCode: 'onDismiss = () => alert("Alert have been dismissed");',
     },
   ];
 }

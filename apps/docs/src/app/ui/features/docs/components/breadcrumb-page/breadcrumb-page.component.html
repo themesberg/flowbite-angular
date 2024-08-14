@@ -1,11 +1,4 @@
-<flowbite-demo-example title="Default Breadcrumb">
-  <flowbite-iframe-wrapper
-    link="frames/breadcrumb/default"
-    height="90" />
-  @for (item of exampleService.defaultBreadcrumb; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
+<flowbite-demo-example
+  title="Default Breadcrumb"
+  height="90"
+  [examples]="exampleService.defaultBreadcrumb" />

@@ -1,55 +1,20 @@
-<flowbite-demo-example title="Default modal">
-  <flowbite-iframe-wrapper
-    link="frames/modal/default"
-    height="455" />
-  @for (item of exampleService.defaultModal; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Modal sizes">
-  <flowbite-iframe-wrapper
-    link="frames/modal/size"
-    height="510" />
-  @for (item of exampleService.sizeModal; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Dismissable Modal">
-  <flowbite-iframe-wrapper
-    link="frames/modal/dismissable"
-    height="455" />
-  @for (item of exampleService.dismissableModal; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Modal with form">
-  <flowbite-iframe-wrapper
-    link="frames/modal/form"
-    height="455" />
-  @for (item of exampleService.formModal; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Positioned Modal">
-  <flowbite-iframe-wrapper
-    link="frames/modal/positioned"
-    height="700" />
-  @for (item of exampleService.positionedModal; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
+<flowbite-demo-example
+  title="Default modal"
+  height="455"
+  [examples]="exampleService.defaultModal" />
+<flowbite-demo-example
+  title="Modal sizes"
+  height="510"
+  [examples]="exampleService.sizeModal" />
+<flowbite-demo-example
+  title="Dismissable Modal"
+  height="455"
+  [examples]="exampleService.dismissableModal" />
+<flowbite-demo-example
+  title="Modal with form"
+  height="455"
+  [examples]="exampleService.formModal" />
+<flowbite-demo-example
+  title="Positioned Modal"
+  height="700"
+  [examples]="exampleService.positionedModal" />

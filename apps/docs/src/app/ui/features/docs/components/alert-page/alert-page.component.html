@@ -1,72 +1,30 @@
-<flowbite-demo-example title="Default alert">
-  <flowbite-iframe-wrapper
-    link="frames/alert/default"
-    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/default.component.html"
-    height="330" />
-  @for (item of exampleService.defaultAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Alerts with icon">
-  <flowbite-iframe-wrapper
-    link="frames/alert/icon"
-    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/icon.component.html"
-    height="370" />
-  @for (item of exampleService.iconAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Bordered alerts">
-  <flowbite-iframe-wrapper
-    link="frames/alert/border"
-    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/border.component.html"
-    height="340" />
-  @for (item of exampleService.borderAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Dismissable alerts">
-  <flowbite-iframe-wrapper
-    link="frames/alert/dismissable"
-    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/dismissable.component.html"
-    height="360" />
-  @for (item of exampleService.dismissableAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Border accent">
-  <flowbite-iframe-wrapper
-    link="frames/alert/border-accent"
-    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/border-accent.component.html"
-    height="350" />
-  @for (item of exampleService.borderAccentAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
-<flowbite-demo-example title="Additional content">
-  <flowbite-iframe-wrapper
-    link="frames/alert/additional-content"
-    githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/additional-content.component.html"
-    height="860" />
-  @for (item of exampleService.additionalContentAlert; track $index) {
-    <flowbite-shiki
-      ngProjectAs="code-example"
-      [language]="item.language"
-      [codeAsync]="item.code" />
-  }
-</flowbite-demo-example>
+<flowbite-demo-example
+  title="Default alert"
+  githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/default.component.html"
+  height="330"
+  [examples]="exampleService.defaultAlert" />
+<flowbite-demo-example
+  title="Alerts with icon"
+  githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/icon.component.html"
+  height="370"
+  [examples]="exampleService.iconAlert" />
+<flowbite-demo-example
+  title="Bordered alerts"
+  githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/border.component.html"
+  height="340"
+  [examples]="exampleService.borderAlert" />
+<flowbite-demo-example
+  title="Dismissable alerts"
+  githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/dismissable.component.html"
+  height="360"
+  [examples]="exampleService.dismissableAlert" />
+<flowbite-demo-example
+  title="Border accent"
+  githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/border-accent.component.html"
+  height="350"
+  [examples]="exampleService.borderAccentAlert" />
+<flowbite-demo-example
+  title="Additional content"
+  githubLink="https://github.com/themesberg/flowbite-angular/blob/main/apps/docs/src/assets/examples/alert/additional-content.component.html"
+  height="860"
+  [examples]="exampleService.additionalContentAlert" />
