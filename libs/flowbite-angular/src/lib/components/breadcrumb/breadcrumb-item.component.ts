@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { createClass } from '../../utils';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { BreadcrumbItemClass, BreadcrumbItemTheme } from './breadcrumb-item.theme';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';

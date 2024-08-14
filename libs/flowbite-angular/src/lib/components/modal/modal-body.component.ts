@@ -1,6 +1,6 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
 import { ModalBodyThemeService } from './modal-body.theme.service';
 

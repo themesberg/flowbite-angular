@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services/state/accordion.state';
 import { createClass } from '../../utils';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { AccordionContentComponent } from './accordion-content.component';
 import type { AccordionPanelClass, AccordionPanelTheme } from './accordion-panel.theme';
 import { AccordionPanelThemeService } from './accordion-panel.theme.service';

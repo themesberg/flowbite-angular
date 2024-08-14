@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { ModalStateService } from '../../services/state/modal.state';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { ModalClass, ModalPositions, ModalSizes, ModalTheme } from './modal.theme';
 import { ModalThemeService } from './modal.theme.service';
 

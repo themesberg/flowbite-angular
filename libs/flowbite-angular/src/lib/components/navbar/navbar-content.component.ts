@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { NavbarStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { NavbarContentClass, NavbarContentTheme } from './navbar-content.theme';
 import { NavbarContentThemeService } from './navbar-content.theme.service';
 

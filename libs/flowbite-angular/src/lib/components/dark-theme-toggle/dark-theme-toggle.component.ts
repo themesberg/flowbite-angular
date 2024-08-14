@@ -3,7 +3,7 @@ import { GlobalSignalStoreService } from '../../services';
 import type { ThemeState } from '../../services/state/theme.state';
 import { createClass } from '../../utils';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-toggle.theme';
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';

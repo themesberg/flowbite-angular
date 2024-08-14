@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
 import { CHEVRON_UP_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { ScrollTopClass, ScrollTopColors, ScrollTopPositions, ScrollTopTheme } from './scroll-top.theme';
 import { ScrollTopThemeService } from './scroll-top.theme.service';

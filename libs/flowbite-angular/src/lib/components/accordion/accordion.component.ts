@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { AccordionStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { AccordionPanelComponent } from './accordion-panel.component';
 import type { AccordionClass, AccordionColors, AccordionTheme } from './accordion.theme';
 import { AccordionThemeService } from './accordion.theme.service';

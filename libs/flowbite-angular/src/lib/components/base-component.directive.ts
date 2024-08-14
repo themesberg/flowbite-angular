@@ -7,7 +7,7 @@ import { afterNextRender, Directive, effect, HostBinding, inject, Injector, sign
 @Directive({
   standalone: true,
 })
-export abstract class BaseComponentDirective implements OnInit {
+export abstract class BaseComponent implements OnInit {
   @HostBinding('class')
   get hostClass() {
     return this.contentClasses().rootClass;

@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common';
 import { FormFieldStateService } from '../../services/state/form-field.state';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import * as properties from './form-field.theme';
 import { FormFieldThemeService } from './form-field.theme.service';
 

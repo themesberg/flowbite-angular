@@ -1,6 +1,6 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { BreadcrumbClass, BreadcrumbTheme } from './breadcrumb.theme';
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 

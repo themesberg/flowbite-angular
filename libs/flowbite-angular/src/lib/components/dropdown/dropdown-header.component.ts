@@ -1,5 +1,5 @@
 import { createClass } from '../../utils';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { DropdownHeaderClass, DropdownHeaderTheme } from './dropdown-header.theme';
 import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 import { DropdownComponent } from './dropdown.component';

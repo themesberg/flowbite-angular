@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
 import { createClass } from '../../utils';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';

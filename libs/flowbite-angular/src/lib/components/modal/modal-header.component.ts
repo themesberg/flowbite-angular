@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { ModalHeaderClass, ModalHeaderTheme } from './modal-header.theme';
 import { ModalHeaderThemeService } from './modal-header.theme.service';

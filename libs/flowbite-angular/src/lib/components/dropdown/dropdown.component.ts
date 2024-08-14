@@ -3,7 +3,7 @@ import { DropdownStateService } from '../../services/state/dropdown.state';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { DropdownClass, DropdownPositions, DropdownTheme } from './dropdown.theme';
 import { DropdownThemeService } from './dropdown.theme.service';

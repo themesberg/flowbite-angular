@@ -3,7 +3,7 @@
  */
 
 import type { FlowbiteClass } from '../../common';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { IconRegistry } from './icon-registry';
 
 import type { OnInit } from '@angular/core';

@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type {
   ButtonClass,
   ButtonColors,

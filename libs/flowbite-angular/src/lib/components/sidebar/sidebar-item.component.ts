@@ -4,7 +4,7 @@ import { SidebarStateService } from '../../services/state/sidebar.state';
 import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BadgeComponent } from '../badge';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
 

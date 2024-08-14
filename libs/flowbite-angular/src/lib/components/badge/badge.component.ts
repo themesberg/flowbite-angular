@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common/flowbite.type';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { routerLinkInputs } from '../../utils/directive.input.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.theme';
 import { BadgeThemeService } from './badge.theme.service';
 

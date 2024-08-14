@@ -1,7 +1,7 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { NavbarBrandClass, NavbarBrandTheme } from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 

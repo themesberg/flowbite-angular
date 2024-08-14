@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common/flowbite.type';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import { ButtonComponent } from '../button/button.component';
 import { IconComponent, IconRegistry } from '../icon';
 import type { AlertClass, AlertColors, AlertTheme } from './alert.theme';

@@ -1,6 +1,6 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { DropdownItemClass, DropdownItemTheme } from './dropdown-item.theme';
 import { DropdownItemThemeService } from './dropdown-item.theme.service';
 import { DropdownComponent } from './dropdown.component';

@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
 import type { SidebarMenuClass, SidebarMenuTheme } from './sidebar-menu.theme';
 import { SidebarMenuThemeService } from './sidebar-menu.theme.service';
 
