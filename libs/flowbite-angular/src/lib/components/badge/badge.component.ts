@@ -26,8 +26,8 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class BadgeComponent extends BaseComponent {
-  protected readonly routerLink = inject(RouterLink);
-  protected readonly themeService = inject(BadgeThemeService);
+  public readonly routerLink = inject(RouterLink);
+  public readonly themeService = inject(BadgeThemeService);
 
   public override contentClasses = signal<BadgeClass>(createClass({ rootClass: '' }));
 

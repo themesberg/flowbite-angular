@@ -19,8 +19,8 @@ import { Component, inject, input, signal } from '@angular/core';
   `,
 })
 export class DropdownHeaderComponent extends BaseComponent {
-  protected readonly themeService = inject(DropdownHeaderThemeService);
-  protected readonly dropdownComponent = inject(DropdownComponent);
+  public readonly themeService = inject(DropdownHeaderThemeService);
+  public readonly dropdownComponent = inject(DropdownComponent);
 
   public override contentClasses = signal<DropdownHeaderClass>(createClass({ root: '', rootClass: '' }));
 

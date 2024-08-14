@@ -21,8 +21,8 @@ import { Component, inject, input, signal } from '@angular/core';
   `,
 })
 export class NavbarContentComponent extends BaseComponent implements OnInit {
-  protected readonly themeStateService = inject(NavbarContentThemeService);
-  protected readonly navbarService = inject(NavbarStateService);
+  public readonly themeStateService = inject(NavbarContentThemeService);
+  public readonly navbarService = inject(NavbarStateService);
 
   public override contentClasses = signal<NavbarContentClass>(
     createClass({ navbarContentListClass: '', rootClass: '' }),

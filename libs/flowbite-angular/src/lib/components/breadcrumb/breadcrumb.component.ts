@@ -17,9 +17,9 @@ import { Component, HostBinding, inject, input, signal } from '@angular/core';
   template: `<ng-content />`,
 })
 export class BreadcrumbComponent extends BaseComponent {
-  @HostBinding('attr.aria-label') ariaLabel = 'breadcrumb';
+  @HostBinding('attr.aria-label') hostAriaLabelValue = 'breadcrumb';
 
-  protected readonly themeService = inject(BreadcrumbThemeService);
+  public readonly themeService = inject(BreadcrumbThemeService);
 
   public override contentClasses = signal<BreadcrumbClass>(createClass({ rootClass: '' }));
 

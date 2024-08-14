@@ -33,8 +33,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class SidebarComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(SidebarThemeService);
-  protected readonly sidebarStateService = inject(SidebarStateService);
+  public readonly themeService = inject(SidebarThemeService);
+  public readonly stateService = inject(SidebarStateService);
 
   public override contentClasses = signal<SidebarClass>(createClass({ rootClass: '' }));
 
@@ -48,7 +48,7 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      displayMode: this.sidebarStateService.select('displayMode')(),
+      displayMode: this.stateService.select('displayMode')(),
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
@@ -58,7 +58,7 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.sidebarStateService.setState({
+    this.stateService.setState({
       displayMode: this.displayMode(),
       isOpen: this.isOpen(),
     }),

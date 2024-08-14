@@ -14,7 +14,7 @@ import { Component, inject, input, signal } from '@angular/core';
   template: `<ng-content />`,
 })
 export class ModalBodyComponent extends BaseComponent {
-  protected readonly themeService = inject(ModalBodyThemeService);
+  public readonly themeService = inject(ModalBodyThemeService);
 
   public override contentClasses = signal<ModalBodyClass>(createClass({ rootClass: '' }));
 

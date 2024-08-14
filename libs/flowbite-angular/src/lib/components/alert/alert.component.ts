@@ -39,11 +39,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   `,
 })
 export class AlertComponent extends BaseComponent implements OnInit {
-  @HostBinding('attr.role') role = 'alert';
+  @HostBinding('attr.role') hostRoleValue = 'alert';
 
-  protected readonly themeService = inject(AlertThemeService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly themeService = inject(AlertThemeService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<AlertClass>(createClass({ rootClass: '', closeButtonClass: '' }));
 

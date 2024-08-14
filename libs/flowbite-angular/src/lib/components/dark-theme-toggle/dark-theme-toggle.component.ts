@@ -27,12 +27,12 @@ import { DomSanitizer } from '@angular/platform-browser';
   `,
 })
 export class DarkThemeToggleComponent extends BaseComponent implements OnInit, AfterViewInit {
-  protected readonly themeService = inject(DarkThemeToggleThemeService);
-  protected readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
+  public readonly themeService = inject(DarkThemeToggleThemeService);
+  public readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
   );
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<DarkThemeToggleClass>(createClass({ rootClass: '' }));
 

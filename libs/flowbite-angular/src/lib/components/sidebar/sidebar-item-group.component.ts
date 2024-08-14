@@ -42,10 +42,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   ],
 })
 export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
-  protected readonly sidebarItemGroupStateService: SidebarItemGroupStateService = inject(SidebarItemGroupStateService);
-  protected readonly themeService = inject(SidebarItemGroupThemeService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly sidebarItemGroupStateService: SidebarItemGroupStateService = inject(SidebarItemGroupStateService);
+  public readonly themeService = inject(SidebarItemGroupThemeService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<SidebarItemGroupClass>(createClass({ rootClass: '' }));
 

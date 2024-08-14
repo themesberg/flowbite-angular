@@ -31,8 +31,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class NavbarComponent extends BaseComponent {
-  protected readonly themeService = inject(NavbarThemeService);
-  protected readonly navbarStateService = inject(NavbarStateService);
+  public readonly themeService = inject(NavbarThemeService);
+  public readonly stateService = inject(NavbarStateService);
 
   public override contentClasses = signal<NavbarClass>(createClass({ rootClass: '' }));
 

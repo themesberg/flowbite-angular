@@ -15,8 +15,8 @@ import { Component, inject, input, signal } from '@angular/core';
   template: `<ng-content />`,
 })
 export class SidebarPageContentComponent extends BaseComponent {
-  protected readonly themeService = inject(SidebarPageContentThemeService);
-  protected readonly sidebarStateService = inject(SidebarStateService);
+  public readonly themeService = inject(SidebarPageContentThemeService);
+  public readonly sidebarStateService = inject(SidebarStateService);
 
   public override contentClasses = signal<SidebarPageContentClass>(createClass({ rootClass: '' }));
 

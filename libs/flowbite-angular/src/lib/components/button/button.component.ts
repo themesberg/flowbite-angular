@@ -42,7 +42,7 @@ import { booleanAttribute, Component, HostBinding, inject, input, signal } from 
 export class ButtonComponent extends BaseComponent {
   @HostBinding('type') hostTypeValue = 'button';
 
-  protected readonly themeService = inject(ButtonThemeService);
+  public readonly themeService = inject(ButtonThemeService);
 
   public override contentClasses = signal<ButtonClass>(createClass({ rootClass: '', spanClass: '' }));
 

@@ -36,9 +36,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   ],
 })
 export class SidebarItemComponent extends BaseComponent {
-  protected readonly routerLink = inject(RouterLink);
-  protected readonly themeService = inject(SidebarItemThemeService);
-  protected readonly sidebarStateService = inject(SidebarStateService);
+  public readonly routerLink = inject(RouterLink);
+  public readonly themeService = inject(SidebarItemThemeService);
+  public readonly sidebarStateService = inject(SidebarStateService);
 
   public override contentClasses = signal<SidebarItemClass>(createClass({ rootClass: '', sidebarIconClass: '' }));
 

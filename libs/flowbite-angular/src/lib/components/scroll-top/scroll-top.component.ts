@@ -19,9 +19,9 @@ import { DomSanitizer } from '@angular/platform-browser';
     class="w-5 h-5" />`,
 })
 export class ScrollTopComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(ScrollTopThemeService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly themeService = inject(ScrollTopThemeService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<ScrollTopClass>(createClass({ rootClass: '' }));
 

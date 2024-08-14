@@ -15,8 +15,8 @@ import { Component, inject, input, signal } from '@angular/core';
   template: `<ng-content />`,
 })
 export class DropdownItemComponent extends BaseComponent {
-  protected readonly themeService = inject(DropdownItemThemeService);
-  protected readonly dropdownComponent = inject(DropdownComponent);
+  public readonly themeService = inject(DropdownItemThemeService);
+  public readonly dropdownComponent = inject(DropdownComponent);
 
   public override contentClasses = signal<DropdownItemClass>(createClass({ rootClass: '' }));
 

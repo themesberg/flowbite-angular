@@ -48,7 +48,7 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
     <div
       [ngClass]="contentClasses().containerClass"
       #dropdown
-      [style.display]="dropdownStateService.select('isOpen')() ? 'block' : 'none'">
+      [style.display]="stateService.select('isOpen')() ? 'block' : 'none'">
       <div [ngClass]="contentClasses().contentClass">
         <ul [ngClass]="contentClasses().subContentClass">
           <ng-content />
@@ -73,10 +73,10 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
-  protected readonly themeService = inject(DropdownThemeService);
-  protected readonly dropdownStateService = inject(DropdownStateService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly themeService = inject(DropdownThemeService);
+  public readonly stateService = inject(DropdownStateService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<DropdownClass>(
     createClass({
@@ -102,7 +102,7 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       label: this.label(),
-      isOpen: booleanToFlowbiteBoolean(this.dropdownStateService.select('isOpen')()),
+      isOpen: booleanToFlowbiteBoolean(this.stateService.select('isOpen')()),
       placement: this.position(),
       customStyle: this.customStyle(),
     });
@@ -116,7 +116,7 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   width = 0;
 
   toggle() {
-    this.dropdownStateService.set('isOpen', !this.dropdownStateService.select('isOpen')());
+    this.stateService.set('isOpen', !this.stateService.select('isOpen')());
   }
 
   calculatePosition() {
@@ -143,13 +143,13 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   ngAfterViewInit() {
     afterNextRender(
       () => {
-        this.dropdownStateService.set('isOpen', this.isOpen());
+        this.stateService.set('isOpen', this.isOpen());
       },
       { injector: this.injector },
     );
 
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (!this.dropdownStateService.select('isOpen')()) return;
+      if (!this.stateService.select('isOpen')()) return;
       this.calculatePosition();
     });
   }
@@ -159,10 +159,10 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&
-      this.dropdownStateService.select('isOpen')() &&
+      this.stateService.select('isOpen')() &&
       !this.button.nativeElement.contains(event.target)
     ) {
-      this.dropdownStateService.set('isOpen', false);
+      this.stateService.set('isOpen', false);
     }
   }
 

@@ -23,10 +23,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   `,
 })
 export class NavbarToggleComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(NavbarToggleThemeService);
-  protected readonly navbarStateService = inject(NavbarStateService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly themeService = inject(NavbarToggleThemeService);
+  public readonly navbarStateService = inject(NavbarStateService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<NavbarToggleClass>(createClass({ rootClass: '' }));
 

@@ -47,10 +47,10 @@ import {
   ],
 })
 export class ModalComponent extends BaseComponent implements AfterViewInit {
-  @HostBinding('tabindex') tabIndex = '-1';
+  @HostBinding('tabindex') hostTabIndexValue = '-1';
 
-  protected readonly themeService = inject(ModalThemeService);
-  protected readonly modalStateService = inject(ModalStateService);
+  public readonly themeService = inject(ModalThemeService);
+  public readonly stateService = inject(ModalStateService);
 
   public override contentClasses = signal<ModalClass>(
     createClass({ modalContainerClass: '', modalContentClass: '', rootClass: '' }),
@@ -67,7 +67,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.modalStateService.select('isOpen')()),
+      isOpen: booleanToFlowbiteBoolean(this.stateService.select('isOpen')()),
       size: this.size(),
       position: this.position(),
       customStyle: this.customStyle(),
@@ -80,30 +80,30 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
     afterNextRender(
       () => {
-        this.modalStateService.set('isOpen', this.isOpen());
+        this.stateService.set('isOpen', this.isOpen());
       },
       { injector: this.injector },
     );
   }
 
   open() {
-    this.modalStateService.set('isOpen', true);
+    this.stateService.set('isOpen', true);
     this.changeBackdrop();
   }
 
   close() {
-    this.modalStateService.set('isOpen', false);
+    this.stateService.set('isOpen', false);
     this.changeBackdrop();
   }
 
   toggle() {
-    this.modalStateService.set('isOpen', this.modalStateService.select('isOpen')());
+    this.stateService.set('isOpen', this.stateService.select('isOpen')());
     this.changeBackdrop();
   }
 
   // If isOpen changes, add or remove backdrop
   changeBackdrop() {
-    if (this.modalStateService.select('isOpen')()) {
+    if (this.stateService.select('isOpen')()) {
       const blurDiv = document.createElement('div');
       blurDiv.classList.add('bg-gray-900', 'bg-opacity-50', 'dark:bg-opacity-80', 'fixed', 'inset-0', 'z-40');
       blurDiv.id = 'blurDiv';

@@ -33,10 +33,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   `,
 })
 export class ModalHeaderComponent extends BaseComponent implements OnInit {
-  protected readonly modalStateService = inject(ModalHeaderThemeService);
-  protected readonly modalComponent = inject(ModalComponent);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly stateService = inject(ModalHeaderThemeService);
+  public readonly modalComponent = inject(ModalComponent);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<ModalHeaderClass>(
     createClass({ modalHeaderButtonClass: '', modalHeaderTitleClass: '', rootClass: '' }),
@@ -48,7 +48,7 @@ export class ModalHeaderComponent extends BaseComponent implements OnInit {
 
   //#region BaseComponent implementation
   public override fetchClass(): void {
-    const propertyClass = this.modalStateService.getClasses({
+    const propertyClass = this.stateService.getClasses({
       customStyle: this.customStyle(),
     });
 

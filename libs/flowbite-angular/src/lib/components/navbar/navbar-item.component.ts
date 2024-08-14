@@ -23,8 +23,8 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class NavbarItemComponent extends BaseComponent {
-  protected readonly themeService = inject(NavbarItemThemeService);
-  protected readonly navbarStateService = inject(NavbarStateService);
+  public readonly themeService = inject(NavbarItemThemeService);
+  public readonly navbarStateService = inject(NavbarStateService);
 
   public override contentClasses = signal<NavbarItemClass>(createClass({ rootClass: '' }));
 

@@ -14,8 +14,8 @@ import { Component, inject, input, signal } from '@angular/core';
   template: ``,
 })
 export class DropdownDividerComponent extends BaseComponent {
-  protected readonly themeService = inject(DropdownDividerThemeService);
-  protected readonly dropdownComponent = inject(DropdownComponent);
+  public readonly themeService = inject(DropdownDividerThemeService);
+  public readonly dropdownComponent = inject(DropdownComponent);
 
   public override contentClasses = signal<DropdownDividerClass>(createClass({ rootClass: '' }));
 

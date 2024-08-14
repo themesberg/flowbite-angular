@@ -24,7 +24,7 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   template: `<ng-content />`,
 })
 export class IndicatorComponent extends BaseComponent {
-  protected readonly themeService = inject(IndicatorThemeService);
+  public readonly themeService = inject(IndicatorThemeService);
 
   public override contentClasses = signal<indicatorClass>(createClass({ rootClass: '' }));
 

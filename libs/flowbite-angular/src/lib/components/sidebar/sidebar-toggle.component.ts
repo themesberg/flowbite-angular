@@ -23,10 +23,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   template: `<flowbite-icon svgIcon="flowbite-angular:bars" />`,
 })
 export class SidebarToggleComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(SidebarToggleThemeService);
-  protected readonly sidebarStateService = inject(SidebarStateService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly themeService = inject(SidebarToggleThemeService);
+  public readonly sidebarStateService = inject(SidebarStateService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<SidebarToggleClass>(createClass({ rootClass: '' }));
 

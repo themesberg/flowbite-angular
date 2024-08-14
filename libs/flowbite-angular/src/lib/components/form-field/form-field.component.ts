@@ -28,8 +28,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   ],
 })
 export class FormFieldComponent extends BaseComponent implements OnInit {
-  protected readonly themeService = inject(FormFieldThemeService);
-  protected readonly formsFieldStateService = inject(FormFieldStateService);
+  public readonly themeService = inject(FormFieldThemeService);
+  public readonly stateService = inject(FormFieldStateService);
 
   public override contentClasses = signal<properties.FormFieldClass>(properties.FormFieldClassInstance);
 
@@ -62,7 +62,7 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
   //#endregion
 
   public override ngOnInit(): void {
-    this.formsFieldStateService.setState({
+    this.stateService.setState({
       type: this.type(),
       floatingLabelType: this.floatingLabelType(),
       size: this.size(),

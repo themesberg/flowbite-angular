@@ -30,10 +30,10 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
-  protected readonly routerLink = inject(RouterLink);
-  protected readonly themeService = inject(BreadcrumbItemThemeService);
-  protected readonly iconRegistry = inject(IconRegistry);
-  protected readonly domSanitizer = inject(DomSanitizer);
+  public readonly routerLink = inject(RouterLink);
+  public readonly themeService = inject(BreadcrumbItemThemeService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
 
   public override contentClasses = signal<BreadcrumbItemClass>(createClass({ rootClass: '', breadcrumbIconClass: '' }));
 

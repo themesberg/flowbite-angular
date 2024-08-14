@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class NavbarBrandComponent extends BaseComponent {
-  protected readonly themeService = inject(NavbarBrandThemeService);
+  public readonly themeService = inject(NavbarBrandThemeService);
 
   public override contentClasses = signal<NavbarBrandClass>(createClass({ rootClass: '' }));
 
