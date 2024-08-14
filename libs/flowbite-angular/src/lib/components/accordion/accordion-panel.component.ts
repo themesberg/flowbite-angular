@@ -33,8 +33,8 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   public readonly themeService = inject(AccordionPanelThemeService);
   public readonly stateService = inject(AccordionPanelStateService);
   public readonly accordionComponent = inject(AccordionComponent);
-  public readonly accordionTitleChild = contentChild.required(AccordionTitleComponent);
-  public readonly accordionContentChild = contentChild.required(AccordionContentComponent);
+  public readonly accordionTitleChild = contentChild(AccordionTitleComponent);
+  public readonly accordionContentChild = contentChild(AccordionContentComponent);
 
   public override contentClasses = signal<AccordionPanelClass>(createClass({ rootClass: '' }));
 
@@ -53,13 +53,22 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit(): void {
-    this.stateService.set('isOpen', this.isOpen());
-
-    super.ngOnInit();
+  public override verify(): void {
+    if (this.accordionTitleChild() === undefined) {
+      throw new Error('No AccordionTitleComponent available');
+    }
+    if (this.accordionContentChild() == undefined) {
+      throw new Error('No AccordionContentComponent available');
+    }
   }
+
+  public override init(): void {
+    this.stateService.setState({
+      isOpen: this.isOpen(),
+    });
+  }
+  //#endregion
 
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {

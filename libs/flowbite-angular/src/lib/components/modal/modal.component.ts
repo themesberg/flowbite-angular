@@ -7,7 +7,6 @@ import type { ModalClass, ModalPositions, ModalSizes, ModalTheme } from './modal
 import { ModalThemeService } from './modal.theme.service';
 
 import { NgClass } from '@angular/common';
-import type { AfterViewInit } from '@angular/core';
 import {
   afterNextRender,
   booleanAttribute,
@@ -46,7 +45,7 @@ import {
     },
   ],
 })
-export class ModalComponent extends BaseComponent implements AfterViewInit {
+export class ModalComponent extends BaseComponent {
   @HostBinding('tabindex') hostTabIndexValue = '-1';
 
   public readonly themeService = inject(ModalThemeService);
@@ -75,9 +74,8 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public ngAfterViewInit(): void {
+  public override init(): void {
     afterNextRender(
       () => {
         this.stateService.set('isOpen', this.isOpen());
@@ -85,6 +83,7 @@ export class ModalComponent extends BaseComponent implements AfterViewInit {
       { injector: this.injector },
     );
   }
+  //#endregion
 
   open() {
     this.stateService.set('isOpen', true);

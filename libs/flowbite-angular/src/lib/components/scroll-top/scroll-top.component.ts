@@ -41,17 +41,15 @@ export class ScrollTopComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
+  public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-up',
       this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_UP_SVG_ICON),
     );
   }
+  //#endregion
 
   @HostListener('click')
   public onClick(): void {

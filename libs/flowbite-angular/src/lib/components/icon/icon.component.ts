@@ -23,9 +23,7 @@ export class IconComponent extends BaseComponent implements OnInit {
 
   public svgIcon = input.required<string>();
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
+  public override init(): void {
     effect(
       () => {
         this._updateSvgIcon();

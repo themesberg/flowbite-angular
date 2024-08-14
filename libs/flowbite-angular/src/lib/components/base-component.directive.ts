@@ -25,6 +25,9 @@ export abstract class BaseComponent implements OnInit {
   public abstract contentClasses: Signal<FlowbiteClass>;
 
   public ngOnInit(): void {
+    this.verify();
+    this.init();
+
     afterNextRender(
       () => {
         this.flowbiteId.set(generateId());
@@ -39,6 +42,12 @@ export abstract class BaseComponent implements OnInit {
       { injector: this.injector, allowSignalWrites: true },
     );
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  public init(): void {}
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  public verify(): void {}
 
   /**
    * Function to load component's classes

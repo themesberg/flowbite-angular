@@ -8,7 +8,6 @@ import type { AccordionClass, AccordionColors, AccordionTheme } from './accordio
 import { AccordionThemeService } from './accordion.theme.service';
 
 import { NgClass } from '@angular/common';
-import type { OnInit } from '@angular/core';
 import { booleanAttribute, Component, contentChildren, inject, input, signal } from '@angular/core';
 
 /**
@@ -32,7 +31,7 @@ import { booleanAttribute, Component, contentChildren, inject, input, signal } f
     },
   ],
 })
-export class AccordionComponent extends BaseComponent implements OnInit {
+export class AccordionComponent extends BaseComponent {
   public readonly themeService = inject(AccordionThemeService);
   public readonly stateService = inject(AccordionStateService);
   public readonly accordionPanelChildren = contentChildren(AccordionPanelComponent);
@@ -58,17 +57,21 @@ export class AccordionComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit(): void {
+  public override verify(): void {
+    if (this.accordionPanelChildren().length === 0) {
+      throw new Error('No AccordionPanelComponent available');
+    }
+  }
+
+  public override init(): void {
     this.stateService.setState({
       isAlwaysOpen: this.isAlwaysOpen(),
       isFlush: this.isFlush(),
       color: this.color(),
     });
-
-    super.ngOnInit();
   }
+  //#endregion
 
   public closeAll(): void {
     this.accordionPanelChildren().forEach((child) => child.toggleVisibility(false));

@@ -55,13 +55,12 @@ export class SidebarComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit(): void {
+  public override init(): void {
     this.stateService.setState({
       displayMode: this.displayMode(),
       isOpen: this.isOpen(),
-    }),
-      super.ngOnInit();
+    });
   }
+  //#endregion
 }

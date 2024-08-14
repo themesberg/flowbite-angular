@@ -59,9 +59,8 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit(): void {
+  public override init(): void {
     this.stateService.setState({
       type: this.type(),
       floatingLabelType: this.floatingLabelType(),
@@ -69,7 +68,6 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
       isDisabled: this.isDisabled(),
       validate: this.validate(),
     });
-
-    super.ngOnInit();
   }
+  //#endregion
 }

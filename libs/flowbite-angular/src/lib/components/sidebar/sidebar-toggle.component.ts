@@ -46,17 +46,15 @@ export class SidebarToggleComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
+  public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'tabs',
       this.domSanitizer.bypassSecurityTrustHtml(BARS_SVG_ICON),
     );
   }
+  //#endregion
 
   @HostListener('click')
   public onClick(): void {

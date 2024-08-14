@@ -8,7 +8,6 @@ import type { NavbarToggleClass, NavbarToggleTheme } from './navbar-toggle.theme
 import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
 
 import { CommonModule } from '@angular/common';
-import type { OnInit } from '@angular/core';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -22,7 +21,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       class="w-5 h-5" />
   `,
 })
-export class NavbarToggleComponent extends BaseComponent implements OnInit {
+export class NavbarToggleComponent extends BaseComponent {
   public readonly themeService = inject(NavbarToggleThemeService);
   public readonly navbarStateService = inject(NavbarStateService);
   public readonly iconRegistry = inject(IconRegistry);
@@ -42,17 +41,15 @@ export class NavbarToggleComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
+  public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'bars',
       this.domSanitizer.bypassSecurityTrustHtml(BARS_SVG_ICON),
     );
   }
+  //#endregion
 
   @HostListener('click')
   public onClick(): void {

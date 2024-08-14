@@ -52,17 +52,15 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
+  public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-down',
       this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
     );
   }
+  //#endregion
 
   @HostListener('click')
   protected onClick(): void {

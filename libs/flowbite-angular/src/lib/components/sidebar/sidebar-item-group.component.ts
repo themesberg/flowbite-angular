@@ -63,23 +63,23 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
 
     this.contentClasses.set(propertyClass);
   }
+
+  public override init(): void {
+    this.sidebarItemGroupStateService.setState({
+      isOpen: this.isOpen(),
+    });
+
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'chevron-down',
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
+    );
+  }
   //#endregion
 
   public onClick(): void {
     const isOpen = this.sidebarItemGroupStateService.select('isOpen')();
 
     this.sidebarItemGroupStateService.set('isOpen', !isOpen);
-  }
-
-  public override ngOnInit(): void {
-    this.iconRegistry.addRawSvgIconInNamepsace(
-      'flowbite-angular',
-      'chevron-down',
-      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
-    );
-
-    this.sidebarItemGroupStateService.set('isOpen', this.isOpen());
-
-    super.ngOnInit();
   }
 }

@@ -9,7 +9,6 @@ import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-to
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import type { AfterViewInit, OnInit } from '@angular/core';
 import { afterNextRender, Component, effect, HostListener, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -26,7 +25,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       class="h-5 w-5 block dark:hidden" />
   `,
 })
-export class DarkThemeToggleComponent extends BaseComponent implements OnInit, AfterViewInit {
+export class DarkThemeToggleComponent extends BaseComponent {
   public readonly themeService = inject(DarkThemeToggleThemeService);
   public readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
@@ -48,11 +47,8 @@ export class DarkThemeToggleComponent extends BaseComponent implements OnInit, A
 
     this.contentClasses.set(propertyClass);
   }
-  //#endregion
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
+  public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'sun',
@@ -63,9 +59,7 @@ export class DarkThemeToggleComponent extends BaseComponent implements OnInit, A
       'moon',
       this.domSanitizer.bypassSecurityTrustHtml(MOON_SVG_ICON),
     );
-  }
 
-  public ngAfterViewInit(): void {
     afterNextRender(
       () => {
         const localStorageTheme = localStorage.getItem('color-theme');
@@ -96,6 +90,7 @@ export class DarkThemeToggleComponent extends BaseComponent implements OnInit, A
       { injector: this.injector },
     );
   }
+  //#endregion
 
   @HostListener('click')
   public onClick() {
