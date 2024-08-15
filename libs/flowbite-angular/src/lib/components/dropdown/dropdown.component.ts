@@ -5,15 +5,19 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
+import { DropdownDividerComponent } from './dropdown-divider.component';
+import { DropdownHeaderComponent } from './dropdown-header.component';
+import { DropdownItemComponent } from './dropdown-item.component';
 import type { DropdownClass, DropdownPositions, DropdownTheme } from './dropdown.theme';
 import { DropdownThemeService } from './dropdown.theme.service';
 
 import { NgClass } from '@angular/common';
-import type { AfterViewInit, OnInit } from '@angular/core';
+import type { AfterViewInit } from '@angular/core';
 import {
   afterNextRender,
   booleanAttribute,
   Component,
+  contentChildren,
   ElementRef,
   HostListener,
   inject,
@@ -69,7 +73,7 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
     },
   ],
 })
-export class DropdownComponent extends BaseComponent implements OnInit, AfterViewInit {
+export class DropdownComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
@@ -77,6 +81,9 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
   public readonly stateService = inject(DropdownStateService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
+  public readonly dropdownItemChildren = contentChildren(DropdownItemComponent);
+  public readonly dropdownHeaderChildren = contentChildren(DropdownHeaderComponent);
+  public readonly dropdownDividerChildren = contentChildren(DropdownDividerComponent);
 
   public override contentClasses = signal<DropdownClass>(
     createClass({
@@ -109,6 +116,27 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
 
     this.contentClasses.set(propertyClass);
   }
+
+  public override init(): void {
+    afterNextRender(
+      () => {
+        this.stateService.set('isOpen', this.isOpen());
+      },
+      { injector: this.injector },
+    );
+
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'chevron-down',
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
+    );
+  }
+
+  public override verify(): void {
+    if (this.dropdownItemChildren().length === 0) {
+      throw new Error('No DropdownItemComponent available');
+    }
+  }
   //#endregion
 
   x = 0;
@@ -130,24 +158,7 @@ export class DropdownComponent extends BaseComponent implements OnInit, AfterVie
     });
   }
 
-  public override ngOnInit() {
-    super.ngOnInit();
-
-    this.iconRegistry.addRawSvgIconInNamepsace(
-      'flowbite-angular',
-      'chevron-down',
-      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
-    );
-  }
-
   ngAfterViewInit() {
-    afterNextRender(
-      () => {
-        this.stateService.set('isOpen', this.isOpen());
-      },
-      { injector: this.injector },
-    );
-
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
       if (!this.stateService.select('isOpen')()) return;
       this.calculatePosition();

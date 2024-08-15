@@ -3,12 +3,14 @@ import { SidebarStateService } from '../../services/state/sidebar.state';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
+import { SidebarMenuComponent } from './sidebar-menu.component';
+import { SidebarPageContentComponent } from './sidebar-page-content.component';
 import type { SidebarClass, SidebarDisplayMode, SidebarTheme } from './sidebar.theme';
 import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -35,6 +37,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
 export class SidebarComponent extends BaseComponent implements OnInit {
   public readonly themeService = inject(SidebarThemeService);
   public readonly stateService = inject(SidebarStateService);
+  public readonly sidebarMenuChild = contentChild(SidebarMenuComponent);
+  public readonly sidebarPageContentChild = contentChild(SidebarPageContentComponent);
 
   public override contentClasses = signal<SidebarClass>(createClass({ rootClass: '' }));
 
@@ -62,5 +66,23 @@ export class SidebarComponent extends BaseComponent implements OnInit {
       isOpen: this.isOpen(),
     });
   }
+
+  public override verify(): void {
+    if (this.sidebarMenuChild() === undefined) {
+      throw new Error('No SidebarMenuComponent available');
+    }
+
+    if (this.sidebarPageContentChild() === undefined) {
+      throw new Error('No SidebarPageContentComponent available');
+    }
+  }
   //#endregion
+
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.stateService.select('isOpen')());
+    }
+
+    this.stateService.set('isOpen', isOpen);
+  }
 }

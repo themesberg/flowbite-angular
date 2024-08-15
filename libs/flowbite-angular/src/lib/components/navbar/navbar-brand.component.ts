@@ -4,6 +4,7 @@ import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base-component.directive';
 import type { NavbarBrandClass, NavbarBrandTheme } from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
+import { NavbarComponent } from './navbar.component';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
@@ -23,6 +24,7 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarBrandComponent extends BaseComponent {
   public readonly themeService = inject(NavbarBrandThemeService);
+  public readonly navbarComponent = inject(NavbarComponent);
 
   public override contentClasses = signal<NavbarBrandClass>(createClass({ rootClass: '' }));
 

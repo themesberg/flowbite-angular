@@ -1,12 +1,14 @@
 import type { DeepPartial } from '../../common';
-import { SidebarStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
+import { SidebarItemGroupComponent } from './sidebar-item-group.component';
+import { SidebarItemComponent } from './sidebar-item.component';
 import type { SidebarMenuClass, SidebarMenuTheme } from './sidebar-menu.theme';
 import { SidebarMenuThemeService } from './sidebar-menu.theme.service';
+import { SidebarComponent } from './sidebar.component';
 
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, contentChildren, inject, input, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -16,7 +18,9 @@ import { Component, inject, input, signal } from '@angular/core';
 })
 export class SidebarMenuComponent extends BaseComponent {
   public readonly themeService = inject(SidebarMenuThemeService);
-  public readonly sidebarStateService = inject(SidebarStateService);
+  public readonly sidebarComponent = inject(SidebarComponent);
+  public readonly sidebarItemGroupChildren = contentChildren(SidebarItemGroupComponent);
+  public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
 
   public override contentClasses = signal<SidebarMenuClass>(createClass({ rootClass: '' }));
 
@@ -26,11 +30,17 @@ export class SidebarMenuComponent extends BaseComponent {
 
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.sidebarStateService.select('isOpen')()),
-      displayMode: this.sidebarStateService.select('displayMode')(),
+      isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.stateService.select('isOpen')()),
+      displayMode: this.sidebarComponent.stateService.select('displayMode')(),
       customStyle: this.customStyle(),
     });
 
     this.contentClasses.set(propertyClass);
+  }
+
+  public override verify(): void {
+    if (this.sidebarItemChildren().length === 0 && this.sidebarItemGroupChildren().length === 0) {
+      throw new Error('No SidebarItemComponent/SidebarItemGroupComponent available');
+    }
   }
 }

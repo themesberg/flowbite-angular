@@ -32,7 +32,7 @@ import { RouterLink } from '@angular/router';
 })
 export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   public readonly themeService = inject(BreadcrumbItemThemeService);
-  public readonly breadcrumb = inject(BreadcrumbComponent);
+  public readonly breadcrumbComponent = inject(BreadcrumbComponent);
   public readonly routerLink = inject(RouterLink);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);

@@ -3,6 +3,9 @@ import { ModalStateService } from '../../services/state/modal.state';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
+import { ModalBodyComponent } from './modal-body.component';
+import { ModalFooterComponent } from './modal-footer.component';
+import { ModalHeaderComponent } from './modal-header.component';
 import type { ModalClass, ModalPositions, ModalSizes, ModalTheme } from './modal.theme';
 import { ModalThemeService } from './modal.theme.service';
 
@@ -11,6 +14,7 @@ import {
   afterNextRender,
   booleanAttribute,
   Component,
+  contentChild,
   HostBinding,
   HostListener,
   inject,
@@ -50,6 +54,9 @@ export class ModalComponent extends BaseComponent {
 
   public readonly themeService = inject(ModalThemeService);
   public readonly stateService = inject(ModalStateService);
+  public readonly modalHeaderChild = contentChild(ModalHeaderComponent);
+  public readonly modalBodyChild = contentChild(ModalBodyComponent);
+  public readonly modalFooterChild = contentChild(ModalFooterComponent);
 
   public override contentClasses = signal<ModalClass>(
     createClass({ modalContainerClass: '', modalContentClass: '', rootClass: '' }),
@@ -82,6 +89,12 @@ export class ModalComponent extends BaseComponent {
       },
       { injector: this.injector },
     );
+  }
+
+  public override verify(): void {
+    if (this.modalBodyChild() === undefined) {
+      throw new Error('No ModalBodyComponent available');
+    }
   }
   //#endregion
 

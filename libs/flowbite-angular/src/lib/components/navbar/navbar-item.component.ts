@@ -1,10 +1,10 @@
 import type { DeepPartial } from '../../common/flowbite.type';
-import { NavbarStateService } from '../../services';
 import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base-component.directive';
 import type { NavbarItemClass, NavbarItemColors, NavbarItemTheme } from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
+import { NavbarComponent } from './navbar.component';
 
 import { NgClass } from '@angular/common';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
@@ -24,7 +24,7 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarItemComponent extends BaseComponent {
   public readonly themeService = inject(NavbarItemThemeService);
-  public readonly navbarStateService = inject(NavbarStateService);
+  public readonly navbarComponent = inject(NavbarComponent);
 
   public override contentClasses = signal<NavbarItemClass>(createClass({ rootClass: '' }));
 
@@ -46,6 +46,6 @@ export class NavbarItemComponent extends BaseComponent {
 
   @HostListener('click')
   public onClick(): void {
-    this.navbarStateService.set('isOpen', false);
+    this.navbarComponent.toggleVisibility(false);
   }
 }

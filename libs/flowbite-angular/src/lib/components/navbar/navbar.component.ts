@@ -3,11 +3,14 @@ import { NavbarStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
+import { NavbarBrandComponent } from './navbar-brand.component';
+import { NavbarContentComponent } from './navbar-content.component';
+import { NavbarToggleComponent } from './navbar-toggle.component';
 import type { NavbarClass, NavbarTheme } from './navbar.theme';
 import { NavbarThemeService } from './navbar.theme.service';
 
 import { NgClass } from '@angular/common';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -33,6 +36,9 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
 export class NavbarComponent extends BaseComponent {
   public readonly themeService = inject(NavbarThemeService);
   public readonly stateService = inject(NavbarStateService);
+  public readonly navbarBrandChild = contentChild(NavbarBrandComponent);
+  public readonly navbarToggleChild = contentChild(NavbarToggleComponent);
+  public readonly navbarContentChild = contentChild(NavbarContentComponent);
 
   public override contentClasses = signal<NavbarClass>(createClass({ rootClass: '' }));
 
@@ -54,5 +60,19 @@ export class NavbarComponent extends BaseComponent {
 
     this.contentClasses.set(propertyClass);
   }
+
+  public override verify(): void {
+    if (this.navbarContentChild() === undefined) {
+      throw new Error('No NavbarContentComponent available');
+    }
+  }
   //#endregion
+
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.stateService.select('isOpen')());
+    }
+
+    this.stateService.set('isOpen', isOpen);
+  }
 }

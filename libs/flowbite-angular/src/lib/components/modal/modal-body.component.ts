@@ -3,6 +3,7 @@ import { createClass } from '../../utils';
 import { BaseComponent } from '../base-component.directive';
 import type { ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
 import { ModalBodyThemeService } from './modal-body.theme.service';
+import { ModalComponent } from './modal.component';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
@@ -15,6 +16,7 @@ import { Component, inject, input, signal } from '@angular/core';
 })
 export class ModalBodyComponent extends BaseComponent {
   public readonly themeService = inject(ModalBodyThemeService);
+  public readonly modalComponent = inject(ModalComponent);
 
   public override contentClasses = signal<ModalBodyClass>(createClass({ rootClass: '' }));
 

@@ -1,12 +1,12 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { SanitizeHtmlPipe } from '../../pipes';
-import { SidebarStateService } from '../../services/state/sidebar.state';
 import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base-component.directive';
 import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
+import { SidebarMenuComponent } from './sidebar-menu.component';
 
 import { NgClass, NgIf } from '@angular/common';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
@@ -38,7 +38,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class SidebarItemComponent extends BaseComponent {
   public readonly routerLink = inject(RouterLink);
   public readonly themeService = inject(SidebarItemThemeService);
-  public readonly sidebarStateService = inject(SidebarStateService);
+  public readonly sidebarMenuComponent = inject(SidebarMenuComponent);
 
   public override contentClasses = signal<SidebarItemClass>(createClass({ rootClass: '', sidebarIconClass: '' }));
 
@@ -63,6 +63,6 @@ export class SidebarItemComponent extends BaseComponent {
 
   @HostListener('click')
   protected onClick(): void {
-    this.sidebarStateService.set('isOpen', false);
+    this.sidebarMenuComponent.sidebarComponent.stateService.set('isOpen', false);
   }
 }

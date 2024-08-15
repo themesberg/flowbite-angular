@@ -6,6 +6,7 @@ import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
+import { SidebarMenuComponent } from './sidebar-menu.component';
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
@@ -42,10 +43,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   ],
 })
 export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
-  public readonly sidebarItemGroupStateService: SidebarItemGroupStateService = inject(SidebarItemGroupStateService);
+  public readonly sidebarItemGroupStateService = inject(SidebarItemGroupStateService);
   public readonly themeService = inject(SidebarItemGroupThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
+  public readonly sidebarMenuComponent = inject(SidebarMenuComponent);
 
   public override contentClasses = signal<SidebarItemGroupClass>(createClass({ rootClass: '' }));
 

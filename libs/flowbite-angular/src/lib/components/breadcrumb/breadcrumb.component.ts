@@ -1,11 +1,12 @@
 import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
 import { BaseComponent } from '../base-component.directive';
+import { BreadcrumbItemComponent } from './breadcrumb-item.component';
 import type { BreadcrumbClass, BreadcrumbTheme } from './breadcrumb.theme';
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
 import { NgClass } from '@angular/common';
-import { Component, HostBinding, inject, input, signal } from '@angular/core';
+import { Component, contentChildren, HostBinding, inject, input, signal } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -20,6 +21,7 @@ export class BreadcrumbComponent extends BaseComponent {
   @HostBinding('attr.aria-label') hostAriaLabelValue = 'breadcrumb';
 
   public readonly themeService = inject(BreadcrumbThemeService);
+  public readonly breadcrumbItemChildren = contentChildren(BreadcrumbItemComponent);
 
   public override contentClasses = signal<BreadcrumbClass>(createClass({ rootClass: '' }));
 
@@ -34,6 +36,12 @@ export class BreadcrumbComponent extends BaseComponent {
     });
 
     this.contentClasses.set(propertyClass);
+  }
+
+  public override verify(): void {
+    if (this.breadcrumbItemChildren().length === 0) {
+      throw new Error('No BreadcrumbItemComponent available');
+    }
   }
   //#endregion
 }

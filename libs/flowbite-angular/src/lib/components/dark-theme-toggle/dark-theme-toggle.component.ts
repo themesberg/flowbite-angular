@@ -49,17 +49,6 @@ export class DarkThemeToggleComponent extends BaseComponent {
   }
 
   public override init(): void {
-    this.iconRegistry.addRawSvgIconInNamepsace(
-      'flowbite-angular',
-      'sun',
-      this.domSanitizer.bypassSecurityTrustHtml(SUN_SVG_ICON),
-    );
-    this.iconRegistry.addRawSvgIconInNamepsace(
-      'flowbite-angular',
-      'moon',
-      this.domSanitizer.bypassSecurityTrustHtml(MOON_SVG_ICON),
-    );
-
     afterNextRender(
       () => {
         const localStorageTheme = localStorage.getItem('color-theme');
@@ -88,6 +77,17 @@ export class DarkThemeToggleComponent extends BaseComponent {
         );
       },
       { injector: this.injector },
+    );
+
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'sun',
+      this.domSanitizer.bypassSecurityTrustHtml(SUN_SVG_ICON),
+    );
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'moon',
+      this.domSanitizer.bypassSecurityTrustHtml(MOON_SVG_ICON),
     );
   }
   //#endregion

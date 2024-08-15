@@ -1,10 +1,10 @@
 import type { DeepPartial } from '../../common';
-import { SidebarStateService } from '../../services';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import type { SidebarPageContentClass, SidebarPageContentTheme } from './sidebar-page-content.theme';
 import { SidebarPageContentThemeService } from './sidebar-page-content.theme.service';
+import { SidebarComponent } from './sidebar.component';
 
 import { Component, inject, input, signal } from '@angular/core';
 
@@ -16,7 +16,7 @@ import { Component, inject, input, signal } from '@angular/core';
 })
 export class SidebarPageContentComponent extends BaseComponent {
   public readonly themeService = inject(SidebarPageContentThemeService);
-  public readonly sidebarStateService = inject(SidebarStateService);
+  public readonly sidebarComponent = inject(SidebarComponent);
 
   public override contentClasses = signal<SidebarPageContentClass>(createClass({ rootClass: '' }));
 
@@ -27,8 +27,8 @@ export class SidebarPageContentComponent extends BaseComponent {
   //region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.sidebarStateService.select('isOpen')()),
-      displayMode: this.sidebarStateService.select('displayMode')(),
+      isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.stateService.select('isOpen')()),
+      displayMode: this.sidebarComponent.stateService.select('displayMode')(),
       customStyle: this.customStyle(),
     });
 
