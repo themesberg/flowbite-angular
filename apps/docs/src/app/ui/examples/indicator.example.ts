@@ -1,5 +1,7 @@
 import type { Example } from './examples';
 
+import { indicatorTheme, themeToString } from 'flowbite-angular';
+
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
@@ -11,29 +13,37 @@ export class IndicatorExampleService {
 
   public readonly defaultIndicator: Example[] = [
     {
-      language: 'html',
+      language: 'angular-html',
       name: 'indicator/default',
     },
   ];
 
   public readonly legendIndicator: Example[] = [
     {
-      language: 'html',
+      language: 'angular-html',
       name: 'indicator/legend',
     },
   ];
 
   public readonly countIndicator: Example[] = [
     {
-      language: 'html',
+      language: 'angular-html',
       name: 'indicator/count',
     },
   ];
 
   public readonly positionedIndicator: Example[] = [
     {
-      language: 'html',
+      language: 'angular-html',
       name: 'indicator/positioned',
+    },
+  ];
+
+  public readonly indicatorTheme: Example[] = [
+    {
+      name: 'Indicator theme',
+      language: 'angular-ts',
+      rawCode: themeToString(indicatorTheme),
     },
   ];
 }

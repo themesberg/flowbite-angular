@@ -10,7 +10,7 @@ import { SidebarMenuComponent } from './sidebar-menu.component';
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, HostListener, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -18,9 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [NgClass, NgIf, IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
-    <span
-      (click)="onClick()"
-      class="flex flex-row justify-between text-red-600 m-2">
+    <span class="flex flex-row justify-between text-red-600 m-2">
       <h4>{{ title() }}</h4>
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"
@@ -79,6 +77,7 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   }
   //#endregion
 
+  @HostListener('click')
   public onClick(): void {
     const isOpen = this.sidebarItemGroupStateService.select('isOpen')();
 

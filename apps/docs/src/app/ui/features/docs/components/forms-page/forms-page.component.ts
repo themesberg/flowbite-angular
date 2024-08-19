@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
 export class FormsPageComponent {
   examples = [
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <form>
   <div class="mb-6">
@@ -33,7 +33,7 @@ export class FormsPageComponent {
 </form>`,
     },
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <form>
   <div class="mb-6 w-full">
@@ -86,7 +86,7 @@ export class FormsPageComponent {
 </form>`,
     },
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <flowbite-form-field size="large">
   <label flowbiteLabel>Large Input</label>
@@ -103,7 +103,7 @@ export class FormsPageComponent {
     },
 
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <flowbite-form-field disabled>
   <label flowbiteLabel>Disabled Input</label>
@@ -115,7 +115,7 @@ export class FormsPageComponent {
 </flowbite-form-field>`,
     },
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -125,7 +125,7 @@ export class FormsPageComponent {
 `,
     },
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -135,7 +135,7 @@ export class FormsPageComponent {
     `,
     },
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <flowbite-form-field>
   <label flowbiteLabel>Your Email</label>
@@ -147,7 +147,7 @@ export class FormsPageComponent {
 </flowbite-form-field>`,
     },
     {
-      language: 'html' as BundledLanguage,
+      language: 'angular-html' as BundledLanguage,
       code: `
 <flowbite-form-field validation="success">
   <label flowbiteLabel>Success Input</label>

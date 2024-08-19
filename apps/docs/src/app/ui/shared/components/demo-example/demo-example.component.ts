@@ -4,16 +4,34 @@ import { ShikiComponent } from '../shiki/shiki.component';
 
 import { NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, computed, inject, input, numberAttribute } from '@angular/core';
+import { Component, computed, HostBinding, inject, input, numberAttribute } from '@angular/core';
 import type { Observable } from 'rxjs';
 
 @Component({
   standalone: true,
   imports: [NgClass, FlowbiteIFrameWrapperComponent, ShikiComponent],
   selector: 'flowbite-demo-example',
-  templateUrl: './demo-example.component.html',
+  template: `
+    <span class="pb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ title() }}</span>
+    <span class="pb-4 text-base text-gray-700 dark:text-gray-400">{{ subtitle() }}</span>
+    <div class="grid rounded-t-xl shadow-md border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+      <flowbite-iframe-wrapper
+        [githubLink]="githubLink()"
+        [height]="height()"
+        [link]="'frames/' + link()" />
+
+      @for (item of examples(); track $index) {
+        <flowbite-shiki
+          ngProjectAs="code-example"
+          [language]="item.language"
+          [codeAsync]="item.rawCode || getAsyncCode(item.name)" />
+      }
+    </div>
+  `,
 })
 export class DemoExampleComponent {
+  @HostBinding('class') hostClass = 'flex flex-col';
+
   public httpClient = inject(HttpClient);
 
   public title = input.required<string>();
