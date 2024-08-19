@@ -11,3 +11,9 @@ export const routerLinkInputs: string[] = [
   'replaceUrl',
   'routerLink',
 ];
+
+export const routerLinkActiveInputs: string[] = [
+  'routerLinkActiveOptions',
+  'ariaCurrentWhenActive',
+  'routerLinkActive',
+];

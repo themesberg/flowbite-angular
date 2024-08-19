@@ -23,9 +23,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"
         class="h-6 w-6 shrink-0 duration-200"
-        [class.rotate-180]="!sidebarItemGroupStateService.select('isOpen')()" />
+        [class.rotate-180]="!stateService.select('isOpen')()" />
     </span>
-    <ng-content *ngIf="sidebarItemGroupStateService.select('isOpen')()" />
+    <ng-content *ngIf="stateService.select('isOpen')()" />
   `,
   providers: [
     {
@@ -41,7 +41,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   ],
 })
 export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
-  public readonly sidebarItemGroupStateService = inject(SidebarItemGroupStateService);
+  public readonly stateService = inject(SidebarItemGroupStateService);
   public readonly themeService = inject(SidebarItemGroupThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
@@ -65,7 +65,7 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   }
 
   public override init(): void {
-    this.sidebarItemGroupStateService.setState({
+    this.stateService.setState({
       isOpen: this.isOpen(),
     });
 
@@ -79,8 +79,8 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
 
   @HostListener('click')
   public onClick(): void {
-    const isOpen = this.sidebarItemGroupStateService.select('isOpen')();
+    const isOpen = this.stateService.select('isOpen')();
 
-    this.sidebarItemGroupStateService.set('isOpen', !isOpen);
+    this.stateService.set('isOpen', !isOpen);
   }
 }
