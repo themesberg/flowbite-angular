@@ -21,6 +21,7 @@ export class SidebarItemGroupThemeService implements FlowbiteThemeService<Sideba
 
     const output: SidebarItemGroupClass = {
       rootClass: twMerge(theme.root.base),
+      spanClass: twMerge(theme.spanText.base, theme.spanText.color[properties.color]),
     };
 
     return output;

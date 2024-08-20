@@ -16,7 +16,7 @@ export class SidebarItemThemeService implements FlowbiteThemeService<SidebarItem
     const theme: SidebarItemTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: SidebarItemClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base, theme.root.color[properties.color]),
       sidebarIconClass: twMerge(theme.icon.base),
     };
 

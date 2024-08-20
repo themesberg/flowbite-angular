@@ -20,6 +20,7 @@ export class SidebarMenuThemeService implements FlowbiteThemeService<SidebarMenu
         theme.root.base,
         theme.root.isOpen[properties.isOpen],
         properties.isOpen === 'enabled' && theme.root.displayMode[properties.displayMode],
+        theme.root.color[properties.color],
       ),
     };
 

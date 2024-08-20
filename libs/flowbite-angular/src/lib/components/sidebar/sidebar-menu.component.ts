@@ -7,6 +7,7 @@ import { SidebarItemComponent } from './sidebar-item.component';
 import type { SidebarMenuClass, SidebarMenuTheme } from './sidebar-menu.theme';
 import { SidebarMenuThemeService } from './sidebar-menu.theme.service';
 import { SidebarComponent } from './sidebar.component';
+import type { SidebarColors } from './sidebar.theme';
 
 import { Component, contentChildren, inject, input, signal } from '@angular/core';
 
@@ -25,12 +26,14 @@ export class SidebarMenuComponent extends BaseComponent {
   public override contentClasses = signal<SidebarMenuClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public color = input<keyof SidebarColors>('primary');
   public customStyle = input<DeepPartial<SidebarMenuTheme>>({});
   //#endregion
 
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.stateService.select('isOpen')()),
+      color: this.color(),
       displayMode: this.sidebarComponent.stateService.select('displayMode')(),
       customStyle: this.customStyle(),
     });
@@ -42,5 +45,9 @@ export class SidebarMenuComponent extends BaseComponent {
     if (this.sidebarItemChildren().length === 0 && this.sidebarItemGroupChildren().length === 0) {
       throw new Error('No SidebarItemComponent/SidebarItemGroupComponent available');
     }
+  }
+
+  public closeAll(): void {
+    this.sidebarItemGroupChildren().forEach((x) => x.toggleVisibility(false));
   }
 }

@@ -1,8 +1,12 @@
 import type { DeepPartial } from '../../common';
-import type { FlowbiteBoolean, FlowbiteClass } from '../../common/flowbite.theme';
+import type { FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from '../../common/flowbite.theme';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
+export interface SidebarColors extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
+  [key: string]: string;
+}
+
 export interface SidebarDisplayMode {
   push: string;
   over: string;

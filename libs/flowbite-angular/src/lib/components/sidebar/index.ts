@@ -1,5 +1,5 @@
 export { SidebarComponent } from './sidebar.component';
-export type { SidebarProperties, SidebarClass, SidebarTheme } from './sidebar.theme';
+export type { SidebarProperties, SidebarClass, SidebarTheme, SidebarColors, SidebarDisplayMode } from './sidebar.theme';
 export { sidebarTheme } from './sidebar.theme';
 export { FLOWBITE_SIDEBAR_THEME_TOKEN, SidebarThemeService } from './sidebar.theme.service';
 
@@ -25,7 +25,6 @@ export type {
   SidebarToggleTheme,
   SidebarToggleClass,
   SidebarToggleProperties,
-  SidebarToggleColors,
   SidebarToggleSizes,
 } from './sidebar-toggle.theme';
 export { sidebarToggleTheme } from './sidebar-toggle.theme';

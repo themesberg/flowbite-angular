@@ -299,6 +299,9 @@ module.exports = {
           },
         ],
       },
+      aria: {
+        current: 'current="true"',
+      },
     },
     fontFamily: {
       sans: 'Inter',
