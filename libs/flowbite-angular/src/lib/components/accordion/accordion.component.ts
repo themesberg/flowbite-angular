@@ -39,9 +39,9 @@ export class AccordionComponent extends BaseComponent {
   public override contentClasses = signal<AccordionClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public isAlwaysOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isAlwaysOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
   public color = input<keyof AccordionColors>('light');
-  public isFlush = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isFlush = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<AccordionTheme>>({});
   //#endregion
 

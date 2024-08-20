@@ -43,9 +43,9 @@ export class NavbarComponent extends BaseComponent {
   public override contentClasses = signal<NavbarClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public isFixed = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public hasBorder = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public isFixed = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<NavbarTheme>>({});
   //#endregion
 

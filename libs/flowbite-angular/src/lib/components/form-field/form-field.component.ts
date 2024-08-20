@@ -36,7 +36,7 @@ export class FormFieldComponent extends BaseComponent implements OnInit {
   //#region properties
   public type = input<keyof properties.FormFieldTypes>('text');
   public size = input<keyof properties.FormFieldSizes>('md');
-  public isDisabled = input<boolean, string | boolean>(false, {
+  public isDisabled = input<boolean, unknown>(false, {
     transform: booleanAttribute,
   });
   public validate = input<keyof properties.FormFieldValidations | undefined>(undefined);

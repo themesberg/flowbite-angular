@@ -55,7 +55,7 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<SidebarItemGroupClass>(createClass({ rootClass: '', spanClass: '' }));
 
   //#region properties
-  public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
   public color = input<keyof SidebarColors>('primary');
   public title = input.required<string>();
   public customStyle = input<DeepPartial<SidebarItemGroupTheme>>({});

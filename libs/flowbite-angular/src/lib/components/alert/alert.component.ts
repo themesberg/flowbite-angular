@@ -49,12 +49,12 @@ export class AlertComponent extends BaseComponent implements OnInit {
 
   //#region properties
   public color = input<keyof AlertColors>('dark');
-  public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public hasBorderAccent = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public hasBorder = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public hasBorderAccent = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<AlertTheme>>({});
   public icon = input<TemplateRef<unknown> | null>(null);
   public additionalContent = input<TemplateRef<unknown> | null>(null);
-  public isDismissable = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isDismissable = input<boolean, unknown>(false, { transform: booleanAttribute });
   public onDismiss = input<() => void | undefined>();
   //#endregion
 

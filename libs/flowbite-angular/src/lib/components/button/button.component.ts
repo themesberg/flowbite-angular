@@ -49,11 +49,11 @@ export class ButtonComponent extends BaseComponent {
   //#region properties
   public color = input<keyof ButtonColors>('blue');
   public size = input<keyof ButtonSizes>('md');
-  public isPill = input<boolean, string | boolean>(false, {
+  public isPill = input<boolean, unknown>(false, {
     transform: booleanAttribute,
   });
   public fill = input<keyof ButtonFill>('solid');
-  public isDisabled = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isDisabled = input<boolean, unknown>(false, { transform: booleanAttribute });
   public gradientMonochrome = input<keyof ButtonMonochromeColors | undefined>(undefined);
   public gradientDuoTone = input<keyof ButtonDuoToneColors | undefined>(undefined);
   public customStyle = input<DeepPartial<ButtonTheme>>({});

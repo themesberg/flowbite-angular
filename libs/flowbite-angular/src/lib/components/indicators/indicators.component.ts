@@ -29,12 +29,12 @@ export class IndicatorComponent extends BaseComponent {
   public override contentClasses = signal<indicatorClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public isPill = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public isOutline = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public isDisabled = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public hasOffset = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public hasBorder = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isPill = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public isOutline = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public isDisabled = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public hasOffset = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public hasBorder = input<boolean, unknown>(false, { transform: booleanAttribute });
   public color = input<keyof IndicatorColors>('dark');
   public size = input<keyof IndicatorSizes>('md');
   public placement = input<keyof IndicatorPositions | undefined>(undefined);

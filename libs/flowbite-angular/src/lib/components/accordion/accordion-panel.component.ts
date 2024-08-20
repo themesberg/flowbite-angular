@@ -39,7 +39,7 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<AccordionPanelClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public isOpen = input<boolean, string | boolean>(false, {
+  public isOpen = input<boolean, unknown>(false, {
     transform: booleanAttribute,
   });
   public customStyle = input<DeepPartial<AccordionPanelTheme>>({});

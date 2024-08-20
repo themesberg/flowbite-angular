@@ -65,8 +65,8 @@ export class ModalComponent extends BaseComponent {
   //#region properties
   public size = input<keyof ModalSizes>('md');
   public position = input<keyof ModalPositions>('center');
-  public isDismissable = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isDismissable = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<ModalTheme>>({});
   //#endregion
 

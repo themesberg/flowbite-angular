@@ -44,8 +44,8 @@ export class SidebarComponent extends BaseComponent implements OnInit {
 
   //#region properties
   public displayMode = input<keyof SidebarDisplayMode>('push');
-  public isOpen = input<boolean, string | boolean>(false, { transform: booleanAttribute });
-  public isRounded = input<boolean, string | boolean>(false, { transform: booleanAttribute });
+  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
+  public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<SidebarTheme>>({});
   //#endregion
 
