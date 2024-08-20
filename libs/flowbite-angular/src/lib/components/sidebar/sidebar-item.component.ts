@@ -54,7 +54,9 @@ export class SidebarItemComponent extends BaseComponent {
 
   //#region properties
   public icon = input<string | undefined>(undefined);
-  public color = input<keyof SidebarColors>('primary');
+  public color = input<keyof SidebarColors>(
+    (this.sidebarItemGroupComponent?.sidebarMenuComponent || this.sidebarMenuComponent)!.color(),
+  );
   public label = input<string | undefined>(undefined);
   public customStyle = input<DeepPartial<SidebarItemTheme>>({});
   //#endregion

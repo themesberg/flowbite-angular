@@ -2,7 +2,7 @@
   <flowbite-navbar
     isFixed
     [customStyle]="{ root: { base: 'flex flex-wrap items-center justify-between p-4 xl:px-60' } }">
-    <div class="flex flex-row items-center">
+    <div class="flex flex-row items-center gap-2">
       <flowbite-sidebar-toggle
         class="xl:hidden h-8 w-8"
         *ngIf="router.url.startsWith('/ui/docs')" />

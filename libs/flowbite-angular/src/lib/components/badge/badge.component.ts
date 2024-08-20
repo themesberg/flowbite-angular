@@ -32,7 +32,7 @@ export class BadgeComponent extends BaseComponent {
   public override contentClasses = signal<BadgeClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof BadgeColors>('dark');
+  public color = input<keyof BadgeColors>('primary');
   public size = input<keyof BadgeSizes>('xs');
   public isIconOnly = input<boolean, unknown>(false, { transform: booleanAttribute });
   public isPill = input<boolean, unknown>(false, { transform: booleanAttribute });

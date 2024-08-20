@@ -5,7 +5,7 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarMenuComponent } from './sidebar-menu.component';
 import { SidebarPageContentComponent } from './sidebar-page-content.component';
-import type { SidebarClass, SidebarDisplayMode, SidebarTheme } from './sidebar.theme';
+import type { SidebarClass, SidebarColors, SidebarDisplayMode, SidebarTheme } from './sidebar.theme';
 import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -43,6 +43,7 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<SidebarClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public color = input<keyof SidebarColors>('primary');
   public displayMode = input<keyof SidebarDisplayMode>('push');
   public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
   public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });

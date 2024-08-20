@@ -5,6 +5,7 @@ import { BaseComponent } from '../base-component.directive';
 import type { AccordionContentClass, AccordionContentTheme } from './accordion-content.theme';
 import { AccordionContentThemeService } from './accordion-content.theme.service';
 import { AccordionPanelComponent } from './accordion-panel.component';
+import type { AccordionColors } from './accordion.theme';
 
 import { NgClass, NgIf } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
@@ -26,6 +27,7 @@ export class AccordionContentComponent extends BaseComponent {
   public override contentClasses = signal<AccordionContentClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public color = input<keyof AccordionColors>(this.accordionPanelComponent.color());
   public customStyle = input<DeepPartial<AccordionContentTheme>>({});
   //#endregion
 

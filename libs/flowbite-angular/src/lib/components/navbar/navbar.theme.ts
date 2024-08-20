@@ -3,7 +3,7 @@ import type { FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from '../../commo
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
-export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
+export interface NavbarColors extends Pick<FlowbiteColors, 'primary' | 'gray'> {
   [key: string]: string;
 }
 //#endregion
@@ -29,6 +29,7 @@ export const navbarTheme: NavbarTheme = createTheme({
   root: {
     base: 'flex flex-wrap items-center justify-between p-4',
     color: {
+      primary: 'bg-primary-200 dark:bg-primary-800 border-primary-200 dark:border-primary-700',
       gray: 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700',
     },
     isRounded: {

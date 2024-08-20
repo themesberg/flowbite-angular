@@ -26,7 +26,7 @@ export class SidebarMenuComponent extends BaseComponent {
   public override contentClasses = signal<SidebarMenuClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof SidebarColors>('primary');
+  public color = input<keyof SidebarColors>(this.sidebarComponent.color());
   public customStyle = input<DeepPartial<SidebarMenuTheme>>({});
   //#endregion
 

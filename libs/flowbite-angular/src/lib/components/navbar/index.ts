@@ -14,7 +14,7 @@ export { navbarContentTheme } from './navbar-content.theme';
 export { FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN, NavbarContentThemeService } from './navbar-content.theme.service';
 
 export { NavbarItemComponent } from './navbar-item.component';
-export type { NabvarItemProperties, NavbarItemClass, NavbarItemColors, NavbarItemTheme } from './navbar-item.theme';
+export type { NabvarItemProperties, NavbarItemClass, NavbarItemTheme } from './navbar-item.theme';
 export { navbarItemTheme } from './navbar-item.theme';
 export { FLOWBITE_NAVBAR_ITEM_THEME_TOKEN, NavbarItemThemeService } from './navbar-item.theme.service';
 

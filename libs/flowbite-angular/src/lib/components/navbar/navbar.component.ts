@@ -6,7 +6,7 @@ import { BaseComponent } from '../base-component.directive';
 import { NavbarBrandComponent } from './navbar-brand.component';
 import { NavbarContentComponent } from './navbar-content.component';
 import { NavbarToggleComponent } from './navbar-toggle.component';
-import type { NavbarClass, NavbarTheme } from './navbar.theme';
+import type { NavbarClass, NavbarColors, NavbarTheme } from './navbar.theme';
 import { NavbarThemeService } from './navbar.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -43,6 +43,7 @@ export class NavbarComponent extends BaseComponent {
   public override contentClasses = signal<NavbarClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public color = input<keyof NavbarColors>('primary');
   public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });
   public hasBorder = input<boolean, unknown>(false, { transform: booleanAttribute });
   public isFixed = input<boolean, unknown>(false, { transform: booleanAttribute });

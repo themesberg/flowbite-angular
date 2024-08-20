@@ -56,7 +56,7 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
 
   //#region properties
   public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public color = input<keyof SidebarColors>('primary');
+  public color = input<keyof SidebarColors>(this.sidebarMenuComponent.color());
   public title = input.required<string>();
   public customStyle = input<DeepPartial<SidebarItemGroupTheme>>({});
   //#endregion

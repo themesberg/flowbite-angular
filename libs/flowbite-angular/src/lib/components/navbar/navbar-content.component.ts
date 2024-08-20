@@ -5,6 +5,7 @@ import { BaseComponent } from '../base-component.directive';
 import type { NavbarContentClass, NavbarContentTheme } from './navbar-content.theme';
 import { NavbarContentThemeService } from './navbar-content.theme.service';
 import { NavbarComponent } from './navbar.component';
+import type { NavbarColors } from './navbar.theme';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
@@ -29,6 +30,7 @@ export class NavbarContentComponent extends BaseComponent implements OnInit {
   );
 
   //#region properties
+  public color = input<keyof NavbarColors>(this.navbarComponent.color());
   public customStyle = input<DeepPartial<NavbarContentTheme>>({});
   //#endregion
 

@@ -47,7 +47,7 @@ export class ButtonComponent extends BaseComponent {
   public override contentClasses = signal<ButtonClass>(createClass({ rootClass: '', spanClass: '' }));
 
   //#region properties
-  public color = input<keyof ButtonColors>('blue');
+  public color = input<keyof ButtonColors>('primary');
   public size = input<keyof ButtonSizes>('md');
   public isPill = input<boolean, unknown>(false, {
     transform: booleanAttribute,

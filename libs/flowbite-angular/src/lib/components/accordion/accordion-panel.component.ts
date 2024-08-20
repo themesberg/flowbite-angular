@@ -7,6 +7,7 @@ import type { AccordionPanelClass, AccordionPanelTheme } from './accordion-panel
 import { AccordionPanelThemeService } from './accordion-panel.theme.service';
 import { AccordionTitleComponent } from './accordion-title.component';
 import { AccordionComponent } from './accordion.component';
+import type { AccordionColors } from './accordion.theme';
 
 import type { OnInit } from '@angular/core';
 import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
@@ -39,9 +40,8 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<AccordionPanelClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public isOpen = input<boolean, unknown>(false, {
-    transform: booleanAttribute,
-  });
+  public color = input<keyof AccordionColors>(this.accordionComponent.color());
+  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<AccordionPanelTheme>>({});
   //#endregion
 

@@ -2,9 +2,10 @@ import type { DeepPartial } from '../../common/flowbite.type';
 import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base-component.directive';
-import type { NavbarItemClass, NavbarItemColors, NavbarItemTheme } from './navbar-item.theme';
+import { NavbarContentComponent } from './navbar-content.component';
+import type { NavbarItemClass, NavbarItemTheme } from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
-import { NavbarComponent } from './navbar.component';
+import type { NavbarColors } from './navbar.theme';
 
 import { NgClass } from '@angular/common';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
@@ -24,12 +25,12 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarItemComponent extends BaseComponent {
   public readonly themeService = inject(NavbarItemThemeService);
-  public readonly navbarComponent = inject(NavbarComponent);
+  public readonly navbarContentComponent = inject(NavbarContentComponent);
 
   public override contentClasses = signal<NavbarItemClass>(createClass({ rootClass: '' }));
 
   //#region properties
-  public color = input<keyof NavbarItemColors>('blue');
+  public color = input<keyof NavbarColors>(this.navbarContentComponent.color());
   public customStyle = input<DeepPartial<NavbarItemTheme>>({});
   //#endregion
 
@@ -46,6 +47,6 @@ export class NavbarItemComponent extends BaseComponent {
 
   @HostListener('click')
   public onClick(): void {
-    this.navbarComponent.toggleVisibility(false);
+    this.navbarContentComponent.navbarComponent.toggleVisibility(false);
   }
 }

@@ -7,6 +7,7 @@ import { IconComponent, IconRegistry } from '../icon';
 import { AccordionPanelComponent } from './accordion-panel.component';
 import type { AccordionTitleClass, AccordionTitleTheme } from './accordion-title.theme';
 import { AccordionTitleThemeService } from './accordion-title.theme.service';
+import type { AccordionColors } from './accordion.theme';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
@@ -36,6 +37,7 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<AccordionTitleClass>(createClass({ rootClass: '', textClass: '' }));
 
   //#region properties
+  public color = input<keyof AccordionColors>(this.accordionPanelComponent.color());
   public customStyle = input<DeepPartial<AccordionTitleTheme>>({});
   //#endregion
 

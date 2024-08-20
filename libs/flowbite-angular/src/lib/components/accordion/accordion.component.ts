@@ -40,7 +40,7 @@ export class AccordionComponent extends BaseComponent {
 
   //#region properties
   public isAlwaysOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public color = input<keyof AccordionColors>('light');
+  public color = input<keyof AccordionColors>('primary');
   public isFlush = input<boolean, unknown>(false, { transform: booleanAttribute });
   public customStyle = input<DeepPartial<AccordionTheme>>({});
   //#endregion
