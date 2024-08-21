@@ -20,11 +20,7 @@ import { booleanAttribute, Component, HostBinding, input } from '@angular/core';
 export class FlowbiteFrameDisplayComponent {
   @HostBinding('class')
   protected get hostBaseClass() {
-    return `
-        flex gap-3 justify-around items-center m-6
-        ${this.orientation() === 'col' ? 'flex-col' : 'flex-row'}
-        ${this.wrap() ? 'flex-wrap' : ''}
-    `;
+    return 'flex min-h-screen gap-3 justify-around items-center p-6';
   }
 
   public orientation = input<'row' | 'col'>('row');
