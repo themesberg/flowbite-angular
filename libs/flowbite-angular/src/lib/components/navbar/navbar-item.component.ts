@@ -1,6 +1,8 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
 import { createClass } from '../../utils';
 import { routerLinkInputs } from '../../utils/directive.input.util';
+import { routerLinkOutputs } from '../../utils/directive.output.util';
 import { BaseComponent } from '../base-component.directive';
 import { NavbarContentComponent } from './navbar-content.component';
 import type { NavbarItemClass, NavbarItemTheme } from './navbar-item.theme';
@@ -20,10 +22,16 @@ import { RouterLink } from '@angular/router';
     {
       directive: RouterLink,
       inputs: routerLinkInputs,
+      outputs: routerLinkOutputs,
+    },
+    {
+      directive: FlowbiteRouterLinkActiveDirective,
     },
   ],
 })
 export class NavbarItemComponent extends BaseComponent {
+  public readonly routerLink = inject(RouterLink);
+  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
   public readonly themeService = inject(NavbarItemThemeService);
   public readonly navbarContentComponent = inject(NavbarContentComponent);
 
