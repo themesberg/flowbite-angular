@@ -2,10 +2,10 @@ import { FlowbiteIFrameWrapperComponent } from '../../../../frames/iframe-wrappe
 import type { Example } from '../../../examples/examples';
 import { ShikiComponent } from '../shiki/shiki.component';
 
-import { NgClass } from '@angular/common';
+import { isPlatformBrowser, NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, computed, HostBinding, inject, input, numberAttribute } from '@angular/core';
-import type { Observable } from 'rxjs';
+import { Component, computed, HostBinding, inject, input, numberAttribute, PLATFORM_ID } from '@angular/core';
+import { of, type Observable } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -32,6 +32,7 @@ import type { Observable } from 'rxjs';
 export class DemoExampleComponent {
   @HostBinding('class') hostClass = 'flex flex-col';
 
+  public platformId = inject(PLATFORM_ID);
   public httpClient = inject(HttpClient);
 
   public title = input.required<string>();
@@ -44,6 +45,10 @@ export class DemoExampleComponent {
   protected link = computed<string>(() => this.examples().filter((x) => x.name !== undefined)[0].name || '');
 
   protected getAsyncCode(name?: string): Observable<string> {
-    return this.httpClient.get(`assets/examples/${name}.component.html`, { responseType: 'text' });
+    if (isPlatformBrowser(this.platformId)) {
+      return this.httpClient.get(`/assets/examples/${name}.component.html`, { responseType: 'text' });
+    }
+
+    return of('');
   }
 }

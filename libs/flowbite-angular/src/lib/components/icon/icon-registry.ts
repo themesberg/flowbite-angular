@@ -5,10 +5,10 @@
 import { trustedHTMLFromString } from './trusted-types';
 import type { TrustedHTML } from './trusted-types';
 
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import type { OnDestroy } from '@angular/core';
-import { inject, Injectable, SecurityContext } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID, SecurityContext } from '@angular/core';
 import type { SafeHtml } from '@angular/platform-browser';
 import { DomSanitizer, type SafeResourceUrl } from '@angular/platform-browser';
 import { finalize, map, of, share, tap, throwError, type Observable } from 'rxjs';
@@ -55,6 +55,8 @@ type LoadedSvgIconConfig = SvgIconConfig & { svgText: TrustedHTML };
   providedIn: 'root',
 })
 export class IconRegistry implements OnDestroy {
+  private platformId = inject(PLATFORM_ID);
+
   private _httpClient = inject(HttpClient, { optional: true });
   private _sanitizer = inject(DomSanitizer);
   private _document = inject(DOCUMENT);
@@ -179,32 +181,36 @@ export class IconRegistry implements OnDestroy {
   }
 
   private _fetchIcon(iconConfig: SvgIconConfig): Observable<TrustedHTML> {
-    if (!this._httpClient) {
-      throw getSvgIconNoHttpClientProvidedError();
+    if (isPlatformBrowser(this.platformId)) {
+      if (!this._httpClient) {
+        throw getSvgIconNoHttpClientProvidedError();
+      }
+
+      const url = this._sanitizer.sanitize(SecurityContext.RESOURCE_URL, iconConfig.url);
+
+      if (!url) {
+        throw getSvgIconFailedToSanitizeUrlError(iconConfig.url);
+      }
+
+      const inProgressFetch = this._inProgressSvgIconFetch.get(url);
+
+      if (inProgressFetch) {
+        return inProgressFetch;
+      }
+
+      const req = this._httpClient.get(url, { responseType: 'text' }).pipe(
+        map((svg) => {
+          return trustedHTMLFromString(svg);
+        }),
+        finalize(() => this._inProgressSvgIconFetch.delete(url)),
+        share(),
+      );
+
+      this._inProgressSvgIconFetch.set(url, req);
+      return req;
+    } else {
+      return of(trustedHTMLFromString('<svg></svg>'));
     }
-
-    const url = this._sanitizer.sanitize(SecurityContext.RESOURCE_URL, iconConfig.url);
-
-    if (!url) {
-      throw getSvgIconFailedToSanitizeUrlError(iconConfig.url);
-    }
-
-    const inProgressFetch = this._inProgressSvgIconFetch.get(url);
-
-    if (inProgressFetch) {
-      return inProgressFetch;
-    }
-
-    const req = this._httpClient.get(url, { responseType: 'text' }).pipe(
-      map((svg) => {
-        return trustedHTMLFromString(svg);
-      }),
-      finalize(() => this._inProgressSvgIconFetch.delete(url)),
-      share(),
-    );
-
-    this._inProgressSvgIconFetch.set(url, req);
-    return req;
   }
 }
 

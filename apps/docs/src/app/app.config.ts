@@ -4,7 +4,7 @@ import { initIcons } from './icon.init';
 import { IconRegistry, initFlowbite } from 'flowbite-angular';
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { APP_INITIALIZER, type ApplicationConfig } from '@angular/core';
+import { APP_INITIALIZER, PLATFORM_ID, type ApplicationConfig } from '@angular/core';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_INITIALIZER,
       useFactory: initIcons,
-      deps: [IconRegistry, DomSanitizer],
+      deps: [IconRegistry, DomSanitizer, PLATFORM_ID],
       multi: false,
     },
   ],
