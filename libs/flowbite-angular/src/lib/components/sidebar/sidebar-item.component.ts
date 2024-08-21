@@ -66,7 +66,6 @@ export class SidebarItemComponent extends BaseComponent {
     const propertyClass = this.themeService.getClasses({
       icon: this.icon(),
       color: this.color(),
-      link: this.routerLink.urlTree,
       label: this.label(),
       customStyle: this.customStyle(),
     });

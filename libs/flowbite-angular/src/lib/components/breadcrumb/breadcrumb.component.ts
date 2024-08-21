@@ -2,7 +2,7 @@ import type { DeepPartial } from '../../common';
 import { createClass } from '../../utils';
 import { BaseComponent } from '../base-component.directive';
 import { BreadcrumbItemComponent } from './breadcrumb-item.component';
-import type { BreadcrumbClass, BreadcrumbTheme } from './breadcrumb.theme';
+import type { BreadcrumbClass, BreadcrumbColors, BreadcrumbTheme } from './breadcrumb.theme';
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
 import { NgClass } from '@angular/common';
@@ -26,6 +26,7 @@ export class BreadcrumbComponent extends BaseComponent {
   public override contentClasses = signal<BreadcrumbClass>(createClass({ rootClass: '' }));
 
   //#region properties
+  public color = input<keyof BreadcrumbColors>('primary');
   public customStyle = input<DeepPartial<BreadcrumbTheme>>({});
   //#endregion
 

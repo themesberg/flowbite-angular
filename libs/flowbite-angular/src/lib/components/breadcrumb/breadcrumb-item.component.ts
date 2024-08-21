@@ -1,11 +1,14 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { createClass } from '../../utils';
+import { routerLinkInputs } from '../../utils/directive.input.util';
+import { routerLinkOutputs } from '../../utils/directive.output.util';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { BreadcrumbItemClass, BreadcrumbItemTheme } from './breadcrumb-item.theme';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
 import { BreadcrumbComponent } from './breadcrumb.component';
+import type { BreadcrumbColors } from './breadcrumb.theme';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';
@@ -26,7 +29,8 @@ import { RouterLink } from '@angular/router';
   hostDirectives: [
     {
       directive: RouterLink,
-      inputs: ['routerLink'],
+      inputs: routerLinkInputs,
+      outputs: routerLinkOutputs,
     },
   ],
 })
@@ -40,12 +44,14 @@ export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   public override contentClasses = signal<BreadcrumbItemClass>(createClass({ rootClass: '', breadcrumbIconClass: '' }));
 
   //#region properties
+  public color = input<keyof BreadcrumbColors>(this.breadcrumbComponent.color());
   public customStyle = input<DeepPartial<BreadcrumbItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
+      color: this.color(),
       link: this.routerLink.urlTree,
       customStyle: this.customStyle(),
     });

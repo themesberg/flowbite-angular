@@ -1,5 +1,5 @@
 export { BreadcrumbComponent } from './breadcrumb.component';
-export type { BreadcrumbProperties, BreadcrumbClass, BreadcrumbTheme } from './breadcrumb.theme';
+export type { BreadcrumbProperties, BreadcrumbClass, BreadcrumbTheme, BreadcrumbColors } from './breadcrumb.theme';
 export { breadcrumbTheme } from './breadcrumb.theme';
 export { BreadcrumbThemeService, FLOWBITE_BREADCRUMB_THEME_TOKEN } from './breadcrumb.theme.service';
 
