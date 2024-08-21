@@ -68,22 +68,22 @@ export interface IndicatorTheme {
 
 export const indicatorTheme: IndicatorTheme = createTheme({
   root: {
-    base: 'flex-shrink-0',
+    base: 'inline-flex items-center justify-center shrink-0 font-bold',
     hasBorder: {
       enabled: 'border-2',
       disabled: '',
     },
     color: {
-      dark: 'bg-gray-900 dark:bg-gray-700 border-white dark:border-gray-800',
-      primary: 'bg-primary-500 border-white dark:border-gray-800',
-      gray: 'bg-gray-200 border-white dark:border-gray-800',
-      blue: 'bg-blue-600 border-white dark:border-gray-800',
-      green: 'bg-green-500 border-white dark:border-gray-800',
-      red: 'bg-red-500 border-white dark:border-gray-800',
-      purple: 'bg-purple-500 border-white dark:border-gray-800',
-      indigo: 'bg-indigo-500 border-white dark:border-gray-800',
-      yellow: 'bg-yellow-300 border-white dark:border-gray-800',
-      teal: 'bg-teal-500 border-white dark:border-gray-800',
+      dark: 'bg-gray-900 dark:bg-gray-700 border-white dark:border-gray-800 text-white',
+      primary: 'bg-primary-500 border-white dark:border-gray-800 text-white',
+      gray: 'bg-gray-200 border-white dark:border-gray-800 text-gray-900',
+      blue: 'bg-blue-600 border-white dark:border-gray-800 text-white',
+      green: 'bg-green-500 border-white dark:border-gray-800 text-white',
+      red: 'bg-red-500 border-white dark:border-gray-800 text-white',
+      purple: 'bg-purple-500 border-white dark:border-gray-800 text-white',
+      indigo: 'bg-indigo-500 border-white dark:border-gray-800 text-white',
+      yellow: 'bg-yellow-300 border-white dark:border-gray-800 text-gray-900',
+      teal: 'bg-teal-500 border-white dark:border-gray-800 text-white',
     },
     isDisabled: {
       enabled: 'opacity-50',
@@ -124,11 +124,11 @@ export const indicatorTheme: IndicatorTheme = createTheme({
       disabled: 'rounded-full',
     },
     size: {
-      xs: 'w-2 h-2',
-      sm: 'w-2.5 h-2.5',
-      md: 'w-3 h-3',
-      lg: 'w-3.5 h-3.5',
-      xl: 'w-6 h-6',
+      xs: 'w-2 h-2 text-xs',
+      sm: 'w-2.5 h-2.5 text-sm',
+      md: 'w-3 h-3 text-sm',
+      lg: 'w-3.5 h-3.5 text-sm',
+      xl: 'w-6 h-6 text-sm',
     },
   },
 });

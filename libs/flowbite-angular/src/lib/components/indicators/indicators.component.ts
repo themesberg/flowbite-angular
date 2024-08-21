@@ -35,7 +35,7 @@ export class IndicatorComponent extends BaseComponent {
   public hasOffset = input<boolean, unknown>(false, { transform: booleanAttribute });
   public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });
   public hasBorder = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public color = input<keyof IndicatorColors>('dark');
+  public color = input<keyof IndicatorColors>('primary');
   public size = input<keyof IndicatorSizes>('md');
   public placement = input<keyof IndicatorPositions | undefined>(undefined);
   public customStyle = input<DeepPartial<IndicatorTheme>>({});
