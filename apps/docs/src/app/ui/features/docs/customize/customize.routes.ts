@@ -8,13 +8,16 @@ export default [
   {
     path: 'theming',
     component: ThemingComponent,
+    title: 'Customize - Theming',
   },
   {
     path: 'override-base-style',
     component: OverrideBaseStyleComponent,
+    title: 'Customize - Overriding base style',
   },
   {
     path: 'use-custom-style',
     component: UseCustomStyleComponent,
+    title: 'Customize - Use custom style',
   },
 ] as Routes;

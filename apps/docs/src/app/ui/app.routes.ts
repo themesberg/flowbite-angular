@@ -17,5 +17,6 @@ export default [
   {
     path: '**',
     component: NotFoundComponent,
+    title: 'Where are you going ?',
   },
 ] as Routes;

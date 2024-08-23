@@ -14,37 +14,46 @@ export default [
   {
     path: 'accordion',
     component: AccordionPageComponent,
+    title: 'Components - Accordion',
   },
   {
     path: 'alert',
     component: AlertPageComponent,
+    title: 'Components - Alert',
   },
   {
     path: 'badge',
     component: BadgePageComponent,
+    title: 'Components - Badge',
   },
   {
     path: 'breadcrumb',
     component: BreadcrumbPageComponent,
+    title: 'Components - Breadcrumb',
   },
   {
     path: 'button',
     component: ButtonPageComponent,
+    title: 'Components - Button',
   },
   {
     path: 'dropdown',
     component: DropdownPageComponent,
+    title: 'Components - Dropdown',
   },
   {
     path: 'indicator',
     component: IndicatorPageComponent,
+    title: 'Components - Indicator',
   },
   {
     path: 'sidebar',
     component: SidebarPageComponent,
+    title: 'Components - Sidebar',
   },
   {
     path: 'modal',
     component: ModalPageComponent,
+    title: 'Components - Modal',
   },
 ] as Routes;

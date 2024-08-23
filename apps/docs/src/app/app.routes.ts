@@ -1,4 +1,3 @@
-import { NotFoundComponent } from './ui/shared/components/not-found/not-found.component';
 import { UiComponent } from './ui/ui.component';
 
 import type { Route } from '@angular/router';
@@ -20,6 +19,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: '**',
-    component: NotFoundComponent,
+    redirectTo: 'ui',
+    pathMatch: 'full',
   },
 ];

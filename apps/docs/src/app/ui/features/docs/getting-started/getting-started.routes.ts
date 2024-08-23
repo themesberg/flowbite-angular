@@ -13,13 +13,16 @@ export default [
   {
     path: 'introduction',
     component: IntroductionComponent,
+    title: 'Gettings started - Introduction',
   },
   {
     path: 'license',
     component: LicenseComponent,
+    title: 'Gettings started - License',
   },
   {
     path: 'quickstart',
     component: QuickstartComponent,
+    title: 'Gettings started - Quickstart',
   },
 ] as Routes;
