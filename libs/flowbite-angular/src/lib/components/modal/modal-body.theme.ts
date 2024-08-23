@@ -13,7 +13,7 @@ export interface ModalBodyTheme {
 
 export const modalBodyTheme: ModalBodyTheme = createTheme({
   root: {
-    base: 'p-6 space-y-6',
+    base: 'block p-6 space-y-6',
   },
 });
 
