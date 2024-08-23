@@ -13,7 +13,7 @@ export interface DropdownDividerTheme {
 
 export const dropdownDividerTheme: DropdownDividerTheme = createTheme({
   root: {
-    base: 'my-1 h-px bg-gray-100 dark:bg-gray-600',
+    base: 'block my-1 h-px bg-gray-100 dark:bg-gray-600',
   },
 });
 

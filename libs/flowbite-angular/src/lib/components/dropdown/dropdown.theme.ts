@@ -63,7 +63,7 @@ export const dropdownTheme: DropdownTheme = createTheme({
     },
   },
   content: {
-    base: 'py-1 text-sm text-gray-700 dark:text-gray-200',
+    base: 'py-1 text-sm text-gray-700 dark:text-gray-200 shadow-md',
   },
   subContent: {
     base: 'py-1',
