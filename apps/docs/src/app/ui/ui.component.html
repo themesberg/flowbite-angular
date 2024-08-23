@@ -18,8 +18,13 @@
     </div>
     <flowbite-navbar-content>
       <flowbite-navbar-item routerLink="./docs">Docs</flowbite-navbar-item>
-      <flowbite-navbar-item (click)="document.defaultView?.open('https://flowbite.com', '_blank')">
-        Flowbite
+      <flowbite-navbar-item>
+        <a
+          href="https://flowbite.com"
+          target="_blank"
+          rel="noopener">
+          Flowbite
+        </a>
       </flowbite-navbar-item>
     </flowbite-navbar-content>
     <div class="flex flex-row">

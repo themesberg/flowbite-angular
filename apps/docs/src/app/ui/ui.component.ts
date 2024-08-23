@@ -11,7 +11,7 @@ import {
   SidebarToggleComponent,
 } from 'flowbite-angular';
 
-import { DOCUMENT, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
@@ -35,6 +35,5 @@ import { Router, RouterOutlet } from '@angular/router';
   providers: [SidebarStateService, IconComponent],
 })
 export class UiComponent {
-  protected document = inject(DOCUMENT);
   protected router = inject(Router);
 }
