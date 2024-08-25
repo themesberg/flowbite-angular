@@ -31,7 +31,7 @@ export const sidebarMenuTheme: SidebarMenuTheme = createTheme({
       disabled: 'hidden',
     },
     color: {
-      primary: 'border-primary-200 dark:border-primary-700',
+      primary: 'border-gray-200 dark:border-gray-800',
       dark: 'border-gray-200 dark:border-gray-700',
       blue: 'border-blue-200 dark:border-blue-700',
       red: 'border-red-200 dark:border-red-700',
