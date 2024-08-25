@@ -18,11 +18,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'flowbite-dark-theme-toggle',
   template: `
     <flowbite-icon
-      svgIcon="flowbite-angular:moon"
-      class="h-5 w-5 hidden dark:block" />
-    <flowbite-icon
-      svgIcon="flowbite-angular:sun"
+      svgIcon="solid:moon"
       class="h-5 w-5 block dark:hidden" />
+    <flowbite-icon
+      svgIcon="solid:sun"
+      class="h-5 w-5 hidden dark:block" />
   `,
 })
 export class DarkThemeToggleComponent extends BaseComponent {

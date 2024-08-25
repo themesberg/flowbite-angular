@@ -17,20 +17,31 @@
       </flowbite-navbar-brand>
     </div>
     <flowbite-navbar-content>
-      <flowbite-navbar-item routerLink="./docs">Docs</flowbite-navbar-item>
-      <flowbite-navbar-item>
-        <a
-          href="https://flowbite.com"
-          target="_blank"
-          rel="noopener">
-          Flowbite
-        </a>
-      </flowbite-navbar-item>
+      <div class="flex flex-row items-center gap-5">
+        <flowbite-navbar-item routerLink="./docs">Docs</flowbite-navbar-item>
+        <flowbite-navbar-item routerLink="./docs/getting-started/quickstart">Quickstart</flowbite-navbar-item>
+        <flowbite-navbar-item>
+          <a
+            href="https://flowbite.com/figma/"
+            target="_blank"
+            rel="noopener">
+            Figma
+          </a>
+        </flowbite-navbar-item>
+        <flowbite-navbar-item>
+          <a
+            href="https://flowbite.com"
+            target="_blank"
+            rel="noopener">
+            Flowbite
+          </a>
+        </flowbite-navbar-item>
+        <div class="flex flex-row justify-start">
+          <flowbite-dark-theme-toggle />
+          <flowbite-navbar-toggle />
+        </div>
+      </div>
     </flowbite-navbar-content>
-    <div class="flex flex-row">
-      <flowbite-dark-theme-toggle />
-      <flowbite-navbar-toggle />
-    </div>
   </flowbite-navbar>
 
   <router-outlet />
