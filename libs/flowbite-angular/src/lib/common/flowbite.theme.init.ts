@@ -57,6 +57,7 @@ import {
   FLOWBITE_MODAL_THEME_TOKEN,
   FLOWBITE_NAVBAR_BRAND_THEME_TOKEN,
   FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
+  FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN,
   FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
   FLOWBITE_NAVBAR_THEME_TOKEN,
   FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
@@ -91,6 +92,8 @@ import {
   NavbarBrandThemeService,
   navbarContentTheme,
   NavbarContentThemeService,
+  navbarIconButtonTheme,
+  NavbarIconButtonThemeService,
   navbarItemTheme,
   NavbarItemThemeService,
   navbarTheme,
@@ -213,6 +216,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: NavbarToggleThemeService,
       useClass: NavbarToggleThemeService,
+    },
+    {
+      provide: NavbarIconButtonThemeService,
+      useClass: NavbarIconButtonThemeService,
     },
     {
       provide: NavbarThemeService,
@@ -361,6 +368,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
       useValue: navbarToogleTheme,
+    },
+    {
+      provide: FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN,
+      useValue: navbarIconButtonTheme,
     },
     {
       provide: FLOWBITE_NAVBAR_THEME_TOKEN,
