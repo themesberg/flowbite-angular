@@ -13,9 +13,7 @@ export class SignalStoreService<T> {
   }
 
   public set<K extends keyof T>(key: K, data: T[K]) {
-    if (this._state()[key] !== data) {
-      this._state.update((currentValue) => ({ ...currentValue, [key]: data }));
-    }
+    this._state.update((currentValue) => ({ ...currentValue, [key]: data }));
   }
 
   public setState(state: T) {

@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import { indicatorTheme, themeToString } from 'flowbite-angular';
@@ -44,6 +45,29 @@ export class IndicatorExampleService {
       name: 'Indicator theme',
       language: 'angular-ts',
       rawCode: themeToString(indicatorTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default indicator',
+    },
+    {
+      fragmentName: 'Legend indicator',
+    },
+    {
+      fragmentName: 'Indicator count',
+    },
+    {
+      fragmentName: 'Indicator position',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Indicator theme',
+        },
+      ],
     },
   ];
 }

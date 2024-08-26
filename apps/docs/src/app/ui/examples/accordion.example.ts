@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import {
@@ -62,6 +63,38 @@ export class AccordionExampleService {
       name: 'Accordion content theme',
       language: 'angular-ts',
       rawCode: themeToString(accordionContentTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default accordion',
+    },
+    {
+      fragmentName: 'Always open',
+    },
+    {
+      fragmentName: 'Color option',
+    },
+    {
+      fragmentName: 'Flush accordion',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Accordion theme',
+        },
+        {
+          fragmentName: 'Accordion panel theme',
+        },
+        {
+          fragmentName: 'Accordion title theme',
+        },
+        {
+          fragmentName: 'Accordion content theme',
+        },
+      ],
     },
   ];
 }

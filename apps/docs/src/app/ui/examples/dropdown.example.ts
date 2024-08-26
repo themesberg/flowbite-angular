@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import {
@@ -62,6 +63,38 @@ export class DropdownExampleService {
       name: 'Dropdown divider theme',
       language: 'angular-ts',
       rawCode: themeToString(dropdownDividerTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Dropdown',
+    },
+    {
+      fragmentName: 'Dropdown with divider',
+    },
+    {
+      fragmentName: 'Dropdown with header',
+    },
+    {
+      fragmentName: 'Dropdown placement',
+    },
+    {
+      fragmentName: 'theme',
+      children: [
+        {
+          fragmentName: 'Dropdown theme',
+        },
+        {
+          fragmentName: 'Dropdown item theme',
+        },
+        {
+          fragmentName: 'Dropdown header theme',
+        },
+        {
+          fragmentName: 'Dropdown divider theme',
+        },
+      ],
     },
   ];
 }

@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import { buttonTheme, themeToString } from 'flowbite-angular';
@@ -90,6 +91,50 @@ export class ButtonExampleService {
       name: 'Button theme',
       language: 'angular-ts',
       rawCode: themeToString(buttonTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default button',
+    },
+    {
+      fragmentName: 'Button pills',
+    },
+    {
+      fragmentName: 'Gradient monochrome',
+    },
+    {
+      fragmentName: 'Gradient duo-tone',
+    },
+    {
+      fragmentName: 'Gradient outline',
+    },
+    {
+      fragmentName: 'Outline buttons',
+    },
+    {
+      fragmentName: 'Button sizes',
+    },
+    {
+      fragmentName: 'Buttons with icon',
+    },
+    {
+      fragmentName: 'Button with label',
+    },
+    {
+      fragmentName: 'Icon buttons',
+    },
+    {
+      fragmentName: 'Disabled',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Button theme',
+        },
+      ],
     },
   ];
 }
