@@ -1,6 +1,6 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { createClass } from '../../utils';
-import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base-component.directive';
 import type { NavbarBrandClass, NavbarBrandTheme } from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar.component';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'flowbite-navbar-brand',
@@ -17,8 +16,9 @@ import { RouterLink } from '@angular/router';
   template: `<ng-content />`,
   hostDirectives: [
     {
-      directive: RouterLink,
-      inputs: routerLinkInputs,
+      directive: FlowbiteRouterLinkDirective,
+      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
+      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
     },
   ],
 })

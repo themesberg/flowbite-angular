@@ -1,9 +1,8 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
+import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { SanitizeHtmlPipe } from '../../pipes';
 import { createClass } from '../../utils';
-import { routerLinkInputs } from '../../utils/directive.input.util';
-import { routerLinkOutputs } from '../../utils/directive.output.util';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarItemGroupComponent } from './sidebar-item-group.component';
@@ -14,11 +13,10 @@ import type { SidebarColors } from './sidebar.theme';
 
 import { NgClass, NgIf } from '@angular/common';
 import { Component, HostListener, inject, input, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, RouterLinkActive, SanitizeHtmlPipe, BadgeComponent],
+  imports: [NgIf, NgClass, SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
     <span
@@ -34,9 +32,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   `,
   hostDirectives: [
     {
-      directive: RouterLink,
-      inputs: routerLinkInputs,
-      outputs: routerLinkOutputs,
+      directive: FlowbiteRouterLinkDirective,
+      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
+      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
     },
     {
       directive: FlowbiteRouterLinkActiveDirective,
@@ -44,7 +42,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   ],
 })
 export class SidebarItemComponent extends BaseComponent {
-  public readonly routerLink = inject(RouterLink);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
   public readonly themeService = inject(SidebarItemThemeService);
   public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent);

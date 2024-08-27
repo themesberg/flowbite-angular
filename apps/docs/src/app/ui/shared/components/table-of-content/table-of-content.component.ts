@@ -12,7 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <ul class="flex flex-col gap-3">
       @if (data().children) {
         <li
-          class="px-2 py-1 text-base font-normal cursor-pointer text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:border-l border-gray-800 dark:border-white aria-current:text-primary-500 aria-current:border-primary-500">
+          class="px-2 py-1 text-base font-normal cursor-default text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:border-l border-gray-800 dark:border-white">
           <ng-container [ngTemplateOutlet]="content" />
         </li>
       } @else {

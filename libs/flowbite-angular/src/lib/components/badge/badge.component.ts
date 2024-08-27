@@ -1,14 +1,13 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { routerLinkInputs } from '../../utils/directive.input.util';
 import { BaseComponent } from '../base-component.directive';
 import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.theme';
 import { BadgeThemeService } from './badge.theme.service';
 
 import { NgClass } from '@angular/common';
 import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 /**
  * @see https://flowbite.com/docs/components/badge/
@@ -20,13 +19,14 @@ import { RouterLink } from '@angular/router';
   template: `<ng-content />`,
   hostDirectives: [
     {
-      directive: RouterLink,
-      inputs: routerLinkInputs,
+      directive: FlowbiteRouterLinkDirective,
+      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
+      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
     },
   ],
 })
 export class BadgeComponent extends BaseComponent {
-  public readonly routerLink = inject(RouterLink);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly themeService = inject(BadgeThemeService);
 
   public override contentClasses = signal<BadgeClass>(createClass({ rootClass: '' }));
@@ -46,7 +46,7 @@ export class BadgeComponent extends BaseComponent {
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
       isPill: booleanToFlowbiteBoolean(this.isPill()),
-      link: this.routerLink.urlTree,
+      link: this.flowbiteRouterLink.routerLink.urlTree,
       customStyle: this.customStyle(),
     });
 
