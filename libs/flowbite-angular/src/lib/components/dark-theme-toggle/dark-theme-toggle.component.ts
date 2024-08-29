@@ -18,10 +18,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'flowbite-dark-theme-toggle',
   template: `
     <flowbite-icon
-      svgIcon="solid:moon"
+      svgIcon="flowbite-angular:moon"
       class="h-5 w-5 block dark:hidden" />
     <flowbite-icon
-      svgIcon="solid:sun"
+      svgIcon="flowbite-angular:sun"
       class="h-5 w-5 hidden dark:block" />
   `,
 })

@@ -20,7 +20,7 @@ export class NavbarIconButtonThemeService implements FlowbiteThemeService<Navbar
     const theme: NavbarIconButtonTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: NavbarIconButtonClass = {
-      rootClass: twMerge(theme.root.base),
+      rootClass: twMerge(theme.root.base, theme.root.color[properties.color]),
     };
 
     return output;
