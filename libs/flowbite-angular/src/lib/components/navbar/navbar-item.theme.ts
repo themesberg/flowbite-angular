@@ -17,7 +17,7 @@ export interface NavbarItemTheme {
 
 export const navbarItemTheme: NavbarItemTheme = createTheme({
   root: {
-    base: 'cursor-pointer block py-2 px-3 rounded text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent',
+    base: 'cursor-pointer block py-2 px-3 rounded text-sm text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent',
     color: {
       primary:
         'md:hover:text-primary-700 md:dark:hover:text-primary-500 aria-current:text-primary-500 dark:aria-current:text-primary-300',

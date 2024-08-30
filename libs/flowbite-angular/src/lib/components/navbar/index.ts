@@ -22,3 +22,15 @@ export { NavbarToggleComponent } from './navbar-toggle.component';
 export type { NavbarToggleTheme, NavbarToggleClass, NavbarToggleProperties } from './navbar-toggle.theme';
 export { navbarToogleTheme } from './navbar-toggle.theme';
 export { FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN, NavbarToggleThemeService } from './navbar-toggle.theme.service';
+
+export { NavbarIconButtonComponent } from './navbar-icon-button.component';
+export type {
+  NavbarIconButtonProperties,
+  NavbarIconButtonClass,
+  NavbarIconButtonTheme,
+} from './navbar-icon-button.theme';
+export { navbarIconButtonTheme } from './navbar-icon-button.theme';
+export {
+  FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN,
+  NavbarIconButtonThemeService,
+} from './navbar-icon-button.theme.service';
