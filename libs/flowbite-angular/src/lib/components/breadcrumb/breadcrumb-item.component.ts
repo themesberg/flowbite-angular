@@ -1,7 +1,6 @@
 import type { DeepPartial } from '../../common/flowbite.type';
+import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { createClass } from '../../utils';
-import { routerLinkInputs } from '../../utils/directive.input.util';
-import { routerLinkOutputs } from '../../utils/directive.output.util';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -14,7 +13,6 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import { Component, inject, input, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -28,16 +26,16 @@ import { RouterLink } from '@angular/router';
   `,
   hostDirectives: [
     {
-      directive: RouterLink,
-      inputs: routerLinkInputs,
-      outputs: routerLinkOutputs,
+      directive: FlowbiteRouterLinkDirective,
+      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
+      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
     },
   ],
 })
 export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   public readonly themeService = inject(BreadcrumbItemThemeService);
   public readonly breadcrumbComponent = inject(BreadcrumbComponent);
-  public readonly routerLink = inject(RouterLink);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
 
@@ -52,7 +50,7 @@ export class BreadcrumbItemComponent extends BaseComponent implements OnInit {
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       color: this.color(),
-      link: this.routerLink.urlTree,
+      link: this.flowbiteRouterLink.routerLink.urlTree,
       customStyle: this.customStyle(),
     });
 

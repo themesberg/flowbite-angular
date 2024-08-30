@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import { breadcrumbItemTheme, breadcrumbTheme, themeToString } from 'flowbite-angular';
@@ -25,6 +26,23 @@ export class BreadcrumbExampleService {
       name: 'Breadcrumb item theme',
       language: 'angular-ts',
       rawCode: themeToString(breadcrumbItemTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default breadcrumb',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Breadcrumb theme',
+        },
+        {
+          fragmentName: 'Breadcrumb item theme',
+        },
+      ],
     },
   ];
 }

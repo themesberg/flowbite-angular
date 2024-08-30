@@ -10,7 +10,11 @@ import { RouterLink } from '@angular/router';
   imports: [NgClass, ShikiComponent, RouterLink],
   selector: 'flowbite-theme-example',
   template: `
-    <h1 class="docs">Theme</h1>
+    <h1
+      id="Theme"
+      class="docs">
+      Theme
+    </h1>
     <p class="docs">
       To learn more about how to customize the appearance of components, please see the
       <a
@@ -21,7 +25,11 @@ import { RouterLink } from '@angular/router';
       documentation.
     </p>
     @for (item of examples(); track $index) {
-      <span class="py-2 text-2xl font-bold text-gray-900 dark:text-white">{{ item.name }}</span>
+      <span
+        [id]="item.name"
+        class="py-2 text-2xl font-bold text-gray-900 dark:text-white">
+        {{ item.name }}
+      </span>
       <span class="pb-4 text-base text-gray-700 dark:text-gray-400">{{ subtitle() }}</span>
       <div class="grid rounded-t-xl shadow-md border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
         <flowbite-shiki

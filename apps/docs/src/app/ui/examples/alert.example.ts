@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import { alertTheme, themeToString } from 'flowbite-angular';
@@ -59,6 +60,35 @@ export class AlertExampleService {
       name: 'Alert theme',
       language: 'angular-ts',
       rawCode: themeToString(alertTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default alert',
+    },
+    {
+      fragmentName: 'Alerts with icon',
+    },
+    {
+      fragmentName: 'Bordered alerts',
+    },
+    {
+      fragmentName: 'Dismissable alerts',
+    },
+    {
+      fragmentName: 'Border accent',
+    },
+    {
+      fragmentName: 'Additional content',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Alert theme',
+        },
+      ],
     },
   ];
 }

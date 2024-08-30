@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import { badgeTheme, themeToString } from 'flowbite-angular';
@@ -48,6 +49,32 @@ export class BadgeExampleService {
       name: 'Badge theme',
       language: 'angular-ts',
       rawCode: themeToString(badgeTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default badge',
+    },
+    {
+      fragmentName: 'Large badge',
+    },
+    {
+      fragmentName: 'Badge as link',
+    },
+    {
+      fragmentName: 'Badge with icon',
+    },
+    {
+      fragmentName: 'Badge with icon only',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Badge theme',
+        },
+      ],
     },
   ];
 }

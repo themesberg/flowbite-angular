@@ -1,3 +1,4 @@
+import type { TableOfContent } from '../shared/models/table-of-content';
 import type { Example } from './examples';
 
 import { modalBodyTheme, modalFooterTheme, modalHeaderTheme, modalTheme, themeToString } from 'flowbite-angular';
@@ -66,6 +67,41 @@ export class ModalExampleService {
       name: 'Modal footer theme',
       language: 'angular-ts',
       rawCode: themeToString(modalFooterTheme),
+    },
+  ];
+
+  public readonly tableOfContent: TableOfContent[] = [
+    {
+      fragmentName: 'Default modal',
+    },
+    {
+      fragmentName: 'Modal sizes',
+    },
+    {
+      fragmentName: 'Dismissable modal',
+    },
+    {
+      fragmentName: 'Modal with form',
+    },
+    {
+      fragmentName: 'Positioned modal',
+    },
+    {
+      fragmentName: 'Theme',
+      children: [
+        {
+          fragmentName: 'Modal theme',
+        },
+        {
+          fragmentName: 'Modal body theme',
+        },
+        {
+          fragmentName: 'Modal header theme',
+        },
+        {
+          fragmentName: 'Modal footer theme',
+        },
+      ],
     },
   ];
 }

@@ -12,7 +12,11 @@ import { of, type Observable } from 'rxjs';
   imports: [NgClass, FlowbiteIFrameWrapperComponent, ShikiComponent],
   selector: 'flowbite-demo-example',
   template: `
-    <span class="pb-2 text-2xl font-bold text-gray-900 dark:text-white">{{ title() }}</span>
+    <span
+      [id]="title()"
+      class="pb-2 text-2xl font-bold text-gray-900 dark:text-white"
+      >{{ title() }}</span
+    >
     <span class="pb-4 text-base text-gray-700 dark:text-gray-400">{{ subtitle() }}</span>
     <div class="grid rounded-t-xl shadow-md border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
       <flowbite-iframe-wrapper

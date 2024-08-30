@@ -1,6 +1,9 @@
-<flowbite-demo-example
-  title="Default Breadcrumb"
-  height="90"
-  [examples]="exampleService.defaultBreadcrumb" />
+<div class="flex flex-col flex-1 gap-8">
+  <flowbite-demo-example
+    title="Default Breadcrumb"
+    height="90"
+    [examples]="exampleService.defaultBreadcrumb" />
 
-<flowbite-theme-example [examples]="exampleService.breadcrumbTheme" />
+  <flowbite-theme-example [examples]="exampleService.breadcrumbTheme" />
+</div>
+<flowbite-table-of-content [data]="exampleService.tableOfContent" />
