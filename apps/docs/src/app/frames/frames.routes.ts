@@ -36,6 +36,10 @@ export default [
     loadChildren: () => import('./modal/modal.routes'),
   },
   {
+    path: 'sidebar',
+    loadChildren: () => import('./sidebar/sidebar.routes'),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },

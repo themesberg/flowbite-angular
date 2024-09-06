@@ -1,1 +1,9 @@
-<p>sidebar-page works!</p>
+<div class="flex flex-col flex-1 gap-8">
+  <flowbite-demo-example
+    title="Default sidebar"
+    height="400"
+    [examples]="exampleService.defaultSidebar" />
+
+  <flowbite-theme-example [examples]="exampleService.sidebarTheme" />
+</div>
+<flowbite-table-of-content [data]="exampleService.tableOfContent" />
