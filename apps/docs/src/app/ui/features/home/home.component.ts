@@ -1,3 +1,5 @@
+import { CopyPackageInputComponent } from './copy-package-input/copy-package-input.component';
+
 import type { ThemeState } from 'flowbite-angular';
 import {
   BreadcrumbComponent,
@@ -23,6 +25,7 @@ import { RouterLink } from '@angular/router';
     InputDirective,
     RouterLink,
     IconComponent,
+    CopyPackageInputComponent,
   ],
   templateUrl: './home.component.html',
 })
