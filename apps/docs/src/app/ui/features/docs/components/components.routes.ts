@@ -6,6 +6,7 @@ import { ButtonPageComponent } from './button-page/button-page.component';
 import { DropdownPageComponent } from './dropdown-page/dropdown-page.component';
 import { IndicatorPageComponent } from './indicator-page/indicator-page.component';
 import { ModalPageComponent } from './modal-page/modal-page.component';
+import { NavbarPageComponent } from './navbar-page/navbar-page.component';
 import { SidebarPageComponent } from './sidebar-page/sidebar-page.component';
 
 import type { Routes } from '@angular/router';
@@ -47,13 +48,18 @@ export default [
     title: 'Components - Indicator',
   },
   {
-    path: 'sidebar',
-    component: SidebarPageComponent,
-    title: 'Components - Sidebar',
-  },
-  {
     path: 'modal',
     component: ModalPageComponent,
     title: 'Components - Modal',
+  },
+  {
+    path: 'navbar',
+    component: NavbarPageComponent,
+    title: 'Components - Navbar',
+  },
+  {
+    path: 'sidebar',
+    component: SidebarPageComponent,
+    title: 'Components - Sidebar',
   },
 ] as Routes;

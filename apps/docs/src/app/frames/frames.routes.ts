@@ -36,6 +36,10 @@ export default [
     loadChildren: () => import('./modal/modal.routes'),
   },
   {
+    path: 'navbar',
+    loadChildren: () => import('./navbar/navbar.routes'),
+  },
+  {
     path: 'sidebar',
     loadChildren: () => import('./sidebar/sidebar.routes'),
   },
