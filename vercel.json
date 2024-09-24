@@ -6,6 +6,9 @@
   "buildCommand": "yarn nx run docs:build",
   "outputDirectory": "dist/docs-static",
   "installCommand": "yarn install",
+  "env": {
+    "FORCE_RUNTIME_TAG": "canary"
+  },
   "rewrites": [
     {
       "source": "/(.*)",
