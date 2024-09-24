@@ -14,7 +14,7 @@
   ],
   "functions": {
     "api/index.mjs": {
-      "includeFiles": "dist/docs-static/browser/**"
+      "includeFiles": "dist/docs-static/**"
     }
   }
 }
