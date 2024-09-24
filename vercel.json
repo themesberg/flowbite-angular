@@ -2,7 +2,10 @@
   "version": 2,
   "public": true,
   "name": "flowbite-angular",
-  "devCommand": "node dist/docs-static/server/main.js",
+  "framework": "angular",
+  "buildCommand": "yarn nx run docs:build",
+  "outputDirectory": "dist/docs-static",
+  "installCommand": "yarn install",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -10,7 +13,7 @@
     }
   ],
   "functions": {
-    "api/index.js": {
+    "api/index.mjs": {
       "includeFiles": "dist/docs-static/browser/**"
     }
   }
