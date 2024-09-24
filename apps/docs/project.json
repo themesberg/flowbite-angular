@@ -7,18 +7,25 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath.base}"],
       "options": {
-        "outputPath": "dist/docs-static/browser",
+        "outputPath": {
+          "base": "dist/docs-static"
+        },
         "index": "apps/docs/src/index.html",
-        "main": "apps/docs/src/main.ts",
-        "polyfills": "zone.js",
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/docs/tsconfig.app.json",
         "inlineStyleLanguage": "css",
         "assets": ["apps/docs/src/assets"],
         "styles": ["apps/docs/src/styles.css"],
-        "scripts": []
+        "scripts": [],
+        "browser": "apps/docs/src/main.ts",
+        "server": "apps/docs/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/docs/server.ts"
+        }
       },
       "configurations": {
         "production": {
@@ -43,9 +50,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -53,69 +58,17 @@
       },
       "defaultConfiguration": "production"
     },
-    "server": {
-      "dependsOn": ["build"],
-      "executor": "@angular-devkit/build-angular:server",
-      "options": {
-        "outputPath": "dist/docs-static/server",
-        "main": "apps/docs/server.ts",
-        "tsConfig": "apps/docs/tsconfig.server.json",
-        "inlineStyleLanguage": "css"
-      },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "outputHashing": "media",
-          "fileReplacements": [
-            {
-              "replace": "apps/docs/src/environments/environment.ts",
-              "with": "apps/docs/src/environments/environment.prod.ts"
-            }
-          ]
+          "buildTarget": "docs:build:production"
         },
         "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "sourceMap": true,
-          "extractLicenses": false,
-          "vendorChunk": true
+          "buildTarget": "docs:build:development"
         }
       },
       "defaultConfiguration": "production"
-    },
-    "prerender": {
-      "executor": "@angular-devkit/build-angular:prerender",
-      "options": {
-        "routes": ["/"]
-      },
-      "configurations": {
-        "development": {
-          "browserTarget": "docs:build:development",
-          "serverTarget": "docs:server:development"
-        },
-        "production": {
-          "browserTarget": "docs:build:production",
-          "serverTarget": "docs:server:production"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "start": {
-      "executor": "@angular-devkit/build-angular:ssr-dev-server",
-      "options": {
-        "browserTarget": "docs:build",
-        "serverTarget": "docs:server"
-      },
-      "configurations": {
-        "production": {
-          "browserTarget": "docs:build:production",
-          "serverTarget": "docs:server:production"
-        },
-        "development": {
-          "browserTarget": "docs:build:development",
-          "serverTarget": "docs:server:development"
-        }
-      },
-      "defaultConfiguration": "development"
     },
     "test": {
       "executor": "@nx/jest:jest",

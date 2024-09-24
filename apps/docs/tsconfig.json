@@ -24,7 +24,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "target": "ES2022"
+    "target": "ES2022",
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
