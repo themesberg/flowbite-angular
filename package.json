@@ -12,16 +12,19 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "nx run build",
-    "build:lib": "nx run flowbite-angular:build && cp README.md LICENSE dist/libs/flowbite-angular",
-    "lint": "nx run-many --target lint --all",
+    "all:build": "nx run-many --target build --all",
+    "all:lint": "nx run-many --target lint --all",
+    "all:test": "nx run-many --target test --all",
+    "docs:build": "nx run docs:build",
+    "docs:lint": "nx run docs:lint",
+    "docs:serve": "nx run docs:serve",
+    "docs:test": "nx run docs:test",
+    "lib:build": "nx run flowbite-angular:build && cp README.md LICENSE dist/libs/flowbite-angular",
+    "lib:lint": "nx run flowbite-angular:lint",
+    "lib:test": "nx run flowbite-angular:test",
     "prepare": "husky install",
-    "prettier": "nx format:check",
-    "release": "standard-version",
-    "test": "nx run-many --target test --all"
-  },
-  "overrides": {
-    "@parcel/watcher": "2.1.0"
+    "prettier": "nx format:check --base=HEAD",
+    "release": "standard-version"
   },
   "dependencies": {
     "@angular-eslint/template-parser": "18.0.1",
@@ -99,5 +102,8 @@
     "ts-jest": "29.1.1",
     "ts-node": "10.9.2",
     "typescript": "5.4.5"
+  },
+  "overrides": {
+    "@parcel/watcher": "2.1.0"
   }
 }
