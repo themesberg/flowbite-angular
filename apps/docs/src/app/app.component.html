@@ -1,6 +1,7 @@
 <ng-doc-root
   [sidebar]="!isLandingPage"
-  [noWidthLimit]="isLandingPage">
+  [noWidthLimit]="isLandingPage"
+  [footerContent]="footerContent">
   <flowbite-navbar
     ngDocCustomNavbar
     isFixed
@@ -84,5 +85,26 @@
   <ng-doc-sidebar></ng-doc-sidebar>
 
   <router-outlet></router-outlet>
+
+  <ng-template #footerContent>
+    <section class="flex flex-col items-center">
+      <div class="flex flex-col items-center py-6 md:py-8 px-4 gap-6 md:gap-8">
+        <div class="flex flex-row justify-between items-center pt-6 md:pt-8 border-t-gray-200">
+          <div class="mx-auto flex flex-col md:flex-row justify-center items-start md:items-center gap-4 md:gap-5">
+            <div class="flex flex-row items-center gap-3">
+              <flowbite-icon
+                svgIcon="flowbite-angular-logo"
+                class="w-8 h-8"
+                alt="Flowbite logo" />
+              <span class="text-2xl font-semibold text-gray-900 dark:text-white"> Flowbite </span>
+            </div>
+            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
+              © 2019-2023 Flowbite™ is a registered trademark. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ng-template>
 </ng-doc-root>
 

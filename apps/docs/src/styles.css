@@ -1,4 +1,4 @@
-@import 'assets/styles/base.css';
+@import 'assets/styles/base.scss';
 @import 'assets/styles/dark.scss';
 
 @config '../tailwind.config.js';
