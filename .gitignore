@@ -8,7 +8,6 @@
 # dependencies
 node_modules
 package-lock.json
-yarn.lock
 
 # IDEs and editors
 /.idea
@@ -32,7 +31,6 @@ yarn.lock
 /coverage
 /libpeerconnection.log
 npm-debug.log
-yarn-error.log
 testem.log
 /typings
 

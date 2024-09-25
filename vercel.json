@@ -3,9 +3,9 @@
   "public": true,
   "name": "flowbite-angular",
   "framework": "angular",
-  "buildCommand": "yarn nx run docs:build",
+  "buildCommand": "npx nx run docs:build",
   "outputDirectory": "dist/docs-static",
-  "installCommand": "yarn install",
+  "installCommand": "npm i",
   "env": {
     "FORCE_RUNTIME_TAG": "canary"
   },
