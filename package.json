@@ -20,6 +20,9 @@
     "release": "standard-version",
     "test": "nx run-many --target test --all"
   },
+  "overrides": {
+    "@parcel/watcher": "2.1.0"
+  },
   "dependencies": {
     "@angular-eslint/template-parser": "18.0.1",
     "@angular/animations": "18.2.5",

@@ -5,7 +5,7 @@ import { IconRegistry, initFlowbite } from 'flowbite-angular';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { APP_INITIALIZER, PLATFORM_ID, type ApplicationConfig } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import {
@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideSearchEngine(NgDocDefaultSearchEngine),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),
     provideMainPageProcessor(NG_DOC_DEFAULT_PAGE_PROCESSORS),
-    //provideClientHydration(),
+    provideClientHydration(),
     provideRouter(
       appRoutes,
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),

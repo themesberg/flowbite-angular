@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: npm i
+        run: npm ci --no-optional
 
       - name: Lint the code 🕵
         run: npx nx lint

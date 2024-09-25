@@ -5,7 +5,7 @@
   "framework": "angular",
   "buildCommand": "npx nx run docs:build",
   "outputDirectory": "dist/docs-static",
-  "installCommand": "npm i",
+  "installCommand": "npm ci --no-optional",
   "env": {
     "FORCE_RUNTIME_TAG": "canary"
   },
