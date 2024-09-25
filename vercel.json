@@ -3,7 +3,7 @@
   "public": true,
   "name": "flowbite-angular",
   "framework": "angular",
-  "buildCommand": "npm run nx run docs:build",
+  "buildCommand": "npx nx run docs:build",
   "outputDirectory": "dist/docs-static",
   "installCommand": "npm i",
   "env": {
