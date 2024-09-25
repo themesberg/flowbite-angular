@@ -1,6 +1,6 @@
 {
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "npm"
   },
   "generators": {
     "@nx/angular:application": {
