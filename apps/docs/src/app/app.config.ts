@@ -23,7 +23,15 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
     provideNgDocContext(),
-    provideNgDocApp(),
+    provideNgDocApp({
+      shiki: {
+        themes: [import('shiki/themes/material-theme.mjs'), import('shiki/themes/material-theme-lighter.mjs')],
+        theme: {
+          light: 'material-theme-lighter',
+          dark: 'material-theme',
+        },
+      },
+    }),
     provideSearchEngine(NgDocDefaultSearchEngine),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),
     provideMainPageProcessor(NG_DOC_DEFAULT_PAGE_PROCESSORS),

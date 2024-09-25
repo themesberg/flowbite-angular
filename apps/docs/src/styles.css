@@ -1,6 +1,7 @@
-@config '../tailwind.config.js';
+@import 'assets/styles/base.css';
+@import 'assets/styles/dark.scss';
 
-@import '@ng-doc/app/styles/themes/dark.css';
+@config '../tailwind.config.js';
 
 @tailwind base;
 
