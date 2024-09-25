@@ -4,7 +4,7 @@ const config: NgDocConfiguration = {
   cache: true,
   routePrefix: 'docs',
   docsPath: 'apps/docs/docs',
-  tsConfig: 'apps/docs/ts-config.app.json',
+  tsConfig: 'apps/docs/tsconfig.app.json',
   repoConfig: {
     url: 'https://github.com/themesberg/flowbite-angular',
     mainBranch: 'main',

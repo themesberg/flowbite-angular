@@ -84,7 +84,7 @@
           "buildTarget": "docs:build:development"
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "development"
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -104,3 +104,4 @@
     }
   }
 }
+

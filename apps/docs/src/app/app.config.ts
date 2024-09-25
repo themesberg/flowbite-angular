@@ -38,7 +38,7 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       useFactory: initIcons,
       deps: [IconRegistry, DomSanitizer, PLATFORM_ID],
-      multi: false,
+      multi: true,
     },
   ],
 };

@@ -1,5 +1,7 @@
 @config '../tailwind.config.js';
 
+@import '@ng-doc/app/styles/themes/dark.css';
+
 @tailwind base;
 
 @layer base {
