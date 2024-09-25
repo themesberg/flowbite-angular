@@ -6,6 +6,14 @@
     isFixed
     [customStyle]="{ root: { base: 'flex flex-wrap items-center justify-between p-4 xl:px-60' } }">
     <div class="flex flex-row flex-1 items-center gap-2">
+      <flowbite-navbar-icon-button
+        *ngIf="!isLandingPage"
+        class="block lg:hidden"
+        (click)="sidebarService.toggle()">
+        <flowbite-icon
+          svgIcon="outline:bars"
+          class="h-5 w-5 block" />
+      </flowbite-navbar-icon-button>
       <flowbite-navbar-brand routerLink="/">
         <flowbite-icon
           class="h-8"

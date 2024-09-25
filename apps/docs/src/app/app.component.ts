@@ -8,15 +8,16 @@ import {
   NavbarToggleComponent,
 } from 'flowbite-angular';
 
-import { Location } from '@angular/common';
+import { Location, NgIf } from '@angular/common';
 import { Component, HostBinding, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NgDocRootComponent, NgDocSidebarComponent, NgDocThemeToggleComponent } from '@ng-doc/app';
+import { NgDocRootComponent, NgDocSidebarComponent, NgDocSidebarService, NgDocThemeToggleComponent } from '@ng-doc/app';
 
 @Component({
   standalone: true,
   imports: [
     RouterOutlet,
+    NgIf,
     NgDocRootComponent,
     NgDocSidebarComponent,
     NgDocThemeToggleComponent,
@@ -32,6 +33,7 @@ import { NgDocRootComponent, NgDocSidebarComponent, NgDocThemeToggleComponent } 
   templateUrl: './app.component.html',
 })
 export class AppComponent {
+  protected readonly sidebarService = inject(NgDocSidebarService);
   protected readonly location = inject(Location);
 
   @HostBinding('attr.data-ng-doc-is-landing')
