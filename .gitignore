@@ -42,3 +42,7 @@ Thumbs.db
 
 .vercel
 .nx
+
+
+# NgDoc files
+/ng-doc

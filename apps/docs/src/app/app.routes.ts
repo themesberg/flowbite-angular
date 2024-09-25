@@ -1,8 +1,9 @@
 import { UiComponent } from './ui/ui.component';
 
-import type { Route } from '@angular/router';
+import type { Routes } from '@angular/router';
+import { NG_DOC_ROUTING } from '@ng-doc/generated';
 
-export const appRoutes: Route[] = [
+export const appRoutes: Routes = [
   {
     path: '',
     redirectTo: 'ui',
@@ -16,6 +17,10 @@ export const appRoutes: Route[] = [
   {
     path: 'frames',
     loadChildren: () => import('./frames/frames.routes'),
+  },
+  {
+    path: 'docs',
+    children: NG_DOC_ROUTING,
   },
   {
     path: '**',
