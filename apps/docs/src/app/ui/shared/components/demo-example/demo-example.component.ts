@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+
 import { FlowbiteIFrameWrapperComponent } from '../../../../frames/iframe-wrapper.component';
 import type { Example } from '../../../examples/examples';
 import { ShikiComponent } from '../shiki/shiki.component';

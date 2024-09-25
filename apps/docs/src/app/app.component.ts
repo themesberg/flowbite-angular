@@ -36,6 +36,6 @@ export class AppComponent {
 
   @HostBinding('attr.data-ng-doc-is-landing')
   get isLandingPage(): boolean {
-    return this.location.path() === '/new-docs';
+    return this.location.path() === '';
   }
 }
