@@ -55,6 +55,7 @@
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
+    "@ng-doc/keywords-loaders": "^18.0.8",
     "@nx/cypress": "19.8.0",
     "@nx/eslint": "19.8.0",
     "@nx/eslint-plugin": "19.8.0",
