@@ -1,5 +1,6 @@
 import { appRoutes } from './app.routes';
 import { initIcons } from './icon.init';
+import { docDemoDisplayerProcessor } from './shared/processors/doc-demo-displayer-processor/doc-demo-displayer-processor';
 
 import { IconRegistry, initFlowbite } from 'flowbite-angular';
 
@@ -14,6 +15,7 @@ import {
   NgDocDefaultSearchEngine,
   provideMainPageProcessor,
   provideNgDocApp,
+  providePageProcessor,
   providePageSkeleton,
   provideSearchEngine,
 } from '@ng-doc/app';
@@ -21,6 +23,7 @@ import { provideNgDocContext } from '@ng-doc/generated';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    // #region NgDoc
     provideAnimations(),
     provideNgDocContext(),
     provideNgDocApp({
@@ -35,6 +38,8 @@ export const appConfig: ApplicationConfig = {
     provideSearchEngine(NgDocDefaultSearchEngine),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),
     provideMainPageProcessor(NG_DOC_DEFAULT_PAGE_PROCESSORS),
+    providePageProcessor([docDemoDisplayerProcessor]),
+    // #endregion
     provideClientHydration(),
     provideRouter(
       appRoutes,
