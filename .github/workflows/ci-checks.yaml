@@ -37,13 +37,13 @@ jobs:
         run: npm i
 
       - name: Lint the code 🕵
-        run: npx lint
+        run: npx nx lint
 
       - name: Run Prettier 💅
-        run: npx prettier --base=HEAD
+        run: npx nx prettier --base=HEAD
 
       - name: Run unit tests 🔬
-        run: npx test
+        run: npx nx test
 
       - name: Build code 🛠
-        run: npx build
+        run: npx nx build
