@@ -6,7 +6,12 @@ import { NG_DOC_ROUTING } from '@ng-doc/generated';
 export default [
   {
     path: '',
-    redirectTo: 'getting-started',
+    redirectTo: 'getting-started/introduction',
+    pathMatch: 'full',
+  },
+  {
+    path: 'getting-started',
+    redirectTo: 'getting-started/introduction',
     pathMatch: 'full',
   },
   {
