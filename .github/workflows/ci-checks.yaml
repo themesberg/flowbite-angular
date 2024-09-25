@@ -40,7 +40,7 @@ jobs:
         run: npx nx lint
 
       - name: Run Prettier 💅
-        run: npx nx prettier --base=HEAD
+        run: npm run prettier --base=HEAD
 
       - name: Run unit tests 🔬
         run: npx nx test
