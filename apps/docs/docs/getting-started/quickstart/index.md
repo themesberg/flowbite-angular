@@ -1,4 +1,6 @@
 ---
+title: Quickstart
+keyword: QuickstartPage
 ---
 
 ---
@@ -25,7 +27,7 @@ npm install flowbite-angular
 
 By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to call the init function inside the provider's list of your application.
 
-For more informations about styling, check the Override base style.
+For more informations about styling, check the `*OverrideBaseStylePage`.
 
 ```angular-ts
 import { initFlowbite } from 'flowbite-angular';
