@@ -26,8 +26,16 @@
       </flowbite-navbar-brand>
     </div>
     <flowbite-navbar-content class="pr-1">
-      <flowbite-navbar-item routerLink="./docs">Docs</flowbite-navbar-item>
-      <flowbite-navbar-item routerLink="./docs/getting-started/quickstart">Quickstart</flowbite-navbar-item>
+      <flowbite-navbar-item
+        routerLink="./docs"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Docs
+      </flowbite-navbar-item>
+      <flowbite-navbar-item
+        routerLink="./docs/getting-started/quickstart"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Quickstart
+      </flowbite-navbar-item>
       <flowbite-navbar-item>
         <a
           href="https://flowbite.com/figma/"
