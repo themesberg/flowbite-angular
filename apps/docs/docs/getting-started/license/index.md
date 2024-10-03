@@ -1,8 +1,5 @@
 ---
-title: License
 keyword: LicensePage
----
-
 ---
 
 ## Copyright

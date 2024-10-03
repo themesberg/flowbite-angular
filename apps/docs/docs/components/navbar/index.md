@@ -1,8 +1,5 @@
 ---
-title: Navbar
 keyword: NavbarPage
----
-
 ---
 
 ## Default navbar

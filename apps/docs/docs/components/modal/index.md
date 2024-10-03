@@ -1,8 +1,5 @@
 ---
-title: Modal
 keyword: ModalPage
----
-
 ---
 
 ## Default modal

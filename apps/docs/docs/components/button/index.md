@@ -1,8 +1,5 @@
 ---
-title: Button
 keyword: ButtonPage
----
-
 ---
 
 ## Default button

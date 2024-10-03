@@ -1,8 +1,5 @@
 ---
-title: Use custom style
 keyword: UseCustomStylePage
----
-
 ---
 
 ## Giving customStyle value

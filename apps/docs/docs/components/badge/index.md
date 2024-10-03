@@ -1,8 +1,5 @@
 ---
-title: Badge
 keyword: BadgePage
----
-
 ---
 
 ## Default badge

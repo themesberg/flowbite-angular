@@ -1,8 +1,5 @@
 ---
-title: Sidebar
 keyword: SidebarPage
----
-
 ---
 
 ## Default sidebar

@@ -1,8 +1,5 @@
 ---
-title: Alert
 keyword: AlertPage
----
-
 ---
 
 ## Default alert

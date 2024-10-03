@@ -1,8 +1,5 @@
 ---
-title: Breadcrumb
 keyword: BreadcrumbPage
----
-
 ---
 
 ## Default breadcrumb

@@ -1,8 +1,5 @@
 ---
-title: Indicator
 keyword: IndicatorPage
----
-
 ---
 
 ## Default indicator

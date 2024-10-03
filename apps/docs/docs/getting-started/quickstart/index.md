@@ -1,8 +1,5 @@
 ---
-title: Quickstart
 keyword: QuickstartPage
----
-
 ---
 
 ## Introduction

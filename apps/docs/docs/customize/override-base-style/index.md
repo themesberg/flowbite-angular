@@ -1,8 +1,5 @@
 ---
-title: Override base style
 keyword: OverrideBaseStylePage
----
-
 ---
 
 ## Init function

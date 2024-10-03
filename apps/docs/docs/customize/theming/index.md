@@ -1,8 +1,5 @@
 ---
-title: Theming
 keyword: ThemingPage
----
-
 ---
 
 You can use the theme object from the configuration file to define any style related classes, such as the color palette, fonts, breakpoints, and more.

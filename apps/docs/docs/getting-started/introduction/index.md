@@ -1,8 +1,5 @@
 ---
-title: Introduction
 keyword: IntroductionPage
----
-
 ---
 
 ## Introduction
