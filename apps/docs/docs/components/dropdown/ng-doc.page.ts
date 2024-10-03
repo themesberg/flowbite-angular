@@ -10,7 +10,7 @@ const dropdown: NgDocPage = {
   title: 'Dropdown',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 5,
+  order: 6,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbiteDividerComponent: FlowbiteDividerComponent,

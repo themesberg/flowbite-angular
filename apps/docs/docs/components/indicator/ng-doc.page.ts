@@ -10,7 +10,7 @@ const indicator: NgDocPage = {
   title: 'Indicator',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 5,
+  order: 7,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbiteCountComponent: FlowbiteCountComponent,
