@@ -3,7 +3,7 @@ import { FlowbiteDefaultComponent } from './default.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
-const badge: NgDocPage = {
+const breadcrumb: NgDocPage = {
   title: 'Breadcrumb',
   mdFile: './index.md',
   category: ComponentCategory,
@@ -13,4 +13,4 @@ const badge: NgDocPage = {
   },
 };
 
-export default badge;
+export default breadcrumb;
