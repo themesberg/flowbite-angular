@@ -7,6 +7,9 @@ import { FlowbiteSizeComponent } from './size.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
+/**
+ * Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles
+ */
 const modal: NgDocPage = {
   title: 'Modal',
   mdFile: './index.md',

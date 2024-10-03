@@ -6,6 +6,9 @@ import { FlowbiteFlushComponent } from './flush.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
+/**
+ * Use the accordion component to show hidden information based on the collapse and expand state of the child elements
+ */
 const Accordion: NgDocPage = {
   title: 'Accordion',
   mdFile: './index.md',

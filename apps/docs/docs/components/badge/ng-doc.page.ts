@@ -7,6 +7,9 @@ import { FlowbiteLinkComponent } from './link.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
+/**
+ * Use Tailwind CSS badges as elements to show counts or labels separately or inside other components
+ */
 const badge: NgDocPage = {
   title: 'Badge',
   mdFile: './index.md',

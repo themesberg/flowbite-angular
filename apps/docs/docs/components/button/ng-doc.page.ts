@@ -13,6 +13,9 @@ import { FlowbiteSizeComponent } from './size.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
+/**
+ * Use the button component inside forms, as links with support for multiple styles, colors, sizes, gradients, and shadows
+ */
 const button: NgDocPage = {
   title: 'Button',
   mdFile: './index.md',
