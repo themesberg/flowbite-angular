@@ -1,15 +1,15 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './default.component';
-import { FlowbiteDisabledComponent } from './disabled.component';
-import { FlowbiteGradientDuotoneComponent } from './gradient-duotone.component';
-import { FlowbiteGradientMonochromeComponent } from './gradient-monochrome.component';
-import { FlowbiteGradientOutlineComponent } from './gradient-outline.component';
-import { FlowbiteIconOnlyComponent } from './icon-only.component';
-import { FlowbiteIconComponent } from './icon.component';
-import { FlowbiteLabelComponent } from './label.component';
-import { FlowbiteOutlineComponent } from './outline.component';
-import { FlowbitePillComponent } from './pill.component';
-import { FlowbiteSizeComponent } from './size.component';
+import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteDisabledComponent } from './_disabled.component';
+import { FlowbiteGradientDuotoneComponent } from './_gradient-duotone.component';
+import { FlowbiteGradientMonochromeComponent } from './_gradient-monochrome.component';
+import { FlowbiteGradientOutlineComponent } from './_gradient-outline.component';
+import { FlowbiteIconOnlyComponent } from './_icon-only.component';
+import { FlowbiteIconComponent } from './_icon.component';
+import { FlowbiteLabelComponent } from './_label.component';
+import { FlowbiteOutlineComponent } from './_outline.component';
+import { FlowbitePillComponent } from './_pill.component';
+import { FlowbiteSizeComponent } from './_size.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 

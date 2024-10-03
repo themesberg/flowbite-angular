@@ -1,5 +1,5 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './default.component';
+import { FlowbiteDefaultComponent } from './_default.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 

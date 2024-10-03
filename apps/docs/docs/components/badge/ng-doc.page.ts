@@ -1,9 +1,9 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './default.component';
-import { FlowbiteIconOnlyComponent } from './icon-only.component';
-import { FlowbiteIconComponent } from './icon.component';
-import { FlowbiteLargeComponent } from './large.component';
-import { FlowbiteLinkComponent } from './link.component';
+import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteIconOnlyComponent } from './_icon-only.component';
+import { FlowbiteIconComponent } from './_icon.component';
+import { FlowbiteLargeComponent } from './_large.component';
+import { FlowbiteLinkComponent } from './_link.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 

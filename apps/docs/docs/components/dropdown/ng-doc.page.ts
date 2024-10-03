@@ -1,8 +1,8 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './default.component';
-import { FlowbiteDividerComponent } from './divider.component';
-import { FlowbiteHeaderComponent } from './header.component';
-import { FlowbitePlacedComponent } from './placed.component';
+import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteDividerComponent } from './_divider.component';
+import { FlowbiteHeaderComponent } from './_header.component';
+import { FlowbitePlacedComponent } from './_placed.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 

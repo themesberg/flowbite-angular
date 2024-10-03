@@ -1,8 +1,8 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteCountComponent } from './count.component';
-import { FlowbiteDefaultComponent } from './default.component';
-import { FlowbiteLegendComponent } from './legend.component';
-import { FlowbitePositionedComponent } from './positioned.component';
+import { FlowbiteCountComponent } from './_count.component';
+import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteLegendComponent } from './_legend.component';
+import { FlowbitePositionedComponent } from './_positioned.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 

@@ -6,11 +6,11 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./default.component.ts"#L16-L38 group="default" name="html"
+```html file="./_default.component.ts"#L16-L38 group="default" name="html"
 
 ```
 
-```typescript file="./default.component.ts"#L1-L7 group="default" name="typescript"
+```typescript file="./_default.component.ts"#L1-L7 group="default" name="typescript"
 
 ```
 
@@ -18,11 +18,11 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteSizeComponent', {container: false}) }}
 
-```html file="./size.component.ts"#L16-L115 group="size" name="html"
+```html file="./_size.component.ts"#L16-L115 group="size" name="html"
 
 ```
 
-```typescript file="./size.component.ts"#L1-L7 group="size" name="typescript"
+```typescript file="./_size.component.ts"#L1-L7 group="size" name="typescript"
 
 ```
 
@@ -30,11 +30,11 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
 
-```html file="./dismissable.component.ts"#L16-L40 group="dismissable" name="html"
+```html file="./_dismissable.component.ts"#L16-L40 group="dismissable" name="html"
 
 ```
 
-```typescript file="./dismissable.component.ts"#L1-L7 group="dismissable" name="typescript"
+```typescript file="./_dismissable.component.ts"#L1-L7 group="dismissable" name="typescript"
 
 ```
 
@@ -42,11 +42,11 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteFormComponent', {container: false}) }}
 
-```html file="./form.component.ts"#L10-L85 group="form" name="html"
+```html file="./_form.component.ts"#L10-L85 group="form" name="html"
 
 ```
 
-```typescript file="./form.component.ts"#L1-L1 group="form" name="typescript"
+```typescript file="./_form.component.ts"#L1-L1 group="form" name="typescript"
 
 ```
 
@@ -54,10 +54,10 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbitePositionedComponent', {container: false}) }}
 
-```html file="./positioned.component.ts"#L16-L41 group="positioned" name="html"
+```html file="./_positioned.component.ts"#L16-L41 group="positioned" name="html"
 
 ```
 
-```typescript file="./positioned.component.ts"#L1-L7 group="positioned" name="typescript"
+```typescript file="./_positioned.component.ts"#L1-L7 group="positioned" name="typescript"
 
 ```

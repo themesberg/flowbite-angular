@@ -6,11 +6,11 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./default.component.ts"#L10-L14 group="default" name="html"
+```html file="./_default.component.ts"#L10-L14 group="default" name="html"
 
 ```
 
-```typescript file="./default.component.ts"#L1-L1 group="default" name="typescript"
+```typescript file="./_default.component.ts"#L1-L1 group="default" name="typescript"
 
 ```
 
@@ -18,11 +18,11 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbiteDividerComponent', {container: false}) }}
 
-```html file="./divider.component.ts"#L10-L15 group="divider" name="html"
+```html file="./_divider.component.ts"#L10-L15 group="divider" name="html"
 
 ```
 
-```typescript file="./divider.component.ts"#L1-L1 group="divider" name="typescript"
+```typescript file="./_divider.component.ts"#L1-L1 group="divider" name="typescript"
 
 ```
 
@@ -30,11 +30,11 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbiteHeaderComponent', {container: false}) }}
 
-```html file="./header.component.ts"#L10-L15 group="header" name="html"
+```html file="./_header.component.ts"#L10-L15 group="header" name="html"
 
 ```
 
-```typescript file="./header.component.ts"#L1-L1 group="header" name="typescript"
+```typescript file="./_header.component.ts"#L1-L1 group="header" name="typescript"
 
 ```
 
@@ -42,10 +42,10 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbitePlacedComponent', {container: false}) }}
 
-```html file="./placed.component.ts"#L10-L30 group="placed" name="html"
+```html file="./_placed.component.ts"#L10-L30 group="placed" name="html"
 
 ```
 
-```typescript file="./placed.component.ts"#L1-L1 group="placed" name="typescript"
+```typescript file="./_placed.component.ts"#L1-L1 group="placed" name="typescript"
 
 ```

@@ -6,11 +6,11 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./default.component.ts"#L10-L18 group="default" name="html"
+```html file="./_default.component.ts"#L10-L18 group="default" name="html"
 
 ```
 
-```typescript file="./default.component.ts"#L1-L1 group="default" name="typescript"
+```typescript file="./_default.component.ts"#L1-L1 group="default" name="typescript"
 
 ```
 
@@ -18,11 +18,11 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteLargeComponent', {container: false}) }}
 
-```html file="./large.component.ts"#L10-L50 group="large" name="html"
+```html file="./_large.component.ts"#L10-L50 group="large" name="html"
 
 ```
 
-```typescript file="./large.component.ts"#L1-L1 group="large" name="typescript"
+```typescript file="./_large.component.ts"#L1-L1 group="large" name="typescript"
 
 ```
 
@@ -30,11 +30,11 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteLinkComponent', {container: false}) }}
 
-```html file="./link.component.ts"#L10-L50 group="link" name="html"
+```html file="./_link.component.ts"#L10-L50 group="link" name="html"
 
 ```
 
-```typescript file="./link.component.ts"#L1-L1 group="link" name="typescript"
+```typescript file="./_link.component.ts"#L1-L1 group="link" name="typescript"
 
 ```
 
@@ -42,11 +42,11 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```html file="./icon.component.ts"#L10-L21 group="icon" name="html"
+```html file="./_icon.component.ts"#L10-L21 group="icon" name="html"
 
 ```
 
-```typescript file="./icon.component.ts"#L1-L1 group="icon" name="typescript"
+```typescript file="./_icon.component.ts"#L1-L1 group="icon" name="typescript"
 
 ```
 
@@ -54,10 +54,10 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
 
-```html file="./icon-only.component.ts"#L10-L36 group="icon-only" name="html"
+```html file="./_icon-only.component.ts"#L10-L36 group="icon-only" name="html"
 
 ```
 
-```typescript file="./icon-only.component.ts"#L1-L1 group="icon-only" name="typescript"
+```typescript file="./_icon-only.component.ts"#L1-L1 group="icon-only" name="typescript"
 
 ```

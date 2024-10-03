@@ -6,11 +6,11 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./default.component.ts"#L10-L39 group="default" name="html"
+```html file="./_default.component.ts"#L10-L39 group="default" name="html"
 
 ```
 
-```typescript file="./default.component.ts"#L1-L1 group="default" name="typescript"
+```typescript file="./_default.component.ts"#L1-L1 group="default" name="typescript"
 
 ```
 
@@ -18,11 +18,11 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```html file="./icon.component.ts"#L10-L51 group="icon" name="html"
+```html file="./_icon.component.ts"#L10-L51 group="icon" name="html"
 
 ```
 
-```typescript file="./icon.component.ts"#L1-L1 group="icon" name="typescript"
+```typescript file="./_icon.component.ts"#L1-L1 group="icon" name="typescript"
 
 ```
 
@@ -30,11 +30,11 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderComponent', {container: false}) }}
 
-```html file="./border.component.ts"#L10-L45 group="border" name="html"
+```html file="./_border.component.ts"#L10-L45 group="border" name="html"
 
 ```
 
-```typescript file="./border.component.ts"#L1-L1 group="border" name="typescript"
+```typescript file="./_border.component.ts"#L1-L1 group="border" name="typescript"
 
 ```
 
@@ -42,15 +42,15 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
 
-```html file="./dismissable.component.ts"#L10-L51 group="dismissable" name="html"
+```html file="./_dismissable.component.ts"#L10-L51 group="dismissable" name="html"
 
 ```
 
-```typescript file="./dismissable.component.ts"#L1-L1 group="dismissable" name="typescript"
+```typescript file="./_dismissable.component.ts"#L1-L1 group="dismissable" name="typescript"
 
 ```
 
-```typescript file="./dismissable.component.ts"#L55 group="dismissable" name="typescript"
+```typescript file="./_dismissable.component.ts"#L55 group="dismissable" name="typescript"
 
 ```
 
@@ -58,11 +58,11 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderAccentComponent', {container: false}) }}
 
-```html file="./border-accent.component.ts"#L10-L45 group="border-accent" name="html"
+```html file="./_border-accent.component.ts"#L10-L45 group="border-accent" name="html"
 
 ```
 
-```typescript file="./border-accent.component.ts"#L1-L1 group="border-accent" name="typescript"
+```typescript file="./_border-accent.component.ts"#L1-L1 group="border-accent" name="typescript"
 
 ```
 
@@ -70,10 +70,10 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteAdditionalContentComponent', {container: false}) }}
 
-```html file="./additional-content.component.ts"#L10-L51 group="additional-content" name="html"
+```html file="./_additional-content.component.ts"#L10-L51 group="additional-content" name="html"
 
 ```
 
-```typescript file="./additional-content.component.ts"#L1-L1 group="additional-content" name="typescript"
+```typescript file="./_additional-content.component.ts"#L1-L1 group="additional-content" name="typescript"
 
 ```

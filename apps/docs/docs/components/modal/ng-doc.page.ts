@@ -1,9 +1,9 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './default.component';
-import { FlowbiteDismissableComponent } from './dismissable.component';
-import { FlowbiteFormComponent } from './form.component';
-import { FlowbitePositionedComponent } from './positioned.component';
-import { FlowbiteSizeComponent } from './size.component';
+import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteDismissableComponent } from './_dismissable.component';
+import { FlowbiteFormComponent } from './_form.component';
+import { FlowbitePositionedComponent } from './_positioned.component';
+import { FlowbiteSizeComponent } from './_size.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
