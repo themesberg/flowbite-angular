@@ -8,11 +8,13 @@ import {
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-accordion-default',
+  selector: 'flowbite-accordion-flush',
   standalone: true,
   imports: [AccordionComponent, AccordionTitleComponent, AccordionContentComponent, AccordionPanelComponent],
   template: `
-    <flowbite-accordion class="w-full">
+    <flowbite-accordion
+      class="w-full"
+      isFlush>
       <flowbite-accordion-panel isOpen>
         <flowbite-accordion-title>What is Flowbite ?</flowbite-accordion-title>
         <flowbite-accordion-content>
@@ -80,4 +82,4 @@ import { Component } from '@angular/core';
     </flowbite-accordion>
   `,
 })
-export class FlowbiteDefaultComponent {}
+export class FlowbiteFlushComponent {}
