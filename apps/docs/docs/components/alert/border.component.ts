@@ -3,7 +3,7 @@ import { AlertComponent } from 'flowbite-angular';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-border',
+  selector: 'flowbite-demo-alert-border',
   standalone: true,
   imports: [AlertComponent],
   template: `

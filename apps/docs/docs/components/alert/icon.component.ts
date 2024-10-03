@@ -3,7 +3,7 @@ import { AlertComponent, IconComponent } from 'flowbite-angular';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-alert-icon',
+  selector: 'flowbite-demo-alert-icon',
   standalone: true,
   imports: [AlertComponent, IconComponent],
   template: `

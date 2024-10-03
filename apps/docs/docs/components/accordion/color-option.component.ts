@@ -8,7 +8,7 @@ import {
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-accordion-color-option',
+  selector: 'flowbite-demo-accordion-color-option',
   standalone: true,
   imports: [AccordionComponent, AccordionTitleComponent, AccordionContentComponent, AccordionPanelComponent],
   template: `

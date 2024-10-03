@@ -3,7 +3,7 @@ import { AlertComponent, ButtonComponent, IconComponent } from 'flowbite-angular
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-additional-content',
+  selector: 'flowbite-demo-alert-additional-content',
   standalone: true,
   imports: [AlertComponent, IconComponent, ButtonComponent],
   template: `

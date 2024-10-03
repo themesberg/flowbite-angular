@@ -3,7 +3,7 @@ import { AlertComponent } from 'flowbite-angular';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-dismissable',
+  selector: 'flowbite-demo-alert-dismissable',
   standalone: true,
   imports: [AlertComponent],
   template: `
