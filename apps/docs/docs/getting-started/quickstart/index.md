@@ -26,7 +26,7 @@ By default, Flowbite Angular provides a style for each of it's components. In or
 
 For more informations about styling, check the `*OverrideBaseStylePage`.
 
-```angular-ts
+```typescript
 import { initFlowbite } from 'flowbite-angular';
 
 import { ApplicationConfig } from '@angular/core';
