@@ -39,10 +39,10 @@
     "@angular/ssr": "18.2.5",
     "@floating-ui/dom": "^1.2.6",
     "@ng-doc/app": "18.0.8",
-    "@ng-doc/builder": "18.0.8",
-    "@ng-doc/core": "18.0.8",
+    "@ng-doc/builder": "^18.1.1",
+    "@ng-doc/core": "^18.1.1",
     "@ng-doc/ui-kit": "18.0.8",
-    "@nx/angular": "19.8.0",
+    "@nx/angular": "19.8.3",
     "express": "~4.18.2",
     "rxjs": "7.8.1",
     "tailwind-merge": "^2.2.1",
@@ -61,12 +61,12 @@
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
-    "@ng-doc/keywords-loaders": "^18.0.8",
-    "@nx/cypress": "19.8.0",
-    "@nx/eslint": "19.8.0",
-    "@nx/eslint-plugin": "19.8.0",
-    "@nx/jest": "19.8.0",
-    "@nx/workspace": "19.8.0",
+    "@ng-doc/keywords-loaders": "^18.1.1",
+    "@nx/cypress": "19.8.3",
+    "@nx/eslint": "19.8.3",
+    "@nx/eslint-plugin": "19.8.3",
+    "@nx/jest": "19.8.3",
+    "@nx/workspace": "19.8.3",
     "@schematics/angular": "18.2.5",
     "@types/express": "4.17.14",
     "@types/jest": "29.5.13",
@@ -86,7 +86,7 @@
     "jest-preset-angular": "14.1.0",
     "lint-staged": "^15.2.0",
     "ng-packagr": "18.2.1",
-    "nx": "19.8.0",
+    "nx": "19.8.3",
     "postcss": "^8.4.13",
     "postcss-import": "16.0.0",
     "postcss-preset-env": "9.3.0",
@@ -104,6 +104,8 @@
     "typescript": "5.4.5"
   },
   "overrides": {
-    "@parcel/watcher": "2.1.0"
+    "@ng-doc/builder": {
+      "@parcel/watcher": "~2.4.0"
+    }
   }
 }
