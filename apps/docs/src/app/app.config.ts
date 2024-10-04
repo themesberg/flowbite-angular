@@ -38,7 +38,7 @@ export const appConfig: ApplicationConfig = {
     provideSearchEngine(NgDocDefaultSearchEngine),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),
     provideMainPageProcessor(NG_DOC_DEFAULT_PAGE_PROCESSORS),
-    providePageProcessor([docDemoDisplayerProcessor]),
+    providePageProcessor(docDemoDisplayerProcessor),
     // #endregion
     provideClientHydration(),
     provideRouter(

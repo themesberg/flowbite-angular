@@ -8,6 +8,7 @@ const config: NgDocConfiguration = {
   tsConfig: 'apps/docs/tsconfig.app.json',
   guide: {
     anchorHeadings: ['h1', 'h2', 'h3', 'h4'],
+    headerTemplate: 'apps/docs/src/app/shared/header-template.html',
   },
   repoConfig: {
     url: 'https://github.com/themesberg/flowbite-angular',
