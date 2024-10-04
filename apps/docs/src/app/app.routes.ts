@@ -1,25 +1,17 @@
-import { UiComponent } from './ui/ui.component';
+import type { Routes } from '@angular/router';
 
-import type { Route } from '@angular/router';
-
-export const appRoutes: Route[] = [
+export const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'ui',
-    pathMatch: 'full',
+    loadChildren: () => import('./pages/landing/landing.routes'),
   },
   {
-    path: 'ui',
-    component: UiComponent,
-    loadChildren: () => import('./ui/app.routes'),
-  },
-  {
-    path: 'frames',
-    loadChildren: () => import('./frames/frames.routes'),
+    path: 'docs',
+    loadChildren: () => import('./pages/docs/docs.routes'),
   },
   {
     path: '**',
-    redirectTo: 'ui',
+    redirectTo: '',
     pathMatch: 'full',
   },
 ];
