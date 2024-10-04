@@ -12,3 +12,5 @@ export * from './modal';
 export * from './navbar';
 export * from './scroll-top';
 export * from './sidebar';
+
+export { BaseComponent } from './base-component.directive';

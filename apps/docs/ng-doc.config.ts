@@ -1,8 +1,8 @@
 import type { NgDocConfiguration } from '@ng-doc/builder';
-import { ngKeywordsLoader } from '@ng-doc/keywords-loaders';
+import { ngKeywordsLoader, rxjsKeywordsLoader } from '@ng-doc/keywords-loaders';
 
 const config: NgDocConfiguration = {
-  cache: false,
+  cache: true,
   routePrefix: 'docs',
   docsPath: 'apps/docs/docs',
   tsConfig: 'apps/docs/tsconfig.app.json',
@@ -52,7 +52,7 @@ const config: NgDocConfiguration = {
         url: 'https://tailwindcss.com/docs/theme',
       },
     },
-    loaders: [ngKeywordsLoader()],
+    loaders: [ngKeywordsLoader(), rxjsKeywordsLoader()],
   },
 };
 
