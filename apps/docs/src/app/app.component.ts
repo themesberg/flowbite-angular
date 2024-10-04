@@ -11,7 +11,7 @@ import {
 import { Location, NgIf } from '@angular/common';
 import { Component, HostBinding, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NgDocRootComponent, NgDocSidebarComponent, NgDocSidebarService, NgDocThemeToggleComponent } from '@ng-doc/app';
+import { NgDocRootComponent, NgDocSidebarComponent, NgDocSidebarService, NgDocThemeToggleComponent, NgDocSearchComponent } from '@ng-doc/app';
 
 @Component({
   standalone: true,
@@ -21,6 +21,7 @@ import { NgDocRootComponent, NgDocSidebarComponent, NgDocSidebarService, NgDocTh
     NgDocRootComponent,
     NgDocSidebarComponent,
     NgDocThemeToggleComponent,
+    NgDocSearchComponent,
     IconComponent,
     NavbarComponent,
     NavbarContentComponent,
