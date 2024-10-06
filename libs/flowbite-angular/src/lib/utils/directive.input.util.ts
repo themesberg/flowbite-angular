@@ -1,3 +1,9 @@
+/**
+ * Register every inputs of RouterLink used in FlowbiteRouterLinkDirective.
+ *
+ * @see `RouterLink`
+ * @see `FlowbiteRouterLinkDirective`
+ */
 export const routerLinkInputs: string[] = [
   'target',
   'queryParams',
@@ -12,6 +18,12 @@ export const routerLinkInputs: string[] = [
   'routerLink',
 ];
 
+/**
+ * Register every inputs of RouterLinkActive used in FlowbiteRouterLinkActiveDirective.
+ *
+ * @see `RouterLinkActive`
+ * @see `FlowbiteRouterLinkActiveDirective`
+ */
 export const routerLinkActiveInputs: string[] = [
   'routerLinkActiveOptions',
   'ariaCurrentWhenActive',
