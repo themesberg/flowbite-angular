@@ -23,7 +23,7 @@ import {
   OnDestroy,
   signal,
   TemplateRef,
-  ViewChild,
+  viewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
@@ -79,9 +79,7 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
   );
 
   //#region template properties
-  @ViewChild('modal', { read: TemplateRef })
-  // @ts-expect-error: Property 'template' has no initializer
-  private readonly template: TemplateRef<unknown>;
+  private readonly template = viewChild.required('modal', { read: TemplateRef });
 
   private readonly viewContainer = inject(ViewContainerRef);
   private readonly router = inject(Router);
@@ -167,7 +165,7 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
       this.destroyTemplate();
     }
 
-    this.embeddedView = this.viewContainer.createEmbeddedView(this.template);
+    this.embeddedView = this.viewContainer.createEmbeddedView(this.template());
   }
 
   private destroyTemplate() {
