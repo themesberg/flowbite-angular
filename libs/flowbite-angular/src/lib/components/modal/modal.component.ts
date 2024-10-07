@@ -41,7 +41,7 @@ import { filter, Subject, takeUntil } from 'rxjs';
       <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]">
       </div>
 
-      <div [ngClass]="contentClasses().rootClass" (click)="onBackdropClick($event)">
+      <div [ngClass]="contentClasses().modalWrapperClass" (click)="onBackdropClick($event)">
         <div [ngClass]="contentClasses().modalContainerClass">
           <div [ngClass]="contentClasses().modalContentClass">
             <ng-content />
@@ -75,7 +75,7 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
   public readonly modalFooterChild = contentChild(ModalFooterComponent);
 
   public override contentClasses = signal<ModalClass>(
-    createClass({ modalContainerClass: '', modalContentClass: '', rootClass: '' }),
+    createClass({ rootClass: '', modalWrapperClass: '', modalContainerClass: '', modalContentClass: '' }),
   );
 
   //#region template properties
