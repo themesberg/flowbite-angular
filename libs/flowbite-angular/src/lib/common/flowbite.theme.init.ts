@@ -119,6 +119,13 @@ import {
 import type { EnvironmentProviders } from '@angular/core';
 import { makeEnvironmentProviders } from '@angular/core';
 
+/**
+ * This function define base implementation of injected services and value used all over flowbite-angular library.
+ *
+ * @returns Return the configuration for flowbite-angular ThemeServices, themeProviders and settingsProviders.
+ *
+ * @see `EnvironmentProviders`
+ */
 export function initFlowbite(): EnvironmentProviders {
   const serviceProviders = makeEnvironmentProviders([
     {

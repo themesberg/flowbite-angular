@@ -1,12 +1,24 @@
+/**
+ * Base definition of heading level used in flowbite-angular.
+ */
 export type FlowbiteHeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
+/**
+ * Base definition of theme used in flowbite-angular.
+ */
 export type FlowbiteTheme = 'dark' | 'light';
 
+/**
+ * Base definition of boolean used in flowbite-angular.
+ */
 export interface FlowbiteBoolean {
   enabled: string;
   disabled: string;
 }
 
+/**
+ * Base definition of colors used in flowbite-angular.
+ */
 export interface FlowbiteColors {
   primary: string;
   light: string;
@@ -24,6 +36,9 @@ export interface FlowbiteColors {
   yellow: string;
 }
 
+/**
+ * Base definition of gradient colors used in flowbite-angular.
+ */
 export interface FlowbiteGradientColors extends Omit<FlowbiteColors, 'warning'> {
   cyan: string;
   lime: string;
@@ -32,6 +47,9 @@ export interface FlowbiteGradientColors extends Omit<FlowbiteColors, 'warning'> 
   teal: string;
 }
 
+/**
+ * Base definition of gradient color with fade from one color to another used in flowbite-angular.
+ */
 export interface FlowbiteGradientDuoToneColors {
   cyanToBlue: string;
   greenToBlue: string;
@@ -42,6 +60,9 @@ export interface FlowbiteGradientDuoToneColors {
   tealToLime: string;
 }
 
+/**
+ * Base definition of positions used in flowbite-angular.
+ */
 export interface FlowbitePositions {
   'bottom-left': string;
   'bottom-right': string;
@@ -54,6 +75,9 @@ export interface FlowbitePositions {
   'center-right': string;
 }
 
+/**
+ * Base definition of sizes used in flowbite-angular.
+ */
 export interface FlowbiteSizes {
   xs: string;
   sm: string;
@@ -62,10 +86,16 @@ export interface FlowbiteSizes {
   xl: string;
 }
 
+/**
+ * Base definition of content positions used in flowbite-angular.
+ */
 export interface FlowbiteContentPositions {
   center: string;
 }
 
+/**
+ * Base definition of classes used in flowbite-angular.
+ */
 export interface FlowbiteClass {
   rootClass: string;
 }

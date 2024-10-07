@@ -2,10 +2,11 @@ import { cloneDeep } from './clone-deep';
 import { isObject } from './is-object';
 
 /**
- * Merge two objects into one
- * @param target Object to be merged
- * @param source Object to be merged
- * @returns The merged object
+ * Merge two objects into one.
+ *
+ * @param target Object to be merged.
+ * @param source Object to be merged.
+ * @returns The merged object.
  */
 export function mergeTheme<T extends object, S extends object>(target: T, source: S): T & S {
   if (isObject(source) && Object.keys(source).length === 0) {

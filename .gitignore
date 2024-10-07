@@ -7,7 +7,7 @@
 
 # dependencies
 node_modules
-package-lock.json
+#package-lock.json
 
 # IDEs and editors
 /.idea
@@ -42,3 +42,7 @@ Thumbs.db
 
 .vercel
 .nx
+
+
+# NgDoc files
+/ng-doc

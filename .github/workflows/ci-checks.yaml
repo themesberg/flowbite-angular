@@ -34,16 +34,16 @@ jobs:
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: npm i
+        run: npm ci
 
       - name: Lint the code 🕵
-        run: npx nx lint
+        run: npm run all:lint
 
       - name: Run Prettier 💅
-        run: npm run prettier --base=HEAD
+        run: npm run prettier
 
       - name: Run unit tests 🔬
-        run: npx nx test
+        run: npm run all:test
 
       - name: Build code 🛠
-        run: npx nx build
+        run: npm run all:build

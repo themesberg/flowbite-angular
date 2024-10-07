@@ -4,6 +4,11 @@ import { routerLinkOutputs } from '../utils/directive.output.util';
 import { Directive, HostListener, inject, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
+/**
+ * Wrapping directive over RouterLink.
+ *
+ * @see `RouterLink`
+ */
 @Directive({
   standalone: true,
   selector: '[flowbiteRouterLink]',

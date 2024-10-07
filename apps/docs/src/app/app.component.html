@@ -1,1 +1,119 @@
-<router-outlet />
+<ng-doc-root
+  [sidebar]="!isLandingPage"
+  [noWidthLimit]="isLandingPage"
+  [footerContent]="footerContent">
+  <flowbite-navbar
+    ngDocCustomNavbar
+    isFixed
+    [customStyle]="{ root: { base: 'flex flex-wrap items-center justify-between p-4 xl:px-60' } }">
+    <div class="flex flex-row flex-1 items-center gap-2">
+      <flowbite-navbar-icon-button
+        *ngIf="!isLandingPage"
+        class="block lg:hidden"
+        (click)="sidebarService.toggle()">
+        <flowbite-icon
+          svgIcon="outline:bars"
+          class="h-5 w-5 block" />
+      </flowbite-navbar-icon-button>
+      <flowbite-navbar-brand routerLink="/">
+        <flowbite-icon
+          class="h-8"
+          svgIcon="flowbite-angular-logo"
+          alt="Flowbite Logo" />
+        <span class="hidden sm:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          Flowbite Angular
+        </span>
+      </flowbite-navbar-brand>
+    </div>
+    <flowbite-navbar-content class="pr-1">
+      <ng-doc-search class="hidden lg:block" />
+      <flowbite-navbar-item
+        routerLink="./docs"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Docs
+      </flowbite-navbar-item>
+      <flowbite-navbar-item
+        routerLink="./docs/getting-started/quickstart"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Quickstart
+      </flowbite-navbar-item>
+      <flowbite-navbar-item>
+        <a
+          href="https://flowbite.com/figma/"
+          target="_blank"
+          rel="noopener">
+          Figma
+        </a>
+      </flowbite-navbar-item>
+      <flowbite-navbar-item>
+        <a
+          href="https://flowbite.com"
+          target="_blank"
+          rel="noopener">
+          Flowbite
+        </a>
+      </flowbite-navbar-item>
+    </flowbite-navbar-content>
+    <div class="flex flex-row items-center justify-start">
+      <flowbite-navbar-icon-button class="hidden sm:block">
+        <a
+          href="https://github.com/themesberg/flowbite-angular"
+          target="_blank"
+          rel="noopener">
+          <flowbite-icon
+            svgIcon="solid:github"
+            class="h-5 w-5 block" />
+        </a>
+      </flowbite-navbar-icon-button>
+      <flowbite-navbar-icon-button class="hidden sm:block">
+        <a
+          href="https://discord.gg/4eeurUVvTy"
+          target="_blank"
+          rel="noopener">
+          <flowbite-icon
+            svgIcon="solid:discord"
+            class="h-5 w-5 block" />
+        </a>
+      </flowbite-navbar-icon-button>
+      <flowbite-navbar-icon-button class="hidden sm:block">
+        <a
+          href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A"
+          target="_blank"
+          rel="noopener">
+          <flowbite-icon
+            svgIcon="solid:youtube"
+            class="h-5 w-5 block" />
+        </a>
+      </flowbite-navbar-icon-button>
+      <ng-doc-theme-toggle />
+
+      <flowbite-navbar-toggle />
+    </div>
+  </flowbite-navbar>
+
+  <ng-doc-sidebar></ng-doc-sidebar>
+
+  <router-outlet></router-outlet>
+
+  <ng-template #footerContent>
+    <section class="flex flex-col items-center">
+      <div class="flex flex-col items-center py-6 md:py-8 px-4 gap-6 md:gap-8">
+        <div class="flex flex-row justify-between items-center pt-6 md:pt-8 border-t-gray-200">
+          <div class="mx-auto flex flex-col md:flex-row justify-center items-start md:items-center gap-4 md:gap-5">
+            <div class="flex flex-row items-center gap-3">
+              <flowbite-icon
+                svgIcon="flowbite-angular-logo"
+                class="w-8 h-8"
+                alt="Flowbite logo" />
+              <span class="text-2xl font-semibold text-gray-900 dark:text-white"> Flowbite </span>
+            </div>
+            <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
+              © 2019-2023 Flowbite™ is a registered trademark. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ng-template>
+</ng-doc-root>
+

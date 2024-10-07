@@ -5,6 +5,14 @@ import type { Signal } from '@angular/core';
 import { Directive, HostListener, inject, signal } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 
+/**
+ * Wrapping directive over RouterLinkActive.
+ *
+ * @usageNotes
+ * It provides a clean way to have 'isActive' data with signal base value.
+ *
+ * @see `RouterLinkActive`
+ */
 @Directive({
   standalone: true,
   selector: '[flowbiteRouterLinkActive]',
@@ -27,6 +35,9 @@ export class FlowbiteRouterLinkActiveDirective {
     return this._isActive.asReadonly();
   }
 
+  /**
+   * Set the RouterLinkActive's ariaCurrentWhenActive to the value passed to the component (via this Directive).
+   */
   constructor() {
     this.routerLinkActive.ariaCurrentWhenActive = this.ariaCurrentValue;
   }

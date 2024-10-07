@@ -11,7 +11,10 @@ const sharedTailwindConfig = require('../../libs/flowbite-angular/tailwind.confi
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   presets: [sharedTailwindConfig],
-  content: [join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'), ...createGlobPatternsForDependencies(__dirname)],
+  content: [
+    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html,md}'),
+    ...createGlobPatternsForDependencies(__dirname),
+  ],
   safelist: ['p-4', 'overflow-x-auto', 'rounded-md', 'max-w-md', 'max-w-sm', 'bg-gray-100', 'bg-gray-500', 'z-0'],
   theme: {
     extend: {
@@ -20,5 +23,6 @@ module.exports = {
       },
     },
   },
+  darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [],
 };

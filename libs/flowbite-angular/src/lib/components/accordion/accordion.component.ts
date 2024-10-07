@@ -10,9 +10,6 @@ import { AccordionThemeService } from './accordion.theme.service';
 import { NgClass } from '@angular/common';
 import { booleanAttribute, Component, contentChildren, inject, input, signal } from '@angular/core';
 
-/**
- * @see https://flowbite.com/docs/components/accordion/
- */
 @Component({
   standalone: true,
   imports: [NgClass],
