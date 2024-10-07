@@ -41,7 +41,7 @@ import { filter, Subject, takeUntil } from 'rxjs';
       <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40">
       </div>
 
-      <div [ngClass]="contentClasses().rootClass" (click)="close()">
+      <div [ngClass]="contentClasses().rootClass" (click)="onBackdropClick($event)">
         <div [ngClass]="contentClasses().modalContainerClass">
           <div [ngClass]="contentClasses().modalContentClass">
             <ng-content />
@@ -181,7 +181,6 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
     }
   }
 
-  @HostListener('click', ['$event'])
   onBackdropClick(event: MouseEvent) {
     if (event.target == event.currentTarget && this.isDismissable()) {
       this.close();
