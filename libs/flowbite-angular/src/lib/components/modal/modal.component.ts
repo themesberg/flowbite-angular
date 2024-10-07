@@ -38,7 +38,7 @@ import { filter, Subject, takeUntil } from 'rxjs';
   selector: 'flowbite-modal',
   template: `
     <ng-template #modal>
-      <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40">
+      <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]">
       </div>
 
       <div [ngClass]="contentClasses().rootClass" (click)="onBackdropClick($event)">
