@@ -34,9 +34,11 @@ export interface ModalProperties {
 export interface ModalTheme {
   root: {
     base: string;
-    isOpen: FlowbiteBoolean;
+  },
+  wrapper: {
+    base: string;
     position: ModalPositions;
-  };
+  },
   container: {
     base: string;
     size: ModalSizes;
@@ -48,11 +50,10 @@ export interface ModalTheme {
 
 export const modalTheme: ModalTheme = createTheme({
   root: {
-    base: 'fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex',
-    isOpen: {
-      enabled: '',
-      disabled: 'hidden',
-    },
+    base: ''
+  },
+  wrapper: {
+    base: 'fixed top-0 left-0 right-0 z-[100] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex',
     position: {
       'top-left': 'items-start justify-start',
       'top-center': 'items-start justify-center',
@@ -80,6 +81,7 @@ export const modalTheme: ModalTheme = createTheme({
 });
 
 export interface ModalClass extends FlowbiteClass {
+  modalWrapperClass: string;
   modalContainerClass: string;
   modalContentClass: string;
 }

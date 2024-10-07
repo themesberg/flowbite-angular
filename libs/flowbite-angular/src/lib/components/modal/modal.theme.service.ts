@@ -14,11 +14,8 @@ export class ModalThemeService implements FlowbiteThemeService<ModalProperties> 
     const theme: ModalTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: ModalClass = {
-      rootClass: twMerge(
-        theme.root.base,
-        theme.root.isOpen[properties.isOpen],
-        theme.root.position[properties.position],
-      ),
+      rootClass: twMerge(theme.root.base),
+      modalWrapperClass: twMerge(theme.wrapper.base, theme.wrapper.position[properties.position]),
       modalContainerClass: twMerge(theme.container.base, theme.container.size[properties.size]),
       modalContentClass: twMerge(theme.content.base),
     };

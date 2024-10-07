@@ -15,12 +15,19 @@ import {
   booleanAttribute,
   Component,
   contentChild,
+  EmbeddedViewRef,
   HostBinding,
   HostListener,
   inject,
   input,
+  OnDestroy,
   signal,
+  TemplateRef,
+  viewChild,
+  ViewContainerRef,
 } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import { filter, Subject, takeUntil } from 'rxjs';
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -30,11 +37,18 @@ import {
   imports: [NgClass],
   selector: 'flowbite-modal',
   template: `
-    <div [ngClass]="contentClasses().modalContainerClass">
-      <div [ngClass]="contentClasses().modalContentClass">
-        <ng-content />
+    <ng-template #modal>
+      <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]">
       </div>
-    </div>
+
+      <div [ngClass]="contentClasses().modalWrapperClass" (click)="onBackdropClick($event)">
+        <div [ngClass]="contentClasses().modalContainerClass">
+          <div [ngClass]="contentClasses().modalContentClass">
+            <ng-content />
+          </div>
+        </div>
+      </div>
+    </ng-template>
   `,
   providers: [
     {
@@ -49,8 +63,10 @@ import {
     },
   ],
 })
-export class ModalComponent extends BaseComponent {
+export class ModalComponent extends BaseComponent implements OnDestroy {
   @HostBinding('tabindex') hostTabIndexValue = '-1';
+
+  private readonly destroyed = new Subject<void>();
 
   public readonly themeService = inject(ModalThemeService);
   public readonly stateService = inject(ModalStateService);
@@ -59,8 +75,17 @@ export class ModalComponent extends BaseComponent {
   public readonly modalFooterChild = contentChild(ModalFooterComponent);
 
   public override contentClasses = signal<ModalClass>(
-    createClass({ modalContainerClass: '', modalContentClass: '', rootClass: '' }),
+    createClass({ rootClass: '', modalWrapperClass: '', modalContainerClass: '', modalContentClass: '' }),
   );
+
+  //#region template properties
+  private readonly template = viewChild.required('modal', { read: TemplateRef });
+
+  private readonly viewContainer = inject(ViewContainerRef);
+  private readonly router = inject(Router);
+
+  private embeddedView?: EmbeddedViewRef<unknown>;
+  //#endregion
 
   //#region properties
   public size = input<keyof ModalSizes>('md');
@@ -89,6 +114,14 @@ export class ModalComponent extends BaseComponent {
       },
       { injector: this.injector },
     );
+
+    // close modal if it's not destroyed on route change
+    this.router.events
+      .pipe(
+        takeUntil(this.destroyed),
+        filter(() => this.isOpen()),
+        filter(event => event instanceof NavigationStart)
+      ).subscribe(() => this.close());
   }
 
   public override verify(): void {
@@ -97,6 +130,11 @@ export class ModalComponent extends BaseComponent {
     }
   }
   //#endregion
+
+  ngOnDestroy(): void {
+    this.destroyed.next();
+    this.destroyed.complete();
+  }
 
   open() {
     this.stateService.set('isOpen', true);
@@ -113,28 +151,34 @@ export class ModalComponent extends BaseComponent {
     this.changeBackdrop();
   }
 
-  // If isOpen changes, add or remove backdrop
+  // If isOpen changes, add or remove template
   changeBackdrop() {
     if (this.stateService.select('isOpen')()) {
-      const blurDiv = document.createElement('div');
-      blurDiv.classList.add('bg-gray-900', 'bg-opacity-50', 'dark:bg-opacity-80', 'fixed', 'inset-0', 'z-40');
-      blurDiv.id = 'blurDiv';
-      document.body.appendChild(blurDiv);
+      this.createTemplate();
     } else {
-      const blurDiv = document.getElementById('blurDiv');
-      if (blurDiv) {
-        document.body.removeChild(blurDiv);
-      }
+      this.destroyTemplate();
     }
   }
 
-  @HostListener('document:keydown', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+  private createTemplate() {
+    if (this.embeddedView) {
+      this.destroyTemplate();
+    }
+
+    this.embeddedView = this.viewContainer.createEmbeddedView(this.template());
+  }
+
+  private destroyTemplate() {
+    this.embeddedView?.destroy();
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeydownHandler(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       this.close();
     }
   }
 
-  @HostListener('click', ['$event'])
   onBackdropClick(event: MouseEvent) {
     if (event.target == event.currentTarget && this.isDismissable()) {
       this.close();
