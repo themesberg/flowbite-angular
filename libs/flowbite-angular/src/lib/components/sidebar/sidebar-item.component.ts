@@ -14,7 +14,6 @@ import type { SidebarColors } from './sidebar.theme';
 import { NgClass, NgIf } from '@angular/common';
 import {
   Component,
-  computed,
   HostListener,
   inject,
   input,
@@ -59,37 +58,18 @@ export class SidebarItemComponent extends BaseComponent {
 
   //#region properties
   public icon = input<string | undefined>(undefined);
-  public color = input<keyof SidebarColors>();
+  public color = input<keyof SidebarColors>(
+    (this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color()
+  );
   public label = input<string | undefined>(undefined);
   public customStyle = input<DeepPartial<SidebarItemTheme>>({});
-
-  // With a computed, it's possible to dynamically
-  // change the color (even if the SidebarMenuComponent's
-  // or SidebarItemGroupComponent's color has changed)
-  private realColor = computed(() => {
-    // If the color is set directly on the
-    // SidebarItemComponent we just return it as is
-    if (this.color() !== undefined) {
-      return this.color() as keyof SidebarColors;
-    }
-
-    // If the component is inside a SidebarItemGroupComponent
-    // we return it's color
-    if (this.sidebarItemGroupComponent) {
-      return this.sidebarItemGroupComponent.color();
-    }
-
-    // Since a SidebarMenuComponent is required, we return
-    // its color if none of the above conditions are met
-    return this.sidebarMenuComponent?.color() ?? 'primary';
-  });
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
       icon: this.icon(),
-      color: this.realColor(),
+      color: this.color(),
       label: this.label(),
       customStyle: this.customStyle(),
     });
