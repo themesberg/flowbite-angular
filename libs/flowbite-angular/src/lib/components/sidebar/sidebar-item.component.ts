@@ -78,8 +78,8 @@ export class SidebarItemComponent extends BaseComponent {
   }
 
   public override verify(): void {
-    if (this.sidebarMenuComponent === undefined) {
-      throw new Error('No SidebarMenuComponent available');
+    if (this.sidebarMenuComponent === undefined && this.sidebarItemGroupComponent === undefined) {
+      throw new Error('No SidebarMenuComponent/SidebarItemGroupComponent available');
     }
   }
   //#endregion
