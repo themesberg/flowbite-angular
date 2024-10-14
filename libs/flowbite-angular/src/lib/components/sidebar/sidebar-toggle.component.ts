@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services';
-import { createClass } from '../../utils';
 import { BARS_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -9,7 +8,7 @@ import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
 import type { SidebarColors } from './sidebar.theme';
 
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -18,13 +17,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'flowbite-sidebar-toggle',
   template: `<flowbite-icon svgIcon="flowbite-angular:bars" />`,
 })
-export class SidebarToggleComponent extends BaseComponent implements OnInit {
+export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> implements OnInit {
   public readonly themeService = inject(SidebarToggleThemeService);
   public readonly sidebarStateService = inject(SidebarStateService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
-
-  public override contentClasses = signal<SidebarToggleClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof SidebarColors>('primary');
@@ -33,14 +30,12 @@ export class SidebarToggleComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): SidebarToggleClass {
+    return this.themeService.getClasses({
       color: this.color(),
       size: this.size(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { DropdownStateService } from '../../services/state/dropdown.state';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
@@ -22,7 +21,6 @@ import {
   HostListener,
   inject,
   input,
-  signal,
   ViewChild,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -73,7 +71,7 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
     },
   ],
 })
-export class DropdownComponent extends BaseComponent implements AfterViewInit {
+export class DropdownComponent extends BaseComponent<DropdownClass> implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
@@ -85,17 +83,6 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   public readonly dropdownHeaderChildren = contentChildren(DropdownHeaderComponent);
   public readonly dropdownDividerChildren = contentChildren(DropdownDividerComponent);
 
-  public override contentClasses = signal<DropdownClass>(
-    createClass({
-      containerClass: '',
-      contentClass: '',
-      dropdownClass: '',
-      rootClass: '',
-      spanClass: '',
-      subContentClass: '',
-    }),
-  );
-
   //#region properties
   public label = input('Dropdown');
   public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
@@ -104,15 +91,13 @@ export class DropdownComponent extends BaseComponent implements AfterViewInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): DropdownClass {
+    return this.themeService.getClasses({
       label: this.label(),
       isOpen: booleanToFlowbiteBoolean(this.stateService.select('isOpen')()),
       placement: this.position(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { ModalStateService } from '../../services/state/modal.state';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { ModalBodyComponent } from './modal-body.component';
@@ -10,18 +9,16 @@ import type { ModalClass, ModalPositions, ModalSizes, ModalTheme } from './modal
 import { ModalThemeService } from './modal.theme.service';
 
 import { NgClass } from '@angular/common';
+import type { EmbeddedViewRef, OnDestroy } from '@angular/core';
 import {
   afterNextRender,
   booleanAttribute,
   Component,
   contentChild,
-  EmbeddedViewRef,
   HostBinding,
   HostListener,
   inject,
   input,
-  OnDestroy,
-  signal,
   TemplateRef,
   viewChild,
   ViewContainerRef,
@@ -38,10 +35,11 @@ import { filter, Subject, takeUntil } from 'rxjs';
   selector: 'flowbite-modal',
   template: `
     <ng-template #modal>
-      <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]">
-      </div>
+      <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]"></div>
 
-      <div [ngClass]="contentClasses().modalWrapperClass" (click)="onBackdropClick($event)">
+      <div
+        [ngClass]="contentClasses().modalWrapperClass"
+        (click)="onBackdropClick($event)">
         <div [ngClass]="contentClasses().modalContainerClass">
           <div [ngClass]="contentClasses().modalContentClass">
             <ng-content />
@@ -63,7 +61,7 @@ import { filter, Subject, takeUntil } from 'rxjs';
     },
   ],
 })
-export class ModalComponent extends BaseComponent implements OnDestroy {
+export class ModalComponent extends BaseComponent<ModalClass> implements OnDestroy {
   @HostBinding('tabindex') hostTabIndexValue = '-1';
 
   private readonly destroyed = new Subject<void>();
@@ -73,10 +71,6 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
   public readonly modalHeaderChild = contentChild(ModalHeaderComponent);
   public readonly modalBodyChild = contentChild(ModalBodyComponent);
   public readonly modalFooterChild = contentChild(ModalFooterComponent);
-
-  public override contentClasses = signal<ModalClass>(
-    createClass({ rootClass: '', modalWrapperClass: '', modalContainerClass: '', modalContentClass: '' }),
-  );
 
   //#region template properties
   private readonly template = viewChild.required('modal', { read: TemplateRef });
@@ -96,15 +90,13 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): ModalClass {
+    return this.themeService.getClasses({
       isOpen: booleanToFlowbiteBoolean(this.stateService.select('isOpen')()),
       size: this.size(),
       position: this.position(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {
@@ -120,8 +112,9 @@ export class ModalComponent extends BaseComponent implements OnDestroy {
       .pipe(
         takeUntil(this.destroyed),
         filter(() => this.isOpen()),
-        filter(event => event instanceof NavigationStart)
-      ).subscribe(() => this.close());
+        filter((event) => event instanceof NavigationStart),
+      )
+      .subscribe(() => this.close());
   }
 
   public override verify(): void {

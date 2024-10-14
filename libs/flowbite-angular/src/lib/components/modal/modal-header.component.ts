@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -9,7 +8,7 @@ import { ModalComponent } from './modal.component';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -32,27 +31,21 @@ import { DomSanitizer } from '@angular/platform-browser';
     </button>
   `,
 })
-export class ModalHeaderComponent extends BaseComponent implements OnInit {
+export class ModalHeaderComponent extends BaseComponent<ModalHeaderClass> implements OnInit {
   public readonly stateService = inject(ModalHeaderThemeService);
   public readonly modalComponent = inject(ModalComponent);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
-
-  public override contentClasses = signal<ModalHeaderClass>(
-    createClass({ modalHeaderButtonClass: '', modalHeaderTitleClass: '', rootClass: '' }),
-  );
 
   //#region properties
   public customStyle = input<DeepPartial<ModalHeaderTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.stateService.getClasses({
+  public override fetchClass(): ModalHeaderClass {
+    return this.stateService.getClasses({
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

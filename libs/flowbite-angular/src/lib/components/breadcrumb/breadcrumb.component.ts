@@ -1,12 +1,11 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { BaseComponent } from '../base-component.directive';
 import { BreadcrumbItemComponent } from './breadcrumb-item.component';
 import type { BreadcrumbClass, BreadcrumbColors, BreadcrumbTheme } from './breadcrumb.theme';
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
 import { NgClass } from '@angular/common';
-import { Component, contentChildren, HostBinding, inject, input, signal } from '@angular/core';
+import { Component, contentChildren, HostBinding, inject, input } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -17,13 +16,11 @@ import { Component, contentChildren, HostBinding, inject, input, signal } from '
   selector: 'flowbite-breadcrumb',
   template: `<ng-content />`,
 })
-export class BreadcrumbComponent extends BaseComponent {
+export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
   @HostBinding('attr.aria-label') hostAriaLabelValue = 'breadcrumb';
 
   public readonly themeService = inject(BreadcrumbThemeService);
   public readonly breadcrumbItemChildren = contentChildren(BreadcrumbItemComponent);
-
-  public override contentClasses = signal<BreadcrumbClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof BreadcrumbColors>('primary');
@@ -31,12 +28,10 @@ export class BreadcrumbComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): BreadcrumbClass {
+    return this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common/flowbite.type';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
@@ -10,7 +9,7 @@ import { AlertThemeService } from './alert.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
-import { booleanAttribute, Component, HostBinding, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, HostBinding, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -38,14 +37,12 @@ import { DomSanitizer } from '@angular/platform-browser';
     <ng-container [ngTemplateOutlet]="additionalContent()"></ng-container>
   `,
 })
-export class AlertComponent extends BaseComponent implements OnInit {
+export class AlertComponent extends BaseComponent<AlertClass> implements OnInit {
   @HostBinding('attr.role') hostRoleValue = 'alert';
 
   public readonly themeService = inject(AlertThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
-
-  public override contentClasses = signal<AlertClass>(createClass({ rootClass: '', closeButtonClass: '' }));
 
   //#region properties
   public color = input<keyof AlertColors>('primary');
@@ -59,15 +56,13 @@ export class AlertComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): AlertClass {
+    return this.themeService.getClasses({
       color: this.color(),
       hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
       hasBorderAccent: booleanToFlowbiteBoolean(this.hasBorderAccent()),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { AccordionPanelStateService } from '../../services/state/accordion.state';
-import { createClass } from '../../utils';
 import { BaseComponent } from '../base-component.directive';
 import { AccordionContentComponent } from './accordion-content.component';
 import type { AccordionPanelClass, AccordionPanelTheme } from './accordion-panel.theme';
@@ -10,7 +9,7 @@ import { AccordionComponent } from './accordion.component';
 import type { AccordionColors } from './accordion.theme';
 
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
+import { booleanAttribute, Component, contentChild, inject, input, untracked } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -30,14 +29,12 @@ import { booleanAttribute, Component, contentChild, inject, input, signal, untra
     },
   ],
 })
-export class AccordionPanelComponent extends BaseComponent implements OnInit {
+export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> implements OnInit {
   public readonly themeService = inject(AccordionPanelThemeService);
   public readonly stateService = inject(AccordionPanelStateService);
   public readonly accordionComponent = inject(AccordionComponent);
   public readonly accordionTitleChild = contentChild(AccordionTitleComponent);
   public readonly accordionContentChild = contentChild(AccordionContentComponent);
-
-  public override contentClasses = signal<AccordionPanelClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof AccordionColors>(this.accordionComponent.color());
@@ -46,12 +43,10 @@ export class AccordionPanelComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): AccordionPanelClass {
+    return this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

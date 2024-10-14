@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { NavbarStateService } from '../../services';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { NavbarBrandComponent } from './navbar-brand.component';
@@ -10,7 +9,7 @@ import type { NavbarClass, NavbarColors, NavbarTheme } from './navbar.theme';
 import { NavbarThemeService } from './navbar.theme.service';
 
 import { NgClass } from '@angular/common';
-import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
+import { booleanAttribute, Component, contentChild, inject, input, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -33,14 +32,12 @@ import { booleanAttribute, Component, contentChild, inject, input, signal, untra
     },
   ],
 })
-export class NavbarComponent extends BaseComponent {
+export class NavbarComponent extends BaseComponent<NavbarClass> {
   public readonly themeService = inject(NavbarThemeService);
   public readonly stateService = inject(NavbarStateService);
   public readonly navbarBrandChild = contentChild(NavbarBrandComponent);
   public readonly navbarToggleChild = contentChild(NavbarToggleComponent);
   public readonly navbarContentChild = contentChild(NavbarContentComponent);
-
-  public override contentClasses = signal<NavbarClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof NavbarColors>('primary');
@@ -51,15 +48,13 @@ export class NavbarComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): NavbarClass {
+    return this.themeService.getClasses({
       hasBorder: booleanToFlowbiteBoolean(this.isRounded()),
       isRounded: booleanToFlowbiteBoolean(this.hasBorder()),
       isFixed: booleanToFlowbiteBoolean(this.isFixed()),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

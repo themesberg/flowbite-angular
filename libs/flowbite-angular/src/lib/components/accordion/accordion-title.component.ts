@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
@@ -11,7 +10,7 @@ import type { AccordionColors } from './accordion.theme';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, input, signal } from '@angular/core';
+import { Component, HostListener, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -28,13 +27,11 @@ import { DomSanitizer } from '@angular/platform-browser';
       [class.rotate-180]="accordionPanelComponent.stateService.select('isOpen')()" />
   `,
 })
-export class AccordionTitleComponent extends BaseComponent implements OnInit {
+export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> implements OnInit {
   public readonly themeService = inject(AccordionTitleThemeService);
   public readonly accordionPanelComponent = inject(AccordionPanelComponent);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
-
-  public override contentClasses = signal<AccordionTitleClass>(createClass({ rootClass: '', textClass: '' }));
 
   //#region properties
   public color = input<keyof AccordionColors>(this.accordionPanelComponent.color());
@@ -42,8 +39,8 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): AccordionTitleClass {
+    return this.themeService.getClasses({
       color: this.accordionPanelComponent.accordionComponent.stateService.select('color')(),
       isFlush: booleanToFlowbiteBoolean(
         this.accordionPanelComponent.accordionComponent.stateService.select('isFlush')(),
@@ -51,8 +48,6 @@ export class AccordionTitleComponent extends BaseComponent implements OnInit {
       isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.stateService.select('isOpen')()),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

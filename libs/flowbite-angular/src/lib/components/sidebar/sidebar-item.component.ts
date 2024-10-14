@@ -2,7 +2,6 @@ import type { DeepPartial } from '../../common/flowbite.type';
 import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
 import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { SanitizeHtmlPipe } from '../../pipes';
-import { createClass } from '../../utils';
 import { BadgeComponent } from '../badge';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarItemGroupComponent } from './sidebar-item-group.component';
@@ -12,13 +11,7 @@ import { SidebarMenuComponent } from './sidebar-menu.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import { NgClass, NgIf } from '@angular/common';
-import {
-  Component,
-  HostListener,
-  inject,
-  input,
-  signal
-} from '@angular/core';
+import { Component, HostListener, inject, input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -47,14 +40,12 @@ import {
     },
   ],
 })
-export class SidebarItemComponent extends BaseComponent {
+export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
   public readonly themeService = inject(SidebarItemThemeService);
   public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, { optional: true });
   public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(SidebarMenuComponent);
-
-  public override contentClasses = signal<SidebarItemClass>(createClass({ rootClass: '', sidebarIconClass: '' }));
 
   //#region properties
   public icon = input<string | undefined>(undefined);
@@ -66,15 +57,13 @@ export class SidebarItemComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): SidebarItemClass {
+    return this.themeService.getClasses({
       icon: this.icon(),
       color: this.color(),
       label: this.label(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

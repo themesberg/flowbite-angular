@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import type {
@@ -12,7 +11,7 @@ import type {
 import { IndicatorThemeService } from './indicators.theme.service';
 
 import { NgClass } from '@angular/common';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, inject, input } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/indicators/
@@ -23,10 +22,8 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
   selector: 'flowbite-indicator',
   template: `<ng-content />`,
 })
-export class IndicatorComponent extends BaseComponent {
+export class IndicatorComponent extends BaseComponent<indicatorClass> {
   public readonly themeService = inject(IndicatorThemeService);
-
-  public override contentClasses = signal<indicatorClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isPill = input<boolean, unknown>(false, { transform: booleanAttribute });
@@ -42,8 +39,8 @@ export class IndicatorComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): indicatorClass {
+    return this.themeService.getClasses({
       hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
       color: this.color(),
       isDisabled: booleanToFlowbiteBoolean(this.isDisabled()),
@@ -55,8 +52,6 @@ export class IndicatorComponent extends BaseComponent {
       placement: this.placement(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }
