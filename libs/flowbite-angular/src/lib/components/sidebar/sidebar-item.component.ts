@@ -44,13 +44,13 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
   public readonly themeService = inject(SidebarItemThemeService);
-  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent);
+  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, { optional: true });
   public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(SidebarMenuComponent);
 
   //#region properties
   public icon = input<string | undefined>(undefined);
   public color = input<keyof SidebarColors>(
-    (this.sidebarItemGroupComponent?.sidebarMenuComponent || this.sidebarMenuComponent)!.color(),
+    (this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color()
   );
   public label = input<string | undefined>(undefined);
   public customStyle = input<DeepPartial<SidebarItemTheme>>({});
