@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
   imports: [NavbarComponent, NavbarContentComponent, NavbarBrandComponent, NavbarItemComponent, DropdownComponent, DropdownItemComponent],
   template: `
 <flowbite-navbar [isFixed]="true" [isOpen]="true">
-  <flowbite-navbar-content>
-    <flowbite-navbar-brand>
-      Flowbite
-    </flowbite-navbar-brand>
+  <flowbite-navbar-brand>
+    Flowbite
+  </flowbite-navbar-brand>
 
+  <flowbite-navbar-content>
     <flowbite-navbar-item>Hello world!</flowbite-navbar-item>
 
     <flowbite-dropdown label="Settings">
