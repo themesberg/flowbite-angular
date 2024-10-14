@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import type { AccordionContentClass, AccordionContentTheme } from './accordion-content.theme';
@@ -8,7 +7,7 @@ import { AccordionPanelComponent } from './accordion-panel.component';
 import type { AccordionColors } from './accordion.theme';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -20,11 +19,9 @@ import { Component, inject, input, signal } from '@angular/core';
     </ng-container>
   `,
 })
-export class AccordionContentComponent extends BaseComponent {
+export class AccordionContentComponent extends BaseComponent<AccordionContentClass> {
   public readonly themeService = inject(AccordionContentThemeService);
   public readonly accordionPanelComponent = inject(AccordionPanelComponent);
-
-  public override contentClasses = signal<AccordionContentClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof AccordionColors>(this.accordionPanelComponent.color());
@@ -32,14 +29,12 @@ export class AccordionContentComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): AccordionContentClass {
+    return this.themeService.getClasses({
       color: this.accordionPanelComponent.accordionComponent.stateService.select('color')(),
       isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.stateService.select('isOpen')()),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

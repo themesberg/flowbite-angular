@@ -1,13 +1,12 @@
 import type { DeepPartial } from '../../common/flowbite.type';
 import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.theme';
 import { BadgeThemeService } from './badge.theme.service';
 
 import { NgClass } from '@angular/common';
-import { booleanAttribute, Component, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, inject, input } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/badge/
@@ -25,11 +24,9 @@ import { booleanAttribute, Component, inject, input, signal } from '@angular/cor
     },
   ],
 })
-export class BadgeComponent extends BaseComponent {
+export class BadgeComponent extends BaseComponent<BadgeClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly themeService = inject(BadgeThemeService);
-
-  public override contentClasses = signal<BadgeClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof BadgeColors>('primary');
@@ -40,8 +37,8 @@ export class BadgeComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): BadgeClass {
+    return this.themeService.getClasses({
       color: this.color(),
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
@@ -49,8 +46,6 @@ export class BadgeComponent extends BaseComponent {
       link: this.flowbiteRouterLink.routerLink.urlTree,
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

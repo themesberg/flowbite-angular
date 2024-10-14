@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
-import { createClass } from '../../utils';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -12,7 +11,7 @@ import type { SidebarColors } from './sidebar.theme';
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, contentChildren, effect, inject, input, signal, untracked } from '@angular/core';
+import { booleanAttribute, Component, contentChildren, effect, inject, input, untracked } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -44,15 +43,13 @@ import { DomSanitizer } from '@angular/platform-browser';
     },
   ],
 })
-export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
+export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupClass> implements OnInit {
   public readonly stateService = inject(SidebarItemGroupStateService);
   public readonly themeService = inject(SidebarItemGroupThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
   public readonly sidebarMenuComponent = inject(SidebarMenuComponent);
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
-
-  public override contentClasses = signal<SidebarItemGroupClass>(createClass({ rootClass: '', spanClass: '' }));
 
   //#region properties
   public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
@@ -62,13 +59,11 @@ export class SidebarItemGroupComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): SidebarItemGroupClass {
+    return this.themeService.getClasses({
       color: this.color(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarItemGroupComponent } from './sidebar-item-group.component';
@@ -9,7 +8,7 @@ import { SidebarMenuThemeService } from './sidebar-menu.theme.service';
 import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
-import { Component, contentChildren, inject, input, signal } from '@angular/core';
+import { Component, contentChildren, inject, input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -17,28 +16,24 @@ import { Component, contentChildren, inject, input, signal } from '@angular/core
   selector: 'flowbite-sidebar-menu',
   template: '<ng-content />',
 })
-export class SidebarMenuComponent extends BaseComponent {
+export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
   public readonly themeService = inject(SidebarMenuThemeService);
   public readonly sidebarComponent = inject(SidebarComponent);
   public readonly sidebarItemGroupChildren = contentChildren(SidebarItemGroupComponent);
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
-
-  public override contentClasses = signal<SidebarMenuClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof SidebarColors>(this.sidebarComponent.color());
   public customStyle = input<DeepPartial<SidebarMenuTheme>>({});
   //#endregion
 
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): SidebarMenuClass {
+    return this.themeService.getClasses({
       isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.stateService.select('isOpen')()),
       color: this.color(),
       displayMode: this.sidebarComponent.stateService.select('displayMode')(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

@@ -1,12 +1,11 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { BaseComponent } from '../base-component.directive';
 import type { ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
 import { ModalBodyThemeService } from './modal-body.theme.service';
 import { ModalComponent } from './modal.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -14,23 +13,19 @@ import { Component, inject, input, signal } from '@angular/core';
   selector: 'flowbite-modal-body',
   template: `<ng-content />`,
 })
-export class ModalBodyComponent extends BaseComponent {
+export class ModalBodyComponent extends BaseComponent<ModalBodyClass> {
   public readonly themeService = inject(ModalBodyThemeService);
   public readonly modalComponent = inject(ModalComponent);
-
-  public override contentClasses = signal<ModalBodyClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public customStyle = input<DeepPartial<ModalBodyTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): ModalBodyClass {
+    return this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

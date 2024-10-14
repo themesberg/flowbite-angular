@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import type {
@@ -14,7 +13,7 @@ import type {
 import { ButtonThemeService } from './button.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
-import { booleanAttribute, Component, HostBinding, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, HostBinding, inject, input } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/buttons/
@@ -39,12 +38,10 @@ import { booleanAttribute, Component, HostBinding, inject, input, signal } from 
     </ng-template>
   `,
 })
-export class ButtonComponent extends BaseComponent {
+export class ButtonComponent extends BaseComponent<ButtonClass> {
   @HostBinding('type') hostTypeValue = 'button';
 
   public readonly themeService = inject(ButtonThemeService);
-
-  public override contentClasses = signal<ButtonClass>(createClass({ rootClass: '', spanClass: '' }));
 
   //#region properties
   public color = input<keyof ButtonColors>('primary');
@@ -60,8 +57,8 @@ export class ButtonComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass() {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): ButtonClass {
+    return this.themeService.getClasses({
       color: this.color(),
       isDisabled: booleanToFlowbiteBoolean(this.isDisabled()),
       fill: this.fill(),
@@ -71,8 +68,6 @@ export class ButtonComponent extends BaseComponent {
       gradientDuoTone: this.gradientDuoTone(),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
   //#endregion
 }

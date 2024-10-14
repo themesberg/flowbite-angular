@@ -1,4 +1,4 @@
-import type { DeepPartial } from '../../../common';
+import type { DeepPartial, FlowbiteClass } from '../../../common';
 import { BaseInputDirective } from './base-input.directive';
 import * as properties from './helper.directive.theme';
 import { HelperDirectiveThemeService } from './helper.directive.theme.service';
@@ -19,13 +19,15 @@ export class HelperDirective extends BaseInputDirective {
   //#endregion
 
   //#region BaseInputDirective implementation
-  override fetchClass(): void {
+  override fetchClass(): FlowbiteClass {
     const propertyClass = this.themeService.getClasses({
       validate: this.formFieldStateService.select('validate')(),
       customStyle: this.customStyle(),
     });
 
     this.contentClasses.set(propertyClass);
+
+    return { rootClass: '' };
   }
   //#endregion
 }

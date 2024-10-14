@@ -1,7 +1,6 @@
 import type { DeepPartial } from '../../common';
 import { GlobalSignalStoreService } from '../../services';
 import type { ThemeState } from '../../services/state/theme.state';
-import { createClass } from '../../utils';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -9,7 +8,7 @@ import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-to
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import { afterNextRender, Component, effect, HostListener, inject, input, signal } from '@angular/core';
+import { afterNextRender, Component, effect, HostListener, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -25,7 +24,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       class="h-5 w-5 hidden dark:block" />
   `,
 })
-export class DarkThemeToggleComponent extends BaseComponent {
+export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass> {
   public readonly themeService = inject(DarkThemeToggleThemeService);
   public readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
     GlobalSignalStoreService<ThemeState>,
@@ -33,19 +32,15 @@ export class DarkThemeToggleComponent extends BaseComponent {
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
 
-  public override contentClasses = signal<DarkThemeToggleClass>(createClass({ rootClass: '' }));
-
   //#region properties
   public customStyle = input<DeepPartial<DarkThemeToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): DarkThemeToggleClass {
+    return this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

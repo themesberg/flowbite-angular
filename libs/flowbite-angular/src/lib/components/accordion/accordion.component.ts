@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { AccordionStateService } from '../../services';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { AccordionPanelComponent } from './accordion-panel.component';
@@ -8,7 +7,7 @@ import type { AccordionClass, AccordionColors, AccordionTheme } from './accordio
 import { AccordionThemeService } from './accordion.theme.service';
 
 import { NgClass } from '@angular/common';
-import { booleanAttribute, Component, contentChildren, inject, input, signal } from '@angular/core';
+import { booleanAttribute, Component, contentChildren, inject, input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -28,12 +27,10 @@ import { booleanAttribute, Component, contentChildren, inject, input, signal } f
     },
   ],
 })
-export class AccordionComponent extends BaseComponent {
+export class AccordionComponent extends BaseComponent<AccordionClass> {
   public readonly themeService = inject(AccordionThemeService);
   public readonly stateService = inject(AccordionStateService);
   public readonly accordionPanelChildren = contentChildren(AccordionPanelComponent);
-
-  public override contentClasses = signal<AccordionClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public isAlwaysOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
@@ -43,14 +40,12 @@ export class AccordionComponent extends BaseComponent {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): AccordionClass {
+    return this.themeService.getClasses({
       color: this.stateService.select('color')(),
       isFlush: booleanToFlowbiteBoolean(this.stateService.select('isFlush')()),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override verify(): void {

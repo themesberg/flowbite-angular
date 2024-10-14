@@ -7,7 +7,7 @@ import { BaseComponent } from '../base-component.directive';
 import { IconRegistry } from './icon-registry';
 
 import type { OnInit } from '@angular/core';
-import { Component, effect, ElementRef, inject, input, signal } from '@angular/core';
+import { Component, effect, ElementRef, inject, input } from '@angular/core';
 import { take } from 'rxjs';
 
 @Component({
@@ -15,9 +15,7 @@ import { take } from 'rxjs';
   standalone: true,
   template: `<ng-content />`,
 })
-export class IconComponent extends BaseComponent implements OnInit {
-  public override contentClasses = signal<FlowbiteClass>({ rootClass: '' });
-
+export class IconComponent extends BaseComponent<FlowbiteClass> implements OnInit {
   public _elementRef = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>);
   public _iconRegistry = inject(IconRegistry);
 
@@ -32,7 +30,9 @@ export class IconComponent extends BaseComponent implements OnInit {
     );
   }
 
-  public override fetchClass(): void {}
+  public override fetchClass(): FlowbiteClass {
+    return { rootClass: '' };
+  }
 
   private _splitIconName(iconName: string): [string, string] {
     if (!iconName) {

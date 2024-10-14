@@ -1,6 +1,5 @@
 import type { DeepPartial } from '../../common';
 import { SidebarStateService } from '../../services/state/sidebar.state';
-import { createClass } from '../../utils';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarMenuComponent } from './sidebar-menu.component';
@@ -10,7 +9,7 @@ import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, contentChild, inject, input, signal, untracked } from '@angular/core';
+import { booleanAttribute, Component, contentChild, inject, input, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -34,13 +33,11 @@ import { booleanAttribute, Component, contentChild, inject, input, signal, untra
     },
   ],
 })
-export class SidebarComponent extends BaseComponent implements OnInit {
+export class SidebarComponent extends BaseComponent<SidebarClass> implements OnInit {
   public readonly themeService = inject(SidebarThemeService);
   public readonly stateService = inject(SidebarStateService);
   public readonly sidebarMenuChild = contentChild(SidebarMenuComponent);
   public readonly sidebarPageContentChild = contentChild(SidebarPageContentComponent);
-
-  public override contentClasses = signal<SidebarClass>(createClass({ rootClass: '' }));
 
   //#region properties
   public color = input<keyof SidebarColors>('primary');
@@ -51,14 +48,12 @@ export class SidebarComponent extends BaseComponent implements OnInit {
   //#endregion
 
   //#region BaseComponent implementation
-  public override fetchClass(): void {
-    const propertyClass = this.themeService.getClasses({
+  public override fetchClass(): SidebarClass {
+    return this.themeService.getClasses({
       displayMode: this.stateService.select('displayMode')(),
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
-
-    this.contentClasses.set(propertyClass);
   }
 
   public override init(): void {

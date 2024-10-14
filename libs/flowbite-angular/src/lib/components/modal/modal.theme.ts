@@ -34,11 +34,11 @@ export interface ModalProperties {
 export interface ModalTheme {
   root: {
     base: string;
-  },
+  };
   wrapper: {
     base: string;
     position: ModalPositions;
-  },
+  };
   container: {
     base: string;
     size: ModalSizes;
@@ -50,7 +50,7 @@ export interface ModalTheme {
 
 export const modalTheme: ModalTheme = createTheme({
   root: {
-    base: ''
+    base: '',
   },
   wrapper: {
     base: 'fixed top-0 left-0 right-0 z-[100] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex',
