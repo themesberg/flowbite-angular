@@ -2,6 +2,7 @@ import ComponentCategory from '../ng-doc.category';
 import { FlowbiteDefaultComponent } from './_default.component';
 import { FlowbiteBrandComponent } from './_brand.component';
 import { FlowbiteDropdownComponent } from './_dropdown.component';
+import { FlowbiteResponsiveComponent } from './_responsive.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
@@ -16,7 +17,8 @@ const navbar: NgDocPage = {
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbiteBrandComponent: FlowbiteBrandComponent,
-    flowbiteDropdownComponent: FlowbiteDropdownComponent
+    flowbiteDropdownComponent: FlowbiteDropdownComponent,
+    flowbiteResponsiveComponent: FlowbiteResponsiveComponent,
   },
 };
 

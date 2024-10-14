@@ -41,3 +41,15 @@ Use this example to feature a dropdown menu when clicking on the settings dropdo
 ```typescript file="./_dropdown.component.ts"#L1-L1 group="dropdown" name="typescript"
 
 ```
+
+## Responsive navbar
+
+{{ NgDocActions.demo('flowbiteResponsiveComponent', {container: false}) }}
+
+```html file="./_responsive.component.ts"#L10-L28 group="responsive" name="html"
+
+```
+
+```typescript file="./_responsive.component.ts"#L1-L1 group="responsive" name="typescript"
+
+```
