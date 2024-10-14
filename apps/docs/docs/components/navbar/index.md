@@ -44,6 +44,8 @@ Use this example to feature a dropdown menu when clicking on the settings dropdo
 
 ## Responsive navbar
 
+On mobile device the navigation bar will be collapsed and you will be able to use the hamburger menu to toggle the menu items by adding the `NavbarToggleComponent` component.
+
 {{ NgDocActions.demo('flowbiteResponsiveComponent', {container: false}) }}
 
 ```html file="./_responsive.component.ts"#L10-L28 group="responsive" name="html"
