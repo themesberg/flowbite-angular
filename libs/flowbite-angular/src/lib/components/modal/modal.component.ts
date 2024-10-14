@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { ModalStateService } from '../../services/state/modal.state';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { ModalBodyComponent } from './modal-body.component';
@@ -11,14 +10,12 @@ import { ModalThemeService } from './modal.theme.service';
 import { NgClass } from '@angular/common';
 import type { EmbeddedViewRef, OnDestroy } from '@angular/core';
 import {
-  afterNextRender,
-  booleanAttribute,
   Component,
   contentChild,
   HostBinding,
   HostListener,
   inject,
-  input,
+  model,
   TemplateRef,
   viewChild,
   ViewContainerRef,
@@ -48,18 +45,6 @@ import { filter, Subject, takeUntil } from 'rxjs';
       </div>
     </ng-template>
   `,
-  providers: [
-    {
-      provide: ModalStateService,
-      useFactory: () => {
-        const service = inject(ModalStateService, {
-          skipSelf: true,
-          optional: true,
-        });
-        return service || new ModalStateService();
-      },
-    },
-  ],
 })
 export class ModalComponent extends BaseComponent<ModalClass> implements OnDestroy {
   @HostBinding('tabindex') hostTabIndexValue = '-1';
@@ -67,7 +52,6 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   private readonly destroyed = new Subject<void>();
 
   public readonly themeService = inject(ModalThemeService);
-  public readonly stateService = inject(ModalStateService);
   public readonly modalHeaderChild = contentChild(ModalHeaderComponent);
   public readonly modalBodyChild = contentChild(ModalBodyComponent);
   public readonly modalFooterChild = contentChild(ModalFooterComponent);
@@ -82,17 +66,17 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   //#endregion
 
   //#region properties
-  public size = input<keyof ModalSizes>('md');
-  public position = input<keyof ModalPositions>('center');
-  public isDismissable = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<ModalTheme>>({});
+  public size = model<keyof ModalSizes>('md');
+  public position = model<keyof ModalPositions>('center');
+  public isDismissable = model<boolean>(false);
+  public isOpen = model<boolean>(false);
+  public customStyle = model<DeepPartial<ModalTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): ModalClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.stateService.select('isOpen')()),
+      isOpen: booleanToFlowbiteBoolean(this.isOpen()),
       size: this.size(),
       position: this.position(),
       customStyle: this.customStyle(),
@@ -100,13 +84,6 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   }
 
   public override init(): void {
-    afterNextRender(
-      () => {
-        this.stateService.set('isOpen', this.isOpen());
-      },
-      { injector: this.injector },
-    );
-
     // close modal if it's not destroyed on route change
     this.router.events
       .pipe(
@@ -130,23 +107,23 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   }
 
   open() {
-    this.stateService.set('isOpen', true);
+    this.isOpen.set(true);
     this.changeBackdrop();
   }
 
   close() {
-    this.stateService.set('isOpen', false);
+    this.isOpen.set(false);
     this.changeBackdrop();
   }
 
   toggle() {
-    this.stateService.set('isOpen', this.stateService.select('isOpen')());
+    this.isOpen.set(!this.isOpen());
     this.changeBackdrop();
   }
 
   // If isOpen changes, add or remove template
   changeBackdrop() {
-    if (this.stateService.select('isOpen')()) {
+    if (this.isOpen()) {
       this.createTemplate();
     } else {
       this.destroyTemplate();

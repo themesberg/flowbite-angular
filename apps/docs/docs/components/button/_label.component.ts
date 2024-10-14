@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
     <flowbite-button>
       Messages
       <flowbite-badge
-        isIconOnly
+        [isIconOnly]="true"
         class="ml-2">
         2
       </flowbite-badge>

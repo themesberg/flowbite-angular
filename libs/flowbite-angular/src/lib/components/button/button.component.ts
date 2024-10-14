@@ -13,7 +13,7 @@ import type {
 import { ButtonThemeService } from './button.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
-import { booleanAttribute, Component, HostBinding, inject, input } from '@angular/core';
+import { Component, HostBinding, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/buttons/
@@ -44,16 +44,14 @@ export class ButtonComponent extends BaseComponent<ButtonClass> {
   public readonly themeService = inject(ButtonThemeService);
 
   //#region properties
-  public color = input<keyof ButtonColors>('primary');
-  public size = input<keyof ButtonSizes>('md');
-  public isPill = input<boolean, unknown>(false, {
-    transform: booleanAttribute,
-  });
-  public fill = input<keyof ButtonFill>('solid');
-  public isDisabled = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public gradientMonochrome = input<keyof ButtonMonochromeColors | undefined>(undefined);
-  public gradientDuoTone = input<keyof ButtonDuoToneColors | undefined>(undefined);
-  public customStyle = input<DeepPartial<ButtonTheme>>({});
+  public color = model<keyof ButtonColors>('primary');
+  public size = model<keyof ButtonSizes>('md');
+  public isPill = model<boolean>(false);
+  public fill = model<keyof ButtonFill>('solid');
+  public isDisabled = model<boolean>(false);
+  public gradientMonochrome = model<keyof ButtonMonochromeColors | undefined>(undefined);
+  public gradientDuoTone = model<keyof ButtonDuoToneColors | undefined>(undefined);
+  public customStyle = model<DeepPartial<ButtonTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

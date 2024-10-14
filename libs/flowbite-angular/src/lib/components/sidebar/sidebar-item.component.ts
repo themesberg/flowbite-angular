@@ -11,7 +11,7 @@ import { SidebarMenuComponent } from './sidebar-menu.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, HostListener, inject, input } from '@angular/core';
+import { Component, HostListener, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -44,16 +44,16 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
   public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
   public readonly themeService = inject(SidebarItemThemeService);
-  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, { optional: true });
+  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, {
+    optional: true,
+  });
   public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(SidebarMenuComponent);
 
   //#region properties
-  public icon = input<string | undefined>(undefined);
-  public color = input<keyof SidebarColors>(
-    (this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color()
-  );
-  public label = input<string | undefined>(undefined);
-  public customStyle = input<DeepPartial<SidebarItemTheme>>({});
+  public icon = model<string | undefined>(undefined);
+  public color = model<keyof SidebarColors>((this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color());
+  public label = model<string | undefined>(undefined);
+  public customStyle = model<DeepPartial<SidebarItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

@@ -8,7 +8,7 @@ import { ModalComponent } from './modal.component';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -38,7 +38,7 @@ export class ModalHeaderComponent extends BaseComponent<ModalHeaderClass> implem
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public customStyle = input<DeepPartial<ModalHeaderTheme>>({});
+  public customStyle = model<DeepPartial<ModalHeaderTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

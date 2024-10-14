@@ -7,7 +7,7 @@ import { BaseComponent } from '../base-component.directive';
 import { IconRegistry } from './icon-registry';
 
 import type { OnInit } from '@angular/core';
-import { Component, effect, ElementRef, inject, input } from '@angular/core';
+import { Component, effect, ElementRef, inject, model } from '@angular/core';
 import { take } from 'rxjs';
 
 @Component({
@@ -19,7 +19,7 @@ export class IconComponent extends BaseComponent<FlowbiteClass> implements OnIni
   public _elementRef = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>);
   public _iconRegistry = inject(IconRegistry);
 
-  public svgIcon = input.required<string>();
+  public svgIcon = model.required<string>();
 
   public override init(): void {
     effect(

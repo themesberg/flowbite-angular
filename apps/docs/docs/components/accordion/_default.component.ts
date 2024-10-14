@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
   imports: [AccordionComponent, AccordionTitleComponent, AccordionContentComponent, AccordionPanelComponent],
   template: `
     <flowbite-accordion class="w-full">
-      <flowbite-accordion-panel isOpen>
+      <flowbite-accordion-panel [isOpen]="true">
         <flowbite-accordion-title>What is Flowbite ?</flowbite-accordion-title>
         <flowbite-accordion-content>
           <p class="text-base font-normal text-gray-600 dark:text-gray-400">

@@ -1,14 +1,14 @@
 import type { DeepPartial } from '../../common';
-import { SidebarStateService } from '../../services';
 import { BARS_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { SidebarToggleClass, SidebarToggleSizes, SidebarToggleTheme } from './sidebar-toggle.theme';
 import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
+import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, input } from '@angular/core';
+import { Component, HostListener, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -19,14 +19,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> implements OnInit {
   public readonly themeService = inject(SidebarToggleThemeService);
-  public readonly sidebarStateService = inject(SidebarStateService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
+  public readonly sidebarComponent = model<SidebarComponent>(inject(SidebarComponent));
 
   //#region properties
-  public color = input<keyof SidebarColors>('primary');
-  public size = input<keyof SidebarToggleSizes>('sm');
-  public customStyle = input<DeepPartial<SidebarToggleTheme>>({});
+  public color = model<keyof SidebarColors>('primary');
+  public size = model<keyof SidebarToggleSizes>('sm');
+  public customStyle = model<DeepPartial<SidebarToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -49,8 +49,8 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
 
   @HostListener('click')
   public onClick(): void {
-    const isOpen = this.sidebarStateService.select('isOpen')();
+    const isOpen = this.sidebarComponent().isOpen();
 
-    this.sidebarStateService.set('isOpen', !isOpen);
+    this.sidebarComponent().isOpen.set(!isOpen);
   }
 }

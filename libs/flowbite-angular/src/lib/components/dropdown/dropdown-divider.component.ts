@@ -4,7 +4,7 @@ import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -17,7 +17,7 @@ export class DropdownDividerComponent extends BaseComponent<DropdownDividerClass
   public readonly dropdownComponent = inject(DropdownComponent);
 
   //#region properties
-  public customStyle = input<Partial<DropdownDividerTheme>>({});
+  public customStyle = model<Partial<DropdownDividerTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

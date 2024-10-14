@@ -6,7 +6,7 @@ import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 import { NavbarComponent } from './navbar.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-brand',
@@ -26,7 +26,7 @@ export class NavbarBrandComponent extends BaseComponent<NavbarBrandClass> {
   public readonly navbarComponent = inject(NavbarComponent);
 
   //#region properties
-  public customStyle = input<DeepPartial<NavbarBrandTheme>>({});
+  public customStyle = model<DeepPartial<NavbarBrandTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

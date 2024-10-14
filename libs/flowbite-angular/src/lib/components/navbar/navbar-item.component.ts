@@ -8,7 +8,7 @@ import { NavbarItemThemeService } from './navbar-item.theme.service';
 import type { NavbarColors } from './navbar.theme';
 
 import { NgClass } from '@angular/common';
-import { Component, HostListener, inject, input } from '@angular/core';
+import { Component, HostListener, inject, model } from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-item',
@@ -33,8 +33,8 @@ export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
   public readonly navbarContentComponent = inject(NavbarContentComponent);
 
   //#region properties
-  public color = input<keyof NavbarColors>(this.navbarContentComponent.color());
-  public customStyle = input<DeepPartial<NavbarItemTheme>>({});
+  public color = model<keyof NavbarColors>(this.navbarContentComponent.color());
+  public customStyle = model<DeepPartial<NavbarItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -48,6 +48,6 @@ export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
 
   @HostListener('click')
   public onClick(): void {
-    this.navbarContentComponent.navbarComponent.toggleVisibility(false);
+    this.navbarContentComponent.navbarComponent().toggleVisibility(false);
   }
 }

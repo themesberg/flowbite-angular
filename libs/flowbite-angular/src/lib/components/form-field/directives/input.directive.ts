@@ -12,7 +12,7 @@ import { Directive, HostBinding, inject, input, signal } from '@angular/core';
 })
 export class InputDirective extends BaseInputDirective {
   @HostBinding('attr.disabled') get getIsDisabled() {
-    return this.formFieldStateService.select('isDisabled')() || null;
+    return this.formFieldComponent.isDisabled() || null;
   }
 
   protected override contentClasses = signal<properties.InputDirectiveClass>(properties.inputDirectiveClassInstance);
@@ -26,11 +26,11 @@ export class InputDirective extends BaseInputDirective {
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      disabled: booleanToFlowbiteBoolean(this.formFieldStateService.select('isDisabled')()),
-      size: this.formFieldStateService.select('size')(),
-      validate: this.formFieldStateService.select('validate')(),
-      prefix: this.formFieldStateService.select('prefix')(),
-      floatingLabelType: this.formFieldStateService.select('floatingLabelType')(),
+      disabled: booleanToFlowbiteBoolean(this.formFieldComponent.isDisabled()),
+      size: this.formFieldComponent.size(),
+      validate: this.formFieldComponent.validate(),
+      prefix: this.formFieldComponent.prefix(),
+      floatingLabelType: this.formFieldComponent.floatingLabelType(),
       customStyle: this.customStyle(),
     });
 

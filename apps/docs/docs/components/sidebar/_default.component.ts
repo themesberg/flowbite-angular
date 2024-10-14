@@ -20,11 +20,11 @@ import { Component } from '@angular/core';
   ],
   template: `
     <flowbite-sidebar
-      isOpen
+      [isOpen]="true"
       class="min-h-screen">
       <flowbite-sidebar-menu>
         <flowbite-sidebar-item-group
-          isOpen
+          [isOpen]="true"
           title="Group">
           <flowbite-sidebar-item>Introduction</flowbite-sidebar-item>
         </flowbite-sidebar-item-group>

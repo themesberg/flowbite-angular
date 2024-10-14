@@ -1,5 +1,5 @@
 import type { FlowbiteClass } from '../../../common';
-import { FormFieldStateService } from '../../../services/state/form-field.state';
+import { FormFieldComponent } from '../form-field.component';
 
 import type { OnInit } from '@angular/core';
 import { Directive, effect, inject, Injector, signal } from '@angular/core';
@@ -13,7 +13,7 @@ export abstract class BaseInputDirective implements OnInit {
   protected contentClasses = signal<FlowbiteClass>({ rootClass: '' });
 
   protected readonly injector = inject(Injector);
-  protected readonly formFieldStateService: FormFieldStateService = inject(FormFieldStateService);
+  protected readonly formFieldComponent: FormFieldComponent = inject(FormFieldComponent);
 
   ngOnInit(): void {
     effect(

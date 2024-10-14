@@ -28,9 +28,9 @@ export class LabelDirective extends BaseInputDirective {
   //#region BaseInputDirective implementation
   override fetchClass(): void {
     const propertyClass = this.themeService.getClasses({
-      disabled: booleanToFlowbiteBoolean(this.formFieldStateService.select('isDisabled')()),
-      validate: this.formFieldStateService.select('validate')(),
-      floatingLabelType: this.formFieldStateService.select('floatingLabelType')(),
+      disabled: booleanToFlowbiteBoolean(this.formFieldComponent.isDisabled()),
+      validate: this.formFieldComponent.validate(),
+      floatingLabelType: this.formFieldComponent.floatingLabelType(),
       customStyle: this.customStyle(),
     });
 

@@ -9,7 +9,7 @@ import { AlertThemeService } from './alert.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
-import { booleanAttribute, Component, HostBinding, inject, input } from '@angular/core';
+import { Component, HostBinding, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -45,14 +45,14 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public color = input<keyof AlertColors>('primary');
-  public hasBorder = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public hasBorderAccent = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<AlertTheme>>({});
-  public icon = input<TemplateRef<unknown> | null>(null);
-  public additionalContent = input<TemplateRef<unknown> | null>(null);
-  public isDismissable = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public onDismiss = input<() => void | undefined>();
+  public color = model<keyof AlertColors>('primary');
+  public hasBorder = model<boolean>(false);
+  public hasBorderAccent = model<boolean>(false);
+  public customStyle = model<DeepPartial<AlertTheme>>({});
+  public icon = model<TemplateRef<unknown> | null>(null);
+  public additionalContent = model<TemplateRef<unknown> | null>(null);
+  public isDismissable = model<boolean>(false);
+  public onDismiss = model<() => void | undefined>();
   //#endregion
 
   //#region BaseComponent implementation

@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { DropdownStateService } from '../../services/state/dropdown.state';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
@@ -12,17 +11,7 @@ import { DropdownThemeService } from './dropdown.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
-import {
-  afterNextRender,
-  booleanAttribute,
-  Component,
-  contentChildren,
-  ElementRef,
-  HostListener,
-  inject,
-  input,
-  ViewChild,
-} from '@angular/core';
+import { Component, contentChildren, ElementRef, HostListener, inject, model, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import type { Placement } from '@floating-ui/dom';
 import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
@@ -50,7 +39,7 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
     <div
       [ngClass]="contentClasses().containerClass"
       #dropdown
-      [style.display]="stateService.select('isOpen')() ? 'block' : 'none'">
+      [style.display]="isOpen() ? 'block' : 'none'">
       <div [ngClass]="contentClasses().contentClass">
         <ul [ngClass]="contentClasses().subContentClass">
           <ng-content />
@@ -58,25 +47,12 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
       </div>
     </div>
   `,
-  providers: [
-    {
-      provide: DropdownStateService,
-      useFactory: () => {
-        const service = inject(DropdownStateService, {
-          skipSelf: true,
-          optional: true,
-        });
-        return service || new DropdownStateService();
-      },
-    },
-  ],
 })
 export class DropdownComponent extends BaseComponent<DropdownClass> implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
   public readonly themeService = inject(DropdownThemeService);
-  public readonly stateService = inject(DropdownStateService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
   public readonly dropdownItemChildren = contentChildren(DropdownItemComponent);
@@ -84,30 +60,23 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   public readonly dropdownDividerChildren = contentChildren(DropdownDividerComponent);
 
   //#region properties
-  public label = input('Dropdown');
-  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public position = input<keyof DropdownPositions>('bottom-center');
-  public customStyle = input<DeepPartial<DropdownTheme>>({});
+  public label = model('Dropdown');
+  public isOpen = model<boolean>(false);
+  public position = model<keyof DropdownPositions>('bottom-center');
+  public customStyle = model<DeepPartial<DropdownTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): DropdownClass {
     return this.themeService.getClasses({
       label: this.label(),
-      isOpen: booleanToFlowbiteBoolean(this.stateService.select('isOpen')()),
+      isOpen: booleanToFlowbiteBoolean(this.isOpen()),
       placement: this.position(),
       customStyle: this.customStyle(),
     });
   }
 
   public override init(): void {
-    afterNextRender(
-      () => {
-        this.stateService.set('isOpen', this.isOpen());
-      },
-      { injector: this.injector },
-    );
-
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-down',
@@ -127,7 +96,7 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   width = 0;
 
   toggle() {
-    this.stateService.set('isOpen', !this.stateService.select('isOpen')());
+    this.isOpen.set(!this.isOpen());
   }
 
   calculatePosition() {
@@ -143,7 +112,7 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
 
   ngAfterViewInit() {
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (!this.stateService.select('isOpen')()) return;
+      if (!this.isOpen()) return;
       this.calculatePosition();
     });
   }
@@ -153,10 +122,10 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&
-      this.stateService.select('isOpen')() &&
+      this.isOpen() &&
       !this.button.nativeElement.contains(event.target)
     ) {
-      this.stateService.set('isOpen', false);
+      this.isOpen.set(false);
     }
   }
 

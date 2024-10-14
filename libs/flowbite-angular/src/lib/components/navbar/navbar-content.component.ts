@@ -8,7 +8,7 @@ import type { NavbarColors } from './navbar.theme';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-content',
@@ -22,17 +22,17 @@ import { Component, inject, input } from '@angular/core';
 })
 export class NavbarContentComponent extends BaseComponent<NavbarContentClass> implements OnInit {
   public readonly themeService = inject(NavbarContentThemeService);
-  public readonly navbarComponent = inject(NavbarComponent);
+  public readonly navbarComponent = model<NavbarComponent>(inject(NavbarComponent));
 
   //#region properties
-  public color = input<keyof NavbarColors>(this.navbarComponent.color());
-  public customStyle = input<DeepPartial<NavbarContentTheme>>({});
+  public color = model<keyof NavbarColors>(this.navbarComponent().color());
+  public customStyle = model<DeepPartial<NavbarContentTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): NavbarContentClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.navbarComponent.stateService.select('isOpen')()),
+      isOpen: booleanToFlowbiteBoolean(this.navbarComponent().isOpen()),
       customStyle: this.customStyle(),
     });
   }

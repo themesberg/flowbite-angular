@@ -6,7 +6,7 @@ import { NavbarIconButtonThemeService } from './navbar-icon-button.theme.service
 import { NavbarComponent } from './navbar.component';
 import type { NavbarColors } from './navbar.theme';
 
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-icon-button',
@@ -20,8 +20,8 @@ export class NavbarIconButtonComponent extends BaseComponent<NavbarIconButtonCla
   public readonly navbarContentComponent = inject(NavbarContentComponent, { optional: true });
 
   //#region properties
-  public color = input<keyof NavbarColors>(this.navbarContentComponent?.color() || this.navbarComponent!.color());
-  public customStyle = input<DeepPartial<NavbarIconButtonTheme>>({});
+  public color = model<keyof NavbarColors>(this.navbarContentComponent?.color() || this.navbarComponent!.color());
+  public customStyle = model<DeepPartial<NavbarIconButtonTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

@@ -1,13 +1,13 @@
 import type { DeepPartial } from '../../common';
-import { NavbarStateService } from '../../services';
 import { BARS_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { NavbarToggleClass, NavbarToggleTheme } from './navbar-toggle.theme';
 import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
+import { NavbarComponent } from './navbar.component';
 
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, input } from '@angular/core';
+import { Component, HostListener, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -22,12 +22,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   public readonly themeService = inject(NavbarToggleThemeService);
-  public readonly navbarStateService = inject(NavbarStateService);
+  public readonly navbarComponent = model<NavbarComponent>(inject(NavbarComponent));
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public customStyle = input<DeepPartial<NavbarToggleTheme>>({});
+  public customStyle = model<DeepPartial<NavbarToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -48,8 +48,8 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
 
   @HostListener('click')
   public onClick(): void {
-    const isCollapsed = this.navbarStateService.select('isOpen')();
+    const isCollapsed = this.navbarComponent().isOpen();
 
-    this.navbarStateService.set('isOpen', !isCollapsed);
+    this.navbarComponent().isOpen.set(!isCollapsed);
   }
 }

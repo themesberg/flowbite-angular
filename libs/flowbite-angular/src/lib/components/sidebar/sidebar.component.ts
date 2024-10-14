@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { SidebarStateService } from '../../services/state/sidebar.state';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarMenuComponent } from './sidebar-menu.component';
@@ -9,7 +8,7 @@ import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, contentChild, inject, input, untracked } from '@angular/core';
+import { Component, contentChild, inject, model, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -19,47 +18,26 @@ import { booleanAttribute, Component, contentChild, inject, input, untracked } f
   imports: [NgClass],
   selector: 'flowbite-sidebar',
   template: `<ng-content />`,
-  providers: [
-    {
-      provide: SidebarStateService,
-      useFactory: () => {
-        const service = inject(SidebarStateService, {
-          skipSelf: true,
-          optional: true,
-        });
-
-        return service || new SidebarStateService();
-      },
-    },
-  ],
 })
 export class SidebarComponent extends BaseComponent<SidebarClass> implements OnInit {
   public readonly themeService = inject(SidebarThemeService);
-  public readonly stateService = inject(SidebarStateService);
   public readonly sidebarMenuChild = contentChild(SidebarMenuComponent);
   public readonly sidebarPageContentChild = contentChild(SidebarPageContentComponent);
 
   //#region properties
-  public color = input<keyof SidebarColors>('primary');
-  public displayMode = input<keyof SidebarDisplayMode>('push');
-  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public isRounded = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<SidebarTheme>>({});
+  public color = model<keyof SidebarColors>('primary');
+  public displayMode = model<keyof SidebarDisplayMode>('push');
+  public isOpen = model<boolean>(false);
+  public isRounded = model<boolean>(false);
+  public customStyle = model<DeepPartial<SidebarTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): SidebarClass {
     return this.themeService.getClasses({
-      displayMode: this.stateService.select('displayMode')(),
+      displayMode: this.displayMode(),
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
-    });
-  }
-
-  public override init(): void {
-    this.stateService.setState({
-      displayMode: this.displayMode(),
-      isOpen: this.isOpen(),
     });
   }
 
@@ -76,9 +54,9 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
 
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {
-      isOpen = untracked(() => !this.stateService.select('isOpen')());
+      isOpen = untracked(() => !this.isOpen());
     }
 
-    this.stateService.set('isOpen', isOpen);
+    this.isOpen.set(isOpen);
   }
 }

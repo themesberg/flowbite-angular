@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
     <flowbite-accordion
       class="w-full"
       color="primary">
-      <flowbite-accordion-panel isOpen>
+      <flowbite-accordion-panel [isOpen]="true">
         <flowbite-accordion-title>What is Flowbite ?</flowbite-accordion-title>
         <flowbite-accordion-content>
           <p class="text-base font-normal text-gray-600 dark:text-gray-400">

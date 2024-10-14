@@ -5,7 +5,7 @@ import { ModalBodyThemeService } from './modal-body.theme.service';
 import { ModalComponent } from './modal.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -18,7 +18,7 @@ export class ModalBodyComponent extends BaseComponent<ModalBodyClass> {
   public readonly modalComponent = inject(ModalComponent);
 
   //#region properties
-  public customStyle = input<DeepPartial<ModalBodyTheme>>({});
+  public customStyle = model<DeepPartial<ModalBodyTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

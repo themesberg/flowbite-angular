@@ -5,7 +5,7 @@ import { ModalFooterThemeService } from './modal-footer.theme.service';
 import { ModalComponent } from './modal.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -18,7 +18,7 @@ export class ModalFooterComponent extends BaseComponent<ModalFooterClass> {
   public readonly modalComponent = inject(ModalComponent);
 
   //#region properties
-  public customStyle = input<DeepPartial<ModalFooterTheme>>({});
+  public customStyle = model<DeepPartial<ModalFooterTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

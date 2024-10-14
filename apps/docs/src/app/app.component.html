@@ -4,7 +4,7 @@
   [footerContent]="footerContent">
   <flowbite-navbar
     ngDocCustomNavbar
-    isFixed
+    [isFixed]="true"
     [customStyle]="{ root: { base: 'flex flex-wrap items-center justify-between p-4 xl:px-60' } }">
     <div class="flex flex-row flex-1 items-center gap-2">
       <flowbite-navbar-icon-button
@@ -116,4 +116,3 @@
     </section>
   </ng-template>
 </ng-doc-root>
-

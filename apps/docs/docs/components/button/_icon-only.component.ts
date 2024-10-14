@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
         svgIcon="outline:arrow-right"
         class="h-5 w-5" />
     </flowbite-button>
-    <flowbite-button isPill>
+    <flowbite-button [isPill]="true">
       <flowbite-icon
         svgIcon="outline:arrow-right"
         class="h-5 w-5" />
@@ -24,7 +24,7 @@ import { Component } from '@angular/core';
     </flowbite-button>
     <flowbite-button
       fill="outline"
-      isPill>
+      [isPill]="true">
       <flowbite-icon
         svgIcon="outline:arrow-right"
         class="h-5 w-5" />

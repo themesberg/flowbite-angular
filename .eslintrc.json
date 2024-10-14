@@ -35,6 +35,8 @@
         "@typescript-eslint/consistent-type-imports": 2,
         "@typescript-eslint/consistent-type-exports": 2,
         "@typescript-eslint/no-namespace": 0,
+        // angular-eslint
+        "@angular-eslint/no-host-metadata-property": "off",
         // nx
         "@nx/dependency-checks": 2,
         "@nx/enforce-module-boundaries": 2

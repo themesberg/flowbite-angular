@@ -6,7 +6,7 @@ import type { ScrollTopClass, ScrollTopColors, ScrollTopPositions, ScrollTopThem
 import { ScrollTopThemeService } from './scroll-top.theme.service';
 
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, input } from '@angular/core';
+import { Component, HostListener, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -23,9 +23,9 @@ export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public color = input<keyof ScrollTopColors>('primary');
-  public position = input<keyof ScrollTopPositions>('bottom-right');
-  public customStyle = input<DeepPartial<ScrollTopTheme>>({});
+  public color = model<keyof ScrollTopColors>('primary');
+  public position = model<keyof ScrollTopPositions>('bottom-right');
+  public customStyle = model<DeepPartial<ScrollTopTheme>>({});
   //#endregion
 
   //#region BaseComponent implemenation

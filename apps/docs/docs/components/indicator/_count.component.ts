@@ -13,9 +13,9 @@ import { Component } from '@angular/core';
         class="w-5 h-5 mr-1" />
       Messages
       <flowbite-indicator
-        hasBorder
+        [hasBorder]="true"
         size="xl"
-        hasOffset="top-right"
+        [hasOffset]="true"
         placement="top-right">
         8
       </flowbite-indicator>

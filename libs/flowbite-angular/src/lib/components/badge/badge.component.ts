@@ -6,7 +6,7 @@ import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.th
 import { BadgeThemeService } from './badge.theme.service';
 
 import { NgClass } from '@angular/common';
-import { booleanAttribute, Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/badge/
@@ -29,11 +29,11 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
   public readonly themeService = inject(BadgeThemeService);
 
   //#region properties
-  public color = input<keyof BadgeColors>('primary');
-  public size = input<keyof BadgeSizes>('xs');
-  public isIconOnly = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public isPill = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public customStyle = input<DeepPartial<BadgeTheme>>({});
+  public color = model<keyof BadgeColors>('primary');
+  public size = model<keyof BadgeSizes>('xs');
+  public isIconOnly = model<boolean>(false);
+  public isPill = model<boolean>(false);
+  public customStyle = model<DeepPartial<BadgeTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

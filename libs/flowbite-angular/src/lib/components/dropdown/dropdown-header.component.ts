@@ -4,7 +4,7 @@ import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -22,7 +22,7 @@ export class DropdownHeaderComponent extends BaseComponent<DropdownHeaderClass> 
   public readonly dropdownComponent = inject(DropdownComponent);
 
   //#region properties
-  public customStyle = input<Partial<DropdownHeaderTheme>>({});
+  public customStyle = model<Partial<DropdownHeaderTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

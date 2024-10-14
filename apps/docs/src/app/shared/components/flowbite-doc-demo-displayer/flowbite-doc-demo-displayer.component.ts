@@ -12,7 +12,7 @@ import { Component, signal } from '@angular/core';
         class="flex flex-row justify-between items-center rounded-t-xl p-6 border-b border-b-gray-200 dark:border-b-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
         <span>
           <flowbite-button
-            isDisabled
+            [isDisabled]="true"
             color="light"
             size="sm">
             <flowbite-icon
@@ -23,28 +23,28 @@ import { Component, signal } from '@angular/core';
         </span>
         <span class="hidden gap-2 lg:flex lg:flex-row">
           <flowbite-button
-            isDisabled
+            [isDisabled]="true"
             color="light"
             size="sm"
-            isPill>
+            [isPill]="true">
             <flowbite-icon
               svgIcon="outline:desktop-pc"
               class="w-4 h-4" />
           </flowbite-button>
           <flowbite-button
-            isDisabled
+            [isDisabled]="true"
             color="light"
             size="sm"
-            isPill>
+            [isPill]="true">
             <flowbite-icon
               svgIcon="outline:tablet"
               class="w-4 h-4" />
           </flowbite-button>
           <flowbite-button
-            isDisabled
+            [isDisabled]="true"
             color="light"
             size="sm"
-            isPill>
+            [isPill]="true">
             <flowbite-icon
               svgIcon="outline:mobile-phone"
               class="w-4 h-4" />
@@ -54,7 +54,7 @@ import { Component, signal } from '@angular/core';
           <flowbite-button
             color="light"
             size="sm"
-            isPill
+            [isPill]="true"
             (click)="themeMode.set('light')">
             <flowbite-icon
               svgIcon="outline:sun"
@@ -63,7 +63,7 @@ import { Component, signal } from '@angular/core';
           <flowbite-button
             color="light"
             size="sm"
-            isPill
+            [isPill]="true"
             (click)="themeMode.set('dark')">
             <flowbite-icon
               svgIcon="outline:moon"
@@ -83,9 +83,6 @@ import { Component, signal } from '@angular/core';
       margin: 0px;
     }
   `,
-  host: {
-    class: 'isolate',
-  },
 })
 export class FlowbiteDocDemoComponent {
   public themeMode = signal<string>('light');

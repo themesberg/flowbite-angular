@@ -10,7 +10,7 @@ import type { BreadcrumbColors } from './breadcrumb.theme';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -39,8 +39,8 @@ export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> 
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public color = input<keyof BreadcrumbColors>(this.breadcrumbComponent.color());
-  public customStyle = input<DeepPartial<BreadcrumbItemTheme>>({});
+  public color = model<keyof BreadcrumbColors>(this.breadcrumbComponent.color());
+  public customStyle = model<DeepPartial<BreadcrumbItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

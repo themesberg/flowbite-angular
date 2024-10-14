@@ -9,39 +9,39 @@ import { Component } from '@angular/core';
   template: `
     <div class="w-56 h-56 relative bg-gray-300 borer border-gray-500 rounded-lg dark:bg-gray-900 dark:border-gray-700">
       <flowbite-indicator
-        hasOffset="top-left"
+        [hasOffset]="true"
         placement="top-left"
         color="gray" />
       <flowbite-indicator
-        hasOffset="top-center"
+        [hasOffset]="true"
         placement="top-center"
         color="blue" />
       <flowbite-indicator
-        hasOffset="top-right"
+        [hasOffset]="true"
         placement="top-right"
         color="green" />
       <flowbite-indicator
-        hasOffset="center-left"
+        [hasOffset]="true"
         placement="center-left"
         color="red" />
       <flowbite-indicator
-        hasOffset="center"
+        [hasOffset]="true"
         placement="center"
         color="purple" />
       <flowbite-indicator
-        hasOffset="center-right"
+        [hasOffset]="true"
         placement="center-right"
         color="indigo" />
       <flowbite-indicator
-        hasOffset="bottom-left"
+        [hasOffset]="true"
         placement="bottom-left"
         color="yellow" />
       <flowbite-indicator
-        hasOffset="bottom-center"
+        [hasOffset]="true"
         placement="bottom-center"
         color="teal" />
       <flowbite-indicator
-        hasOffset="bottom-right"
+        [hasOffset]="true"
         placement="bottom-right"
         color="dark" />
     </div>

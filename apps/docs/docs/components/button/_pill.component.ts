@@ -8,32 +8,32 @@ import { Component } from '@angular/core';
   imports: [ButtonComponent],
   template: `
     <flowbite-button
-      isPill
+      [isPill]="true"
       color="dark">
       Dark
     </flowbite-button>
     <flowbite-button
-      isPill
+      [isPill]="true"
       color="light">
       Light
     </flowbite-button>
     <flowbite-button
-      isPill
+      [isPill]="true"
       color="green">
       Success
     </flowbite-button>
     <flowbite-button
-      isPill
+      [isPill]="true"
       color="red">
       Failure
     </flowbite-button>
     <flowbite-button
-      isPill
+      [isPill]="true"
       color="yellow">
       Warning
     </flowbite-button>
     <flowbite-button
-      isPill
+      [isPill]="true"
       color="purple">
       Purple
     </flowbite-button>

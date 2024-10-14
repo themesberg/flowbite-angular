@@ -10,7 +10,7 @@ import type { AccordionColors } from './accordion.theme';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, input } from '@angular/core';
+import { Component, HostListener, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -24,7 +24,7 @@ import { DomSanitizer } from '@angular/platform-browser';
     <flowbite-icon
       svgIcon="flowbite-angular:chevron-down"
       class="h-6 w-6 shrink-0 duration-200"
-      [class.rotate-180]="accordionPanelComponent.stateService.select('isOpen')()" />
+      [class.rotate-180]="accordionPanelComponent.isOpen()" />
   `,
 })
 export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> implements OnInit {
@@ -34,18 +34,16 @@ export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> 
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public color = input<keyof AccordionColors>(this.accordionPanelComponent.color());
-  public customStyle = input<DeepPartial<AccordionTitleTheme>>({});
+  public color = model<keyof AccordionColors>(this.accordionPanelComponent.color());
+  public customStyle = model<DeepPartial<AccordionTitleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): AccordionTitleClass {
     return this.themeService.getClasses({
-      color: this.accordionPanelComponent.accordionComponent.stateService.select('color')(),
-      isFlush: booleanToFlowbiteBoolean(
-        this.accordionPanelComponent.accordionComponent.stateService.select('isFlush')(),
-      ),
-      isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.stateService.select('isOpen')()),
+      color: this.accordionPanelComponent.accordionComponent.color(),
+      isFlush: booleanToFlowbiteBoolean(this.accordionPanelComponent.accordionComponent.isFlush()),
+      isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.isOpen()),
       customStyle: this.customStyle(),
     });
   }

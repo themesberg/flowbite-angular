@@ -2,22 +2,16 @@ import type { FlowbiteClass } from '../common';
 import { generateId, Guid } from '../utils/id.generator';
 
 import type { OnInit } from '@angular/core';
-import { afterNextRender, computed, Directive, HostBinding, inject, Injector, signal } from '@angular/core';
+import { afterNextRender, computed, Directive, inject, Injector, signal } from '@angular/core';
 
 @Directive({
   standalone: true,
+  host: {
+    '[class]': 'this.contentClasses().rootClass',
+    '[attr.flowbite-id]': 'this.flowbiteId()',
+  },
 })
 export abstract class BaseComponent<TClass extends FlowbiteClass> implements OnInit {
-  @HostBinding('class')
-  get hostClass() {
-    return this.contentClasses().rootClass;
-  }
-
-  @HostBinding('attr.flowbite-id')
-  get getFlowbiteId() {
-    return this.flowbiteId();
-  }
-
   public readonly injector = inject(Injector);
 
   public readonly flowbiteId = signal<Guid>(new Guid(Guid.empty));

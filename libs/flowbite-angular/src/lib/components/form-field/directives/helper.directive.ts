@@ -21,7 +21,7 @@ export class HelperDirective extends BaseInputDirective {
   //#region BaseInputDirective implementation
   override fetchClass(): FlowbiteClass {
     const propertyClass = this.themeService.getClasses({
-      validate: this.formFieldStateService.select('validate')(),
+      validate: this.formFieldComponent.validate(),
       customStyle: this.customStyle(),
     });
 

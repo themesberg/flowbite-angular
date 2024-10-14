@@ -5,7 +5,7 @@ import type { SidebarPageContentClass, SidebarPageContentTheme } from './sidebar
 import { SidebarPageContentThemeService } from './sidebar-page-content.theme.service';
 import { SidebarComponent } from './sidebar.component';
 
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -18,14 +18,14 @@ export class SidebarPageContentComponent extends BaseComponent<SidebarPageConten
   public readonly sidebarComponent = inject(SidebarComponent);
 
   //#region properties
-  public customStyle = input<DeepPartial<SidebarPageContentTheme>>({});
+  public customStyle = model<DeepPartial<SidebarPageContentTheme>>({});
   //endregion
 
   //region BaseComponent implementation
   public override fetchClass(): SidebarPageContentClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.stateService.select('isOpen')()),
-      displayMode: this.sidebarComponent.stateService.select('displayMode')(),
+      isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.isOpen()),
+      displayMode: this.sidebarComponent.displayMode(),
       customStyle: this.customStyle(),
     });
   }

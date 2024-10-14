@@ -8,7 +8,7 @@ import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-to
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import { afterNextRender, Component, effect, HostListener, inject, input } from '@angular/core';
+import { afterNextRender, Component, effect, HostListener, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -33,7 +33,7 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
-  public customStyle = input<DeepPartial<DarkThemeToggleTheme>>({});
+  public customStyle = model<DeepPartial<DarkThemeToggleTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

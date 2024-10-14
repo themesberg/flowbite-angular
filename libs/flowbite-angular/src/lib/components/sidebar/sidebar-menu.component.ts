@@ -8,7 +8,7 @@ import { SidebarMenuThemeService } from './sidebar-menu.theme.service';
 import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
-import { Component, contentChildren, inject, input } from '@angular/core';
+import { Component, contentChildren, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -23,15 +23,15 @@ export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
 
   //#region properties
-  public color = input<keyof SidebarColors>(this.sidebarComponent.color());
-  public customStyle = input<DeepPartial<SidebarMenuTheme>>({});
+  public color = model<keyof SidebarColors>(this.sidebarComponent.color());
+  public customStyle = model<DeepPartial<SidebarMenuTheme>>({});
   //#endregion
 
   public override fetchClass(): SidebarMenuClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.stateService.select('isOpen')()),
+      isOpen: booleanToFlowbiteBoolean(this.sidebarComponent.isOpen()),
       color: this.color(),
-      displayMode: this.sidebarComponent.stateService.select('displayMode')(),
+      displayMode: this.sidebarComponent.displayMode(),
       customStyle: this.customStyle(),
     });
   }

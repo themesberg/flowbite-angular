@@ -5,7 +5,7 @@ import type { BreadcrumbClass, BreadcrumbColors, BreadcrumbTheme } from './bread
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
 import { NgClass } from '@angular/common';
-import { Component, contentChildren, HostBinding, inject, input } from '@angular/core';
+import { Component, contentChildren, HostBinding, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -23,8 +23,8 @@ export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
   public readonly breadcrumbItemChildren = contentChildren(BreadcrumbItemComponent);
 
   //#region properties
-  public color = input<keyof BreadcrumbColors>('primary');
-  public customStyle = input<DeepPartial<BreadcrumbTheme>>({});
+  public color = model<keyof BreadcrumbColors>('primary');
+  public customStyle = model<DeepPartial<BreadcrumbTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

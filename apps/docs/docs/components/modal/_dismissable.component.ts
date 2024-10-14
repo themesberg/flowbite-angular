@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
     <flowbite-button (click)="dismissableModal.open()">Open modal</flowbite-button>
     <flowbite-modal
       #dismissableModal
-      isDismissable>
+      [isDismissable]="true">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">

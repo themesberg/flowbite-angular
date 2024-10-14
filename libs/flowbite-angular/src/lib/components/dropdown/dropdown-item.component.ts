@@ -5,7 +5,7 @@ import { DropdownItemThemeService } from './dropdown-item.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -18,7 +18,7 @@ export class DropdownItemComponent extends BaseComponent<DropdownItemClass> {
   public readonly dropdownComponent = inject(DropdownComponent);
 
   //#region properties
-  public customStyle = input<DeepPartial<DropdownItemTheme>>({});
+  public customStyle = model<DeepPartial<DropdownItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation

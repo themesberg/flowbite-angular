@@ -1,5 +1,4 @@
 import type { DeepPartial } from '../../common';
-import { SidebarItemGroupStateService } from '../../services/state/sidebar.state';
 import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -11,7 +10,7 @@ import type { SidebarColors } from './sidebar.theme';
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { booleanAttribute, Component, contentChildren, effect, inject, input, untracked } from '@angular/core';
+import { Component, contentChildren, inject, model, untracked } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -26,25 +25,12 @@ import { DomSanitizer } from '@angular/platform-browser';
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"
         class="h-6 w-6 shrink-0 duration-200"
-        [class.rotate-180]="!stateService.select('isOpen')()" />
+        [class.rotate-180]="!isOpen()" />
     </span>
-    <ng-content *ngIf="stateService.select('isOpen')()" />
+    <ng-content *ngIf="isOpen()" />
   `,
-  providers: [
-    {
-      provide: SidebarItemGroupStateService,
-      useFactory: () => {
-        const service = inject(SidebarItemGroupStateService, {
-          skipSelf: true,
-          optional: true,
-        });
-        return service || new SidebarItemGroupStateService();
-      },
-    },
-  ],
 })
 export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupClass> implements OnInit {
-  public readonly stateService = inject(SidebarItemGroupStateService);
   public readonly themeService = inject(SidebarItemGroupThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
@@ -52,10 +38,10 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
 
   //#region properties
-  public isOpen = input<boolean, unknown>(false, { transform: booleanAttribute });
-  public color = input<keyof SidebarColors>(this.sidebarMenuComponent.color());
-  public title = input.required<string>();
-  public customStyle = input<DeepPartial<SidebarItemGroupTheme>>({});
+  public isOpen = model<boolean>(this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive.isActive()));
+  public color = model<keyof SidebarColors>(this.sidebarMenuComponent.color());
+  public title = model.required<string>();
+  public customStyle = model<DeepPartial<SidebarItemGroupTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
@@ -73,19 +59,6 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
   }
 
   public override init(): void {
-    this.stateService.setState({
-      isOpen: this.isOpen(),
-    });
-
-    effect(
-      () => {
-        if (this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive.isActive())) {
-          this.toggleVisibility(true);
-        }
-      },
-      { injector: this.injector, allowSignalWrites: true },
-    );
-
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-down',
@@ -100,9 +73,9 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
 
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {
-      isOpen = untracked(() => !this.stateService.select('isOpen')());
+      isOpen = untracked(() => !this.isOpen());
     }
 
-    this.stateService.set('isOpen', isOpen);
+    this.isOpen.set(isOpen);
   }
 }
