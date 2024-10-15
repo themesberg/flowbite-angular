@@ -1,4 +1,4 @@
-import type { FlowbiteThemeService } from '../../common';
+import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils/theme/merge-theme';
 import type { AccordionClass, AccordionProperties, AccordionTheme } from './accordion.theme';
 

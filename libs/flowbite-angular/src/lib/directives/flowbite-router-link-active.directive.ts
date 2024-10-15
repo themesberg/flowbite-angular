@@ -1,5 +1,5 @@
-import { routerLinkActiveInputs } from '../utils/directive.input.util';
-import { routerLinkActiveOutputs } from '../utils/directive.output.util';
+import routerLinkActiveInputs from '../utils/directives/inputs/router-link-active.input';
+import routerLinkActiveOutputs from '../utils/directives/outputs/router-link-active.output';
 
 import type { Signal } from '@angular/core';
 import { Directive, HostListener, inject, signal } from '@angular/core';

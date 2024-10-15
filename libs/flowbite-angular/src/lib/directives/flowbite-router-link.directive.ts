@@ -1,5 +1,5 @@
-import { routerLinkInputs } from '../utils/directive.input.util';
-import { routerLinkOutputs } from '../utils/directive.output.util';
+import routerLinkInputs from '../utils/directives/inputs/router-link.inputs';
+import routerLinkOutputs from '../utils/directives/outputs/router-link.output';
 
 import { Directive, HostListener, inject, model } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';

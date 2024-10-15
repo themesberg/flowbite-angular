@@ -1,4 +1,4 @@
-import type { FlowbiteClass } from './flowbite.theme';
+import type { FlowbiteClass } from '../common/flowbite.theme';
 
 import { Injectable } from '@angular/core';
 

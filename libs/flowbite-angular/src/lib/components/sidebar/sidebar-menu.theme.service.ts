@@ -1,4 +1,4 @@
-import type { FlowbiteThemeService } from '../../common';
+import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils';
 import type { SidebarMenuClass, SidebarMenuProperties, SidebarMenuTheme } from './sidebar-menu.theme';
 

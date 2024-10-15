@@ -1,4 +1,4 @@
-import type { FlowbiteThemeService } from '../../common/flowbite.theme.service';
+import type { FlowbiteThemeService } from '../../services/flowbite.theme.service';
 import { mergeTheme } from '../../utils/theme/merge-theme';
 import type { AlertClass, AlertProperties, AlertTheme } from './alert.theme';
 
