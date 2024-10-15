@@ -8,7 +8,7 @@ import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-to
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import { afterNextRender, Component, effect, HostListener, inject, model } from '@angular/core';
+import { afterNextRender, Component, effect, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -23,6 +23,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       svgIcon="flowbite-angular:sun"
       class="h-5 w-5 hidden dark:block" />
   `,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass> {
   public readonly themeService = inject(DarkThemeToggleThemeService);
@@ -87,7 +90,6 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
   }
   //#endregion
 
-  @HostListener('click')
   public onClick() {
     if (this.themeStateService.select('theme')() === 'light') this.themeStateService.set('theme', 'dark');
     else this.themeStateService.set('theme', 'light');

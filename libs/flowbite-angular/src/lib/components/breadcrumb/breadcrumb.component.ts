@@ -5,7 +5,7 @@ import type { BreadcrumbClass, BreadcrumbColors, BreadcrumbTheme } from './bread
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
 import { NgClass } from '@angular/common';
-import { Component, contentChildren, HostBinding, inject, model } from '@angular/core';
+import { Component, contentChildren, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -15,10 +15,11 @@ import { Component, contentChildren, HostBinding, inject, model } from '@angular
   imports: [NgClass],
   selector: 'flowbite-breadcrumb',
   template: `<ng-content />`,
+  host: {
+    '[attr.aria-label]': 'breadcrumb',
+  },
 })
 export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
-  @HostBinding('attr.aria-label') hostAriaLabelValue = 'breadcrumb';
-
   public readonly themeService = inject(BreadcrumbThemeService);
   public readonly breadcrumbItemChildren = contentChildren(BreadcrumbItemComponent);
 

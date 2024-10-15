@@ -8,7 +8,7 @@ import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -16,6 +16,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [IconComponent],
   selector: 'flowbite-sidebar-toggle',
   template: `<flowbite-icon svgIcon="flowbite-angular:bars" />`,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> implements OnInit {
   public readonly themeService = inject(SidebarToggleThemeService);
@@ -47,7 +50,6 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
   }
   //#endregion
 
-  @HostListener('click')
   public onClick(): void {
     const isOpen = this.sidebarComponent().isOpen();
 

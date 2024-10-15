@@ -8,13 +8,16 @@ import { NavbarItemThemeService } from './navbar-item.theme.service';
 import type { NavbarColors } from './navbar.theme';
 
 import { NgClass } from '@angular/common';
-import { Component, HostListener, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-item',
   standalone: true,
   imports: [NgClass],
   template: `<ng-content />`,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
@@ -36,7 +39,6 @@ export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
   }
   //#endregion
 
-  @HostListener('click')
   public onClick(): void {
     this.navbarContentComponent.navbarComponent().toggleVisibility(false);
   }

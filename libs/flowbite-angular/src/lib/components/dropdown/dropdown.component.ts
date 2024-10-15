@@ -11,7 +11,7 @@ import { DropdownThemeService } from './dropdown.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
-import { Component, contentChildren, ElementRef, HostListener, inject, model, ViewChild } from '@angular/core';
+import { Component, contentChildren, ElementRef, inject, model, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import type { Placement } from '@floating-ui/dom';
 import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
@@ -47,6 +47,9 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
       </div>
     </div>
   `,
+  host: {
+    '(document:click)': 'clickout($event)',
+  },
 })
 export class DropdownComponent extends BaseComponent<DropdownClass> implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
@@ -118,7 +121,6 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   }
 
   // Onclick outside the dropdown, close it
-  @HostListener('document:click', ['$event'])
   clickout(event: Event) {
     if (
       !this.dropdown.nativeElement.contains(event.target) &&

@@ -11,7 +11,7 @@ import { SidebarMenuComponent } from './sidebar-menu.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, HostListener, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -29,6 +29,9 @@ import { Component, HostListener, inject, model } from '@angular/core';
     </span>
     <flowbite-badge *ngIf="label()">{{ label() }}</flowbite-badge>
   `,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
@@ -63,8 +66,7 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   }
   //#endregion
 
-  @HostListener('click')
-  protected onClick(): void {
+  onClick(): void {
     (this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent)?.closeAll();
     (
       this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent

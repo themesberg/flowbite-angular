@@ -1,7 +1,7 @@
 import routerLinkInputs from '../utils/directives/inputs/router-link.inputs';
 import routerLinkOutputs from '../utils/directives/outputs/router-link.output';
 
-import { Directive, HostListener, inject, model } from '@angular/core';
+import { Directive, inject, model } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 /**
@@ -12,6 +12,9 @@ import { Router, RouterLink } from '@angular/router';
 @Directive({
   standalone: true,
   selector: '[flowbiteRouterLink]',
+  host: {
+    '(click)': 'onClick()',
+  },
   hostDirectives: [
     {
       directive: RouterLink,
@@ -26,7 +29,7 @@ export class FlowbiteRouterLinkDirective {
 
   public href = model<string>();
 
-  @HostListener('click') onClick() {
+  onClick() {
     const hrefValue = this.href();
 
     if (hrefValue) {

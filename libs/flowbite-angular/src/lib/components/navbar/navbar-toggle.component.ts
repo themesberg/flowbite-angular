@@ -7,7 +7,7 @@ import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
 import { NavbarComponent } from './navbar.component';
 
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -19,6 +19,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       svgIcon="flowbite-angular:bars"
       class="w-5 h-5" />
   `,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   public readonly themeService = inject(NavbarToggleThemeService);
@@ -46,7 +49,6 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   }
   //#endregion
 
-  @HostListener('click')
   public onClick(): void {
     const isCollapsed = this.navbarComponent().isOpen();
 

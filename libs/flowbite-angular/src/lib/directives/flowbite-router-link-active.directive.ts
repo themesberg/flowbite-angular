@@ -2,7 +2,7 @@ import routerLinkActiveInputs from '../utils/directives/inputs/router-link-activ
 import routerLinkActiveOutputs from '../utils/directives/outputs/router-link-active.output';
 
 import type { Signal } from '@angular/core';
-import { Directive, HostListener, inject, signal } from '@angular/core';
+import { Directive, inject, signal } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 
 /**
@@ -16,6 +16,9 @@ import { RouterLinkActive } from '@angular/router';
 @Directive({
   standalone: true,
   selector: '[flowbiteRouterLinkActive]',
+  host: {
+    isActiveChange: 'onIsActiveChange',
+  },
   hostDirectives: [
     {
       directive: RouterLinkActive,
@@ -42,7 +45,7 @@ export class FlowbiteRouterLinkActiveDirective {
     this.routerLinkActive.ariaCurrentWhenActive = this.ariaCurrentValue;
   }
 
-  @HostListener('isActiveChange') onIsActiveChange(): void {
+  onIsActiveChange(): void {
     this._isActive.set(this.routerLinkActive.isActive);
   }
 }

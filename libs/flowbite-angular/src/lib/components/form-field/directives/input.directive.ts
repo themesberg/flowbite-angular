@@ -4,17 +4,16 @@ import { BaseInputDirective } from './base-input.directive';
 import * as properties from './input.directive.theme';
 import { InputDirectiveThemeService } from './input.directive.theme.service';
 
-import { Directive, HostBinding, inject, input, signal } from '@angular/core';
+import { Directive, inject, input, signal } from '@angular/core';
 
 @Directive({
   standalone: true,
   selector: 'input[flowbiteInput]',
+  host: {
+    '[attr.disabled]': 'formFieldComponent.isDisabled() || null',
+  },
 })
 export class InputDirective extends BaseInputDirective {
-  @HostBinding('attr.disabled') get getIsDisabled() {
-    return this.formFieldComponent.isDisabled() || null;
-  }
-
   protected override contentClasses = signal<properties.InputDirectiveClass>(properties.inputDirectiveClassInstance);
 
   protected readonly themeService = inject(InputDirectiveThemeService);

@@ -9,17 +9,7 @@ import { ModalThemeService } from './modal.theme.service';
 
 import { NgClass } from '@angular/common';
 import type { EmbeddedViewRef, OnDestroy } from '@angular/core';
-import {
-  Component,
-  contentChild,
-  HostBinding,
-  HostListener,
-  inject,
-  model,
-  TemplateRef,
-  viewChild,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, contentChild, inject, model, TemplateRef, viewChild, ViewContainerRef } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
 
@@ -45,10 +35,12 @@ import { filter, Subject, takeUntil } from 'rxjs';
       </div>
     </ng-template>
   `,
+  host: {
+    tabindex: '-1',
+    '(document:keydown)': 'onKeydownHandler($event)',
+  },
 })
 export class ModalComponent extends BaseComponent<ModalClass> implements OnDestroy {
-  @HostBinding('tabindex') hostTabIndexValue = '-1';
-
   private readonly destroyed = new Subject<void>();
 
   public readonly themeService = inject(ModalThemeService);
@@ -142,8 +134,8 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
     this.embeddedView?.destroy();
   }
 
-  @HostListener('document:keydown', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {
+    console.log('hello');
     if (event.key === 'Escape') {
       this.close();
     }

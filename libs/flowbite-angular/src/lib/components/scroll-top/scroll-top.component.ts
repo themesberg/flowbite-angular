@@ -6,7 +6,7 @@ import type { ScrollTopClass, ScrollTopColors, ScrollTopPositions, ScrollTopThem
 import { ScrollTopThemeService } from './scroll-top.theme.service';
 
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -16,6 +16,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   template: `<flowbite-icon
     svgIcon="flowbite-angular:chevron-up"
     class="w-5 h-5" />`,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements OnInit {
   public readonly themeService = inject(ScrollTopThemeService);
@@ -46,7 +49,6 @@ export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements
   }
   //#endregion
 
-  @HostListener('click')
   public onClick(): void {
     window.scrollTo(window.scrollX, 0);
   }

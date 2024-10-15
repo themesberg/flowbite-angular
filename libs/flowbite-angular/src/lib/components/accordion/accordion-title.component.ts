@@ -10,7 +10,7 @@ import type { AccordionColors } from './accordion.theme';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, HostListener, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -26,6 +26,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       class="h-6 w-6 shrink-0 duration-200"
       [class.rotate-180]="accordionPanelComponent.isOpen()" />
   `,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
 export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> implements OnInit {
   public readonly themeService = inject(AccordionTitleThemeService);
@@ -57,8 +60,7 @@ export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> 
   }
   //#endregion
 
-  @HostListener('click')
-  protected onClick(): void {
+  public onClick(): void {
     this.accordionPanelComponent.toggleVisibility();
   }
 }

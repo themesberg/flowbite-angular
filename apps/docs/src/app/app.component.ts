@@ -11,7 +11,7 @@ import {
 } from 'flowbite-angular';
 
 import { Location, NgIf } from '@angular/common';
-import { Component, HostBinding, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   NgDocRootComponent,
@@ -42,12 +42,14 @@ import {
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
+  host: {
+    '[attr.data-ng-doc-is-landing]': 'isLandingPage',
+  },
 })
 export class AppComponent {
   protected readonly sidebarService = inject(NgDocSidebarService);
   protected readonly location = inject(Location);
 
-  @HostBinding('attr.data-ng-doc-is-landing')
   get isLandingPage(): boolean {
     return this.location.path() === '';
   }

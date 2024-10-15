@@ -13,7 +13,7 @@ import type {
 import { ButtonThemeService } from './button.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
-import { Component, HostBinding, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/buttons/
@@ -37,10 +37,11 @@ import { Component, HostBinding, inject, model } from '@angular/core';
       <ng-content />
     </ng-template>
   `,
+  host: {
+    '[attr.type]': 'button',
+  },
 })
 export class ButtonComponent extends BaseComponent<ButtonClass> {
-  @HostBinding('type') hostTypeValue = 'button';
-
   public readonly themeService = inject(ButtonThemeService);
 
   //#region properties

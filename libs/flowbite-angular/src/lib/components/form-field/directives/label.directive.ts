@@ -5,17 +5,16 @@ import { BaseInputDirective } from './base-input.directive';
 import * as properties from './label.directive.theme';
 import { LabelDirectiveThemeService } from './label.directive.theme.service';
 
-import { Directive, HostBinding, inject, input, signal } from '@angular/core';
+import { Directive, inject, input, signal } from '@angular/core';
 
 @Directive({
   standalone: true,
   selector: 'label[flowbiteLabel]',
+  host: {
+    '[attr.for]': 'for.flowbiteId()',
+  },
 })
 export class LabelDirective extends BaseInputDirective {
-  @HostBinding('attr.for') get forComponentId() {
-    return this.for.flowbiteId();
-  }
-
   protected override contentClasses = signal<properties.LabelDirectiveClass>(properties.labelDirectiveClassInstance);
 
   protected readonly themeService = inject(LabelDirectiveThemeService);

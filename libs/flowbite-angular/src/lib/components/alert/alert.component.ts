@@ -9,7 +9,7 @@ import { AlertThemeService } from './alert.theme.service';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
-import { Component, HostBinding, inject, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -36,10 +36,11 @@ import { DomSanitizer } from '@angular/platform-browser';
     </div>
     <ng-container [ngTemplateOutlet]="additionalContent()"></ng-container>
   `,
+  host: {
+    '[attr.role]': 'alert',
+  },
 })
 export class AlertComponent extends BaseComponent<AlertClass> implements OnInit {
-  @HostBinding('attr.role') hostRoleValue = 'alert';
-
   public readonly themeService = inject(AlertThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
