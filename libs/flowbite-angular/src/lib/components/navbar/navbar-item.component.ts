@@ -15,20 +15,10 @@ import { Component, HostListener, inject, model } from '@angular/core';
   standalone: true,
   imports: [NgClass],
   template: `<ng-content />`,
-  hostDirectives: [
-    {
-      directive: FlowbiteRouterLinkDirective,
-      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
-      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
-    },
-    {
-      directive: FlowbiteRouterLinkActiveDirective,
-    },
-  ],
 })
 export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
-  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
-  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, { optional: true });
   public readonly themeService = inject(NavbarItemThemeService);
   public readonly navbarContentComponent = inject(NavbarContentComponent);
 

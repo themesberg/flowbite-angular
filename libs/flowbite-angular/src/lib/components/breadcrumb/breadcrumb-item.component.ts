@@ -23,18 +23,11 @@ import { DomSanitizer } from '@angular/platform-browser';
       svgIcon="flowbite-angular:chevron-right" />
     <ng-content />
   `,
-  hostDirectives: [
-    {
-      directive: FlowbiteRouterLinkDirective,
-      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
-      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
-    },
-  ],
 })
 export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> implements OnInit {
   public readonly themeService = inject(BreadcrumbItemThemeService);
   public readonly breadcrumbComponent = inject(BreadcrumbComponent);
-  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
 
@@ -47,7 +40,7 @@ export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> 
   public override fetchClass(): BreadcrumbItemClass {
     return this.themeService.getClasses({
       color: this.color(),
-      link: this.flowbiteRouterLink.routerLink.urlTree,
+      link: this.flowbiteRouterLink?.routerLink.urlTree ?? null,
       customStyle: this.customStyle(),
     });
   }

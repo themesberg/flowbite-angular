@@ -21,9 +21,6 @@ import { Router, RouterLink } from '@angular/router';
   ],
 })
 export class FlowbiteRouterLinkDirective {
-  public static flowbiteRouterLinkInputs: string[] = ['href'];
-  public static flowbiteRouterLinkOutputs: string[] = [];
-
   public readonly router = inject(Router);
   public readonly routerLink = inject(RouterLink);
 

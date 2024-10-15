@@ -38,7 +38,9 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
 
   //#region properties
-  public isOpen = model<boolean>(this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive.isActive()));
+  public isOpen = model<boolean>(
+    this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive?.isActive() ?? false),
+  );
   public color = model<keyof SidebarColors>(this.sidebarMenuComponent.color());
   public title = model.required<string>();
   public customStyle = model<DeepPartial<SidebarItemGroupTheme>>({});

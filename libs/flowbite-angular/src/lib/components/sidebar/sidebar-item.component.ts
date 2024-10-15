@@ -29,20 +29,10 @@ import { Component, HostListener, inject, model } from '@angular/core';
     </span>
     <flowbite-badge *ngIf="label()">{{ label() }}</flowbite-badge>
   `,
-  hostDirectives: [
-    {
-      directive: FlowbiteRouterLinkDirective,
-      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
-      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
-    },
-    {
-      directive: FlowbiteRouterLinkActiveDirective,
-    },
-  ],
 })
 export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
-  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
-  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, { optional: true });
   public readonly themeService = inject(SidebarItemThemeService);
   public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, {
     optional: true,

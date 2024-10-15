@@ -16,16 +16,9 @@ import { Component, inject, model } from '@angular/core';
   imports: [NgClass],
   selector: 'flowbite-badge',
   template: `<ng-content />`,
-  hostDirectives: [
-    {
-      directive: FlowbiteRouterLinkDirective,
-      inputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkInputs,
-      outputs: FlowbiteRouterLinkDirective.flowbiteRouterLinkOutputs,
-    },
-  ],
 })
 export class BadgeComponent extends BaseComponent<BadgeClass> {
-  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
   public readonly themeService = inject(BadgeThemeService);
 
   //#region properties
@@ -43,7 +36,7 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
       isPill: booleanToFlowbiteBoolean(this.isPill()),
-      link: this.flowbiteRouterLink.routerLink.urlTree,
+      link: this.flowbiteRouterLink?.routerLink.urlTree ?? null,
       customStyle: this.customStyle(),
     });
   }

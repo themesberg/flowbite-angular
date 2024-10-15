@@ -1,4 +1,6 @@
 import {
+  FlowbiteRouterLinkActiveDirective,
+  FlowbiteRouterLinkDirective,
   IconComponent,
   NavbarBrandComponent,
   NavbarComponent,
@@ -11,7 +13,13 @@ import {
 import { Location, NgIf } from '@angular/common';
 import { Component, HostBinding, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NgDocRootComponent, NgDocSidebarComponent, NgDocSidebarService, NgDocThemeToggleComponent, NgDocSearchComponent } from '@ng-doc/app';
+import {
+  NgDocRootComponent,
+  NgDocSearchComponent,
+  NgDocSidebarComponent,
+  NgDocSidebarService,
+  NgDocThemeToggleComponent,
+} from '@ng-doc/app';
 
 @Component({
   standalone: true,
@@ -29,6 +37,8 @@ import { NgDocRootComponent, NgDocSidebarComponent, NgDocSidebarService, NgDocTh
     NavbarBrandComponent,
     NavbarToggleComponent,
     NavbarIconButtonComponent,
+    FlowbiteRouterLinkDirective,
+    FlowbiteRouterLinkActiveDirective,
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',

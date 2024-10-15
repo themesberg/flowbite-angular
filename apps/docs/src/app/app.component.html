@@ -28,11 +28,15 @@
     <flowbite-navbar-content class="pr-1">
       <ng-doc-search class="hidden lg:block" />
       <flowbite-navbar-item
+        flowbiteRouterLink
+        flowbiteRouterLinkActive
         routerLink="./docs"
         [routerLinkActiveOptions]="{ exact: true }">
         Docs
       </flowbite-navbar-item>
       <flowbite-navbar-item
+        flowbiteRouterLink
+        flowbiteRouterLinkActive
         routerLink="./docs/getting-started/quickstart"
         [routerLinkActiveOptions]="{ exact: true }">
         Quickstart
