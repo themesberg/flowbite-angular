@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
     Flowbite
   </flowbite-navbar-brand>
 
-  <flowbite-navbar-toggle></flowbite-navbar-toggle>
+  <flowbite-navbar-toggle />
 
   <flowbite-navbar-content>
     <flowbite-navbar-item>
