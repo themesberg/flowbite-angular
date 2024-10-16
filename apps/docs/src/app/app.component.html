@@ -15,7 +15,9 @@
           svgIcon="outline:bars"
           class="h-5 w-5 block" />
       </flowbite-navbar-icon-button>
-      <flowbite-navbar-brand routerLink="/">
+      <flowbite-navbar-brand
+        flowbiteRouterLink
+        routerLink="/">
         <flowbite-icon
           class="h-8"
           svgIcon="flowbite-angular-logo"
@@ -95,7 +97,7 @@
     </div>
   </flowbite-navbar>
 
-  <ng-doc-sidebar></ng-doc-sidebar>
+  <ng-doc-sidebar />
 
   <router-outlet></router-outlet>
 

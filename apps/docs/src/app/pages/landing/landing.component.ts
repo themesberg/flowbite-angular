@@ -1,6 +1,7 @@
 import { ButtonComponent, IconComponent } from 'flowbite-angular';
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NgDocThemeService } from '@ng-doc/app/services/theme';
 
 @Component({
   selector: 'flowbite-landing',
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent {}
+export class LandingComponent {
+  protected readonly themeService = inject(NgDocThemeService);
+
+  public setTheme(id: 'light' | 'dark'): void {
+    this.themeService.set(id);
+  }
+}

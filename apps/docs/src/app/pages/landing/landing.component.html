@@ -15,11 +15,11 @@
         <div class="flex flex-row items-start gap-4 md:gap-6">
           <flowbite-button
             color="primary"
-            size="xl">
-            <span class="leading-5 text-sm font-medium">Get started</span>
+            size="lg">
+            Get started
             <flowbite-icon
               svgIcon="outline:arrow-right"
-              class="block w-5 h-5 ms-2"
+              class="block w-6 h-6 ms-2"
               alt="arrow right" />
           </flowbite-button>
         </div>
@@ -39,7 +39,7 @@
     </div>
   </div>
 </section>
-<section class="flex flex-col items-center gap-2 border-gray-100 dark:border-gray-800">
+<section class="flex flex-col items-center pb-4 gap-2 border-gray-100 dark:border-gray-800">
   <div class="max-w-screen-xl mx-auto flex flex-col justify-center items-center px-4 gap-4">
     <p class="leading-tight text-base font-normal text-gray-400">Featured in:</p>
     <div class="flex flex-col md:flex-row items-center gap-8">
@@ -79,7 +79,7 @@
         src="/assets/images/code-example-dark.png"
         alt="code example dark" />
     </div>
-    <div class="flex flex-col items-start gap-6 xl:gap-8">
+    <div class="flex flex-col items-start gap-6 xl:gap-8 pt-1">
       <div class="flex flex-col items-start gap-6 md:gap-4">
         <h2 class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
           UI components in Angular
@@ -172,7 +172,9 @@
     <div class="flex flex-col items-start gap-6 xl:gap-8">
       <div class="flex flex-row justify-center items-start gap-8">
         <div class="flex flex-col items-center gap-2">
-          <flowbite-button color="primary">
+          <flowbite-button
+            color="primary"
+            (click)="setTheme('light')">
             <flowbite-icon
               class="h-5 w-5"
               alt="light mode toggle"
@@ -181,7 +183,9 @@
           <span class="leading-6 text-base font-medium text-gray-900 dark:text-white">Light</span>
         </div>
         <div class="flex flex-col items-center gap-2">
-          <flowbite-button color="light">
+          <flowbite-button
+            color="light"
+            (click)="setTheme('dark')">
             <flowbite-icon
               class="h-5 w-5"
               alt="light mode toggle"
