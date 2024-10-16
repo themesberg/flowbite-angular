@@ -1,14 +1,19 @@
-import * as properties from './button.theme';
-import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base-component.directive';
+import type {
+  ButtonClass,
+  ButtonColors,
+  ButtonDuoToneColors,
+  ButtonFill,
+  ButtonMonochromeColors,
+  ButtonSizes,
+  ButtonTheme,
+} from './button.theme';
+import { ButtonThemeService } from './button.theme.service';
 
-import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/buttons/
@@ -17,130 +22,51 @@ import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet],
   selector: 'flowbite-button',
-  templateUrl: './button.component.html',
+  template: `
+    <span
+      *ngIf="gradientDuoTone() && fill() === 'outline'; else default"
+      [ngClass]="contentClasses().spanClass">
+      <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
+    </span>
+
+    <ng-template #default>
+      <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
+    </ng-template>
+
+    <ng-template #contentOutlet>
+      <ng-content />
+    </ng-template>
+  `,
+  host: {
+    '[attr.type]': 'button',
+  },
 })
-export class ButtonComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.ButtonClass,
-    string
-  >;
+export class ButtonComponent extends BaseComponent<ButtonClass> {
+  public readonly themeService = inject(ButtonThemeService);
+
   //#region properties
-  protected $color: keyof properties.ButtonColors = 'info';
-  protected $size: keyof properties.ButtonSizes = 'md';
-  protected $pill: keyof FlowbiteBoolean = 'disabled';
-  protected $outline: keyof properties.ButtonFill = 'solid';
-  protected $disabled: keyof FlowbiteBoolean = 'disabled';
-  protected $gradientMonochrome?: keyof properties.ButtonMonochromeColors;
-  protected $gradientDuoTone?: keyof properties.ButtonDuoToneColors;
-  protected $customStyle: Partial<properties.ButtonBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default info */
-  public get color(): keyof properties.ButtonColors {
-    return this.$color;
-  }
-  @Input() public set color(value: keyof properties.ButtonColors) {
-    this.$color = value;
-    this.fetchClass();
-  }
-
-  /** @default md */
-  public get size(): keyof properties.ButtonSizes {
-    return this.$size;
-  }
-  @Input() public set size(value: keyof properties.ButtonSizes) {
-    this.$size = value;
-    this.fetchClass();
-  }
-
-  /** @default false */
-  public get pill(): boolean {
-    return flowbiteBooleanToBoolean(this.$pill);
-  }
-  @Input({ transform: booleanAttribute }) public set pill(value: boolean) {
-    this.$pill = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default solid */
-  public get outline(): keyof properties.ButtonFill {
-    return this.$outline;
-  }
-  @Input() public set outline(value: keyof properties.ButtonFill) {
-    this.$outline = value;
-    this.fetchClass();
-  }
-
-  /** @default false */
-  public get disabled(): boolean {
-    return flowbiteBooleanToBoolean(this.$disabled);
-  }
-  @Input({ transform: booleanAttribute }) public set disabled(value: boolean) {
-    this.$disabled = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default undefined */
-  public get gradientMonochrome():
-    | keyof properties.ButtonMonochromeColors
-    | undefined {
-    return this.$gradientMonochrome;
-  }
-  @Input() public set gradientMonochrome(
-    value: keyof properties.ButtonMonochromeColors | undefined,
-  ) {
-    this.$gradientMonochrome = value;
-    this.fetchClass();
-  }
-
-  /** @default undefined */
-  public get gradientDuoTone():
-    | keyof properties.ButtonDuoToneColors
-    | undefined {
-    return this.$gradientDuoTone;
-  }
-  @Input() public set gradientDuoTone(
-    value: keyof properties.ButtonDuoToneColors | undefined,
-  ) {
-    this.$gradientDuoTone = value;
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.ButtonBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(value: Partial<properties.ButtonBaseTheme>) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public color = model<keyof ButtonColors>('primary');
+  public size = model<keyof ButtonSizes>('md');
+  public isPill = model<boolean>(false);
+  public fill = model<keyof ButtonFill>('solid');
+  public isDisabled = model<boolean>(false);
+  public gradientMonochrome = model<keyof ButtonMonochromeColors | undefined>(undefined);
+  public gradientDuoTone = model<keyof ButtonDuoToneColors | undefined>(undefined);
+  public customStyle = model<DeepPartial<ButtonTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass() {
-    if (
-      paramNotNull(
-        this.$color,
-        this.$disabled,
-        this.$outline,
-        this.$pill,
-        this.$size,
-        this.$customStyle,
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        color: this.$color,
-        disabled: this.$disabled,
-        outline: this.$outline,
-        pill: this.$pill,
-        size: this.$size,
-        gradientMonochrome: this.$gradientMonochrome,
-        gradientDuoTone: this.$gradientDuoTone,
-        customStyle: this.$customStyle,
-      });
-
-      this.contentClasses = propertyClass;
-    }
+  public override fetchClass(): ButtonClass {
+    return this.themeService.getClasses({
+      color: this.color(),
+      isDisabled: booleanToFlowbiteBoolean(this.isDisabled()),
+      fill: this.fill(),
+      isPill: booleanToFlowbiteBoolean(this.isPill()),
+      size: this.size(),
+      gradientMonochrome: this.gradientMonochrome(),
+      gradientDuoTone: this.gradientDuoTone(),
+      customStyle: this.customStyle(),
+    });
   }
   //#endregion
 }

@@ -1,65 +1,47 @@
-import * as properties from './accordion.theme';
-import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base-component.directive';
+import { AccordionPanelComponent } from './accordion-panel.component';
+import type { AccordionClass, AccordionColors, AccordionTheme } from './accordion.theme';
+import { AccordionThemeService } from './accordion.theme.service';
 
-import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, contentChildren, inject, model } from '@angular/core';
 
-/**
- * @see https://flowbite.com/docs/components/accordion/
- */
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-accordion',
-  templateUrl: './accordion.component.html',
+  template: `<ng-content />`,
 })
-export class AccordionComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.AccordionClass,
-    string
-  >;
-  //#region properties
-  protected $flush: keyof FlowbiteBoolean = 'disabled';
-  protected $customStyle: Partial<properties.AccordionBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default false */
-  public get flush(): boolean {
-    return flowbiteBooleanToBoolean(this.$flush);
-  }
-  @Input({ transform: booleanAttribute }) public set flush(value: boolean) {
-    this.$flush = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
+export class AccordionComponent extends BaseComponent<AccordionClass> {
+  public readonly themeService = inject(AccordionThemeService);
+  public readonly accordionPanelChildren = contentChildren(AccordionPanelComponent);
 
-  /** @default {} */
-  public get customStyle(): Partial<properties.AccordionBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.AccordionBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  //#region properties
+  public isAlwaysOpen = model<boolean>(false);
+  public color = model<keyof AccordionColors>('primary');
+  public isFlush = model<boolean>(false);
+  public customStyle = model<DeepPartial<AccordionTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$flush, this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        flush: this.$flush,
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): AccordionClass {
+    return this.themeService.getClasses({
+      color: this.color(),
+      isFlush: booleanToFlowbiteBoolean(this.isFlush()),
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
+  public override verify(): void {
+    if (this.accordionPanelChildren().length === 0) {
+      throw new Error('No AccordionPanelComponent available');
     }
   }
   //#endregion
+
+  public closeAll(): void {
+    this.accordionPanelChildren().forEach((child) => child.toggleVisibility(false));
+  }
 }

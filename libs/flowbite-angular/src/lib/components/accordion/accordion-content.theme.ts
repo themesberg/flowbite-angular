@@ -1,40 +1,37 @@
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
+import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils';
+import type { AccordionColors } from './accordion.theme';
 
 export interface AccordionContentProperties {
-  customStyle: Partial<AccordionContentBaseTheme>;
+  color: keyof AccordionColors;
+  isOpen: keyof FlowbiteBoolean;
+  customStyle: DeepPartial<AccordionContentTheme>;
 }
 
-export interface AccordionContentBaseTheme {
-  root: Partial<AccordionContentRootTheme>;
-}
-
-export interface AccordionContentRootTheme {
-  base: string;
-}
-
-export const accordionContentTheme: AccordionContentBaseTheme = {
+export interface AccordionContentTheme {
   root: {
-    base: 'py-5 px-5 dark:bg-gray-900',
-  },
-};
-
-export interface AccordionContentClass {
-  root: string;
-}
-
-export function getClasses(
-  properties: AccordionContentProperties,
-): AccordionContentClass {
-  const theme: AccordionContentBaseTheme = mergeTheme(
-    accordionContentTheme,
-    properties.customStyle,
-  );
-
-  const output: AccordionContentClass = {
-    root: twMerge(theme.root.base),
+    base: string;
+    color: AccordionColors;
+    isOpen: FlowbiteBoolean;
   };
-
-  return output;
 }
+
+export const accordionContentTheme: AccordionContentTheme = createTheme({
+  root: {
+    base: 'flex flex-col gap-2',
+    color: {
+      primary: 'border-primary-200 dark:border-primary-700',
+      light: 'border-gray-200 dark:border-gray-700',
+      blue: 'border-blue-200 dark:border-blue-700',
+      red: 'border-red-200 dark:border-red-700',
+      green: 'border-green-200 dark:border-green-700',
+      yellow: 'border-yellow-200 dark:border-yellow-700',
+    },
+    isOpen: {
+      enabled: 'p-5',
+      disabled: '',
+    },
+  },
+});
+
+export type AccordionContentClass = FlowbiteClass;

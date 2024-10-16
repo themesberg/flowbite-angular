@@ -1,9 +1,11 @@
-import * as properties from './breadcrumb.theme';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { BaseComponent } from '../base-component.directive';
+import { BreadcrumbItemComponent } from './breadcrumb-item.component';
+import type { BreadcrumbClass, BreadcrumbColors, BreadcrumbTheme } from './breadcrumb.theme';
+import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 
-import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, contentChildren, inject, model } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -12,37 +14,30 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-breadcrumb',
-  templateUrl: './breadcrumb.component.html',
+  template: `<ng-content />`,
+  host: {
+    '[attr.aria-label]': 'breadcrumb',
+  },
 })
-export class BreadcrumbComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.BreadcrumbClass,
-    string
-  >;
+export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
+  public readonly themeService = inject(BreadcrumbThemeService);
+  public readonly breadcrumbItemChildren = contentChildren(BreadcrumbItemComponent);
+
   //#region properties
-  protected $customStyle: Partial<properties.BreadcrumbBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.BreadcrumbBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.BreadcrumbBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public color = model<keyof BreadcrumbColors>('primary');
+  public customStyle = model<DeepPartial<BreadcrumbTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): BreadcrumbClass {
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
+  public override verify(): void {
+    if (this.breadcrumbItemChildren().length === 0) {
+      throw new Error('No BreadcrumbItemComponent available');
     }
   }
   //#endregion

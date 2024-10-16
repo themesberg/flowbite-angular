@@ -4,33 +4,57 @@
   "projectType": "application",
   "sourceRoot": "apps/docs/src",
   "prefix": "flowbite",
+  "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@ng-doc/builder:application",
+      "outputs": ["{options.outputPath.base}"],
       "options": {
-        "outputPath": "dist/docs-static/browser",
+        "outputPath": {
+          "base": "dist/docs-static"
+        },
         "index": "apps/docs/src/index.html",
-        "main": "apps/docs/src/main.ts",
-        "polyfills": "zone.js",
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/docs/tsconfig.app.json",
         "inlineStyleLanguage": "css",
-        "assets": ["apps/docs/src/favicon.png", "apps/docs/src/assets"],
-        "styles": ["apps/docs/src/styles.css"],
-        "scripts": []
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "node_modules/@ng-doc/app/assets",
+            "output": "assets/ng-doc/app"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@ng-doc/ui-kit/assets",
+            "output": "assets/ng-doc/ui-kit"
+          },
+          {
+            "glob": "**/*",
+            "input": "ng-doc/docs/assets",
+            "output": "assets/ng-doc"
+          },
+          "apps/docs/src/assets"
+        ],
+        "styles": ["node_modules/@ng-doc/app/styles/global.css", "apps/docs/src/styles.css"],
+        "scripts": [],
+        "browser": "apps/docs/src/main.ts",
+        "server": "apps/docs/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/docs/server.ts"
+        },
+        "allowedCommonJsDependencies": ["@ng-doc/core"]
       },
       "configurations": {
         "production": {
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "500kb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "2kb"
             }
           ],
           "fileReplacements": [
@@ -42,9 +66,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -52,66 +74,14 @@
       },
       "defaultConfiguration": "production"
     },
-    "server": {
-      "dependsOn": ["build"],
-      "executor": "@angular-devkit/build-angular:server",
-      "options": {
-        "outputPath": "dist/docs-static/server",
-        "main": "apps/docs/server.ts",
-        "tsConfig": "apps/docs/tsconfig.server.json",
-        "inlineStyleLanguage": "css"
-      },
+    "serve": {
+      "executor": "@ng-doc/builder:dev-server",
       "configurations": {
         "production": {
-          "outputHashing": "media",
-          "fileReplacements": [
-            {
-              "replace": "apps/docs/src/environments/environment.ts",
-              "with": "apps/docs/src/environments/environment.prod.ts"
-            }
-          ]
+          "buildTarget": "docs:build:production"
         },
         "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "sourceMap": true,
-          "extractLicenses": false,
-          "vendorChunk": true
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "prerender": {
-      "executor": "@angular-devkit/build-angular:prerender",
-      "options": {
-        "routes": ["/"]
-      },
-      "configurations": {
-        "development": {
-          "browserTarget": "docs:build:development",
-          "serverTarget": "docs:server:development"
-        },
-        "production": {
-          "browserTarget": "docs:build:production",
-          "serverTarget": "docs:server:production"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
-    "start": {
-      "executor": "@angular-devkit/build-angular:ssr-dev-server",
-      "options": {
-        "browserTarget": "docs:build",
-        "serverTarget": "docs:server"
-      },
-      "configurations": {
-        "production": {
-          "browserTarget": "docs:build:development",
-          "serverTarget": "docs:server:development"
-        },
-        "development": {
-          "browserTarget": "docs:build:production",
-          "serverTarget": "docs:server:production"
+          "buildTarget": "docs:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -132,6 +102,6 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }
+

@@ -1,38 +1,25 @@
-import { mergeTheme } from '../../utils/merge-theme';
+import type { DeepPartial, FlowbiteClass, FlowbiteColors } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
-import { twMerge } from 'tailwind-merge';
+export interface BreadcrumbColors
+  extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
+  [key: string]: string;
+}
 
 export interface BreadcrumbProperties {
-  customStyle: Partial<BreadcrumbBaseTheme>;
+  customStyle: DeepPartial<BreadcrumbTheme>;
 }
 
-export interface BreadcrumbBaseTheme {
-  root: Partial<BreadcrumbRootTheme>;
+export interface BreadcrumbTheme {
+  root: {
+    base: string;
+  };
 }
 
-export interface BreadcrumbRootTheme {
-  base: string;
-}
-
-export const breadcrumbTheme: BreadcrumbBaseTheme = {
+export const breadcrumbTheme: BreadcrumbTheme = createTheme({
   root: {
     base: 'flex items-center',
   },
-};
+});
 
-export interface BreadcrumbClass {
-  root: string;
-}
-
-export function getClasses(properties: BreadcrumbProperties): BreadcrumbClass {
-  const theme: BreadcrumbBaseTheme = mergeTheme(
-    breadcrumbTheme,
-    properties.customStyle,
-  );
-
-  const output: BreadcrumbClass = {
-    root: twMerge(theme.root.base),
-  };
-
-  return output;
-}
+export type BreadcrumbClass = FlowbiteClass;

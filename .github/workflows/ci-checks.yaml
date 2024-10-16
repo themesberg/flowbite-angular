@@ -1,6 +1,7 @@
 name: CI Checks
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -28,21 +29,21 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: yarn
+        run: npm ci
 
       - name: Lint the code 🕵
-        run: yarn lint
+        run: npm run all:lint
 
       - name: Run Prettier 💅
-        run: yarn prettier --base=HEAD
+        run: npm run prettier
 
       - name: Run unit tests 🔬
-        run: yarn test
+        run: npm run all:test
 
       - name: Build code 🛠
-        run: yarn build
+        run: npm run all:build

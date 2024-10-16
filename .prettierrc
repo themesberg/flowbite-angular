@@ -1,3 +1,20 @@
 {
-  "singleQuote": true
+  "endOfLine": "crlf",
+  "singleQuote": true,
+  "singleAttributePerLine": true,
+  "bracketSameLine": true,
+  "printWidth": 120,
+  "trailingComma": "all",
+  "plugins": ["prettier-plugin-packagejson", "@ianvs/prettier-plugin-sort-imports"],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "importOrder": [
+    "^~/(.*)$",
+    "^[.]",
+    "",
+    "(flowbite-angular|shiki)",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "<BUILTIN_MODULES>"
+  ]
 }

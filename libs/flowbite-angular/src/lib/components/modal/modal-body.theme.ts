@@ -1,35 +1,20 @@
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
+import type { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
 export interface ModalBodyProperties {
-  customStyle: Partial<ModalBodyBaseTheme>;
+  customStyle: DeepPartial<ModalBodyTheme>;
 }
 
-export interface ModalBodyBaseTheme {
-  root: Partial<ModalBodyRootTheme>;
-}
-
-export interface ModalBodyRootTheme {
-  base: string;
-}
-
-export const modalBodyTheme: ModalBodyBaseTheme = {
+export interface ModalBodyTheme {
   root: {
-    base: 'p-6 space-y-6',
-  },
-};
-
-export interface ModalBodyClass {
-  root: string;
-}
-
-export function getClasses(properties: ModalBodyProperties): ModalBodyClass {
-  const theme = mergeTheme(modalBodyTheme, properties.customStyle);
-
-  const output: ModalBodyClass = {
-    root: twMerge(theme.root.base),
+    base: string;
   };
-
-  return output;
 }
+
+export const modalBodyTheme: ModalBodyTheme = createTheme({
+  root: {
+    base: 'block p-6 space-y-6',
+  },
+});
+
+export type ModalBodyClass = FlowbiteClass;

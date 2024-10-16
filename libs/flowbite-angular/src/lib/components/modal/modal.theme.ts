@@ -1,36 +1,12 @@
-import { FlowbitePositions, FlowbiteSizes } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import type { FlowbitePositions } from '../../common/type-definitions/flowbite.positions';
+import type { FlowbiteSizes } from '../../common/type-definitions/flowbite.sizes';
+import { createTheme } from '../../utils/theme/create-theme';
 
-import { twMerge } from 'tailwind-merge';
-
-export interface ModalProperties {
-  size: keyof ModalSizes;
-  position: keyof ModalPositions;
-  customStyle: Partial<ModalBaseTheme>;
-}
-
-export interface ModalBaseTheme {
-  root: Partial<ModalRootTheme>;
-  container: Partial<ModalContainerRootTheme>;
-  content: Partial<ModalContentRootTheme>;
-}
-
-export interface ModalRootTheme {
-  base: string;
-  position: Record<keyof ModalPositions, string>;
-}
-
-export interface ModalContainerRootTheme {
-  base: string;
-  size: Record<keyof ModalSizes, string>;
-}
-
-export interface ModalContentRootTheme {
-  base: string;
-}
-
-export interface ModalSizes
-  extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
+//#region Component theme option
+export interface ModalSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
@@ -49,10 +25,38 @@ export interface ModalPositions
   > {
   [key: string]: string;
 }
+//#endregion
 
-export const modalTheme: ModalBaseTheme = {
+export interface ModalProperties {
+  isOpen: keyof FlowbiteBoolean;
+  size: keyof ModalSizes;
+  position: keyof ModalPositions;
+  customStyle: DeepPartial<ModalTheme>;
+}
+
+export interface ModalTheme {
   root: {
-    base: 'fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex',
+    base: string;
+  };
+  wrapper: {
+    base: string;
+    position: ModalPositions;
+  };
+  container: {
+    base: string;
+    size: ModalSizes;
+  };
+  content: {
+    base: string;
+  };
+}
+
+export const modalTheme: ModalTheme = createTheme({
+  root: {
+    base: '',
+  },
+  wrapper: {
+    base: 'fixed top-0 left-0 right-0 z-[100] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full flex',
     position: {
       'top-left': 'items-start justify-start',
       'top-center': 'items-start justify-center',
@@ -77,28 +81,10 @@ export const modalTheme: ModalBaseTheme = {
   content: {
     base: 'relative bg-white rounded-lg shadow dark:bg-gray-700',
   },
-};
+});
 
-export interface ModalClass {
-  modalClass: string;
+export interface ModalClass extends FlowbiteClass {
+  modalWrapperClass: string;
   modalContainerClass: string;
   modalContentClass: string;
-}
-
-export function getClasses(properties: ModalProperties): ModalClass {
-  const theme: ModalBaseTheme = mergeTheme(modalTheme, properties.customStyle);
-
-  const output: ModalClass = {
-    modalClass: twMerge(
-      theme.root.base,
-      theme.root.position![properties.position],
-    ),
-    modalContainerClass: twMerge(
-      theme.container.base,
-      theme.container.size![properties.size],
-    ),
-    modalContentClass: twMerge(theme.content.base),
-  };
-
-  return output;
 }

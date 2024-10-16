@@ -1,1 +1,1 @@
-export * from './sanitize-html';
+export { SanitizeHtmlPipe } from './sanitize-html';

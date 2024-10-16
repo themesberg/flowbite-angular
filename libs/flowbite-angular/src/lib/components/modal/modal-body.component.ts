@@ -1,46 +1,31 @@
-import * as properties from './modal-body.theme';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { BaseComponent } from '../base-component.directive';
+import type { ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
+import { ModalBodyThemeService } from './modal-body.theme.service';
+import { ModalComponent } from './modal.component';
 
-import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-modal-body',
-  templateUrl: './modal-body.component.html',
+  template: `<ng-content />`,
 })
-export class ModalBodyComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.ModalBodyClass,
-    string
-  >;
+export class ModalBodyComponent extends BaseComponent<ModalBodyClass> {
+  public readonly themeService = inject(ModalBodyThemeService);
+  public readonly modalComponent = inject(ModalComponent);
+
   //#region properties
-  protected $customStyle: Partial<properties.ModalBodyBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.ModalBodyBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.ModalBodyBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public customStyle = model<DeepPartial<ModalBodyTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
-
-      this.contentClasses = propertyClass;
-    }
+  public override fetchClass(): ModalBodyClass {
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
+    });
   }
   //#endregion
 }
