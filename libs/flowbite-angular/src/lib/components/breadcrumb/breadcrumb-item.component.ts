@@ -1,4 +1,4 @@
-import type { DeepPartial } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
 import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';

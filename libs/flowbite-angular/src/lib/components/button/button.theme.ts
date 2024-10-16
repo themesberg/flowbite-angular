@@ -1,12 +1,11 @@
-import type {
-  FlowbiteBoolean,
-  FlowbiteClass,
-  FlowbiteColors,
-  FlowbiteGradientColors,
-  FlowbiteGradientDuoToneColors,
-  FlowbiteSizes,
-} from '../../common/flowbite.theme';
-import type { Combination, DeepPartial } from '../../common/flowbite.type';
+import type { FlowbiteColors } from '../../common/type-definitions/colors/flowbite.colors';
+import type { FlowbiteGradientColors } from '../../common/type-definitions/colors/flowbite.gradient-colors';
+import type { FlowbiteGradientDuoToneColors } from '../../common/type-definitions/colors/flowbite.gradient-duo-tone-colors';
+import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import type { Combination } from '../../common/type-definitions/flowbite.combination';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
+import type { FlowbiteSizes } from '../../common/type-definitions/flowbite.sizes';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option

@@ -1,5 +1,7 @@
 import type { DeepPartial } from '../../common';
-import type { FlowbiteBoolean, FlowbiteClass, FlowbiteSizes } from '../../common/flowbite.theme';
+import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import type { FlowbiteSizes } from '../../common/type-definitions/flowbite.sizes';
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option

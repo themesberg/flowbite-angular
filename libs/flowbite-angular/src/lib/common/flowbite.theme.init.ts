@@ -1,4 +1,3 @@
-import { FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR } from '.';
 import {
   accordionContentTheme,
   AccordionContentThemeService,
@@ -434,12 +433,5 @@ export function initFlowbite(): EnvironmentProviders {
     },
   ]);
 
-  const settingsProviders = makeEnvironmentProviders([
-    {
-      provide: FLOWBITE_SETTINGS_ROUTER_DISPLAY_ERROR,
-      useValue: true,
-    },
-  ]);
-
-  return makeEnvironmentProviders([serviceProviders, themeProviders, settingsProviders]);
+  return makeEnvironmentProviders([serviceProviders, themeProviders]);
 }

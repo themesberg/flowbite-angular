@@ -1,5 +1,5 @@
 import type { FlowbiteClass } from '../../common';
-import type { DeepPartial } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
 import { createTheme } from '../../utils/theme/create-theme';
 import type { SidebarColors } from './sidebar.theme';
 

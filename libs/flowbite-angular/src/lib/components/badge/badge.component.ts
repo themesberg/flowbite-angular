@@ -1,4 +1,4 @@
-import type { DeepPartial } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
 import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';

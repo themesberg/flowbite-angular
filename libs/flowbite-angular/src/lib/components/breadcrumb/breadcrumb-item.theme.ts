@@ -1,5 +1,5 @@
-import type { FlowbiteClass } from '../../common/flowbite.theme';
-import type { DeepPartial } from '../../common/flowbite.type';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
 import { createTheme } from '../../utils/theme/create-theme';
 import type { BreadcrumbColors } from './breadcrumb.theme';
 

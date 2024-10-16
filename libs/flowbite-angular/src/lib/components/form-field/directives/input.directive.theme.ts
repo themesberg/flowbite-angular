@@ -1,5 +1,6 @@
 import type { DeepPartial } from '../../../common';
-import type { FlowbiteBoolean, FlowbiteClass } from '../../../common/flowbite.theme';
+import type { FlowbiteBoolean } from '../../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../../common/type-definitions/flowbite.class';
 import { createTheme } from '../../../utils/theme/create-theme';
 import type {
   FormFieldFloatingLabelTypes,

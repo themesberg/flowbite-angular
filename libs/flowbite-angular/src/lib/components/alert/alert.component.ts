@@ -1,4 +1,4 @@
-import type { DeepPartial } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
 import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { CLOSE_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';

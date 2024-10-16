@@ -1,4 +1,4 @@
-import type { DeepPartial } from '../../common/flowbite.type';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
 import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
 import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { SanitizeHtmlPipe } from '../../pipes';
