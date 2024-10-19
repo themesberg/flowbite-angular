@@ -1,13 +1,11 @@
-import { FlowbiteBoolean } from '../common/flowbite.theme';
+import type { FlowbiteBoolean } from '../common/type-definitions/flowbite.boolean';
 
-export function booleanToFlowbiteBoolean(
-  value: boolean,
-): keyof FlowbiteBoolean {
+/**
+ * This function cast a boolean to the internal flowbute-angular boolean type.
+ *
+ * @param value The input to be cast.
+ * @returns enabled if value is true ; disabled if value is false.
+ */
+export function booleanToFlowbiteBoolean(value: boolean): keyof FlowbiteBoolean {
   return value ? 'enabled' : 'disabled';
-}
-
-export function flowbiteBooleanToBoolean(
-  value: keyof FlowbiteBoolean,
-): boolean {
-  return value === 'enabled';
 }

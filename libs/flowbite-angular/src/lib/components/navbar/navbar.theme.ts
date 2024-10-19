@@ -1,83 +1,52 @@
-import { FlowbiteBoolean, FlowbiteColors } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteColors } from '../../common/type-definitions/colors/flowbite.colors';
+import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import { createTheme } from '../../utils/theme/create-theme';
 
-import { twMerge } from 'tailwind-merge';
-
-export interface NavbarProperties {
-  rounded: keyof FlowbiteBoolean;
-  border: keyof FlowbiteBoolean;
-  fluid: keyof FlowbiteBoolean;
-  customStyle: Partial<NavbarBaseTheme>;
-}
-
-export interface NavbarBaseTheme {
-  root: Partial<NavbarRootTheme>;
-  content: Partial<NavbarContentTheme>;
-}
-
-export interface NavbarRootTheme {
-  base: string;
-  color: Record<keyof NavbarColors, string>;
-  rounded: Record<keyof FlowbiteBoolean, string>;
-  border: Record<keyof FlowbiteBoolean, string>;
-}
-
-export interface NavbarContentTheme {
-  base: string;
-  fluid: Record<keyof FlowbiteBoolean, string>;
-}
-
-export interface NavbarColors extends Pick<FlowbiteColors, 'gray'> {
+//#region Component theme option
+export interface NavbarColors extends Pick<FlowbiteColors, 'primary' | 'gray'> {
   [key: string]: string;
 }
+//#endregion
 
-export const navbarTheme: NavbarBaseTheme = {
+export interface NavbarProperties {
+  isRounded: keyof FlowbiteBoolean;
+  hasBorder: keyof FlowbiteBoolean;
+  isFixed: keyof FlowbiteBoolean;
+  customStyle: DeepPartial<NavbarTheme>;
+}
+
+export interface NavbarTheme {
   root: {
-    base: 'sm:px-4',
+    base: string;
+    color: NavbarColors;
+    isRounded: FlowbiteBoolean;
+    hasBorder: FlowbiteBoolean;
+    isFixed: FlowbiteBoolean;
+  };
+}
+
+export const navbarTheme: NavbarTheme = createTheme({
+  root: {
+    base: 'flex flex-wrap items-center justify-between p-4',
     color: {
-      gray: 'border-gray-200 bg-white px-2 py-2.5 dark:border-gray-700 dark:bg-gray-800',
+      primary: 'bg-primary-200 dark:bg-primary-800 border-primary-200 dark:border-primary-700',
+      gray: 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700',
     },
-    rounded: {
+    isRounded: {
       enabled: 'rounded',
       disabled: '',
     },
-    border: {
+    hasBorder: {
       enabled: 'border',
       disabled: '',
     },
-  },
-  content: {
-    base: 'mx-auto flex flex-wrap items-center justify-between',
-    fluid: {
-      enabled: '',
-      disabled: 'container',
+    isFixed: {
+      enabled: 'border-b',
+      disabled: '',
     },
   },
-};
+});
 
-export interface NavbarClass {
-  navbarClass: string;
-  contentClass: string;
-}
-
-export function getClasses(properties: NavbarProperties): NavbarClass {
-  const theme: NavbarBaseTheme = mergeTheme(
-    navbarTheme,
-    properties.customStyle,
-  );
-
-  const output: NavbarClass = {
-    navbarClass: twMerge(
-      theme.root.base,
-      theme.root.color!['gray'],
-      theme.root.rounded![properties.rounded],
-      theme.root.border![properties.border],
-    ),
-    contentClass: twMerge(
-      theme.content.base,
-      theme.content.fluid![properties.fluid],
-    ),
-  };
-
-  return output;
-}
+export type NavbarClass = FlowbiteClass;

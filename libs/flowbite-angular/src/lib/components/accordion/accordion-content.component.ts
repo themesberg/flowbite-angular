@@ -1,50 +1,40 @@
-import * as properties from './accordion-content.theme';
+import type { DeepPartial } from '../../common';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base-component.directive';
+import type { AccordionContentClass, AccordionContentTheme } from './accordion-content.theme';
+import { AccordionContentThemeService } from './accordion-content.theme.service';
 import { AccordionPanelComponent } from './accordion-panel.component';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import type { AccordionColors } from './accordion.theme';
 
-import { Component, Input } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgIf, NgClass],
   selector: 'flowbite-accordion-content',
-  templateUrl: './accordion-content.component.html',
+  template: `
+    <ng-container *ngIf="accordionPanelComponent.isOpen()">
+      <ng-content />
+    </ng-container>
+  `,
 })
-export class AccordionContentComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.AccordionContentClass,
-    string
-  >;
+export class AccordionContentComponent extends BaseComponent<AccordionContentClass> {
+  public readonly themeService = inject(AccordionContentThemeService);
+  public readonly accordionPanelComponent = inject(AccordionPanelComponent);
+
   //#region properties
-  protected $customStyle: Partial<properties.AccordionContentBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.AccordionContentBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.AccordionContentBaseTheme>,
-  ) {
-    this.$customStyle = value;
-  }
+  public color = model<keyof AccordionColors>(this.accordionPanelComponent.color());
+  public customStyle = model<DeepPartial<AccordionContentTheme>>({});
   //#endregion
 
-  constructor(readonly accordionPanel: AccordionPanelComponent) {
-    super();
-  }
-
-  //#region  BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
-
-      this.contentClasses = propertyClass;
-    }
+  //#region BaseComponent implementation
+  public override fetchClass(): AccordionContentClass {
+    return this.themeService.getClasses({
+      color: this.accordionPanelComponent.accordionComponent.color(),
+      isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.isOpen()),
+      customStyle: this.customStyle(),
+    });
   }
   //#endregion
 }

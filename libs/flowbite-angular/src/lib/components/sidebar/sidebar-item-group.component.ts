@@ -1,46 +1,83 @@
-import * as properties from './sidebar-item-group.theme';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
+import { BaseComponent } from '../base-component.directive';
+import { IconComponent, IconRegistry } from '../icon';
+import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
+import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
+import { SidebarItemComponent } from './sidebar-item.component';
+import { SidebarMenuComponent } from './sidebar-menu.component';
+import type { SidebarColors } from './sidebar.theme';
 
-import { Component, Input } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
+import type { OnInit } from '@angular/core';
+import { Component, contentChildren, inject, model, untracked } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgIf, IconComponent],
   selector: 'flowbite-sidebar-item-group',
-  templateUrl: './sidebar-item-group.component.html',
+  template: `
+    <span
+      [class]="contentClasses().spanClass"
+      (click)="onSpanClick()">
+      <h4>{{ title() }}</h4>
+      <flowbite-icon
+        svgIcon="flowbite-angular:chevron-down"
+        class="h-6 w-6 shrink-0 duration-200"
+        [class.rotate-180]="!isOpen()" />
+    </span>
+    <ng-content *ngIf="isOpen()" />
+  `,
 })
-export class SidebarItemGroupComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.SidebarItemGroupClass,
-    string
-  >;
+export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupClass> implements OnInit {
+  public readonly themeService = inject(SidebarItemGroupThemeService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
+  public readonly sidebarMenuComponent = inject(SidebarMenuComponent);
+  public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
+
   //#region properties
-  protected $customStyle: Partial<properties.SidebarItemGroupBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.SidebarItemGroupBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.SidebarItemGroupBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public isOpen = model<boolean>(
+    this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive?.isActive() ?? false),
+  );
+  public color = model<keyof SidebarColors>(this.sidebarMenuComponent.color());
+  public title = model.required<string>();
+  public customStyle = model<DeepPartial<SidebarItemGroupTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): SidebarItemGroupClass {
+    return this.themeService.getClasses({
+      color: this.color(),
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
+  public override verify(): void {
+    if (this.sidebarItemChildren().length === 0) {
+      throw new Error('No SidebarItemComponent available');
     }
   }
+
+  public override init(): void {
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'chevron-down',
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
+    );
+  }
   //#endregion
+
+  public onSpanClick(): void {
+    this.toggleVisibility();
+  }
+
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.isOpen());
+    }
+
+    this.isOpen.set(isOpen);
+  }
 }

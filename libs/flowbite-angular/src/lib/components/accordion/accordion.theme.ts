@@ -1,45 +1,46 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteColors } from '../../common/type-definitions/colors/flowbite.colors';
+import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import { createTheme } from '../../utils/theme/create-theme';
 
-import { twMerge } from 'tailwind-merge';
+//#region region Component theme option
+export interface AccordionColors
+  extends Pick<FlowbiteColors, 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow'> {
+  [key: string]: string;
+}
+//#endregion
 
 export interface AccordionProperties {
-  flush: keyof FlowbiteBoolean;
-  customStyle: Partial<AccordionBaseTheme>;
+  color: keyof AccordionColors;
+  isFlush: keyof FlowbiteBoolean;
+  customStyle: DeepPartial<AccordionTheme>;
 }
 
-export interface AccordionBaseTheme {
-  root: Partial<AccordionRootTheme>;
-}
-
-export interface AccordionRootTheme {
-  base: string;
-  flush: Record<keyof FlowbiteBoolean, string>;
-}
-
-export const accordionTheme: AccordionBaseTheme = {
+export interface AccordionTheme {
   root: {
-    base: 'divide-y divide-gray-200 overflow-hidden border-gray-200 dark:divide-gray-700 dark:border-gray-700',
-    flush: {
-      enabled: 'border-b',
-      disabled: 'rounded-lg border',
+    base: string;
+    color: AccordionColors;
+    isFlush: FlowbiteBoolean;
+  };
+}
+
+export const accordionTheme: AccordionTheme = createTheme({
+  root: {
+    base: '',
+    color: {
+      primary: 'border-primary-200 dark:border-primary-700 divide-primary-200 dark:divide-primary-700',
+      light: 'border-gray-300 dark:border-gray-700 divide-gray-200 dark:divide-gray-700',
+      blue: 'border-blue-200 dark:border-blue-700 divide-blue-200 dark:divide-blue-700',
+      red: 'border-red-200 dark:border-red-700 divide-red-200 dark:divide-red-700',
+      green: 'border-green-200 dark:border-green-700 divide-green-200 dark:divide-green-700',
+      yellow: 'border-yellow-200 dark:border-yellow-700 divide-yellow-200 dark:divide-yellow-700',
+    },
+    isFlush: {
+      enabled: '',
+      disabled: 'rounded-lg border shadow-sm',
     },
   },
-};
+});
 
-export interface AccordionClass {
-  root: string;
-}
-
-export function getClasses(properties: AccordionProperties): AccordionClass {
-  const theme: AccordionBaseTheme = mergeTheme(
-    accordionTheme,
-    properties.customStyle,
-  );
-
-  const output: AccordionClass = {
-    root: twMerge(theme.root.base, theme.root.flush![properties.flush]),
-  };
-
-  return output;
-}
+export type AccordionClass = FlowbiteClass;

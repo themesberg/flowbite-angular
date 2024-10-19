@@ -1,51 +1,31 @@
-import * as properties from './dropdown-item.theme';
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common';
+import { BaseComponent } from '../base-component.directive';
+import type { DropdownItemClass, DropdownItemTheme } from './dropdown-item.theme';
+import { DropdownItemThemeService } from './dropdown-item.theme.service';
 import { DropdownComponent } from './dropdown.component';
-import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-dropdown-item',
-  templateUrl: './dropdown-item.component.html',
+  template: `<ng-content />`,
 })
-export class DropdownItemComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.DropdownItemClass,
-    string
-  >;
-  //#region properties
-  protected $customStyle: Partial<properties.DropdownItemBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.DropdownItemBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.DropdownItemBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
+export class DropdownItemComponent extends BaseComponent<DropdownItemClass> {
+  public readonly themeService = inject(DropdownItemThemeService);
+  public readonly dropdownComponent = inject(DropdownComponent);
 
-  constructor(readonly dropdown: DropdownComponent) {
-    super();
-  }
+  //#region properties
+  public customStyle = model<DeepPartial<DropdownItemTheme>>({});
+  //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
-
-      this.contentClasses = propertyClass;
-    }
+  public override fetchClass(): DropdownItemClass {
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
+    });
   }
   //#endregion
 }

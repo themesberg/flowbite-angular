@@ -1,9 +1,0 @@
-<aside
-  [ngClass]="contentClasses!.sidebarClass"
-  [class.w-16]="sidebarService.$collapsed | async"
-  [class.w-64]="(sidebarService.$collapsed | async) === false"
->
-  <div [ngClass]="contentClasses!.sidebarContentClass">
-    <ng-content></ng-content>
-  </div>
-</aside>

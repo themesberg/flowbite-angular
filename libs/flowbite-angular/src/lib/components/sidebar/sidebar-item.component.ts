@@ -1,95 +1,75 @@
-import * as properties from './sidebar-item.theme';
-import { BadgeComponent } from '../badge';
-import { BaseComponent } from '../base.component';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
+import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
+import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
 import { SanitizeHtmlPipe } from '../../pipes';
-import { SidebarService } from '../../services';
-import { paramNotNull } from '../../utils/param.util';
+import { BadgeComponent } from '../badge';
+import { BaseComponent } from '../base-component.directive';
+import { SidebarItemGroupComponent } from './sidebar-item-group.component';
+import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
+import { SidebarItemThemeService } from './sidebar-item.theme.service';
+import { SidebarMenuComponent } from './sidebar-menu.component';
+import type { SidebarColors } from './sidebar.theme';
 
-import { AsyncPipe, NgClass, NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgClass, NgIf } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
-  imports: [
-    NgIf,
-    NgClass,
-    RouterLink,
-    RouterLinkActive,
-    SanitizeHtmlPipe,
-    AsyncPipe,
-    BadgeComponent,
-  ],
+  imports: [NgIf, NgClass, SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
-  templateUrl: './sidebar-item.component.html',
+  template: `
+    <span
+      class="flex-shrink-0"
+      [innerHTML]="icon()! | sanitizeHtml"
+      *ngIf="icon()"></span>
+    <span
+      [ngClass]="contentClasses().sidebarIconClass"
+      [class.ml-3]="icon()">
+      <ng-content />
+    </span>
+    <flowbite-badge *ngIf="label()">{{ label() }}</flowbite-badge>
+  `,
+  host: {
+    '(click)': 'onClick()',
+  },
 })
-export class SidebarItemComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.SidebarItemClass,
-    string
-  >;
+export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, { optional: true });
+  public readonly themeService = inject(SidebarItemThemeService);
+  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, {
+    optional: true,
+  });
+  public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(SidebarMenuComponent);
+
   //#region properties
-  protected $icon?: string;
-  protected $link?: string;
-  protected $label?: string;
-  protected $customStyle: Partial<properties.SidebarItemBaseTheme> = {};
+  public icon = model<string | undefined>(undefined);
+  public color = model<keyof SidebarColors>((this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color());
+  public label = model<string | undefined>(undefined);
+  public customStyle = model<DeepPartial<SidebarItemTheme>>({});
   //#endregion
-  //#region getter/setter
-  /** @default undefined */
-  public get icon(): string | undefined {
-    return this.$icon;
-  }
-  @Input() public set icon(value: string | undefined) {
-    this.$icon = value;
-    this.fetchClass();
-  }
-
-  /** @default undefined */
-  public get link(): string | undefined {
-    return this.$link;
-  }
-  @Input() public set link(value: string | undefined) {
-    this.$link = value;
-    this.fetchClass();
-  }
-
-  /** @default undefined */
-  public get label(): string | undefined {
-    return this.$label;
-  }
-  @Input() public set label(value: string | undefined) {
-    this.$label = value;
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.SidebarItemBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.SidebarItemBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
-
-  constructor(readonly sidebarService: SidebarService) {
-    super();
-  }
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        icon: this.$icon,
-        link: this.$link,
-        label: this.$label,
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): SidebarItemClass {
+    return this.themeService.getClasses({
+      icon: this.icon(),
+      color: this.color(),
+      label: this.label(),
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
+  public override verify(): void {
+    if (this.sidebarMenuComponent === undefined && this.sidebarItemGroupComponent === undefined) {
+      throw new Error('No SidebarMenuComponent/SidebarItemGroupComponent available');
     }
   }
   //#endregion
+
+  onClick(): void {
+    (this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent)?.closeAll();
+    (
+      this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent
+    )?.sidebarComponent.toggleVisibility(false);
+  }
 }

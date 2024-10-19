@@ -1,123 +1,83 @@
-import * as properties from './alert.theme';
-import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { CLOSE_SVG_ICON } from '../../utils/icon.list';
+import { BaseComponent } from '../base-component.directive';
+import { ButtonComponent } from '../button/button.component';
+import { IconComponent, IconRegistry } from '../icon';
+import type { AlertClass, AlertColors, AlertTheme } from './alert.theme';
+import { AlertThemeService } from './alert.theme.service';
 
-import { Component, Input, TemplateRef, booleanAttribute } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import type { OnInit, TemplateRef } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
-/**
- * @see https://flowbite.com/docs/components/alerts/
- */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet],
+  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent, ButtonComponent],
   selector: 'flowbite-alert',
-  templateUrl: './alert.component.html',
+  template: `
+    <div class="flex items-center">
+      <ng-container [ngTemplateOutlet]="icon()"></ng-container>
+      <div>
+        <ng-content />
+      </div>
+      <button
+        type="button"
+        [ngClass]="contentClasses()!.closeButtonClass"
+        *ngIf="isDismissable()"
+        aria-label="Close"
+        (click)="onDismissClick()">
+        <span class="sr-only">Close</span>
+        <flowbite-icon
+          svgIcon="flowbite-angular:close"
+          class="h-5 w-5" />
+      </button>
+    </div>
+    <ng-container [ngTemplateOutlet]="additionalContent()"></ng-container>
+  `,
+  host: {
+    '[attr.role]': 'alert',
+  },
 })
-export class AlertComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.AlertClass,
-    string
-  >;
+export class AlertComponent extends BaseComponent<AlertClass> implements OnInit {
+  public readonly themeService = inject(AlertThemeService);
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
+
   //#region properties
-  protected $color: keyof properties.AlertColors = 'blue';
-  protected $rounded: keyof FlowbiteBoolean = 'enabled';
-  protected $borderAccent: keyof FlowbiteBoolean = 'disabled';
-  protected $customStyle: Partial<properties.AlertBaseTheme> = {};
-
-  protected $icon: TemplateRef<unknown> | null = null;
-  protected $additionalContent: TemplateRef<unknown> | null = null;
-  protected $dismiss!: () => void;
-  //#endregion
-  //#region getter/setter
-  /** @default blue */
-  public get color(): keyof properties.AlertColors {
-    return this.$color;
-  }
-  @Input() public set color(value: keyof properties.AlertColors) {
-    this.$color = value;
-    this.fetchClass();
-  }
-
-  /** @default true */
-  public get rounded(): boolean {
-    return flowbiteBooleanToBoolean(this.$rounded);
-  }
-  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
-    this.$rounded = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default false */
-  public get borderAccent(): boolean {
-    return flowbiteBooleanToBoolean(this.$borderAccent);
-  }
-  @Input({ transform: booleanAttribute }) public set borderAccent(
-    value: boolean,
-  ) {
-    this.$borderAccent = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.AlertBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(value: Partial<properties.AlertBaseTheme>) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-
-  /** @default null */
-  public get icon(): TemplateRef<unknown> | null {
-    return this.$icon;
-  }
-  @Input() public set icon(value: TemplateRef<unknown> | null) {
-    this.$icon = value;
-    this.fetchClass();
-  }
-
-  /** @default null */
-  public get additionalContent(): TemplateRef<unknown> | null {
-    return this.$additionalContent;
-  }
-  @Input() public set additionalContent(value: TemplateRef<unknown> | null) {
-    this.$additionalContent = value;
-    this.fetchClass();
-  }
-
-  public get dismiss(): () => void {
-    return this.$dismiss;
-  }
-  @Input() public set dismiss(value: () => void) {
-    this.$dismiss = value;
-  }
+  public color = model<keyof AlertColors>('primary');
+  public hasBorder = model<boolean>(false);
+  public hasBorderAccent = model<boolean>(false);
+  public customStyle = model<DeepPartial<AlertTheme>>({});
+  public icon = model<TemplateRef<unknown> | null>(null);
+  public additionalContent = model<TemplateRef<unknown> | null>(null);
+  public isDismissable = model<boolean>(false);
+  public onDismiss = model<() => void | undefined>();
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (
-      paramNotNull(
-        this.$color,
-        this.$rounded,
-        this.$borderAccent,
-        this.$customStyle,
-      )
-    ) {
-      const propertyClass = properties.getClasses({
-        color: this.$color,
-        borderAccent: this.$borderAccent,
-        rounded: this.$rounded,
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): AlertClass {
+    return this.themeService.getClasses({
+      color: this.color(),
+      hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
+      hasBorderAccent: booleanToFlowbiteBoolean(this.hasBorderAccent()),
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
-    }
+  public override init(): void {
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'close',
+      this.domSanitizer.bypassSecurityTrustHtml(CLOSE_SVG_ICON),
+    );
   }
   //#endregion
+
+  public onDismissClick() {
+    const func = this.onDismiss();
+
+    if (func) func();
+  }
 }

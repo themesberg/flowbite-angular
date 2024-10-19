@@ -1,51 +1,35 @@
-import * as properties from './dropdown-header.theme';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
+import type { DropdownHeaderClass, DropdownHeaderTheme } from './dropdown-header.theme';
+import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 import { DropdownComponent } from './dropdown.component';
-import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-dropdown-header',
-  templateUrl: './dropdown-header.component.html',
+  template: `
+    <div [ngClass]="contentClasses().root">
+      <ng-content />
+    </div>
+    <div class="my-1 h-px bg-gray-100 dark:bg-gray-600"></div>
+  `,
 })
-export class DropdownHeaderComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.DropdownHeaderClass,
-    string
-  >;
-  //#region properties
-  protected $customStyle: Partial<properties.DropdownHeaderBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.DropdownHeaderBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.DropdownHeaderBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
+export class DropdownHeaderComponent extends BaseComponent<DropdownHeaderClass> {
+  public readonly themeService = inject(DropdownHeaderThemeService);
+  public readonly dropdownComponent = inject(DropdownComponent);
 
-  constructor(readonly dropdown: DropdownComponent) {
-    super();
-  }
+  //#region properties
+  public customStyle = model<Partial<DropdownHeaderTheme>>({});
+  //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
-
-      this.contentClasses = propertyClass;
-    }
+  public override fetchClass(): DropdownHeaderClass {
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
+    });
   }
   //#endregion
 }
