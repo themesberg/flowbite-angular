@@ -6,8 +6,8 @@
 @tailwind base;
 
 @layer base {
-  ul,
-  ol {
+  ul:not(flowbite-dropdown ul),
+  ol:not(flowbite-dropdown ol) {
     list-style: revert;
     margin: revert;
     padding: revert;
