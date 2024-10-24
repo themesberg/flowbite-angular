@@ -1,59 +1,56 @@
-import * as properties from './breadcrumb-item.theme';
-import { BaseComponent } from '../base.component';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
+import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
+import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
+import { BaseComponent } from '../base-component.directive';
+import { IconComponent, IconRegistry } from '../icon';
+import type { BreadcrumbItemClass, BreadcrumbItemTheme } from './breadcrumb-item.theme';
+import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
+import { BreadcrumbComponent } from './breadcrumb.component';
+import type { BreadcrumbColors } from './breadcrumb.theme';
 
-import { Component, HostBinding, Input } from '@angular/core';
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import type { OnInit } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet],
+  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
   selector: 'flowbite-breadcrumb-item',
-  templateUrl: './breadcrumb-item.component.html',
+  template: `
+    <flowbite-icon
+      [ngClass]="contentClasses().breadcrumbIconClass"
+      svgIcon="flowbite-angular:chevron-right" />
+    <ng-content />
+  `,
 })
-export class BreadcrumbItemComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.BreadcrumbItemClass,
-    string
-  >;
+export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> implements OnInit {
+  public readonly themeService = inject(BreadcrumbItemThemeService);
+  public readonly breadcrumbComponent = inject(BreadcrumbComponent);
+  public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  public readonly iconRegistry = inject(IconRegistry);
+  public readonly domSanitizer = inject(DomSanitizer);
+
   //#region properties
-  protected $href?: string;
-  protected $customStyle: Partial<properties.BreadcrumbItemBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  @HostBinding('attr.class') hostClass = 'group flex items-center';
-
-  /** @default undefined */
-  public get href(): string | undefined {
-    return this.$href;
-  }
-  @Input() public set href(value: string | undefined) {
-    this.$href = value;
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.BreadcrumbItemBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.BreadcrumbItemBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public color = model<keyof BreadcrumbColors>(this.breadcrumbComponent.color());
+  public customStyle = model<DeepPartial<BreadcrumbItemTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        href: this.$href,
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): BreadcrumbItemClass {
+    return this.themeService.getClasses({
+      color: this.color(),
+      link: this.flowbiteRouterLink?.routerLink.urlTree ?? null,
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
-    }
+  public override init(): void {
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'chevron-right',
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_RIGHT_SVG_ICON),
+    );
   }
   //#endregion
 }

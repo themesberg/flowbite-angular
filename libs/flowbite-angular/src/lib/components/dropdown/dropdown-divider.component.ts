@@ -1,51 +1,30 @@
-import * as properties from './dropdown-divider.theme';
-import { BaseComponent } from '../base.component';
+import { BaseComponent } from '../base-component.directive';
+import type { DropdownDividerClass, DropdownDividerTheme } from './dropdown-divider.theme';
+import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
 import { DropdownComponent } from './dropdown.component';
-import { paramNotNull } from '../../utils/param.util';
 
-import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, inject, model } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-dropdown-divider',
-  templateUrl: './dropdown-divider.component.html',
+  template: ``,
 })
-export class DropdownDividerComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.DropdownDividerClass,
-    string
-  >;
-  //#region properties
-  protected $customStyle: Partial<properties.DropdownDividerBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default {} */
-  public get customStyle(): Partial<properties.DropdownDividerBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(
-    value: Partial<properties.DropdownDividerBaseTheme>,
-  ) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
+export class DropdownDividerComponent extends BaseComponent<DropdownDividerClass> {
+  public readonly themeService = inject(DropdownDividerThemeService);
+  public readonly dropdownComponent = inject(DropdownComponent);
 
-  constructor(readonly dropdown: DropdownComponent) {
-    super();
-  }
+  //#region properties
+  public customStyle = model<Partial<DropdownDividerTheme>>({});
+  //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        customStyle: this.$customStyle,
-      });
-
-      this.contentClasses = propertyClass;
-    }
+  public override fetchClass(): DropdownDividerClass {
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
+    });
   }
   //#endregion
 }

@@ -4,12 +4,14 @@
   "projectType": "library",
   "sourceRoot": "libs/flowbite-angular/src",
   "prefix": "flowbite",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/flowbite-angular"],
       "options": {
-        "project": "libs/flowbite-angular/ng-package.json"
+        "project": "libs/flowbite-angular/ng-package.json",
+        "tailwindConfig": "libs/flowbite-angular/tailwind.config.js"
       },
       "configurations": {
         "production": {
@@ -31,6 +33,5 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
-  },
-  "tags": []
+  }
 }

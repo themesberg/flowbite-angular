@@ -11,16 +11,21 @@
     },
     {
       "path": "./tsconfig.editor.json"
+    },
+    {
+      "path": "./tsconfig.server.json"
     }
   ],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "target": "es2020"
+    "target": "ES2022",
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

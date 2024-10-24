@@ -1,40 +1,20 @@
-import { mergeTheme } from '../../utils/merge-theme';
-
-import { twMerge } from 'tailwind-merge';
+import type { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
 export interface ModalFooterProperties {
-  customStyle: Partial<ModalFooterBaseTheme>;
+  customStyle: DeepPartial<ModalFooterTheme>;
 }
 
-export interface ModalFooterBaseTheme {
-  root: Partial<ModalFooterRootTheme>;
+export interface ModalFooterTheme {
+  root: {
+    base: string;
+  };
 }
 
-export interface ModalFooterRootTheme {
-  base: string;
-}
-
-export const modalFooterTheme: ModalFooterBaseTheme = {
+export const modalFooterTheme: ModalFooterTheme = createTheme({
   root: {
     base: 'flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600',
   },
-};
+});
 
-export interface ModalFooterClass {
-  root: string;
-}
-
-export function getClasses(
-  properties: ModalFooterProperties,
-): ModalFooterClass {
-  const theme: ModalFooterBaseTheme = mergeTheme(
-    modalFooterTheme,
-    properties.customStyle,
-  );
-
-  const output: ModalFooterClass = {
-    root: twMerge(theme.root.base),
-  };
-
-  return output;
-}
+export type ModalFooterClass = FlowbiteClass;

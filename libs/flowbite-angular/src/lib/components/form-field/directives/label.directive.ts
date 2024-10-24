@@ -1,50 +1,39 @@
-import * as properties from './label.directive.theme';
+import type { DeepPartial } from '../../../common';
+import { booleanToFlowbiteBoolean } from '../../../utils/boolean.util';
+import { FormFieldComponent } from '../form-field.component';
 import { BaseInputDirective } from './base-input.directive';
-import { FlowbiteBoolean } from '../../../common/flowbite.theme';
-import {
-  FormFieldFloatingLabelTypes,
-  FormFieldValidations,
-} from '../form-field.theme';
+import * as properties from './label.directive.theme';
+import { LabelDirectiveThemeService } from './label.directive.theme.service';
 
-import { Directive, HostBinding, Input } from '@angular/core';
+import { Directive, inject, input, signal } from '@angular/core';
 
 @Directive({
   standalone: true,
   selector: 'label[flowbiteLabel]',
+  host: {
+    '[attr.for]': 'for.flowbiteId()',
+  },
 })
 export class LabelDirective extends BaseInputDirective {
-  _parentId = '';
-  _disabled: keyof FlowbiteBoolean = 'disabled';
-  _validate?: keyof FormFieldValidations;
-  _floatingLabelType?: keyof FormFieldFloatingLabelTypes;
-  @Input() customStyle: Partial<properties.LabelDirectiveBaseTheme> = {};
+  protected override contentClasses = signal<properties.LabelDirectiveClass>(properties.labelDirectiveClassInstance);
 
-  @HostBinding('attr.for') get for() {
-    return this._parentId;
-  }
+  protected readonly themeService = inject(LabelDirectiveThemeService);
+  protected readonly for = inject(FormFieldComponent);
 
-  @Input() set parentId(id: string) {
-    this._parentId = id;
-  }
-  @Input() set validate(validate: keyof FormFieldValidations) {
-    this._validate = validate;
-    this.handleClasses();
-  }
-  @Input() set floatingLabelType(
-    floatingLabelType: keyof FormFieldFloatingLabelTypes,
-  ) {
-    this._floatingLabelType = floatingLabelType;
-    this.handleClasses();
-  }
+  //#region properties
+  public customStyle = input<DeepPartial<properties.LabelDirectiveBaseTheme>>({});
+  //#endregion
 
-  override handleClasses(): void {
-    const propertyClass = properties.getClasses({
-      disabled: this._disabled,
-      validate: this._validate,
-      floatingLabelType: this._floatingLabelType,
-      customStyle: this.customStyle,
+  //#region BaseInputDirective implementation
+  override fetchClass(): void {
+    const propertyClass = this.themeService.getClasses({
+      disabled: booleanToFlowbiteBoolean(this.formFieldComponent.isDisabled()),
+      validate: this.formFieldComponent.validate(),
+      floatingLabelType: this.formFieldComponent.floatingLabelType(),
+      customStyle: this.customStyle(),
     });
 
-    this._class = propertyClass.root;
+    this.contentClasses.set(propertyClass);
   }
+  //#endregion
 }
