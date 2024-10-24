@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: pnpm i
+        run: pnpm i  --frozen-lockfile
 
       - name: Lint the code 🕵
         run: pnpm all:lint
