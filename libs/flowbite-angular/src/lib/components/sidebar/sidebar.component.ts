@@ -1,68 +1,62 @@
-import * as properties from './sidebar.theme';
-import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import { SidebarService } from '../../services';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base-component.directive';
+import { SidebarMenuComponent } from './sidebar-menu.component';
+import { SidebarPageContentComponent } from './sidebar-page-content.component';
+import type { SidebarClass, SidebarColors, SidebarDisplayMode, SidebarTheme } from './sidebar.theme';
+import { SidebarThemeService } from './sidebar.theme.service';
 
-import { AsyncPipe, NgClass } from '@angular/common';
-import { Component, Input, booleanAttribute } from '@angular/core';
+import { NgClass } from '@angular/common';
+import type { OnInit } from '@angular/core';
+import { Component, contentChild, inject, model, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
  */
 @Component({
   standalone: true,
-  imports: [NgClass, AsyncPipe],
+  imports: [NgClass],
   selector: 'flowbite-sidebar',
-  templateUrl: './sidebar.component.html',
+  template: `<ng-content />`,
 })
-export class SidebarComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.SidebarClass,
-    string
-  >;
+export class SidebarComponent extends BaseComponent<SidebarClass> implements OnInit {
+  public readonly themeService = inject(SidebarThemeService);
+  public readonly sidebarMenuChild = contentChild(SidebarMenuComponent);
+  public readonly sidebarPageContentChild = contentChild(SidebarPageContentComponent);
+
   //#region properties
-  protected $rounded: keyof FlowbiteBoolean = 'disabled';
-  protected $customStyle: Partial<properties.SidebarBaseTheme> = {};
+  public color = model<keyof SidebarColors>('primary');
+  public displayMode = model<keyof SidebarDisplayMode>('push');
+  public isOpen = model<boolean>(false);
+  public isRounded = model<boolean>(false);
+  public customStyle = model<DeepPartial<SidebarTheme>>({});
   //#endregion
-  //#region getter/setter
-  /** @default false */
-  public get rounded(): boolean {
-    return flowbiteBooleanToBoolean(this.$rounded);
-  }
-  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
-    this.$rounded = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.SidebarBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(value: Partial<properties.SidebarBaseTheme>) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
-  //#endregion
-
-  constructor(readonly sidebarService: SidebarService) {
-    super();
-  }
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (paramNotNull(this.$rounded, this.$customStyle)) {
-      const propertyClass = properties.getClasses({
-        rounded: this.$rounded,
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): SidebarClass {
+    return this.themeService.getClasses({
+      displayMode: this.displayMode(),
+      isRounded: booleanToFlowbiteBoolean(this.isRounded()),
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
+  public override verify(): void {
+    if (this.sidebarMenuChild() === undefined) {
+      throw new Error('No SidebarMenuComponent available');
+    }
+
+    if (this.sidebarPageContentChild() === undefined) {
+      throw new Error('No SidebarPageContentComponent available');
     }
   }
   //#endregion
+
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.isOpen());
+    }
+
+    this.isOpen.set(isOpen);
+  }
 }

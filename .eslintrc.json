@@ -1,43 +1,46 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "sort-imports-es6-autofix"],
+  "ignorePatterns": ["!**/*"],
+  "plugins": ["@nx", "@typescript-eslint"],
+  "extends": ["plugin:@angular-eslint/recommended", "plugin:@typescript-eslint/recommended-type-checked", "prettier"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": ["*.ts"],
+      "plugins": [],
+      "extends": [],
       "rules": {
-        "sort-imports-es6-autofix/sort-imports-es6": [
-          2,
+        // eslint
+        "no-extra-semi": 0,
+        "comma-dangle": 0,
+        "no-empty-function": 0,
+        // typescript-eslint
+        "@typescript-eslint/comma-dangle": 0,
+        "@typescript-eslint/no-extra-semi": 2,
+        "@typescript-eslint/lines-around-comment": 1,
+        "@typescript-eslint/member-delimiter-style": 2,
+        "@typescript-eslint/member-ordering": [
+          1,
           {
-            "ignoreCase": false,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+            "default": ["signature", "field", "constructor", "method"]
           }
         ],
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ]
+        "@typescript-eslint/no-empty-function": 1,
+        "@typescript-eslint/no-explicit-any": 1,
+        "@typescript-eslint/no-unnecessary-condition": 2,
+        "@typescript-eslint/no-unsafe-assignment": 0,
+        "@typescript-eslint/no-unsafe-call": 0,
+        "@typescript-eslint/no-unsafe-argument": 0,
+        "@typescript-eslint/no-unsafe-member-access": 0,
+        "@typescript-eslint/no-floating-promises": 0,
+        "@typescript-eslint/consistent-type-imports": 2,
+        "@typescript-eslint/consistent-type-exports": 2,
+        "@typescript-eslint/no-namespace": 0,
+        // angular-eslint
+        "@angular-eslint/no-host-metadata-property": "off",
+        // nx
+        "@nx/dependency-checks": 2,
+        "@nx/enforce-module-boundaries": 2
       }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {}
     }
   ]
 }

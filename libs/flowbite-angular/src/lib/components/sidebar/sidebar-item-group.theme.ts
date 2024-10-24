@@ -1,39 +1,39 @@
-import { mergeTheme } from '../../utils/merge-theme';
-import { twMerge } from 'tailwind-merge';
+import type { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
+import type { SidebarColors } from './sidebar.theme';
 
 export interface SidebarItemGroupProperties {
-  customStyle: Partial<SidebarItemGroupBaseTheme>;
+  color: keyof SidebarColors;
+  customStyle: DeepPartial<SidebarItemGroupTheme>;
 }
 
-export interface SidebarItemGroupBaseTheme {
-  root: Partial<SidebarItemGroupRootTheme>;
-}
-
-export interface SidebarItemGroupRootTheme {
-  base: string;
-}
-
-export const sidebarItemGroupTheme: SidebarItemGroupBaseTheme = {
+export interface SidebarItemGroupTheme {
   root: {
-    base: 'flex flex-col space-y-2',
-  },
-};
-
-export interface SidebarItemGroupClass {
-  root: string;
+    base: string;
+  };
+  spanText: {
+    base: string;
+    color: SidebarColors;
+  };
 }
 
-export function getClasses(
-  properties: SidebarItemGroupProperties,
-): SidebarItemGroupClass {
-  const theme: SidebarItemGroupBaseTheme = mergeTheme(
-    sidebarItemGroupTheme,
-    properties.customStyle,
-  );
+export const sidebarItemGroupTheme: SidebarItemGroupTheme = createTheme({
+  root: {
+    base: 'flex flex-col py-2 font-semibold cursor-pointer',
+  },
+  spanText: {
+    base: 'flex flex-row justify-between m-2',
+    color: {
+      primary: 'text-primary-600',
+      dark: 'text-gray-600',
+      blue: 'text-blue-600',
+      red: 'text-red-600',
+      green: 'text-green-600',
+      yellow: 'text-yellow-600',
+    },
+  },
+});
 
-  const output: SidebarItemGroupClass = {
-    root: twMerge(theme.root.base),
-  };
-
-  return output;
+export interface SidebarItemGroupClass extends FlowbiteClass {
+  spanClass: string;
 }

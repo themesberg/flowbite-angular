@@ -1,33 +1,56 @@
-import { Component } from '@angular/core';
 import {
-  DarkThemeToggleComponent,
+  FlowbiteRouterLinkActiveDirective,
+  FlowbiteRouterLinkDirective,
+  IconComponent,
+  NavbarBrandComponent,
   NavbarComponent,
-  SidebarComponent,
-  SidebarItemComponent,
-  SidebarItemGroupComponent,
+  NavbarContentComponent,
+  NavbarIconButtonComponent,
+  NavbarItemComponent,
+  NavbarToggleComponent,
 } from 'flowbite-angular';
-import { NgFor } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { SidebarService } from 'flowbite-angular';
 
-import { components } from './common/components';
+import { Location, NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import {
+  NgDocRootComponent,
+  NgDocSearchComponent,
+  NgDocSidebarComponent,
+  NgDocSidebarService,
+  NgDocThemeToggleComponent,
+} from '@ng-doc/app';
 
 @Component({
   standalone: true,
   imports: [
-    NavbarComponent,
-    SidebarComponent,
-    SidebarItemComponent,
-    SidebarItemGroupComponent,
     RouterOutlet,
-    DarkThemeToggleComponent,
-    NgFor,
+    NgIf,
+    NgDocRootComponent,
+    NgDocSidebarComponent,
+    NgDocThemeToggleComponent,
+    NgDocSearchComponent,
+    IconComponent,
+    NavbarComponent,
+    NavbarContentComponent,
+    NavbarItemComponent,
+    NavbarBrandComponent,
+    NavbarToggleComponent,
+    NavbarIconButtonComponent,
+    FlowbiteRouterLinkDirective,
+    FlowbiteRouterLinkActiveDirective,
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
+  host: {
+    '[attr.data-ng-doc-is-landing]': 'isLandingPage',
+  },
 })
 export class AppComponent {
-  components = components;
+  protected readonly sidebarService = inject(NgDocSidebarService);
+  protected readonly location = inject(Location);
 
-  constructor(protected readonly sidebarService: SidebarService) {}
+  get isLandingPage(): boolean {
+    return this.location.path() === '';
+  }
 }

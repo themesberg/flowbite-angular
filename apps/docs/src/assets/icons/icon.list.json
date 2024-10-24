@@ -1,0 +1,2927 @@
+[
+  {
+    "namespace": "brand",
+    "name": "adobe",
+    "path": "/assets/icons/brand/adobe.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "airbnb",
+    "path": "/assets/icons/brand/airbnb.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "airtable",
+    "path": "/assets/icons/brand/airtable.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "allianz",
+    "path": "/assets/icons/brand/allianz.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "amazon",
+    "path": "/assets/icons/brand/amazon.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "asana",
+    "path": "/assets/icons/brand/asana.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "atlassian",
+    "path": "/assets/icons/brand/atlassian.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "bank-of-america",
+    "path": "/assets/icons/brand/bank-of-america.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "bmw",
+    "path": "/assets/icons/brand/bmw.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "coca-cola",
+    "path": "/assets/icons/brand/coca-cola.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "coinbase",
+    "path": "/assets/icons/brand/coinbase.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "combinator",
+    "path": "/assets/icons/brand/combinator.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "dev",
+    "path": "/assets/icons/brand/dev.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "discord",
+    "path": "/assets/icons/brand/discord.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "disney",
+    "path": "/assets/icons/brand/disney.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "dribbble",
+    "path": "/assets/icons/brand/dribbble.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "dropbox",
+    "path": "/assets/icons/brand/dropbox.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "elastic",
+    "path": "/assets/icons/brand/elastic.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "evernote",
+    "path": "/assets/icons/brand/evernote.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "fedex",
+    "path": "/assets/icons/brand/fedex.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "ford",
+    "path": "/assets/icons/brand/ford.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "github",
+    "path": "/assets/icons/brand/github.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "google",
+    "path": "/assets/icons/brand/google.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "gumroad",
+    "path": "/assets/icons/brand/gumroad.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "honda",
+    "path": "/assets/icons/brand/honda.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "hubspot",
+    "path": "/assets/icons/brand/hubspot.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "ibm",
+    "path": "/assets/icons/brand/ibm.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "instagram",
+    "path": "/assets/icons/brand/instagram.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "intel",
+    "path": "/assets/icons/brand/intel.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "intercom",
+    "path": "/assets/icons/brand/intercom.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "invision",
+    "path": "/assets/icons/brand/invision.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "mailchimp",
+    "path": "/assets/icons/brand/mailchimp.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "mastercard",
+    "path": "/assets/icons/brand/mastercard.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "mcdonald's",
+    "path": "/assets/icons/brand/mcdonald's.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "mercedes-benz",
+    "path": "/assets/icons/brand/mercedes-benz.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "meta",
+    "path": "/assets/icons/brand/meta.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "microsoft",
+    "path": "/assets/icons/brand/microsoft.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "mitsubishi",
+    "path": "/assets/icons/brand/mitsubishi.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "nestlé",
+    "path": "/assets/icons/brand/nestlé.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "netflix",
+    "path": "/assets/icons/brand/netflix.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "notion",
+    "path": "/assets/icons/brand/notion.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "paypal",
+    "path": "/assets/icons/brand/paypal.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "pepsi",
+    "path": "/assets/icons/brand/pepsi.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "product-hunt",
+    "path": "/assets/icons/brand/product-hunt.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "reddit",
+    "path": "/assets/icons/brand/reddit.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "shell",
+    "path": "/assets/icons/brand/shell.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "shopify",
+    "path": "/assets/icons/brand/shopify.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "slack",
+    "path": "/assets/icons/brand/slack.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "spotify",
+    "path": "/assets/icons/brand/spotify.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "stripe",
+    "path": "/assets/icons/brand/stripe.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "tesla",
+    "path": "/assets/icons/brand/tesla.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "tiktok",
+    "path": "/assets/icons/brand/tiktok.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "toyota",
+    "path": "/assets/icons/brand/toyota.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "treehouse",
+    "path": "/assets/icons/brand/treehouse.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "trustpilot",
+    "path": "/assets/icons/brand/trustpilot.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "twitch",
+    "path": "/assets/icons/brand/twitch.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "ups",
+    "path": "/assets/icons/brand/ups.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "visa",
+    "path": "/assets/icons/brand/visa.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "vodafone",
+    "path": "/assets/icons/brand/vodafone.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "volkswagen",
+    "path": "/assets/icons/brand/volkswagen.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "whatsapp",
+    "path": "/assets/icons/brand/whatsapp.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "youtube",
+    "path": "/assets/icons/brand/youtube.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "zapier",
+    "path": "/assets/icons/brand/zapier.svg"
+  },
+  {
+    "namespace": "brand",
+    "name": "zoom",
+    "path": "/assets/icons/brand/zoom.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "angle-down",
+    "path": "/assets/icons/outline/arrows/angle-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "angle-left",
+    "path": "/assets/icons/outline/arrows/angle-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "angle-right",
+    "path": "/assets/icons/outline/arrows/angle-right.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "angle-up",
+    "path": "/assets/icons/outline/arrows/angle-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-down-to-bracket",
+    "path": "/assets/icons/outline/arrows/arrow-down-to-bracket.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-down",
+    "path": "/assets/icons/outline/arrows/arrow-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-left-to-bracket",
+    "path": "/assets/icons/outline/arrows/arrow-left-to-bracket.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-left",
+    "path": "/assets/icons/outline/arrows/arrow-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-right-alt",
+    "path": "/assets/icons/outline/arrows/arrow-right-alt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-right-to-bracket",
+    "path": "/assets/icons/outline/arrows/arrow-right-to-bracket.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-right",
+    "path": "/assets/icons/outline/arrows/arrow-right.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-sort-letters",
+    "path": "/assets/icons/outline/arrows/arrow-sort-letters.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-up-down",
+    "path": "/assets/icons/outline/arrows/arrow-up-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-up-from-bracket",
+    "path": "/assets/icons/outline/arrows/arrow-up-from-bracket.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-up-right-down-left",
+    "path": "/assets/icons/outline/arrows/arrow-up-right-down-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-up",
+    "path": "/assets/icons/outline/arrows/arrow-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrows-repeat-count",
+    "path": "/assets/icons/outline/arrows/arrows-repeat-count.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrows-repeat",
+    "path": "/assets/icons/outline/arrows/arrows-repeat.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "caret-down",
+    "path": "/assets/icons/outline/arrows/caret-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "caret-left",
+    "path": "/assets/icons/outline/arrows/caret-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "caret-right",
+    "path": "/assets/icons/outline/arrows/caret-right.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "caret-sort",
+    "path": "/assets/icons/outline/arrows/caret-sort.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "caret-up",
+    "path": "/assets/icons/outline/arrows/caret-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-double-down",
+    "path": "/assets/icons/outline/arrows/chevron-double-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-double-left",
+    "path": "/assets/icons/outline/arrows/chevron-double-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-double-right",
+    "path": "/assets/icons/outline/arrows/chevron-double-right.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-double-up",
+    "path": "/assets/icons/outline/arrows/chevron-double-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-down",
+    "path": "/assets/icons/outline/arrows/chevron-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-left",
+    "path": "/assets/icons/outline/arrows/chevron-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-right",
+    "path": "/assets/icons/outline/arrows/chevron-right.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-sort",
+    "path": "/assets/icons/outline/arrows/chevron-sort.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chevron-up",
+    "path": "/assets/icons/outline/arrows/chevron-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "compress",
+    "path": "/assets/icons/outline/arrows/compress.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "expand",
+    "path": "/assets/icons/outline/arrows/expand.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "forward",
+    "path": "/assets/icons/outline/arrows/forward.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "minimize",
+    "path": "/assets/icons/outline/arrows/minimize.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "redo",
+    "path": "/assets/icons/outline/arrows/redo.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "refresh",
+    "path": "/assets/icons/outline/arrows/refresh.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "reply-all",
+    "path": "/assets/icons/outline/arrows/reply-all.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "reply",
+    "path": "/assets/icons/outline/arrows/reply.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "share-all",
+    "path": "/assets/icons/outline/arrows/share-all.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "sort-horizontal",
+    "path": "/assets/icons/outline/arrows/sort-horizontal.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "sort",
+    "path": "/assets/icons/outline/arrows/sort.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "undo",
+    "path": "/assets/icons/outline/arrows/undo.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "cart-plus-alt",
+    "path": "/assets/icons/outline/e-commerce/cart-plus-alt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "cart-plus",
+    "path": "/assets/icons/outline/e-commerce/cart-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "cart",
+    "path": "/assets/icons/outline/e-commerce/cart.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "cash",
+    "path": "/assets/icons/outline/e-commerce/cash.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "credit-card-plus",
+    "path": "/assets/icons/outline/e-commerce/credit-card-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "credit-card",
+    "path": "/assets/icons/outline/e-commerce/credit-card.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "dollar",
+    "path": "/assets/icons/outline/e-commerce/dollar.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "euro",
+    "path": "/assets/icons/outline/e-commerce/euro.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "receipt",
+    "path": "/assets/icons/outline/e-commerce/receipt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "sale-percent",
+    "path": "/assets/icons/outline/e-commerce/sale-percent.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "scale-balanced",
+    "path": "/assets/icons/outline/e-commerce/scale-balanced.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "shopping-bag",
+    "path": "/assets/icons/outline/e-commerce/shopping-bag.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "store",
+    "path": "/assets/icons/outline/e-commerce/store.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "tag",
+    "path": "/assets/icons/outline/e-commerce/tag.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user-headset",
+    "path": "/assets/icons/outline/e-commerce/user-headset.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "wallet",
+    "path": "/assets/icons/outline/e-commerce/wallet.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "face-explode",
+    "path": "/assets/icons/outline/emoji/face-explode.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "face-grin-stars",
+    "path": "/assets/icons/outline/emoji/face-grin-stars.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "face-grin",
+    "path": "/assets/icons/outline/emoji/face-grin.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "face-laugh",
+    "path": "/assets/icons/outline/emoji/face-laugh.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "thumbs-down",
+    "path": "/assets/icons/outline/emoji/thumbs-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "thumbs-up",
+    "path": "/assets/icons/outline/emoji/thumbs-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "archive-arrow-down",
+    "path": "/assets/icons/outline/files_folders/archive-arrow-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "clipboard-check",
+    "path": "/assets/icons/outline/files_folders/clipboard-check.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "clipboard-clean",
+    "path": "/assets/icons/outline/files_folders/clipboard-clean.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "clipboard-list",
+    "path": "/assets/icons/outline/files_folders/clipboard-list.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "clipboard",
+    "path": "/assets/icons/outline/files_folders/clipboard.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-chart-bar",
+    "path": "/assets/icons/outline/files_folders/file-chart-bar.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-check",
+    "path": "/assets/icons/outline/files_folders/file-check.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-circle-plus",
+    "path": "/assets/icons/outline/files_folders/file-circle-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-clone",
+    "path": "/assets/icons/outline/files_folders/file-clone.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-code",
+    "path": "/assets/icons/outline/files_folders/file-code.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-copy-alt",
+    "path": "/assets/icons/outline/files_folders/file-copy-alt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-copy",
+    "path": "/assets/icons/outline/files_folders/file-copy.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-csv",
+    "path": "/assets/icons/outline/files_folders/file-csv.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-doc",
+    "path": "/assets/icons/outline/files_folders/file-doc.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-export",
+    "path": "/assets/icons/outline/files_folders/file-export.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-image",
+    "path": "/assets/icons/outline/files_folders/file-image.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-import",
+    "path": "/assets/icons/outline/files_folders/file-import.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-invoice",
+    "path": "/assets/icons/outline/files_folders/file-invoice.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-lines",
+    "path": "/assets/icons/outline/files_folders/file-lines.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-music",
+    "path": "/assets/icons/outline/files_folders/file-music.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-paste",
+    "path": "/assets/icons/outline/files_folders/file-paste.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-pdf",
+    "path": "/assets/icons/outline/files_folders/file-pdf.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-pen",
+    "path": "/assets/icons/outline/files_folders/file-pen.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-ppt",
+    "path": "/assets/icons/outline/files_folders/file-ppt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-search",
+    "path": "/assets/icons/outline/files_folders/file-search.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-shield",
+    "path": "/assets/icons/outline/files_folders/file-shield.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-video",
+    "path": "/assets/icons/outline/files_folders/file-video.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-word",
+    "path": "/assets/icons/outline/files_folders/file-word.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file-zip",
+    "path": "/assets/icons/outline/files_folders/file-zip.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "file",
+    "path": "/assets/icons/outline/files_folders/file.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "folder-arrow-right",
+    "path": "/assets/icons/outline/files_folders/folder-arrow-right.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "folder-duplicate",
+    "path": "/assets/icons/outline/files_folders/folder-duplicate.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "folder-open",
+    "path": "/assets/icons/outline/files_folders/folder-open.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "folder-plus",
+    "path": "/assets/icons/outline/files_folders/folder-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "folder",
+    "path": "/assets/icons/outline/files_folders/folder.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "adjustments-horizontal",
+    "path": "/assets/icons/outline/general/adjustments-horizontal.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "adjustments-vertical",
+    "path": "/assets/icons/outline/general/adjustments-vertical.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "annotation",
+    "path": "/assets/icons/outline/general/annotation.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "archive",
+    "path": "/assets/icons/outline/general/archive.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "arrow-up-right-from-square",
+    "path": "/assets/icons/outline/general/arrow-up-right-from-square.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "atom",
+    "path": "/assets/icons/outline/general/atom.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "award",
+    "path": "/assets/icons/outline/general/award.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "badge-check",
+    "path": "/assets/icons/outline/general/badge-check.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "ban",
+    "path": "/assets/icons/outline/general/ban.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bars-from-left",
+    "path": "/assets/icons/outline/general/bars-from-left.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bars",
+    "path": "/assets/icons/outline/general/bars.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bell-active-alt",
+    "path": "/assets/icons/outline/general/bell-active-alt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bell-active",
+    "path": "/assets/icons/outline/general/bell-active.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bell-ring",
+    "path": "/assets/icons/outline/general/bell-ring.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bell",
+    "path": "/assets/icons/outline/general/bell.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "blender-phone",
+    "path": "/assets/icons/outline/general/blender-phone.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "book-open",
+    "path": "/assets/icons/outline/general/book-open.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "book",
+    "path": "/assets/icons/outline/general/book.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bookmark",
+    "path": "/assets/icons/outline/general/bookmark.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "brain",
+    "path": "/assets/icons/outline/general/brain.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "briefcase",
+    "path": "/assets/icons/outline/general/briefcase.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bug",
+    "path": "/assets/icons/outline/general/bug.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "building",
+    "path": "/assets/icons/outline/general/building.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "bullhorn",
+    "path": "/assets/icons/outline/general/bullhorn.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "calendar-edit",
+    "path": "/assets/icons/outline/general/calendar-edit.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "calendar-month",
+    "path": "/assets/icons/outline/general/calendar-month.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "calendar-plus",
+    "path": "/assets/icons/outline/general/calendar-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "calendar-week",
+    "path": "/assets/icons/outline/general/calendar-week.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chart-line-down",
+    "path": "/assets/icons/outline/general/chart-line-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chart-line-up",
+    "path": "/assets/icons/outline/general/chart-line-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chart-mixed-dollar",
+    "path": "/assets/icons/outline/general/chart-mixed-dollar.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chart-mixed",
+    "path": "/assets/icons/outline/general/chart-mixed.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chart-pie",
+    "path": "/assets/icons/outline/general/chart-pie.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "chart",
+    "path": "/assets/icons/outline/general/chart.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "check-circle",
+    "path": "/assets/icons/outline/general/check-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "check-plus-circle",
+    "path": "/assets/icons/outline/general/check-plus-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "check",
+    "path": "/assets/icons/outline/general/check.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "circle-minus",
+    "path": "/assets/icons/outline/general/circle-minus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "circle-plus",
+    "path": "/assets/icons/outline/general/circle-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "clock",
+    "path": "/assets/icons/outline/general/clock.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "close-circle",
+    "path": "/assets/icons/outline/general/close-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "close",
+    "path": "/assets/icons/outline/general/close.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "cloud-arrow-up",
+    "path": "/assets/icons/outline/general/cloud-arrow-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "code-branch",
+    "path": "/assets/icons/outline/general/code-branch.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "code-fork",
+    "path": "/assets/icons/outline/general/code-fork.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "code-merge",
+    "path": "/assets/icons/outline/general/code-merge.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "code-pull-request",
+    "path": "/assets/icons/outline/general/code-pull-request.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "code",
+    "path": "/assets/icons/outline/general/code.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "cog",
+    "path": "/assets/icons/outline/general/cog.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "column",
+    "path": "/assets/icons/outline/general/column.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "command",
+    "path": "/assets/icons/outline/general/command.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "database",
+    "path": "/assets/icons/outline/general/database.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "desktop-pc",
+    "path": "/assets/icons/outline/general/desktop-pc.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "dna",
+    "path": "/assets/icons/outline/general/dna.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "dots-horizontal",
+    "path": "/assets/icons/outline/general/dots-horizontal.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "dots-vertical",
+    "path": "/assets/icons/outline/general/dots-vertical.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "download",
+    "path": "/assets/icons/outline/general/download.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "draw-square",
+    "path": "/assets/icons/outline/general/draw-square.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "edit",
+    "path": "/assets/icons/outline/general/edit.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "envelope-open",
+    "path": "/assets/icons/outline/general/envelope-open.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "envelope",
+    "path": "/assets/icons/outline/general/envelope.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "exclamation-circle",
+    "path": "/assets/icons/outline/general/exclamation-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "eye-slash",
+    "path": "/assets/icons/outline/general/eye-slash.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "eye",
+    "path": "/assets/icons/outline/general/eye.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "filter",
+    "path": "/assets/icons/outline/general/filter.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "fingerprint",
+    "path": "/assets/icons/outline/general/fingerprint.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "fire",
+    "path": "/assets/icons/outline/general/fire.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "flag",
+    "path": "/assets/icons/outline/general/flag.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "floppy-disk-alt",
+    "path": "/assets/icons/outline/general/floppy-disk-alt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "floppy-disk",
+    "path": "/assets/icons/outline/general/floppy-disk.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "gift-box",
+    "path": "/assets/icons/outline/general/gift-box.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "globe",
+    "path": "/assets/icons/outline/general/globe.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "grid-plus",
+    "path": "/assets/icons/outline/general/grid-plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "grid",
+    "path": "/assets/icons/outline/general/grid.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "heart",
+    "path": "/assets/icons/outline/general/heart.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "home",
+    "path": "/assets/icons/outline/general/home.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "hourglass",
+    "path": "/assets/icons/outline/general/hourglass.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "image",
+    "path": "/assets/icons/outline/general/image.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "inbox-full",
+    "path": "/assets/icons/outline/general/inbox-full.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "inbox",
+    "path": "/assets/icons/outline/general/inbox.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "info-circle",
+    "path": "/assets/icons/outline/general/info-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "keyboard",
+    "path": "/assets/icons/outline/general/keyboard.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "label",
+    "path": "/assets/icons/outline/general/label.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "landmark",
+    "path": "/assets/icons/outline/general/landmark.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "layers",
+    "path": "/assets/icons/outline/general/layers.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "life-saver",
+    "path": "/assets/icons/outline/general/life-saver.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "lightbulb",
+    "path": "/assets/icons/outline/general/lightbulb.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "link",
+    "path": "/assets/icons/outline/general/link.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "lock-open",
+    "path": "/assets/icons/outline/general/lock-open.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "lock-time",
+    "path": "/assets/icons/outline/general/lock-time.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "lock",
+    "path": "/assets/icons/outline/general/lock.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "mail-box",
+    "path": "/assets/icons/outline/general/mail-box.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "map-pin-alt",
+    "path": "/assets/icons/outline/general/map-pin-alt.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "map-pin",
+    "path": "/assets/icons/outline/general/map-pin.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "message-caption",
+    "path": "/assets/icons/outline/general/message-caption.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "message-dots",
+    "path": "/assets/icons/outline/general/message-dots.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "messages",
+    "path": "/assets/icons/outline/general/messages.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "minus",
+    "path": "/assets/icons/outline/general/minus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "mobile-phone",
+    "path": "/assets/icons/outline/general/mobile-phone.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "newspaper",
+    "path": "/assets/icons/outline/general/newspaper.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "objects-column",
+    "path": "/assets/icons/outline/general/objects-column.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "palette",
+    "path": "/assets/icons/outline/general/palette.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "paper-clip",
+    "path": "/assets/icons/outline/general/paper-clip.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "paper-plane",
+    "path": "/assets/icons/outline/general/paper-plane.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "pen-nib",
+    "path": "/assets/icons/outline/general/pen-nib.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "pen",
+    "path": "/assets/icons/outline/general/pen.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "phone-hangup",
+    "path": "/assets/icons/outline/general/phone-hangup.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "phone",
+    "path": "/assets/icons/outline/general/phone.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "plus",
+    "path": "/assets/icons/outline/general/plus.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "printer",
+    "path": "/assets/icons/outline/general/printer.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "qr-code",
+    "path": "/assets/icons/outline/general/qr-code.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "question-circle",
+    "path": "/assets/icons/outline/general/question-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "restore-window",
+    "path": "/assets/icons/outline/general/restore-window.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "rocket",
+    "path": "/assets/icons/outline/general/rocket.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "ruler-combined",
+    "path": "/assets/icons/outline/general/ruler-combined.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "search",
+    "path": "/assets/icons/outline/general/search.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "server",
+    "path": "/assets/icons/outline/general/server.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "share-nodes",
+    "path": "/assets/icons/outline/general/share-nodes.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "shield-check",
+    "path": "/assets/icons/outline/general/shield-check.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "shield",
+    "path": "/assets/icons/outline/general/shield.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "star-half-stroke",
+    "path": "/assets/icons/outline/general/star-half-stroke.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "star-half",
+    "path": "/assets/icons/outline/general/star-half.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "star",
+    "path": "/assets/icons/outline/general/star.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "swatchbook",
+    "path": "/assets/icons/outline/general/swatchbook.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "table-column",
+    "path": "/assets/icons/outline/general/table-column.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "table-row",
+    "path": "/assets/icons/outline/general/table-row.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "tablet",
+    "path": "/assets/icons/outline/general/tablet.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "terminal",
+    "path": "/assets/icons/outline/general/terminal.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "ticket",
+    "path": "/assets/icons/outline/general/ticket.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "trash-bin",
+    "path": "/assets/icons/outline/general/trash-bin.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "truck",
+    "path": "/assets/icons/outline/general/truck.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "upload",
+    "path": "/assets/icons/outline/general/upload.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "volume-down",
+    "path": "/assets/icons/outline/general/volume-down.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "volume-up",
+    "path": "/assets/icons/outline/general/volume-up.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "wand-magic-sparkles",
+    "path": "/assets/icons/outline/general/wand-magic-sparkles.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "window",
+    "path": "/assets/icons/outline/general/window.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "zoom-in",
+    "path": "/assets/icons/outline/general/zoom-in.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "zoom-out",
+    "path": "/assets/icons/outline/general/zoom-out.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "backward-step",
+    "path": "/assets/icons/outline/media/backward-step.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "camera-photo",
+    "path": "/assets/icons/outline/media/camera-photo.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "caption",
+    "path": "/assets/icons/outline/media/caption.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "circle-pause",
+    "path": "/assets/icons/outline/media/circle-pause.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "clapperboard-play",
+    "path": "/assets/icons/outline/media/clapperboard-play.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "computer-speaker",
+    "path": "/assets/icons/outline/media/computer-speaker.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "forward-step",
+    "path": "/assets/icons/outline/media/forward-step.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "headphones",
+    "path": "/assets/icons/outline/media/headphones.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "list-music",
+    "path": "/assets/icons/outline/media/list-music.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "microphone-slash",
+    "path": "/assets/icons/outline/media/microphone-slash.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "microphone",
+    "path": "/assets/icons/outline/media/microphone.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "pause",
+    "path": "/assets/icons/outline/media/pause.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "play",
+    "path": "/assets/icons/outline/media/play.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "rectangle-list",
+    "path": "/assets/icons/outline/media/rectangle-list.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "shuffle",
+    "path": "/assets/icons/outline/media/shuffle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "stop",
+    "path": "/assets/icons/outline/media/stop.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "video-camera",
+    "path": "/assets/icons/outline/media/video-camera.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "volume-mute",
+    "path": "/assets/icons/outline/media/volume-mute.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "align-center",
+    "path": "/assets/icons/outline/text/align-center.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "indent",
+    "path": "/assets/icons/outline/text/indent.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "language",
+    "path": "/assets/icons/outline/text/language.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "letter-bold",
+    "path": "/assets/icons/outline/text/letter-bold.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "letter-italic",
+    "path": "/assets/icons/outline/text/letter-italic.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "letter-underline",
+    "path": "/assets/icons/outline/text/letter-underline.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "list",
+    "path": "/assets/icons/outline/text/list.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "ordered-list",
+    "path": "/assets/icons/outline/text/ordered-list.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "outdent",
+    "path": "/assets/icons/outline/text/outdent.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "paragraph",
+    "path": "/assets/icons/outline/text/paragraph.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "quote",
+    "path": "/assets/icons/outline/text/quote.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "text-size",
+    "path": "/assets/icons/outline/text/text-size.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "text-slash",
+    "path": "/assets/icons/outline/text/text-slash.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "address-book",
+    "path": "/assets/icons/outline/user/address-book.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "profile-card",
+    "path": "/assets/icons/outline/user/profile-card.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user-add",
+    "path": "/assets/icons/outline/user/user-add.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user-circle",
+    "path": "/assets/icons/outline/user/user-circle.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user-edit",
+    "path": "/assets/icons/outline/user/user-edit.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user-remove",
+    "path": "/assets/icons/outline/user/user-remove.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user-settings",
+    "path": "/assets/icons/outline/user/user-settings.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "user",
+    "path": "/assets/icons/outline/user/user.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "users-group",
+    "path": "/assets/icons/outline/user/users-group.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "users",
+    "path": "/assets/icons/outline/user/users.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "moon",
+    "path": "/assets/icons/outline/weather/moon.svg"
+  },
+  {
+    "namespace": "outline",
+    "name": "sun",
+    "path": "/assets/icons/outline/weather/sun.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "arrow-right-alt",
+    "path": "/assets/icons/solid/arrows/arrow-right-alt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "caret-down",
+    "path": "/assets/icons/solid/arrows/caret-down.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "caret-left",
+    "path": "/assets/icons/solid/arrows/caret-left.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "caret-right",
+    "path": "/assets/icons/solid/arrows/caret-right.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "caret-sort",
+    "path": "/assets/icons/solid/arrows/caret-sort.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "caret-up",
+    "path": "/assets/icons/solid/arrows/caret-up.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "forward",
+    "path": "/assets/icons/solid/arrows/forward.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "reply-all",
+    "path": "/assets/icons/solid/arrows/reply-all.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "reply",
+    "path": "/assets/icons/solid/arrows/reply.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "share-all",
+    "path": "/assets/icons/solid/arrows/share-all.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "apple",
+    "path": "/assets/icons/solid/brands/apple.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "css",
+    "path": "/assets/icons/solid/brands/css.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "discord",
+    "path": "/assets/icons/solid/brands/discord.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "dribbble",
+    "path": "/assets/icons/solid/brands/dribbble.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "dropbox",
+    "path": "/assets/icons/solid/brands/dropbox.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "facebook",
+    "path": "/assets/icons/solid/brands/facebook.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "flowbite",
+    "path": "/assets/icons/solid/brands/flowbite.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "github",
+    "path": "/assets/icons/solid/brands/github.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "google",
+    "path": "/assets/icons/solid/brands/google.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "html",
+    "path": "/assets/icons/solid/brands/html.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "instagram",
+    "path": "/assets/icons/solid/brands/instagram.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "linkedin",
+    "path": "/assets/icons/solid/brands/linkedin.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "mastercard",
+    "path": "/assets/icons/solid/brands/mastercard.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "npm",
+    "path": "/assets/icons/solid/brands/npm.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "react",
+    "path": "/assets/icons/solid/brands/react.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "reddit",
+    "path": "/assets/icons/solid/brands/reddit.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "stackoverflow",
+    "path": "/assets/icons/solid/brands/stackoverflow.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "tailwind",
+    "path": "/assets/icons/solid/brands/tailwind.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "twitter",
+    "path": "/assets/icons/solid/brands/twitter.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "visa",
+    "path": "/assets/icons/solid/brands/visa.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "vue",
+    "path": "/assets/icons/solid/brands/vue.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "whatsapp",
+    "path": "/assets/icons/solid/brands/whatsapp.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "windows",
+    "path": "/assets/icons/solid/brands/windows.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "X",
+    "path": "/assets/icons/solid/brands/X.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "youtube",
+    "path": "/assets/icons/solid/brands/youtube.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "cart-plus-alt",
+    "path": "/assets/icons/solid/e-commerce/cart-plus-alt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "cart-plus",
+    "path": "/assets/icons/solid/e-commerce/cart-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "cart",
+    "path": "/assets/icons/solid/e-commerce/cart.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "cash",
+    "path": "/assets/icons/solid/e-commerce/cash.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "credit-card-plus",
+    "path": "/assets/icons/solid/e-commerce/credit-card-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "credit-card",
+    "path": "/assets/icons/solid/e-commerce/credit-card.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "receipt",
+    "path": "/assets/icons/solid/e-commerce/receipt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "sale-percent",
+    "path": "/assets/icons/solid/e-commerce/sale-percent.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "scale-balanced",
+    "path": "/assets/icons/solid/e-commerce/scale-balanced.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "shopping-bag",
+    "path": "/assets/icons/solid/e-commerce/shopping-bag.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "store",
+    "path": "/assets/icons/solid/e-commerce/store.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "tag",
+    "path": "/assets/icons/solid/e-commerce/tag.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user-headset",
+    "path": "/assets/icons/solid/e-commerce/user-headset.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "wallet",
+    "path": "/assets/icons/solid/e-commerce/wallet.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "face-explode",
+    "path": "/assets/icons/solid/emoji/face-explode.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "face-grin-stars",
+    "path": "/assets/icons/solid/emoji/face-grin-stars.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "face-grin",
+    "path": "/assets/icons/solid/emoji/face-grin.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "face-laugh",
+    "path": "/assets/icons/solid/emoji/face-laugh.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "thumbs-down",
+    "path": "/assets/icons/solid/emoji/thumbs-down.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "thumbs-up",
+    "path": "/assets/icons/solid/emoji/thumbs-up.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "archive-arrow-down",
+    "path": "/assets/icons/solid/files_folders/archive-arrow-down.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "clipboard-check",
+    "path": "/assets/icons/solid/files_folders/clipboard-check.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "clipboard-clean",
+    "path": "/assets/icons/solid/files_folders/clipboard-clean.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "clipboard-list",
+    "path": "/assets/icons/solid/files_folders/clipboard-list.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "clipboard",
+    "path": "/assets/icons/solid/files_folders/clipboard.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-chart-bar",
+    "path": "/assets/icons/solid/files_folders/file-chart-bar.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-check",
+    "path": "/assets/icons/solid/files_folders/file-check.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-circle-plus",
+    "path": "/assets/icons/solid/files_folders/file-circle-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-clone",
+    "path": "/assets/icons/solid/files_folders/file-clone.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-code",
+    "path": "/assets/icons/solid/files_folders/file-code.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-copy-alt",
+    "path": "/assets/icons/solid/files_folders/file-copy-alt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-copy",
+    "path": "/assets/icons/solid/files_folders/file-copy.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-csv",
+    "path": "/assets/icons/solid/files_folders/file-csv.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-doc",
+    "path": "/assets/icons/solid/files_folders/file-doc.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-export",
+    "path": "/assets/icons/solid/files_folders/file-export.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-image",
+    "path": "/assets/icons/solid/files_folders/file-image.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-import",
+    "path": "/assets/icons/solid/files_folders/file-import.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-invoice",
+    "path": "/assets/icons/solid/files_folders/file-invoice.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-lines",
+    "path": "/assets/icons/solid/files_folders/file-lines.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-music",
+    "path": "/assets/icons/solid/files_folders/file-music.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-paste",
+    "path": "/assets/icons/solid/files_folders/file-paste.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-pdf",
+    "path": "/assets/icons/solid/files_folders/file-pdf.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-pen",
+    "path": "/assets/icons/solid/files_folders/file-pen.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-ppt",
+    "path": "/assets/icons/solid/files_folders/file-ppt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-search",
+    "path": "/assets/icons/solid/files_folders/file-search.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-shield",
+    "path": "/assets/icons/solid/files_folders/file-shield.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-video",
+    "path": "/assets/icons/solid/files_folders/file-video.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-word",
+    "path": "/assets/icons/solid/files_folders/file-word.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file-zip",
+    "path": "/assets/icons/solid/files_folders/file-zip.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "file",
+    "path": "/assets/icons/solid/files_folders/file.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "folder-arrow-right",
+    "path": "/assets/icons/solid/files_folders/folder-arrow-right.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "folder-duplicate",
+    "path": "/assets/icons/solid/files_folders/folder-duplicate.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "folder-open",
+    "path": "/assets/icons/solid/files_folders/folder-open.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "folder-plus",
+    "path": "/assets/icons/solid/files_folders/folder-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "folder",
+    "path": "/assets/icons/solid/files_folders/folder.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "adjustments-horizontal",
+    "path": "/assets/icons/solid/general/adjustments-horizontal.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "adjustments-vertical",
+    "path": "/assets/icons/solid/general/adjustments-vertical.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "annotation",
+    "path": "/assets/icons/solid/general/annotation.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "archive",
+    "path": "/assets/icons/solid/general/archive.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "arrow-up-right-from-square",
+    "path": "/assets/icons/solid/general/arrow-up-right-from-square.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "award",
+    "path": "/assets/icons/solid/general/award.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "badge-check",
+    "path": "/assets/icons/solid/general/badge-check.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bell-active-alt",
+    "path": "/assets/icons/solid/general/bell-active-alt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bell-active",
+    "path": "/assets/icons/solid/general/bell-active.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bell-ring",
+    "path": "/assets/icons/solid/general/bell-ring.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bell",
+    "path": "/assets/icons/solid/general/bell.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "blender-phone",
+    "path": "/assets/icons/solid/general/blender-phone.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "book-open",
+    "path": "/assets/icons/solid/general/book-open.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "book",
+    "path": "/assets/icons/solid/general/book.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bookmark",
+    "path": "/assets/icons/solid/general/bookmark.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "brain",
+    "path": "/assets/icons/solid/general/brain.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "briefcase",
+    "path": "/assets/icons/solid/general/briefcase.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bug",
+    "path": "/assets/icons/solid/general/bug.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "building",
+    "path": "/assets/icons/solid/general/building.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "bullhorn",
+    "path": "/assets/icons/solid/general/bullhorn.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "calendar-edit",
+    "path": "/assets/icons/solid/general/calendar-edit.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "calendar-month",
+    "path": "/assets/icons/solid/general/calendar-month.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "calendar-plus",
+    "path": "/assets/icons/solid/general/calendar-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "calendar-week",
+    "path": "/assets/icons/solid/general/calendar-week.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "chart-mixed-dollar",
+    "path": "/assets/icons/solid/general/chart-mixed-dollar.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "chart-pie",
+    "path": "/assets/icons/solid/general/chart-pie.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "check-circle",
+    "path": "/assets/icons/solid/general/check-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "check-plus-circle",
+    "path": "/assets/icons/solid/general/check-plus-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "circle-minus",
+    "path": "/assets/icons/solid/general/circle-minus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "circle-plus",
+    "path": "/assets/icons/solid/general/circle-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "clock",
+    "path": "/assets/icons/solid/general/clock.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "close-circle",
+    "path": "/assets/icons/solid/general/close-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "cloud-arrow-up",
+    "path": "/assets/icons/solid/general/cloud-arrow-up.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "code-branch",
+    "path": "/assets/icons/solid/general/code-branch.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "code-fork",
+    "path": "/assets/icons/solid/general/code-fork.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "code-merge",
+    "path": "/assets/icons/solid/general/code-merge.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "code-pull-request",
+    "path": "/assets/icons/solid/general/code-pull-request.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "cog",
+    "path": "/assets/icons/solid/general/cog.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "column",
+    "path": "/assets/icons/solid/general/column.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "database",
+    "path": "/assets/icons/solid/general/database.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "desktop-pc",
+    "path": "/assets/icons/solid/general/desktop-pc.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "download",
+    "path": "/assets/icons/solid/general/download.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "draw-square",
+    "path": "/assets/icons/solid/general/draw-square.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "edit",
+    "path": "/assets/icons/solid/general/edit.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "envelope-open",
+    "path": "/assets/icons/solid/general/envelope-open.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "envelope",
+    "path": "/assets/icons/solid/general/envelope.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "exclamation-circle",
+    "path": "/assets/icons/solid/general/exclamation-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "eye-slash",
+    "path": "/assets/icons/solid/general/eye-slash.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "eye",
+    "path": "/assets/icons/solid/general/eye.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "filter",
+    "path": "/assets/icons/solid/general/filter.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "fire",
+    "path": "/assets/icons/solid/general/fire.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "flag",
+    "path": "/assets/icons/solid/general/flag.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "floppy-disk-alt",
+    "path": "/assets/icons/solid/general/floppy-disk-alt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "floppy-disk",
+    "path": "/assets/icons/solid/general/floppy-disk.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "gift-box",
+    "path": "/assets/icons/solid/general/gift-box.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "globe",
+    "path": "/assets/icons/solid/general/globe.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "grid-plus",
+    "path": "/assets/icons/solid/general/grid-plus.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "grid",
+    "path": "/assets/icons/solid/general/grid.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "heart",
+    "path": "/assets/icons/solid/general/heart.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "home",
+    "path": "/assets/icons/solid/general/home.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "hourglass",
+    "path": "/assets/icons/solid/general/hourglass.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "image",
+    "path": "/assets/icons/solid/general/image.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "inbox-full",
+    "path": "/assets/icons/solid/general/inbox-full.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "inbox",
+    "path": "/assets/icons/solid/general/inbox.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "info-circle",
+    "path": "/assets/icons/solid/general/info-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "keyboard",
+    "path": "/assets/icons/solid/general/keyboard.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "label",
+    "path": "/assets/icons/solid/general/label.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "landmark",
+    "path": "/assets/icons/solid/general/landmark.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "layers",
+    "path": "/assets/icons/solid/general/layers.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "life-saver",
+    "path": "/assets/icons/solid/general/life-saver.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "lightbulb",
+    "path": "/assets/icons/solid/general/lightbulb.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "lock-open",
+    "path": "/assets/icons/solid/general/lock-open.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "lock-time",
+    "path": "/assets/icons/solid/general/lock-time.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "lock",
+    "path": "/assets/icons/solid/general/lock.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "mail-box",
+    "path": "/assets/icons/solid/general/mail-box.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "map-pin-alt",
+    "path": "/assets/icons/solid/general/map-pin-alt.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "map-pin",
+    "path": "/assets/icons/solid/general/map-pin.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "message-caption",
+    "path": "/assets/icons/solid/general/message-caption.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "message-dots",
+    "path": "/assets/icons/solid/general/message-dots.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "messages",
+    "path": "/assets/icons/solid/general/messages.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "mobile-phone",
+    "path": "/assets/icons/solid/general/mobile-phone.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "newspaper",
+    "path": "/assets/icons/solid/general/newspaper.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "objects-column",
+    "path": "/assets/icons/solid/general/objects-column.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "palette",
+    "path": "/assets/icons/solid/general/palette.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "paper-plane",
+    "path": "/assets/icons/solid/general/paper-plane.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "pen-nib",
+    "path": "/assets/icons/solid/general/pen-nib.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "pen",
+    "path": "/assets/icons/solid/general/pen.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "phone-hangup",
+    "path": "/assets/icons/solid/general/phone-hangup.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "phone",
+    "path": "/assets/icons/solid/general/phone.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "printer",
+    "path": "/assets/icons/solid/general/printer.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "question-circle",
+    "path": "/assets/icons/solid/general/question-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "rocket",
+    "path": "/assets/icons/solid/general/rocket.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "search",
+    "path": "/assets/icons/solid/general/search.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "server",
+    "path": "/assets/icons/solid/general/server.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "share-nodes",
+    "path": "/assets/icons/solid/general/share-nodes.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "shield-check",
+    "path": "/assets/icons/solid/general/shield-check.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "shield",
+    "path": "/assets/icons/solid/general/shield.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "star-half-stroke",
+    "path": "/assets/icons/solid/general/star-half-stroke.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "star-half",
+    "path": "/assets/icons/solid/general/star-half.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "star",
+    "path": "/assets/icons/solid/general/star.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "swatchbook",
+    "path": "/assets/icons/solid/general/swatchbook.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "table-column",
+    "path": "/assets/icons/solid/general/table-column.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "table-row",
+    "path": "/assets/icons/solid/general/table-row.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "tablet",
+    "path": "/assets/icons/solid/general/tablet.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "terminal",
+    "path": "/assets/icons/solid/general/terminal.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "ticket",
+    "path": "/assets/icons/solid/general/ticket.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "trash-bin",
+    "path": "/assets/icons/solid/general/trash-bin.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "truck",
+    "path": "/assets/icons/solid/general/truck.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "upload",
+    "path": "/assets/icons/solid/general/upload.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "volume-down",
+    "path": "/assets/icons/solid/general/volume-down.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "volume-up",
+    "path": "/assets/icons/solid/general/volume-up.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "wand-magic-sparkles",
+    "path": "/assets/icons/solid/general/wand-magic-sparkles.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "window-restore",
+    "path": "/assets/icons/solid/general/window-restore.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "window",
+    "path": "/assets/icons/solid/general/window.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "zoom-in",
+    "path": "/assets/icons/solid/general/zoom-in.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "zoom-out",
+    "path": "/assets/icons/solid/general/zoom-out.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "backward-step",
+    "path": "/assets/icons/solid/media/backward-step.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "camera-photo",
+    "path": "/assets/icons/solid/media/camera-photo.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "caption",
+    "path": "/assets/icons/solid/media/caption.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "circle-pause",
+    "path": "/assets/icons/solid/media/circle-pause.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "clapperboard-play",
+    "path": "/assets/icons/solid/media/clapperboard-play.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "computer-speaker",
+    "path": "/assets/icons/solid/media/computer-speaker.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "forward-step",
+    "path": "/assets/icons/solid/media/forward-step.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "headphones",
+    "path": "/assets/icons/solid/media/headphones.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "list-music",
+    "path": "/assets/icons/solid/media/list-music.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "microphone-slash",
+    "path": "/assets/icons/solid/media/microphone-slash.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "microphone",
+    "path": "/assets/icons/solid/media/microphone.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "pause",
+    "path": "/assets/icons/solid/media/pause.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "play",
+    "path": "/assets/icons/solid/media/play.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "rectangle-list",
+    "path": "/assets/icons/solid/media/rectangle-list.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "stop",
+    "path": "/assets/icons/solid/media/stop.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "video-camera",
+    "path": "/assets/icons/solid/media/video-camera.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "volume-mute",
+    "path": "/assets/icons/solid/media/volume-mute.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "indent",
+    "path": "/assets/icons/solid/text/indent.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "outdent",
+    "path": "/assets/icons/solid/text/outdent.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "paragraph",
+    "path": "/assets/icons/solid/text/paragraph.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "quote",
+    "path": "/assets/icons/solid/text/quote.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "address-book",
+    "path": "/assets/icons/solid/user/address-book.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "profile-card",
+    "path": "/assets/icons/solid/user/profile-card.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user-add",
+    "path": "/assets/icons/solid/user/user-add.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user-circle",
+    "path": "/assets/icons/solid/user/user-circle.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user-edit",
+    "path": "/assets/icons/solid/user/user-edit.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user-remove",
+    "path": "/assets/icons/solid/user/user-remove.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user-settings",
+    "path": "/assets/icons/solid/user/user-settings.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "user",
+    "path": "/assets/icons/solid/user/user.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "users-group",
+    "path": "/assets/icons/solid/user/users-group.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "users",
+    "path": "/assets/icons/solid/user/users.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "moon",
+    "path": "/assets/icons/solid/weather/moon.svg"
+  },
+  {
+    "namespace": "solid",
+    "name": "sun",
+    "path": "/assets/icons/solid/weather/sun.svg"
+  }
+]

@@ -1,31 +1,59 @@
-import { Component, Input, booleanAttribute } from '@angular/core';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
+import type { DeepPartial } from '../../common';
+import { BaseComponent } from '../base-component.directive';
+import { AccordionContentComponent } from './accordion-content.component';
+import type { AccordionPanelClass, AccordionPanelTheme } from './accordion-panel.theme';
+import { AccordionPanelThemeService } from './accordion-panel.theme.service';
+import { AccordionTitleComponent } from './accordion-title.component';
+import { AccordionComponent } from './accordion.component';
+import type { AccordionColors } from './accordion.theme';
+
+import type { OnInit } from '@angular/core';
+import { Component, contentChild, inject, model, untracked } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [],
   selector: 'flowbite-accordion-panel',
-  templateUrl: './accordion-panel.component.html',
+  template: `<ng-content />`,
 })
-export class AccordionPanelComponent {
+export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> implements OnInit {
+  public readonly themeService = inject(AccordionPanelThemeService);
+  public readonly accordionComponent = inject(AccordionComponent);
+  public readonly accordionTitleChild = contentChild(AccordionTitleComponent);
+  public readonly accordionContentChild = contentChild(AccordionContentComponent);
+
   //#region properties
-  protected $open: keyof FlowbiteBoolean = 'disabled';
+  public color = model<keyof AccordionColors>(this.accordionComponent.color());
+  public isOpen = model<boolean>(false);
+  public customStyle = model<DeepPartial<AccordionPanelTheme>>({});
   //#endregion
-  //#region getter/setter
-  /** @default false */
-  public get open(): boolean {
-    return flowbiteBooleanToBoolean(this.$open);
+
+  //#region BaseComponent implementation
+  public override fetchClass(): AccordionPanelClass {
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
+    });
   }
-  @Input({ transform: booleanAttribute }) public set open(value: boolean) {
-    this.$open = booleanToFlowbiteBoolean(value);
+
+  public override verify(): void {
+    if (this.accordionTitleChild() === undefined) {
+      throw new Error('No AccordionTitleComponent available');
+    }
+    if (this.accordionContentChild() == undefined) {
+      throw new Error('No AccordionContentComponent available');
+    }
   }
   //#endregion
 
-  toggleVisibility() {
-    this.open = !this.open;
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.isOpen());
+    }
+
+    if (isOpen && untracked(() => !this.accordionComponent.isAlwaysOpen())) {
+      this.accordionComponent.closeAll();
+    }
+
+    this.isOpen.set(isOpen);
   }
 }

@@ -1,5 +1,23 @@
-@import '~prismjs/themes/prism-tomorrow.min.css';
+@import 'assets/styles/base.scss';
+@import 'assets/styles/dark.scss';
+
+@config '../tailwind.config.js';
 
 @tailwind base;
+
+@layer base {
+  ul:not(flowbite-dropdown ul),
+  ol:not(flowbite-dropdown ol) {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+  }
+
+  @font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

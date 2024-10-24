@@ -1,15 +1,20 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
+import type { DeepPartial, FlowbiteClass } from '../../common';
+import { createTheme } from '../../utils/theme/create-theme';
 
 export interface AccordionPanelProperties {
-  open: keyof FlowbiteBoolean;
+  customStyle: DeepPartial<AccordionPanelTheme>;
 }
 
-export interface AccordionPanelBaseTheme {
-  root: Partial<AccordionPanelRootTheme>;
+export interface AccordionPanelTheme {
+  root: {
+    base: string;
+  };
 }
 
-export interface AccordionPanelRootTheme {
-  base: string;
-}
+export const accordionPanelTheme: AccordionPanelTheme = createTheme({
+  root: {
+    base: 'group',
+  },
+});
 
-export interface AccordionPanelClass {}
+export type AccordionPanelClass = FlowbiteClass;

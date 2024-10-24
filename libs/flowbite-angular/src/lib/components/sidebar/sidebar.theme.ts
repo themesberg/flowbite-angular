@@ -1,58 +1,42 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import type { DeepPartial } from '../../common';
+import type { FlowbiteColors } from '../../common/type-definitions/colors/flowbite.colors';
+import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import { createTheme } from '../../utils/theme/create-theme';
 
-import { twMerge } from 'tailwind-merge';
+//#region Component theme option
+export interface SidebarColors extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
+  [key: string]: string;
+}
+
+export interface SidebarDisplayMode {
+  push: string;
+  over: string;
+  backdrop: string;
+}
+//endregion
 
 export interface SidebarProperties {
-  rounded: keyof FlowbiteBoolean;
-  customStyle: Partial<SidebarBaseTheme>;
+  displayMode: keyof SidebarDisplayMode;
+  isRounded: keyof FlowbiteBoolean;
+  customStyle: DeepPartial<SidebarTheme>;
 }
 
-export interface SidebarBaseTheme {
-  root: Partial<SidebarRootTheme>;
-  content: Partial<SidebarContentRootTheme>;
-}
-
-export interface SidebarRootTheme {
-  base: string;
-}
-
-export interface SidebarContentRootTheme {
-  base: string;
-  rounded: Record<keyof FlowbiteBoolean, string>;
-}
-
-export const sidebarTheme: SidebarBaseTheme = {
+export interface SidebarTheme {
   root: {
-    base: 'h-full',
-  },
-  content: {
-    base: 'flex h-full flex-col space-y-4 divide-y divide-gray-200 overflow-y-auto bg-white py-4 px-3 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800',
-    rounded: {
+    base: string;
+    isRounded: FlowbiteBoolean;
+  };
+}
+
+export const sidebarTheme: SidebarTheme = createTheme({
+  root: {
+    base: 'flex flex-row min-h-full',
+    isRounded: {
       enabled: 'rounded',
       disabled: '',
     },
   },
-};
+});
 
-export interface SidebarClass {
-  sidebarClass: string;
-  sidebarContentClass: string;
-}
-
-export function getClasses(properties: SidebarProperties): SidebarClass {
-  const theme: SidebarBaseTheme = mergeTheme(
-    sidebarTheme,
-    properties.customStyle,
-  );
-
-  const output: SidebarClass = {
-    sidebarClass: twMerge(theme.root.base),
-    sidebarContentClass: twMerge(
-      theme.content.base,
-      theme.content.rounded![properties.rounded],
-    ),
-  };
-
-  return output;
-}
+export type SidebarClass = FlowbiteClass;

@@ -1,14 +1,14 @@
-import * as properties from './navbar.theme';
-import { BaseComponent } from '../base.component';
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import {
-  booleanToFlowbiteBoolean,
-  flowbiteBooleanToBoolean,
-} from '../../utils/boolean.util';
-import { paramNotNull } from '../../utils/param.util';
+import type { DeepPartial } from '../../common';
+import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
+import { BaseComponent } from '../base-component.directive';
+import { NavbarBrandComponent } from './navbar-brand.component';
+import { NavbarContentComponent } from './navbar-content.component';
+import { NavbarToggleComponent } from './navbar-toggle.component';
+import type { NavbarClass, NavbarColors, NavbarTheme } from './navbar.theme';
+import { NavbarThemeService } from './navbar.theme.service';
 
-import { Component, Input, booleanAttribute } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, contentChild, inject, model, untracked } from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -17,71 +17,45 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-navbar',
-  templateUrl: './navbar.component.html',
+  template: `<ng-content />`,
 })
-export class NavbarComponent extends BaseComponent {
-  protected override contentClasses?: Record<
-    keyof properties.NavbarClass,
-    string
-  >;
+export class NavbarComponent extends BaseComponent<NavbarClass> {
+  public readonly themeService = inject(NavbarThemeService);
+  public readonly navbarBrandChild = contentChild(NavbarBrandComponent);
+  public readonly navbarToggleChild = contentChild(NavbarToggleComponent);
+  public readonly navbarContentChild = contentChild(NavbarContentComponent);
+
   //#region properties
-  public $rounded: keyof FlowbiteBoolean = 'disabled';
-  public $border: keyof FlowbiteBoolean = 'disabled';
-  public $fluid: keyof FlowbiteBoolean = 'disabled';
-  public $customStyle: Partial<properties.NavbarBaseTheme> = {};
-  //#endregion
-  //#region getter/setter
-  /** @default false */
-  public get rounded(): boolean {
-    return flowbiteBooleanToBoolean(this.$rounded);
-  }
-  @Input({ transform: booleanAttribute }) public set rounded(value: boolean) {
-    this.$rounded = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default false */
-  public get border(): boolean {
-    return flowbiteBooleanToBoolean(this.$border);
-  }
-  @Input({ transform: booleanAttribute }) public set border(value: boolean) {
-    this.$border = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default false */
-  public get fluid(): boolean {
-    return flowbiteBooleanToBoolean(this.$fluid);
-  }
-  @Input({ transform: booleanAttribute }) public set fluid(value: boolean) {
-    this.$fluid = booleanToFlowbiteBoolean(value);
-    this.fetchClass();
-  }
-
-  /** @default {} */
-  public get customStyle(): Partial<properties.NavbarBaseTheme> {
-    return this.$customStyle;
-  }
-  @Input() public set customStyle(value: Partial<properties.NavbarBaseTheme>) {
-    this.$customStyle = value;
-    this.fetchClass();
-  }
+  public color = model<keyof NavbarColors>('primary');
+  public isOpen = model<boolean>(false);
+  public isRounded = model<boolean>(false);
+  public hasBorder = model<boolean>(false);
+  public isFixed = model<boolean>(false);
+  public customStyle = model<DeepPartial<NavbarTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
-  protected override fetchClass(): void {
-    if (
-      paramNotNull(this.$rounded, this.$border, this.$fluid, this.$customStyle)
-    ) {
-      const propertyClass = properties.getClasses({
-        border: this.$border,
-        fluid: this.$fluid,
-        rounded: this.$rounded,
-        customStyle: this.$customStyle,
-      });
+  public override fetchClass(): NavbarClass {
+    return this.themeService.getClasses({
+      hasBorder: booleanToFlowbiteBoolean(this.isRounded()),
+      isRounded: booleanToFlowbiteBoolean(this.hasBorder()),
+      isFixed: booleanToFlowbiteBoolean(this.isFixed()),
+      customStyle: this.customStyle(),
+    });
+  }
 
-      this.contentClasses = propertyClass;
+  public override verify(): void {
+    if (this.navbarContentChild() === undefined) {
+      throw new Error('No NavbarContentComponent available');
     }
   }
   //#endregion
+
+  public toggleVisibility(isOpen?: boolean): void {
+    if (isOpen === undefined) {
+      isOpen = untracked(() => !this.isOpen());
+    }
+
+    this.isOpen.set(isOpen);
+  }
 }

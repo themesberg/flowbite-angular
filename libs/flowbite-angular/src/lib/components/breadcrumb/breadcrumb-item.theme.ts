@@ -1,59 +1,43 @@
-import { FlowbiteBoolean } from '../../common/flowbite.theme';
-import { mergeTheme } from '../../utils/merge-theme';
+import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
+import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
+import { createTheme } from '../../utils/theme/create-theme';
+import type { BreadcrumbColors } from './breadcrumb.theme';
 
-import { twMerge } from 'tailwind-merge';
+import type { UrlTree } from '@angular/router';
 
 export interface BreadcrumbItemProperties {
-  href?: string;
-  customStyle: Partial<BreadcrumbItemBaseTheme>;
+  color: keyof BreadcrumbColors;
+  link: UrlTree | null;
+  customStyle: DeepPartial<BreadcrumbItemTheme>;
 }
 
-export interface BreadcrumbItemBaseTheme {
-  root: Partial<BreadcrumbRootTheme>;
-  item: Partial<BreadcrumbItemContentTheme>;
-}
-
-export interface BreadcrumbRootTheme {
-  base: string;
-}
-
-export interface BreadcrumbItemContentTheme {
-  base: Record<keyof FlowbiteBoolean, string>;
-}
-
-export const breadcrumbItemTheme: BreadcrumbItemBaseTheme = {
+export interface BreadcrumbItemTheme {
   root: {
-    base: 'mx-1 h-6 w-6 text-gray-400 group-first:hidden md:mx-2',
-  },
-  item: {
-    base: {
-      enabled:
-        'flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
-      disabled:
-        'flex items-center text-sm font-medium text-gray-500 dark:text-gray-400',
+    base: string;
+    color: BreadcrumbColors;
+  };
+  icon: {
+    base: string;
+  };
+}
+
+export const breadcrumbItemTheme: BreadcrumbItemTheme = createTheme({
+  root: {
+    base: 'group flex items-center text-sm font-medium cursor-pointer',
+    color: {
+      primary: 'text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-500',
+      dark: 'text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white',
+      blue: 'text-blue-700 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-500',
+      red: 'text-red-700 dark:text-red-400 hover:text-red-900 dark:hover:text-red-500',
+      green: 'text-green-700 dark:text-green-400 hover:text-green-900 dark:hover:text-green-500',
+      yellow: 'text-yellow-700 dark:text-yellow-400 hover:text-yellow-900 dark:hover:text-yellow-500',
     },
   },
-};
+  icon: {
+    base: 'mx-1 h-6 w-6 md:mx-2 group-first:hidden',
+  },
+});
 
-export interface BreadcrumbItemClass {
-  breadcrumbClass: string;
-  contentClass: string;
-}
-
-export function getClasses(
-  properties: BreadcrumbItemProperties,
-): BreadcrumbItemClass {
-  const theme: BreadcrumbItemBaseTheme = mergeTheme(
-    breadcrumbItemTheme,
-    properties.customStyle,
-  );
-
-  const output: BreadcrumbItemClass = {
-    breadcrumbClass: twMerge(theme.root.base),
-    contentClass: twMerge(
-      theme.item.base![properties.href ? 'enabled' : 'disabled'],
-    ),
-  };
-
-  return output;
+export interface BreadcrumbItemClass extends FlowbiteClass {
+  breadcrumbIconClass: string;
 }
