@@ -1,6 +1,6 @@
 {
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "pnpm"
   },
   "generators": {
     "@nx/angular:application": {
