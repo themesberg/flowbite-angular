@@ -5,10 +5,7 @@
   "framework": "angular",
   "buildCommand": "pnpm docs:build",
   "outputDirectory": "dist/docs-static",
-  "installCommand": "pnpm i",
-  "env": {
-    "FORCE_RUNTIME_TAG": "canary"
-  },
+  "installCommand": "pnpm install --frozen-lockfile",
   "rewrites": [
     {
       "source": "/(.*)",

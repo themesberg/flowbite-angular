@@ -19,7 +19,7 @@
     "docs:lint": "nx run docs:lint",
     "docs:serve": "nx run docs:serve",
     "docs:test": "nx run docs:test",
-    "preinstall": "npx only-allow pnpm",
+    "preinstall": "pnpm dlx only-allow pnpm",
     "lib:build": "nx run flowbite-angular:build && cp README.md LICENSE dist/libs/flowbite-angular",
     "lib:lint": "nx run flowbite-angular:lint",
     "lib:test": "nx run flowbite-angular:test",
