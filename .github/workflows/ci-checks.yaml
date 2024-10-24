@@ -34,16 +34,16 @@ jobs:
             ${{ runner.os }}-modules-
 
       - name: Install packages 🏭
-        run: npm ci
+        run: pnpm i
 
       - name: Lint the code 🕵
-        run: npm run all:lint
+        run: pnpm all:lint
 
       - name: Run Prettier 💅
-        run: npm run prettier
+        run: pnpm prettier
 
       - name: Run unit tests 🔬
-        run: npm run all:test
+        run: pnpm all:test
 
       - name: Build code 🛠
-        run: npm run all:build
+        run: pnpm all:build
