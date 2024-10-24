@@ -6,7 +6,7 @@ keyword: NavbarPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./_default.component.ts"#L10-L14 group="default" name="html"
+```html file="./_default.component.ts"#L10-L16 group="default" name="html"
 
 ```
 

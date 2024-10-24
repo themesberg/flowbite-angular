@@ -1,6 +1,7 @@
 import {
   SidebarComponent,
   SidebarItemComponent,
+  SidebarItemGroupComponent,
   SidebarMenuComponent,
   SidebarPageContentComponent,
 } from 'flowbite-angular';
@@ -8,15 +9,26 @@ import {
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-demo-sidebar-default',
+  selector: 'flowbite-demo-sidebar-multi-level',
   standalone: true,
-  imports: [SidebarComponent, SidebarMenuComponent, SidebarItemComponent, SidebarPageContentComponent],
+  imports: [
+    SidebarComponent,
+    SidebarMenuComponent,
+    SidebarItemComponent,
+    SidebarItemGroupComponent,
+    SidebarPageContentComponent,
+  ],
   template: `
     <flowbite-sidebar
       [isOpen]="true"
       class="min-h-screen">
       <flowbite-sidebar-menu>
         <flowbite-sidebar-item>Dashboard</flowbite-sidebar-item>
+        <flowbite-sidebar-item-group title="E-commerce">
+          <flowbite-sidebar-item>Products</flowbite-sidebar-item>
+          <flowbite-sidebar-item>Billing</flowbite-sidebar-item>
+          <flowbite-sidebar-item>Invoice</flowbite-sidebar-item>
+        </flowbite-sidebar-item-group>
         <flowbite-sidebar-item>Kanban</flowbite-sidebar-item>
         <flowbite-sidebar-item>Inbox</flowbite-sidebar-item>
         <flowbite-sidebar-item>Users</flowbite-sidebar-item>
@@ -26,4 +38,4 @@ import { Component } from '@angular/core';
     </flowbite-sidebar>
   `,
 })
-export class FlowbiteDefaultComponent {}
+export class FlowbiteMultiLevelComponent {}

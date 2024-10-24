@@ -1,5 +1,6 @@
 import ComponentCategory from '../ng-doc.category';
 import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteMultiLevelComponent } from './_multi-level.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
@@ -13,6 +14,7 @@ const sidebar: NgDocPage = {
   order: 9,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
+    flowbiteMultiLevelComponent: FlowbiteMultiLevelComponent,
   },
 };
 
