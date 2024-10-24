@@ -13,37 +13,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code 🗄
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup NodeJS 20 💿
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: false
+
+      - name: Setup NodeJS 💿
+        uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'pnpm'
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
 
-      - name: Setup Cache 🗂
-        uses: actions/cache@v3
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-modules-
-
       - name: Install packages 🏭
-        run: npm ci
+        run: pnpm i --frozen-lockfile
 
       - name: Lint the code 🕵
-        run: npm run all:lint
+        run: pnpm all:lint
 
       - name: Run Prettier 💅
-        run: npm run prettier
+        run: pnpm prettier
 
       - name: Run unit tests 🔬
-        run: npm run all:test
+        run: pnpm all:test
 
       - name: Build code 🛠
-        run: npm run all:build
+        run: pnpm all:build

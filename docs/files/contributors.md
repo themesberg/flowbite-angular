@@ -8,10 +8,10 @@ To contribute, you will need (of course) to be able to build and start the docum
 
 1. Make sure you have `Node.js > v20` installed
 2. Run `git clone https://github.com/themesberg/flowbite-angular.git`
-3. Run `npm i`
+3. Run `pnpm i`
    > [!WARNING]
    > If some errors happen, check the logs ; it could be some dependencies outside Node.js (example with [parcel library](https://github.com/parcel-bundler/watcher) ; this library needs a C++ compiler installed on the computer)
-4. Run `npm run docs:serve`
+4. Run `pnpm docs:serve`
    > [!TIP]
    > This will start local dev server on `localhost:4200`
 

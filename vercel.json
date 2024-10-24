@@ -3,12 +3,9 @@
   "public": true,
   "name": "flowbite-angular",
   "framework": "angular",
-  "buildCommand": "npm run docs:build",
+  "buildCommand": "pnpm docs:build",
   "outputDirectory": "dist/docs-static",
-  "installCommand": "npm ci",
-  "env": {
-    "FORCE_RUNTIME_TAG": "canary"
-  },
+  "installCommand": "pnpm install --frozen-lockfile",
   "rewrites": [
     {
       "source": "/(.*)",
