@@ -1,0 +1,159 @@
+{
+  "changelog": true,
+  "npm": false,
+  "github": false,
+  "repositoryUrl": "https://github.com/themesberg/flowbite-angular/",
+  "branches": [
+    "main",
+    "next",
+    "next-major",
+    "rework_project_side_configuration",
+    "+([0-9])?(.{+([0-9]),x}).x",
+    {
+      "name": "beta",
+      "prerelease": true
+    },
+    {
+      "name": "alpha",
+      "prerelease": true
+    },
+    {
+      "name": "test-*",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+        },
+        "releaseRules": [
+          {
+            "breaking": true,
+            "release": "major"
+          },
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "fix",
+            "release": "patch"
+          },
+          {
+            "type": "docs",
+            "release": "patch"
+          },
+          {
+            "type": "style",
+            "release": "patch"
+          },
+          {
+            "type": "refactor",
+            "release": "patch"
+          },
+          {
+            "type": "perf",
+            "release": "minor"
+          },
+          {
+            "type": "test",
+            "release": "patch"
+          },
+          {
+            "type": "build",
+            "release": "patch"
+          },
+          {
+            "type": "ci",
+            "release": "patch"
+          },
+          {
+            "type": "chore",
+            "release": "patch"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "angular",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "feat",
+              "section": "🎉 Features"
+            },
+            {
+              "type": "fix",
+              "section": "🐛 Bug Fixes"
+            },
+            {
+              "type": "docs",
+              "section": "📝 Documentation",
+              "hidden": false
+            },
+            {
+              "type": "style",
+              "section": "🎨 Theme and UI",
+              "hidden": false
+            },
+            {
+              "type": "refactor",
+              "section": "♻️ Code Refactors",
+              "hidden": false
+            },
+            {
+              "type": "perf",
+              "section": "⚡️ Performance Improvements",
+              "hidden": false
+            },
+            {
+              "type": "test",
+              "section": "🩺 Unit Tests",
+              "hidden": false
+            },
+            {
+              "type": "build",
+              "section": "📦️ Build System and Packaging",
+              "hidden": false
+            },
+            {
+              "type": "ci",
+              "section": "🧑‍💻 CI/CD Scripts",
+              "hidden": false
+            },
+            {
+              "type": "chore",
+              "section": "🔧 Miscellaneous Chores",
+              "hidden": false
+            }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "dist/libs/${RPOJECT_NAME}"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "pnpm lib:build"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "message": "chore(release): 🚀 v${nextRelease.version} \n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
+
