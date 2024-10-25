@@ -1,13 +1,14 @@
 {
   "changelog": true,
-  "npm": false,
-  "github": false,
+  "npm": true,
+  "github": true,
   "repositoryUrl": "https://github.com/themesberg/flowbite-angular/",
+  "tagFormat": "${PROJECT_NAME}@v${version}",
   "branches": [
     "main",
     "next",
     "next-major",
-    "rework_project_side_configuration",
+    "test_setup_semantic_release_nx-semantic-release",
     "+([0-9])?(.{+([0-9]),x}).x",
     {
       "name": "beta",
@@ -134,24 +135,6 @@
             }
           ]
         }
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "pkgRoot": "dist/libs/${RPOJECT_NAME}"
-      }
-    ],
-    [
-      "@semantic-release/exec",
-      {
-        "prepareCmd": "pnpm lib:build"
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "message": "chore(release): 🚀 v${nextRelease.version} \n\n${nextRelease.notes}"
       }
     ]
   ]

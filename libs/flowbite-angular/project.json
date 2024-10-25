@@ -36,10 +36,17 @@
     "semantic-release": {
       "executor": "@theunderscorer/nx-semantic-release:semantic-release",
       "options": {
-        "github": false,
-        "changelog": true,
-        "npm": false,
-        "tagFormat": "v${VERSION}"
+        "buildTarget": "flowbite-angular:build",
+        "outputPath": "{workspaceRoot}/dist/libs/flowbite-angular",
+        "dryRun": true,
+        "plugins": [
+          [
+            "@semantic-release/npm",
+            {
+              "pkgRoot": "{workspaceRoot}/dist/libs/flowbite-angular"
+            }
+          ]
+        ]
       }
     }
   }
