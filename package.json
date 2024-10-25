@@ -22,6 +22,7 @@
     "preinstall": "pnpm dlx only-allow pnpm",
     "lib:build": "nx run flowbite-angular:build && cp README.md LICENSE dist/libs/flowbite-angular",
     "lib:lint": "nx run flowbite-angular:lint",
+    "lib:release": "nx run flowbite-angular:semantic-release --dryRun",
     "lib:test": "nx run flowbite-angular:test",
     "prepare": "husky install",
     "prettier": "nx format:check --base=HEAD",
@@ -111,3 +112,4 @@
     }
   }
 }
+
