@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Release new version 🛠
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code 🗄
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 💿
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Monorepo install
+        uses: ./.github/actions/setup
+
+      - name: Build code 🛠
+        run: 'pnpm exec nx run flowbite-angular:semantic-release --dryRun'
