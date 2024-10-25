@@ -32,6 +32,16 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "semantic-release": {
+      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
+      "options": {
+        "github": false,
+        "changelog": true,
+        "npm": false,
+        "tagFormat": "v${VERSION}"
+      }
     }
   }
 }
+
