@@ -23,4 +23,4 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Release new version 🛠
-        run: 'pnpm exec nx run flowbite-angular:semantic-release --dryRun'
+        run: pnpm lib:release
