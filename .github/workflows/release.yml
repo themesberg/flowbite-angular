@@ -23,4 +23,4 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Release new version 🛠
-        run: pnpm lib:release
+        run: pnpm lib:release -- --ci --verbose --skip-nx-cache
