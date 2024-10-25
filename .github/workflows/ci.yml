@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Monorepo isntall
+      - name: Monorepo install
         uses: ./.github/actions/setup
 
       - name: Lint the code 🕵
@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Monorepo isntall
+      - name: Monorepo install
         uses: ./.github/actions/setup
 
       - name: Run unit tests 🔬
@@ -61,7 +61,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Monorepo isntall
+      - name: Monorepo install
         uses: ./.github/actions/setup
 
       - name: Build code 🛠
