@@ -22,7 +22,7 @@ jobs:
           node-version: 20
 
       - name: Monorepo isntall
-        uses: ./.github/actions/setup.yml
+        uses: ./.github/actions/action.yml
 
       - name: Lint the code 🕵
         run: pnpm all:lint
@@ -42,7 +42,7 @@ jobs:
           node-version: 20
 
       - name: Monorepo isntall
-        uses: ./.github/actions/setup.yml
+        uses: ./.github/actions/action.yml
 
       - name: Run unit tests 🔬
         run: pnpm all:test -- --ci --verbose
@@ -62,7 +62,7 @@ jobs:
           node-version: 20
 
       - name: Monorepo isntall
-        uses: ./.github/actions/setup.yml
+        uses: ./.github/actions/action.yml
 
       - name: Build code 🛠
         run: pnpm all:build
