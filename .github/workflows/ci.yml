@@ -45,7 +45,7 @@ jobs:
         uses: ./.github/actions/setup.yml
 
       - name: Run unit tests 🔬
-        run: pnpm all:test
+        run: pnpm all:test -- --ci --verbose
 
   build:
     name: Build code 🛠
