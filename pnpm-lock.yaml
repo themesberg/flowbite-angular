@@ -210,9 +210,6 @@ importers:
       shiki:
         specifier: ^1.7.0
         version: 1.22.1
-      standard-version:
-        specifier: ^9.3.2
-        version: 9.5.0
       stylelint:
         specifier: ^16.5.0
         version: 16.10.0(typescript@5.4.5)
@@ -2668,10 +2665,6 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
-  '@hutson/parse-repository-url@3.0.2':
-    resolution: {integrity: sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==}
-    engines: {node: '>=6.9.0'}
-
   '@ianvs/prettier-plugin-sort-imports@4.3.1':
     resolution: {integrity: sha512-ZHwbyjkANZOjaBm3ZosADD2OUYGFzQGxfy67HmGZU94mHqe7g1LCMA7YYKB1Cq+UTPCBqlAYapY0KXAjKEw8Sg==}
     peerDependencies:
@@ -4299,9 +4292,6 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  add-stream@1.0.0:
-    resolution: {integrity: sha512-qQLMr+8o0WC4FZGQTcJiKBVC59JylcPSrTtk6usvmIDFUOCKegapy1VHQwRbFMOFyb/inzUVqHs+eMYKDM1YeQ==}
-
   address@1.2.2:
     resolution: {integrity: sha512-4B/qKCfeE/ODUaAUpSwfzazo5x29WD4r3vXiWsB7I2mSDAihwEqKO+g8GELZUQSSAo5e1XTYh3ZVfLyxBc12nA==}
     engines: {node: '>= 10.0.0'}
@@ -5001,10 +4991,6 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  concat-stream@2.0.0:
-    resolution: {integrity: sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==}
-    engines: {'0': node >= 6.0}
-
   config-chain@1.1.13:
     resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==}
 
@@ -5039,61 +5025,14 @@ packages:
     resolution: {integrity: sha512-ROjNchA9LgfNMTTFSIWPzebCwOGFdgkEq45EnvvrmSLvCtAw0HSmrCs7/ty+wAeYUZyNay0YMUNYFTRL72PkBQ==}
     engines: {node: '>=16'}
 
-  conventional-changelog-atom@2.0.8:
-    resolution: {integrity: sha512-xo6v46icsFTK3bb7dY/8m2qvc8sZemRgdqLb/bjpBsH2UyOS8rKNTgcb5025Hri6IpANPApbXMg15QLb1LJpBw==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-codemirror@2.0.8:
-    resolution: {integrity: sha512-z5DAsn3uj1Vfp7po3gpt2Boc+Bdwmw2++ZHa5Ak9k0UKsYAO5mH1UBTN0qSCuJZREIhX6WU4E1p3IW2oRCNzQw==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-config-spec@2.1.0:
-    resolution: {integrity: sha512-IpVePh16EbbB02V+UA+HQnnPIohgXvJRxHcS5+Uwk4AT5LjzCZJm5sp/yqs5C6KZJ1jMsV4paEV13BN1pvDuxQ==}
-
-  conventional-changelog-conventionalcommits@4.6.3:
-    resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
-    engines: {node: '>=10'}
-
   conventional-changelog-conventionalcommits@7.0.2:
     resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
     engines: {node: '>=16'}
-
-  conventional-changelog-core@4.2.4:
-    resolution: {integrity: sha512-gDVS+zVJHE2v4SLc6B0sLsPiloR0ygU7HaDW14aNJE1v4SlqJPILPl/aJC7YdtRE4CybBf8gDwObBvKha8Xlyg==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-ember@2.0.9:
-    resolution: {integrity: sha512-ulzIReoZEvZCBDhcNYfDIsLTHzYHc7awh+eI44ZtV5cx6LVxLlVtEmcO+2/kGIHGtw+qVabJYjdI5cJOQgXh1A==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-eslint@3.0.9:
-    resolution: {integrity: sha512-6NpUCMgU8qmWmyAMSZO5NrRd7rTgErjrm4VASam2u5jrZS0n38V7Y9CzTtLT2qwz5xEChDR4BduoWIr8TfwvXA==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-express@2.0.6:
-    resolution: {integrity: sha512-SDez2f3iVJw6V563O3pRtNwXtQaSmEfTCaTBPCqn0oG0mfkq0rX4hHBq5P7De2MncoRixrALj3u3oQsNK+Q0pQ==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-jquery@3.0.11:
-    resolution: {integrity: sha512-x8AWz5/Td55F7+o/9LQ6cQIPwrCjfJQ5Zmfqi8thwUEKHstEn4kTIofXub7plf1xvFA2TqhZlq7fy5OmV6BOMw==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-jshint@2.0.9:
-    resolution: {integrity: sha512-wMLdaIzq6TNnMHMy31hql02OEQ8nCQfExw1SE0hYL5KvU+JCTuPaDO+7JiogGT2gJAxiUGATdtYYfh+nT+6riA==}
-    engines: {node: '>=10'}
-
-  conventional-changelog-preset-loader@2.3.4:
-    resolution: {integrity: sha512-GEKRWkrSAZeTq5+YjUZOYxdHq+ci4dNwHvpaBC3+ENalzFWuCWa9EZXSuZBpkr72sMdKB+1fyDV4takK1Lf58g==}
-    engines: {node: '>=10'}
 
   conventional-changelog-writer@5.0.1:
     resolution: {integrity: sha512-5WsuKUfxW7suLblAbFnxAcrvf6r+0b7GvNaWUwUIk0bXMnENP/PEieGKVUQrjPqwPT4o3EPAASBXiY6iHooLOQ==}
     engines: {node: '>=10'}
     hasBin: true
-
-  conventional-changelog@3.1.25:
-    resolution: {integrity: sha512-ryhi3fd1mKf3fSjbLXOfK2D06YwKNic1nC9mWqybBHdObPd8KJ2vjaXZfYj1U23t+V8T8n0d7gwnc9XbIdFbyQ==}
-    engines: {node: '>=10'}
 
   conventional-commits-filter@2.0.7:
     resolution: {integrity: sha512-ASS9SamOP4TbCClsRHxIHXRfcGCnIoQqkvAzCSbZzTFLfcTqJVugB0agRgsEELsqaeWgsXv513eS116wnlSSPA==}
@@ -5107,11 +5046,6 @@ packages:
   conventional-commits-parser@5.0.0:
     resolution: {integrity: sha512-ZPMl0ZJbw74iS9LuX9YIAiW8pfM5p3yh2o/NbXHbkFuZzY5jvdi5jFycEOkmBW5H5I7nA+D6f3UcsCLP2vvSEA==}
     engines: {node: '>=16'}
-    hasBin: true
-
-  conventional-recommended-bump@6.1.0:
-    resolution: {integrity: sha512-uiApbSiNGM/kkdL9GTOLAqC4hbptObFo4wW2QRyHsKciGAfQuLU1ShZ1BIVI/+K2BE/W1AWYQMCXAsv4dyKPaw==}
-    engines: {node: '>=10'}
     hasBin: true
 
   convert-source-map@1.9.0:
@@ -5695,10 +5629,6 @@ packages:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
-  detect-indent@6.1.0:
-    resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
-    engines: {node: '>=8'}
-
   detect-indent@7.0.1:
     resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
     engines: {node: '>=12.20'}
@@ -5820,10 +5750,6 @@ packages:
   dotenv@16.3.2:
     resolution: {integrity: sha512-HTlk5nmhkm8F6JcdXvHIzaorzCoziNQT9mGxLPVXW8wJF1TiGSL60ZGB4gHWabHOaMmWmhvk2/lPHfnBiT78AQ==}
     engines: {node: '>=12'}
-
-  dotgitignore@2.1.0:
-    resolution: {integrity: sha512-sCm11ak2oY6DglEPpCB8TixLjWAxd3kJTs6UIcSasNYxXdFPV+YKlye92c8H4kKFqV5qYMIh7d+cYecEg0dIkA==}
-    engines: {node: '>=6'}
 
   duplexer2@0.1.4:
     resolution: {integrity: sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA==}
@@ -6285,10 +6211,6 @@ packages:
     resolution: {integrity: sha512-NWzkk0jSJtTt08+FBFMvXoeZnOJD+jTtsRmBYbAIzJdX6l7dLgR7CTubCM5/eDdPUBvLCeVasP1brfVR/9/EZQ==}
     engines: {node: '>=4'}
 
-  find-up@3.0.0:
-    resolution: {integrity: sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==}
-    engines: {node: '>=6'}
-
   find-up@4.1.0:
     resolution: {integrity: sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==}
     engines: {node: '>=8'}
@@ -6425,11 +6347,6 @@ packages:
     resolution: {integrity: sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==}
     engines: {node: '>=8.0.0'}
 
-  get-pkg-repo@4.2.1:
-    resolution: {integrity: sha512-2+QbHjFRfGB74v/pYWjd5OhU3TDIC2Gv/YKUTk/tCvAz0pkn/Mz6P3uByuBimLOcPvN2jYdScl3xGFSrx0jEcA==}
-    engines: {node: '>=6.9.0'}
-    hasBin: true
-
   get-stdin@9.0.0:
     resolution: {integrity: sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA==}
     engines: {node: '>=12'}
@@ -6462,18 +6379,6 @@ packages:
     resolution: {integrity: sha512-VnctFhw+xfj8Va1xtfEqCUD2XDrbAPSJx+hSrE5K7fGdjZruW7XV+QOrN7LF/RJyvspRiD2I0asWsxFp0ya26A==}
     engines: {node: '>=10'}
     hasBin: true
-
-  git-remote-origin-url@2.0.0:
-    resolution: {integrity: sha512-eU+GGrZgccNJcsDH5LkXR3PB9M958hxc7sbA8DFJjrv9j4L2P/eZfKhM+QD6wyzpiv+b1BpK0XrYCxkovtjSLw==}
-    engines: {node: '>=4'}
-
-  git-semver-tags@4.1.1:
-    resolution: {integrity: sha512-OWyMt5zBe7xFs8vglMmhM9lRQzCWL3WjHtxNNfJTMngGym7pC1kh8sP6jevfydJ6LP3ZvGxfb6ABYgPUM0mtsA==}
-    engines: {node: '>=10'}
-    hasBin: true
-
-  gitconfiglocal@1.0.0:
-    resolution: {integrity: sha512-spLUXeTAVHxDtKsJc8FkFVgFtMdEN9qPGpL23VfSHx4fP4+Ds097IXLvymbnDH8FnmxX5Nr9bPw3A+AQ6mWEaQ==}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -7626,10 +7531,6 @@ packages:
     resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==}
     engines: {node: '>=4'}
 
-  locate-path@3.0.0:
-    resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}
-    engines: {node: '>=6'}
-
   locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
@@ -8550,10 +8451,6 @@ packages:
     resolution: {integrity: sha512-nQja7m7gSKuewoVRen45CtVfODR3crN3goVQ0DDZ9N3yHxgpkuBhZqsaiotSQRrADUrne346peY7kT3TSACykg==}
     engines: {node: '>=4'}
 
-  p-locate@3.0.0:
-    resolution: {integrity: sha512-x+12w/To+4GFfgJhBEpiDcLozRJGegY+Ei7/z0tSLkMmxGZNybVMSfWj9aJn8Z5Fc7dBUNJOOVgPv2H7IwulSQ==}
-    engines: {node: '>=6'}
-
   p-locate@4.1.0:
     resolution: {integrity: sha512-R79ZZ/0wAxKGu3oYMlz8jy/kbhsNrS7SKZ7PxEHBgJ5+F2mtFW2fK2cOtBh1cHYkQsbzFV7I+EoRKe6Yt0oK7A==}
     engines: {node: '>=8'}
@@ -8686,10 +8583,6 @@ packages:
 
   path-to-regexp@0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
-
-  path-type@3.0.0:
-    resolution: {integrity: sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==}
-    engines: {node: '>=4'}
 
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
@@ -9359,10 +9252,6 @@ packages:
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
 
-  read-pkg-up@3.0.0:
-    resolution: {integrity: sha512-YFzFrVvpC6frF1sz8psoHDBGF7fLPc+llq/8NB43oagqWkx8ar5zYtsTORtOjw9W2RHLpWP+zTWwBvf1bCmcSw==}
-    engines: {node: '>=4'}
-
   read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
     engines: {node: '>=8'}
@@ -9370,10 +9259,6 @@ packages:
   read-pkg-up@9.1.0:
     resolution: {integrity: sha512-vaMRR1AC1nrd5CQM0PhlRsO5oc2AAigqr7cCrZ/MW/Rsaflz4RlgzkpL4qoU/z1F6wrbd85iFv1OQj/y5RdGvg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  read-pkg@3.0.0:
-    resolution: {integrity: sha512-BLq/cCO9two+lBgiTYNqD6GdtK8s4NpaWrl6/rCO9w0TUS8oJl7cmToOZfRYllKTISY6nt1U7jQ53brmKqY6BA==}
-    engines: {node: '>=4'}
 
   read-pkg@5.2.0:
     resolution: {integrity: sha512-Ug69mNOpfvKDAc2Q8DRpMjjzdtrnv9HcSMX+4VsZxD1aZ6ZzrIE7rlzXBtWTyhULSMKg076AW6WR5iZpD0JiOg==}
@@ -10074,11 +9959,6 @@ packages:
     resolution: {integrity: sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ==}
     engines: {node: '>=10'}
 
-  standard-version@9.5.0:
-    resolution: {integrity: sha512-3zWJ/mmZQsOaO+fOlsa0+QK90pwhNd042qEcw6hKFNoLFs7peGyvPffpEBbK/DSGPbyOvli0mUIFv5A4qTjh2Q==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   statuses@1.3.1:
     resolution: {integrity: sha512-wuTCPGlJONk/a1kqZ4fQM2+908lC7fa7nPYpTC1EhnvqLX/IICbeP1OZGDtA374trpSq68YubKUMo8oRhN46yg==}
     engines: {node: '>= 0.6'}
@@ -10127,10 +10007,6 @@ packages:
 
   stringify-entities@4.0.4:
     resolution: {integrity: sha512-IwfBptatlO+QCJUo19AqvrPNqlVMpW9YEL2LIVY+Rpv2qsjCGxaDLNRgeGsQWJhfItebuJhsGSLjaBbNSQ+ieg==}
-
-  stringify-package@1.0.1:
-    resolution: {integrity: sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==}
-    deprecated: This module is not used anymore, and has been replaced by @npmcli/package-json
 
   strip-ansi@3.0.1:
     resolution: {integrity: sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg==}
@@ -10581,9 +10457,6 @@ packages:
 
   typed-assert@1.0.9:
     resolution: {integrity: sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg==}
-
-  typedarray@0.0.6:
-    resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
@@ -14776,8 +14649,6 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@hutson/parse-repository-url@3.0.2': {}
-
   '@ianvs/prettier-plugin-sort-imports@4.3.1(prettier@3.3.3)':
     dependencies:
       '@babel/core': 7.26.0
@@ -17136,8 +17007,6 @@ snapshots:
 
   acorn@8.13.0: {}
 
-  add-stream@1.0.0: {}
-
   address@1.2.2: {}
 
   adjust-sourcemap-loader@4.0.0:
@@ -17977,13 +17846,6 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  concat-stream@2.0.0:
-    dependencies:
-      buffer-from: 1.1.2
-      inherits: 2.0.4
-      readable-stream: 3.6.2
-      typedarray: 0.0.6
-
   config-chain@1.1.13:
     dependencies:
       ini: 1.3.8
@@ -18019,65 +17881,9 @@ snapshots:
     dependencies:
       compare-func: 2.0.0
 
-  conventional-changelog-atom@2.0.8:
-    dependencies:
-      q: 1.5.1
-
-  conventional-changelog-codemirror@2.0.8:
-    dependencies:
-      q: 1.5.1
-
-  conventional-changelog-config-spec@2.1.0: {}
-
-  conventional-changelog-conventionalcommits@4.6.3:
-    dependencies:
-      compare-func: 2.0.0
-      lodash: 4.17.21
-      q: 1.5.1
-
   conventional-changelog-conventionalcommits@7.0.2:
     dependencies:
       compare-func: 2.0.0
-
-  conventional-changelog-core@4.2.4:
-    dependencies:
-      add-stream: 1.0.0
-      conventional-changelog-writer: 5.0.1
-      conventional-commits-parser: 3.2.4
-      dateformat: 3.0.3
-      get-pkg-repo: 4.2.1
-      git-raw-commits: 2.0.11
-      git-remote-origin-url: 2.0.0
-      git-semver-tags: 4.1.1
-      lodash: 4.17.21
-      normalize-package-data: 3.0.3
-      q: 1.5.1
-      read-pkg: 3.0.0
-      read-pkg-up: 3.0.0
-      through2: 4.0.2
-
-  conventional-changelog-ember@2.0.9:
-    dependencies:
-      q: 1.5.1
-
-  conventional-changelog-eslint@3.0.9:
-    dependencies:
-      q: 1.5.1
-
-  conventional-changelog-express@2.0.6:
-    dependencies:
-      q: 1.5.1
-
-  conventional-changelog-jquery@3.0.11:
-    dependencies:
-      q: 1.5.1
-
-  conventional-changelog-jshint@2.0.9:
-    dependencies:
-      compare-func: 2.0.0
-      q: 1.5.1
-
-  conventional-changelog-preset-loader@2.3.4: {}
 
   conventional-changelog-writer@5.0.1:
     dependencies:
@@ -18090,20 +17896,6 @@ snapshots:
       semver: 6.3.1
       split: 1.0.1
       through2: 4.0.2
-
-  conventional-changelog@3.1.25:
-    dependencies:
-      conventional-changelog-angular: 5.0.13
-      conventional-changelog-atom: 2.0.8
-      conventional-changelog-codemirror: 2.0.8
-      conventional-changelog-conventionalcommits: 4.6.3
-      conventional-changelog-core: 4.2.4
-      conventional-changelog-ember: 2.0.9
-      conventional-changelog-eslint: 3.0.9
-      conventional-changelog-express: 2.0.6
-      conventional-changelog-jquery: 3.0.11
-      conventional-changelog-jshint: 2.0.9
-      conventional-changelog-preset-loader: 2.3.4
 
   conventional-commits-filter@2.0.7:
     dependencies:
@@ -18125,17 +17917,6 @@ snapshots:
       is-text-path: 2.0.0
       meow: 12.1.1
       split2: 4.2.0
-
-  conventional-recommended-bump@6.1.0:
-    dependencies:
-      concat-stream: 2.0.0
-      conventional-changelog-preset-loader: 2.3.4
-      conventional-commits-filter: 2.0.7
-      conventional-commits-parser: 3.2.4
-      git-raw-commits: 2.0.11
-      git-semver-tags: 4.1.1
-      meow: 8.1.2
-      q: 1.5.1
 
   convert-source-map@1.9.0: {}
 
@@ -18803,8 +18584,6 @@ snapshots:
 
   destroy@1.2.0: {}
 
-  detect-indent@6.1.0: {}
-
   detect-indent@7.0.1: {}
 
   detect-libc@1.0.3: {}
@@ -18909,11 +18688,6 @@ snapshots:
   dotenv-expand@10.0.0: {}
 
   dotenv@16.3.2: {}
-
-  dotgitignore@2.1.0:
-    dependencies:
-      find-up: 3.0.0
-      minimatch: 3.1.2
 
   duplexer2@0.1.4:
     dependencies:
@@ -19646,10 +19420,6 @@ snapshots:
     dependencies:
       locate-path: 2.0.0
 
-  find-up@3.0.0:
-    dependencies:
-      locate-path: 3.0.0
-
   find-up@4.1.0:
     dependencies:
       locate-path: 5.0.0
@@ -19789,13 +19559,6 @@ snapshots:
 
   get-package-type@0.1.0: {}
 
-  get-pkg-repo@4.2.1:
-    dependencies:
-      '@hutson/parse-repository-url': 3.0.2
-      hosted-git-info: 4.1.0
-      through2: 2.0.5
-      yargs: 16.2.0
-
   get-stdin@9.0.0: {}
 
   get-stream@5.2.0:
@@ -19832,20 +19595,6 @@ snapshots:
       meow: 8.1.2
       split2: 3.2.2
       through2: 4.0.2
-
-  git-remote-origin-url@2.0.0:
-    dependencies:
-      gitconfiglocal: 1.0.0
-      pify: 2.3.0
-
-  git-semver-tags@4.1.1:
-    dependencies:
-      meow: 8.1.2
-      semver: 6.3.1
-
-  gitconfiglocal@1.0.0:
-    dependencies:
-      ini: 1.3.8
 
   github-slugger@2.0.0: {}
 
@@ -21395,11 +21144,6 @@ snapshots:
       p-locate: 2.0.0
       path-exists: 3.0.0
 
-  locate-path@3.0.0:
-    dependencies:
-      p-locate: 3.0.0
-      path-exists: 3.0.0
-
   locate-path@5.0.0:
     dependencies:
       p-locate: 4.1.0
@@ -22418,10 +22162,6 @@ snapshots:
     dependencies:
       p-limit: 1.3.0
 
-  p-locate@3.0.0:
-    dependencies:
-      p-limit: 2.3.0
-
   p-locate@4.1.0:
     dependencies:
       p-limit: 2.3.0
@@ -22552,10 +22292,6 @@ snapshots:
       minipass: 7.1.2
 
   path-to-regexp@0.1.7: {}
-
-  path-type@3.0.0:
-    dependencies:
-      pify: 3.0.0
 
   path-type@4.0.0: {}
 
@@ -23240,11 +22976,6 @@ snapshots:
     dependencies:
       pify: 2.3.0
 
-  read-pkg-up@3.0.0:
-    dependencies:
-      find-up: 2.1.0
-      read-pkg: 3.0.0
-
   read-pkg-up@7.0.1:
     dependencies:
       find-up: 4.1.0
@@ -23256,12 +22987,6 @@ snapshots:
       find-up: 6.3.0
       read-pkg: 7.1.0
       type-fest: 2.19.0
-
-  read-pkg@3.0.0:
-    dependencies:
-      load-json-file: 4.0.0
-      normalize-package-data: 2.5.0
-      path-type: 3.0.0
 
   read-pkg@5.2.0:
     dependencies:
@@ -24313,23 +24038,6 @@ snapshots:
     dependencies:
       escape-string-regexp: 2.0.0
 
-  standard-version@9.5.0:
-    dependencies:
-      chalk: 2.4.2
-      conventional-changelog: 3.1.25
-      conventional-changelog-config-spec: 2.1.0
-      conventional-changelog-conventionalcommits: 4.6.3
-      conventional-recommended-bump: 6.1.0
-      detect-indent: 6.1.0
-      detect-newline: 3.1.0
-      dotgitignore: 2.1.0
-      figures: 3.2.0
-      find-up: 5.0.0
-      git-semver-tags: 4.1.1
-      semver: 7.6.3
-      stringify-package: 1.0.1
-      yargs: 16.2.0
-
   statuses@1.3.1: {}
 
   statuses@1.5.0: {}
@@ -24383,8 +24091,6 @@ snapshots:
     dependencies:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
-
-  stringify-package@1.0.1: {}
 
   strip-ansi@3.0.1:
     dependencies:
@@ -24916,8 +24622,6 @@ snapshots:
   type@2.7.3: {}
 
   typed-assert@1.0.9: {}
-
-  typedarray@0.0.6: {}
 
   typescript@5.4.5: {}
 
