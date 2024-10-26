@@ -18,7 +18,7 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteLargeComponent', {container: false}) }}
 
-```html file="./_large.component.ts"#L10-L50 group="large" name="html"
+```html file="./_large.component.ts"#L10-L18 group="large" name="html"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteLinkComponent', {container: false}) }}
 
-```html file="./_link.component.ts"#L10-L50 group="link" name="html"
+```html file="./_link.component.ts"#L10-L18 group="link" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```html file="./_icon.component.ts"#L10-L21 group="icon" name="html"
+```html file="./_icon.component.ts"#L10-L17 group="icon" name="html"
 
 ```
 
@@ -54,7 +54,7 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
 
-```html file="./_icon-only.component.ts"#L10-L36 group="icon-only" name="html"
+```html file="./_icon-only.component.ts"#L10-L21 group="icon-only" name="html"
 
 ```
 
