@@ -8,6 +8,9 @@ jobs:
   release:
     name: Release new version 🛠
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - name: Check out the code 🗄
         uses: actions/checkout@v4
@@ -24,3 +27,6 @@ jobs:
 
       - name: Release new version 🛠
         run: pnpm lib:release -- --ci --verbose --skip-nx-cache
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
