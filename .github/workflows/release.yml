@@ -9,8 +9,9 @@ jobs:
     name: Release new version 🛠
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       issues: write
+      pull-requests: write
     steps:
       - name: Check out the code 🗄
         uses: actions/checkout@v4
