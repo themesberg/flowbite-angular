@@ -21,7 +21,9 @@ import { Component, inject, model } from '@angular/core';
 })
 export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
-  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, { optional: true });
+  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, {
+    optional: true,
+  });
   public readonly themeService = inject(NavbarItemThemeService);
   public readonly navbarContentComponent = inject(NavbarContentComponent);
 

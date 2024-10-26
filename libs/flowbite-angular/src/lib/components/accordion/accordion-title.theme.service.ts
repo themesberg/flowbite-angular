@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type { AccordionTitleClass, AccordionTitleProperties, AccordionTitleTheme } from './accordion-title.theme';
+import type {
+  AccordionTitleClass,
+  AccordionTitleProperties,
+  AccordionTitleTheme,
+} from './accordion-title.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_ACCORDION_TITLE_THEME_TOKEN = new InjectionToken<AccordionTitleTheme>(
-  'FLOWBITE_ACCORDION_TITLE_THEME_TOKEN',
+  'FLOWBITE_ACCORDION_TITLE_THEME_TOKEN'
 );
 
 export class AccordionTitleThemeService implements FlowbiteThemeService<AccordionTitleProperties> {
@@ -20,7 +24,7 @@ export class AccordionTitleThemeService implements FlowbiteThemeService<Accordio
         theme.root.base,
         theme.root.color[properties.color],
         theme.root.isFlush[properties.isFlush],
-        theme.root.isOpen[properties.isOpen],
+        theme.root.isOpen[properties.isOpen]
       ),
       textClass: twMerge(theme.text.base),
     };

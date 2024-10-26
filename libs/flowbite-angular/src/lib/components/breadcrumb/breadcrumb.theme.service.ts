@@ -5,7 +5,9 @@ import type { BreadcrumbClass, BreadcrumbProperties, BreadcrumbTheme } from './b
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_BREADCRUMB_THEME_TOKEN = new InjectionToken<BreadcrumbTheme>('FLOWBITE_BREADCRUMB_THEME_TOKEN');
+export const FLOWBITE_BREADCRUMB_THEME_TOKEN = new InjectionToken<BreadcrumbTheme>(
+  'FLOWBITE_BREADCRUMB_THEME_TOKEN'
+);
 
 export class BreadcrumbThemeService implements FlowbiteThemeService<BreadcrumbProperties> {
   private readonly baseTheme = inject(FLOWBITE_BREADCRUMB_THEME_TOKEN);

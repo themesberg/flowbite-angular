@@ -20,7 +20,9 @@ export class NavbarIconButtonComponent extends BaseComponent<NavbarIconButtonCla
   public readonly navbarContentComponent = inject(NavbarContentComponent, { optional: true });
 
   //#region properties
-  public color = model<keyof NavbarColors>(this.navbarContentComponent?.color() || this.navbarComponent!.color());
+  public color = model<keyof NavbarColors>(
+    this.navbarContentComponent?.color() || this.navbarComponent!.color()
+  );
   public customStyle = model<DeepPartial<NavbarIconButtonTheme>>({});
   //#endregion
 

@@ -29,7 +29,8 @@ export const accordionTheme: AccordionTheme = createTheme({
   root: {
     base: '',
     color: {
-      primary: 'border-primary-200 dark:border-primary-700 divide-primary-200 dark:divide-primary-700',
+      primary:
+        'border-primary-200 dark:border-primary-700 divide-primary-200 dark:divide-primary-700',
       light: 'border-gray-300 dark:border-gray-700 divide-gray-200 dark:divide-gray-700',
       blue: 'border-blue-200 dark:border-blue-700 divide-blue-200 dark:divide-blue-700',
       red: 'border-red-200 dark:border-red-700 divide-red-200 dark:divide-red-700',

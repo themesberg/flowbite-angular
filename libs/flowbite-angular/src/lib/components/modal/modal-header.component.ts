@@ -24,9 +24,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       [ngClass]="contentClasses().modalHeaderButtonClass"
       data-modal-hide="medium-modal"
       (click)="modalComponent.close()">
-      <flowbite-icon
-        svgIcon="flowbite-angular:close"
-        class="w-5 h-5" />
+      <flowbite-icon svgIcon="flowbite-angular:close" class="w-5 h-5" />
       <span class="sr-only">Close modal</span>
     </button>
   `,
@@ -52,7 +50,7 @@ export class ModalHeaderComponent extends BaseComponent<ModalHeaderClass> implem
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'close',
-      this.domSanitizer.bypassSecurityTrustHtml(CLOSE_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(CLOSE_SVG_ICON)
     );
   }
   //#endregion

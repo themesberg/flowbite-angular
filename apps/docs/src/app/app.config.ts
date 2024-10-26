@@ -28,7 +28,10 @@ export const appConfig: ApplicationConfig = {
     provideNgDocContext(),
     provideNgDocApp({
       shiki: {
-        themes: [import('shiki/themes/material-theme.mjs'), import('shiki/themes/material-theme-lighter.mjs')],
+        themes: [
+          import('shiki/themes/material-theme.mjs'),
+          import('shiki/themes/material-theme-lighter.mjs'),
+        ],
         theme: {
           light: 'material-theme-lighter',
           dark: 'material-theme',
@@ -43,7 +46,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideRouter(
       appRoutes,
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' })
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
     initFlowbite(),

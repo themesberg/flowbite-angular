@@ -25,7 +25,10 @@ export interface InputDirectiveBaseTheme {
   disabled: FlowbiteBoolean;
   validation: FormFieldValidations;
   prefix?: FormFieldPrefixes;
-  floatingLabel: Record<keyof FormFieldFloatingLabelTypes, Omit<InputDirectiveBaseTheme, 'floatingLabel'>>;
+  floatingLabel: Record<
+    keyof FormFieldFloatingLabelTypes,
+    Omit<InputDirectiveBaseTheme, 'floatingLabel'>
+  >;
 }
 
 export const inputDirectiveTheme: InputDirectiveBaseTheme = createTheme({

@@ -15,7 +15,9 @@ import { Directive, inject, input, signal } from '@angular/core';
   },
 })
 export class LabelDirective extends BaseInputDirective {
-  protected override contentClasses = signal<properties.LabelDirectiveClass>(properties.labelDirectiveClassInstance);
+  protected override contentClasses = signal<properties.LabelDirectiveClass>(
+    properties.labelDirectiveClassInstance
+  );
 
   protected readonly themeService = inject(LabelDirectiveThemeService);
   protected readonly for = inject(FormFieldComponent);

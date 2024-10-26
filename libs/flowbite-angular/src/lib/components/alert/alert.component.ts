@@ -29,9 +29,7 @@ import { DomSanitizer } from '@angular/platform-browser';
         aria-label="Close"
         (click)="onDismissClick()">
         <span class="sr-only">Close</span>
-        <flowbite-icon
-          svgIcon="flowbite-angular:close"
-          class="h-5 w-5" />
+        <flowbite-icon svgIcon="flowbite-angular:close" class="h-5 w-5" />
       </button>
     </div>
     <ng-container [ngTemplateOutlet]="additionalContent()"></ng-container>
@@ -70,7 +68,7 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'close',
-      this.domSanitizer.bypassSecurityTrustHtml(CLOSE_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(CLOSE_SVG_ICON)
     );
   }
   //#endregion

@@ -5,7 +5,9 @@ import type { DropdownClass, DropdownProperties, DropdownTheme } from './dropdow
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_DROPDOWN_THEME_TOKEN = new InjectionToken<DropdownTheme>('FLOWBITE_DROPDOWN_THEME_TOKEN');
+export const FLOWBITE_DROPDOWN_THEME_TOKEN = new InjectionToken<DropdownTheme>(
+  'FLOWBITE_DROPDOWN_THEME_TOKEN'
+);
 
 export class DropdownThemeService implements FlowbiteThemeService<DropdownProperties> {
   private readonly baseTheme = inject(FLOWBITE_DROPDOWN_THEME_TOKEN);
@@ -20,7 +22,7 @@ export class DropdownThemeService implements FlowbiteThemeService<DropdownProper
       containerClass: twMerge(
         theme.container.base,
         theme.container.isOpen[properties.isOpen],
-        theme.container.placement[properties.placement],
+        theme.container.placement[properties.placement]
       ),
       contentClass: twMerge(theme.content.base),
       subContentClass: twMerge(theme.subContent.base),

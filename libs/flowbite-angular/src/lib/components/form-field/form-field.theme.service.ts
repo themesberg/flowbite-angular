@@ -6,7 +6,7 @@ import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_FORM_FIELD_THEME_TOKEN = new InjectionToken<FormFieldBaseTheme>(
-  'FLOWBITE_FORM_FIELD_THEME_TOKEN',
+  'FLOWBITE_FORM_FIELD_THEME_TOKEN'
 );
 
 export class FormFieldThemeService implements FlowbiteThemeService<FormFieldProperties> {

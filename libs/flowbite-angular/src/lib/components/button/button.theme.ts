@@ -10,18 +10,30 @@ import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
 export interface ButtonColors
-  extends Pick<FlowbiteColors, 'dark' | 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow' | 'purple'> {
+  extends Pick<
+    FlowbiteColors,
+    'dark' | 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow' | 'purple'
+  > {
   [key: string]: string;
 }
 
 export interface ButtonMonochromeColors
-  extends Pick<FlowbiteGradientColors, 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple'> {
+  extends Pick<
+    FlowbiteGradientColors,
+    'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple'
+  > {
   [key: string]: string;
 }
 
 export type ButtonDuoToneColors = Pick<
   FlowbiteGradientDuoToneColors,
-  'purpleToBlue' | 'cyanToBlue' | 'greenToBlue' | 'purpleToPink' | 'pinkToOrange' | 'tealToLime' | 'redToYellow'
+  | 'purpleToBlue'
+  | 'cyanToBlue'
+  | 'greenToBlue'
+  | 'purpleToPink'
+  | 'pinkToOrange'
+  | 'tealToLime'
+  | 'redToYellow'
 >;
 
 export interface ButtonSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {

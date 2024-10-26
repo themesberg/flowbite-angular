@@ -5,7 +5,9 @@ import type { ButtonClass, ButtonProperties, ButtonTheme } from './button.theme'
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_BUTTON_THEME_TOKEN = new InjectionToken<ButtonTheme>('FLOWBITE_BUTTON_THEME_TOKEN');
+export const FLOWBITE_BUTTON_THEME_TOKEN = new InjectionToken<ButtonTheme>(
+  'FLOWBITE_BUTTON_THEME_TOKEN'
+);
 
 export class ButtonThemeService implements FlowbiteThemeService<ButtonProperties> {
   private readonly baseTheme = inject(FLOWBITE_BUTTON_THEME_TOKEN);
@@ -24,9 +26,13 @@ export class ButtonThemeService implements FlowbiteThemeService<ButtonProperties
             ? theme.root.gradientMonochrome[properties.gradientMonochrome]
             : theme.root.color[properties.color][properties.fill],
         theme.root.isPill[properties.isPill],
-        theme.root.isDisabled[properties.isDisabled],
+        theme.root.isDisabled[properties.isDisabled]
       ),
-      spanClass: twMerge(theme.span.base, theme.span.isPill[properties.isPill], theme.span.size[properties.size]),
+      spanClass: twMerge(
+        theme.span.base,
+        theme.span.isPill[properties.isPill],
+        theme.span.size[properties.size]
+      ),
     };
 
     return output;

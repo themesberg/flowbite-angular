@@ -3,7 +3,10 @@ import { createTheme } from '../../utils/theme/create-theme';
 
 //#region region Component theme option
 export interface ScrollTopColors
-  extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'gray' | 'green' | 'lime' | 'purple' | 'red'> {
+  extends Pick<
+    FlowbiteColors,
+    'primary' | 'dark' | 'blue' | 'gray' | 'green' | 'lime' | 'purple' | 'red'
+  > {
   [key: string]: string;
 }
 

@@ -25,12 +25,14 @@ export const breadcrumbItemTheme: BreadcrumbItemTheme = createTheme({
   root: {
     base: 'group flex items-center text-sm font-medium cursor-pointer',
     color: {
-      primary: 'text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-500',
+      primary:
+        'text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-500',
       dark: 'text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white',
       blue: 'text-blue-700 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-500',
       red: 'text-red-700 dark:text-red-400 hover:text-red-900 dark:hover:text-red-500',
       green: 'text-green-700 dark:text-green-400 hover:text-green-900 dark:hover:text-green-500',
-      yellow: 'text-yellow-700 dark:text-yellow-400 hover:text-yellow-900 dark:hover:text-yellow-500',
+      yellow:
+        'text-yellow-700 dark:text-yellow-400 hover:text-yellow-900 dark:hover:text-yellow-500',
     },
   },
   icon: {

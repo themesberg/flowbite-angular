@@ -26,7 +26,7 @@ export class IconComponent extends BaseComponent<FlowbiteClass> implements OnIni
       () => {
         this._updateSvgIcon();
       },
-      { injector: this.injector },
+      { injector: this.injector }
     );
   }
 
