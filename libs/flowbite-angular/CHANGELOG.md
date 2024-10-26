@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.1...flowbite-angular@v1.0.0-alpha.2) (2024-10-26)
+
+
+### Features
+
+* remove every storeServices ([2dc68ed](https://github.com/themesberg/flowbite-angular/commit/2dc68edbe8c738caaee2435203b8fdab0920035b))
+
 # 1.0.0-alpha.1 (2024-10-26)
 
 
