@@ -24,6 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup NodeJS 💿
         uses: actions/setup-node@v4
@@ -36,5 +37,5 @@ jobs:
       - name: Release new version 🛠
         run: pnpm lib:release -- --ci --verbose --skip-nx-cache
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
