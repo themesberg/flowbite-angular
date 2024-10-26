@@ -6,7 +6,7 @@ keyword: NavbarPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./_default.component.ts"#L10-L16 group="default" name="html"
+```html file="./_default.component.ts"#L10-L14 group="default" name="html"
 
 ```
 
@@ -20,11 +20,11 @@ Use this example to display a brand element inside the navbar by importing the `
 
 {{ NgDocActions.demo('flowbiteBrandComponent', {container: false}) }}
 
-```html file="./_brand.component.ts"#L10-L23 group="brand" name="html"
+```html file="./_brand.component.ts"#L15-L22 group="brand" name="html"
 
 ```
 
-```typescript file="./_brand.component.ts"#L1-L1 group="brand" name="typescript"
+```typescript file="./_brand.component.ts"#L1-L6 group="brand" name="typescript"
 
 ```
 
@@ -34,11 +34,11 @@ Use this example to feature a dropdown menu when clicking on the settings dropdo
 
 {{ NgDocActions.demo('flowbiteDropdownComponent', {container: false}) }}
 
-```html file="./_dropdown.component.ts"#L10-L30 group="dropdown" name="html"
+```html file="./_dropdown.component.ts"#L24-L36 group="dropdown" name="html"
 
 ```
 
-```typescript file="./_dropdown.component.ts"#L1-L1 group="dropdown" name="typescript"
+```typescript file="./_dropdown.component.ts"#L1-L8 group="dropdown" name="typescript"
 
 ```
 
@@ -48,10 +48,10 @@ On mobile device the navigation bar will be collapsed and you will be able to us
 
 {{ NgDocActions.demo('flowbiteResponsiveComponent', {container: false}) }}
 
-```html file="./_responsive.component.ts"#L10-L28 group="responsive" name="html"
+```html file="./_responsive.component.ts"#L22-L32 group="responsive" name="html"
 
 ```
 
-```typescript file="./_responsive.component.ts"#L1-L1 group="responsive" name="typescript"
+```typescript file="./_responsive.component.ts"#L1-L7 group="responsive" name="typescript"
 
 ```

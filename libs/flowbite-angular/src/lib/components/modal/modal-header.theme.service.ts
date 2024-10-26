@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type { ModalHeaderClass, ModalHeaderProperties, ModalHeaderTheme } from './modal-header.theme';
+import type {
+  ModalHeaderClass,
+  ModalHeaderProperties,
+  ModalHeaderTheme,
+} from './modal-header.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_MODAL_HEADER_THEME_TOKEN = new InjectionToken<ModalHeaderTheme>(
-  'FLOWBITE_MODAL_HEADER_THEME_TOKEN',
+  'FLOWBITE_MODAL_HEADER_THEME_TOKEN'
 );
 
 export class ModalHeaderThemeService implements FlowbiteThemeService<ModalHeaderProperties> {

@@ -5,7 +5,9 @@ import type { NabvarItemProperties, NavbarItemClass, NavbarItemTheme } from './n
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_NAVBAR_ITEM_THEME_TOKEN = new InjectionToken<NavbarItemTheme>('FLOWBITE_NAVBAR_ITEM_THEME_TOKEN');
+export const FLOWBITE_NAVBAR_ITEM_THEME_TOKEN = new InjectionToken<NavbarItemTheme>(
+  'FLOWBITE_NAVBAR_ITEM_THEME_TOKEN'
+);
 
 export class NavbarItemThemeService implements FlowbiteThemeService<NabvarItemProperties> {
   private readonly baseTheme = inject(FLOWBITE_NAVBAR_ITEM_THEME_TOKEN);

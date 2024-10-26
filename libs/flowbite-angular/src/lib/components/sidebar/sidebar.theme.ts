@@ -5,7 +5,8 @@ import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class
 import { createTheme } from '../../utils/theme/create-theme';
 
 //#region Component theme option
-export interface SidebarColors extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
+export interface SidebarColors
+  extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
   [key: string]: string;
 }
 

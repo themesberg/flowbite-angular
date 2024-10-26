@@ -1,13 +1,17 @@
 import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type { AccordionPanelClass, AccordionPanelProperties, AccordionPanelTheme } from './accordion-panel.theme';
+import type {
+  AccordionPanelClass,
+  AccordionPanelProperties,
+  AccordionPanelTheme,
+} from './accordion-panel.theme';
 import type { AccordionClass } from './accordion.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_ACCORDION_PANEL_THEME_TOKEN = new InjectionToken<AccordionPanelTheme>(
-  'FLOWBITE_ACCORDION_PANEL_THEME_TOKEN',
+  'FLOWBITE_ACCORDION_PANEL_THEME_TOKEN'
 );
 
 export class AccordionPanelThemeService implements FlowbiteThemeService<AccordionPanelProperties> {

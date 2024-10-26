@@ -8,26 +8,16 @@ import { Component } from '@angular/core';
   imports: [ButtonComponent, IconComponent],
   template: `
     <flowbite-button>
-      <flowbite-icon
-        svgIcon="outline:arrow-right"
-        class="h-5 w-5" />
+      <flowbite-icon svgIcon="outline:arrow-right" class="h-5 w-5" />
     </flowbite-button>
     <flowbite-button [isPill]="true">
-      <flowbite-icon
-        svgIcon="outline:arrow-right"
-        class="h-5 w-5" />
+      <flowbite-icon svgIcon="outline:arrow-right" class="h-5 w-5" />
     </flowbite-button>
     <flowbite-button fill="outline">
-      <flowbite-icon
-        svgIcon="outline:arrow-right"
-        class="h-5 w-5" />
+      <flowbite-icon svgIcon="outline:arrow-right" class="h-5 w-5" />
     </flowbite-button>
-    <flowbite-button
-      fill="outline"
-      [isPill]="true">
-      <flowbite-icon
-        svgIcon="outline:arrow-right"
-        class="h-5 w-5" />
+    <flowbite-button fill="outline" [isPill]="true">
+      <flowbite-icon svgIcon="outline:arrow-right" class="h-5 w-5" />
     </flowbite-button>
   `,
 })

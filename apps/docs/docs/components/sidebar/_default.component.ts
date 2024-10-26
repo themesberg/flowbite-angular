@@ -10,11 +10,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'flowbite-demo-sidebar-default',
   standalone: true,
-  imports: [SidebarComponent, SidebarMenuComponent, SidebarItemComponent, SidebarPageContentComponent],
+  imports: [
+    SidebarComponent,
+    SidebarMenuComponent,
+    SidebarItemComponent,
+    SidebarPageContentComponent,
+  ],
   template: `
-    <flowbite-sidebar
-      [isOpen]="true"
-      class="min-h-screen">
+    <flowbite-sidebar [isOpen]="true" class="min-h-screen">
       <flowbite-sidebar-menu>
         <flowbite-sidebar-item>Dashboard</flowbite-sidebar-item>
         <flowbite-sidebar-item>Kanban</flowbite-sidebar-item>

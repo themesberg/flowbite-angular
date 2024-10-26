@@ -18,13 +18,8 @@ import { Component, inject, model } from '@angular/core';
   imports: [NgIf, NgClass, SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
-    <span
-      class="flex-shrink-0"
-      [innerHTML]="icon()! | sanitizeHtml"
-      *ngIf="icon()"></span>
-    <span
-      [ngClass]="contentClasses().sidebarIconClass"
-      [class.ml-3]="icon()">
+    <span class="flex-shrink-0" [innerHTML]="icon()! | sanitizeHtml" *ngIf="icon()"></span>
+    <span [ngClass]="contentClasses().sidebarIconClass" [class.ml-3]="icon()">
       <ng-content />
     </span>
     <flowbite-badge *ngIf="label()">{{ label() }}</flowbite-badge>
@@ -35,16 +30,25 @@ import { Component, inject, model } from '@angular/core';
 })
 export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
-  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, { optional: true });
-  public readonly themeService = inject(SidebarItemThemeService);
-  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(SidebarItemGroupComponent, {
+  public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, {
     optional: true,
   });
-  public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(SidebarMenuComponent);
+  public readonly themeService = inject(SidebarItemThemeService);
+  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(
+    SidebarItemGroupComponent,
+    {
+      optional: true,
+    }
+  );
+  public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(
+    SidebarMenuComponent
+  );
 
   //#region properties
   public icon = model<string | undefined>(undefined);
-  public color = model<keyof SidebarColors>((this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color());
+  public color = model<keyof SidebarColors>(
+    (this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color()
+  );
   public label = model<string | undefined>(undefined);
   public customStyle = model<DeepPartial<SidebarItemTheme>>({});
   //#endregion

@@ -22,7 +22,9 @@ export class FormFieldComponent extends BaseComponent<properties.FormFieldClass>
   public size = model<keyof properties.FormFieldSizes>('md');
   public isDisabled = model<boolean>(false);
   public validate = model<keyof properties.FormFieldValidations | undefined>(undefined);
-  public floatingLabelType = model<keyof properties.FormFieldFloatingLabelTypes | undefined>(undefined);
+  public floatingLabelType = model<keyof properties.FormFieldFloatingLabelTypes | undefined>(
+    undefined
+  );
   public prefix = model<keyof properties.FormFieldPrefixes | undefined>(undefined);
   public customStyle = model<DeepPartial<properties.FormFieldBaseTheme>>({});
   //#endregion

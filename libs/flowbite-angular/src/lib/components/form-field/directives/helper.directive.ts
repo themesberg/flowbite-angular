@@ -10,7 +10,9 @@ import { Directive, inject, input, signal } from '@angular/core';
   selector: '[flowbiteHelper]',
 })
 export class HelperDirective extends BaseInputDirective {
-  protected override contentClasses = signal<properties.HelperDirectiveClass>(properties.helperDirectiveClassInstance);
+  protected override contentClasses = signal<properties.HelperDirectiveClass>(
+    properties.helperDirectiveClassInstance
+  );
 
   protected readonly themeService = inject(HelperDirectiveThemeService);
 

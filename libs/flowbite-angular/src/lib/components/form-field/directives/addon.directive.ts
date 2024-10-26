@@ -10,7 +10,9 @@ import { Directive, inject, input, signal } from '@angular/core';
   selector: '[flowbiteAddon]',
 })
 export class AddonDirective extends BaseInputDirective {
-  protected override contentClasses = signal<properties.AddonDirectiveClass>(properties.addonDirectiveClassInstance);
+  protected override contentClasses = signal<properties.AddonDirectiveClass>(
+    properties.addonDirectiveClassInstance
+  );
 
   protected readonly themeService = inject(AddonDirectiveThemeService);
 

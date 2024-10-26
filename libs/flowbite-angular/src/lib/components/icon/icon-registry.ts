@@ -19,19 +19,19 @@ export function getSvgIconFromNamedError(iconName: string): Error {
 
 export function getSvgIconFailedToSanitizeRawError(raw: SafeHtml): Error {
   return Error(
-    `The raw provided to IconRegistry was not trusted as safe HTML by ANGULAR's DOMSanitizer. Attempted raw was : ${raw as string}`,
+    `The raw provided to IconRegistry was not trusted as safe HTML by ANGULAR's DOMSanitizer. Attempted raw was : ${raw as string}`
   );
 }
 
 export function getSvgIconFailedToSanitizeUrlError(url: SafeResourceUrl): Error {
   return Error(
-    `The URL provided to IconRegistry was not trusted as a resource URL via Angular's DOMSanitizer. Attempted URL was : ${url as string}`,
+    `The URL provided to IconRegistry was not trusted as a resource URL via Angular's DOMSanitizer. Attempted URL was : ${url as string}`
   );
 }
 
 export function getSvgIconNoHttpClientProvidedError(): Error {
   return Error(
-    `Could not fid HttpClient provider for use with flowbite-angular icons. Please include the HttpClientModule from @angular/common/http in your app imports`,
+    `Could not fid HttpClient provider for use with flowbite-angular icons. Please include the HttpClientModule from @angular/common/http in your app imports`
   );
 }
 
@@ -45,7 +45,7 @@ export class SvgIconConfig {
   constructor(
     public url: SafeResourceUrl,
     public svgText: TrustedHTML | undefined,
-    public options?: SvgIconOptions,
+    public options?: SvgIconOptions
   ) {}
 }
 
@@ -77,12 +77,17 @@ export class IconRegistry implements OnDestroy {
     namespace: string,
     iconName: string,
     url: SafeResourceUrl,
-    options?: SvgIconOptions,
+    options?: SvgIconOptions
   ): this {
     return this._addSvgIconConfig(namespace, iconName, new SvgIconConfig(url, undefined, options));
   }
 
-  public addRawSvgIconInNamepsace(namespace: string, iconName: string, raw: SafeHtml, options?: SvgIconOptions): this {
+  public addRawSvgIconInNamepsace(
+    namespace: string,
+    iconName: string,
+    raw: SafeHtml,
+    options?: SvgIconOptions
+  ): this {
     const cleanRaw = this._sanitizer.sanitize(SecurityContext.HTML, raw);
 
     if (!cleanRaw) {
@@ -142,7 +147,7 @@ export class IconRegistry implements OnDestroy {
   private _loadSvgIconFromConfig(config: SvgIconConfig): Observable<SVGElement> {
     return this._fetchIcon(config).pipe(
       tap((svgText) => (config.svgText = svgText)),
-      map(() => this._svgElementFromConfig(config as LoadedSvgIconConfig)),
+      map(() => this._svgElementFromConfig(config as LoadedSvgIconConfig))
     );
   }
 
@@ -203,7 +208,7 @@ export class IconRegistry implements OnDestroy {
           return trustedHTMLFromString(svg);
         }),
         finalize(() => this._inProgressSvgIconFetch.delete(url)),
-        share(),
+        share()
       );
 
       this._inProgressSvgIconFetch.set(url, req);

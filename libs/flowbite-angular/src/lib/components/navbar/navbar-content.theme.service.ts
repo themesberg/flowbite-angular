@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type { NavbarContentClass, NavbarContentProperties, NavbarContentTheme } from './navbar-content.theme';
+import type {
+  NavbarContentClass,
+  NavbarContentProperties,
+  NavbarContentTheme,
+} from './navbar-content.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN = new InjectionToken<NavbarContentTheme>(
-  'FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN',
+  'FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN'
 );
 
 export class NavbarContentThemeService implements FlowbiteThemeService<NavbarContentProperties> {

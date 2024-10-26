@@ -2,7 +2,11 @@ import type { DeepPartial } from '../../common';
 import { BARS_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
-import type { SidebarToggleClass, SidebarToggleSizes, SidebarToggleTheme } from './sidebar-toggle.theme';
+import type {
+  SidebarToggleClass,
+  SidebarToggleSizes,
+  SidebarToggleTheme,
+} from './sidebar-toggle.theme';
 import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
 import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
@@ -45,7 +49,7 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'tabs',
-      this.domSanitizer.bypassSecurityTrustHtml(BARS_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(BARS_SVG_ICON)
     );
   }
   //#endregion

@@ -24,16 +24,10 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
   imports: [NgClass, IconComponent],
   selector: 'flowbite-dropdown',
   template: `
-    <button
-      type="button"
-      [ngClass]="contentClasses().dropdownClass"
-      (click)="toggle()"
-      #button>
+    <button type="button" [ngClass]="contentClasses().dropdownClass" (click)="toggle()" #button>
       <span [ngClass]="contentClasses().spanClass">
         {{ label() }}
-        <flowbite-icon
-          svgIcon="flowbite-angular:chevron-down"
-          class="ml-2 h-4 w-4" />
+        <flowbite-icon svgIcon="flowbite-angular:chevron-down" class="ml-2 h-4 w-4" />
       </span>
     </button>
     <div
@@ -83,7 +77,7 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-down',
-      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON)
     );
   }
 

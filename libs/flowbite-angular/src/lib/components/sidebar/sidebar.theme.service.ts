@@ -5,7 +5,9 @@ import type { SidebarClass, SidebarProperties, SidebarTheme } from './sidebar.th
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_SIDEBAR_THEME_TOKEN = new InjectionToken<SidebarTheme>('FLOWBITE_SIDEBAR_THEME_TOKEN');
+export const FLOWBITE_SIDEBAR_THEME_TOKEN = new InjectionToken<SidebarTheme>(
+  'FLOWBITE_SIDEBAR_THEME_TOKEN'
+);
 
 export class SidebarThemeService implements FlowbiteThemeService<SidebarProperties> {
   private readonly baseTheme = inject(FLOWBITE_SIDEBAR_THEME_TOKEN);

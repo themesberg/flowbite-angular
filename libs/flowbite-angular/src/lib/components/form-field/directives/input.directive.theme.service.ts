@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../../services';
 import { mergeTheme } from '../../../utils/theme/merge-theme';
-import type { InputDirectiveBaseTheme, InputDirectiveClass, InputDirectiveProperties } from './input.directive.theme';
+import type {
+  InputDirectiveBaseTheme,
+  InputDirectiveClass,
+  InputDirectiveProperties,
+} from './input.directive.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN = new InjectionToken<InputDirectiveBaseTheme>(
-  'FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN',
+  'FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN'
 );
 
 export class InputDirectiveThemeService implements FlowbiteThemeService<InputDirectiveProperties> {
@@ -28,14 +32,22 @@ export class InputDirectiveThemeService implements FlowbiteThemeService<InputDir
           !properties.validate &&
           properties.disabled === 'disabled' &&
           theme.floatingLabel[properties.floatingLabelType].default,
-        properties.floatingLabelType && theme.floatingLabel[properties.floatingLabelType].size[properties.size],
+        properties.floatingLabelType &&
+          theme.floatingLabel[properties.floatingLabelType].size[properties.size],
 
         !properties.floatingLabelType && theme.base,
-        !properties.floatingLabelType && properties.validate && theme.validation[properties.validate],
-        !properties.floatingLabelType && !properties.validate && theme.disabled[properties.disabled],
-        !properties.floatingLabelType && !properties.validate && properties.disabled === 'disabled' && theme.default,
+        !properties.floatingLabelType &&
+          properties.validate &&
+          theme.validation[properties.validate],
+        !properties.floatingLabelType &&
+          !properties.validate &&
+          theme.disabled[properties.disabled],
+        !properties.floatingLabelType &&
+          !properties.validate &&
+          properties.disabled === 'disabled' &&
+          theme.default,
         !properties.floatingLabelType && properties.prefix && theme.prefix?.[properties.prefix],
-        !properties.floatingLabelType && theme.size[properties.size],
+        !properties.floatingLabelType && theme.size[properties.size]
       ),
     };
 

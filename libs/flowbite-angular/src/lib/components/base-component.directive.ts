@@ -26,7 +26,7 @@ export abstract class BaseComponent<TClass extends FlowbiteClass> implements OnI
       () => {
         this.flowbiteId.set(generateId());
       },
-      { injector: this.injector },
+      { injector: this.injector }
     );
   }
 

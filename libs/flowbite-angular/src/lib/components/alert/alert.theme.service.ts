@@ -5,7 +5,9 @@ import type { AlertClass, AlertProperties, AlertTheme } from './alert.theme';
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_ALERT_THEME_TOKEN = new InjectionToken<AlertTheme>('FLOWBITE_ALERT_THEME_TOKEN');
+export const FLOWBITE_ALERT_THEME_TOKEN = new InjectionToken<AlertTheme>(
+  'FLOWBITE_ALERT_THEME_TOKEN'
+);
 
 export class AlertThemeService implements FlowbiteThemeService<AlertProperties> {
   private readonly baseTheme = inject(FLOWBITE_ALERT_THEME_TOKEN);
@@ -18,7 +20,7 @@ export class AlertThemeService implements FlowbiteThemeService<AlertProperties> 
         theme.root.base,
         theme.root.color[properties.color],
         theme.root.hasBorder[properties.hasBorder],
-        theme.root.hasBorderAccent[properties.hasBorderAccent],
+        theme.root.hasBorderAccent[properties.hasBorderAccent]
       ),
       closeButtonClass: twMerge(theme.closeButton.base, theme.closeButton.color[properties.color]),
     };

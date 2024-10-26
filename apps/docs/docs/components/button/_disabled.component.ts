@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
   imports: [ButtonComponent],
   template: `
     <flowbite-button [isDisabled]="true">Disabled button</flowbite-button>
-    <flowbite-button
-      color="blue"
-      [isDisabled]="true">
-      Disabled button
-    </flowbite-button>
+    <flowbite-button color="blue" [isDisabled]="true"> Disabled button </flowbite-button>
   `,
 })
 export class FlowbiteDisabledComponent {}
