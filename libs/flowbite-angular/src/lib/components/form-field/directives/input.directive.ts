@@ -14,7 +14,9 @@ import { Directive, inject, input, signal } from '@angular/core';
   },
 })
 export class InputDirective extends BaseInputDirective {
-  protected override contentClasses = signal<properties.InputDirectiveClass>(properties.inputDirectiveClassInstance);
+  protected override contentClasses = signal<properties.InputDirectiveClass>(
+    properties.inputDirectiveClassInstance
+  );
 
   protected readonly themeService = inject(InputDirectiveThemeService);
 

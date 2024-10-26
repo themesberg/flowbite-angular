@@ -14,11 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'flowbite-navbar-toggle',
   standalone: true,
   imports: [CommonModule, IconComponent],
-  template: `
-    <flowbite-icon
-      svgIcon="flowbite-angular:bars"
-      class="w-5 h-5" />
-  `,
+  template: ` <flowbite-icon svgIcon="flowbite-angular:bars" class="w-5 h-5" /> `,
   host: {
     '(click)': 'onClick()',
   },
@@ -44,7 +40,7 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'bars',
-      this.domSanitizer.bypassSecurityTrustHtml(BARS_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(BARS_SVG_ICON)
     );
   }
   //#endregion

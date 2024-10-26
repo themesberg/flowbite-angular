@@ -10,10 +10,12 @@ import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN = new InjectionToken<SidebarItemGroupTheme>(
-  'FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN',
+  'FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN'
 );
 
-export class SidebarItemGroupThemeService implements FlowbiteThemeService<SidebarItemGroupProperties> {
+export class SidebarItemGroupThemeService
+  implements FlowbiteThemeService<SidebarItemGroupProperties>
+{
   private readonly baseTheme = inject(FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN);
 
   public getClasses(properties: SidebarItemGroupProperties): SidebarItemGroupClass {

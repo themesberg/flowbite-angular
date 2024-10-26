@@ -55,7 +55,7 @@ export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> 
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-down',
-      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON)
     );
   }
   //#endregion

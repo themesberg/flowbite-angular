@@ -49,7 +49,7 @@ export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> 
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-right',
-      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_RIGHT_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_RIGHT_SVG_ICON)
     );
   }
   //#endregion

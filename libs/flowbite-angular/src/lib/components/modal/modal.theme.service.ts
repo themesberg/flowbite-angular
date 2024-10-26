@@ -5,7 +5,9 @@ import type { ModalClass, ModalProperties, ModalTheme } from './modal.theme';
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_MODAL_THEME_TOKEN = new InjectionToken<ModalTheme>('FLOWBITE_MODAL_THEME_TOKEN');
+export const FLOWBITE_MODAL_THEME_TOKEN = new InjectionToken<ModalTheme>(
+  'FLOWBITE_MODAL_THEME_TOKEN'
+);
 
 export class ModalThemeService implements FlowbiteThemeService<ModalProperties> {
   private readonly baseTheme = inject(FLOWBITE_MODAL_THEME_TOKEN);

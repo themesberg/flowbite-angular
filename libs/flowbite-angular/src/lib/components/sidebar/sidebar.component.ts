@@ -3,7 +3,12 @@ import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
 import { BaseComponent } from '../base-component.directive';
 import { SidebarMenuComponent } from './sidebar-menu.component';
 import { SidebarPageContentComponent } from './sidebar-page-content.component';
-import type { SidebarClass, SidebarColors, SidebarDisplayMode, SidebarTheme } from './sidebar.theme';
+import type {
+  SidebarClass,
+  SidebarColors,
+  SidebarDisplayMode,
+  SidebarTheme,
+} from './sidebar.theme';
 import { SidebarThemeService } from './sidebar.theme.service';
 
 import { NgClass } from '@angular/common';

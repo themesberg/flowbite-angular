@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils';
-import type { SidebarMenuClass, SidebarMenuProperties, SidebarMenuTheme } from './sidebar-menu.theme';
+import type {
+  SidebarMenuClass,
+  SidebarMenuProperties,
+  SidebarMenuTheme,
+} from './sidebar-menu.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_SIDEBAR_MENU_THEME_TOKEN = new InjectionToken<SidebarMenuTheme>(
-  'FLOWBITE_SIDEBAR_MENU_THEME_TOKEN',
+  'FLOWBITE_SIDEBAR_MENU_THEME_TOKEN'
 );
 
 export class SidebarMenuThemeService implements FlowbiteThemeService<SidebarMenuProperties> {
@@ -20,7 +24,7 @@ export class SidebarMenuThemeService implements FlowbiteThemeService<SidebarMenu
         theme.root.base,
         theme.root.isOpen[properties.isOpen],
         properties.isOpen === 'enabled' && theme.root.displayMode[properties.displayMode],
-        theme.root.color[properties.color],
+        theme.root.color[properties.color]
       ),
     };
 

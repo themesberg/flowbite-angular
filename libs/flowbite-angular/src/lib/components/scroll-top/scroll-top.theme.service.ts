@@ -5,7 +5,9 @@ import type { ScrollTopClass, ScrollTopProperties, ScrollTopTheme } from './scro
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_SCROLL_TOP_THEME_TOKEN = new InjectionToken<ScrollTopTheme>('FLOWBITE_SCROLL_TOP_THEME_TOKEN');
+export const FLOWBITE_SCROLL_TOP_THEME_TOKEN = new InjectionToken<ScrollTopTheme>(
+  'FLOWBITE_SCROLL_TOP_THEME_TOKEN'
+);
 
 export class ScrollTopThemeService implements FlowbiteThemeService<ScrollTopProperties> {
   private readonly baseTheme = inject(FLOWBITE_SCROLL_TOP_THEME_TOKEN);
@@ -14,7 +16,11 @@ export class ScrollTopThemeService implements FlowbiteThemeService<ScrollTopProp
     const theme: ScrollTopTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: ScrollTopClass = {
-      rootClass: twMerge(theme.root.base, theme.root.color[properties.color], theme.root.position[properties.position]),
+      rootClass: twMerge(
+        theme.root.base,
+        theme.root.color[properties.color],
+        theme.root.position[properties.position]
+      ),
     };
 
     return output;

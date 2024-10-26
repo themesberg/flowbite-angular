@@ -5,7 +5,9 @@ import type { indicatorClass, IndicatorProperties, IndicatorTheme } from './indi
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_INDICATOR_THEME_TOKEN = new InjectionToken<IndicatorTheme>('FLOWBITE_INDICATOR_THEME_TOKEN');
+export const FLOWBITE_INDICATOR_THEME_TOKEN = new InjectionToken<IndicatorTheme>(
+  'FLOWBITE_INDICATOR_THEME_TOKEN'
+);
 
 export class IndicatorThemeService implements FlowbiteThemeService<IndicatorProperties> {
   private readonly baseTheme = inject(FLOWBITE_INDICATOR_THEME_TOKEN);
@@ -19,12 +21,14 @@ export class IndicatorThemeService implements FlowbiteThemeService<IndicatorProp
         theme.root.hasBorder[properties.hasBorder],
         theme.root.color[properties.color],
         theme.root.isDisabled[properties.isDisabled],
-        properties.placement && properties.hasOffset == 'enabled' && theme.root.hasOffset[properties.placement],
+        properties.placement &&
+          properties.hasOffset == 'enabled' &&
+          theme.root.hasOffset[properties.placement],
         theme.root.isOutline[properties.isOutline],
         theme.root.isPill[properties.isPill],
         properties.placement && 'absolute ' + theme.root.placement[properties.placement],
         theme.root.isRounded[properties.isRounded],
-        theme.root.size[properties.size],
+        theme.root.size[properties.size]
       ),
     };
 

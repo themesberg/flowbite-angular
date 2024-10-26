@@ -10,10 +10,12 @@ import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN = new InjectionToken<NavbarIconButtonTheme>(
-  'FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN',
+  'FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN'
 );
 
-export class NavbarIconButtonThemeService implements FlowbiteThemeService<NavbarIconButtonProperties> {
+export class NavbarIconButtonThemeService
+  implements FlowbiteThemeService<NavbarIconButtonProperties>
+{
   private readonly baseTheme = inject(FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN);
 
   public getClasses(properties: NavbarIconButtonProperties): NavbarIconButtonClass {

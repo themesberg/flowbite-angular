@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../services';
 import { mergeTheme } from '../../utils/theme/merge-theme';
-import type { BreadcrumbItemClass, BreadcrumbItemProperties, BreadcrumbItemTheme } from './breadcrumb-item.theme';
+import type {
+  BreadcrumbItemClass,
+  BreadcrumbItemProperties,
+  BreadcrumbItemTheme,
+} from './breadcrumb-item.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN = new InjectionToken<BreadcrumbItemTheme>(
-  'FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN',
+  'FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN'
 );
 
 export class BreadcrumbItemThemeService implements FlowbiteThemeService<BreadcrumbItemProperties> {

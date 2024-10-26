@@ -16,12 +16,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [NgIf, NgClass, IconComponent],
   selector: 'flowbite-dark-theme-toggle',
   template: `
-    <flowbite-icon
-      svgIcon="flowbite-angular:moon"
-      class="h-5 w-5 block dark:hidden" />
-    <flowbite-icon
-      svgIcon="flowbite-angular:sun"
-      class="h-5 w-5 hidden dark:block" />
+    <flowbite-icon svgIcon="flowbite-angular:moon" class="h-5 w-5 block dark:hidden" />
+    <flowbite-icon svgIcon="flowbite-angular:sun" class="h-5 w-5 hidden dark:block" />
   `,
   host: {
     '(click)': 'onClick()',
@@ -30,7 +26,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass> {
   public readonly themeService = inject(DarkThemeToggleThemeService);
   public readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
-    GlobalSignalStoreService<ThemeState>,
+    GlobalSignalStoreService<ThemeState>
   );
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
@@ -71,27 +67,28 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
               ? document.documentElement.classList.add('dark')
               : document.documentElement.classList.remove('dark');
           },
-          { injector: this.injector },
+          { injector: this.injector }
         );
       },
-      { injector: this.injector },
+      { injector: this.injector }
     );
 
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'sun',
-      this.domSanitizer.bypassSecurityTrustHtml(SUN_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(SUN_SVG_ICON)
     );
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'moon',
-      this.domSanitizer.bypassSecurityTrustHtml(MOON_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(MOON_SVG_ICON)
     );
   }
   //#endregion
 
   public onClick() {
-    if (this.themeStateService.select('theme')() === 'light') this.themeStateService.set('theme', 'dark');
+    if (this.themeStateService.select('theme')() === 'light')
+      this.themeStateService.set('theme', 'dark');
     else this.themeStateService.set('theme', 'light');
   }
 }

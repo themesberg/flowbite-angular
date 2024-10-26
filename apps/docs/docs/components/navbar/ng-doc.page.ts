@@ -1,6 +1,6 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './_default.component';
 import { FlowbiteBrandComponent } from './_brand.component';
+import { FlowbiteDefaultComponent } from './_default.component';
 import { FlowbiteDropdownComponent } from './_dropdown.component';
 import { FlowbiteResponsiveComponent } from './_responsive.component';
 

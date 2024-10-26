@@ -18,9 +18,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [NgClass, NgIf, IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
-    <span
-      [class]="contentClasses().spanClass"
-      (click)="onSpanClick()">
+    <span [class]="contentClasses().spanClass" (click)="onSpanClick()">
       <h4>{{ title() }}</h4>
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"
@@ -30,7 +28,10 @@ import { DomSanitizer } from '@angular/platform-browser';
     <ng-content *ngIf="isOpen()" />
   `,
 })
-export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupClass> implements OnInit {
+export class SidebarItemGroupComponent
+  extends BaseComponent<SidebarItemGroupClass>
+  implements OnInit
+{
   public readonly themeService = inject(SidebarItemGroupThemeService);
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
@@ -39,7 +40,7 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
 
   //#region properties
   public isOpen = model<boolean>(
-    this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive?.isActive() ?? false),
+    this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive?.isActive() ?? false)
   );
   public color = model<keyof SidebarColors>(this.sidebarMenuComponent.color());
   public title = model.required<string>();
@@ -64,7 +65,7 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-down',
-      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON),
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON)
     );
   }
   //#endregion

@@ -20,7 +20,7 @@ export abstract class BaseInputDirective implements OnInit {
       () => {
         this.fetchClass();
       },
-      { injector: this.injector, allowSignalWrites: true },
+      { injector: this.injector, allowSignalWrites: true }
     );
   }
 

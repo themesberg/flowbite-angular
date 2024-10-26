@@ -11,7 +11,7 @@ export declare interface TrustedTypePolicyFactory {
     policyName: string,
     policyOptions: {
       createHTML?: (input: string) => string;
-    },
+    }
   ): TrustedTypePolicy;
 }
 

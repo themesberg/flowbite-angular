@@ -5,7 +5,9 @@ import type { NavbarClass, NavbarProperties, NavbarTheme } from './navbar.theme'
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-export const FLOWBITE_NAVBAR_THEME_TOKEN = new InjectionToken<NavbarTheme>('FLOWBITE_NAVBAR_THEME_TOKEN');
+export const FLOWBITE_NAVBAR_THEME_TOKEN = new InjectionToken<NavbarTheme>(
+  'FLOWBITE_NAVBAR_THEME_TOKEN'
+);
 
 export class NavbarThemeService implements FlowbiteThemeService<NavbarProperties> {
   private readonly baseTheme = inject(FLOWBITE_NAVBAR_THEME_TOKEN);
@@ -19,7 +21,7 @@ export class NavbarThemeService implements FlowbiteThemeService<NavbarProperties
         theme.root.color['gray'],
         theme.root.isRounded[properties.isRounded],
         theme.root.hasBorder[properties.hasBorder],
-        theme.root.isFixed[properties.isFixed],
+        theme.root.isFixed[properties.isFixed]
       ),
     };
 

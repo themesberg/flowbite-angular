@@ -1,12 +1,16 @@
 import type { FlowbiteThemeService } from '../../../services';
 import { mergeTheme } from '../../../utils/theme/merge-theme';
-import type { LabelDirectiveBaseTheme, LabelDirectiveClass, LabelDirectiveProperties } from './label.directive.theme';
+import type {
+  LabelDirectiveBaseTheme,
+  LabelDirectiveClass,
+  LabelDirectiveProperties,
+} from './label.directive.theme';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN = new InjectionToken<LabelDirectiveBaseTheme>(
-  'FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN',
+  'FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN'
 );
 
 export class LabelDirectiveThemeService implements FlowbiteThemeService<LabelDirectiveProperties> {
@@ -26,8 +30,10 @@ export class LabelDirectiveThemeService implements FlowbiteThemeService<LabelDir
           theme.floatingLabel[properties.floatingLabelType].default,
 
         !properties.floatingLabelType && theme.base,
-        !properties.floatingLabelType && properties.validate && theme.validation[properties.validate],
-        !properties.floatingLabelType && !properties.validate && theme.default,
+        !properties.floatingLabelType &&
+          properties.validate &&
+          theme.validation[properties.validate],
+        !properties.floatingLabelType && !properties.validate && theme.default
       ),
     };
 
