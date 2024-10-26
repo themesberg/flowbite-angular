@@ -1,6 +1,4 @@
-import type { DeepPartial } from '../../common';
-import { GlobalSignalStoreService } from '../../services';
-import type { ThemeState } from '../../services/state/theme.state';
+import type { DeepPartial, FlowbiteTheme } from '../../common';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from '../../utils/icon.list';
 import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
@@ -8,7 +6,7 @@ import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-to
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import { NgClass, NgIf } from '@angular/common';
-import { afterNextRender, Component, effect, inject, model } from '@angular/core';
+import { afterNextRender, Component, inject, model } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -25,9 +23,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass> {
   public readonly themeService = inject(DarkThemeToggleThemeService);
-  public readonly themeStateService = inject<GlobalSignalStoreService<ThemeState>>(
-    GlobalSignalStoreService<ThemeState>
-  );
   public readonly iconRegistry = inject(IconRegistry);
   public readonly domSanitizer = inject(DomSanitizer);
 
@@ -45,30 +40,7 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
   public override init(): void {
     afterNextRender(
       () => {
-        const localStorageTheme = localStorage.getItem('color-theme');
-
-        if (
-          localStorageTheme === 'dark' ||
-          (!localStorageTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-          this.themeStateService.set('theme', 'dark');
-          document.documentElement.classList.add('dark');
-        } else {
-          this.themeStateService.set('theme', 'light');
-          document.documentElement.classList.remove('dark');
-        }
-
-        effect(
-          () => {
-            const theme = this.themeStateService.select('theme')();
-
-            localStorage.setItem('color-theme', theme);
-            theme === 'dark'
-              ? document.documentElement.classList.add('dark')
-              : document.documentElement.classList.remove('dark');
-          },
-          { injector: this.injector }
-        );
+        this.toggleTheme(this.getTheme());
       },
       { injector: this.injector }
     );
@@ -87,8 +59,29 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
   //#endregion
 
   public onClick() {
-    if (this.themeStateService.select('theme')() === 'light')
-      this.themeStateService.set('theme', 'dark');
-    else this.themeStateService.set('theme', 'light');
+    this.toggleTheme();
+  }
+
+  private getTheme(): FlowbiteTheme {
+    return localStorage.getItem('color-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  private toggleTheme(theme?: FlowbiteTheme): void {
+    if (!theme) {
+      const tmpTheme = this.getTheme();
+
+      if (tmpTheme === 'dark') theme = 'light';
+      else theme = 'dark';
+    }
+
+    this.setTheme(theme);
+  }
+
+  private setTheme(theme: FlowbiteTheme): void {
+    localStorage.setItem('color-theme', theme);
+
+    theme === 'dark'
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark');
   }
 }

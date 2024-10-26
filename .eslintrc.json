@@ -11,7 +11,12 @@
     {
       "files": ["*.ts"],
       "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ],
 
         // ESLint
         "no-extra-semi": "off",
