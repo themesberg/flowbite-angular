@@ -25,8 +25,7 @@
     "lib:release": "nx run flowbite-angular:semantic-release",
     "lib:test": "nx run flowbite-angular:test",
     "prepare": "husky install",
-    "prettier": "nx format:check --base=HEAD",
-    "release": "standard-version"
+    "prettier": "nx format:check --base=HEAD"
   },
   "dependencies": {
     "@angular-eslint/template-parser": "18.0.0",
