@@ -3,5 +3,6 @@
   "dest": "../../dist/libs/flowbite-angular",
   "lib": {
     "entryFile": "common/index.ts"
-  }
+  },
+  "assets": ["tailwind.config.js", "README.md", "LICENSE"]
 }
