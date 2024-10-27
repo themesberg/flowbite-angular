@@ -1,10 +1,11 @@
-import type { DeepPartial } from '../../common';
-import { BaseComponent } from '../base-component.directive';
 import { NavbarContentComponent } from './navbar-content.component';
 import type { NavbarIconButtonClass, NavbarIconButtonTheme } from './navbar-icon-button.theme';
 import { NavbarIconButtonThemeService } from './navbar-icon-button.theme.service';
 import { NavbarComponent } from './navbar.component';
 import type { NavbarColors } from './navbar.theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import { Component, inject, model } from '@angular/core';
 

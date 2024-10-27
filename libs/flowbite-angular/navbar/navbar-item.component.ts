@@ -1,11 +1,12 @@
-import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
-import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
-import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
-import { BaseComponent } from '../base-component.directive';
 import { NavbarContentComponent } from './navbar-content.component';
 import type { NavbarItemClass, NavbarItemTheme } from './navbar-item.theme';
 import { NavbarItemThemeService } from './navbar-item.theme.service';
 import type { NavbarColors } from './navbar.theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
+import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

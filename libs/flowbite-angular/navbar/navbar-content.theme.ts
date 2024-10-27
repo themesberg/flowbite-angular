@@ -1,5 +1,5 @@
-import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from '../../common';
-import { createTheme } from '../../utils/theme/create-theme';
+import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 export interface NavbarContentProperties {
   isOpen: keyof FlowbiteBoolean;

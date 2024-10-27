@@ -1,7 +1,7 @@
-import type { DeepPartial } from '../../common';
-import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
-import { createTheme } from '../../utils/theme/create-theme';
 import type { NavbarColors } from './navbar.theme';
+
+import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 export interface NabvarItemProperties {
   color: keyof NavbarColors;
