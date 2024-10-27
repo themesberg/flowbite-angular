@@ -2,9 +2,10 @@
  * Thanks to Angular Material for Icon part of this library : https://github.com/angular/components
  */
 
-import type { FlowbiteClass } from '../../common';
-import { BaseComponent } from '../base-component.directive';
 import { IconRegistry } from './icon-registry';
+
+import type { FlowbiteClass } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import type { OnInit } from '@angular/core';
 import { Component, effect, ElementRef, inject, model } from '@angular/core';
