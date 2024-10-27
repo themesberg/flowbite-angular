@@ -1,3 +1,9 @@
+import { darkThemeToggleTheme } from '../dark-theme-toggle/dark-theme-toggle.theme';
+import {
+  DarkThemeToggleThemeService,
+  FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
+} from '../dark-theme-toggle/dark-theme-toggle.theme.service';
+
 import {
   accordionContentTheme,
   AccordionContentThemeService,
@@ -7,20 +13,27 @@ import {
   AccordionThemeService,
   accordionTitleTheme,
   AccordionTitleThemeService,
-  addonDirectiveTheme,
-  AddonDirectiveThemeService,
-  alertTheme,
-  AlertThemeService,
-  badgeTheme,
-  BadgeThemeService,
+  FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN,
+  FLOWBITE_ACCORDION_PANEL_THEME_TOKEN,
+  FLOWBITE_ACCORDION_THEME_TOKEN,
+  FLOWBITE_ACCORDION_TITLE_THEME_TOKEN,
+} from 'flowbite-angular/accordion';
+import { alertTheme, AlertThemeService, FLOWBITE_ALERT_THEME_TOKEN } from 'flowbite-angular/alert';
+import { badgeTheme, BadgeThemeService, FLOWBITE_BADGE_THEME_TOKEN } from 'flowbite-angular/badge';
+import {
   breadcrumbItemTheme,
   BreadcrumbItemThemeService,
   breadcrumbTheme,
   BreadcrumbThemeService,
+  FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN,
+  FLOWBITE_BREADCRUMB_THEME_TOKEN,
+} from 'flowbite-angular/breadcrumb';
+import {
   buttonTheme,
   ButtonThemeService,
-  darkThemeToggleTheme,
-  DarkThemeToggleThemeService,
+  FLOWBITE_BUTTON_THEME_TOKEN,
+} from 'flowbite-angular/button';
+import {
   dropdownDividerTheme,
   DropdownDividerThemeService,
   dropdownHeaderTheme,
@@ -29,56 +42,21 @@ import {
   DropdownItemThemeService,
   dropdownTheme,
   DropdownThemeService,
-  FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN,
-  FLOWBITE_ACCORDION_PANEL_THEME_TOKEN,
-  FLOWBITE_ACCORDION_THEME_TOKEN,
-  FLOWBITE_ACCORDION_TITLE_THEME_TOKEN,
-  FLOWBITE_ALERT_THEME_TOKEN,
-  FLOWBITE_BADGE_THEME_TOKEN,
-  FLOWBITE_BREADCRUMB_ITEM_THEME_TOKEN,
-  FLOWBITE_BREADCRUMB_THEME_TOKEN,
-  FLOWBITE_BUTTON_THEME_TOKEN,
-  FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
-  FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN,
-  FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN,
-  FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN,
-  FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN,
-  FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN,
   FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN,
   FLOWBITE_DROPDOWN_HEADER_THEME_TOKEN,
   FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN,
   FLOWBITE_DROPDOWN_THEME_TOKEN,
-  FLOWBITE_FORM_FIELD_THEME_TOKEN,
+} from 'flowbite-angular/dropdown';
+import {
   FLOWBITE_INDICATOR_THEME_TOKEN,
+  indicatorTheme,
+  IndicatorThemeService,
+} from 'flowbite-angular/indicator';
+import {
   FLOWBITE_MODAL_BODY_THEME_TOKEN,
   FLOWBITE_MODAL_FOOTER_THEME_TOKEN,
   FLOWBITE_MODAL_HEADER_THEME_TOKEN,
   FLOWBITE_MODAL_THEME_TOKEN,
-  FLOWBITE_NAVBAR_BRAND_THEME_TOKEN,
-  FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
-  FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN,
-  FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
-  FLOWBITE_NAVBAR_THEME_TOKEN,
-  FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
-  FLOWBITE_SCROLL_TOP_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_MENU_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
-  formFieldTheme,
-  FormFieldThemeService,
-  helperDirectiveTheme,
-  HelperDirectiveThemeService,
-  iconDirectiveTheme,
-  IconDirectiveThemeService,
-  indicatorTheme,
-  IndicatorThemeService,
-  inputDirectiveTheme,
-  InputDirectiveThemeService,
-  labelDirectiveTheme,
-  LabelDirectiveThemeService,
   modalBodyTheme,
   ModalBodyThemeService,
   modalFooterTheme,
@@ -87,6 +65,14 @@ import {
   ModalHeaderThemeService,
   modalTheme,
   ModalThemeService,
+} from 'flowbite-angular/modal';
+import {
+  FLOWBITE_NAVBAR_BRAND_THEME_TOKEN,
+  FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
+  FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN,
+  FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
+  FLOWBITE_NAVBAR_THEME_TOKEN,
+  FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
   navbarBrandTheme,
   NavbarBrandThemeService,
   navbarContentTheme,
@@ -99,8 +85,19 @@ import {
   NavbarThemeService,
   NavbarToggleThemeService,
   navbarToogleTheme,
+} from 'flowbite-angular/navbar';
+import {
+  FLOWBITE_SCROLL_TOP_THEME_TOKEN,
   scrollTopTheme,
   ScrollTopThemeService,
+} from 'flowbite-angular/scroll-top';
+import {
+  FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_MENU_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_THEME_TOKEN,
+  FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
   sidebarItemGroupTheme,
   SidebarItemGroupThemeService,
   sidebarItemTheme,
@@ -113,7 +110,7 @@ import {
   SidebarThemeService,
   sidebarToggleTheme,
   SidebarToggleThemeService,
-} from '../components';
+} from 'flowbite-angular/sidebar';
 
 import type { EnvironmentProviders } from '@angular/core';
 import { makeEnvironmentProviders } from '@angular/core';
@@ -182,10 +179,6 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: DropdownThemeService,
       useClass: DropdownThemeService,
-    },
-    {
-      provide: FormFieldThemeService,
-      useClass: FormFieldThemeService,
     },
     {
       provide: IndicatorThemeService,
@@ -259,26 +252,6 @@ export function initFlowbite(): EnvironmentProviders {
       provide: SidebarThemeService,
       useClass: SidebarThemeService,
     },
-    {
-      provide: IconDirectiveThemeService,
-      useClass: IconDirectiveThemeService,
-    },
-    {
-      provide: AddonDirectiveThemeService,
-      useClass: AddonDirectiveThemeService,
-    },
-    {
-      provide: InputDirectiveThemeService,
-      useClass: InputDirectiveThemeService,
-    },
-    {
-      provide: LabelDirectiveThemeService,
-      useClass: LabelDirectiveThemeService,
-    },
-    {
-      provide: HelperDirectiveThemeService,
-      useClass: HelperDirectiveThemeService,
-    },
   ]);
 
   const themeProviders = makeEnvironmentProviders([
@@ -334,10 +307,6 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_DROPDOWN_THEME_TOKEN,
       useValue: dropdownTheme,
-    },
-    {
-      provide: FLOWBITE_FORM_FIELD_THEME_TOKEN,
-      useValue: formFieldTheme,
     },
     {
       provide: FLOWBITE_INDICATOR_THEME_TOKEN,
@@ -410,26 +379,6 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_SIDEBAR_THEME_TOKEN,
       useValue: sidebarTheme,
-    },
-    {
-      provide: FLOWBITE_DIRECTIVE_ADDON_THEME_TOKEN,
-      useValue: addonDirectiveTheme,
-    },
-    {
-      provide: FLOWBITE_DIRECTIVE_HELPER_THEME_TOKEN,
-      useValue: helperDirectiveTheme,
-    },
-    {
-      provide: FLOWBITE_DIRECTIVE_LABEL_THEME_TOKEN,
-      useValue: labelDirectiveTheme,
-    },
-    {
-      provide: FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN,
-      useValue: iconDirectiveTheme,
-    },
-    {
-      provide: FLOWBITE_DIRECTIVE_INPUT_THEME_TOKEN,
-      useValue: inputDirectiveTheme,
     },
   ]);
 

@@ -1,5 +1,6 @@
-import type { FlowbiteClass } from '../common';
-import { generateId, Guid } from '../utils/id.generator';
+import type { FlowbiteClass } from './type-definitions/flowbite.class';
+
+import { generateId, Guid } from 'flowbite-angular/utils';
 
 import type { OnInit } from '@angular/core';
 import { afterNextRender, computed, Directive, inject, Injector, signal } from '@angular/core';
