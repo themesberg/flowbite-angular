@@ -1,4 +1,4 @@
-import type { FlowbiteBoolean } from '../common/type-definitions/flowbite.boolean';
+import type { FlowbiteBoolean } from 'flowbite-angular';
 
 /**
  * This function cast a boolean to the internal flowbute-angular boolean type.
