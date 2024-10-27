@@ -3,7 +3,7 @@ import {
   AccordionContentComponent,
   AccordionPanelComponent,
   AccordionTitleComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/accordion';
 
 import { Component } from '@angular/core';
 

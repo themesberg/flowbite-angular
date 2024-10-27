@@ -1,4 +1,8 @@
-import { NavbarComponent, NavbarContentComponent, NavbarItemComponent } from 'flowbite-angular';
+import {
+  NavbarComponent,
+  NavbarContentComponent,
+  NavbarItemComponent,
+} from 'flowbite-angular/navbar';
 
 import { Component } from '@angular/core';
 

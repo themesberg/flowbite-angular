@@ -1,4 +1,6 @@
-import { ButtonComponent, IconComponent, IndicatorComponent } from 'flowbite-angular';
+import { ButtonComponent } from 'flowbite-angular/button';
+import { IconComponent } from 'flowbite-angular/icon';
+import { IndicatorComponent } from 'flowbite-angular/indicator';
 
 import { Component } from '@angular/core';
 

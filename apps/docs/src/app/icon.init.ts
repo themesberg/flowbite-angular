@@ -1,6 +1,6 @@
 import * as iconListJson from '../assets/icons/icon.list.json';
 
-import type { IconRegistry } from 'flowbite-angular';
+import type { IconRegistry } from 'flowbite-angular/icon';
 
 import type { DomSanitizer } from '@angular/platform-browser';
 

@@ -2,7 +2,7 @@ import {
   DropdownComponent,
   DropdownDividerComponent,
   DropdownItemComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/dropdown';
 
 import { Component } from '@angular/core';
 

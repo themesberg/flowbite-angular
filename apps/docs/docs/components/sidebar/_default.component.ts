@@ -3,7 +3,7 @@ import {
   SidebarItemComponent,
   SidebarMenuComponent,
   SidebarPageContentComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/sidebar';
 
 import { Component } from '@angular/core';
 
