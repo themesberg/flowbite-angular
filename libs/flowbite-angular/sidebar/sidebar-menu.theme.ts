@@ -1,6 +1,7 @@
-import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from '../../common';
-import { createTheme } from '../../utils';
 import type { SidebarColors, SidebarDisplayMode } from './sidebar.theme';
+
+import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 export interface SidebarMenuProperties {
   isOpen: keyof FlowbiteBoolean;

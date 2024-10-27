@@ -1,6 +1,3 @@
-import type { DeepPartial } from '../../common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base-component.directive';
 import { SidebarMenuComponent } from './sidebar-menu.component';
 import { SidebarPageContentComponent } from './sidebar-page-content.component';
 import type {
@@ -10,6 +7,10 @@ import type {
   SidebarTheme,
 } from './sidebar.theme';
 import { SidebarThemeService } from './sidebar.theme.service';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';

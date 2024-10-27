@@ -1,14 +1,15 @@
-import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
-import { FlowbiteRouterLinkActiveDirective } from '../../directives/flowbite-router-link-active.directive';
-import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
-import { SanitizeHtmlPipe } from '../../pipes';
-import { BadgeComponent } from '../badge';
-import { BaseComponent } from '../base-component.directive';
 import { SidebarItemGroupComponent } from './sidebar-item-group.component';
 import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
 import { SidebarMenuComponent } from './sidebar-menu.component';
 import type { SidebarColors } from './sidebar.theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { BadgeComponent } from 'flowbite-angular/badge';
+import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
+import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
+import { SanitizeHtmlPipe } from 'flowbite-angular/sanitize-html';
 
 import { NgClass, NgIf } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

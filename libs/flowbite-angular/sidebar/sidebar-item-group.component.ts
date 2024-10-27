@@ -1,12 +1,13 @@
-import type { DeepPartial } from '../../common';
-import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
 import { SidebarItemComponent } from './sidebar-item.component';
 import { SidebarMenuComponent } from './sidebar-menu.component';
 import type { SidebarColors } from './sidebar.theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';

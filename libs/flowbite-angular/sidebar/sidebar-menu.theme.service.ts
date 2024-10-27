@@ -1,10 +1,11 @@
-import type { FlowbiteThemeService } from '../../services';
-import { mergeTheme } from '../../utils';
 import type {
   SidebarMenuClass,
   SidebarMenuProperties,
   SidebarMenuTheme,
 } from './sidebar-menu.theme';
+
+import type { FlowbiteThemeService } from 'flowbite-angular';
+import { mergeTheme } from 'flowbite-angular/utils';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
