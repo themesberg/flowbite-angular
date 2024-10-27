@@ -1,9 +1,10 @@
-import type { DeepPartial, FlowbiteTheme } from '../../common';
-import { MOON_SVG_ICON, SUN_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-toggle.theme';
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
+
+import type { DeepPartial, FlowbiteTheme } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { MOON_SVG_ICON, SUN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
 import { afterNextRender, Component, inject, model } from '@angular/core';
