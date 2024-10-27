@@ -1,6 +1,3 @@
-import type { DeepPartial } from '../../common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base-component.directive';
 import type {
   indicatorClass,
   IndicatorColors,
@@ -9,6 +6,10 @@ import type {
   IndicatorTheme,
 } from './indicators.theme';
 import { IndicatorThemeService } from './indicators.theme.service';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';
