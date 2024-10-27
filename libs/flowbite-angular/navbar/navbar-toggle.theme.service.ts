@@ -1,10 +1,11 @@
-import type { FlowbiteThemeService } from '../../services';
-import { mergeTheme } from '../../utils/theme/merge-theme';
 import type {
   NavbarToggleClass,
   NavbarToggleProperties,
   NavbarToggleTheme,
 } from './navbar-toggle.theme';
+
+import type { FlowbiteThemeService } from 'flowbite-angular';
+import { mergeTheme } from 'flowbite-angular/utils';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';

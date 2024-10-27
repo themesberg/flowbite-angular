@@ -1,11 +1,12 @@
-import type { DeepPartial } from '../../common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base-component.directive';
 import { NavbarBrandComponent } from './navbar-brand.component';
 import { NavbarContentComponent } from './navbar-content.component';
 import { NavbarToggleComponent } from './navbar-toggle.component';
 import type { NavbarClass, NavbarColors, NavbarTheme } from './navbar.theme';
 import { NavbarThemeService } from './navbar.theme.service';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import { Component, contentChild, inject, model, untracked } from '@angular/core';

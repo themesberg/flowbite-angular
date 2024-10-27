@@ -1,8 +1,9 @@
-import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
-import { BaseComponent } from '../base-component.directive';
 import type { NavbarBrandClass, NavbarBrandTheme } from './navbar-brand.theme';
 import { NavbarBrandThemeService } from './navbar-brand.theme.service';
 import { NavbarComponent } from './navbar.component';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';
