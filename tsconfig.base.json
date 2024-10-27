@@ -19,7 +19,24 @@
     "paths": {
       "@ng-doc/generated": ["ng-doc/docs/index.ts"],
       "@ng-doc/generated/*": ["ng-doc/docs/*"],
-      "flowbite-angular": ["libs/flowbite-angular/src/index.ts"]
+      "flowbite-angular": ["libs/flowbite-angular/common/index.ts"],
+      "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/index.ts"],
+      "flowbite-angular/alert": ["libs/flowbite-angular/alert/index.ts"],
+      "flowbite-angular/badge": ["libs/flowbite-angular/badge/index.ts"],
+      "flowbite-angular/breadcrumb": ["libs/flowbite-angular/breadcrumb/index.ts"],
+      "flowbite-angular/button": ["libs/flowbite-angular/button/index.ts"],
+      "flowbite-angular/dark-theme-toggle": ["libs/flowbite-angular/dark-theme-toggle/index.ts"],
+      "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/index.ts"],
+      "flowbite-angular/icon": ["libs/flowbite-angular/icon/index.ts"],
+      "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/index.ts"],
+      "flowbite-angular/modal": ["libs/flowbite-angular/modal/index.ts"],
+      "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/index.ts"],
+      "flowbite-angular/router-link": ["libs/flowbite-angular/router-link/index.ts"],
+      "flowbite-angular/router-link-active": ["libs/flowbite-angular/router-link-active/index.ts"],
+      "flowbite-angular/sanitize-html": ["libs/flowbite-angular/sanitize-html/index.ts"],
+      "flowbite-angular/scroll-top": ["libs/flowbite-angular/scroll-top/index.ts"],
+      "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/index.ts"],
+      "flowbite-angular/utils": ["libs/flowbite-angular/utils/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
