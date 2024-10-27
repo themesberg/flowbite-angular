@@ -6,8 +6,7 @@ import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { Component, contentChildren, inject, model } from '@angular/core';
 

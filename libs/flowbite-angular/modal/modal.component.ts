@@ -5,8 +5,7 @@ import type { ModalClass, ModalPositions, ModalSizes, ModalTheme } from './modal
 import { ModalThemeService } from './modal.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import type { EmbeddedViewRef, OnDestroy } from '@angular/core';

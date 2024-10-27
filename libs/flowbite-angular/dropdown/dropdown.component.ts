@@ -1,4 +1,3 @@
-import { IconComponent, IconRegistry } from '../icon';
 import { DropdownDividerComponent } from './dropdown-divider.component';
 import { DropdownHeaderComponent } from './dropdown-header.component';
 import { DropdownItemComponent } from './dropdown-item.component';
@@ -6,8 +5,9 @@ import type { DropdownClass, DropdownPositions, DropdownTheme } from './dropdown
 import { DropdownThemeService } from './dropdown.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean, CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
+import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';

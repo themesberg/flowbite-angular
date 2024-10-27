@@ -5,8 +5,7 @@ import type { NavbarClass, NavbarColors, NavbarTheme } from './navbar.theme';
 import { NavbarThemeService } from './navbar.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, contentChild, inject, model, untracked } from '@angular/core';

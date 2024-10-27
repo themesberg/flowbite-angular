@@ -1,4 +1,3 @@
-import { IconComponent, IconRegistry } from '../icon';
 import type { BreadcrumbItemClass, BreadcrumbItemTheme } from './breadcrumb-item.theme';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
 import { BreadcrumbComponent } from './breadcrumb.component';
@@ -6,6 +5,7 @@ import type { BreadcrumbColors } from './breadcrumb.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
 

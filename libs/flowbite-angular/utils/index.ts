@@ -5,7 +5,6 @@ export { isObject } from './theme/is-object';
 export { mergeTheme } from './theme/merge-theme';
 export { themeToString } from './theme/to-string';
 
-export { booleanToFlowbiteBoolean } from './boolean.util';
 export {
   BARS_SVG_ICON,
   CHEVRON_DOWN_SVG_ICON,

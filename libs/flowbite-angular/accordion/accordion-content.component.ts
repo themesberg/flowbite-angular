@@ -3,9 +3,8 @@ import { AccordionContentThemeService } from './accordion-content.theme.service'
 import { AccordionPanelComponent } from './accordion-panel.component';
 import type { AccordionColors } from './accordion.theme';
 
-import { BaseComponent } from 'flowbite-angular';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

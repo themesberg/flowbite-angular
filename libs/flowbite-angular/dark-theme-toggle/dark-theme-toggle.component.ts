@@ -1,9 +1,9 @@
-import { IconComponent, IconRegistry } from '../icon';
 import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-toggle.theme';
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
 import type { DeepPartial, FlowbiteTheme } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
