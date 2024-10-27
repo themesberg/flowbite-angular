@@ -1,7 +1,7 @@
-import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
-import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
-import { createTheme } from '../../utils/theme/create-theme';
 import type { BreadcrumbColors } from './breadcrumb.theme';
+
+import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 import type { UrlTree } from '@angular/router';
 

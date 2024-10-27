@@ -1,12 +1,13 @@
-import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
-import { FlowbiteRouterLinkDirective } from '../../directives/flowbite-router-link.directive';
-import { CHEVRON_RIGHT_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { BreadcrumbItemClass, BreadcrumbItemTheme } from './breadcrumb-item.theme';
 import { BreadcrumbItemThemeService } from './breadcrumb-item.theme.service';
 import { BreadcrumbComponent } from './breadcrumb.component';
 import type { BreadcrumbColors } from './breadcrumb.theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
+import { CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';

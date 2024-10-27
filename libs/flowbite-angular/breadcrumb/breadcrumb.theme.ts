@@ -1,5 +1,5 @@
-import type { DeepPartial, FlowbiteClass, FlowbiteColors } from '../../common';
-import { createTheme } from '../../utils/theme/create-theme';
+import type { DeepPartial, FlowbiteClass, FlowbiteColors } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 export interface BreadcrumbColors
   extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
