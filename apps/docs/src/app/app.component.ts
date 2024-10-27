@@ -1,14 +1,14 @@
+import { IconComponent } from 'flowbite-angular/icon';
 import {
-  FlowbiteRouterLinkActiveDirective,
-  FlowbiteRouterLinkDirective,
-  IconComponent,
   NavbarBrandComponent,
   NavbarComponent,
   NavbarContentComponent,
   NavbarIconButtonComponent,
   NavbarItemComponent,
   NavbarToggleComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/navbar';
+import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
+import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
 import { Location, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';

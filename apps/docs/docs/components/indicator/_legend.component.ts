@@ -1,4 +1,4 @@
-import { IndicatorComponent } from 'flowbite-angular';
+import { IndicatorComponent } from 'flowbite-angular/indicator';
 
 import { Component } from '@angular/core';
 

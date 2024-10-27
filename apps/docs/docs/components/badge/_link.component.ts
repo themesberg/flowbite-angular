@@ -1,4 +1,4 @@
-import { BadgeComponent } from 'flowbite-angular';
+import { BadgeComponent } from 'flowbite-angular/badge';
 
 import { Component } from '@angular/core';
 

@@ -1,4 +1,4 @@
-import { ButtonComponent } from 'flowbite-angular';
+import { ButtonComponent } from 'flowbite-angular/button';
 
 import { Component } from '@angular/core';
 

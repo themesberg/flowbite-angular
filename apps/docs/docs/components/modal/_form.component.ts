@@ -1,9 +1,5 @@
-import {
-  ButtonComponent,
-  ModalBodyComponent,
-  ModalComponent,
-  ModalHeaderComponent,
-} from 'flowbite-angular';
+import { ButtonComponent } from 'flowbite-angular/button';
+import { ModalBodyComponent, ModalComponent, ModalHeaderComponent } from 'flowbite-angular/modal';
 
 import { Component } from '@angular/core';
 

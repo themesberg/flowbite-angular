@@ -2,7 +2,8 @@ import { appRoutes } from './app.routes';
 import { initIcons } from './icon.init';
 import { docDemoDisplayerProcessor } from './shared/processors/doc-demo-displayer-processor/doc-demo-displayer-processor';
 
-import { IconRegistry, initFlowbite } from 'flowbite-angular';
+import { initFlowbite } from 'flowbite-angular/core';
+import { IconRegistry } from 'flowbite-angular/icon';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { APP_INITIALIZER, PLATFORM_ID, type ApplicationConfig } from '@angular/core';
