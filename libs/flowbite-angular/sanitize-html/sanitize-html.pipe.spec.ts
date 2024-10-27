@@ -1,4 +1,4 @@
-import { SanitizeHtmlPipe } from '.';
+import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 
 import { TestBed } from '@angular/core/testing';
 import { DomSanitizer } from '@angular/platform-browser';
