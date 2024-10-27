@@ -1,10 +1,12 @@
-import type { DeepPartial } from '../../common';
-import type { FlowbiteColors } from '../../common/type-definitions/colors/flowbite.colors';
-import type { FlowbiteBoolean } from '../../common/type-definitions/flowbite.boolean';
-import type { FlowbiteClass } from '../../common/type-definitions/flowbite.class';
-import type { FlowbitePositions } from '../../common/type-definitions/flowbite.positions';
-import type { FlowbiteSizes } from '../../common/type-definitions/flowbite.sizes';
-import { createTheme } from '../../utils/theme/create-theme';
+import type {
+  DeepPartial,
+  FlowbiteBoolean,
+  FlowbiteClass,
+  FlowbiteColors,
+  FlowbitePositions,
+  FlowbiteSizes,
+} from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
 export interface IndicatorColors
