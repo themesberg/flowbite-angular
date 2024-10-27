@@ -1,5 +1,3 @@
-export * from './directives';
-
 export { cloneDeep } from './theme/clone-deep';
 export { createClass } from './theme/create-class';
 export { createTheme } from './theme/create-theme';
