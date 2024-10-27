@@ -9,7 +9,6 @@ import { NgDocThemeService } from '@ng-doc/app/services/theme';
   standalone: true,
   imports: [IconComponent, ButtonComponent],
   templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css',
 })
 export class LandingComponent {
   protected readonly themeService = inject(NgDocThemeService);
