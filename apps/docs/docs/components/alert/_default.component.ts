@@ -1,4 +1,4 @@
-import { AlertComponent } from 'flowbite-angular';
+import { AlertComponent } from 'flowbite-angular/alert';
 
 import { Component } from '@angular/core';
 

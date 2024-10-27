@@ -1,4 +1,5 @@
-import { ButtonComponent, IconComponent } from 'flowbite-angular';
+import { ButtonComponent } from 'flowbite-angular/button';
+import { IconComponent } from 'flowbite-angular/icon';
 
 import { Component, inject } from '@angular/core';
 import { NgDocThemeService } from '@ng-doc/app/services/theme';
@@ -8,7 +9,6 @@ import { NgDocThemeService } from '@ng-doc/app/services/theme';
   standalone: true,
   imports: [IconComponent, ButtonComponent],
   templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css',
 })
 export class LandingComponent {
   protected readonly themeService = inject(NgDocThemeService);

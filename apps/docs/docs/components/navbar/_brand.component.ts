@@ -3,7 +3,7 @@ import {
   NavbarComponent,
   NavbarContentComponent,
   NavbarItemComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/navbar';
 
 import { Component } from '@angular/core';
 

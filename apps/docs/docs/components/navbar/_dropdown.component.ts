@@ -1,11 +1,10 @@
+import { DropdownComponent, DropdownItemComponent } from 'flowbite-angular/dropdown';
 import {
-  DropdownComponent,
-  DropdownItemComponent,
   NavbarBrandComponent,
   NavbarComponent,
   NavbarContentComponent,
   NavbarItemComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/navbar';
 
 import { Component } from '@angular/core';
 
