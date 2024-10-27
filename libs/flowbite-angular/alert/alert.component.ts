@@ -1,11 +1,11 @@
-import type { DeepPartial } from '../../common/type-definitions/flowbite.deep-partial';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { CLOSE_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { ButtonComponent } from '../button/button.component';
 import { IconComponent, IconRegistry } from '../icon';
 import type { AlertClass, AlertColors, AlertTheme } from './alert.theme';
 import { AlertThemeService } from './alert.theme.service';
+
+import { BaseComponent } from 'flowbite-angular';
+import type { DeepPartial } from 'flowbite-angular';
+import { booleanToFlowbiteBoolean, CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
