@@ -9,7 +9,13 @@ import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -37,6 +43,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   host: {
     '[attr.role]': 'alert',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertComponent extends BaseComponent<AlertClass> implements OnInit {
   public readonly themeService = inject(AlertThemeService);

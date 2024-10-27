@@ -9,7 +9,13 @@ import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-item',
@@ -19,6 +25,8 @@ import { Component, inject, model } from '@angular/core';
   host: {
     '(click)': 'onClick()',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });

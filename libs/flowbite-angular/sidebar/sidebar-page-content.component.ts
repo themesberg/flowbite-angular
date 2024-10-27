@@ -8,13 +8,21 @@ import { SidebarComponent } from './sidebar.component';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [],
   selector: 'flowbite-sidebar-page-content',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarPageContentComponent extends BaseComponent<SidebarPageContentClass> {
   public readonly themeService = inject(SidebarPageContentThemeService);

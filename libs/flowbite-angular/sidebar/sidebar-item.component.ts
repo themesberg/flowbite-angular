@@ -12,7 +12,13 @@ import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-
 import { SanitizeHtmlPipe } from 'flowbite-angular/sanitize-html';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
@@ -28,6 +34,8 @@ import { Component, inject, model } from '@angular/core';
   host: {
     '(click)': 'onClick()',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });

@@ -7,7 +7,14 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
-import { afterNextRender, Component, inject, model } from '@angular/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -21,6 +28,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   host: {
     '(click)': 'onClick()',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass> {
   public readonly themeService = inject(DarkThemeToggleThemeService);

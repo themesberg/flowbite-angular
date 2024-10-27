@@ -6,13 +6,22 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
-import { Component, contentChildren, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChildren,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-accordion',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionComponent extends BaseComponent<AccordionClass> {
   public readonly themeService = inject(AccordionThemeService);

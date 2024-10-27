@@ -11,7 +11,16 @@ import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
-import { Component, contentChildren, ElementRef, inject, model, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChildren,
+  ElementRef,
+  inject,
+  model,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import type { Placement } from '@floating-ui/dom';
 import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
@@ -44,6 +53,8 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
   host: {
     '(document:click)': 'clickout($event)',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownComponent extends BaseComponent<DropdownClass> implements AfterViewInit {
   @ViewChild('dropdown') dropdown!: ElementRef;

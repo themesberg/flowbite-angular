@@ -8,7 +8,13 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-content',
@@ -19,6 +25,8 @@ import { Component, inject, model } from '@angular/core';
       <ng-content />
     </div>
   `,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarContentComponent extends BaseComponent<NavbarContentClass> implements OnInit {
   public readonly themeService = inject(NavbarContentThemeService);

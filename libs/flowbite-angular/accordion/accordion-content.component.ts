@@ -7,7 +7,13 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
 
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
@@ -18,6 +24,8 @@ import { Component, inject, model } from '@angular/core';
       <ng-content />
     </ng-container>
   `,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionContentComponent extends BaseComponent<AccordionContentClass> {
   public readonly themeService = inject(AccordionContentThemeService);

@@ -11,7 +11,15 @@ import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, contentChildren, inject, model, untracked } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChildren,
+  inject,
+  model,
+  untracked,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -28,6 +36,8 @@ import { DomSanitizer } from '@angular/platform-browser';
     </span>
     <ng-content *ngIf="isOpen()" />
   `,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarItemGroupComponent
   extends BaseComponent<SidebarItemGroupClass>

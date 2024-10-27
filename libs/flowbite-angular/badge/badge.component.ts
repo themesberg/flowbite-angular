@@ -6,7 +6,13 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/badge/
@@ -16,6 +22,8 @@ import { Component, inject, model } from '@angular/core';
   imports: [NgClass],
   selector: 'flowbite-badge',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadgeComponent extends BaseComponent<BadgeClass> {
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });

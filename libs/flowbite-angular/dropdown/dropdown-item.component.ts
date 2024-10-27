@@ -6,13 +6,21 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [NgClass],
   selector: 'flowbite-dropdown-item',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownItemComponent extends BaseComponent<DropdownItemClass> {
   public readonly themeService = inject(DropdownItemThemeService);
