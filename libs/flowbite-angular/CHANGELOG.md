@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.3...flowbite-angular@v1.0.0-alpha.4) (2024-10-27)
+
+
+### Bug Fixes
+
+* assets while building library ([b02ae48](https://github.com/themesberg/flowbite-angular/commit/b02ae483413dadf74ed8ebd012adeacb92972b89))
+
 # [1.0.0-alpha.3](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.2...flowbite-angular@v1.0.0-alpha.3) (2024-10-27)
 
 
