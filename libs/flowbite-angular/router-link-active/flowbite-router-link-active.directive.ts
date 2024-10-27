@@ -1,6 +1,3 @@
-import routerLinkActiveInputs from '../utils/directives/inputs/router-link-active.input';
-import routerLinkActiveOutputs from '../utils/directives/outputs/router-link-active.output';
-
 import type { Signal } from '@angular/core';
 import { Directive, inject, signal } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
@@ -22,8 +19,8 @@ import { RouterLinkActive } from '@angular/router';
   hostDirectives: [
     {
       directive: RouterLinkActive,
-      inputs: routerLinkActiveInputs,
-      outputs: routerLinkActiveOutputs,
+      inputs: ['routerLinkActiveOptions', 'ariaCurrentWhenActive', 'routerLinkActive'],
+      outputs: ['isActiveChange'],
     },
   ],
 })

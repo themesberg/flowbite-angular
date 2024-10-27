@@ -1,6 +1,3 @@
-import routerLinkInputs from '../utils/directives/inputs/router-link.inputs';
-import routerLinkOutputs from '../utils/directives/outputs/router-link.output';
-
 import { Directive, inject, model } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
@@ -18,8 +15,20 @@ import { Router, RouterLink } from '@angular/router';
   hostDirectives: [
     {
       directive: RouterLink,
-      inputs: routerLinkInputs,
-      outputs: routerLinkOutputs,
+      inputs: [
+        'target',
+        'queryParams',
+        'fragment',
+        'queryParamsHandling',
+        'state',
+        'info',
+        'relativeTo',
+        'preserveFragment',
+        'skipLocationChange',
+        'replaceUrl',
+        'routerLink',
+      ],
+      outputs: [],
     },
   ],
 })
