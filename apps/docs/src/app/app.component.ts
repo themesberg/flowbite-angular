@@ -11,7 +11,7 @@ import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
 import { Location, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   NgDocRootComponent,
@@ -53,4 +53,6 @@ export class AppComponent {
   get isLandingPage(): boolean {
     return this.location.path() === '';
   }
+
+  public readonly currentYear = computed(() => new Date().getFullYear());
 }
