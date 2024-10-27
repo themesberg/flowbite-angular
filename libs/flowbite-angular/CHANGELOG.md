@@ -1,3 +1,31 @@
+# [1.0.0-alpha.3](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.2...flowbite-angular@v1.0.0-alpha.3) (2024-10-27)
+
+
+### Bug Fixes
+
+* circular import & component import ([04668c4](https://github.com/themesberg/flowbite-angular/commit/04668c43e3fbcce8a8807e056d73c4e060120b7c))
+
+
+### Features
+
+* add secondary entrypoints ([35628a3](https://github.com/themesberg/flowbite-angular/commit/35628a34febca5504614c256d2a58516122d55a0))
+* add viewEncapsulation and changeDetection ([b80f78d](https://github.com/themesberg/flowbite-angular/commit/b80f78d3e71215ad6b2e965833f9a66cbf82c44e))
+* **alert:** add entrypoint ([8631420](https://github.com/themesberg/flowbite-angular/commit/8631420b479af65a2802f15b593a0e8bf6a7d39d))
+* **badge:** add entrypoint ([1c7a33c](https://github.com/themesberg/flowbite-angular/commit/1c7a33c87cb994ca16f8d835e2c8c01f71026a5d))
+* **breadcrumb:** add entrypoint ([ea5eb0a](https://github.com/themesberg/flowbite-angular/commit/ea5eb0a5ae7dd3803caca3aae74e50d90d65e8c8))
+* **button:** add entrypoint ([19e8fed](https://github.com/themesberg/flowbite-angular/commit/19e8fed79431bdff8f7b0ab3c9801035e56b7277))
+* **common:** add entrypoint ([a5d50cc](https://github.com/themesberg/flowbite-angular/commit/a5d50cc61669577ca7ecbaf7581601de182ffee8))
+* **dark-theme-toggle:** add entrypoint ([9ee8ca3](https://github.com/themesberg/flowbite-angular/commit/9ee8ca398483de884f0a2910e25f824831a99819))
+* **dropdown:** add entrypoint ([22ce79d](https://github.com/themesberg/flowbite-angular/commit/22ce79db0c343767e39052a1a8b8fdfdbaffc5a8))
+* **icon:** add entrypoint ([d5ee496](https://github.com/themesberg/flowbite-angular/commit/d5ee4962b60fa40e2bed664eb94c110adef7e97b))
+* **indicator:** add entrypoint ([f12a373](https://github.com/themesberg/flowbite-angular/commit/f12a37394e84eb034301346b899513c98ca5c949))
+* **modal:** add entrypoint ([36da9f1](https://github.com/themesberg/flowbite-angular/commit/36da9f1ff432bfdbbadc657132f536ef9bb589a4))
+* **navbar:** add entrypoint ([ecfef64](https://github.com/themesberg/flowbite-angular/commit/ecfef64744d23491a9540758341e2f338eb207b3))
+* **router-link:** add entrypoint ([3886be7](https://github.com/themesberg/flowbite-angular/commit/3886be783876c5a756c07273712d08589fc5051e))
+* **scroll-top:** add entrypoint ([57b1358](https://github.com/themesberg/flowbite-angular/commit/57b1358f98de99c085d7560e53d995aa63f23f43))
+* **sidebar:** add entrypoint ([b94ac5a](https://github.com/themesberg/flowbite-angular/commit/b94ac5a545d0c034a0dd401a8062575afe612e2c))
+* **utils:** add entrypoint ([67bf1da](https://github.com/themesberg/flowbite-angular/commit/67bf1da55a5424be1f2e78b36d4b9dd8f28565a5))
+
 # [1.0.0-alpha.2](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.1...flowbite-angular@v1.0.0-alpha.2) (2024-10-26)
 
 
