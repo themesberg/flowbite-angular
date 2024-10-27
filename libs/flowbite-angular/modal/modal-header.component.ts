@@ -9,7 +9,13 @@ import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -29,6 +35,8 @@ import { DomSanitizer } from '@angular/platform-browser';
       <span class="sr-only">Close modal</span>
     </button>
   `,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalHeaderComponent extends BaseComponent<ModalHeaderClass> implements OnInit {
   public readonly stateService = inject(ModalHeaderThemeService);

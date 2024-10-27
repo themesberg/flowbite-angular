@@ -8,7 +8,13 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { BARS_SVG_ICON } from 'flowbite-angular/utils';
 
 import { CommonModule } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -19,6 +25,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   host: {
     '(click)': 'onClick()',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   public readonly themeService = inject(NavbarToggleThemeService);

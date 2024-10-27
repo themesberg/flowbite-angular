@@ -8,13 +8,22 @@ import type { SidebarColors } from './sidebar.theme';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { Component, contentChildren, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChildren,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [],
   selector: 'flowbite-sidebar-menu',
   template: '<ng-content />',
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
   public readonly themeService = inject(SidebarMenuThemeService);

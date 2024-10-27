@@ -10,6 +10,7 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { NgClass } from '@angular/common';
 import type { EmbeddedViewRef, OnDestroy } from '@angular/core';
 import {
+  ChangeDetectionStrategy,
   Component,
   contentChild,
   inject,
@@ -17,6 +18,7 @@ import {
   TemplateRef,
   viewChild,
   ViewContainerRef,
+  ViewEncapsulation,
 } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
@@ -45,6 +47,8 @@ import { filter, Subject, takeUntil } from 'rxjs';
     tabindex: '-1',
     '(document:keydown)': 'onKeydownHandler($event)',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalComponent extends BaseComponent<ModalClass> implements OnDestroy {
   private readonly destroyed = new Subject<void>();

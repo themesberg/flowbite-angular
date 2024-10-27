@@ -11,7 +11,13 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/indicators/
@@ -21,6 +27,8 @@ import { Component, inject, model } from '@angular/core';
   imports: [NgClass],
   selector: 'flowbite-indicator',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IndicatorComponent extends BaseComponent<indicatorClass> {
   public readonly themeService = inject(IndicatorThemeService);

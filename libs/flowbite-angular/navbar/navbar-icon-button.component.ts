@@ -7,13 +7,21 @@ import type { NavbarColors } from './navbar.theme';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'flowbite-navbar-icon-button',
   standalone: true,
   imports: [],
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarIconButtonComponent extends BaseComponent<NavbarIconButtonClass> {
   public readonly themeService = inject(NavbarIconButtonThemeService);

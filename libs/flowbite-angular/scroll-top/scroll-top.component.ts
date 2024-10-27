@@ -12,7 +12,13 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_UP_SVG_ICON } from 'flowbite-angular/utils';
 
 import type { OnInit } from '@angular/core';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -23,6 +29,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   host: {
     '(click)': 'onClick()',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements OnInit {
   public readonly themeService = inject(ScrollTopThemeService);

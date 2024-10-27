@@ -9,13 +9,23 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import type { OnInit } from '@angular/core';
-import { Component, contentChild, inject, model, untracked } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChild,
+  inject,
+  model,
+  untracked,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [],
   selector: 'flowbite-accordion-panel',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> implements OnInit {
   public readonly themeService = inject(AccordionPanelThemeService);

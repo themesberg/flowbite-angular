@@ -6,7 +6,14 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
-import { Component, contentChildren, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChildren,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -19,6 +26,8 @@ import { Component, contentChildren, inject, model } from '@angular/core';
   host: {
     '[attr.aria-label]': 'breadcrumb',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
   public readonly themeService = inject(BreadcrumbThemeService);

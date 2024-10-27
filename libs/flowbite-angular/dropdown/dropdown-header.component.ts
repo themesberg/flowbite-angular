@@ -5,7 +5,13 @@ import { DropdownComponent } from './dropdown.component';
 import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   standalone: true,
@@ -17,6 +23,8 @@ import { Component, inject, model } from '@angular/core';
     </div>
     <div class="my-1 h-px bg-gray-100 dark:bg-gray-600"></div>
   `,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownHeaderComponent extends BaseComponent<DropdownHeaderClass> {
   public readonly themeService = inject(DropdownHeaderThemeService);

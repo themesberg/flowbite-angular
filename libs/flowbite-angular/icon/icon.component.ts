@@ -8,13 +8,23 @@ import type { FlowbiteClass } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import type { OnInit } from '@angular/core';
-import { Component, effect, ElementRef, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  ElementRef,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 import { take } from 'rxjs';
 
 @Component({
   selector: 'flowbite-icon',
   standalone: true,
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconComponent extends BaseComponent<FlowbiteClass> implements OnInit {
   public _elementRef = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>);

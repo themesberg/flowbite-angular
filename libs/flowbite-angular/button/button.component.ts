@@ -13,7 +13,13 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
-import { Component, inject, model } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  ViewEncapsulation,
+} from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/buttons/
@@ -40,6 +46,8 @@ import { Component, inject, model } from '@angular/core';
   host: {
     '[attr.type]': 'button',
   },
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent extends BaseComponent<ButtonClass> {
   public readonly themeService = inject(ButtonThemeService);

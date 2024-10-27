@@ -8,7 +8,15 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
-import { Component, contentChild, inject, model, untracked } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChild,
+  inject,
+  model,
+  untracked,
+  ViewEncapsulation,
+} from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -18,6 +26,8 @@ import { Component, contentChild, inject, model, untracked } from '@angular/core
   imports: [NgClass],
   selector: 'flowbite-navbar',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent extends BaseComponent<NavbarClass> {
   public readonly themeService = inject(NavbarThemeService);

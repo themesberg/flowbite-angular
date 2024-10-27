@@ -13,7 +13,15 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { Component, contentChild, inject, model, untracked } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  contentChild,
+  inject,
+  model,
+  untracked,
+  ViewEncapsulation,
+} from '@angular/core';
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -23,6 +31,8 @@ import { Component, contentChild, inject, model, untracked } from '@angular/core
   imports: [NgClass],
   selector: 'flowbite-sidebar',
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent extends BaseComponent<SidebarClass> implements OnInit {
   public readonly themeService = inject(SidebarThemeService);
