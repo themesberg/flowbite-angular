@@ -1,5 +1,10 @@
-import type { DeepPartial, FlowbiteClass, FlowbiteColors, FlowbitePositions } from '../../common';
-import { createTheme } from '../../utils/theme/create-theme';
+import type {
+  DeepPartial,
+  FlowbiteClass,
+  FlowbiteColors,
+  FlowbitePositions,
+} from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 //#region region Component theme option
 export interface ScrollTopColors
