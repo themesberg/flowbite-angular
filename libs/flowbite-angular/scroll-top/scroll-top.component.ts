@@ -1,4 +1,3 @@
-import { IconComponent, IconRegistry } from '../icon';
 import type {
   ScrollTopClass,
   ScrollTopColors,
@@ -9,6 +8,7 @@ import { ScrollTopThemeService } from './scroll-top.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_UP_SVG_ICON } from 'flowbite-angular/utils';
 
 import type { OnInit } from '@angular/core';

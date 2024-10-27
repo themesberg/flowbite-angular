@@ -4,8 +4,7 @@ import { NavbarComponent } from './navbar.component';
 import type { NavbarColors } from './navbar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';

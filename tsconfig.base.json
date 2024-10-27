@@ -25,6 +25,7 @@
       "flowbite-angular/badge": ["libs/flowbite-angular/badge/index.ts"],
       "flowbite-angular/breadcrumb": ["libs/flowbite-angular/breadcrumb/index.ts"],
       "flowbite-angular/button": ["libs/flowbite-angular/button/index.ts"],
+      "flowbite-angular/core": ["libs/flowbite-angular/core/index.ts"],
       "flowbite-angular/dark-theme-toggle": ["libs/flowbite-angular/dark-theme-toggle/index.ts"],
       "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/index.ts"],
       "flowbite-angular/icon": ["libs/flowbite-angular/icon/index.ts"],

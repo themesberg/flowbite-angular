@@ -1,9 +1,3 @@
-import { darkThemeToggleTheme } from '../dark-theme-toggle/dark-theme-toggle.theme';
-import {
-  DarkThemeToggleThemeService,
-  FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
-} from '../dark-theme-toggle/dark-theme-toggle.theme.service';
-
 import {
   accordionContentTheme,
   AccordionContentThemeService,
@@ -33,6 +27,11 @@ import {
   ButtonThemeService,
   FLOWBITE_BUTTON_THEME_TOKEN,
 } from 'flowbite-angular/button';
+import {
+  darkThemeToggleTheme,
+  DarkThemeToggleThemeService,
+  FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
+} from 'flowbite-angular/dark-theme-toggle';
 import {
   dropdownDividerTheme,
   DropdownDividerThemeService,

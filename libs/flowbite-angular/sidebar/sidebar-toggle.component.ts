@@ -1,4 +1,3 @@
-import { IconComponent, IconRegistry } from '../icon';
 import type {
   SidebarToggleClass,
   SidebarToggleSizes,
@@ -10,6 +9,7 @@ import type { SidebarColors } from './sidebar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { BARS_SVG_ICON } from 'flowbite-angular/utils';
 
 import type { OnInit } from '@angular/core';

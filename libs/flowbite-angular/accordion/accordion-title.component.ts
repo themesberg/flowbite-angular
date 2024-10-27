@@ -1,12 +1,12 @@
-import { IconComponent, IconRegistry } from '../icon';
 import { AccordionPanelComponent } from './accordion-panel.component';
 import type { AccordionTitleClass, AccordionTitleTheme } from './accordion-title.theme';
 import { AccordionTitleThemeService } from './accordion-title.theme.service';
 import type { AccordionColors } from './accordion.theme';
 
-import { BaseComponent } from 'flowbite-angular';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean, CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
+import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';

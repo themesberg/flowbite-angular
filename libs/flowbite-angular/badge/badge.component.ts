@@ -2,9 +2,8 @@ import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.th
 import { BadgeThemeService } from './badge.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

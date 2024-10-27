@@ -1,4 +1,3 @@
-import { IconComponent, IconRegistry } from '../icon';
 import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
 import { SidebarItemComponent } from './sidebar-item.component';
@@ -7,6 +6,7 @@ import type { SidebarColors } from './sidebar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';

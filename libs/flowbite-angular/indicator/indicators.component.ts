@@ -8,8 +8,7 @@ import type {
 import { IndicatorThemeService } from './indicators.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
-import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

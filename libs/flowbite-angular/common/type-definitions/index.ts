@@ -1,3 +1,4 @@
+export { booleanToFlowbiteBoolean } from './flowbite.boolean';
 export type { FlowbiteBoolean } from './flowbite.boolean';
 export type { FlowbiteClass } from './flowbite.class';
 export type { FlowbiteContentPositions } from './flowbite.content-positions';

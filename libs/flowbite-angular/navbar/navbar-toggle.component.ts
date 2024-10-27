@@ -1,10 +1,10 @@
-import { IconComponent, IconRegistry } from '../icon';
 import type { NavbarToggleClass, NavbarToggleTheme } from './navbar-toggle.theme';
 import { NavbarToggleThemeService } from './navbar-toggle.theme.service';
 import { NavbarComponent } from './navbar.component';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
+import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { BARS_SVG_ICON } from 'flowbite-angular/utils';
 
 import { CommonModule } from '@angular/common';
