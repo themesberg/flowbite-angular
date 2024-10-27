@@ -2,7 +2,7 @@
 export default {
   displayName: 'flowbite-angular',
   preset: '../../jest.preset.js',
-  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   globals: {},
   coverageDirectory: '../../coverage/libs/flowbite-angular',
   transform: {
