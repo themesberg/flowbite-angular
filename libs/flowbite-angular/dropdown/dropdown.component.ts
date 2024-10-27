@@ -1,13 +1,13 @@
-import type { DeepPartial } from '../../common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { CHEVRON_DOWN_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import { DropdownDividerComponent } from './dropdown-divider.component';
 import { DropdownHeaderComponent } from './dropdown-header.component';
 import { DropdownItemComponent } from './dropdown-item.component';
 import type { DropdownClass, DropdownPositions, DropdownTheme } from './dropdown.theme';
 import { DropdownThemeService } from './dropdown.theme.service';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { booleanToFlowbiteBoolean, CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';

@@ -1,7 +1,8 @@
-import { BaseComponent } from '../base-component.directive';
 import type { DropdownDividerClass, DropdownDividerTheme } from './dropdown-divider.theme';
 import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
 import { DropdownComponent } from './dropdown.component';
+
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

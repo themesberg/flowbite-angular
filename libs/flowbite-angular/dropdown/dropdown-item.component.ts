@@ -1,8 +1,9 @@
-import type { DeepPartial } from '../../common';
-import { BaseComponent } from '../base-component.directive';
 import type { DropdownItemClass, DropdownItemTheme } from './dropdown-item.theme';
 import { DropdownItemThemeService } from './dropdown-item.theme.service';
 import { DropdownComponent } from './dropdown.component';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';
