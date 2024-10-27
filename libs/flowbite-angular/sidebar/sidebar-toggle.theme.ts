@@ -1,6 +1,7 @@
-import type { DeepPartial, FlowbiteClass, FlowbiteSizes } from '../../common';
-import { createTheme } from '../../utils/theme/create-theme';
 import type { SidebarColors } from './sidebar.theme';
+
+import type { DeepPartial, FlowbiteClass, FlowbiteSizes } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 //#region region Component theme option
 export interface SidebarToggleSizes extends Pick<FlowbiteSizes, 'sm'> {

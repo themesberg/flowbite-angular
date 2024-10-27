@@ -1,12 +1,13 @@
-import type { DeepPartial } from '../../common';
-import { booleanToFlowbiteBoolean } from '../../utils/boolean.util';
-import { BaseComponent } from '../base-component.directive';
 import type {
   SidebarPageContentClass,
   SidebarPageContentTheme,
 } from './sidebar-page-content.theme';
 import { SidebarPageContentThemeService } from './sidebar-page-content.theme.service';
 import { SidebarComponent } from './sidebar.component';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { booleanToFlowbiteBoolean } from 'flowbite-angular/utils';
 
 import { Component, inject, model } from '@angular/core';
 

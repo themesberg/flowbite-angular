@@ -1,6 +1,3 @@
-import type { DeepPartial } from '../../common';
-import { BARS_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type {
   SidebarToggleClass,
@@ -10,6 +7,10 @@ import type {
 import { SidebarToggleThemeService } from './sidebar-toggle.theme.service';
 import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { BARS_SVG_ICON } from 'flowbite-angular/utils';
 
 import type { OnInit } from '@angular/core';
 import { Component, inject, model } from '@angular/core';

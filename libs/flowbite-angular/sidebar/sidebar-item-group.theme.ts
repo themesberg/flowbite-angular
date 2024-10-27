@@ -1,6 +1,7 @@
-import type { DeepPartial, FlowbiteClass } from '../../common';
-import { createTheme } from '../../utils/theme/create-theme';
 import type { SidebarColors } from './sidebar.theme';
+
+import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
+import { createTheme } from 'flowbite-angular/utils';
 
 export interface SidebarItemGroupProperties {
   color: keyof SidebarColors;
