@@ -1,8 +1,9 @@
-import type { DeepPartial } from '../../common';
-import { BaseComponent } from '../base-component.directive';
 import { BreadcrumbItemComponent } from './breadcrumb-item.component';
 import type { BreadcrumbClass, BreadcrumbColors, BreadcrumbTheme } from './breadcrumb.theme';
 import { BreadcrumbThemeService } from './breadcrumb.theme.service';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, contentChildren, inject, model } from '@angular/core';
