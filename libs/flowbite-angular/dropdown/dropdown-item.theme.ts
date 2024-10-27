@@ -1,4 +1,4 @@
-import type { DeepPartial, FlowbiteClass } from '../../common';
+import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 
 export interface DropdownItemProperties {
   customStyle: DeepPartial<DropdownItemTheme>;

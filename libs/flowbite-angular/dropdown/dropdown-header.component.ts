@@ -1,7 +1,8 @@
-import { BaseComponent } from '../base-component.directive';
 import type { DropdownHeaderClass, DropdownHeaderTheme } from './dropdown-header.theme';
 import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 import { DropdownComponent } from './dropdown.component';
+
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';
