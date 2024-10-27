@@ -1,8 +1,9 @@
-import type { DeepPartial } from '../../common';
-import { BaseComponent } from '../base-component.directive';
 import type { ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
 import { ModalBodyThemeService } from './modal-body.theme.service';
 import { ModalComponent } from './modal.component';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import { Component, inject, model } from '@angular/core';

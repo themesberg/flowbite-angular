@@ -1,10 +1,11 @@
-import type { DeepPartial } from '../../common';
-import { CLOSE_SVG_ICON } from '../../utils/icon.list';
-import { BaseComponent } from '../base-component.directive';
 import { IconComponent, IconRegistry } from '../icon';
 import type { ModalHeaderClass, ModalHeaderTheme } from './modal-header.theme';
 import { ModalHeaderThemeService } from './modal-header.theme.service';
 import { ModalComponent } from './modal.component';
+
+import type { DeepPartial } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
+import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';

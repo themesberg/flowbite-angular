@@ -1,6 +1,7 @@
-import type { FlowbiteThemeService } from '../../services';
-import { mergeTheme } from '../../utils/theme/merge-theme';
 import type { ModalClass, ModalProperties, ModalTheme } from './modal.theme';
+
+import type { FlowbiteThemeService } from 'flowbite-angular';
+import { mergeTheme } from 'flowbite-angular/utils';
 
 import { inject, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
