@@ -35,3 +35,29 @@ export const appConfig: ApplicationConfig = {
   providers: [initFlowbite()],
 };
 ```
+
+## Tailwind configuration
+
+Make sure to use the TailwindCSS configuration preset in your tailwind.config.js
+
+```javascript
+const { join } = require('path');
+const flowbiteAngularTailwindConfig = require('flowbite-angular/tailwind.config');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  presets: [
+    // Use flowbite-angular's TailwindCSS configuration
+    flowbiteAngularTailwindConfig,
+  ],
+  content: [
+    // Include every *.mjs files of flowbite-angular
+    join(__dirname, '../../node_modules/flowbite-angular/**/*.{html,ts,mjs}'),
+    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html,md}'),
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
