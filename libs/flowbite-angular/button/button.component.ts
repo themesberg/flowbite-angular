@@ -50,16 +50,57 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent extends BaseComponent<ButtonClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(ButtonThemeService);
 
   //#region properties
+  /**
+   * Set the button color
+   *
+   * @default primary
+   */
   public color = model<keyof ButtonColors>('primary');
+  /**
+   * Set the button size
+   *
+   * @default md
+   */
   public size = model<keyof ButtonSizes>('md');
+  /**
+   * Set if the button is pill
+   *
+   * @default false
+   */
   public isPill = model<boolean>(false);
+  /**
+   * Set the button fill
+   *
+   * @default solid
+   */
   public fill = model<keyof ButtonFill>('solid');
+  /**
+   * Set if the button is disabled
+   *
+   * @default false
+   */
   public isDisabled = model<boolean>(false);
+  /**
+   * Set the button gradient monochrome
+   *
+   * @default undefined
+   */
   public gradientMonochrome = model<keyof ButtonMonochromeColors | undefined>(undefined);
+  /**
+   * Set the button gradient duotone
+   *
+   * @default undefined
+   */
   public gradientDuoTone = model<keyof ButtonDuoToneColors | undefined>(undefined);
+  /**
+   * Set the custom style for this button
+   */
   public customStyle = model<DeepPartial<ButtonTheme>>({});
   //#endregion
 
