@@ -22,6 +22,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/sidebar/
+ */
 @Component({
   standalone: true,
   imports: [IconComponent],
@@ -34,14 +37,41 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(SidebarToggleThemeService);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
+  /**
+   * The `SidebarComponent` to use
+   *
+   * @default The injected `SidebarComponent`
+   */
   public readonly sidebarComponent = model<SidebarComponent>(inject(SidebarComponent));
 
   //#region properties
+  /**
+   * Set the sidebar toggle color
+   *
+   * @default primary
+   */
   public color = model<keyof SidebarColors>('primary');
+  /**
+   * Set the sidebar toggle size
+   *
+   * @default sm
+   */
   public size = model<keyof SidebarToggleSizes>('sm');
+  /**
+   * Set the custom style for this sidebar toggle
+   */
   public customStyle = model<DeepPartial<SidebarToggleTheme>>({});
   //#endregion
 
@@ -63,6 +93,9 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
   }
   //#endregion
 
+  /**
+   * Toggle sidebar visibility
+   */
   public onClick(): void {
     const isOpen = this.sidebarComponent().isOpen();
 

@@ -16,6 +16,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/sidebar/
+ */
 @Component({
   standalone: true,
   imports: [],
@@ -25,10 +28,19 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarPageContentComponent extends BaseComponent<SidebarPageContentClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(SidebarPageContentThemeService);
+  /**
+   * The parent `SidebarComponent`
+   */
   public readonly sidebarComponent = inject(SidebarComponent);
 
   //#region properties
+  /**
+   * Set the custom style for this sidebar page content
+   */
   public customStyle = model<DeepPartial<SidebarPageContentTheme>>({});
   //endregion
 

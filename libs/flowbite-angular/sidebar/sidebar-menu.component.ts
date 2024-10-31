@@ -17,6 +17,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/sidebar/
+ */
 @Component({
   standalone: true,
   imports: [],
@@ -26,13 +29,33 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(SidebarMenuThemeService);
+  /**
+   * The parent `SidebarComponent`
+   */
   public readonly sidebarComponent = inject(SidebarComponent);
+  /**
+   * List of `SidebarItemGroupComponent`
+   */
   public readonly sidebarItemGroupChildren = contentChildren(SidebarItemGroupComponent);
+  /**
+   * List of `SidebarItemComponent`
+   */
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
 
   //#region properties
+  /**
+   * Set the sidebar menu color
+   *
+   * @default `SidebarComponent`'s color
+   */
   public color = model<keyof SidebarColors>(this.sidebarComponent.color());
+  /**
+   * Set the custom style for this sidebar menu
+   */
   public customStyle = model<DeepPartial<SidebarMenuTheme>>({});
   //#endregion
 
@@ -51,6 +74,9 @@ export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
     }
   }
 
+  /**
+   * Toggle visibility of ll children to false
+   */
   public closeAll(): void {
     this.sidebarItemGroupChildren().forEach((x) => x.toggleVisibility(false));
   }

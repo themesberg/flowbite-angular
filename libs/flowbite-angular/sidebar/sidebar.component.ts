@@ -35,15 +35,47 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent extends BaseComponent<SidebarClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(SidebarThemeService);
+  /**
+   * The child `SidebarMenuComponent`
+   */
   public readonly sidebarMenuChild = contentChild(SidebarMenuComponent);
+  /**
+   * The child `SidebarPageContentComponent`
+   */
   public readonly sidebarPageContentChild = contentChild(SidebarPageContentComponent);
 
   //#region properties
+  /**
+   * Set the sidebar color
+   *
+   * @default primary
+   */
   public color = model<keyof SidebarColors>('primary');
+  /**
+   * Set the sidebar display mode
+   *
+   * @default push
+   */
   public displayMode = model<keyof SidebarDisplayMode>('push');
+  /**
+   * Set is the sidebar is open
+   *
+   * @default false
+   */
   public isOpen = model<boolean>(false);
+  /**
+   * Set is the sidebar is rounded
+   *
+   * @default false
+   */
   public isRounded = model<boolean>(false);
+  /**
+   * Set the custom style for this sidebar
+   */
   public customStyle = model<DeepPartial<SidebarTheme>>({});
   //#endregion
 
@@ -67,6 +99,11 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
   }
   //#endregion
 
+  /**
+   * Toggle sidebar visibility
+   *
+   * @param isOpen If provided force isOpen value
+   */
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {
       isOpen = untracked(() => !this.isOpen());

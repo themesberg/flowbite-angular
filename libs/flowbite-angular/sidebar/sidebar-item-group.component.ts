@@ -10,7 +10,6 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
-import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -22,12 +21,15 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/sidebar/
+ */
 @Component({
   standalone: true,
   imports: [NgClass, NgIf, IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
-    <span [class]="contentClasses().spanClass" (click)="onSpanClick()">
+    <span [class]="contentClasses().spanClass" (click)="toggleVisibility()">
       <h4>{{ title() }}</h4>
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"
@@ -39,22 +41,51 @@ import { DomSanitizer } from '@angular/platform-browser';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarItemGroupComponent
-  extends BaseComponent<SidebarItemGroupClass>
-  implements OnInit
-{
+export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupClass> {
+  /**
+   * Service injecteed used to generate class
+   */
   public readonly themeService = inject(SidebarItemGroupThemeService);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
+  /**
+   * The parent `SidebarMenuComponent`
+   */
   public readonly sidebarMenuComponent = inject(SidebarMenuComponent);
+  /**
+   * List of `SidebarItemComponent`
+   */
   public readonly sidebarItemChildren = contentChildren(SidebarItemComponent);
 
   //#region properties
+  /**
+   * Set if the sidebar item group is open
+   *
+   * @default One of children is active
+   * @default false
+   */
   public isOpen = model<boolean>(
     this.sidebarItemChildren().some((x) => x.flowbiteRouterLinkActive?.isActive() ?? false)
   );
+  /**
+   * Set the sidebar item group color
+   *
+   * @default `SidebarMenuComponent`'s color
+   */
   public color = model<keyof SidebarColors>(this.sidebarMenuComponent.color());
+  /**
+   * Set the sidebar item group title
+   */
   public title = model.required<string>();
+  /**
+   * Set the custom style for this sidebar item group
+   */
   public customStyle = model<DeepPartial<SidebarItemGroupTheme>>({});
   //#endregion
 
@@ -81,10 +112,11 @@ export class SidebarItemGroupComponent
   }
   //#endregion
 
-  public onSpanClick(): void {
-    this.toggleVisibility();
-  }
-
+  /**
+   * Toggle isOpen value
+   *
+   * @param isOpen If provided force isOpen value
+   */
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {
       isOpen = untracked(() => !this.isOpen());
