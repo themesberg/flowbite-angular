@@ -10,6 +10,14 @@ import { mergeTheme } from 'flowbite-angular/utils';
 import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
+/**
+ * `InjectionToken` used to import `ModalHeaderTheme` value
+ *
+ * @example
+ * ```
+ * var theme = inject(FLOWBITE_MODAL_HEADER_THEME_TOKEN)
+ * ```
+ */
 export const FLOWBITE_MODAL_HEADER_THEME_TOKEN = new InjectionToken<ModalHeaderTheme>(
   'FLOWBITE_MODAL_HEADER_THEME_TOKEN'
 );
