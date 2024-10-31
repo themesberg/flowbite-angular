@@ -39,6 +39,8 @@ export class AccordionComponent extends BaseComponent<AccordionClass> {
   //#region properties
   /**
    * Does the opened `AccordionPanelComponent` stay open if another one is opening
+   *
+   * @default false
    */
   public isAlwaysOpen = model<boolean>(false);
   /**
@@ -49,6 +51,8 @@ export class AccordionComponent extends BaseComponent<AccordionClass> {
   public color = model<keyof AccordionColors>('primary');
   /**
    * Set the accordion as flush or not
+   *
+   * @default false
    */
   public isFlush = model<boolean>(false);
   /**

@@ -66,14 +66,20 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
   //#region properties
   /**
    * Set the indicator color
+   *
+   * @default primary
    */
   public color = model<keyof AlertColors>('primary');
   /**
    * Set if the alert has border
+   *
+   * @default false
    */
   public hasBorder = model<boolean>(false);
   /**
    * Set if the alert has border accent
+   *
+   * @default false
    */
   public hasBorderAccent = model<boolean>(false);
   /**
@@ -82,18 +88,26 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
   public customStyle = model<DeepPartial<AlertTheme>>({});
   /**
    * Set the custom icon
+   *
+   * @default null
    */
   public icon = model<TemplateRef<unknown> | null>(null);
   /**
    * Set the additional content
+   *
+   * @default null
    */
   public additionalContent = model<TemplateRef<unknown> | null>(null);
   /**
    * Set if the alert is dismissable
+   *
+   * @default false
    */
   public isDismissable = model<boolean>(false);
   /**
    * Set the function called when the alert is dismissed
+   *
+   * @default undefined
    */
   public onDismiss = model<() => void | undefined>();
   //#endregion
