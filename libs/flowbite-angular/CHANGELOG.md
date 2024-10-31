@@ -1,3 +1,10 @@
+# [1.0.0-alpha.5](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.4...flowbite-angular@v1.0.0-alpha.5) (2024-10-31)
+
+
+### Bug Fixes
+
+* multiple typo ([96343bb](https://github.com/themesberg/flowbite-angular/commit/96343bb7b567fe6e2d10a99da8d908ea3814f58b))
+
 # [1.0.0-alpha.4](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.3...flowbite-angular@v1.0.0-alpha.4) (2024-10-27)
 
 
