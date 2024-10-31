@@ -3,13 +3,16 @@ import type { DropdownClass, DropdownProperties, DropdownTheme } from './dropdow
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_DROPDOWN_THEME_TOKEN = new InjectionToken<DropdownTheme>(
   'FLOWBITE_DROPDOWN_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class DropdownThemeService implements FlowbiteThemeService<DropdownProperties> {
   private readonly baseTheme = inject(FLOWBITE_DROPDOWN_THEME_TOKEN);
 

@@ -1,7 +1,7 @@
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
-//#region region Component theme option
+//#region Component theme option
 /**
  * Available colors for `AccordionComponent`
  */
