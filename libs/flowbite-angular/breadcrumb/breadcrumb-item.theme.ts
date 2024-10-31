@@ -5,12 +5,18 @@ import { createTheme } from 'flowbite-angular/utils';
 
 import type { UrlTree } from '@angular/router';
 
+/**
+ * Required properties for the class generation of `BreadcrumbItemComponent`
+ */
 export interface BreadcrumbItemProperties {
   color: keyof BreadcrumbColors;
   link: UrlTree | null;
   customStyle: DeepPartial<BreadcrumbItemTheme>;
 }
 
+/**
+ * Theme definition for `BreadcrumbItemComponent`
+ */
 export interface BreadcrumbItemTheme {
   root: {
     base: string;
@@ -21,6 +27,9 @@ export interface BreadcrumbItemTheme {
   };
 }
 
+/**
+ * Default theme for `BreadcrumbItemComponent`
+ */
 export const breadcrumbItemTheme: BreadcrumbItemTheme = createTheme({
   root: {
     base: 'group flex items-center text-sm font-medium cursor-pointer',
@@ -40,6 +49,9 @@ export const breadcrumbItemTheme: BreadcrumbItemTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `BreadcrumbItemComponent`
+ */
 export interface BreadcrumbItemClass extends FlowbiteClass {
   breadcrumbIconClass: string;
 }

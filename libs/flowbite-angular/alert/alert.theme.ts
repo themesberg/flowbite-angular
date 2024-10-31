@@ -2,12 +2,18 @@ import type { DeepPartial, FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
+/**
+ * Available colors for `AlertComponent`
+ */
 export type AlertColors = Pick<
   FlowbiteColors,
   'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'
 >;
 //#endregion
 
+/**
+ * Required properties for the class generation of `AlertComponent`
+ */
 export interface AlertProperties {
   color: keyof AlertColors;
   hasBorder: keyof FlowbiteBoolean;
@@ -15,6 +21,9 @@ export interface AlertProperties {
   customStyle: DeepPartial<AlertTheme>;
 }
 
+/**
+ * Theme definition for `AlertComponent`
+ */
 export interface AlertTheme {
   root: {
     base: string;
@@ -28,6 +37,9 @@ export interface AlertTheme {
   };
 }
 
+/**
+ * Default theme for `AlertComponent`
+ */
 export const alertTheme: AlertTheme = createTheme({
   root: {
     base: 'flex flex-col gap-2 p-4 text-sm rounded-lg',
@@ -65,6 +77,9 @@ export const alertTheme: AlertTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `AlertComponent`
+ */
 export interface AlertClass extends FlowbiteClass {
   closeButtonClass: string;
 }

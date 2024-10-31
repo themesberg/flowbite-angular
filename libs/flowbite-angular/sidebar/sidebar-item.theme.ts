@@ -3,6 +3,9 @@ import type { SidebarColors } from './sidebar.theme';
 import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `SidebarItemComponent`
+ */
 export interface SidebarItemProperties {
   icon: string | undefined;
   color: keyof SidebarColors;
@@ -10,6 +13,9 @@ export interface SidebarItemProperties {
   customStyle: DeepPartial<SidebarItemTheme>;
 }
 
+/**
+ * Theme definition for `SidebarItemComponent`
+ */
 export interface SidebarItemTheme {
   root: {
     base: string;
@@ -20,6 +26,9 @@ export interface SidebarItemTheme {
   };
 }
 
+/**
+ * Default theme for `SidebarItemComponent`
+ */
 export const sidebarItemTheme: SidebarItemTheme = createTheme({
   root: {
     base: 'group flex cursor-pointer items-center rounded-lg p-2 text-base font-normal text-gray-900 dark:text-white',
@@ -40,6 +49,9 @@ export const sidebarItemTheme: SidebarItemTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `SidebarItemComponent`
+ */
 export interface SidebarItemClass extends FlowbiteClass {
   sidebarIconClass: string;
 }

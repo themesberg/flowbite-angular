@@ -7,12 +7,18 @@ import type {
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
+/**
+ * Available positions for `DropdownComponent`
+ */
 export interface DropdownPositions extends Pick<FlowbitePositions, 'bottom-center' | 'top-center'> {
   'left-center': string;
   'right-center': string;
 }
 //#endregion
 
+/**
+ * Required properties for the class generation of `DropdownComponent`
+ */
 export interface DropdownProperties {
   label: string;
   isOpen: keyof FlowbiteBoolean;
@@ -20,6 +26,9 @@ export interface DropdownProperties {
   customStyle: DeepPartial<DropdownTheme>;
 }
 
+/**
+ * Theme definition for `DropdownComponent`
+ */
 export interface DropdownTheme {
   root: {
     base: string;
@@ -43,6 +52,9 @@ export interface DropdownTheme {
   };
 }
 
+/**
+ * Default theme for `DropdownComponent`
+ */
 export const dropdownTheme: DropdownTheme = createTheme({
   root: {
     base: '',
@@ -74,6 +86,9 @@ export const dropdownTheme: DropdownTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `DropdownComponent`
+ */
 export interface DropdownClass extends FlowbiteClass {
   dropdownClass: string;
   spanClass: string;

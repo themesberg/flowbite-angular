@@ -7,6 +7,9 @@ import type {
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region region Component theme option
+/**
+ * Available colors for `ScrollTopComponent`
+ */
 export interface ScrollTopColors
   extends Pick<
     FlowbiteColors,
@@ -15,17 +18,26 @@ export interface ScrollTopColors
   [key: string]: string;
 }
 
+/**
+ * Available positions for `ScrollTopComponent`
+ */
 export interface ScrollTopPositions extends Omit<FlowbitePositions, 'center'> {
   [key: string]: string;
 }
 //#endregion
 
+/**
+ * Required properties for the class generation for `ScrollTopComponent`
+ */
 export interface ScrollTopProperties {
   color: keyof ScrollTopPositions;
   position: keyof ScrollTopPositions;
   customStyle: DeepPartial<ScrollTopTheme>;
 }
 
+/**
+ * Theme definition for `ScrollTopComponent`
+ */
 export interface ScrollTopTheme {
   root: {
     base: string;
@@ -34,6 +46,9 @@ export interface ScrollTopTheme {
   };
 }
 
+/**
+ * Default theme for `ScrollTopComponent`
+ */
 export const scrollTopTheme: ScrollTopTheme = createTheme({
   root: {
     base: 'cursor-pointer fixed flex flex-row place-items-center p-2 rounded-lg',
@@ -60,4 +75,7 @@ export const scrollTopTheme: ScrollTopTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `ScrollTopComponent`
+ */
 export type ScrollTopClass = FlowbiteClass;

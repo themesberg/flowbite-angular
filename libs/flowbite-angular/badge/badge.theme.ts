@@ -9,6 +9,9 @@ import type {
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
+/**
+ * Available colors for `BadgeComponent`
+ */
 export interface BadgeColors
   extends Pick<
     FlowbiteColors,
@@ -17,11 +20,17 @@ export interface BadgeColors
   [key: string]: string;
 }
 
+/**
+ * Available sizes for `BadgeComponent`
+ */
 export interface BadgeSizes extends Pick<FlowbiteSizes, 'xs' | 'sm'> {
   [key: string]: string;
 }
 //#endregion
 
+/**
+ * Required properties for the class generation of `BadgeComponent`
+ */
 export interface BadgeProperties {
   color: keyof BadgeColors;
   size: keyof BadgeSizes;
@@ -31,6 +40,9 @@ export interface BadgeProperties {
   customStyle: DeepPartial<BadgeTheme>;
 }
 
+/**
+ * Theme definition for `BadgeComponent`
+ */
 export interface BadgeTheme {
   root: {
     base: string;
@@ -42,6 +54,9 @@ export interface BadgeTheme {
   };
 }
 
+/**
+ * Default theme for `BadgeComponent`
+ */
 export const badgeTheme: BadgeTheme = createTheme({
   root: {
     base: 'flex h-fit items-center gap-1 font-semibold',
@@ -80,4 +95,7 @@ export const badgeTheme: BadgeTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `BadgeComponent`
+ */
 export type BadgeClass = FlowbiteClass;
