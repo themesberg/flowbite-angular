@@ -14,6 +14,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/modal/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -23,10 +26,19 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalBodyComponent extends BaseComponent<ModalBodyClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(ModalBodyThemeService);
+  /**
+   * The parent `ModalComponent`
+   */
   public readonly modalComponent = inject(ModalComponent);
 
   //#region properties
+  /**
+   * Set the custom style for this modal body
+   */
   public customStyle = model<DeepPartial<ModalBodyTheme>>({});
   //#endregion
 
