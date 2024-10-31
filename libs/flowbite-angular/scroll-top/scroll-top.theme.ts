@@ -30,7 +30,7 @@ export interface ScrollTopPositions extends Omit<FlowbitePositions, 'center'> {
  * Required properties for the class generation for `ScrollTopComponent`
  */
 export interface ScrollTopProperties {
-  color: keyof ScrollTopPositions;
+  color: keyof ScrollTopColors;
   position: keyof ScrollTopPositions;
   customStyle: DeepPartial<ScrollTopTheme>;
 }
