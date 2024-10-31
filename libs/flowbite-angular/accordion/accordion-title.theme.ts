@@ -3,6 +3,9 @@ import type { AccordionColors } from './accordion.theme';
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `AccordionTitleComponent`
+ */
 export interface AccordionTitleProperties {
   color: keyof AccordionColors;
   isOpen: keyof FlowbiteBoolean;
@@ -10,6 +13,9 @@ export interface AccordionTitleProperties {
   customStyle: DeepPartial<AccordionTitleTheme>;
 }
 
+/**
+ * Theme definition for `AccordionTitleComponent`
+ */
 export interface AccordionTitleTheme {
   root: {
     base: string;
@@ -22,6 +28,9 @@ export interface AccordionTitleTheme {
   };
 }
 
+/**
+ * Default theme for `AccordionTitleComponent`
+ */
 export const accordionTitleTheme: AccordionTitleTheme = createTheme({
   root: {
     base: 'cursor-pointer flex items-center p-5 justify-between group-first:rounded-t-lg',
@@ -51,6 +60,9 @@ export const accordionTitleTheme: AccordionTitleTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `AccordionTitleComponent`
+ */
 export interface AccordionTitleClass extends FlowbiteClass {
   textClass: string;
 }

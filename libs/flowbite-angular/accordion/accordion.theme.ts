@@ -2,18 +2,27 @@ import type { DeepPartial, FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region region Component theme option
+/**
+ * Available colors for `AccordionComponent`
+ */
 export interface AccordionColors
   extends Pick<FlowbiteColors, 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow'> {
   [key: string]: string;
 }
 //#endregion
 
+/**
+ * Required properties for the class generation of `AccordionComponent`
+ */
 export interface AccordionProperties {
   color: keyof AccordionColors;
   isFlush: keyof FlowbiteBoolean;
   customStyle: DeepPartial<AccordionTheme>;
 }
 
+/**
+ * Theme definition for `AccordionComponent`
+ */
 export interface AccordionTheme {
   root: {
     base: string;
@@ -22,6 +31,9 @@ export interface AccordionTheme {
   };
 }
 
+/**
+ * Default theme for `AccordionComponent`
+ */
 export const accordionTheme: AccordionTheme = createTheme({
   root: {
     base: '',
@@ -41,4 +53,7 @@ export const accordionTheme: AccordionTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `AccordionComponent`
+ */
 export type AccordionClass = FlowbiteClass;

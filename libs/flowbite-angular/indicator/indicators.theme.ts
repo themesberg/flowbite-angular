@@ -9,6 +9,9 @@ import type {
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
+/**
+ * Available colors for `IndicatorComponent`
+ */
 export interface IndicatorColors
   extends Pick<
     FlowbiteColors,
@@ -17,10 +20,16 @@ export interface IndicatorColors
   [key: string]: string;
 }
 
+/**
+ * Available sizes for `IndicatorComponent`
+ */
 export interface IndicatorSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
+/**
+ * Available positions for `IndicatorComponent`
+ */
 export interface IndicatorPositions
   extends Pick<
     FlowbitePositions,
@@ -38,6 +47,9 @@ export interface IndicatorPositions
 }
 //#endregion
 
+/**
+ * Required properties for the class generation of `IndicatorComponent`
+ */
 export interface IndicatorProperties {
   isPill: keyof FlowbiteBoolean;
   isOutline: keyof FlowbiteBoolean;
@@ -51,6 +63,9 @@ export interface IndicatorProperties {
   customStyle: DeepPartial<IndicatorTheme>;
 }
 
+/**
+ * Theme definition for `IndicatorComponent`
+ */
 export interface IndicatorTheme {
   root: {
     base: string;
@@ -66,6 +81,9 @@ export interface IndicatorTheme {
   };
 }
 
+/**
+ * Default theme for `IndicatorComponent`
+ */
 export const indicatorTheme: IndicatorTheme = createTheme({
   root: {
     base: 'inline-flex items-center justify-center shrink-0 font-bold',
@@ -133,4 +151,7 @@ export const indicatorTheme: IndicatorTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `IndicatorComponent`
+ */
 export type indicatorClass = FlowbiteClass;

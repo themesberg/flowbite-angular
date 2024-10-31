@@ -11,6 +11,9 @@ import type {
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
+/**
+ * Available colors for `ButtonComponent`
+ */
 export interface ButtonColors
   extends Pick<
     FlowbiteColors,
@@ -19,6 +22,9 @@ export interface ButtonColors
   [key: string]: string;
 }
 
+/**
+ * Available monochrome colors for `ButtonComponent`
+ */
 export interface ButtonMonochromeColors
   extends Pick<
     FlowbiteGradientColors,
@@ -27,6 +33,9 @@ export interface ButtonMonochromeColors
   [key: string]: string;
 }
 
+/**
+ * Available duotone colors for `ButtonComponent`
+ */
 export type ButtonDuoToneColors = Pick<
   FlowbiteGradientDuoToneColors,
   | 'purpleToBlue'
@@ -38,21 +47,33 @@ export type ButtonDuoToneColors = Pick<
   | 'redToYellow'
 >;
 
+/**
+ * Available sizes for `ButtonComponent`
+ */
 export interface ButtonSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
+/**
+ * Available fill for `ButtonComponent`
+ */
 export interface ButtonFill {
   solid: string;
   outline: string;
 }
 
+/**
+ * Available types for `ButtonComponent`
+ */
 export interface ButtonTypes {
   default: string;
   span: string;
 }
 //#endregion
 
+/**
+ * Required properties for the class generation of `ButtonComponent`
+ */
 export interface ButtonProperties {
   color: keyof ButtonColors;
   gradientMonochrome?: keyof ButtonMonochromeColors;
@@ -64,6 +85,9 @@ export interface ButtonProperties {
   customStyle: DeepPartial<ButtonTheme>;
 }
 
+/**
+ * Theme definition for `ButtonComponent`
+ */
 export interface ButtonTheme {
   root: {
     base: ButtonTypes;
@@ -81,6 +105,9 @@ export interface ButtonTheme {
   };
 }
 
+/**
+ * Default theme for `ButtonComponent`
+ */
 export const buttonTheme: ButtonTheme = createTheme({
   root: {
     base: {
@@ -226,6 +253,9 @@ export const buttonTheme: ButtonTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `ButtonComponent`
+ */
 export interface ButtonClass extends FlowbiteClass {
   spanClass: string;
 }

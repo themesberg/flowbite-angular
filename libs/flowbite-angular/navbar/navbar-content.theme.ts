@@ -1,11 +1,17 @@
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `NavbarContentComponent`
+ */
 export interface NavbarContentProperties {
   isOpen: keyof FlowbiteBoolean;
   customStyle: DeepPartial<NavbarContentTheme>;
 }
 
+/**
+ * Theme definition for `NavbarContentComponent`
+ */
 export interface NavbarContentTheme {
   root: {
     base: string;
@@ -16,6 +22,9 @@ export interface NavbarContentTheme {
   };
 }
 
+/**
+ * Default theme for `NavbarContentComponent`
+ */
 export const navbarContentTheme: NavbarContentTheme = createTheme({
   root: {
     base: 'w-full md:block md:w-auto order-last md:order-none',
@@ -29,6 +38,9 @@ export const navbarContentTheme: NavbarContentTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `NavbarContentComponent`
+ */
 export interface NavbarContentClass extends FlowbiteClass {
   navbarContentListClass: string;
 }

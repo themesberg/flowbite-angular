@@ -3,12 +3,18 @@ import type { SidebarDisplayMode } from './sidebar.theme';
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `SidebarPageContentComponent`
+ */
 export interface SidebarPageContentProperties {
   isOpen: keyof FlowbiteBoolean;
   displayMode: keyof SidebarDisplayMode;
   customStyle: DeepPartial<SidebarPageContentTheme>;
 }
 
+/**
+ * Theme definition for `SidebarPageContentComponent`
+ */
 export interface SidebarPageContentTheme {
   root: {
     base: string;
@@ -16,6 +22,9 @@ export interface SidebarPageContentTheme {
   };
 }
 
+/**
+ * Default theme for `SidebarPageContentComponent`
+ */
 export const sidebarPageContentTheme: SidebarPageContentTheme = createTheme({
   root: {
     base: 'flex flex-1',
@@ -27,4 +36,7 @@ export const sidebarPageContentTheme: SidebarPageContentTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `SidebarPageContentComponent`
+ */
 export type SidebarPageContentClass = FlowbiteClass;

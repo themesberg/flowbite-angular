@@ -1,10 +1,16 @@
 import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `DropdownHeaderComponent`
+ */
 export interface DropdownHeaderProperties {
   customStyle: DeepPartial<DropdownHeaderTheme>;
 }
 
+/**
+ * Theme definition of `DropdownHeaderComponent`
+ */
 export interface DropdownHeaderTheme {
   root: {
     base: string;
@@ -14,6 +20,9 @@ export interface DropdownHeaderTheme {
   };
 }
 
+/**
+ * Default theme for `DropdownHeaderComponent`
+ */
 export const dropdownHeaderTheme: DropdownHeaderTheme = createTheme({
   root: {
     base: '',
@@ -23,6 +32,9 @@ export const dropdownHeaderTheme: DropdownHeaderTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `DropdownHeaderComponent`
+ */
 export interface DropdownHeaderClass extends FlowbiteClass {
   root: string;
 }
