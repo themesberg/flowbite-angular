@@ -13,6 +13,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/dropdowns/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -27,10 +30,19 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownHeaderComponent extends BaseComponent<DropdownHeaderClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(DropdownHeaderThemeService);
+  /**
+   * The parent `DropdownComponent`
+   */
   public readonly dropdownComponent = inject(DropdownComponent);
 
   //#region properties
+  /**
+   * Set the custom style for this dropdown header
+   */
   public customStyle = model<Partial<DropdownHeaderTheme>>({});
   //#endregion
 

@@ -60,17 +60,53 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('button') button!: ElementRef;
 
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(DropdownThemeService);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
+  /**
+   * List of `DropdownItemComponent`
+   */
   public readonly dropdownItemChildren = contentChildren(DropdownItemComponent);
+  /**
+   * List of `DropdownHeaderComponent`
+   */
   public readonly dropdownHeaderChildren = contentChildren(DropdownHeaderComponent);
+  /**
+   * List of `DropdownDividerComponent`
+   */
   public readonly dropdownDividerChildren = contentChildren(DropdownDividerComponent);
 
   //#region properties
+  /**
+   * Set the dropdown label
+   *
+   * @default Dropdown
+   */
   public label = model('Dropdown');
+  /**
+   * Set if the dropdown is open
+   *
+   * @default false
+   */
   public isOpen = model<boolean>(false);
+  /**
+   * Set the dropdown position
+   *
+   * @default bottom-center
+   */
   public position = model<keyof DropdownPositions>('bottom-center');
+  /**
+   * Set the custom style for this dropdown
+   */
   public customStyle = model<DeepPartial<DropdownTheme>>({});
   //#endregion
 
@@ -103,7 +139,10 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   y = 0;
   width = 0;
 
-  toggle() {
+  /**
+   * Toggle dropdown isOpen
+   */
+  public toggle() {
     this.isOpen.set(!this.isOpen());
   }
 
