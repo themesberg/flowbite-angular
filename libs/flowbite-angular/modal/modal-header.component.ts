@@ -18,6 +18,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/modal/
+ */
 @Component({
   standalone: true,
   imports: [NgClass, IconComponent],
@@ -39,12 +42,27 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalHeaderComponent extends BaseComponent<ModalHeaderClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly stateService = inject(ModalHeaderThemeService);
+  /**
+   * The parent `ModalComponent`
+   */
   public readonly modalComponent = inject(ModalComponent);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the custom style for this modal header
+   */
   public customStyle = model<DeepPartial<ModalHeaderTheme>>({});
   //#endregion
 
