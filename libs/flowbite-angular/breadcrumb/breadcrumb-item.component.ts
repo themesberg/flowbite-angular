@@ -20,6 +20,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/breadcrumb/
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
@@ -34,14 +37,37 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(BreadcrumbItemThemeService);
+  /**
+   * The parent `BreadcrumbComponent`
+   */
   public readonly breadcrumbComponent = inject(BreadcrumbComponent);
+  /**
+   * Optional `FlowbiteRouterLinkDirective` injected
+   */
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the breadcrumb item color
+   *
+   * @default `BreadcrumbComponent`'s color
+   */
   public color = model<keyof BreadcrumbColors>(this.breadcrumbComponent.color());
+  /**
+   * Set the custom style for this breadcrumb item
+   */
   public customStyle = model<DeepPartial<BreadcrumbItemTheme>>({});
   //#endregion
 
