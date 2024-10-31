@@ -15,6 +15,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/navbar/
+ */
 @Component({
   selector: 'flowbite-navbar-icon-button',
   standalone: true,
@@ -24,14 +27,32 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarIconButtonComponent extends BaseComponent<NavbarIconButtonClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(NavbarIconButtonThemeService);
+  /**
+   * The optional parent `NavbarComponent`
+   */
   public readonly navbarComponent = inject(NavbarComponent, { optional: true });
+  /**
+   * The optional parent `NavbarContentComponent`
+   */
   public readonly navbarContentComponent = inject(NavbarContentComponent, { optional: true });
 
   //#region properties
+  /**
+   * Set the navbar icon button color
+   *
+   * @default `NavbarContentComponent`'s color
+   * @default `NavbarComponent`'s color
+   */
   public color = model<keyof NavbarColors>(
     this.navbarContentComponent?.color() || this.navbarComponent!.color()
   );
+  /**
+   * Set the custom style for this navbar icon button
+   */
   public customStyle = model<DeepPartial<NavbarIconButtonTheme>>({});
   //#endregion
 

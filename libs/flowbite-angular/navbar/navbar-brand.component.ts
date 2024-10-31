@@ -14,6 +14,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/navbar/
+ */
 @Component({
   selector: 'flowbite-navbar-brand',
   standalone: true,
@@ -23,10 +26,19 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarBrandComponent extends BaseComponent<NavbarBrandClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(NavbarBrandThemeService);
+  /**
+   * The parent `NavbarComponent`
+   */
   public readonly navbarComponent = inject(NavbarComponent);
 
   //#region properties
+  /**
+   * Set the custom style for this navbar brand
+   */
   public customStyle = model<DeepPartial<NavbarBrandTheme>>({});
   //#endregion
 
