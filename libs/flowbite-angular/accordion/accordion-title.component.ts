@@ -19,6 +19,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/accordion/
+ */
 @Component({
   standalone: true,
   imports: [NgClass, IconComponent],
@@ -39,13 +42,33 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(AccordionTitleThemeService);
+  /**
+   * The parent `AccordionPanelComponent`
+   */
   public readonly accordionPanelComponent = inject(AccordionPanelComponent);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the accordion title color
+   *
+   * @default `AccordionPanelComponents`'s color
+   */
   public color = model<keyof AccordionColors>(this.accordionPanelComponent.color());
+  /**
+   * Set the custom style for this accordion title
+   */
   public customStyle = model<DeepPartial<AccordionTitleTheme>>({});
   //#endregion
 
@@ -68,6 +91,9 @@ export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> 
   }
   //#endregion
 
+  /**
+   * Toggle the parent `AccordionPanelComponent`'s isOpen
+   */
   public onClick(): void {
     this.accordionPanelComponent.toggleVisibility();
   }

@@ -17,10 +17,31 @@ import { afterNextRender, computed, Directive, inject, Injector, signal } from '
   },
 })
 export abstract class BaseComponent<TClass extends FlowbiteClass> implements OnInit {
+  /**
+   * `Injector` instance injected to be used as an injector context where there is no default one.
+   *
+   * @example
+   * ```
+   * public ngOnInit(): void {
+   *   afterNextRender(
+   *      () => {},
+   *      { injector: this.injector }
+   *   );
+   * }
+   * ```
+   */
   public readonly injector = inject(Injector);
 
+  /**
+   * Auto generated GUID for each flowbite-angular component
+   *
+   * Its default value is 00000000-0000-0000-0000-000000000000, and is set to a random GUID inside the `afterNextRender` hook
+   */
   public readonly flowbiteId = signal<Guid>(new Guid(Guid.empty));
 
+  /**
+   * Computed signal storing the component classes used in its template
+   */
   public contentClasses = computed<TClass>(() => this.fetchClass());
 
   /**
