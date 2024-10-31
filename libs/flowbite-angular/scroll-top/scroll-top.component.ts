@@ -21,6 +21,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * Provide a way to go at the top of the page via a button
+ */
 @Component({
   selector: 'flowbite-scroll-top',
   standalone: true,
@@ -33,13 +36,35 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(ScrollTopThemeService);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the scroll top color
+   *
+   * @default primary
+   */
   public color = model<keyof ScrollTopColors>('primary');
+  /**
+   * Set the scroll top position
+   *
+   * @default bottom-right
+   */
   public position = model<keyof ScrollTopPositions>('bottom-right');
+  /**
+   * Set the custom style for this scroll top
+   */
   public customStyle = model<DeepPartial<ScrollTopTheme>>({});
   //#endregion
 
@@ -61,6 +86,9 @@ export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements
   }
   //#endregion
 
+  /**
+   * Navigate to the top of the page
+   */
   public onClick(): void {
     window.scrollTo(window.scrollX, 0);
   }
