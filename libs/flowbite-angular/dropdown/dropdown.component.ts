@@ -158,6 +158,8 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   }
 
   ngAfterViewInit() {
+    // todo : Fix ERROR ReferenceError: ResizeObserver is not defined
+    // Append when runing command 'pnpm lib:build'
     autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
       if (!this.isOpen()) return;
       this.calculatePosition();
