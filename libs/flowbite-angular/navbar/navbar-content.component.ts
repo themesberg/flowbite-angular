@@ -16,6 +16,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/navbar/
+ */
 @Component({
   selector: 'flowbite-navbar-content',
   standalone: true,
@@ -29,10 +32,21 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarContentComponent extends BaseComponent<NavbarContentClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(NavbarContentThemeService);
-  public readonly navbarComponent = model<NavbarComponent>(inject(NavbarComponent));
+  /**
+   * The parent `NavbarComponent`
+   */
+  public readonly navbarComponent = model(inject(NavbarComponent));
 
   //#region properties
+  /**
+   * Set the navbar content color
+   *
+   * @default `NavbarComponent`'s color
+   */
   public color = model<keyof NavbarColors>(this.navbarComponent().color());
   public customStyle = model<DeepPartial<NavbarContentTheme>>({});
   //#endregion

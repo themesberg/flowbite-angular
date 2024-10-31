@@ -53,9 +53,21 @@ import { filter, Subject, takeUntil } from 'rxjs';
 export class ModalComponent extends BaseComponent<ModalClass> implements OnDestroy {
   private readonly destroyed = new Subject<void>();
 
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(ModalThemeService);
+  /**
+   * The child `ModalHeaderComponent`
+   */
   public readonly modalHeaderChild = contentChild(ModalHeaderComponent);
+  /**
+   * The child `ModalBodyComponent`
+   */
   public readonly modalBodyChild = contentChild(ModalBodyComponent);
+  /**
+   * The child `ModalFooterComponent`
+   */
   public readonly modalFooterChild = contentChild(ModalFooterComponent);
 
   //#region template properties
@@ -68,10 +80,33 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   //#endregion
 
   //#region properties
+  /**
+   * Set the modal size
+   *
+   * @default md
+   */
   public size = model<keyof ModalSizes>('md');
+  /**
+   * Set the modal position
+   *
+   * @default center
+   */
   public position = model<keyof ModalPositions>('center');
+  /**
+   * Set if the modal is dismissable
+   *
+   * @default false
+   */
   public isDismissable = model<boolean>(false);
+  /**
+   * Set if the modal is open
+   *
+   * @default false
+   */
   public isOpen = model<boolean>(false);
+  /**
+   * Set the custom style for this modal
+   */
   public customStyle = model<DeepPartial<ModalTheme>>({});
   //#endregion
 

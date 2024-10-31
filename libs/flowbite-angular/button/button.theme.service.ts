@@ -3,13 +3,24 @@ import type { ButtonClass, ButtonProperties, ButtonTheme } from './button.theme'
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
+/**
+ * `InjectionToken` used to import `ButtonTheme` value
+ *
+ * @example
+ * ```
+ * var theme = inject(FLOWBITE_BUTTON_THEME_TOKEN)
+ * ```
+ */
 export const FLOWBITE_BUTTON_THEME_TOKEN = new InjectionToken<ButtonTheme>(
   'FLOWBITE_BUTTON_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class ButtonThemeService implements FlowbiteThemeService<ButtonProperties> {
   private readonly baseTheme = inject(FLOWBITE_BUTTON_THEME_TOKEN);
 

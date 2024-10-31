@@ -20,6 +20,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/sidebar/
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, SanitizeHtmlPipe, BadgeComponent],
@@ -38,27 +41,54 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
+  /**
+   * Optional `FlowbiteRouterLinkDirective` injected
+   */
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  /**
+   * Optional `FlowbiteRouterLinkActiveDirective` injected
+   */
   public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, {
     optional: true,
   });
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(SidebarItemThemeService);
-  public readonly sidebarItemGroupComponent = inject<SidebarItemGroupComponent | undefined>(
-    SidebarItemGroupComponent,
-    {
-      optional: true,
-    }
-  );
-  public readonly sidebarMenuComponent = inject<SidebarMenuComponent | undefined>(
-    SidebarMenuComponent
-  );
+  /**
+   * The optional parent `SidebarItemGroupComponent`
+   */
+  public readonly sidebarItemGroupComponent = inject(SidebarItemGroupComponent, { optional: true });
+  /**
+   * The optional parent `SidebarMenuComponent`
+   */
+  public readonly sidebarMenuComponent = inject(SidebarMenuComponent, { optional: true });
 
   //#region properties
+  /**
+   * Set the sidebar item icon
+   *
+   * @default undefined
+   */
   public icon = model<string | undefined>(undefined);
+  /**
+   * Set the sidebar item color
+   *
+   * @default `SidebarItemGroupComponent`'s color
+   * @default `SidebarMenuComponent`'s color
+   */
   public color = model<keyof SidebarColors>(
     (this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color()
   );
+  /**
+   * Set the sidebar item label
+   *
+   * @default undefined
+   */
   public label = model<string | undefined>(undefined);
+  /**
+   * Set the custom style for this sidebar item
+   */
   public customStyle = model<DeepPartial<SidebarItemTheme>>({});
   //#endregion
 
@@ -79,6 +109,9 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
   }
   //#endregion
 
+  /**
+   * Toggle sidebar menu visibility
+   */
   onClick(): void {
     (this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent)?.closeAll();
     (

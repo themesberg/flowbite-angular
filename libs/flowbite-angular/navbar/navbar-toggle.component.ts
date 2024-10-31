@@ -17,6 +17,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/navbar/
+ */
 @Component({
   selector: 'flowbite-navbar-toggle',
   standalone: true,
@@ -29,12 +32,27 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(NavbarToggleThemeService);
-  public readonly navbarComponent = model<NavbarComponent>(inject(NavbarComponent));
+  /**
+   * The parent `NavbarComponent`
+   */
+  public readonly navbarComponent = model(inject(NavbarComponent));
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the custom style for this navbar toggle
+   */
   public customStyle = model<DeepPartial<NavbarToggleTheme>>({});
   //#endregion
 
@@ -54,6 +72,9 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   }
   //#endregion
 
+  /**
+   * Toggle navbar visibility (open close on mobile device)
+   */
   public onClick(): void {
     const isCollapsed = this.navbarComponent().isOpen();
 

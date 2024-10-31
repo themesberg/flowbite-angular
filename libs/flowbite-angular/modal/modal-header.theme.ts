@@ -1,10 +1,16 @@
 import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `ModalComponent`
+ */
 export interface ModalHeaderProperties {
   customStyle: DeepPartial<ModalHeaderTheme>;
 }
 
+/**
+ * Theme definition for `ModalComponent`
+ */
 export interface ModalHeaderTheme {
   root: {
     base: string;
@@ -17,6 +23,9 @@ export interface ModalHeaderTheme {
   };
 }
 
+/**
+ * Default theme for `ModalComponent`
+ */
 export const modalHeaderTheme: ModalHeaderTheme = createTheme({
   root: {
     base: 'flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600',
@@ -29,6 +38,9 @@ export const modalHeaderTheme: ModalHeaderTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `ModalComponent`
+ */
 export interface ModalHeaderClass extends FlowbiteClass {
   modalHeaderTitleClass: string;
   modalHeaderButtonClass: string;

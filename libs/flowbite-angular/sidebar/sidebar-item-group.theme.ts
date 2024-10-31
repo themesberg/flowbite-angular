@@ -3,11 +3,17 @@ import type { SidebarColors } from './sidebar.theme';
 import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `SidebarItemGroupComponent`
+ */
 export interface SidebarItemGroupProperties {
   color: keyof SidebarColors;
   customStyle: DeepPartial<SidebarItemGroupTheme>;
 }
 
+/**
+ * Theme definition for `SidebarItemGroupComponent`
+ */
 export interface SidebarItemGroupTheme {
   root: {
     base: string;
@@ -18,6 +24,9 @@ export interface SidebarItemGroupTheme {
   };
 }
 
+/**
+ * Default theme for `SidebarItemGroupComponent`
+ */
 export const sidebarItemGroupTheme: SidebarItemGroupTheme = createTheme({
   root: {
     base: 'flex flex-col py-2 font-semibold cursor-pointer',
@@ -35,6 +44,9 @@ export const sidebarItemGroupTheme: SidebarItemGroupTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `SidebarItemGroupComponent`
+ */
 export interface SidebarItemGroupClass extends FlowbiteClass {
   spanClass: string;
 }

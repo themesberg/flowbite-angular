@@ -19,6 +19,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/accordion/
+ */
 @Component({
   standalone: true,
   imports: [],
@@ -28,14 +31,39 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(AccordionPanelThemeService);
+  /**
+   * The parent `AccordionComponent`
+   */
   public readonly accordionComponent = inject(AccordionComponent);
+  /**
+   * The child `AccordionTitleComponent`
+   */
   public readonly accordionTitleChild = contentChild(AccordionTitleComponent);
+  /**
+   * The child `AccordionContentComponent`
+   */
   public readonly accordionContentChild = contentChild(AccordionContentComponent);
 
   //#region properties
+  /**
+   * Set the accordion panel color
+   *
+   * @default `AccordionComponent`'s color
+   */
   public color = model<keyof AccordionColors>(this.accordionComponent.color());
+  /**
+   * Set if the accordion panel is open or not
+   *
+   * @default false
+   */
   public isOpen = model<boolean>(false);
+  /**
+   * Set the custom style for this accordion panel
+   */
   public customStyle = model<DeepPartial<AccordionPanelTheme>>({});
   //#endregion
 
@@ -56,6 +84,11 @@ export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> 
   }
   //#endregion
 
+  /**
+   * Toggle isOpen for itself and close every other `AccordionPanelComponent` if the parent `AccordionComponent`'s isAlwaysOpen is false
+   *
+   * @param isOpen Instead of toggle, it can set the value provided
+   */
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {
       isOpen = untracked(() => !this.isOpen());

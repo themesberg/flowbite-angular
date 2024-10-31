@@ -3,12 +3,18 @@ import type { AccordionColors } from './accordion.theme';
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class generation of `AccordionContentComponent`
+ */
 export interface AccordionContentProperties {
   color: keyof AccordionColors;
   isOpen: keyof FlowbiteBoolean;
   customStyle: DeepPartial<AccordionContentTheme>;
 }
 
+/**
+ * Theme definition for `AccordionContentComponent`
+ */
 export interface AccordionContentTheme {
   root: {
     base: string;
@@ -17,6 +23,9 @@ export interface AccordionContentTheme {
   };
 }
 
+/**
+ * Default theme for `AccordionContentComponent`
+ */
 export const accordionContentTheme: AccordionContentTheme = createTheme({
   root: {
     base: 'flex flex-col gap-2',
@@ -35,4 +44,7 @@ export const accordionContentTheme: AccordionContentTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `AccordionContentComponent`
+ */
 export type AccordionContentClass = FlowbiteClass;

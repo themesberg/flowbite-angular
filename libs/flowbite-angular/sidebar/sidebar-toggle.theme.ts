@@ -4,17 +4,26 @@ import type { DeepPartial, FlowbiteClass, FlowbiteSizes } from 'flowbite-angular
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region region Component theme option
+/**
+ * Available sizes for `SidebarToggleComponent`
+ */
 export interface SidebarToggleSizes extends Pick<FlowbiteSizes, 'sm'> {
   [key: string]: string;
 }
 //#endregion
 
+/**
+ * Required properties for the class generation of `SidebarToggleComponent`
+ */
 export interface SidebarToggleProperties {
   color: keyof SidebarColors;
   size: keyof SidebarToggleSizes;
   customStyle: DeepPartial<SidebarToggleTheme>;
 }
 
+/**
+ * Theme definitions for `SidebarToggleComponent`
+ */
 export interface SidebarToggleTheme {
   root: {
     base: string;
@@ -23,6 +32,9 @@ export interface SidebarToggleTheme {
   };
 }
 
+/**
+ * Default theme for `SidebarToggleComponent`
+ */
 export const sidebarToggleTheme: SidebarToggleTheme = createTheme({
   root: {
     base: 'cursor-pointer inline-flex items-center p-2 justify-center rounded-lg focus:outline-none focus:ring-2',
@@ -43,4 +55,7 @@ export const sidebarToggleTheme: SidebarToggleTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `SidebarToggleComponent`
+ */
 export type SidebarToggleClass = FlowbiteClass;

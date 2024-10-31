@@ -3,13 +3,24 @@ import type { indicatorClass, IndicatorProperties, IndicatorTheme } from './indi
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
+/**
+ * `InjectionToken` used to import `IndicatorTheme` value
+ *
+ * @example
+ * ```
+ * var theme = inject(FLOWBITE_INDICATOR_THEME_TOKEN)
+ * ```
+ */
 export const FLOWBITE_INDICATOR_THEME_TOKEN = new InjectionToken<IndicatorTheme>(
   'FLOWBITE_INDICATOR_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class IndicatorThemeService implements FlowbiteThemeService<IndicatorProperties> {
   private readonly baseTheme = inject(FLOWBITE_INDICATOR_THEME_TOKEN);
 

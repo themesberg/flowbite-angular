@@ -26,14 +26,43 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BadgeComponent extends BaseComponent<BadgeClass> {
+  /**
+   * Optional `FlowbiteRouterLinkDirective` injected
+   */
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(BadgeThemeService);
 
   //#region properties
+  /**
+   * Set the badge color
+   *
+   * @default primary
+   */
   public color = model<keyof BadgeColors>('primary');
+  /**
+   * Set the badge size
+   *
+   * @default xs
+   */
   public size = model<keyof BadgeSizes>('xs');
+  /**
+   * Set if the badge is icon only
+   *
+   * @default false
+   */
   public isIconOnly = model<boolean>(false);
+  /**
+   * Set if the badge is pill
+   *
+   * @default false
+   */
   public isPill = model<boolean>(false);
+  /**
+   * Set the custom style for this badge
+   */
   public customStyle = model<DeepPartial<BadgeTheme>>({});
   //#endregion
 

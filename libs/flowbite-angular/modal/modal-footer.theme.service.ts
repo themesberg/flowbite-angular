@@ -7,13 +7,24 @@ import type {
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
+/**
+ * `InjectionToken` used to import `ModalFooterTheme` value
+ *
+ * @example
+ * ```
+ * var theme = inject(FLOWBITE_MODAL_FOOTER_THEME_TOKEN)
+ * ```
+ */
 export const FLOWBITE_MODAL_FOOTER_THEME_TOKEN = new InjectionToken<ModalFooterTheme>(
   'FLOWBITE_MODAL_FOOTER_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class ModalFooterThemeService implements FlowbiteThemeService<ModalFooterProperties> {
   private readonly baseTheme = inject(FLOWBITE_MODAL_FOOTER_THEME_TOKEN);
 

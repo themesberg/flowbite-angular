@@ -15,6 +15,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/accordion/
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass],
@@ -28,11 +31,25 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionContentComponent extends BaseComponent<AccordionContentClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(AccordionContentThemeService);
+  /**
+   * The parent `AccordionPanelComponent`
+   */
   public readonly accordionPanelComponent = inject(AccordionPanelComponent);
 
   //#region properties
+  /**
+   * Set the accordion content color
+   * 
+   @default `AccordionPanelComponent`'s color
+   */
   public color = model<keyof AccordionColors>(this.accordionPanelComponent.color());
+  /**
+   * Set the custom style for this accordion content
+   */
   public customStyle = model<DeepPartial<AccordionContentTheme>>({});
   //#endregion
 

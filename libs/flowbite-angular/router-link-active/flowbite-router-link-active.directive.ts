@@ -27,10 +27,19 @@ import { RouterLinkActive } from '@angular/router';
 export class FlowbiteRouterLinkActiveDirective {
   private readonly ariaCurrentValue: boolean = true;
 
+  /**
+   * `RouterLinkActive` directive
+   */
   public routerLinkActive = inject(RouterLinkActive);
 
+  /**
+   * Updated value when the user is on the same page as routerLinkActive value
+   */
   private _isActive = signal<boolean>(this.routerLinkActive.isActive);
 
+  /**
+   * Getter for _isActive
+   */
   public get isActive(): Signal<boolean> {
     return this._isActive.asReadonly();
   }
@@ -42,7 +51,10 @@ export class FlowbiteRouterLinkActiveDirective {
     this.routerLinkActive.ariaCurrentWhenActive = this.ariaCurrentValue;
   }
 
-  onIsActiveChange(): void {
+  /**
+   * Update _isActive when `RouterLinkActive`'s isActive update
+   */
+  public onIsActiveChange(): void {
     this._isActive.set(this.routerLinkActive.isActive);
   }
 }

@@ -3,13 +3,24 @@ import type { AlertClass, AlertProperties, AlertTheme } from './alert.theme';
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
+/**
+ * `InjectionToken` used to import `AlertTheme` value
+ *
+ * @example
+ * ```
+ * var theme = inject(FLOWBITE_ALERT_THEME_TOKEN)
+ * ```
+ */
 export const FLOWBITE_ALERT_THEME_TOKEN = new InjectionToken<AlertTheme>(
   'FLOWBITE_ALERT_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class AlertThemeService implements FlowbiteThemeService<AlertProperties> {
   private readonly baseTheme = inject(FLOWBITE_ALERT_THEME_TOKEN);
 

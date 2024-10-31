@@ -3,6 +3,9 @@ import type { SidebarColors, SidebarDisplayMode } from './sidebar.theme';
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Required properties for the class definition of `SidebarMenuComponent`
+ */
 export interface SidebarMenuProperties {
   isOpen: keyof FlowbiteBoolean;
   color: keyof SidebarColors;
@@ -10,6 +13,9 @@ export interface SidebarMenuProperties {
   customStyle: DeepPartial<SidebarMenuTheme>;
 }
 
+/**
+ * Theme definition for `SidebarMenuComponent`
+ */
 export interface SidebarMenuTheme {
   root: {
     base: string;
@@ -19,6 +25,9 @@ export interface SidebarMenuTheme {
   };
 }
 
+/**
+ * Default theme for `SidebarMenuComponent`
+ */
 export const sidebarMenuTheme: SidebarMenuTheme = createTheme({
   root: {
     base: 'flex-col min-h-full overflow-y-auto shrink-0 pr-1 border-r bg-white dark:bg-gray-800',
@@ -42,4 +51,7 @@ export const sidebarMenuTheme: SidebarMenuTheme = createTheme({
   },
 });
 
+/**
+ * Generated class definition for `SidebarMenuComponent`
+ */
 export type SidebarMenuClass = FlowbiteClass;

@@ -16,10 +16,10 @@ export class SanitizeHtmlPipe implements PipeTransform {
   private _sanitizer = inject(DomSanitizer);
 
   /**
-   * Return the result of 'bypassSecurityTrustHtml' function of DomSanitizer for the parameter.
+   * Return the result of `bypassSecurityTrustHtml` function of DomSanitizer for the parameter.
    *
    * @param v The string to be transformed.
-   * @returns The SfeHtml from the DomSanitizer.
+   * @returns The SafeHtml from the DomSanitizer.
    */
   transform(v: string): SafeHtml {
     return this._sanitizer.bypassSecurityTrustHtml(v);

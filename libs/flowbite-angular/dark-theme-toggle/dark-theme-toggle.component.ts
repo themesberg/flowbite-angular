@@ -17,6 +17,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * Use to toggle light/dark mode accross the site
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, IconComponent],
@@ -32,11 +35,23 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(DarkThemeToggleThemeService);
+  /**
+   * `IconRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the custom style for this dark-theme-toggle
+   */
   public customStyle = model<DeepPartial<DarkThemeToggleTheme>>({});
   //#endregion
 
@@ -68,14 +83,26 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
   }
   //#endregion
 
+  /**
+   * Toggle between dark and light mode
+   */
   public onClick() {
     this.toggleTheme();
   }
 
+  /**
+   * Get theme from the `localStorage`
+   * @returns The current theme saved in the `localStorage` with the key `color-theme`
+   */
   private getTheme(): FlowbiteTheme {
     return localStorage.getItem('color-theme') === 'dark' ? 'dark' : 'light';
   }
 
+  /**
+   * Toggle the theme saced in the `localStorage`
+   *
+   * @param theme If provided, force the theme instead of toggling it between light and dark mode
+   */
   private toggleTheme(theme?: FlowbiteTheme): void {
     if (!theme) {
       const tmpTheme = this.getTheme();
@@ -87,6 +114,11 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
     this.setTheme(theme);
   }
 
+  /**
+   * Set the theme inside the page
+   *
+   * @param theme Theme to apply
+   */
   private setTheme(theme: FlowbiteTheme): void {
     localStorage.setItem('color-theme', theme);
 

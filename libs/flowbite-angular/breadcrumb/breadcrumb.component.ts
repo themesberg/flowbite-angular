@@ -30,11 +30,25 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(BreadcrumbThemeService);
+  /**
+   * List of `BreadcrumbItemComponent`
+   */
   public readonly breadcrumbItemChildren = contentChildren(BreadcrumbItemComponent);
 
   //#region properties
+  /**
+   * Set the breacrumb color
+   *
+   * @default primary
+   */
   public color = model<keyof BreadcrumbColors>('primary');
+  /**
+   * Set the custom style for this breadcrumb
+   */
   public customStyle = model<DeepPartial<BreadcrumbTheme>>({});
   //#endregion
 
