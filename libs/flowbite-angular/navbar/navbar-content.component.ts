@@ -39,7 +39,7 @@ export class NavbarContentComponent extends BaseComponent<NavbarContentClass> im
   /**
    * The parent `NavbarComponent`
    */
-  public readonly navbarComponent = inject(NavbarComponent);
+  public readonly navbarComponent = model(inject(NavbarComponent));
 
   //#region properties
   /**
@@ -47,14 +47,14 @@ export class NavbarContentComponent extends BaseComponent<NavbarContentClass> im
    *
    * @default `NavbarComponent`'s color
    */
-  public color = model<keyof NavbarColors>(this.navbarComponent.color());
+  public color = model<keyof NavbarColors>(this.navbarComponent().color());
   public customStyle = model<DeepPartial<NavbarContentTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): NavbarContentClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.navbarComponent.isOpen()),
+      isOpen: booleanToFlowbiteBoolean(this.navbarComponent().isOpen()),
       customStyle: this.customStyle(),
     });
   }

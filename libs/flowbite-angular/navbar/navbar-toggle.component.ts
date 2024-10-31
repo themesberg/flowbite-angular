@@ -39,7 +39,7 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   /**
    * The parent `NavbarComponent`
    */
-  public readonly navbarComponent = inject(NavbarComponent);
+  public readonly navbarComponent = model(inject(NavbarComponent));
   /**
    * `IconRegistry` service
    */
@@ -76,8 +76,8 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
    * Toggle navbar visibility (open close on mobile device)
    */
   public onClick(): void {
-    const isCollapsed = this.navbarComponent.isOpen();
+    const isCollapsed = this.navbarComponent().isOpen();
 
-    this.navbarComponent.isOpen.set(!isCollapsed);
+    this.navbarComponent().isOpen.set(!isCollapsed);
   }
 }
