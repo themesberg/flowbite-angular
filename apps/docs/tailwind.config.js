@@ -6,7 +6,7 @@
 
 const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
 const { join } = require('path');
-const sharedTailwindConfig = require('flowbite-angular/tailwind.config.js');
+const sharedTailwindConfig = require('flowbite-angular/tailwind.config');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
