@@ -30,17 +30,57 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent extends BaseComponent<NavbarClass> {
+  /**
+   * Service injecteed used to generate class
+   */
   public readonly themeService = inject(NavbarThemeService);
+  /**
+   * The child `NavbarBrandComponent`
+   */
   public readonly navbarBrandChild = contentChild(NavbarBrandComponent);
+  /**
+   * The child `NavbarToggleComponent`
+   */
   public readonly navbarToggleChild = contentChild(NavbarToggleComponent);
+  /**
+   * The child `NavbarContentComponent`
+   */
   public readonly navbarContentChild = contentChild(NavbarContentComponent);
 
   //#region properties
+  /**
+   * Set the navbar color
+   *
+   * @default primary
+   */
   public color = model<keyof NavbarColors>('primary');
+  /**
+   * Set if the navbar is open
+   *
+   * @default false
+   */
   public isOpen = model<boolean>(false);
+  /**
+   * Set if the navbar is rounded
+   *
+   * @default false
+   */
   public isRounded = model<boolean>(false);
+  /**
+   * Set if the navbar has border
+   *
+   * @default false
+   */
   public hasBorder = model<boolean>(false);
+  /**
+   * Set if the navbar is fixed
+   *
+   * @default false
+   */
   public isFixed = model<boolean>(false);
+  /**
+   * Set the custom style for this navbar
+   */
   public customStyle = model<DeepPartial<NavbarTheme>>({});
   //#endregion
 
@@ -61,6 +101,11 @@ export class NavbarComponent extends BaseComponent<NavbarClass> {
   }
   //#endregion
 
+  /**
+   * Toggle visibility of the navbar
+   *
+   * @param isOpen When provide force the isOpen value
+   */
   public toggleVisibility(isOpen?: boolean): void {
     if (isOpen === undefined) {
       isOpen = untracked(() => !this.isOpen());

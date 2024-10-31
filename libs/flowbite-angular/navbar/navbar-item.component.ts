@@ -17,6 +17,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/navbar/
+ */
 @Component({
   selector: 'flowbite-navbar-item',
   standalone: true,
@@ -29,15 +32,35 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
+  /**
+   * Optional `FlowbiteRouterLinkDirective` injected
+   */
   public readonly flowbiteRouterLink = inject(FlowbiteRouterLinkDirective, { optional: true });
+  /**
+   * Optional `FlowbiteRouterLinkActiveDirective` injected
+   */
   public readonly flowbiteRouterLinkActive = inject(FlowbiteRouterLinkActiveDirective, {
     optional: true,
   });
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(NavbarItemThemeService);
+  /**
+   * The parent `NavbarContentComponent`
+   */
   public readonly navbarContentComponent = inject(NavbarContentComponent);
 
   //#region properties
+  /**
+   * Set the navbar item color
+   *
+   * @default `NavbarContentComponent`'s color
+   */
   public color = model<keyof NavbarColors>(this.navbarContentComponent.color());
+  /**
+   * Set the custom style for this navbar item
+   */
   public customStyle = model<DeepPartial<NavbarItemTheme>>({});
   //#endregion
 
@@ -50,7 +73,10 @@ export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
   }
   //#endregion
 
+  /**
+   * Toggle the nnavbar visibility (auto close when on mobile device)
+   */
   public onClick(): void {
-    this.navbarContentComponent.navbarComponent().toggleVisibility(false);
+    this.navbarContentComponent.navbarComponent.toggleVisibility(false);
   }
 }
