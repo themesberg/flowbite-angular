@@ -1,3 +1,11 @@
+# [1.0.0-alpha.6](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.5...flowbite-angular@v1.0.0-alpha.6) (2024-10-31)
+
+
+### Bug Fixes
+
+* ci install ([7bc93ee](https://github.com/themesberg/flowbite-angular/commit/7bc93eef3938a3a58ae15540a5b308c665d417a1))
+* tailwind config file and import codeblock in quickstart ([781069c](https://github.com/themesberg/flowbite-angular/commit/781069c3ddb0a3aaafec66007663de08cdb64cb2))
+
 # [1.0.0-alpha.5](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0-alpha.4...flowbite-angular@v1.0.0-alpha.5) (2024-10-31)
 
 
