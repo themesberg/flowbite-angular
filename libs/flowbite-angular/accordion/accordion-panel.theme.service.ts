@@ -8,13 +8,16 @@ import type { AccordionClass } from './accordion.theme';
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_ACCORDION_PANEL_THEME_TOKEN = new InjectionToken<AccordionPanelTheme>(
   'FLOWBITE_ACCORDION_PANEL_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class AccordionPanelThemeService implements FlowbiteThemeService<AccordionPanelProperties> {
   private readonly baseTheme = inject(FLOWBITE_ACCORDION_PANEL_THEME_TOKEN);
 

@@ -3,13 +3,16 @@ import type { BreadcrumbClass, BreadcrumbProperties, BreadcrumbTheme } from './b
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_BREADCRUMB_THEME_TOKEN = new InjectionToken<BreadcrumbTheme>(
   'FLOWBITE_BREADCRUMB_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class BreadcrumbThemeService implements FlowbiteThemeService<BreadcrumbProperties> {
   private readonly baseTheme = inject(FLOWBITE_BREADCRUMB_THEME_TOKEN);
 

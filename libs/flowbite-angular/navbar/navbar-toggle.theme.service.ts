@@ -7,13 +7,16 @@ import type {
 import type { FlowbiteThemeService } from 'flowbite-angular';
 import { mergeTheme } from 'flowbite-angular/utils';
 
-import { inject, InjectionToken } from '@angular/core';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 export const FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN = new InjectionToken<NavbarToggleTheme>(
   'FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN'
 );
 
+@Injectable({
+  providedIn: 'root',
+})
 export class NavbarToggleThemeService implements FlowbiteThemeService<NavbarToggleProperties> {
   private readonly baseTheme = inject(FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN);
 
