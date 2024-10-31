@@ -3,11 +3,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const { createGlobPatternsForDependencies } = require('@nx/angular/tailwind');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...createGlobPatternsForDependencies(__dirname)],
   darkMode: 'class',
   theme: {
     extend: {
