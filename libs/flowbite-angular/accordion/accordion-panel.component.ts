@@ -57,6 +57,8 @@ export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> 
   public color = model<keyof AccordionColors>(this.accordionComponent.color());
   /**
    * Set if the accordion panel is open or not
+   *
+   * @default false
    */
   public isOpen = model<boolean>(false);
   /**
