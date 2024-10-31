@@ -77,6 +77,6 @@ export class NavbarItemComponent extends BaseComponent<NavbarItemClass> {
    * Toggle the nnavbar visibility (auto close when on mobile device)
    */
   public onClick(): void {
-    this.navbarContentComponent.navbarComponent.toggleVisibility(false);
+    this.navbarContentComponent.navbarComponent().toggleVisibility(false);
   }
 }
