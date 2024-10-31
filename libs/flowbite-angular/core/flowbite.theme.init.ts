@@ -82,8 +82,8 @@ import {
   NavbarItemThemeService,
   navbarTheme,
   NavbarThemeService,
+  navbarToggleTheme,
   NavbarToggleThemeService,
-  navbarToogleTheme,
 } from 'flowbite-angular/navbar';
 import {
   FLOWBITE_SCROLL_TOP_THEME_TOKEN,
@@ -341,7 +341,7 @@ export function initFlowbite(): EnvironmentProviders {
     },
     {
       provide: FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
-      useValue: navbarToogleTheme,
+      useValue: navbarToggleTheme,
     },
     {
       provide: FLOWBITE_NAVBAR_ICON_BUTTON_THEME_TOKEN,

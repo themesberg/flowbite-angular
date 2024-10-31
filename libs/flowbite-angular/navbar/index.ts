@@ -41,7 +41,7 @@ export type {
   NavbarToggleClass,
   NavbarToggleProperties,
 } from './navbar-toggle.theme';
-export { navbarToogleTheme } from './navbar-toggle.theme';
+export { navbarToggleTheme } from './navbar-toggle.theme';
 export {
   FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
   NavbarToggleThemeService,
