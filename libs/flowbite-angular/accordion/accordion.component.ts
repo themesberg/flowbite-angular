@@ -15,6 +15,9 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
+/**
+ * @see https://flowbite.com/docs/components/accordion/
+ */
 @Component({
   standalone: true,
   imports: [NgClass],
@@ -24,13 +27,33 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionComponent extends BaseComponent<AccordionClass> {
+  /**
+   * Service injected used to generated class
+   */
   public readonly themeService = inject(AccordionThemeService);
+  /**
+   * List of `AccordionPanelComponent`
+   */
   public readonly accordionPanelChildren = contentChildren(AccordionPanelComponent);
 
   //#region properties
+  /**
+   * Does the opened `AccordionPanelComponent` stay open if another one is opening
+   */
   public isAlwaysOpen = model<boolean>(false);
+  /**
+   * Set the accordion color and every child default color
+   *
+   * @default primary
+   */
   public color = model<keyof AccordionColors>('primary');
+  /**
+   * Set the accordion as flush or not
+   */
   public isFlush = model<boolean>(false);
+  /**
+   * Set the custom style for this accordion
+   */
   public customStyle = model<DeepPartial<AccordionTheme>>({});
   //#endregion
 
@@ -50,6 +73,9 @@ export class AccordionComponent extends BaseComponent<AccordionClass> {
   }
   //#endregion
 
+  /**
+   * Close every `AccordionPanelComponent`
+   */
   public closeAll(): void {
     this.accordionPanelChildren().forEach((child) => child.toggleVisibility(false));
   }
