@@ -33,11 +33,23 @@ import { Router, RouterLink } from '@angular/router';
   ],
 })
 export class FlowbiteRouterLinkDirective {
+  /**
+   * `Router` service
+   */
   public readonly router = inject(Router);
+  /**
+   * `RouterLink` directive
+   */
   public readonly routerLink = inject(RouterLink);
 
+  /**
+   * @todo Verify utility
+   */
   public href = model<string>();
 
+  /**
+   * @todo Verify utility
+   */
   onClick() {
     const hrefValue = this.href();
 
