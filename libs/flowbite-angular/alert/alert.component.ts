@@ -18,6 +18,9 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+/**
+ * @see https://flowbite.com/docs/components/alerts/
+ */
 @Component({
   standalone: true,
   imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent, ButtonComponent],
@@ -47,18 +50,51 @@ import { DomSanitizer } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertComponent extends BaseComponent<AlertClass> implements OnInit {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(AlertThemeService);
+  /**
+   * `IcoRegistry` service
+   */
   public readonly iconRegistry = inject(IconRegistry);
+  /**
+   * `DomSanitizer` service
+   */
   public readonly domSanitizer = inject(DomSanitizer);
 
   //#region properties
+  /**
+   * Set the indicator color
+   */
   public color = model<keyof AlertColors>('primary');
+  /**
+   * Set if the alert has border
+   */
   public hasBorder = model<boolean>(false);
+  /**
+   * Set if the alert has border accent
+   */
   public hasBorderAccent = model<boolean>(false);
+  /**
+   * Set the custom style for this alert
+   */
   public customStyle = model<DeepPartial<AlertTheme>>({});
+  /**
+   * Set the custom icon
+   */
   public icon = model<TemplateRef<unknown> | null>(null);
+  /**
+   * Set the additional content
+   */
   public additionalContent = model<TemplateRef<unknown> | null>(null);
+  /**
+   * Set if the alert is dismissable
+   */
   public isDismissable = model<boolean>(false);
+  /**
+   * Set the function called when the alert is dismissed
+   */
   public onDismiss = model<() => void | undefined>();
   //#endregion
 
@@ -81,6 +117,9 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
   }
   //#endregion
 
+  /**
+   * Call the onDismiss function if it's not undefined
+   */
   public onDismissClick() {
     const func = this.onDismiss();
 
