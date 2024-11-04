@@ -4,6 +4,9 @@
   "printWidth": 100,
   "trailingComma": "es5",
   "bracketSameLine": true,
+  "bracketSpacing": true,
+  "proseWrap": "always",
+  "singleAttributePerLine": true,
   "plugins": ["prettier-plugin-packagejson", "@ianvs/prettier-plugin-sort-imports"],
   "importOrder": [
     "^~/(.*)$",

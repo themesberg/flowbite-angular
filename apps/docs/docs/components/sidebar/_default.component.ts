@@ -17,7 +17,9 @@ import { Component } from '@angular/core';
     SidebarPageContentComponent,
   ],
   template: `
-    <flowbite-sidebar [isOpen]="true" class="min-h-screen">
+    <flowbite-sidebar
+      [isOpen]="true"
+      class="min-h-screen">
       <flowbite-sidebar-menu>
         <flowbite-sidebar-item>Dashboard</flowbite-sidebar-item>
         <flowbite-sidebar-item>Kanban</flowbite-sidebar-item>

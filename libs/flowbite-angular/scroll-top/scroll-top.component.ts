@@ -28,7 +28,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'flowbite-scroll-top',
   standalone: true,
   imports: [IconComponent],
-  template: `<flowbite-icon svgIcon="flowbite-angular:chevron-up" class="w-5 h-5" />`,
+  template: `<flowbite-icon
+    svgIcon="flowbite-angular:chevron-up"
+    class="w-5 h-5" />`,
   host: {
     '(click)': 'onClick()',
   },

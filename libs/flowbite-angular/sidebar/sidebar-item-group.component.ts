@@ -29,7 +29,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   imports: [NgClass, NgIf, IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
-    <span [class]="contentClasses().spanClass" (click)="toggleVisibility()">
+    <span
+      [class]="contentClasses().spanClass"
+      (click)="toggleVisibility()">
       <h4>{{ title() }}</h4>
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"

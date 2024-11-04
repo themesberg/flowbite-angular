@@ -37,7 +37,11 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="default_modal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="default_modal.close()" color="light"> I decline </flowbite-button>
+        <flowbite-button
+          (click)="default_modal.close()"
+          color="light">
+          I decline
+        </flowbite-button>
       </flowbite-modal-footer>
     </flowbite-modal>
   `,

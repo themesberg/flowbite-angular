@@ -38,7 +38,9 @@ import { DomSanitizer } from '@angular/platform-browser';
         aria-label="Close"
         (click)="onDismissClick()">
         <span class="sr-only">Close</span>
-        <flowbite-icon svgIcon="flowbite-angular:close" class="h-5 w-5" />
+        <flowbite-icon
+          svgIcon="flowbite-angular:close"
+          class="h-5 w-5" />
       </button>
     </div>
     <ng-container [ngTemplateOutlet]="additionalContent()"></ng-container>

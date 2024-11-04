@@ -34,7 +34,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       [ngClass]="contentClasses().modalHeaderButtonClass"
       data-modal-hide="medium-modal"
       (click)="modalComponent.close()">
-      <flowbite-icon svgIcon="flowbite-angular:close" class="w-5 h-5" />
+      <flowbite-icon
+        svgIcon="flowbite-angular:close"
+        class="w-5 h-5" />
       <span class="sr-only">Close modal</span>
     </button>
   `,

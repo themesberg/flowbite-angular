@@ -24,7 +24,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'flowbite-navbar-toggle',
   standalone: true,
   imports: [CommonModule, IconComponent],
-  template: ` <flowbite-icon svgIcon="flowbite-angular:bars" class="w-5 h-5" /> `,
+  template: `
+    <flowbite-icon
+      svgIcon="flowbite-angular:bars"
+      class="w-5 h-5" />
+  `,
   host: {
     '(click)': 'onClick()',
   },
