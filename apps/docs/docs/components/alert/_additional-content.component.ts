@@ -179,5 +179,8 @@ import { Component } from '@angular/core';
       </div>
     </ng-template>
   `,
+  host: {
+    class: 'flex flex wrap flex-col gap-3',
+  },
 })
 export class FlowbiteAdditionalContentComponent {}

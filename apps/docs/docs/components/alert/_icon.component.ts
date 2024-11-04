@@ -10,40 +10,34 @@ import { Component } from '@angular/core';
   template: `
     <flowbite-alert
       [icon]="icon"
-      color="primary"
-      class="w-full">
+      color="primary">
       <span class="font-medium">Primary alert !</span> Change a few things up and try submitting
       again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
-      color="dark"
-      class="w-full">
+      color="dark">
       <span class="font-medium">Dark alert !</span> Change a few things up and try submitting again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
-      color="blue"
-      class="w-full">
+      color="blue">
       <span class="font-medium">blue alert !</span> Change a few things up and try submitting again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
-      color="red"
-      class="w-full">
+      color="red">
       <span class="font-medium">red alert !</span> Change a few things up and try submitting again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
-      color="green"
-      class="w-full">
+      color="green">
       <span class="font-medium">green alert !</span> Change a few things up and try submitting
       again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
-      color="yellow"
-      class="w-full">
+      color="yellow">
       <span class="font-medium">yellow alert !</span> Change a few things up and try submitting
       again.
     </flowbite-alert>
@@ -54,5 +48,8 @@ import { Component } from '@angular/core';
         class="mr-3 inline h-5 w-5 flex-shrink-0" />
     </ng-template>
   `,
+  host: {
+    class: 'flex flex wrap flex-col gap-3',
+  },
 })
 export class FlowbiteIconComponent {}
