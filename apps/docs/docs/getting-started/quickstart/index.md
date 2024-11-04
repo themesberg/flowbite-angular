@@ -4,7 +4,8 @@ keyword: QuickstartPage
 
 ## Introduction
 
-Flowbite Angular can easily be integrated into your project using NPM. It functions as a common Angular library.
+Flowbite Angular can easily be integrated into your project using NPM. It functions as a common
+Angular library.
 
 ## Require via NPM
 
@@ -22,7 +23,8 @@ npm install flowbite-angular
 
 ## Init function
 
-By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to call the init function inside the provider's list of your application.
+By default, Flowbite Angular provides a style for each of it's components. In order to use them, you
+have to call the init function inside the provider's list of your application.
 
 For more informations about styling, check the `*OverrideBaseStylePage`.
 
@@ -40,7 +42,7 @@ export const appConfig: ApplicationConfig = {
 
 Make sure to use the TailwindCSS configuration preset in your tailwind.config.js
 
-```javascript
+```javascript {2,7-8}
 const { join } = require('path');
 const flowbiteAngularTailwindConfig = require('flowbite-angular/tailwind.config');
 
