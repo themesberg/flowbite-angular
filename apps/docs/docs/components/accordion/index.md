@@ -18,7 +18,7 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteAlwaysOpenComponent', {container: false}) }}
 
-```html file="./_always-open.component.ts"#L20-L90 group="always-open" name="html"
+```html file="./_always-open.component.ts"#L20-L92 group="always-open" name="html"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteColorOptionComponent', {container: false}) }}
 
-```html file="./_color-option.component.ts"#L20-L90 group="color-option" name="html"
+```html file="./_color-option.component.ts"#L20-L92 group="color-option" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteFlushComponent', {container: false}) }}
 
-```html file="./_flush.component.ts"#L20-L90 group="flush" name="html"
+```html file="./_flush.component.ts"#L20-L92 group="flush" name="html"
 
 ```
 

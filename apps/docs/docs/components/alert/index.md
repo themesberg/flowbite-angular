@@ -6,7 +6,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./_default.component.ts"#L10-L30 group="default" name="html"
+```html file="./_default.component.ts"#L10-L42 group="default" name="html"
 
 ```
 
@@ -18,11 +18,11 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```html file="./_icon.component.ts"#L10-L34 group="icon" name="html"
+```html file="./_icon.component.ts"#L11-L55 group="icon" name="html"
 
 ```
 
-```typescript file="./_icon.component.ts"#L1-L1 group="icon" name="typescript"
+```typescript file="./_icon.component.ts"#L1-L2 group="icon" name="typescript"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderComponent', {container: false}) }}
 
-```html file="./_border.component.ts"#L10-L30 group="border" name="html"
+```html file="./_border.component.ts"#L10-L48 group="border" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
 
-```html file="./_dismissable.component.ts"#L10-L30 group="dismissable" name="html"
+```html file="./_dismissable.component.ts"#L10-L54 group="dismissable" name="html"
 
 ```
 
@@ -50,7 +50,7 @@ keyword: AlertPage
 
 ```
 
-```typescript file="./_dismissable.component.ts"#L34 group="dismissable" name="typescript"
+```typescript file="./_dismissable.component.ts"#L58 group="dismissable" name="typescript"
 
 ```
 
@@ -58,7 +58,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderAccentComponent', {container: false}) }}
 
-```html file="./_border-accent.component.ts"#L10-L30 group="border-accent" name="html"
+```html file="./_border-accent.component.ts"#L10-L48 group="border-accent" name="html"
 
 ```
 
@@ -70,10 +70,10 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteAdditionalContentComponent', {container: false}) }}
 
-```html file="./_additional-content.component.ts"#L10-L106 group="additional-content" name="html"
+```html file="./_additional-content.component.ts"#L12-L180 group="additional-content" name="html"
 
 ```
 
-```typescript file="./_additional-content.component.ts"#L1-L1 group="additional-content" name="typescript"
+```typescript file="./_additional-content.component.ts"#L1-L3 group="additional-content" name="typescript"
 
 ```

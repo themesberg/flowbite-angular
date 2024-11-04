@@ -42,7 +42,7 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbitePlacedComponent', {container: false}) }}
 
-```html file="./_placed.component.ts"#L10-L24 group="placed" name="html"
+```html file="./_placed.component.ts"#L10-L30 group="placed" name="html"
 
 ```
 
