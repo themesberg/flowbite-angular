@@ -26,7 +26,8 @@
 
 ---
 
-**`flowbite-angular` is an open source collection of UI components, built in Angular, with utility classes from Tailwind CSS that you can use as a starting point for user interfaces and websites.**
+**`flowbite-angular` is an open source collection of UI components, built in Angular, with utility
+classes from Tailwind CSS that you can use as a starting point for user interfaces and websites.**
 
 ## Table of Contents
 
@@ -44,17 +45,20 @@ Documentation for `flowbite-angular` is not yet finished.
 
 If you want to browse the components, visit [flowbite-angular.com](https://flowbite-angular.com/).
 
-If you want to learn more about Flowbite, visit [Flowbite docs](https://flowbite.com/docs/getting-started/introduction/).
+If you want to learn more about Flowbite, visit
+[Flowbite docs](https://flowbite.com/docs/getting-started/introduction/).
 
 ## Getting started
 
-To use `flowbite-angular`, you just need to setup `flowbite` normally and install `flowbite-angular` from `npm`.
+To use `flowbite-angular`, you just need to setup `flowbite` normally and install `flowbite-angular`
+from `npm`.
 
 `flowbite` can be included as a plugin into an existing Tailwind CSS project.
 
 ### Require via `npm`
 
-Make sure that you have <a href="https://nodejs.org/en/" rel="nofollow" >Node.js</a> and <a href="https://tailwindcss.com/" rel="nofollow" >Tailwind CSS</a> installed.
+Make sure that you have <a href="https://nodejs.org/en/" rel="nofollow" >Node.js</a> and
+<a href="https://tailwindcss.com/" rel="nofollow" >Tailwind CSS</a> installed.
 
 1. Install `flowbite` as a dependency using `npm` by running the following command:
 
@@ -361,7 +365,9 @@ For casual chatting with others using the library:
 
 ## Contributing
 
-Thank you for your interest in helping! Visit our [guide on contributing](https://github.com/themesberg/flowbite-angular/blob/main/CONTRIBUTING.md) to get started.
+Thank you for your interest in helping! Visit our
+[guide on contributing](https://github.com/themesberg/flowbite-angular/blob/main/CONTRIBUTING.md) to
+get started.
 
 ## Figma
 

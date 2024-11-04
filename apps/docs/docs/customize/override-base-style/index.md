@@ -4,7 +4,8 @@ keyword: OverrideBaseStylePage
 
 ## Init function
 
-By default, Flowbite Angular provides a style for each of it's components. In order to use them, you have to call the init function inside the provider's list of your application.
+By default, Flowbite Angular provides a style for each of it's components. In order to use them, you
+have to call the init function inside the provider's list of your application.
 
 ```typescript
 import { initFlowbite } from 'flowbite-angular';
@@ -18,18 +19,25 @@ export const appConfig: ApplicationConfig = {
 
 ## Override base style
 
-Behind the scene, <span class="docs highlight">initFlowbite()</span> setup a bunch of InjectionToken, later used as base style in flowbite-angular component.
-You can override base style by setting, after <span class="docs highlight">initFlowbite()</span>, some new values for <span class="docs highlight">InjectionToken</span>. Each <span class="docs highlight">InjectionToken</span> are named as follow :
+Behind the scene, <span class="docs highlight">initFlowbite()</span> setup a bunch of
+InjectionToken, later used as base style in flowbite-angular component. You can override base style
+by setting, after <span class="docs highlight">initFlowbite()</span>, some new values for
+<span class="docs highlight">InjectionToken</span>. Each
+<span class="docs highlight">InjectionToken</span> are named as follow :
 
 - COMPONENT : FLOWBITE\_<span class="docs highlight">COMPONENT_NAME</span>\_THEME_TOKEN
 - COMPONENT : FLOWBITE\_<span class="docs highlight">COMPONENT_NAME</span>\_THEME_TOKEN
 
-Each <span class="docs highlight">InjectionToken</span> are linked to a <span class="docs highlight">default value</span>. <span class="docs highlight">default value</span> values are named as follow :
+Each <span class="docs highlight">InjectionToken</span> are linked to a
+<span class="docs highlight">default value</span>. <span class="docs highlight">default value</span>
+values are named as follow :
 
 - COMPONENT : <span class="docs highlight">componentName</span>Theme
 - DIRECTIVE : <span class="docs highlight">directiveName</span>DirectiveTheme
 
-In order to combine both base style and component (or directive) parameter, flowbite-angular uses <span class="docs highlight">ThemeServices</span>, one for each component. As default style, they can be override. Each <span class="docs highlight">ThemeServices</span> are named as follow :
+In order to combine both base style and component (or directive) parameter, flowbite-angular uses
+<span class="docs highlight">ThemeServices</span>, one for each component. As default style, they
+can be override. Each <span class="docs highlight">ThemeServices</span> are named as follow :
 
 - COMPONENT : <span class="docs highlight">ComponentName</span>ThemeService
 - DIRECTIVE : <span class="docs highlight">DirectiveName</span>DirectiveThemeService

@@ -12,18 +12,8 @@ const sharedTailwindConfig = require('flowbite-angular/tailwind.config');
 module.exports = {
   presets: [sharedTailwindConfig],
   content: [
-    join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html,md}'),
+    join(__dirname, '**/!(*.stories|*.spec).{ts,html,md}'),
     ...createGlobPatternsForDependencies(__dirname),
-  ],
-  safelist: [
-    'p-4',
-    'overflow-x-auto',
-    'rounded-md',
-    'max-w-md',
-    'max-w-sm',
-    'bg-gray-100',
-    'bg-gray-500',
-    'z-0',
   ],
   theme: {
     extend: {
