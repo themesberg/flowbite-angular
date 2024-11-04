@@ -1,5 +1,5 @@
 ---
-keyword: InheriteComponent
+keyword: InheritComponent
 ---
 
 ## Inheriting components
