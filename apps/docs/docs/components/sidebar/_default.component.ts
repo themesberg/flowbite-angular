@@ -3,14 +3,19 @@ import {
   SidebarItemComponent,
   SidebarMenuComponent,
   SidebarPageContentComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/sidebar';
 
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-sidebar-default',
   standalone: true,
-  imports: [SidebarComponent, SidebarMenuComponent, SidebarItemComponent, SidebarPageContentComponent],
+  imports: [
+    SidebarComponent,
+    SidebarMenuComponent,
+    SidebarItemComponent,
+    SidebarPageContentComponent,
+  ],
   template: `
     <flowbite-sidebar
       [isOpen]="true"

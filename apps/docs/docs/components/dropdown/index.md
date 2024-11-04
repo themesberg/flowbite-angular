@@ -18,11 +18,11 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbiteDividerComponent', {container: false}) }}
 
-```html file="./_divider.component.ts"#L10-L15 group="divider" name="html"
+```html file="./_divider.component.ts"#L14-L19 group="divider" name="html"
 
 ```
 
-```typescript file="./_divider.component.ts"#L1-L1 group="divider" name="typescript"
+```typescript file="./_divider.component.ts"#L1-L5 group="divider" name="typescript"
 
 ```
 
@@ -30,11 +30,11 @@ keyword: DropdownPage
 
 {{ NgDocActions.demo('flowbiteHeaderComponent', {container: false}) }}
 
-```html file="./_header.component.ts"#L10-L15 group="header" name="html"
+```html file="./_header.component.ts"#L14-L22 group="header" name="html"
 
 ```
 
-```typescript file="./_header.component.ts"#L1-L1 group="header" name="typescript"
+```typescript file="./_header.component.ts"#L1-L5 group="header" name="typescript"
 
 ```
 

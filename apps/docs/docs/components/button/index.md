@@ -90,11 +90,11 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```html file="./_icon.component.ts"#L10-L21 group="icon" name="html"
+```html file="./_icon.component.ts"#L11-L22 group="icon" name="html"
 
 ```
 
-```typescript file="./_icon.component.ts"#L1-L1 group="icon" name="typescript"
+```typescript file="./_icon.component.ts"#L1-L2 group="icon" name="typescript"
 
 ```
 
@@ -102,11 +102,11 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteLabelComponent', {container: false}) }}
 
-```html file="./_label.component.ts"#L10-L17 group="label" name="html"
+```html file="./_label.component.ts"#L10-L18 group="label" name="html"
 
 ```
 
-```typescript file="./_label.component.ts"#L1-L1 group="label" name="typescript"
+```typescript file="./_label.component.ts"#L1-L2 group="label" name="typescript"
 
 ```
 
@@ -114,11 +114,11 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
 
-```html file="./_icon-only.component.ts"#L10-L31 group="icon-only" name="html"
+```html file="./_icon-only.component.ts"#L11-L32 group="icon-only" name="html"
 
 ```
 
-```typescript file="./_icon-only.component.ts"#L1-L1 group="icon-only" name="typescript"
+```typescript file="./_icon-only.component.ts"#L1-L2 group="icon-only" name="typescript"
 
 ```
 

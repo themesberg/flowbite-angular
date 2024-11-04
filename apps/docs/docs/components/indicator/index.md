@@ -30,11 +30,11 @@ keyword: IndicatorPage
 
 {{ NgDocActions.demo('flowbiteCountComponent', {container: false}) }}
 
-```html file="./_count.component.ts"#L10-L22 group="count" name="html"
+```html file="./_count.component.ts"#L12-L24 group="count" name="html"
 
 ```
 
-```typescript file="./_count.component.ts"#L1-L1 group="count" name="typescript"
+```typescript file="./_count.component.ts"#L1-L3 group="count" name="typescript"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: IndicatorPage
 
 {{ NgDocActions.demo('flowbitePositionedComponent', {container: false}) }}
 
-```html file="./_positioned.component.ts"#L10-L47 group="positioned" name="html"
+```html file="./_positioned.component.ts"#L10-L48 group="positioned" name="html"
 
 ```
 

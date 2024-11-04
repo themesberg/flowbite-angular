@@ -1,4 +1,4 @@
-import { IndicatorComponent } from 'flowbite-angular';
+import { IndicatorComponent } from 'flowbite-angular/indicator';
 
 import { Component } from '@angular/core';
 
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [IndicatorComponent],
   template: `
-    <div class="w-56 h-56 relative bg-gray-300 borer border-gray-500 rounded-lg dark:bg-gray-900 dark:border-gray-700">
+    <div
+      class="w-56 h-56 relative bg-gray-300 borer border-gray-500 rounded-lg dark:bg-gray-900 dark:border-gray-700">
       <flowbite-indicator
         [hasOffset]="true"
         placement="top-left"

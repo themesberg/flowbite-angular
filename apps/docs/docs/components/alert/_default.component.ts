@@ -1,4 +1,4 @@
-import { AlertComponent } from 'flowbite-angular';
+import { AlertComponent } from 'flowbite-angular/alert';
 
 import { Component } from '@angular/core';
 
@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
     <flowbite-alert
       color="primary"
       class="w-full">
-      <span class="font-medium">primary alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">primary alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
     <flowbite-alert
       color="dark"
@@ -30,12 +31,14 @@ import { Component } from '@angular/core';
     <flowbite-alert
       color="green"
       class="w-full">
-      <span class="font-medium">green alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">green alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
     <flowbite-alert
       color="yellow"
       class="w-full">
-      <span class="font-medium">yellow alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">yellow alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
   `,
 })

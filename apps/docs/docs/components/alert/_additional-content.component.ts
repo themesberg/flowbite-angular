@@ -1,4 +1,6 @@
-import { AlertComponent, ButtonComponent, IconComponent } from 'flowbite-angular';
+import { AlertComponent } from 'flowbite-angular/alert';
+import { ButtonComponent } from 'flowbite-angular/button';
+import { IconComponent } from 'flowbite-angular/icon';
 
 import { Component } from '@angular/core';
 
@@ -40,8 +42,8 @@ import { Component } from '@angular/core';
 
     <ng-template #primaryAdditionalContent>
       <div class="mt-2 mb-4 text-sm">
-        More blue about this blue alert goes here. This example text is going to run a bit longer so that you can see
-        how spacing within an alert works with this kind of content.
+        More blue about this blue alert goes here. This example text is going to run a bit longer so
+        that you can see how spacing within an alert works with this kind of content.
       </div>
       <div class="flex">
         <flowbite-button
@@ -63,8 +65,8 @@ import { Component } from '@angular/core';
     </ng-template>
     <ng-template #darkAdditionalContent>
       <div class="mt-2 mb-4 text-sm">
-        More blue about this blue alert goes here. This example text is going to run a bit longer so that you can see
-        how spacing within an alert works with this kind of content.
+        More blue about this blue alert goes here. This example text is going to run a bit longer so
+        that you can see how spacing within an alert works with this kind of content.
       </div>
       <div class="flex">
         <flowbite-button
@@ -86,8 +88,8 @@ import { Component } from '@angular/core';
     </ng-template>
     <ng-template #blueAdditionalContent>
       <div class="mt-2 mb-4 text-sm">
-        More blue about this blue alert goes here. This example text is going to run a bit longer so that you can see
-        how spacing within an alert works with this kind of content.
+        More blue about this blue alert goes here. This example text is going to run a bit longer so
+        that you can see how spacing within an alert works with this kind of content.
       </div>
       <div class="flex">
         <flowbite-button
@@ -109,8 +111,8 @@ import { Component } from '@angular/core';
     </ng-template>
     <ng-template #redAdditionalContent>
       <div class="mt-2 mb-4 text-sm">
-        More blue about this blue alert goes here. This example text is going to run a bit longer so that you can see
-        how spacing within an alert works with this kind of content.
+        More blue about this blue alert goes here. This example text is going to run a bit longer so
+        that you can see how spacing within an alert works with this kind of content.
       </div>
       <div class="flex">
         <flowbite-button
@@ -132,8 +134,8 @@ import { Component } from '@angular/core';
     </ng-template>
     <ng-template #greenAdditionalContent>
       <div class="mt-2 mb-4 text-sm">
-        More blue about this blue alert goes here. This example text is going to run a bit longer so that you can see
-        how spacing within an alert works with this kind of content.
+        More blue about this blue alert goes here. This example text is going to run a bit longer so
+        that you can see how spacing within an alert works with this kind of content.
       </div>
       <div class="flex">
         <flowbite-button
@@ -155,8 +157,8 @@ import { Component } from '@angular/core';
     </ng-template>
     <ng-template #yellowAdditionalContent>
       <div class="mt-2 mb-4 text-sm">
-        More blue about this blue alert goes here. This example text is going to run a bit longer so that you can see
-        how spacing within an alert works with this kind of content.
+        More blue about this blue alert goes here. This example text is going to run a bit longer so
+        that you can see how spacing within an alert works with this kind of content.
       </div>
       <div class="flex">
         <flowbite-button

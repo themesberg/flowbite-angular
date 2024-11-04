@@ -42,11 +42,11 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```html file="./_icon.component.ts"#L10-L21 group="icon" name="html"
+```html file="./_icon.component.ts"#L11-L22 group="icon" name="html"
 
 ```
 
-```typescript file="./_icon.component.ts"#L1-L1 group="icon" name="typescript"
+```typescript file="./_icon.component.ts"#L1-L2 group="icon" name="typescript"
 
 ```
 
@@ -54,10 +54,10 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
 
-```html file="./_icon-only.component.ts"#L10-L36 group="icon-only" name="html"
+```html file="./_icon-only.component.ts"#L11-L32 group="icon-only" name="html"
 
 ```
 
-```typescript file="./_icon-only.component.ts"#L1-L1 group="icon-only" name="typescript"
+```typescript file="./_icon-only.component.ts"#L1-L2 group="icon-only" name="typescript"
 
 ```

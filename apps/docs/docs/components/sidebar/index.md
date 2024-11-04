@@ -6,11 +6,11 @@ keyword: SidebarPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./_default.component.ts"#L15-L26 group="default" name="html"
+```html file="./_default.component.ts"#L20-L31 group="default" name="html"
 
 ```
 
-```typescript file="./_default.component.ts"#L1-L7 group="default" name="typescript"
+```typescript file="./_default.component.ts"#L1-L6 group="default" name="typescript"
 
 ```
 

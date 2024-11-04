@@ -1,4 +1,5 @@
-import { AlertComponent, IconComponent } from 'flowbite-angular';
+import { AlertComponent } from 'flowbite-angular/alert';
+import { IconComponent } from 'flowbite-angular/icon';
 
 import { Component } from '@angular/core';
 
@@ -11,7 +12,8 @@ import { Component } from '@angular/core';
       [icon]="icon"
       color="primary"
       class="w-full">
-      <span class="font-medium">Primary alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">Primary alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
@@ -35,13 +37,15 @@ import { Component } from '@angular/core';
       [icon]="icon"
       color="green"
       class="w-full">
-      <span class="font-medium">green alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">green alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
     <flowbite-alert
       [icon]="icon"
       color="yellow"
       class="w-full">
-      <span class="font-medium">yellow alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">yellow alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
 
     <ng-template #icon>

@@ -1,4 +1,4 @@
-import { AlertComponent } from 'flowbite-angular';
+import { AlertComponent } from 'flowbite-angular/alert';
 
 import { Component } from '@angular/core';
 
@@ -11,7 +11,8 @@ import { Component } from '@angular/core';
       [hasBorderAccent]="true"
       color="primary"
       class="w-full">
-      <span class="font-medium">Primary alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">Primary alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
     <flowbite-alert
       [hasBorderAccent]="true"
@@ -35,13 +36,15 @@ import { Component } from '@angular/core';
       [hasBorderAccent]="true"
       color="green"
       class="w-full">
-      <span class="font-medium">green alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">green alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
     <flowbite-alert
       [hasBorderAccent]="true"
       color="yellow"
       class="w-full">
-      <span class="font-medium">yellow alert !</span> Change a few things up and try submitting again.
+      <span class="font-medium">yellow alert !</span> Change a few things up and try submitting
+      again.
     </flowbite-alert>
   `,
 })

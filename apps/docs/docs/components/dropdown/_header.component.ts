@@ -1,4 +1,8 @@
-import { DropdownComponent, DropdownHeaderComponent, DropdownItemComponent } from 'flowbite-angular';
+import {
+  DropdownComponent,
+  DropdownHeaderComponent,
+  DropdownItemComponent,
+} from 'flowbite-angular/dropdown';
 
 import { Component } from '@angular/core';
 
