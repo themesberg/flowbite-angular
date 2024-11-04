@@ -12,7 +12,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [NavbarComponent, NavbarItemComponent, NavbarContentComponent, NavbarBrandComponent],
   template: `
-    <flowbite-navbar [isFixed]="true" [isOpen]="true">
+    <flowbite-navbar
+      [isFixed]="true"
+      [isOpen]="true">
       <flowbite-navbar-brand> Flowbite </flowbite-navbar-brand>
 
       <flowbite-navbar-content>

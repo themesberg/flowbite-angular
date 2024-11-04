@@ -28,8 +28,13 @@ import {
   imports: [NgIf, NgClass, SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
-    <span class="flex-shrink-0" [innerHTML]="icon()! | sanitizeHtml" *ngIf="icon()"></span>
-    <span [ngClass]="contentClasses().sidebarIconClass" [class.ml-3]="icon()">
+    <span
+      class="flex-shrink-0"
+      [innerHTML]="icon()! | sanitizeHtml"
+      *ngIf="icon()"></span>
+    <span
+      [ngClass]="contentClasses().sidebarIconClass"
+      [class.ml-3]="icon()">
       <ng-content />
     </span>
     <flowbite-badge *ngIf="label()">{{ label() }}</flowbite-badge>

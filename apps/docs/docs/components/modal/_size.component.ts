@@ -23,7 +23,9 @@ import { Component } from '@angular/core';
     <flowbite-button (click)="sizeMediumModal.open()">Medium</flowbite-button>
     <flowbite-button (click)="sizeLargeModal.open()">Large</flowbite-button>
     <flowbite-button (click)="sizeExtraLargeModal.open()">Extra large</flowbite-button>
-    <flowbite-modal #sizeSmallModal size="sm">
+    <flowbite-modal
+      #sizeSmallModal
+      size="sm">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -40,12 +42,16 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="sizeSmallModal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="sizeSmallModal.close()" color="light">
+        <flowbite-button
+          (click)="sizeSmallModal.close()"
+          color="light">
           I decline
         </flowbite-button>
       </flowbite-modal-footer>
     </flowbite-modal>
-    <flowbite-modal #sizeMediumModal size="md">
+    <flowbite-modal
+      #sizeMediumModal
+      size="md">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -62,12 +68,16 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="sizeMediumModal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="sizeMediumModal.close()" color="light">
+        <flowbite-button
+          (click)="sizeMediumModal.close()"
+          color="light">
           I decline
         </flowbite-button>
       </flowbite-modal-footer>
     </flowbite-modal>
-    <flowbite-modal #sizeLargeModal size="lg">
+    <flowbite-modal
+      #sizeLargeModal
+      size="lg">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -84,12 +94,16 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="sizeLargeModal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="sizeLargeModal.close()" color="light">
+        <flowbite-button
+          (click)="sizeLargeModal.close()"
+          color="light">
           I decline
         </flowbite-button>
       </flowbite-modal-footer>
     </flowbite-modal>
-    <flowbite-modal #sizeExtraLargeModal size="xl">
+    <flowbite-modal
+      #sizeExtraLargeModal
+      size="xl">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -106,7 +120,9 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="sizeExtraLargeModal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="sizeExtraLargeModal.close()" color="light">
+        <flowbite-button
+          (click)="sizeExtraLargeModal.close()"
+          color="light">
           I decline
         </flowbite-button>
       </flowbite-modal-footer>

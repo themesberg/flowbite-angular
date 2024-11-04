@@ -9,12 +9,18 @@ import { Component } from '@angular/core';
   imports: [ModalComponent, ModalBodyComponent, ModalHeaderComponent, ButtonComponent],
   template: `
     <flowbite-button (click)="formModal.open()">Open modal</flowbite-button>
-    <flowbite-modal #formModal dismissable>
+    <flowbite-modal
+      #formModal
+      dismissable>
       <flowbite-modal-header>Sign in to our platform</flowbite-modal-header>
       <flowbite-modal-body>
-        <form class="space-y-6" action="#">
+        <form
+          class="space-y-6"
+          action="#">
           <div>
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label
+              for="email"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               Your email
             </label>
             <input
@@ -55,7 +61,9 @@ import { Component } from '@angular/core';
                 Remember me
               </label>
             </div>
-            <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">
+            <a
+              href="#"
+              class="text-sm text-blue-700 hover:underline dark:text-blue-500">
               Lost Password?
             </a>
           </div>
@@ -67,7 +75,9 @@ import { Component } from '@angular/core';
           </button>
           <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
             Not registered?
-            <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">
+            <a
+              href="#"
+              class="text-blue-700 hover:underline dark:text-blue-500">
               Create account
             </a>
           </div>

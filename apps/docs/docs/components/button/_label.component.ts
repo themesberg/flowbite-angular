@@ -10,7 +10,11 @@ import { Component } from '@angular/core';
   template: `
     <flowbite-button>
       Messages
-      <flowbite-badge [isIconOnly]="true" class="ml-2"> 2 </flowbite-badge>
+      <flowbite-badge
+        [isIconOnly]="true"
+        class="ml-2">
+        2
+      </flowbite-badge>
     </flowbite-button>
   `,
 })

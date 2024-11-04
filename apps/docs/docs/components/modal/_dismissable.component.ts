@@ -20,7 +20,9 @@ import { Component } from '@angular/core';
   ],
   template: `
     <flowbite-button (click)="dismissableModal.open()">Open modal</flowbite-button>
-    <flowbite-modal #dismissableModal [isDismissable]="true">
+    <flowbite-modal
+      #dismissableModal
+      [isDismissable]="true">
       <flowbite-modal-header>Terms of Service</flowbite-modal-header>
       <flowbite-modal-body>
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -37,7 +39,9 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
       <flowbite-modal-footer>
         <flowbite-button (click)="dismissableModal.close()">I accept</flowbite-button>
-        <flowbite-button (click)="dismissableModal.close()" color="light">
+        <flowbite-button
+          (click)="dismissableModal.close()"
+          color="light">
           I decline
         </flowbite-button>
       </flowbite-modal-footer>

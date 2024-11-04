@@ -34,7 +34,9 @@ import { filter, Subject, takeUntil } from 'rxjs';
     <ng-template #modal>
       <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]"></div>
 
-      <div [ngClass]="contentClasses().modalWrapperClass" (click)="onBackdropClick($event)">
+      <div
+        [ngClass]="contentClasses().modalWrapperClass"
+        (click)="onBackdropClick($event)">
         <div [ngClass]="contentClasses().modalContainerClass">
           <div [ngClass]="contentClasses().modalContentClass">
             <ng-content />

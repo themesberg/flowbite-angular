@@ -17,7 +17,9 @@ import { Component } from '@angular/core';
     AccordionPanelComponent,
   ],
   template: `
-    <flowbite-accordion class="w-full" [isAlwaysOpen]="true">
+    <flowbite-accordion
+      class="w-full"
+      [isAlwaysOpen]="true">
       <flowbite-accordion-panel [isOpen]="true">
         <flowbite-accordion-title>What is Flowbite ?</flowbite-accordion-title>
         <flowbite-accordion-content>

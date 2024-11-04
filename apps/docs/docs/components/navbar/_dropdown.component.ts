@@ -20,7 +20,9 @@ import { Component } from '@angular/core';
     DropdownItemComponent,
   ],
   template: `
-    <flowbite-navbar [isFixed]="true" [isOpen]="true">
+    <flowbite-navbar
+      [isFixed]="true"
+      [isOpen]="true">
       <flowbite-navbar-brand> Flowbite </flowbite-navbar-brand>
 
       <flowbite-navbar-content>
