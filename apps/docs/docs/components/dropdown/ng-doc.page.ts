@@ -8,6 +8,8 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements
+ *
+ * @status:alert BREAKING CHANGES
  */
 const dropdown: NgDocPage = {
   title: 'Dropdown',
