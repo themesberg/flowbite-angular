@@ -1,5 +1,8 @@
 import type { NgDocApi } from '@ng-doc/core';
 
+/**
+ * @status:info NEW
+ */
 const api: NgDocApi = {
   title: 'API Reference',
   order: 999,
