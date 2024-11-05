@@ -29,5 +29,8 @@ import { Component } from '@angular/core';
       <flowbite-dropdown-item>Item 3</flowbite-dropdown-item>
     </flowbite-dropdown>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3 justify-around',
+  },
 })
 export class FlowbitePlacedComponent {}
