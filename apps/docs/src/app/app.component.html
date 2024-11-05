@@ -5,7 +5,9 @@
   <flowbite-navbar
     ngDocCustomNavbar
     [isFixed]="true"
-    [customStyle]="{ root: { base: 'flex flex-wrap items-center justify-between p-4 xl:px-60' } }">
+    [customStyle]="{
+      root: { base: 'flex flex-wrap items-center 2xl:justify-between p-4 2xl:px-60' },
+    }">
     <div class="flex flex-row flex-1 items-center gap-2">
       <flowbite-navbar-icon-button
         *ngIf="!isLandingPage"
@@ -23,13 +25,13 @@
           svgIcon="flowbite-angular-logo"
           alt="Flowbite Logo" />
         <span
-          class="hidden sm:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          class="hidden xl:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
           Flowbite Angular
         </span>
       </flowbite-navbar-brand>
+      <ng-doc-search class="hidden lg:block pl-2" />
     </div>
-    <flowbite-navbar-content class="pr-1">
-      <ng-doc-search class="hidden lg:block" />
+    <flowbite-navbar-content class="hidden xl:block pr-1">
       <flowbite-navbar-item
         flowbiteRouterLink
         flowbiteRouterLinkActive
@@ -98,6 +100,7 @@
             class="h-5 w-5 block" />
         </a>
       </flowbite-navbar-icon-button>
+
       <ng-doc-theme-toggle />
 
       <flowbite-badge size="sm">
