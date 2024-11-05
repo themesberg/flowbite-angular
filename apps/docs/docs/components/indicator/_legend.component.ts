@@ -47,5 +47,8 @@ import { Component } from '@angular/core';
       Revenue
     </span>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteLegendComponent {}
