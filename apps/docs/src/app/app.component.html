@@ -62,7 +62,9 @@
       </flowbite-navbar-item>
     </flowbite-navbar-content>
     <div class="flex flex-row items-center justify-start">
-      <flowbite-navbar-icon-button class="hidden sm:block">
+      <flowbite-navbar-icon-button
+        class="hidden sm:block"
+        color="gray">
         <a
           href="https://github.com/themesberg/flowbite-angular"
           target="_blank"
@@ -72,7 +74,9 @@
             class="h-5 w-5 block" />
         </a>
       </flowbite-navbar-icon-button>
-      <flowbite-navbar-icon-button class="hidden sm:block">
+      <flowbite-navbar-icon-button
+        class="hidden sm:block"
+        color="gray">
         <a
           href="https://discord.gg/4eeurUVvTy"
           target="_blank"
@@ -82,7 +86,9 @@
             class="h-5 w-5 block" />
         </a>
       </flowbite-navbar-icon-button>
-      <flowbite-navbar-icon-button class="hidden sm:block">
+      <flowbite-navbar-icon-button
+        class="hidden sm:block"
+        color="gray">
         <a
           href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A"
           target="_blank"
@@ -95,6 +101,10 @@
       <ng-doc-theme-toggle />
 
       <flowbite-navbar-toggle />
+
+      <flowbite-badge size="sm">
+        {{ flowbiteAngularVersion }}
+      </flowbite-badge>
     </div>
   </flowbite-navbar>
 
