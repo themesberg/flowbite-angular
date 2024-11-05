@@ -17,5 +17,8 @@ import { Component } from '@angular/core';
     <flowbite-badge color="purple">Purple</flowbite-badge>
     <flowbite-badge color="pink">Pink</flowbite-badge>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteDefaultComponent {}
