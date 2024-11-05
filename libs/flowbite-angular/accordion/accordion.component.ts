@@ -3,7 +3,7 @@ import type { AccordionClass, AccordionColors, AccordionTheme } from './accordio
 import { AccordionThemeService } from './accordion.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
 import {
@@ -64,8 +64,6 @@ export class AccordionComponent extends BaseComponent<AccordionClass> {
   //#region BaseComponent implementation
   public override fetchClass(): AccordionClass {
     return this.themeService.getClasses({
-      color: this.color(),
-      isFlush: booleanToFlowbiteBoolean(this.isFlush()),
       customStyle: this.customStyle(),
     });
   }

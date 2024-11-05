@@ -58,6 +58,7 @@ export class AccordionContentComponent extends BaseComponent<AccordionContentCla
     return this.themeService.getClasses({
       color: this.accordionPanelComponent.accordionComponent.color(),
       isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.isOpen()),
+      isFlush: booleanToFlowbiteBoolean(this.accordionPanelComponent.accordionComponent.isFlush()),
       customStyle: this.customStyle(),
     });
   }
