@@ -39,7 +39,7 @@ export const appConfig: ApplicationConfig = {
         },
       },
     }),
-    provideSearchEngine(NgDocDefaultSearchEngine),
+    provideSearchEngine(NgDocDefaultSearchEngine, { tolerance: 2 }),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),
     provideMainPageProcessor(NG_DOC_DEFAULT_PAGE_PROCESSORS),
     providePageProcessor(docDemoDisplayerProcessor),
