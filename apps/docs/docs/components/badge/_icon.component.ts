@@ -21,5 +21,8 @@ import { Component } from '@angular/core';
       3 days ago
     </flowbite-badge>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteIconComponent {}

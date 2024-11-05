@@ -30,11 +30,11 @@ keyword: BadgePage
 
 {{ NgDocActions.demo('flowbiteLinkComponent', {container: false}) }}
 
-```html file="./_link.component.ts"#L10-L50 group="link" name="html"
+```html file="./_link.component.ts"#L11-L72 group="link" name="html"
 
 ```
 
-```typescript file="./_link.component.ts"#L1-L1 group="link" name="typescript"
+```typescript file="./_link.component.ts"#L1-L2 group="link" name="typescript"
 
 ```
 
