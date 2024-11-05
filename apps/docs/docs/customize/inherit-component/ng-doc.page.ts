@@ -4,6 +4,8 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Customize flowbite-angular's component style by inheriting component.
+ *
+ * @status:info NEW
  */
 const OverrideBaseStyle: NgDocPage = {
   title: 'Inherit component',
