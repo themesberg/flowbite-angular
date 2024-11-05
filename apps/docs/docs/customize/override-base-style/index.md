@@ -8,7 +8,7 @@ By default, Flowbite Angular provides a style for each of it's components. In or
 have to call the init function inside the provider's list of your application.
 
 ```typescript
-import { initFlowbite } from 'flowbite-angular';
+import { initFlowbite } from 'flowbite-angular/core';
 
 import { ApplicationConfig } from '@angular/core';
 
@@ -59,8 +59,9 @@ can be override. Each <span class="text-primary-500">ThemeServices</span> are na
 #### Component
 
 ```typescript
-import type { AlertBaseTheme } from 'flowbite-angular';
-import { createTheme, FLOWBITE_ALERT_THEME_TOKEN, initFlowbite } from 'flowbite-angular';
+import { AlertBaseTheme, FLOWBITE_ALERT_THEME_TOKEN } from 'flowbite-angular/alert';
+import { createTheme } from 'flowbite-angular/utils';
+import { initFlowbite } from 'flowbite-angular/core';
 
 const customAlertTheme: AlertBaseTheme = createTheme({
   base: 'flex flex-col gap-2 p-4 text-sm rounded-lg',
@@ -108,8 +109,9 @@ export const appConfig: ApplicationConfig = {
 #### Directive
 
 ```typescript
-import type { IconDirectiveBaseTheme } from 'flowbite-angular';
-import { createTheme, FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN, initFlowbite } from 'flowbite-angular';
+import { IconDirectiveBaseTheme, FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN } from 'flowbite-angular/icon';
+import { createTheme } from 'flowbite-angular/utils';
+import { initFlowbite } from 'flowbite-angular/core';
 
 const customIconDirectiveTheme: IconDirectiveBaseTheme = createTheme({
   base: 'w-5 h-5 text-gray-500 dark:text-gray-400',
