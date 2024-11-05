@@ -56,13 +56,10 @@ export class AppComponent {
   protected readonly sidebarService = inject(NgDocSidebarService);
   protected readonly location = inject(Location);
 
-  get flowbiteAngularVersion(): string {
-    return flowbiteAngularPackageJson.version;
-  }
-
   get isLandingPage(): boolean {
     return this.location.path() === '';
   }
 
   public readonly currentYear = computed(() => new Date().getFullYear());
+  public readonly flowbiteAngularVersion = computed(() => flowbiteAngularPackageJson.version);
 }

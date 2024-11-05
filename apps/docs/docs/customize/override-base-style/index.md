@@ -19,28 +19,40 @@ export const appConfig: ApplicationConfig = {
 
 ## Override base style
 
-Behind the scene, <span class="docs highlight">initFlowbite()</span> setup a bunch of
+Behind the scene, <span class="text-primary-500">initFlowbite()</span> setup a bunch of
 InjectionToken, later used as base style in flowbite-angular component. You can override base style
-by setting, after <span class="docs highlight">initFlowbite()</span>, some new values for
-<span class="docs highlight">InjectionToken</span>. Each
-<span class="docs highlight">InjectionToken</span> are named as follow :
+by setting, after <span class="text-primary-500">initFlowbite()</span>, some new values for
+<span class="text-primary-500">InjectionToken</span>. Each
+<span class="text-primary-500">InjectionToken</span> are named as follow :
 
-- COMPONENT : FLOWBITE\_<span class="docs highlight">COMPONENT_NAME</span>\_THEME_TOKEN
-- COMPONENT : FLOWBITE\_<span class="docs highlight">COMPONENT_NAME</span>\_THEME_TOKEN
+<span class="text-xs md:text-base">
 
-Each <span class="docs highlight">InjectionToken</span> are linked to a
-<span class="docs highlight">default value</span>. <span class="docs highlight">default value</span>
-values are named as follow :
+- COMPONENT : FLOWBITE\_<span class="text-primary-500">COMPONENT_NAME</span>\_THEME_TOKEN
+- COMPONENT : FLOWBITE\_<span class="text-primary-500">COMPONENT_NAME</span>\_THEME_TOKEN
 
-- COMPONENT : <span class="docs highlight">componentName</span>Theme
-- DIRECTIVE : <span class="docs highlight">directiveName</span>DirectiveTheme
+</span>
+
+Each <span class="text-primary-500">InjectionToken</span> are linked to a
+<span class="text-primary-500">default value</span>. <span class="text-primary-500">default
+value</span> values are named as follow :
+
+<span class="text-xs md:text-base">
+
+- COMPONENT : <span class="text-primary-500">componentName</span>Theme
+- DIRECTIVE : <span class="text-primary-500">directiveName</span>DirectiveTheme
+
+</span>
 
 In order to combine both base style and component (or directive) parameter, flowbite-angular uses
-<span class="docs highlight">ThemeServices</span>, one for each component. As default style, they
-can be override. Each <span class="docs highlight">ThemeServices</span> are named as follow :
+<span class="text-primary-500">ThemeServices</span>, one for each component. As default style, they
+can be override. Each <span class="text-primary-500">ThemeServices</span> are named as follow :
 
-- COMPONENT : <span class="docs highlight">ComponentName</span>ThemeService
-- DIRECTIVE : <span class="docs highlight">DirectiveName</span>DirectiveThemeService
+<span class="text-xs md:text-base">
+
+- COMPONENT : <span class="text-primary-500">ComponentName</span>ThemeService
+- DIRECTIVE : <span class="text-primary-500">DirectiveName</span>DirectiveThemeService
+
+</span>
 
 ### Examples
 
