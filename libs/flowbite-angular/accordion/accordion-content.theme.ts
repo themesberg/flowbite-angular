@@ -9,6 +9,7 @@ import { createTheme } from 'flowbite-angular/utils';
 export interface AccordionContentProperties {
   color: keyof AccordionColors;
   isOpen: keyof FlowbiteBoolean;
+  isFlush: keyof FlowbiteBoolean;
   customStyle: DeepPartial<AccordionContentTheme>;
 }
 
@@ -20,6 +21,7 @@ export interface AccordionContentTheme {
     base: string;
     color: AccordionColors;
     isOpen: FlowbiteBoolean;
+    isFlush: FlowbiteBoolean;
   };
 }
 
@@ -28,7 +30,7 @@ export interface AccordionContentTheme {
  */
 export const accordionContentTheme: AccordionContentTheme = createTheme({
   root: {
-    base: 'flex flex-col gap-2',
+    base: 'flex flex-col',
     color: {
       primary: 'border-primary-200 dark:border-primary-700',
       light: 'border-gray-200 dark:border-gray-700',
@@ -40,6 +42,10 @@ export const accordionContentTheme: AccordionContentTheme = createTheme({
     isOpen: {
       enabled: 'p-5',
       disabled: '',
+    },
+    isFlush: {
+      enabled: '',
+      disabled: 'border-x border-t group-last:border-b',
     },
   },
 });

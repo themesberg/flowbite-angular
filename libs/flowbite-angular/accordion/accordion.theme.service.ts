@@ -28,11 +28,7 @@ export class AccordionThemeService implements FlowbiteThemeService<AccordionProp
     const theme: AccordionTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: AccordionClass = {
-      rootClass: twMerge(
-        theme.root.base,
-        theme.root.isFlush[properties.isFlush],
-        theme.root.color[properties.color]
-      ),
+      rootClass: twMerge(theme.root.base),
     };
 
     return output;

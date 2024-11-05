@@ -37,7 +37,8 @@ export class AccordionContentThemeService
       rootClass: twMerge(
         theme.root.base,
         theme.root.color[properties.color],
-        theme.root.isOpen[properties.isOpen]
+        theme.root.isOpen[properties.isOpen],
+        theme.root.isFlush[properties.isFlush]
       ),
     };
 

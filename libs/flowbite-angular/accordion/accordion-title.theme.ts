@@ -48,11 +48,11 @@ export const accordionTitleTheme: AccordionTitleTheme = createTheme({
     },
     isFlush: {
       enabled: 'border-b bg-transparent hover:bg-transparent',
-      disabled: '',
+      disabled: 'border border-b-0',
     },
     isOpen: {
       enabled: '',
-      disabled: 'bg-transparent dark:bg-transparent text-gray-500 ',
+      disabled: 'bg-transparent dark:bg-transparent',
     },
   },
   text: {
