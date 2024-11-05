@@ -6,6 +6,8 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Use the sidebar component to show a list of menu items and multi-level menu items to navigate on your website
+ *
+ * @status:alert BREAKING CHANGES
  */
 const sidebar: NgDocPage = {
   title: 'Sidebar',

@@ -8,6 +8,8 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Use the indicator component to show a number count, account status, or as a loading label positioned relative to the parent component coded with Tailwind CSS
+ *
+ * @status:alert BREAKING CHANGES
  */
 const indicator: NgDocPage = {
   title: 'Indicator',
