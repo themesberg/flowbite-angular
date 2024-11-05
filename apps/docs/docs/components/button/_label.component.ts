@@ -17,5 +17,8 @@ import { Component } from '@angular/core';
       </flowbite-badge>
     </flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteLabelComponent {}

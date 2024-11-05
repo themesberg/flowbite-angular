@@ -13,5 +13,8 @@ import { Component } from '@angular/core';
     <flowbite-button size="lg">Large</flowbite-button>
     <flowbite-button size="xl">Extra large</flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3 items-center',
+  },
 })
 export class FlowbiteSizeComponent {}
