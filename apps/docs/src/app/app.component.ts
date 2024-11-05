@@ -1,3 +1,8 @@
+// Import with relative path since it's not in node_modules and we need to import package.json in order to get version
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import flowbiteAngularPackageJson from '../../../../libs/flowbite-angular/package.json';
+
+import { BadgeComponent } from 'flowbite-angular/badge';
 import { IconComponent } from 'flowbite-angular/icon';
 import {
   NavbarBrandComponent,
@@ -39,6 +44,7 @@ import {
     NavbarIconButtonComponent,
     FlowbiteRouterLinkDirective,
     FlowbiteRouterLinkActiveDirective,
+    BadgeComponent,
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
@@ -49,6 +55,10 @@ import {
 export class AppComponent {
   protected readonly sidebarService = inject(NgDocSidebarService);
   protected readonly location = inject(Location);
+
+  get flowbiteAngularVersion(): string {
+    return flowbiteAngularPackageJson.version;
+  }
 
   get isLandingPage(): boolean {
     return this.location.path() === '';
