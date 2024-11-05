@@ -43,5 +43,8 @@ import { Component } from '@angular/core';
       Red to Yellow
     </flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteGradientOutlineComponent {}

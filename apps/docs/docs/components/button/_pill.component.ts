@@ -38,5 +38,8 @@ import { Component } from '@angular/core';
       Purple
     </flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbitePillComponent {}

@@ -21,5 +21,8 @@ import { Component } from '@angular/core';
         class="ml-2 -mr-1 h-5 w-5" />
     </flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteIconComponent {}

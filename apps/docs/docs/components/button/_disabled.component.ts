@@ -14,5 +14,8 @@ import { Component } from '@angular/core';
       Disabled button
     </flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteDisabledComponent {}

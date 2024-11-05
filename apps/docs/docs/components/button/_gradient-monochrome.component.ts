@@ -16,5 +16,8 @@ import { Component } from '@angular/core';
     <flowbite-button gradientMonochrome="pink">Pink</flowbite-button>
     <flowbite-button gradientMonochrome="purple">Purple</flowbite-button>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteGradientMonochromeComponent {}
