@@ -85,5 +85,8 @@ import { Component } from '@angular/core';
       </flowbite-modal-body>
     </flowbite-modal>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteFormComponent {}

@@ -128,5 +128,8 @@ import { Component } from '@angular/core';
       </flowbite-modal-footer>
     </flowbite-modal>
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3 justify-around',
+  },
 })
 export class FlowbiteSizeComponent {}
