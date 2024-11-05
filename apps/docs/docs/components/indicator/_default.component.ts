@@ -18,5 +18,8 @@ import { Component } from '@angular/core';
     <flowbite-indicator color="yellow" />
     <flowbite-indicator color="teal" />
   `,
+  host: {
+    class: 'flex flex wrap flex-row gap-3 justify-around',
+  },
 })
 export class FlowbiteDefaultComponent {}
