@@ -6,7 +6,7 @@ keyword: BreadcrumbPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L11-L20 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
