@@ -6,7 +6,7 @@ keyword: SidebarPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L20-L29 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
@@ -18,7 +18,7 @@ keyword: SidebarPage
 
 {{ NgDocActions.demo('flowbiteMultiLevelComponent', {container: false}) }}
 
-```angular-html file="./_multi-level.component.ts"#L22-L36 group="multi-level" name="html"
+```angular-html file="./_multi-level.component.html" group="multi-level" name="html"
 
 ```
 
