@@ -16,17 +16,6 @@ import { Component } from '@angular/core';
     SidebarItemComponent,
     SidebarPageContentComponent,
   ],
-  template: `
-    <flowbite-sidebar [isOpen]="true">
-      <flowbite-sidebar-menu>
-        <flowbite-sidebar-item>Dashboard</flowbite-sidebar-item>
-        <flowbite-sidebar-item>Kanban</flowbite-sidebar-item>
-        <flowbite-sidebar-item>Inbox</flowbite-sidebar-item>
-        <flowbite-sidebar-item>Users</flowbite-sidebar-item>
-        <flowbite-sidebar-item>Products</flowbite-sidebar-item>
-      </flowbite-sidebar-menu>
-      <flowbite-sidebar-page-content>Hello world !</flowbite-sidebar-page-content>
-    </flowbite-sidebar>
-  `,
+  templateUrl: './_default.component.html',
 })
 export class FlowbiteDefaultComponent {}
