@@ -5,7 +5,7 @@ keyword: ThemingPage
 You can use the theme object from the configuration file to define any style related classes, such
 as the color palette, fonts, breakpoints, and more.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     colors: {
@@ -48,7 +48,7 @@ You can read all of the `TailwindConfigurableKeys`.
 
 Use the <span class="docs highlight">screens</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     screens: {
@@ -66,7 +66,7 @@ module.exports = {
 
 Use the <span class="docs highlight">colors</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     colors: {
@@ -91,7 +91,7 @@ module.exports = {
 
 Use the <span class="docs highlight">colors</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     fontFamily: {
@@ -105,7 +105,7 @@ module.exports = {
 
 Use the <span class="docs highlight">spacing</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     spacing: {
@@ -162,7 +162,7 @@ default settings but you want to extend them with your own.
 For example, you can keep all of the default breakpoints, but you may want to add another larger one
 for the screens key.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     extend: {
@@ -181,16 +181,16 @@ Alternatively, you can also completely override certain settings.
 For example, the following code will override all of the <span class="docs highlight">opacity</span>
 settings with your own.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     opacity: {
-      '0': '0',
-      '20': '0.2',
-      '40': '0.4',
-      '60': '0.6',
-      '80': '0.8',
-      '100': '1',
+      0: '0',
+      20: '0.2',
+      40: '0.4',
+      60: '0.6',
+      80: '0.8',
+      100: '1',
     },
   },
 };

@@ -7,7 +7,7 @@ keyword: OverrideBaseStylePage
 By default, Flowbite Angular provides a style for each of it's components. In order to use them, you
 have to call the init function inside the provider's list of your application.
 
-```typescript
+```angular-ts
 import { initFlowbite } from 'flowbite-angular/core';
 
 import { ApplicationConfig } from '@angular/core';
@@ -58,7 +58,7 @@ can be override. Each <span class="text-primary-500">ThemeServices</span> are na
 
 #### Component
 
-```typescript
+```angular-ts
 import { AlertBaseTheme, FLOWBITE_ALERT_THEME_TOKEN } from 'flowbite-angular/alert';
 import { createTheme } from 'flowbite-angular/utils';
 import { initFlowbite } from 'flowbite-angular/core';
@@ -108,7 +108,7 @@ export const appConfig: ApplicationConfig = {
 
 #### Directive
 
-```typescript
+```angular-ts
 import { IconDirectiveBaseTheme, FLOWBITE_DIRECTIVE_ICON_THEME_TOKEN } from 'flowbite-angular/icon';
 import { createTheme } from 'flowbite-angular/utils';
 import { initFlowbite } from 'flowbite-angular/core';
