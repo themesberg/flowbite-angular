@@ -6,7 +6,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L10-L16 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
@@ -18,7 +18,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbitePillComponent', {container: false}) }}
 
-```angular-html file="./_pill.component.ts"#L10-L39 group="pill" name="html"
+```angular-html file="./_pill.component.html" group="pill" name="html"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteGradientMonochromeComponent', {container: false}) }}
 
-```angular-html file="./_gradient-monochrome.component.ts"#L10-L17 group="gradient-monochrome" name="html"
+```angular-html file="./_gradient-monochrome.component.html" group="gradient-monochrome" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteGradientDuotoneComponent', {container: false}) }}
 
-```angular-html file="./_gradient-duotone.component.ts"#L10-L16 group="gradient-duotone" name="html"
+```angular-html file="./_gradient-duotone.component.html" group="gradient-duotone" name="html"
 
 ```
 
@@ -54,7 +54,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteGradientOutlineComponent', {container: false}) }}
 
-```angular-html file="./_gradient-outline.component.ts"#L10-L44 group="gradient-outline" name="html"
+```angular-html file="./_gradient-outline.component.html" group="gradient-outline" name="html"
 
 ```
 
@@ -66,7 +66,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteOutlineComponent', {container: false}) }}
 
-```angular-html file="./_outline.component.ts"#L10-L35 group="outline" name="html"
+```angular-html file="./_outline.component.html" group="outline" name="html"
 
 ```
 
@@ -78,7 +78,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteSizeComponent', {container: false}) }}
 
-```angular-html file="./_size.component.ts"#L10-L14 group="size" name="html"
+```angular-html file="./_size.component.html" group="size" name="html"
 
 ```
 
@@ -90,7 +90,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```angular-html file="./_icon.component.ts"#L11-L22 group="icon" name="html"
+```angular-html file="./_icon.component.html" group="icon" name="html"
 
 ```
 
@@ -102,7 +102,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteLabelComponent', {container: false}) }}
 
-```angular-html file="./_label.component.ts"#L10-L18 group="label" name="html"
+```angular-html file="./_label.component.html" group="label" name="html"
 
 ```
 
@@ -114,7 +114,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
 
-```angular-html file="./_icon-only.component.ts"#L11-L32 group="icon-only" name="html"
+```angular-html file="./_icon-only.component.html" group="icon-only" name="html"
 
 ```
 
@@ -126,7 +126,7 @@ keyword: ButtonPage
 
 {{ NgDocActions.demo('flowbiteDisabledComponent', {container: false}) }}
 
-```angular-html file="./_disabled.component.ts"#L10-L15 group="disabled" name="html"
+```angular-html file="./_disabled.component.html" group="disabled" name="html"
 
 ```
 
