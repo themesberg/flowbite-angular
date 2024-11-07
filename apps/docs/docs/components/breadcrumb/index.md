@@ -10,6 +10,6 @@ keyword: BreadcrumbPage
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L2 group="default" name="typescript"
+```angular-ts file="./_default.component.ts"#L1-L3 group="default" name="typescript"
 
 ```
