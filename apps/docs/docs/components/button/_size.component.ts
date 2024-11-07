@@ -6,13 +6,7 @@ import { Component } from '@angular/core';
   selector: 'flowbite-demo-button-size',
   standalone: true,
   imports: [ButtonComponent],
-  template: `
-    <flowbite-button size="xs">Extra small</flowbite-button>
-    <flowbite-button size="sm">Small</flowbite-button>
-    <flowbite-button size="md">Base</flowbite-button>
-    <flowbite-button size="lg">Large</flowbite-button>
-    <flowbite-button size="xl">Extra large</flowbite-button>
-  `,
+  templateUrl: './_size.component.html',
   host: {
     class: 'flex flex wrap flex-row gap-3 items-center',
   },
