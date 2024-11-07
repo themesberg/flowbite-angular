@@ -11,17 +11,6 @@ import { Component } from '@angular/core';
   selector: 'flowbite-demo-navbar-brand',
   standalone: true,
   imports: [NavbarComponent, NavbarItemComponent, NavbarContentComponent, NavbarBrandComponent],
-  template: `
-    <flowbite-navbar
-      [isFixed]="true"
-      [isOpen]="true">
-      <flowbite-navbar-brand> Flowbite </flowbite-navbar-brand>
-
-      <flowbite-navbar-content>
-        <flowbite-navbar-item> Home </flowbite-navbar-item>
-        <flowbite-navbar-item> Contacts </flowbite-navbar-item>
-      </flowbite-navbar-content>
-    </flowbite-navbar>
-  `,
+  templateUrl: './_brand.component.html',
 })
 export class FlowbiteBrandComponent {}

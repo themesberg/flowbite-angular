@@ -6,7 +6,7 @@ keyword: NavbarPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L14-L20 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
@@ -21,7 +21,7 @@ Use this example to display a brand element inside the navbar by importing the
 
 {{ NgDocActions.demo('flowbiteBrandComponent', {container: false}) }}
 
-```angular-html file="./_brand.component.ts"#L15-L24 group="brand" name="html"
+```angular-html file="./_brand.component.html" group="brand" name="html"
 
 ```
 
@@ -36,7 +36,7 @@ by importing the `DropdownComponent` and `DropdownItemComponent` components.
 
 {{ NgDocActions.demo('flowbiteDropdownComponent', {container: false}) }}
 
-```angular-html file="./_dropdown.component.ts"#L23-L37 group="dropdown" name="html"
+```angular-html file="./_dropdown.component.html" group="dropdown" name="html"
 
 ```
 
@@ -51,7 +51,7 @@ to toggle the menu items by adding the `NavbarToggleComponent` component.
 
 {{ NgDocActions.demo('flowbiteResponsiveComponent', {container: false}) }}
 
-```angular-html file="./_responsive.component.ts"#L22-L32 group="responsive" name="html"
+```angular-html file="./_responsive.component.html" group="responsive" name="html"
 
 ```
 

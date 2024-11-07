@@ -19,22 +19,6 @@ import { Component } from '@angular/core';
     DropdownComponent,
     DropdownItemComponent,
   ],
-  template: `
-    <flowbite-navbar
-      [isFixed]="true"
-      [isOpen]="true">
-      <flowbite-navbar-brand> Flowbite </flowbite-navbar-brand>
-
-      <flowbite-navbar-content>
-        <flowbite-navbar-item>Hello world!</flowbite-navbar-item>
-
-        <flowbite-dropdown label="Settings">
-          <flowbite-dropdown-item> Profile </flowbite-dropdown-item>
-          <flowbite-dropdown-item> Billing </flowbite-dropdown-item>
-          <flowbite-dropdown-item> App settings </flowbite-dropdown-item>
-        </flowbite-dropdown>
-      </flowbite-navbar-content>
-    </flowbite-navbar>
-  `,
+  templateUrl: './_dropdown.component.html',
 })
 export class FlowbiteDropdownComponent {}
