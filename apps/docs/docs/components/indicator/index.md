@@ -6,7 +6,7 @@ keyword: IndicatorPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L10-L19 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
@@ -18,7 +18,7 @@ keyword: IndicatorPage
 
 {{ NgDocActions.demo('flowbiteLegendComponent', {container: false}) }}
 
-```angular-html file="./_legend.component.ts"#L10-L48 group="legend" name="html"
+```angular-html file="./_legend.component.html" group="legend" name="html"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: IndicatorPage
 
 {{ NgDocActions.demo('flowbiteCountComponent', {container: false}) }}
 
-```angular-html file="./_count.component.ts"#L12-L24 group="count" name="html"
+```angular-html file="./_count.component.html" group="count" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: IndicatorPage
 
 {{ NgDocActions.demo('flowbitePositionedComponent', {container: false}) }}
 
-```angular-html file="./_positioned.component.ts"#L10-L48 group="positioned" name="html"
+```angular-html file="./_positioned.component.html" group="positioned" name="html"
 
 ```
 
