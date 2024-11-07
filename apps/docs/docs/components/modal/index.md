@@ -6,7 +6,7 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L22-L46 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
@@ -18,7 +18,7 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteSizeComponent', {container: false}) }}
 
-```angular-html file="./_size.component.ts"#L22-L129 group="size" name="html"
+```angular-html file="./_size.component.html" group="size" name="html"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
 
-```angular-html file="./_dismissable.component.ts"#L22-L48 group="dismissable" name="html"
+```angular-html file="./_dismissable.component.html" group="dismissable" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbiteFormComponent', {container: false}) }}
 
-```angular-html file="./_form.component.ts"#L11-L86 group="form" name="html"
+```angular-html file="./_form.component.html" group="form" name="html"
 
 ```
 
@@ -54,7 +54,7 @@ keyword: ModalPage
 
 {{ NgDocActions.demo('flowbitePositionedComponent', {container: false}) }}
 
-```angular-html file="./_positioned.component.ts"#L22-L49 group="positioned" name="html"
+```angular-html file="./_positioned.component.html" group="positioned" name="html"
 
 ```
 
