@@ -6,11 +6,11 @@ keyword: NavbarPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./_default.component.ts"#L14-L20 group="default" name="html"
+```angular-html file="./_default.component.ts"#L14-L20 group="default" name="html"
 
 ```
 
-```typescript file="./_default.component.ts"#L1-L5 group="default" name="typescript"
+```angular-ts file="./_default.component.ts"#L1-L5 group="default" name="typescript"
 
 ```
 
@@ -21,11 +21,11 @@ Use this example to display a brand element inside the navbar by importing the
 
 {{ NgDocActions.demo('flowbiteBrandComponent', {container: false}) }}
 
-```html file="./_brand.component.ts"#L15-L24 group="brand" name="html"
+```angular-html file="./_brand.component.ts"#L15-L24 group="brand" name="html"
 
 ```
 
-```typescript file="./_brand.component.ts"#L1-L6 group="brand" name="typescript"
+```angular-ts file="./_brand.component.ts"#L1-L6 group="brand" name="typescript"
 
 ```
 
@@ -36,11 +36,11 @@ by importing the `DropdownComponent` and `DropdownItemComponent` components.
 
 {{ NgDocActions.demo('flowbiteDropdownComponent', {container: false}) }}
 
-```html file="./_dropdown.component.ts"#L23-L37 group="dropdown" name="html"
+```angular-html file="./_dropdown.component.ts"#L23-L37 group="dropdown" name="html"
 
 ```
 
-```typescript file="./_dropdown.component.ts"#L1-L7 group="dropdown" name="typescript"
+```angular-ts file="./_dropdown.component.ts"#L1-L7 group="dropdown" name="typescript"
 
 ```
 
@@ -51,10 +51,10 @@ to toggle the menu items by adding the `NavbarToggleComponent` component.
 
 {{ NgDocActions.demo('flowbiteResponsiveComponent', {container: false}) }}
 
-```html file="./_responsive.component.ts"#L22-L32 group="responsive" name="html"
+```angular-html file="./_responsive.component.ts"#L22-L32 group="responsive" name="html"
 
 ```
 
-```typescript file="./_responsive.component.ts"#L1-L7 group="responsive" name="typescript"
+```angular-ts file="./_responsive.component.ts"#L1-L7 group="responsive" name="typescript"
 
 ```

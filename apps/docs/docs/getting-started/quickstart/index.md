@@ -28,7 +28,7 @@ have to call the init function inside the provider's list of your application.
 
 For more informations about styling, check the `*OverrideBaseStylePage`.
 
-```typescript
+```angular-ts
 import { initFlowbite } from 'flowbite-angular/core';
 
 import { ApplicationConfig } from '@angular/core';

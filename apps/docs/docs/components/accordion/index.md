@@ -6,11 +6,11 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```html file="./_default.component.ts"#L20-L90 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
-```typescript file="./_default.component.ts"#L1-L6 group="default" name="typescript"
+```angular-ts file="./_default.component.ts"#L1-L6 group="default" name="typescript"
 
 ```
 
@@ -18,11 +18,11 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteAlwaysOpenComponent', {container: false}) }}
 
-```html file="./_always-open.component.ts"#L20-L90 group="always-open" name="html"
+```angular-html file="./_always-open.component.html" group="always-open" name="html"
 
 ```
 
-```typescript file="./_always-open.component.ts"#L1-L6 group="always-open" name="typescript"
+```angular-ts file="./_always-open.component.ts"#L1-L6 group="always-open" name="typescript"
 
 ```
 
@@ -30,11 +30,11 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteColorOptionComponent', {container: false}) }}
 
-```html file="./_color-option.component.ts"#L20-L90 group="color-option" name="html"
+```angular-html file="./_color-option.component.html" group="color-option" name="html"
 
 ```
 
-```typescript file="./_color-option.component.ts"#L1-L6 group="color-option" name="typescript"
+```angular-ts file="./_color-option.component.ts"#L1-L6 group="color-option" name="typescript"
 
 ```
 
@@ -42,10 +42,10 @@ keyword: AccordionPage
 
 {{ NgDocActions.demo('flowbiteFlushComponent', {container: false}) }}
 
-```html file="./_flush.component.ts"#L20-L90 group="flush" name="html"
+```angular-html file="./_flush.component.html" group="flush" name="html"
 
 ```
 
-```typescript file="./_flush.component.ts"#L1-L6 group="flush" name="typescript"
+```angular-ts file="./_flush.component.ts"#L1-L6 group="flush" name="typescript"
 
 ```

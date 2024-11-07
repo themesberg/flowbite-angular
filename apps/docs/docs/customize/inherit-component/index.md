@@ -7,7 +7,7 @@ keyword: InheritComponent
 If you want to add some functionalities to one or multiple components, then you can make a custom
 component like this
 
-```typescript
+```angular-ts
 import { IndicatorComponent } from 'flowbite-angular/indicator';
 
 import { Component } from '@angular/core';
