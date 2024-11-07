@@ -6,7 +6,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
-```angular-html file="./_default.component.ts"#L10-L30 group="default" name="html"
+```angular-html file="./_default.component.html" group="default" name="html"
 
 ```
 
@@ -18,7 +18,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```angular-html file="./_icon.component.ts"#L11-L49 group="icon" name="html"
+```angular-html file="./_icon.component.html" group="icon" name="html"
 
 ```
 
@@ -30,7 +30,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderComponent', {container: false}) }}
 
-```angular-html file="./_border.component.ts"#L10-L42 group="border" name="html"
+```angular-html file="./_border.component.html" group="border" name="html"
 
 ```
 
@@ -42,7 +42,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
 
-```angular-html file="./_dismissable.component.ts"#L10-L48 group="dismissable" name="html"
+```angular-html file="./_dismissable.component.html" group="dismissable" name="html"
 
 ```
 
@@ -50,7 +50,7 @@ keyword: AlertPage
 
 ```
 
-```angular-ts file="./_dismissable.component.ts"#L58 group="dismissable" name="typescript"
+```angular-ts file="./_dismissable.component.ts"#L15 group="dismissable" name="typescript"
 
 ```
 
@@ -58,7 +58,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderAccentComponent', {container: false}) }}
 
-```angular-html file="./_border-accent.component.ts"#L10-L42 group="border-accent" name="html"
+```angular-html file="./_border-accent.component.html" group="border-accent" name="html"
 
 ```
 
@@ -70,7 +70,7 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteAdditionalContentComponent', {container: false}) }}
 
-```angular-html file="./_additional-content.component.ts"#L12-L180 group="additional-content" name="html"
+```angular-html file="./_additional-content.component.html" group="additional-content" name="html"
 
 ```
 
