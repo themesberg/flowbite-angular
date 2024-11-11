@@ -2,9 +2,10 @@
 keyword: ThemingPage
 ---
 
-You can use the theme object from the configuration file to define any style related classes, such as the color palette, fonts, breakpoints, and more.
+You can use the theme object from the configuration file to define any style related classes, such
+as the color palette, fonts, breakpoints, and more.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     colors: {
@@ -37,7 +38,9 @@ module.exports = {
 
 ## Theme structure
 
-Some of the more widely used <span class="docs highlight">theme</span> keys are <span class="docs highlight">screens</span>, <span class="docs highlight">colors</span>, and <span class="docs highlight">spacing</span> as one of the core utility classes.
+Some of the more widely used <span class="docs highlight">theme</span> keys are
+<span class="docs highlight">screens</span>, <span class="docs highlight">colors</span>, and
+<span class="docs highlight">spacing</span> as one of the core utility classes.
 
 You can read all of the `TailwindConfigurableKeys`.
 
@@ -45,7 +48,7 @@ You can read all of the `TailwindConfigurableKeys`.
 
 Use the <span class="docs highlight">screens</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     screens: {
@@ -63,7 +66,7 @@ module.exports = {
 
 Use the <span class="docs highlight">colors</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     colors: {
@@ -88,7 +91,7 @@ module.exports = {
 
 Use the <span class="docs highlight">colors</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     fontFamily: {
@@ -102,7 +105,7 @@ module.exports = {
 
 Use the <span class="docs highlight">spacing</span> key to update the responsive breakpoints.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     spacing: {
@@ -148,15 +151,18 @@ module.exports = {
 
 ## Customizing the theme
 
-By default, the configuration file will set the base utility classes from TailwindCSS. However, you can customize them by using the extends object.
+By default, the configuration file will set the base utility classes from TailwindCSS. However, you
+can customize them by using the extends object.
 
 ### Extending
 
-Use the <span class="docs highlight">extends</span> object if you want to keep the values from the default settings but you want to extend them with your own.
+Use the <span class="docs highlight">extends</span> object if you want to keep the values from the
+default settings but you want to extend them with your own.
 
-For example, you can keep all of the default breakpoints, but you may want to add another larger one for the screens key.
+For example, you can keep all of the default breakpoints, but you may want to add another larger one
+for the screens key.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     extend: {
@@ -172,21 +178,23 @@ module.exports = {
 
 Alternatively, you can also completely override certain settings.
 
-For example, the following code will override all of the <span class="docs highlight">opacity</span> settings with your own.
+For example, the following code will override all of the <span class="docs highlight">opacity</span>
+settings with your own.
 
-```typescript
+```javascript
 module.exports = {
   theme: {
     opacity: {
-      '0': '0',
-      '20': '0.2',
-      '40': '0.4',
-      '60': '0.6',
-      '80': '0.8',
-      '100': '1',
+      0: '0',
+      20: '0.2',
+      40: '0.4',
+      60: '0.6',
+      80: '0.8',
+      100: '1',
     },
   },
 };
 ```
 
-Please read the official `TailwindThemingDocumentation` if you want a full overview of the theming options.
+Please read the official `TailwindThemingDocumentation` if you want a full overview of the theming
+options.

@@ -1,4 +1,4 @@
-import { DropdownComponent, DropdownItemComponent } from 'flowbite-angular';
+import { DropdownComponent, DropdownItemComponent } from 'flowbite-angular/dropdown';
 
 import { Component } from '@angular/core';
 
@@ -6,12 +6,9 @@ import { Component } from '@angular/core';
   selector: 'flowbite-demo-dropdown-default',
   standalone: true,
   imports: [DropdownComponent, DropdownItemComponent],
-  template: `
-    <flowbite-dropdown>
-      <flowbite-dropdown-item>Item 1</flowbite-dropdown-item>
-      <flowbite-dropdown-item>Item 2</flowbite-dropdown-item>
-      <flowbite-dropdown-item>Item 3</flowbite-dropdown-item>
-    </flowbite-dropdown>
-  `,
+  templateUrl: './_default.component.html',
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteDefaultComponent {}

@@ -1,53 +1,15 @@
-import { BadgeComponent } from 'flowbite-angular';
+import { BadgeComponent } from 'flowbite-angular/badge';
+import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-badge-link',
   standalone: true,
-  imports: [BadgeComponent],
-  template: `
-    <flowbite-badge routerLink="#">Default</flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="primary">
-      Primary
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="blue">
-      Blue
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="red">
-      Red
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="green">
-      Green
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="yellow">
-      Yellow
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="indigo">
-      Indigo
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="purple">
-      Purple
-    </flowbite-badge>
-    <flowbite-badge
-      routerLink="#"
-      color="pink">
-      Pink
-    </flowbite-badge>
-  `,
+  imports: [BadgeComponent, FlowbiteRouterLinkDirective],
+  templateUrl: './_link.component.html',
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteLinkComponent {}

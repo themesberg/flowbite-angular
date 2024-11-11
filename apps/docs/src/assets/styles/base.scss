@@ -2,6 +2,11 @@
   --ng-doc-primary: #ff2c51;
   --ng-doc-hover-background: #ff9ba8;
   --ng-doc-font-system: Inter;
+
+  --ng-doc-tab-group-tabs-background: #f9fafb;
+  --ng-doc-code-background: #f9fafb;
+
+  --ng-doc-text-selection: rgb(255, 44, 81, 0.15);
 }
 
 ng-doc-tabs {
@@ -11,13 +16,4 @@ ng-doc-tabs {
 
 ng-doc-tab-group {
   border-radius: 0px !important;
-}
-
-.ng-doc-sidenav {
-  padding-right: 24px !important;
-}
-
-.ng-doc-sidenav-content {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
 }

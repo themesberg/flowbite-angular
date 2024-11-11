@@ -1,0 +1,68 @@
+name: CI Checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+concurrency: ${{ github.ref }}
+
+jobs:
+  lint:
+    name: Lint the code 🕵
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code 🗄
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 💿
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Monorepo install
+        uses: ./.github/actions/setup
+
+      - name: Lint the code 🕵
+        run: pnpm all:lint
+
+  test:
+    name: Run unit tests 🔬
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code 🗄
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 💿
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Monorepo install
+        uses: ./.github/actions/setup
+
+      - name: Run unit tests 🔬
+        run: pnpm all:test -- --ci --verbose
+
+  build:
+    name: Build code 🛠
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code 🗄
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup NodeJS 💿
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Monorepo install
+        uses: ./.github/actions/setup
+
+      - name: Build code 🛠
+        run: pnpm all:build

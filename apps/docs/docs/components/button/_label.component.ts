@@ -1,4 +1,5 @@
-import { BadgeComponent, ButtonComponent } from 'flowbite-angular';
+import { BadgeComponent } from 'flowbite-angular/badge';
+import { ButtonComponent } from 'flowbite-angular/button';
 
 import { Component } from '@angular/core';
 
@@ -6,15 +7,9 @@ import { Component } from '@angular/core';
   selector: 'flowbite-demo-button-label',
   standalone: true,
   imports: [ButtonComponent, BadgeComponent],
-  template: `
-    <flowbite-button>
-      Messages
-      <flowbite-badge
-        [isIconOnly]="true"
-        class="ml-2">
-        2
-      </flowbite-badge>
-    </flowbite-button>
-  `,
+  templateUrl: './_label.component.html',
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteLabelComponent {}

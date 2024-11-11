@@ -1,6 +1,6 @@
 {
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "pnpm"
   },
   "generators": {
     "@nx/angular:application": {
@@ -62,7 +62,6 @@
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
-  "nxCloudAccessToken": "YTVmMTBiZGQtMDQxZS00ODViLTk0NTktYjJjZGFjNjRlZjlmfHJlYWQtd3JpdGU=",
   "useInferencePlugins": false,
   "defaultBase": "main"
 }

@@ -2,7 +2,8 @@ import { appRoutes } from './app.routes';
 import { initIcons } from './icon.init';
 import { docDemoDisplayerProcessor } from './shared/processors/doc-demo-displayer-processor/doc-demo-displayer-processor';
 
-import { IconRegistry, initFlowbite } from 'flowbite-angular';
+import { initFlowbite } from 'flowbite-angular/core';
+import { IconRegistry } from 'flowbite-angular/icon';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { APP_INITIALIZER, PLATFORM_ID, type ApplicationConfig } from '@angular/core';
@@ -28,14 +29,17 @@ export const appConfig: ApplicationConfig = {
     provideNgDocContext(),
     provideNgDocApp({
       shiki: {
-        themes: [import('shiki/themes/material-theme.mjs'), import('shiki/themes/material-theme-lighter.mjs')],
+        themes: [
+          import('shiki/themes/material-theme.mjs'),
+          import('shiki/themes/material-theme-lighter.mjs'),
+        ],
         theme: {
           light: 'material-theme-lighter',
           dark: 'material-theme',
         },
       },
     }),
-    provideSearchEngine(NgDocDefaultSearchEngine),
+    provideSearchEngine(NgDocDefaultSearchEngine, { tolerance: 2 }),
     providePageSkeleton(NG_DOC_DEFAULT_PAGE_SKELETON),
     provideMainPageProcessor(NG_DOC_DEFAULT_PAGE_PROCESSORS),
     providePageProcessor(docDemoDisplayerProcessor),
@@ -43,7 +47,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideRouter(
       appRoutes,
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' })
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
     initFlowbite(),

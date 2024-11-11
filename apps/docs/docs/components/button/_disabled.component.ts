@@ -1,4 +1,4 @@
-import { ButtonComponent } from 'flowbite-angular';
+import { ButtonComponent } from 'flowbite-angular/button';
 
 import { Component } from '@angular/core';
 
@@ -6,13 +6,9 @@ import { Component } from '@angular/core';
   selector: 'flowbite-demo-button-disabled',
   standalone: true,
   imports: [ButtonComponent],
-  template: `
-    <flowbite-button [isDisabled]="true">Disabled button</flowbite-button>
-    <flowbite-button
-      color="blue"
-      [isDisabled]="true">
-      Disabled button
-    </flowbite-button>
-  `,
+  templateUrl: './_disabled.component.html',
+  host: {
+    class: 'flex flex wrap flex-row gap-3',
+  },
 })
 export class FlowbiteDisabledComponent {}

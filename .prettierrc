@@ -1,12 +1,13 @@
 {
-  "endOfLine": "crlf",
+  "endOfLine": "lf",
   "singleQuote": true,
-  "singleAttributePerLine": true,
+  "printWidth": 100,
+  "trailingComma": "es5",
   "bracketSameLine": true,
-  "printWidth": 120,
-  "trailingComma": "all",
+  "bracketSpacing": true,
+  "proseWrap": "always",
+  "singleAttributePerLine": true,
   "plugins": ["prettier-plugin-packagejson", "@ianvs/prettier-plugin-sort-imports"],
-  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
   "importOrder": [
     "^~/(.*)$",
     "^[.]",
@@ -16,5 +17,6 @@
     "<THIRD_PARTY_MODULES>",
     "",
     "<BUILTIN_MODULES>"
-  ]
+  ],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"]
 }

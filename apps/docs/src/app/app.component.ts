@@ -1,17 +1,22 @@
+// Import with relative path since it's not in node_modules and we need to import package.json in order to get version
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import flowbiteAngularPackageJson from '../../../../libs/flowbite-angular/package.json';
+
+import { BadgeComponent } from 'flowbite-angular/badge';
+import { IconComponent } from 'flowbite-angular/icon';
 import {
-  FlowbiteRouterLinkActiveDirective,
-  FlowbiteRouterLinkDirective,
-  IconComponent,
   NavbarBrandComponent,
   NavbarComponent,
   NavbarContentComponent,
   NavbarIconButtonComponent,
   NavbarItemComponent,
   NavbarToggleComponent,
-} from 'flowbite-angular';
+} from 'flowbite-angular/navbar';
+import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
+import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
 import { Location, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   NgDocRootComponent,
@@ -39,6 +44,7 @@ import {
     NavbarIconButtonComponent,
     FlowbiteRouterLinkDirective,
     FlowbiteRouterLinkActiveDirective,
+    BadgeComponent,
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
@@ -53,4 +59,7 @@ export class AppComponent {
   get isLandingPage(): boolean {
     return this.location.path() === '';
   }
+
+  public readonly currentYear = computed(() => new Date().getFullYear());
+  public readonly flowbiteAngularVersion = computed(() => flowbiteAngularPackageJson.version);
 }
