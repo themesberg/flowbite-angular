@@ -84,29 +84,29 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/alerts/">
+        <a href="https://flowbite-angular.com/docs/components/alert">
             <img alt="Tailwind CSS Alerts" src="https://flowbite.s3.amazonaws.com/github/alerts.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/badges/">
+        <a href="https://flowbite-angular.com/docs/components/badge">
             <img alt="Tailwind CSS Badge" src="https://flowbite.s3.amazonaws.com/github/badge.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/breadcrumb/">
+        <a href="https://flowbite-angular.com/docs/components/breadcrumb">
             <img alt="Tailwind CSS Breadcrumbs" src="https://flowbite.s3.amazonaws.com/github/breadcrumbs.jpg">
         </a>
     </td>
   </tr>
   <tr>
-    <td width="33.3333%">:construction: Buttons</td>
+    <td width="33.3333%">Buttons</td>
     <td width="33.3333%">:construction: Button group</td>
     <td width="33.3333%">:construction: Cards</td>
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/buttons/">
+        <a href="https://flowbite-angular.com/docs/components/button">
             <img alt="Tailwind CSS Buttons" src="https://flowbite.s3.amazonaws.com/github/buttons.jpg">
         </a>
     </td>
@@ -122,13 +122,13 @@ module.exports = {
     </td>
   </tr>
   <tr>
-    <td width="33.3333%">:construction: Dropdown</td>
+    <td width="33.3333%">Dropdown</td>
     <td width="33.3333%">:construction: Forms</td>
     <td width="33.3333%">:construction: List group</td>
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/dropdown/">
+        <a href="https://flowbite-angular.com/docs/components/dropdown">
             <img alt="Tailwind CSS Dropdown" src="https://flowbite.s3.amazonaws.com/github/dropdown.jpg">
         </a>
     </td>
@@ -145,7 +145,7 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">:construction: Typography</td>
-    <td width="33.3333%">:construction: Modal</td>
+    <td width="33.3333%">Modal</td>
     <td width="33.3333%">:construction: Tabs</td>
   </tr>
   <tr>
@@ -155,7 +155,7 @@ module.exports = {
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/modal/">
+        <a href="https://flowbite-angular.com/docs/components/modal">
             <img alt="Tailwind CSS Modal" src="https://flowbite.s3.amazonaws.com/github/modal.jpg">
         </a>
     </td>
@@ -166,13 +166,13 @@ module.exports = {
     </td>
   </tr>
   <tr>
-    <td width="33.3333%">:construction: Navbar</td>
+    <td width="33.3333%">Navbar</td>
     <td width="33.3333%">:construction: Pagination</td>
     <td width="33.3333%">:construction: Timeline</td>
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/navbars/">
+        <a href="https://flowbite-angular.com/docs/components/navbar">
             <img alt="Tailwind CSS Navbar" src="https://flowbite.s3.amazonaws.com/github/navbar.jpg">
         </a>
     </td>
@@ -233,8 +233,8 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">:construction: Footer</td>
-    <td width="33.3333%">:construction: Accordion</td>
-    <td width="33.3333%">:construction: Sidebar</td>
+    <td width="33.3333%">Accordion</td>
+    <td width="33.3333%">Sidebar</td>
   </tr>
   <tr>
     <td width="33.3333%">
@@ -243,12 +243,12 @@ module.exports = {
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/accordion/">
+        <a href="https://flowbite-angular.com/docs/components/accordion">
             <img alt="Tailwind CSS Accordion" src="https://flowbite.s3.amazonaws.com/github/accordion.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/sidebar/">
+        <a href="https://flowbite-angular.com/docs/components/sidebar">
             <img alt="Tailwind CSS Sidebar" src="https://flowbite.s3.amazonaws.com/github/sidebar.jpg">
         </a>
     </td>
