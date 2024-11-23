@@ -67,7 +67,7 @@ body:
 
   - type: input
     id: flowbite-angular-version
-    attribute:
+    attributes:
       label: Flowbite-angular version
     validations:
       required: true
