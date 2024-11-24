@@ -1,10 +1,14 @@
 import {
+  accordionContentDefaultValueProvider,
   accordionContentTheme,
   AccordionContentThemeService,
+  accordionDefaultValueProvider,
+  accordionPanelDefaultValueProvider,
   accordionPanelTheme,
   AccordionPanelThemeService,
   accordionTheme,
   AccordionThemeService,
+  accordionTitleDefaultValueProvider,
   accordionTitleTheme,
   AccordionTitleThemeService,
   FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN,
@@ -381,5 +385,12 @@ export function initFlowbite(): EnvironmentProviders {
     },
   ]);
 
-  return makeEnvironmentProviders([serviceProviders, themeProviders]);
+  const defaultValueProvider = makeEnvironmentProviders([
+    accordionDefaultValueProvider,
+    accordionPanelDefaultValueProvider,
+    accordionTitleDefaultValueProvider,
+    accordionContentDefaultValueProvider,
+  ]);
+
+  return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);
 }
