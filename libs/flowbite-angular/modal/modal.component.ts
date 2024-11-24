@@ -182,7 +182,6 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   }
 
   onKeydownHandler(event: KeyboardEvent) {
-    console.log('hello');
     if (event.key === 'Escape') {
       this.close();
     }

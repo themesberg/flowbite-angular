@@ -14,10 +14,31 @@ import {
   Component,
   contentChild,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   untracked,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_ACCORDION_PANEL_IS_OPEN_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_ACCORDION_IS_OPEN_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_ACCORDION_PANEL_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<AccordionPanelTheme>
+>('FLOWBITE_ACCORDION_PANEL_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const accordionPanelDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_ACCORDION_PANEL_IS_OPEN_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_ACCORDION_PANEL_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/accordion/
@@ -60,11 +81,11 @@ export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> 
    *
    * @default false
    */
-  public isOpen = model<boolean>(false);
+  public isOpen = model(inject(FLOWBITE_ACCORDION_PANEL_IS_OPEN_DEFAULT_VALUE));
   /**
    * Set the custom style for this accordion panel
    */
-  public customStyle = model<DeepPartial<AccordionPanelTheme>>({});
+  public customStyle = model(inject(FLOWBITE_ACCORDION_PANEL_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

@@ -54,7 +54,7 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
    *
    * @default The injected `SidebarComponent`
    */
-  public readonly sidebarComponent = model<SidebarComponent>(inject(SidebarComponent));
+  public readonly sidebarComponent = model(inject(SidebarComponent));
 
   //#region properties
   /**
