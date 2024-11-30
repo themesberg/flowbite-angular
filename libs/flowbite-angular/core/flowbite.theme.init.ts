@@ -16,7 +16,12 @@ import {
   FLOWBITE_ACCORDION_THEME_TOKEN,
   FLOWBITE_ACCORDION_TITLE_THEME_TOKEN,
 } from 'flowbite-angular/accordion';
-import { alertTheme, AlertThemeService, FLOWBITE_ALERT_THEME_TOKEN } from 'flowbite-angular/alert';
+import {
+  alertDefaultValueProvider,
+  alertTheme,
+  AlertThemeService,
+  FLOWBITE_ALERT_THEME_TOKEN,
+} from 'flowbite-angular/alert';
 import { badgeTheme, BadgeThemeService, FLOWBITE_BADGE_THEME_TOKEN } from 'flowbite-angular/badge';
 import {
   breadcrumbItemTheme,
@@ -390,6 +395,7 @@ export function initFlowbite(): EnvironmentProviders {
     accordionPanelDefaultValueProvider,
     accordionTitleDefaultValueProvider,
     accordionContentDefaultValueProvider,
+    alertDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);

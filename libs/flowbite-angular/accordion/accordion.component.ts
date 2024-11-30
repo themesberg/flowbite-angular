@@ -95,9 +95,7 @@ export class AccordionComponent extends BaseComponent<AccordionClass> {
   /**
    * Set the custom style for this accordion
    */
-  public customStyle = model<DeepPartial<AccordionTheme>>(
-    inject(FLOWBITE_ACCORDION_CUSTOM_STYLE_DEFAULT_VALUE)
-  );
+  public customStyle = model(inject(FLOWBITE_ACCORDION_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
