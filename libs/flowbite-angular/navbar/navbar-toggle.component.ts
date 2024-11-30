@@ -12,10 +12,23 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_NAVBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<NavbarToggleTheme>
+>('FLOWBITE_NAVBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const navbarToggleDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_NAVBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -57,7 +70,7 @@ export class NavbarToggleComponent extends BaseComponent<NavbarToggleClass> {
   /**
    * Set the custom style for this navbar toggle
    */
-  public customStyle = model<DeepPartial<NavbarToggleTheme>>({});
+  public customStyle = model(inject(FLOWBITE_NAVBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

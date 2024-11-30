@@ -11,9 +11,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_NAVBAR_ICON_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<NavbarIconButtonTheme>
+>('FLOWBITE_NAVBAR_ICON_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const navbarIconButtonDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_NAVBAR_ICON_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -53,7 +66,7 @@ export class NavbarIconButtonComponent extends BaseComponent<NavbarIconButtonCla
   /**
    * Set the custom style for this navbar icon button
    */
-  public customStyle = model<DeepPartial<NavbarIconButtonTheme>>({});
+  public customStyle = model(inject(FLOWBITE_NAVBAR_ICON_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

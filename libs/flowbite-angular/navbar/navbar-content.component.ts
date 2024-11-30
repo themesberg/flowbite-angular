@@ -12,9 +12,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_NAVBAR_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<NavbarContentTheme>
+>('FLOWBITE_NAVBAR_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const navbarContentDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_NAVBAR_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -48,7 +61,10 @@ export class NavbarContentComponent extends BaseComponent<NavbarContentClass> im
    * @default `NavbarComponent`'s color
    */
   public color = model<keyof NavbarColors>(this.navbarComponent().color());
-  public customStyle = model<DeepPartial<NavbarContentTheme>>({});
+  /**
+   * Set the custom style for this navbar content
+   */
+  public customStyle = model(inject(FLOWBITE_NAVBAR_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
