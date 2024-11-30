@@ -1,11 +1,11 @@
-import type { FlowbiteClass } from 'flowbite-angular';
+import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
 /**
  * Required properties for the class generation of `DropdownDividerComponent`
  */
 export interface DropdownDividerProperties {
-  customStyle: Partial<DropdownDividerTheme>;
+  customStyle: DeepPartial<DropdownDividerTheme>;
 }
 
 /**

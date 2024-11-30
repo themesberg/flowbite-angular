@@ -10,9 +10,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_DROPDOWN_ITEM_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<DropdownItemTheme>
+>('FLOWBITE_DROPDOWN_ITEM_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const dropdownItemDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_DROPDOWN_ITEM_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -39,7 +52,7 @@ export class DropdownItemComponent extends BaseComponent<DropdownItemClass> {
   /**
    * Set the custom style for this dropdown item
    */
-  public customStyle = model<DeepPartial<DropdownItemTheme>>({});
+  public customStyle = model(inject(FLOWBITE_DROPDOWN_ITEM_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

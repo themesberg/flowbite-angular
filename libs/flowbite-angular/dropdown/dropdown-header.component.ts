@@ -2,6 +2,7 @@ import type { DropdownHeaderClass, DropdownHeaderTheme } from './dropdown-header
 import { DropdownHeaderThemeService } from './dropdown-header.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
+import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import { NgClass } from '@angular/common';
@@ -9,9 +10,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_DROPDOWN_HEADER_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<DropdownHeaderTheme>
+>('FLOWBITE_DROPDOWN_HEADER_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const dropdownHeaderDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_DROPDOWN_HEADER_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -43,7 +57,7 @@ export class DropdownHeaderComponent extends BaseComponent<DropdownHeaderClass> 
   /**
    * Set the custom style for this dropdown header
    */
-  public customStyle = model<Partial<DropdownHeaderTheme>>({});
+  public customStyle = model(inject(FLOWBITE_DROPDOWN_HEADER_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
