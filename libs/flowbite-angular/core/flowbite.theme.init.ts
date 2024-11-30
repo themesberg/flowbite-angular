@@ -120,6 +120,7 @@ import {
 } from 'flowbite-angular/navbar';
 import {
   FLOWBITE_SCROLL_TOP_THEME_TOKEN,
+  scrollTopDefaultValueProvider,
   scrollTopTheme,
   ScrollTopThemeService,
 } from 'flowbite-angular/scroll-top';
@@ -440,6 +441,7 @@ export function initFlowbite(): EnvironmentProviders {
     navbarIconButtonDefaultValueProvider,
     navbarContentDefaultValueProvider,
     navbarBrandDefaultThemeProvider,
+    scrollTopDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);

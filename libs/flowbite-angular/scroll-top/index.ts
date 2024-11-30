@@ -1,4 +1,10 @@
-export { ScrollTopComponent } from './scroll-top.component';
+export {
+  ScrollTopComponent,
+  FLOWBITE_SCROLL_TOP_COLOR_DEFAULT_VALUE,
+  FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE,
+  FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE,
+  scrollTopDefaultValueProvider,
+} from './scroll-top.component';
 export type {
   ScrollTopTheme,
   ScrollTopClass,
