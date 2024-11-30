@@ -70,6 +70,7 @@ import {
 } from 'flowbite-angular/dropdown';
 import {
   FLOWBITE_INDICATOR_THEME_TOKEN,
+  indicatorDefaultValueProvider,
   indicatorTheme,
   IndicatorThemeService,
 } from 'flowbite-angular/indicator';
@@ -418,6 +419,7 @@ export function initFlowbite(): EnvironmentProviders {
     dropdownItemDefaultValueProvider,
     dropdownHeaderDefaultValueProvider,
     dropdownDividerDefaultValueProvider,
+    indicatorDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);
