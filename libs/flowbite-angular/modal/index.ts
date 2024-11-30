@@ -1,4 +1,12 @@
-export { ModalComponent } from './modal.component';
+export {
+  ModalComponent,
+  FLOWBITE_MODAL_CUSTOM_STYLE_DEFAULT_VALUE,
+  FLOWBITE_MODAL_IS_DISMISSABLE_DEFAULT_VALUE,
+  FLOWBITE_MODAL_IS_OPEN_DEFAULT_VALUE,
+  FLOWBITE_MODAL_POSITION_DEFAULT_VALUE,
+  FLOWBITE_MODAL_SIZE_DEFAULT_VALUE,
+  modalDefaultValueProvider,
+} from './modal.component';
 export type {
   ModalProperties,
   ModalClass,
@@ -9,7 +17,11 @@ export type {
 export { modalTheme } from './modal.theme';
 export { FLOWBITE_MODAL_THEME_TOKEN, ModalThemeService } from './modal.theme.service';
 
-export { ModalHeaderComponent } from './modal-header.component';
+export {
+  ModalHeaderComponent,
+  FLOWBITE_MODAL_HEADER_CUSTOM_SYLE_DEFAULT_VALUE,
+  modalHeaderDefaultValueProvider,
+} from './modal-header.component';
 export type {
   ModalHeaderProperties,
   ModalHeaderClass,
@@ -21,12 +33,20 @@ export {
   ModalHeaderThemeService,
 } from './modal-header.theme.service';
 
-export { ModalBodyComponent } from './modal-body.component';
+export {
+  ModalBodyComponent,
+  FLOWBITE_MODAL_BODY_CUSTOM_STYLE_DEFAULT_VALUE,
+  modalBodyDefaultValueProvider,
+} from './modal-body.component';
 export type { ModalBodyProperties, ModalBodyClass, ModalBodyTheme } from './modal-body.theme';
 export { modalBodyTheme } from './modal-body.theme';
 export { FLOWBITE_MODAL_BODY_THEME_TOKEN, ModalBodyThemeService } from './modal-body.theme.service';
 
-export { ModalFooterComponent } from './modal-footer.component';
+export {
+  ModalFooterComponent,
+  FLOWBITE_MODAL_FOOTER_CUSTOM_STYLE_DEFAULT_VALUE,
+  modalFooterDefaultValueProvider,
+} from './modal-footer.component';
 export type {
   ModalFooterProperties,
   ModalFooterClass,

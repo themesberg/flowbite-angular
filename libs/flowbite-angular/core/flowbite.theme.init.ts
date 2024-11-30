@@ -79,10 +79,14 @@ import {
   FLOWBITE_MODAL_FOOTER_THEME_TOKEN,
   FLOWBITE_MODAL_HEADER_THEME_TOKEN,
   FLOWBITE_MODAL_THEME_TOKEN,
+  modalBodyDefaultValueProvider,
   modalBodyTheme,
   ModalBodyThemeService,
+  modalDefaultValueProvider,
+  modalFooterDefaultValueProvider,
   modalFooterTheme,
   ModalFooterThemeService,
+  modalHeaderDefaultValueProvider,
   modalHeaderTheme,
   ModalHeaderThemeService,
   modalTheme,
@@ -420,6 +424,10 @@ export function initFlowbite(): EnvironmentProviders {
     dropdownHeaderDefaultValueProvider,
     dropdownDividerDefaultValueProvider,
     indicatorDefaultValueProvider,
+    modalDefaultValueProvider,
+    modalHeaderDefaultValueProvider,
+    modalFooterDefaultValueProvider,
+    modalBodyDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);

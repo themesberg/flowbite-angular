@@ -10,9 +10,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_MODAL_BODY_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<ModalBodyTheme>
+>('FLOWBITE_MODAL_BODY_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const modalBodyDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_MODAL_BODY_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -39,7 +52,7 @@ export class ModalBodyComponent extends BaseComponent<ModalBodyClass> {
   /**
    * Set the custom style for this modal body
    */
-  public customStyle = model<DeepPartial<ModalBodyTheme>>({});
+  public customStyle = model(inject(FLOWBITE_MODAL_BODY_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
