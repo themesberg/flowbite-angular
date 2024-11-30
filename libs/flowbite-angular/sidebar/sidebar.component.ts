@@ -18,10 +18,55 @@ import {
   Component,
   contentChild,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   untracked,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_SIDEBAR_COLOR_DEFAULT_VALUE = new InjectionToken<keyof SidebarColors>(
+  'FLOWBITE_SIDEBAR_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SIDEBAR_DISPLAY_MODE_DEFAULT_VALUE = new InjectionToken<
+  keyof SidebarDisplayMode
+>('FLOWBITE_SIDEBAR_DISPLAY_MODE_DEFAULT_VALUE');
+
+export const FLOWBITE_SIDEBAR_IS_OPEN_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_SIDEBAR_IS_OPEN_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SIDEBAR_IS_ROUNDED_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_SIDEBAR_IS_ROUNDED_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SIDEBAR_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<SidebarTheme>
+>('FLOWBITE_SIDEBAR_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const sidebarDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SIDEBAR_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_DISPLAY_MODE_DEFAULT_VALUE,
+    useValue: 'push',
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_IS_OPEN_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_IS_ROUNDED_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -54,29 +99,29 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
    *
    * @default primary
    */
-  public color = model<keyof SidebarColors>('primary');
+  public color = model(inject(FLOWBITE_SIDEBAR_COLOR_DEFAULT_VALUE));
   /**
    * Set the sidebar display mode
    *
    * @default push
    */
-  public displayMode = model<keyof SidebarDisplayMode>('push');
+  public displayMode = model(inject(FLOWBITE_SIDEBAR_DISPLAY_MODE_DEFAULT_VALUE));
   /**
    * Set is the sidebar is open
    *
    * @default false
    */
-  public isOpen = model<boolean>(false);
+  public isOpen = model(inject(FLOWBITE_SIDEBAR_IS_OPEN_DEFAULT_VALUE));
   /**
    * Set is the sidebar is rounded
    *
    * @default false
    */
-  public isRounded = model<boolean>(false);
+  public isRounded = model(inject(FLOWBITE_SIDEBAR_IS_ROUNDED_DEFAULT_VALUE));
   /**
    * Set the custom style for this sidebar
    */
-  public customStyle = model<DeepPartial<SidebarTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
