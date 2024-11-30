@@ -11,9 +11,30 @@ import {
   Component,
   contentChildren,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_BREADCRUMB_COLOR_DEFAULT_VALUE = new InjectionToken<keyof BreadcrumbColors>(
+  'FLOWBITE_BREADCRUMB_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BREADCRUMB_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<BreadcrumbTheme>
+>('FLOWBITE_BREADCRUMB_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const breadcrumbDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_BREADCRUMB_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_BREADCRUMB_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -45,11 +66,11 @@ export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
    *
    * @default primary
    */
-  public color = model<keyof BreadcrumbColors>('primary');
+  public color = model(inject(FLOWBITE_BREADCRUMB_COLOR_DEFAULT_VALUE));
   /**
    * Set the custom style for this breadcrumb
    */
-  public customStyle = model<DeepPartial<BreadcrumbTheme>>({});
+  public customStyle = model(inject(FLOWBITE_BREADCRUMB_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
