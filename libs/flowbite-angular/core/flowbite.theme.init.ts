@@ -51,10 +51,14 @@ import {
   FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
 } from 'flowbite-angular/dark-theme-toggle';
 import {
+  dropdownDefaultValueProvider,
+  dropdownDividerDefaultValueProvider,
   dropdownDividerTheme,
   DropdownDividerThemeService,
+  dropdownHeaderDefaultValueProvider,
   dropdownHeaderTheme,
   DropdownHeaderThemeService,
+  dropdownItemDefaultValueProvider,
   dropdownItemTheme,
   DropdownItemThemeService,
   dropdownTheme,
@@ -410,6 +414,10 @@ export function initFlowbite(): EnvironmentProviders {
     breadcrumbItemDefaultValueProvider,
     buttonDefaultValueProvider,
     darkThemeToggleDefaultValueProvider,
+    dropdownDefaultValueProvider,
+    dropdownItemDefaultValueProvider,
+    dropdownHeaderDefaultValueProvider,
+    dropdownDividerDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);

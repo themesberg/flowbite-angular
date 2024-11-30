@@ -17,6 +17,8 @@ import {
   contentChildren,
   ElementRef,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewChild,
   ViewEncapsulation,
@@ -24,6 +26,41 @@ import {
 import { DomSanitizer } from '@angular/platform-browser';
 import type { Placement } from '@floating-ui/dom';
 import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
+
+export const FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE = new InjectionToken<string>(
+  'FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE = new InjectionToken<keyof DropdownPositions>(
+  'FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<DropdownTheme>
+>('FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const dropdownDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE,
+    useValue: 'Dropdown',
+  },
+  {
+    provide: FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE,
+    useValue: 'bottom-center',
+  },
+  {
+    provide: FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -97,23 +134,23 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
    *
    * @default Dropdown
    */
-  public label = model('Dropdown');
+  public label = model(inject(FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE));
   /**
    * Set if the dropdown is open
    *
    * @default false
    */
-  public isOpen = model<boolean>(false);
+  public isOpen = model(inject(FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE));
   /**
    * Set the dropdown position
    *
    * @default bottom-center
    */
-  public position = model<keyof DropdownPositions>('bottom-center');
+  public position = model(inject(FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE));
   /**
    * Set the custom style for this dropdown
    */
-  public customStyle = model<DeepPartial<DropdownTheme>>({});
+  public customStyle = model(inject(FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
