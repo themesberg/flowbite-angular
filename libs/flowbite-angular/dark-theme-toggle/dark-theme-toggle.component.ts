@@ -12,10 +12,23 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_DARK_THEME_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<DarkThemeToggleTheme>
+>('FLOWBITE_DARK_THEME_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const darkThemeToggleDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_DARK_THEME_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * Use to toggle light/dark mode accross the site
@@ -56,7 +69,7 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
   /**
    * Set the custom style for this dark-theme-toggle
    */
-  public customStyle = model<DeepPartial<DarkThemeToggleTheme>>({});
+  public customStyle = model(inject(FLOWBITE_DARK_THEME_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

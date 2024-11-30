@@ -45,6 +45,7 @@ import {
   FLOWBITE_BUTTON_THEME_TOKEN,
 } from 'flowbite-angular/button';
 import {
+  darkThemeToggleDefaultValueProvider,
   darkThemeToggleTheme,
   DarkThemeToggleThemeService,
   FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
@@ -408,6 +409,7 @@ export function initFlowbite(): EnvironmentProviders {
     breadcrumbDefaultValueProvider,
     breadcrumbItemDefaultValueProvider,
     buttonDefaultValueProvider,
+    darkThemeToggleDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);
