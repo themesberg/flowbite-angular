@@ -10,9 +10,54 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_BADGE_COLOR_DEFAULT_VALUE = new InjectionToken<keyof BadgeColors>(
+  'FLOWBITE_BADGE_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BADGE_SIZE_DEFAULT_VALUE = new InjectionToken<keyof BadgeSizes>(
+  'FLOWBITE_BADGE_SIZE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BADGE_IS_ICON_ONLY_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_BADGE_IS_ICON_ONLY_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<BadgeTheme>
+>('FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const badgeDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_BADGE_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_BADGE_SIZE_DEFAULT_VALUE,
+    useValue: 'xs',
+  },
+  {
+    provide: FLOWBITE_BADGE_IS_ICON_ONLY_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/badge/
@@ -41,29 +86,29 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
    *
    * @default primary
    */
-  public color = model<keyof BadgeColors>('primary');
+  public color = model(inject(FLOWBITE_BADGE_COLOR_DEFAULT_VALUE));
   /**
    * Set the badge size
    *
    * @default xs
    */
-  public size = model<keyof BadgeSizes>('xs');
+  public size = model(inject(FLOWBITE_BADGE_SIZE_DEFAULT_VALUE));
   /**
    * Set if the badge is icon only
    *
    * @default false
    */
-  public isIconOnly = model<boolean>(false);
+  public isIconOnly = model(inject(FLOWBITE_BADGE_IS_ICON_ONLY_DEFAULT_VALUE));
   /**
    * Set if the badge is pill
    *
    * @default false
    */
-  public isPill = model<boolean>(false);
+  public isPill = model(inject(FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE));
   /**
    * Set the custom style for this badge
    */
-  public customStyle = model<DeepPartial<BadgeTheme>>({});
+  public customStyle = model(inject(FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
