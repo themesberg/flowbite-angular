@@ -15,9 +15,94 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_INDICATOR_IS_PILL_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_INDICATOR_IS_PILL_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_IS_OUTLINE_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_INDICATOR_IS_OUTLINE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_IS_DISABLED_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_INDICATOR_IS_DISABLED_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_HAS_OFFSET_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_INDICATOR_HAS_OFFSET_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_IS_ROUNDED_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_INDICATOR_IS_ROUNDED_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_HAS_BORDER_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_INDICATOR_HAS_BORDER_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_COLOR_DEFAULT_VALUE = new InjectionToken<keyof IndicatorColors>(
+  'FLOWBITE_INDICATOR_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_SIZE_DEFAULT_VALUE = new InjectionToken<keyof IndicatorSizes>(
+  'FLOWBITE_INDICATOR_SIZE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE = new InjectionToken<
+  keyof IndicatorPositions | undefined
+>('FLOBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE');
+
+export const FLOWBITE_INDICATOR_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<IndicatorTheme>
+>('FLOWBITE_INDICATOR_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const indicatorDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_INDICATOR_IS_PILL_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_IS_OUTLINE_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_IS_DISABLED_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_HAS_OFFSET_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_IS_ROUNDED_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_HAS_BORDER_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_INDICATOR_SIZE_DEFAULT_VALUE,
+    useValue: 'md',
+  },
+  {
+    provide: FLOWBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_INDICATOR_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/indicators/
@@ -42,59 +127,59 @@ export class IndicatorComponent extends BaseComponent<indicatorClass> {
    *
    * @default false
    */
-  public isPill = model<boolean>(false);
+  public isPill = model(inject(FLOWBITE_INDICATOR_IS_PILL_DEFAULT_VALUE));
   /**
    * Set if the indicator is outline
    *
    * @default false
    */
-  public isOutline = model<boolean>(false);
+  public isOutline = model(inject(FLOWBITE_INDICATOR_IS_OUTLINE_DEFAULT_VALUE));
   /**
    * Set if the indicator is disable
    *
    * @default false
    */
-  public isDisabled = model<boolean>(false);
+  public isDisabled = model(inject(FLOWBITE_INDICATOR_IS_DISABLED_DEFAULT_VALUE));
   /**
    * Set if the indicator has offset
    *
    * @default false
    */
-  public hasOffset = model<boolean>(false);
+  public hasOffset = model(inject(FLOWBITE_INDICATOR_HAS_OFFSET_DEFAULT_VALUE));
   /**
    * Set if the indicator is rounded
    *
    * @default false
    */
-  public isRounded = model<boolean>(false);
+  public isRounded = model(inject(FLOWBITE_INDICATOR_IS_ROUNDED_DEFAULT_VALUE));
   /**
    * Set if the indicator has border
    *
    * @default false
    */
-  public hasBorder = model<boolean>(false);
+  public hasBorder = model(inject(FLOWBITE_INDICATOR_HAS_BORDER_DEFAULT_VALUE));
   /**
    * Set the indicator color
    *
    * @default primary
    */
-  public color = model<keyof IndicatorColors>('primary');
+  public color = model(inject(FLOWBITE_INDICATOR_COLOR_DEFAULT_VALUE));
   /**
    * Set the indicator size
    *
    * @default md
    */
-  public size = model<keyof IndicatorSizes>('md');
+  public size = model(inject(FLOWBITE_INDICATOR_SIZE_DEFAULT_VALUE));
   /**
    * Set the indicator placement
    *
    * @default undefined
    */
-  public placement = model<keyof IndicatorPositions | undefined>(undefined);
+  public placement = model(inject(FLOWBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE));
   /**
    * Set the custom style for this indicator
    */
-  public customStyle = model<DeepPartial<IndicatorTheme>>({});
+  public customStyle = model(inject(FLOWBITE_INDICATOR_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
