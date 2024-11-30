@@ -29,6 +29,8 @@ import {
   FLOWBITE_BADGE_THEME_TOKEN,
 } from 'flowbite-angular/badge';
 import {
+  breadcrumbDefaultValueProvider,
+  breadcrumbItemDefaultValueProvider,
   breadcrumbItemTheme,
   BreadcrumbItemThemeService,
   breadcrumbTheme,
@@ -402,6 +404,8 @@ export function initFlowbite(): EnvironmentProviders {
     accordionContentDefaultValueProvider,
     alertDefaultValueProvider,
     badgeDefaultValueProvider,
+    breadcrumbDefaultValueProvider,
+    breadcrumbItemDefaultValueProvider,
   ]);
 
   return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);
