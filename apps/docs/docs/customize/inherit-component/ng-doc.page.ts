@@ -11,7 +11,7 @@ const OverrideBaseStyle: NgDocPage = {
   title: 'Inherit component',
   mdFile: './index.md',
   category: CustomizeCategory,
-  order: 4,
+  order: 5,
 };
 
 export default OverrideBaseStyle;

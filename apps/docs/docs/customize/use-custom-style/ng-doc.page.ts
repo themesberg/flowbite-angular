@@ -11,7 +11,7 @@ const UseCustomStyle: NgDocPage = {
   title: 'Use custom style',
   mdFile: './index.md',
   category: CustomizeCategory,
-  order: 3,
+  order: 4,
 };
 
 export default UseCustomStyle;
