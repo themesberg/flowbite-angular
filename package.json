@@ -38,7 +38,6 @@
     "@angular/platform-server": "18.0.0",
     "@angular/router": "18.0.0",
     "@angular/ssr": "18.0.0",
-    "@floating-ui/dom": "^1.2.6",
     "@ng-doc/app": "18.3.0",
     "@ng-doc/builder": "18.3.0",
     "@ng-doc/core": "18.3.0",
