@@ -38,9 +38,6 @@ importers:
       '@angular/ssr':
         specifier: 18.0.0
         version: 18.0.0(@angular/common@18.0.0(@angular/core@18.0.0(rxjs@7.5.0)(zone.js@0.14.10))(rxjs@7.5.0))(@angular/core@18.0.0(rxjs@7.5.0)(zone.js@0.14.10))
-      '@floating-ui/dom':
-        specifier: ^1.2.6
-        version: 1.6.11
       '@ng-doc/app':
         specifier: 18.3.0
         version: 18.3.0(kjmryw66ul6uw2b2cvo7x2zo5e)
@@ -234,9 +231,6 @@ importers:
 
   libs/flowbite-angular:
     dependencies:
-      '@floating-ui/dom':
-        specifier: 1.2.6
-        version: 1.2.6
       tailwind-merge:
         specifier: 2.2.1
         version: 2.2.1
@@ -2652,18 +2646,6 @@ packages:
   '@eslint/js@8.57.0':
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-
-  '@floating-ui/core@1.6.8':
-    resolution: {integrity: sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==}
-
-  '@floating-ui/dom@1.2.6':
-    resolution: {integrity: sha512-02vxFDuvuVPs22iJICacezYJyf7zwwOCWkPNkWNBr1U0Qt1cKFYzWvxts0AmqcOQGwt/3KJWcWIgtbUU38keyw==}
-
-  '@floating-ui/dom@1.6.11':
-    resolution: {integrity: sha512-qkMCxSR24v2vGkhYDo/UzxfJN3D4syqSjyuTFz6C7XcpU1pASPRieNI0Kj5VP3/503mOfYiGY891ugBX1GlABQ==}
-
-  '@floating-ui/utils@0.2.8':
-    resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -14664,21 +14646,6 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.0': {}
-
-  '@floating-ui/core@1.6.8':
-    dependencies:
-      '@floating-ui/utils': 0.2.8
-
-  '@floating-ui/dom@1.2.6':
-    dependencies:
-      '@floating-ui/core': 1.6.8
-
-  '@floating-ui/dom@1.6.11':
-    dependencies:
-      '@floating-ui/core': 1.6.8
-      '@floating-ui/utils': 0.2.8
-
-  '@floating-ui/utils@0.2.8': {}
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
