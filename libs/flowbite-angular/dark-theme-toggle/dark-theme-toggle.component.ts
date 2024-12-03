@@ -1,14 +1,14 @@
 import type { DarkThemeToggleClass, DarkThemeToggleTheme } from './dark-theme-toggle.theme';
 import { DarkThemeToggleThemeService } from './dark-theme-toggle.theme.service';
 
-import type { DeepPartial, FlowbiteTheme } from 'flowbite-angular';
+import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
+import { FlowbiteThemeDirective } from 'flowbite-angular/theme';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from 'flowbite-angular/utils';
 
 import { NgClass, NgIf } from '@angular/common';
 import {
-  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   inject,
@@ -64,6 +64,10 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
    * `DomSanitizer` service
    */
   public readonly domSanitizer = inject(DomSanitizer);
+  /**
+   * `FlowbiteThemeDirective` directive
+   */
+  public readonly themeDirective = inject(FlowbiteThemeDirective);
 
   //#region properties
   /**
@@ -79,14 +83,15 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
     });
   }
 
-  public override init(): void {
-    afterNextRender(
-      () => {
-        this.toggleTheme(this.getTheme());
-      },
-      { injector: this.injector }
-    );
+  public override verify(): void {
+    if (this.themeDirective === undefined) {
+      throw Error(
+        "Please use FlowbiteThemeDirective on your top level `hostDirective`'s component"
+      );
+    }
+  }
 
+  public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'sun',
@@ -104,43 +109,6 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
    * Toggle between dark and light mode
    */
   public onClick() {
-    this.toggleTheme();
-  }
-
-  /**
-   * Get theme from the `localStorage`
-   * @returns The current theme saved in the `localStorage` with the key `color-theme`
-   */
-  private getTheme(): FlowbiteTheme {
-    return localStorage.getItem('color-theme') === 'dark' ? 'dark' : 'light';
-  }
-
-  /**
-   * Toggle the theme saced in the `localStorage`
-   *
-   * @param theme If provided, force the theme instead of toggling it between light and dark mode
-   */
-  private toggleTheme(theme?: FlowbiteTheme): void {
-    if (!theme) {
-      const tmpTheme = this.getTheme();
-
-      if (tmpTheme === 'dark') theme = 'light';
-      else theme = 'dark';
-    }
-
-    this.setTheme(theme);
-  }
-
-  /**
-   * Set the theme inside the page
-   *
-   * @param theme Theme to apply
-   */
-  private setTheme(theme: FlowbiteTheme): void {
-    localStorage.setItem('color-theme', theme);
-
-    theme === 'dark'
-      ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark');
+    this.themeDirective.toggleTheme();
   }
 }
