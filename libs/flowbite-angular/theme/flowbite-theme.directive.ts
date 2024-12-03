@@ -8,7 +8,7 @@ import { afterNextRender, Directive, inject, Injector } from '@angular/core';
  */
 @Directive({
   standalone: true,
-  selector: 'body[flowbiteTheme]',
+  selector: '[flowbiteTheme]',
 })
 export class FlowbiteThemeDirective implements OnInit {
   private readonly injector = inject(Injector);
@@ -41,8 +41,8 @@ export class FlowbiteThemeDirective implements OnInit {
     if (!theme) {
       const tmpTheme = this.getTheme();
 
-      if (tmpTheme === 'dark') theme = 'dark';
-      else theme = 'light';
+      if (tmpTheme === 'dark') theme = 'light';
+      else theme = 'dark';
     }
 
     this.setTheme(theme);
