@@ -9,7 +9,6 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import type { AfterViewInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import type { ElementRef } from '@angular/core';
 import {
@@ -21,44 +20,10 @@ import {
   makeEnvironmentProviders,
   model,
   viewChild,
+  viewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-
-export const FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE = new InjectionToken<string>(
-  'FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE'
-);
-
-export const FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE = new InjectionToken<boolean>(
-  'FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE'
-);
-
-export const FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE = new InjectionToken<keyof DropdownPositions>(
-  'FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE'
-);
-
-export const FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
-  DeepPartial<DropdownTheme>
->('FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE');
-
-export const dropdownDefaultValueProvider = makeEnvironmentProviders([
-  {
-    provide: FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE,
-    useValue: 'Dropdown',
-  },
-  {
-    provide: FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE,
-    useValue: false,
-  },
-  {
-    provide: FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE,
-    useValue: 'bottom-center',
-  },
-  {
-    provide: FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE,
-    useValue: {},
-  },
-]);
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -97,6 +62,9 @@ export const dropdownDefaultValueProvider = makeEnvironmentProviders([
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+export class DropdownComponent extends BaseComponent<DropdownClass> {
+  dropdown = viewChild.required<ElementRef>('dropdown');
+  button = viewChild.required<ElementRef>('button');
 export class DropdownComponent extends BaseComponent<DropdownClass> {
   dropdown = viewChild.required<ElementRef>('dropdown');
   button = viewChild.required<ElementRef>('button');
@@ -181,7 +149,9 @@ export class DropdownComponent extends BaseComponent<DropdownClass> {
   clickout(event: Event) {
     if (
       !this.dropdown().nativeElement.contains(event.target) &&
+      !this.dropdown().nativeElement.contains(event.target) &&
       this.isOpen() &&
+      !this.button().nativeElement.contains(event.target)
       !this.button().nativeElement.contains(event.target)
     ) {
       this.isOpen.set(false);
