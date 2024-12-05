@@ -32,4 +32,4 @@ module.exports = {
 ## Get or set theme manually
 
 In order to access or to update the application theme manually, you simply have to inject
-`FlowbiteThemeDirective` into your component and call on of the provided functions.
+`FlowbiteThemeDirective` into your component and call one of the provided functions.
