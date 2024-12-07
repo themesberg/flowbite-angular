@@ -7,7 +7,6 @@ import { NavbarThemeService } from './navbar.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -76,7 +75,6 @@ export const navbarDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-navbar',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

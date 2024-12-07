@@ -9,7 +9,7 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -38,7 +38,7 @@ export const breadcrumbItemDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
+  imports: [NgClass, IconComponent],
   selector: 'flowbite-breadcrumb-item',
   template: `
     <flowbite-icon

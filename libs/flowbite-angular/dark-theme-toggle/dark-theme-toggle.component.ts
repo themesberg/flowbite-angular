@@ -7,7 +7,6 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { FlowbiteThemeDirective } from 'flowbite-angular/theme';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -35,7 +34,7 @@ export const darkThemeToggleDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-dark-theme-toggle',
   template: `
     <flowbite-icon

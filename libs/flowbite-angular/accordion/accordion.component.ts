@@ -5,7 +5,6 @@ import { AccordionThemeService } from './accordion.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -57,7 +56,6 @@ export const accordionDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-accordion',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

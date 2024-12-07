@@ -5,7 +5,6 @@ import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -64,7 +63,6 @@ export const badgeDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-badge',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

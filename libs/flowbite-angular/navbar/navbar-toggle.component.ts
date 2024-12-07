@@ -7,7 +7,6 @@ import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { BARS_SVG_ICON } from 'flowbite-angular/utils';
 
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -36,7 +35,7 @@ export const navbarToggleDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   selector: 'flowbite-navbar-toggle',
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [IconComponent],
   template: `
     <flowbite-icon
       svgIcon="flowbite-angular:bars"
