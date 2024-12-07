@@ -111,7 +111,7 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   /**
    * The child `ModalBodyComponent`
    */
-  public readonly modalBodyChild = contentChild(ModalBodyComponent);
+  public readonly modalBodyChild = contentChild.required(ModalBodyComponent);
   /**
    * The child `ModalFooterComponent`
    */
@@ -176,12 +176,6 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
         filter((event) => event instanceof NavigationStart)
       )
       .subscribe(() => this.close());
-  }
-
-  public override verify(): void {
-    if (this.modalBodyChild() === undefined) {
-      throw new Error('No ModalBodyComponent available');
-    }
   }
   //#endregion
 

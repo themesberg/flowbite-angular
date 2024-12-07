@@ -96,7 +96,7 @@ export class NavbarComponent extends BaseComponent<NavbarClass> {
   /**
    * The child `NavbarContentComponent`
    */
-  public readonly navbarContentChild = contentChild(NavbarContentComponent);
+  public readonly navbarContentChild = contentChild.required(NavbarContentComponent);
 
   //#region properties
   /**
@@ -143,12 +143,6 @@ export class NavbarComponent extends BaseComponent<NavbarClass> {
       isFixed: booleanToFlowbiteBoolean(this.isFixed()),
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.navbarContentChild() === undefined) {
-      throw new Error('No NavbarContentComponent available');
-    }
   }
   //#endregion
 

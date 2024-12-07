@@ -170,12 +170,6 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
       this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOWN_SVG_ICON)
     );
   }
-
-  public override verify(): void {
-    if (this.dropdownItemChildren().length === 0) {
-      throw new Error('No DropdownItemComponent available');
-    }
-  }
   //#endregion
 
   x = 0;

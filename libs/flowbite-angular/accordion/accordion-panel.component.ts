@@ -63,11 +63,11 @@ export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> 
   /**
    * The child `AccordionTitleComponent`
    */
-  public readonly accordionTitleChild = contentChild(AccordionTitleComponent);
+  public readonly accordionTitleChild = contentChild.required(AccordionTitleComponent);
   /**
    * The child `AccordionContentComponent`
    */
-  public readonly accordionContentChild = contentChild(AccordionContentComponent);
+  public readonly accordionContentChild = contentChild.required(AccordionContentComponent);
 
   //#region properties
   /**
@@ -93,15 +93,6 @@ export class AccordionPanelComponent extends BaseComponent<AccordionPanelClass> 
     return this.themeService.getClasses({
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.accordionTitleChild() === undefined) {
-      throw new Error('No AccordionTitleComponent available');
-    }
-    if (this.accordionContentChild() == undefined) {
-      throw new Error('No AccordionContentComponent available');
-    }
   }
   //#endregion
 

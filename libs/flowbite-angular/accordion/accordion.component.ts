@@ -102,12 +102,6 @@ export class AccordionComponent extends BaseComponent<AccordionClass> {
       customStyle: this.customStyle(),
     });
   }
-
-  public override verify(): void {
-    if (this.accordionPanelChildren().length === 0) {
-      throw new Error('No AccordionPanelComponent available');
-    }
-  }
   //#endregion
 
   /**

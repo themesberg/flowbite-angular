@@ -82,14 +82,6 @@ export class DarkThemeToggleComponent extends BaseComponent<DarkThemeToggleClass
     });
   }
 
-  public override verify(): void {
-    if (this.themeDirective === undefined) {
-      throw Error(
-        "Please use FlowbiteThemeDirective on your top level `hostDirective`'s component"
-      );
-    }
-  }
-
   public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',

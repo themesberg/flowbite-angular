@@ -50,7 +50,6 @@ export abstract class BaseComponent<TClass extends FlowbiteClass> implements OnI
    * A call to verify and init function is done. Then a new Guid is set in the `afterNextRender` hook.
    */
   public ngOnInit(): void {
-    this.verify();
     this.init();
 
     afterNextRender(
@@ -66,12 +65,6 @@ export abstract class BaseComponent<TClass extends FlowbiteClass> implements OnI
    */
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   public init(): void {}
-
-  /**
-   * Function loaded during the `OnInit` lifecycle hook. It ensure that required initialization is done.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  public verify(): void {}
 
   /**
    * Function to load component's classes

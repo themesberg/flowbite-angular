@@ -112,12 +112,6 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
     });
   }
 
-  public override verify(): void {
-    if (this.sidebarItemChildren().length === 0) {
-      throw new Error('No SidebarItemComponent available');
-    }
-  }
-
   public override init(): void {
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
