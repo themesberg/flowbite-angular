@@ -135,12 +135,6 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
       customStyle: this.customStyle(),
     });
   }
-
-  public override verify(): void {
-    if (this.sidebarMenuComponent === undefined && this.sidebarItemGroupComponent === undefined) {
-      throw new Error('No SidebarMenuComponent/SidebarItemGroupComponent available');
-    }
-  }
   //#endregion
 
   /**

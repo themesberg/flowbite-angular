@@ -81,12 +81,6 @@ export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
     });
   }
 
-  public override verify(): void {
-    if (this.sidebarItemChildren().length === 0 && this.sidebarItemGroupChildren().length === 0) {
-      throw new Error('No SidebarItemComponent/SidebarItemGroupComponent available');
-    }
-  }
-
   /**
    * Toggle visibility of ll children to false
    */

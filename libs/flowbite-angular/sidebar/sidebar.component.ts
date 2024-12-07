@@ -85,11 +85,11 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
   /**
    * The child `SidebarMenuComponent`
    */
-  public readonly sidebarMenuChild = contentChild(SidebarMenuComponent);
+  public readonly sidebarMenuChild = contentChild.required(SidebarMenuComponent);
   /**
    * The child `SidebarPageContentComponent`
    */
-  public readonly sidebarPageContentChild = contentChild(SidebarPageContentComponent);
+  public readonly sidebarPageContentChild = contentChild.required(SidebarPageContentComponent);
 
   //#region properties
   /**
@@ -129,16 +129,6 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.sidebarMenuChild() === undefined) {
-      throw new Error('No SidebarMenuComponent available');
-    }
-
-    if (this.sidebarPageContentChild() === undefined) {
-      throw new Error('No SidebarPageContentComponent available');
-    }
   }
   //#endregion
 

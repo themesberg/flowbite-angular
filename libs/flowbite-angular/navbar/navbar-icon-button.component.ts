@@ -76,10 +76,4 @@ export class NavbarIconButtonComponent extends BaseComponent<NavbarIconButtonCla
       customStyle: this.customStyle(),
     });
   }
-
-  public override verify(): void {
-    if (this.navbarComponent === null && this.navbarContentComponent === null) {
-      throw new Error('No NavbarComponent/NavbarContentComponent available');
-    }
-  }
 }

@@ -77,11 +77,5 @@ export class BreadcrumbComponent extends BaseComponent<BreadcrumbClass> {
       customStyle: this.customStyle(),
     });
   }
-
-  public override verify(): void {
-    if (this.breadcrumbItemChildren().length === 0) {
-      throw new Error('No BreadcrumbItemComponent available');
-    }
-  }
   //#endregion
 }
