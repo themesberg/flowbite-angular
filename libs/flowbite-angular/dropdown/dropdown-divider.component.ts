@@ -5,7 +5,6 @@ import { DropdownComponent } from './dropdown.component';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -32,7 +31,6 @@ export const dropdownDividerDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-dropdown-divider',
   template: ``,
   encapsulation: ViewEncapsulation.None,

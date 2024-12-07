@@ -5,7 +5,6 @@ import { BreadcrumbThemeService } from './breadcrumb.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -41,7 +40,6 @@ export const breadcrumbDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-breadcrumb',
   template: `<ng-content />`,
   host: {

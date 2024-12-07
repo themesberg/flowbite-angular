@@ -5,7 +5,6 @@ import { ModalComponent } from './modal.component';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -32,7 +31,6 @@ export const modalBodyDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-modal-body',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

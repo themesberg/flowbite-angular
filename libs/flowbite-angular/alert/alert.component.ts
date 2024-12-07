@@ -3,7 +3,6 @@ import { AlertThemeService } from './alert.theme.service';
 
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
-import { ButtonComponent } from 'flowbite-angular/button';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
@@ -93,7 +92,7 @@ export const alertDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent, ButtonComponent],
+  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
   selector: 'flowbite-alert',
   template: `
     <div class="flex items-center">
