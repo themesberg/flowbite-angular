@@ -6,7 +6,6 @@ import type { AccordionColors } from './accordion.theme';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
 
-import { NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,12 +19,11 @@ import {
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass],
   selector: 'flowbite-accordion-content',
   template: `
-    <ng-container *ngIf="accordionPanelComponent.isOpen()">
+    @if (accordionPanelComponent.isOpen()) {
       <ng-content />
-    </ng-container>
+    }
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

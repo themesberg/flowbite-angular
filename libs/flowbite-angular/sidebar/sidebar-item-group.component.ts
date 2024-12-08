@@ -9,7 +9,6 @@ import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -26,7 +25,7 @@ import { DomSanitizer } from '@angular/platform-browser';
  */
 @Component({
   standalone: true,
-  imports: [NgClass, NgIf, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
     <span
@@ -38,7 +37,9 @@ import { DomSanitizer } from '@angular/platform-browser';
         class="h-6 w-6 shrink-0 duration-200"
         [class.rotate-180]="!isOpen()" />
     </span>
-    <ng-content *ngIf="isOpen()" />
+    @if (isOpen()) {
+      <ng-content />
+    }
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
