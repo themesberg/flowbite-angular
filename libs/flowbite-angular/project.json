@@ -41,9 +41,6 @@
         "changelog": true,
         "branches": [
           "main",
-          "next",
-          "next-major",
-          "+([0-9])?(.{+([0-9]),x}).x",
           {
             "name": "beta",
             "prerelease": true
@@ -56,7 +53,7 @@
         "buildTarget": "flowbite-angular:build",
         "outputPath": "{workspaceRoot}/dist/libs/flowbite-angular",
         "tagFormat": "flowbite-angular@v${version}",
-        "commitMessage": "chore(flowbite-angular): ${nextRelease.version} [skip cli]\n\n${nextRelease.notes}"
+        "commitMessage": "chore(flowbite-angular): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     }
   }
