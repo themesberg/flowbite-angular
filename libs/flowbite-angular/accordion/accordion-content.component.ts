@@ -6,7 +6,6 @@ import type { AccordionColors } from './accordion.theme';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
 
-import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -33,12 +32,11 @@ export const accordionContentDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf],
   selector: 'flowbite-accordion-content',
   template: `
-    <ng-container *ngIf="accordionPanelComponent.isOpen()">
+    @if (accordionPanelComponent.isOpen()) {
       <ng-content />
-    </ng-container>
+    }
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -6,7 +6,7 @@ import type { DeepPartial } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -92,7 +92,7 @@ export const alertDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
+  imports: [NgClass, NgTemplateOutlet, IconComponent],
   selector: 'flowbite-alert',
   template: `
     <div class="flex items-center">
@@ -100,17 +100,18 @@ export const alertDefaultValueProvider = makeEnvironmentProviders([
       <div>
         <ng-content />
       </div>
-      <button
-        type="button"
-        [ngClass]="contentClasses()!.closeButtonClass"
-        *ngIf="isDismissable()"
-        aria-label="Close"
-        (click)="onDismissClick()">
-        <span class="sr-only">Close</span>
-        <flowbite-icon
-          svgIcon="flowbite-angular:close"
-          class="h-5 w-5" />
-      </button>
+      @if (isDismissable()) {
+        <button
+          type="button"
+          [ngClass]="contentClasses()!.closeButtonClass"
+          aria-label="Close"
+          (click)="onDismissClick()">
+          <span class="sr-only">Close</span>
+          <flowbite-icon
+            svgIcon="flowbite-angular:close"
+            class="h-5 w-5" />
+        </button>
+      }
     </div>
     <ng-container [ngTemplateOutlet]="additionalContent()"></ng-container>
   `,

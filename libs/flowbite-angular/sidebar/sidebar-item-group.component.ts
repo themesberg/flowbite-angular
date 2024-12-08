@@ -9,7 +9,6 @@ import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -39,7 +38,7 @@ export const sidebarItemGroupDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
     <span
@@ -51,7 +50,9 @@ export const sidebarItemGroupDefaultValueProvider = makeEnvironmentProviders([
         class="h-6 w-6 shrink-0 duration-200"
         [class.rotate-180]="!isOpen()" />
     </span>
-    <ng-content *ngIf="isOpen()" />
+    @if (isOpen()) {
+      <ng-content />
+    }
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

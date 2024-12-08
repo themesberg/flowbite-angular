@@ -12,7 +12,7 @@ import { ButtonThemeService } from './button.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -95,20 +95,18 @@ export const buttonDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet],
+  imports: [NgClass, NgTemplateOutlet],
   selector: 'flowbite-button',
   template: `
-    <span
-      *ngIf="gradientDuoTone() && fill() === 'outline'; else default"
-      [ngClass]="contentClasses().spanClass">
-      <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
-    </span>
+    @if (gradientDuoTone() && fill() === 'outline') {
+      <span [ngClass]="contentClasses().spanClass">
+        <ng-content *ngTemplateOutlet="content" />
+      </span>
+    } @else {
+      <ng-content *ngTemplateOutlet="content" />
+    }
 
-    <ng-template #default>
-      <ng-container *ngTemplateOutlet="contentOutlet"></ng-container>
-    </ng-template>
-
-    <ng-template #contentOutlet>
+    <ng-template #content>
       <ng-content />
     </ng-template>
   `,
