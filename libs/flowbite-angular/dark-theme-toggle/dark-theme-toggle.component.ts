@@ -6,7 +6,6 @@ import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { MOON_SVG_ICON, SUN_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgIf } from '@angular/common';
 import {
   afterNextRender,
   ChangeDetectionStrategy,
@@ -22,7 +21,7 @@ import { DomSanitizer } from '@angular/platform-browser';
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-dark-theme-toggle',
   template: `
     <flowbite-icon

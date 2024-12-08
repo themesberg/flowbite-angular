@@ -11,7 +11,6 @@ import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 import { SanitizeHtmlPipe } from 'flowbite-angular/sanitize-html';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -25,7 +24,7 @@ import {
  */
 @Component({
   standalone: true,
-  imports: [NgClass, SanitizeHtmlPipe, BadgeComponent],
+  imports: [SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
     @if (icon()) {
@@ -35,7 +34,7 @@ import {
     }
 
     <span
-      [ngClass]="contentClasses().sidebarIconClass"
+      [class]="contentClasses().sidebarIconClass"
       [class.ml-3]="icon()">
       <ng-content />
     </span>

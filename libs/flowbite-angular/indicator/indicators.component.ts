@@ -10,7 +10,6 @@ import { IndicatorThemeService } from './indicators.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -24,7 +23,6 @@ import {
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-indicator',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

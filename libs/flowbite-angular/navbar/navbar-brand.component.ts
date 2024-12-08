@@ -20,7 +20,6 @@ import {
 @Component({
   selector: 'flowbite-navbar-brand',
   standalone: true,
-  imports: [NgClass],
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

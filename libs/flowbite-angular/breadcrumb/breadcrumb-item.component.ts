@@ -9,7 +9,6 @@ import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgIf, NgTemplateOutlet } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -25,11 +24,11 @@ import { DomSanitizer } from '@angular/platform-browser';
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, NgTemplateOutlet, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-breadcrumb-item',
   template: `
     <flowbite-icon
-      [ngClass]="contentClasses().breadcrumbIconClass"
+      [class]="contentClasses().breadcrumbIconClass"
       svgIcon="flowbite-angular:chevron-right" />
     <ng-content />
   `,

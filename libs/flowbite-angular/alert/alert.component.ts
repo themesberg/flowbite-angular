@@ -6,7 +6,7 @@ import type { DeepPartial } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -22,7 +22,7 @@ import { DomSanitizer } from '@angular/platform-browser';
  */
 @Component({
   standalone: true,
-  imports: [NgClass, NgTemplateOutlet, IconComponent],
+  imports: [NgTemplateOutlet, IconComponent],
   selector: 'flowbite-alert',
   template: `
     <div class="flex items-center">
@@ -33,7 +33,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       @if (isDismissable()) {
         <button
           type="button"
-          [ngClass]="contentClasses()!.closeButtonClass"
+          [class]="contentClasses()!.closeButtonClass"
           aria-label="Close"
           (click)="onDismissClick()">
           <span class="sr-only">Close</span>

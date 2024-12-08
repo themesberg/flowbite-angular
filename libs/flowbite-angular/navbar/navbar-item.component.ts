@@ -8,7 +8,6 @@ import { BaseComponent } from 'flowbite-angular';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -23,7 +22,6 @@ import {
 @Component({
   selector: 'flowbite-navbar-item',
   standalone: true,
-  imports: [NgClass],
   template: `<ng-content />`,
   host: {
     '(click)': 'onClick()',

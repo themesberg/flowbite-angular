@@ -21,7 +21,6 @@ import {
  */
 @Component({
   standalone: true,
-  imports: [],
   selector: 'flowbite-sidebar-page-content',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

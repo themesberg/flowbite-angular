@@ -5,7 +5,6 @@ import { DropdownComponent } from './dropdown.component';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -19,7 +18,6 @@ import {
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-dropdown-item',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

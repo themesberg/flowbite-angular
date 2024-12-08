@@ -11,7 +11,6 @@ import { SidebarThemeService } from './sidebar.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -28,7 +27,6 @@ import {
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-sidebar',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

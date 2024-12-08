@@ -9,7 +9,6 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass } from '@angular/common';
 import type { AfterViewInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -30,15 +29,15 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
  */
 @Component({
   standalone: true,
-  imports: [NgClass, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-dropdown',
   template: `
     <button
       type="button"
-      [ngClass]="contentClasses().dropdownClass"
+      [class]="contentClasses().dropdownClass"
       (click)="toggle()"
       #button>
-      <span [ngClass]="contentClasses().spanClass">
+      <span [class]="contentClasses().spanClass">
         {{ label() }}
         <flowbite-icon
           svgIcon="flowbite-angular:chevron-down"
@@ -46,11 +45,11 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
       </span>
     </button>
     <div
-      [ngClass]="contentClasses().containerClass"
+      [class]="contentClasses().containerClass"
       #dropdown
       [style.display]="isOpen() ? 'block' : 'none'">
-      <div [ngClass]="contentClasses().contentClass">
-        <ul [ngClass]="contentClasses().subContentClass">
+      <div [class]="contentClasses().contentClass">
+        <ul [class]="contentClasses().subContentClass">
           <ng-content />
         </ul>
       </div>

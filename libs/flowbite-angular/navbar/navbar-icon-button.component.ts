@@ -21,7 +21,6 @@ import {
 @Component({
   selector: 'flowbite-navbar-icon-button',
   standalone: true,
-  imports: [],
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
