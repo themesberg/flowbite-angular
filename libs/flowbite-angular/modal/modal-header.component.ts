@@ -7,7 +7,6 @@ import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -36,15 +35,15 @@ export const modalHeaderDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-modal-header',
   template: `
-    <h3 [ngClass]="contentClasses().modalHeaderTitleClass">
+    <h3 [class]="contentClasses().modalHeaderTitleClass">
       <ng-content />
     </h3>
     <button
       type="button"
-      [ngClass]="contentClasses().modalHeaderButtonClass"
+      [class]="contentClasses().modalHeaderButtonClass"
       data-modal-hide="medium-modal"
       (click)="modalComponent.close()">
       <flowbite-icon

@@ -6,7 +6,6 @@ import type { NavbarColors } from './navbar.theme';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -35,9 +34,8 @@ export const navbarContentDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   selector: 'flowbite-navbar-content',
   standalone: true,
-  imports: [NgClass],
   template: `
-    <div [ngClass]="contentClasses().navbarContentListClass">
+    <div [class]="contentClasses().navbarContentListClass">
       <ng-content />
     </div>
   `,

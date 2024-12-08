@@ -35,7 +35,6 @@ export const sidebarMenuDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [],
   selector: 'flowbite-sidebar-menu',
   template: '<ng-content />',
   encapsulation: ViewEncapsulation.None,
