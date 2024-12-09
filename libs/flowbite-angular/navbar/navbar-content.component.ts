@@ -4,8 +4,9 @@ import { NavbarComponent } from './navbar.component';
 import type { NavbarColors } from './navbar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -26,6 +27,16 @@ import {
       <ng-content />
     </div>
   `,
+  host: {
+    '[@isOpenAnimation]': 'navbarComponent().isOpen()',
+  },
+  animations: [
+    trigger('isOpenAnimation', [
+      state('true', style({ height: '*', class: 'test' })),
+      state('false', style({ height: '0px' })),
+      transition('true <=> false', animate('300ms')),
+    ]),
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -46,13 +57,15 @@ export class NavbarContentComponent extends BaseComponent<NavbarContentClass> im
    * @default `NavbarComponent`'s color
    */
   public color = model<keyof NavbarColors>(this.navbarComponent().color());
+  /**
+   * Set the custom style for this navbar content
+   */
   public customStyle = model<DeepPartial<NavbarContentTheme>>({});
   //#endregion
 
   //#region BaseComponent implementation
   public override fetchClass(): NavbarContentClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.navbarComponent().isOpen()),
       customStyle: this.customStyle(),
     });
   }

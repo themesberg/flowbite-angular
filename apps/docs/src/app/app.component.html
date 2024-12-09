@@ -4,10 +4,7 @@
   [footerContent]="footerContent">
   <flowbite-navbar
     ngDocCustomNavbar
-    [isFixed]="true"
-    [customStyle]="{
-      root: { base: 'flex flex-wrap items-center 2xl:justify-between p-4 2xl:px-60' },
-    }">
+    [isFixed]="true">
     <div class="flex flex-row flex-1 items-center gap-2">
       @if (!isLandingPage) {
         <flowbite-navbar-icon-button
@@ -32,7 +29,7 @@
       </flowbite-navbar-brand>
       <ng-doc-search class="hidden lg:block pl-2" />
     </div>
-    <flowbite-navbar-content class="hidden xl:block pr-1">
+    <flowbite-navbar-content>
       <flowbite-navbar-item
         flowbiteRouterLink
         flowbiteRouterLinkActive
