@@ -6,6 +6,7 @@ import type { DeepPartial } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
+import { animate, style, transition, trigger } from '@angular/animations';
 import { NgTemplateOutlet } from '@angular/common';
 import type { OnInit, TemplateRef } from '@angular/core';
 import {
@@ -117,7 +118,14 @@ export const alertDefaultValueProvider = makeEnvironmentProviders([
   `,
   host: {
     '[attr.role]': 'alert',
+    '[@onDestroyAnimation]': '',
   },
+  animations: [
+    trigger('onDestroyAnimation', [
+      transition(':enter', [style({ opacity: 0 }), animate('300ms', style({ opacity: 1 }))]),
+      transition(':leave', [animate('300ms', style({ opacity: 0 }))]),
+    ]),
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
