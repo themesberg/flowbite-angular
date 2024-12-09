@@ -25,7 +25,7 @@
     "lib:lint": "nx run flowbite-angular:lint",
     "lib:release": "nx run flowbite-angular:semantic-release",
     "lib:test": "nx run flowbite-angular:test",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@angular-eslint/template-parser": "18.0.0",
@@ -83,11 +83,11 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-cypress": "2.15.1",
     "eslint-plugin-prettier": "^5.2.1",
-    "husky": "8.0.0",
+    "husky": "9.1.7",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-preset-angular": "14.1.0",
-    "lint-staged": "^15.2.0",
+    "lint-staged": "15.2.10",
     "ng-packagr": "18.2.1",
     "nx": "19.1.0",
     "postcss": "^8.4.13",
