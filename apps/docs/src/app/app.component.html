@@ -109,9 +109,11 @@
     </div>
   </flowbite-navbar>
 
-  <ng-doc-sidebar />
+  <ng-doc-sidebar class="mt-2" />
 
-  <router-outlet></router-outlet>
+  <div class="mt-2">
+    <router-outlet />
+  </div>
 
   <ng-template #footerContent>
     <section class="flex flex-col items-center">
