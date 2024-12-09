@@ -6,6 +6,7 @@ import type { AccordionColors } from './accordion.theme';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import type { DeepPartial } from 'flowbite-angular';
 
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,11 +21,17 @@ import {
 @Component({
   standalone: true,
   selector: 'flowbite-accordion-content',
-  template: `
-    @if (accordionPanelComponent.isOpen()) {
-      <ng-content />
-    }
-  `,
+  template: `<ng-content />`,
+  host: {
+    '[@isOpenAnimation]': 'accordionPanelComponent.isOpen()',
+  },
+  animations: [
+    trigger('isOpenAnimation', [
+      state('true', style({ height: '*' })),
+      state('false', style({ height: '0px' })),
+      transition('true <=> false', animate('300ms')),
+    ]),
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -55,7 +62,6 @@ export class AccordionContentComponent extends BaseComponent<AccordionContentCla
   public override fetchClass(): AccordionContentClass {
     return this.themeService.getClasses({
       color: this.accordionPanelComponent.accordionComponent.color(),
-      isOpen: booleanToFlowbiteBoolean(this.accordionPanelComponent.isOpen()),
       isFlush: booleanToFlowbiteBoolean(this.accordionPanelComponent.accordionComponent.isFlush()),
       customStyle: this.customStyle(),
     });
