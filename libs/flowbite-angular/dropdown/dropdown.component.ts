@@ -9,8 +9,6 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import type { AfterViewInit } from '@angular/core';
-import { NgClass } from '@angular/common';
 import type { ElementRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -46,7 +44,8 @@ import { DomSanitizer } from '@angular/platform-browser';
     <div
       [class]="contentClasses().containerClass"
       #dropdown
-      [style.display]="isOpen() ? 'block' : 'none'">
+      [style.display]="isOpen() ? 'block' : 'none'"
+      [style.minWidth.px]="button.clientWidth">
       <div [class]="contentClasses().contentClass">
         <ul [class]="contentClasses().subContentClass">
           <ng-content />
