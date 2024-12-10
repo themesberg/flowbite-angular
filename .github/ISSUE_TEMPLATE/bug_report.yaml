@@ -1,6 +1,6 @@
 name: '🐞 Bug Report'
 description: Report a bug
-title: '[Bug] '
+title: '[Bug] {SCOPE} - '
 labels: 'Type: bug'
 assignees: MGREMY
 
