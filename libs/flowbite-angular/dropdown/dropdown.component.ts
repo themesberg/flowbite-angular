@@ -9,20 +9,17 @@ import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import type { AfterViewInit } from '@angular/core';
+import type { ElementRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
   contentChildren,
-  ElementRef,
   inject,
   model,
-  ViewChild,
+  viewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import type { Placement } from '@floating-ui/dom';
-import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -47,7 +44,8 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
     <div
       [class]="contentClasses().containerClass"
       #dropdown
-      [style.display]="isOpen() ? 'block' : 'none'">
+      [style.display]="isOpen() ? 'block' : 'none'"
+      [style.minWidth.px]="button.clientWidth">
       <div [class]="contentClasses().contentClass">
         <ul [class]="contentClasses().subContentClass">
           <ng-content />
@@ -61,9 +59,9 @@ import { autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/d
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DropdownComponent extends BaseComponent<DropdownClass> implements AfterViewInit {
-  @ViewChild('dropdown') dropdown!: ElementRef;
-  @ViewChild('button') button!: ElementRef;
+export class DropdownComponent extends BaseComponent<DropdownClass> {
+  dropdown = viewChild.required<ElementRef>('dropdown');
+  button = viewChild.required<ElementRef>('button');
 
   /**
    * Service injected used to generate class
@@ -140,10 +138,6 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
   }
   //#endregion
 
-  x = 0;
-  y = 0;
-  width = 0;
-
   /**
    * Toggle dropdown isOpen
    */
@@ -151,47 +145,14 @@ export class DropdownComponent extends BaseComponent<DropdownClass> implements A
     this.isOpen.set(!this.isOpen());
   }
 
-  calculatePosition() {
-    computePosition(this.button.nativeElement, this.dropdown.nativeElement, {
-      placement: this.convertPosition(this.position()),
-      middleware: [offset(8), flip(), shift()],
-    }).then(({ x, y }: { x: number; y: number }) => {
-      this.dropdown.nativeElement.style.left = x + 'px';
-      this.dropdown.nativeElement.style.top = y + 'px';
-      this.width = this.button.nativeElement.offsetWidth;
-    });
-  }
-
-  ngAfterViewInit() {
-    // todo : Fix ERROR ReferenceError: ResizeObserver is not defined
-    // Append when runing command 'pnpm lib:build'
-    autoUpdate(this.button.nativeElement, this.dropdown.nativeElement, () => {
-      if (!this.isOpen()) return;
-      this.calculatePosition();
-    });
-  }
-
   // Onclick outside the dropdown, close it
   clickout(event: Event) {
     if (
-      !this.dropdown.nativeElement.contains(event.target) &&
+      !this.dropdown().nativeElement.contains(event.target) &&
       this.isOpen() &&
-      !this.button.nativeElement.contains(event.target)
+      !this.button().nativeElement.contains(event.target)
     ) {
       this.isOpen.set(false);
-    }
-  }
-
-  convertPosition(pos: keyof DropdownPositions): Placement {
-    switch (pos) {
-      case 'top-center':
-        return 'top';
-      case 'bottom-center':
-        return 'bottom';
-      case 'left-center':
-        return 'left';
-      case 'right-center':
-        return 'right';
     }
   }
 }
