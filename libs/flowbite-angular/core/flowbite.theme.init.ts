@@ -119,6 +119,11 @@ import {
   NavbarToggleThemeService,
 } from 'flowbite-angular/navbar';
 import {
+  FLOWBITE_PAGINATION_THEME_TOKEN,
+  paginationTheme,
+  PaginationThemeService,
+} from 'flowbite-angular/pagination';
+import {
   FLOWBITE_SCROLL_TOP_THEME_TOKEN,
   scrollTopDefaultValueProvider,
   scrollTopTheme,
@@ -242,6 +247,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: NavbarBrandThemeService,
       useClass: NavbarBrandThemeService,
+    },
+    {
+      provide: PaginationThemeService,
+      useClass: PaginationThemeService,
     },
     {
       provide: NavbarContentThemeService,
@@ -374,6 +383,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
       useValue: navbarContentTheme,
+    },
+    {
+      provide: FLOWBITE_PAGINATION_THEME_TOKEN,
+      useValue: paginationTheme,
     },
     {
       provide: FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
