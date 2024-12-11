@@ -1,3 +1,36 @@
+# [1.1.0](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0...flowbite-angular@v1.1.0) (2024-12-11)
+
+
+### Bug Fixes
+
+* **dropdown:** set container's min-width ([a9e19d5](https://github.com/themesberg/flowbite-angular/commit/a9e19d5429362ab8197cfb049ce377fb56dfcba5))
+
+
+### Features
+
+* **accordion:** add animation ([7e92417](https://github.com/themesberg/flowbite-angular/commit/7e924175b0cf46f76efd1ce7e31a7a63ab59815e))
+* **accordion:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([04f4d54](https://github.com/themesberg/flowbite-angular/commit/04f4d540667095bc189b5833c4b3c4ed03f748a6))
+* **alert:** add animation ([84d0c53](https://github.com/themesberg/flowbite-angular/commit/84d0c53263644b33f4a361c5d3f93978a62ef2b5))
+* **alert:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([da3ff4a](https://github.com/themesberg/flowbite-angular/commit/da3ff4a854a25df19d0b60006bd3cd8126c3f0e1))
+* **badge:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([f7337d6](https://github.com/themesberg/flowbite-angular/commit/f7337d6994642178f35a19cf4eebddab699690d0))
+* **breadcrumb:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([f8b0f20](https://github.com/themesberg/flowbite-angular/commit/f8b0f2057d3a1c105fcdd3afba21ab4381c4d341))
+* **button:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([9d8d700](https://github.com/themesberg/flowbite-angular/commit/9d8d700487d8cfa1b9af9af600439a1df2ed564b))
+* **dark-theme-toggle:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([f4c5854](https://github.com/themesberg/flowbite-angular/commit/f4c585430a43f0ac64dd32f491d46410030b6c4e))
+* **dropdown:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([bbda81d](https://github.com/themesberg/flowbite-angular/commit/bbda81db98408d5bbdcda5c8a48a09829cca4384))
+* **dropdown:** use `viewChield()`, remove position calculation ([5394931](https://github.com/themesberg/flowbite-angular/commit/5394931b20a8488652985cf8f6e6c9d9d93d963c))
+* **dropdown:** use `viewChield()`, remove position calculation ([114c9d1](https://github.com/themesberg/flowbite-angular/commit/114c9d15e164f20ac8f4082132ff872d9b20c58b))
+* **dropdown:** use tailwind classes instead of @floating-ui/dom ([1d4c0dc](https://github.com/themesberg/flowbite-angular/commit/1d4c0dca85658430b1ac0d7e9986bccd044115a6))
+* **dropdown:** use tailwind classes instead of @floating-ui/dom ([1f0b871](https://github.com/themesberg/flowbite-angular/commit/1f0b87100776ef8387900bc400377f4f1302b187))
+* **indicator:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([cbaca0f](https://github.com/themesberg/flowbite-angular/commit/cbaca0ff22c305703fef5e93943838d00b6f6c43))
+* **indicator:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([cdbb78c](https://github.com/themesberg/flowbite-angular/commit/cdbb78c825904dac93a571004a28bfd2e1f1ef2c))
+* **modal:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([4463716](https://github.com/themesberg/flowbite-angular/commit/44637163fb1cf15826b8461e9eb8ee0e5063b2f4))
+* **navbar:** add animation ([5df1c2d](https://github.com/themesberg/flowbite-angular/commit/5df1c2db294498acbe0e3cf1abb92ee89a51da86))
+* **navbar:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([fab0fbb](https://github.com/themesberg/flowbite-angular/commit/fab0fbb181635568c8755c23187f946d748bc7d7))
+* **scroll-top:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([02b9e21](https://github.com/themesberg/flowbite-angular/commit/02b9e213a48ec50cc696c8bec4732a83ad77c030))
+* **sidebar:** provide injection token for default input value [#80](https://github.com/themesberg/flowbite-angular/issues/80) ([6d57117](https://github.com/themesberg/flowbite-angular/commit/6d571174ab07d2ccc4a80dc86de9bd02e11e9bf1))
+* **theme:** add clean api to access and modify the current application theme [#82](https://github.com/themesberg/flowbite-angular/issues/82) ([906a894](https://github.com/themesberg/flowbite-angular/commit/906a89440fa87dccad17a07eef24f61fd59f3de7))
+* **theme:** add signal based accessor to current theme [#82](https://github.com/themesberg/flowbite-angular/issues/82) ([90807d3](https://github.com/themesberg/flowbite-angular/commit/90807d38444cb23aec5d6c32464c3449811a780c))
+
 # 1.0.0 (2024-11-11)
 
 
