@@ -54,7 +54,7 @@ export const FLOWBITE_INDICATOR_SIZE_DEFAULT_VALUE = new InjectionToken<keyof In
 
 export const FLOWBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE = new InjectionToken<
   keyof IndicatorPositions | undefined
->('FLOBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE');
+>('FLOWBITE_INDICATOR_PLACEMENT_DEFAULT_VALUE');
 
 export const FLOWBITE_INDICATOR_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<IndicatorTheme>

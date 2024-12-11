@@ -4,7 +4,7 @@ keyword: DarkModePage
 
 ## Enable dark mode
 
-All you need to do is add `FlowbiteThemeDirective` as an `hostDirectives` in you `app.component.ts`.
+All you need to do is add `FlowbiteThemeDirective` as a `hostDirectives` in you `app.component.ts`.
 
 ```angular-ts
 ...
@@ -21,7 +21,7 @@ export class AppComponent {
 ```
 
 If your TailwindCSS configuration is based on the one provided by flowbite-angular, then everything
-will be setup. Otherwise, you have to update your TailwindCSS configuration like this :
+will be set up. Otherwise, you have to update your TailwindCSS configuration like this :
 
 ```javascript
 module.exports = {

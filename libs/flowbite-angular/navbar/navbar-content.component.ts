@@ -45,7 +45,7 @@ export const navbarContentDefaultValueProvider = makeEnvironmentProviders([
   },
   animations: [
     trigger('isOpenAnimation', [
-      state('true', style({ height: '*', class: 'test' })),
+      state('true', style({ height: '*' })),
       state('false', style({ height: '0px' })),
       transition('true <=> false', animate('300ms')),
     ]),

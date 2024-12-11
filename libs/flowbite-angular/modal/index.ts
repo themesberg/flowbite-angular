@@ -19,7 +19,7 @@ export { FLOWBITE_MODAL_THEME_TOKEN, ModalThemeService } from './modal.theme.ser
 
 export {
   ModalHeaderComponent,
-  FLOWBITE_MODAL_HEADER_CUSTOM_SYLE_DEFAULT_VALUE,
+  FLOWBITE_MODAL_HEADER_CUSTOM_STYLE_DEFAULT_VALUE,
   modalHeaderDefaultValueProvider,
 } from './modal-header.component';
 export type {
