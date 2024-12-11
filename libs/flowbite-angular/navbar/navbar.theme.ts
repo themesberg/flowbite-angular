@@ -40,7 +40,7 @@ export const navbarTheme: NavbarTheme = createTheme({
       disabled: '',
     },
     isFixed: {
-      enabled: 'border-b',
+      enabled: 'fixed w-full border-b',
       disabled: '',
     },
   },
