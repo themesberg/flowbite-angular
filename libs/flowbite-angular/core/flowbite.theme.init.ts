@@ -119,6 +119,7 @@ import {
   NavbarToggleThemeService,
 } from 'flowbite-angular/navbar';
 import {
+  FLOWBITE_PAGINATION_THEME_TOKEN,
   FLOWBITE_PAGINATION_BUTTON_THEME_TOKEN,
   FLOWBITE_PAGINATION_THEME_TOKEN,
   paginationButtonDefaultValueProvider,
@@ -252,6 +253,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: NavbarBrandThemeService,
       useClass: NavbarBrandThemeService,
+    },
+    {
+      provide: PaginationThemeService,
+      useClass: PaginationThemeService,
     },
     {
       provide: NavbarContentThemeService,
@@ -392,6 +397,10 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
       useValue: navbarContentTheme,
+    },
+    {
+      provide: FLOWBITE_PAGINATION_THEME_TOKEN,
+      useValue: paginationTheme,
     },
     {
       provide: FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
