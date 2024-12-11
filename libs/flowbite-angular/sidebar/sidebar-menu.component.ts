@@ -13,9 +13,22 @@ import {
   Component,
   contentChildren,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_SIDEBAR_MENU_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<SidebarMenuTheme>
+>('FLOWBITE_SIDEBAR_MENU_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const sidebarMenuDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SIDEBAR_MENU_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -55,7 +68,7 @@ export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
   /**
    * Set the custom style for this sidebar menu
    */
-  public customStyle = model<DeepPartial<SidebarMenuTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_MENU_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   public override fetchClass(): SidebarMenuClass {
@@ -65,12 +78,6 @@ export class SidebarMenuComponent extends BaseComponent<SidebarMenuClass> {
       displayMode: this.sidebarComponent.displayMode(),
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.sidebarItemChildren().length === 0 && this.sidebarItemGroupChildren().length === 0) {
-      throw new Error('No SidebarItemComponent/SidebarItemGroupComponent available');
-    }
   }
 
   /**

@@ -1,4 +1,11 @@
-export { DropdownComponent } from './dropdown.component';
+export {
+  DropdownComponent,
+  FLOWBITE_DROPDOWN_CUSTOM_STYLE_DEFAULT_VALUE,
+  FLOWBITE_DROPDOWN_IS_OPEN_DEFAULT_VALUE,
+  FLOWBITE_DROPDOWN_LABEL_DEFAULT_VALUE,
+  FLOWBITE_DROPDOWN_POSITION_DEFAULT_VALUE,
+  dropdownDefaultValueProvider,
+} from './dropdown.component';
 export type {
   DropdownProperties,
   DropdownClass,
@@ -8,7 +15,11 @@ export type {
 export { dropdownTheme } from './dropdown.theme';
 export { DropdownThemeService, FLOWBITE_DROPDOWN_THEME_TOKEN } from './dropdown.theme.service';
 
-export { DropdownItemComponent } from './dropdown-item.component';
+export {
+  DropdownItemComponent,
+  FLOWBITE_DROPDOWN_ITEM_CUSTOM_STYLE_DEFAULT_VALUE,
+  dropdownItemDefaultValueProvider,
+} from './dropdown-item.component';
 export type {
   DropdownItemProperties,
   DropdownItemClass,
@@ -20,7 +31,11 @@ export {
   FLOWBITE_DROPDOWN_ITEM_THEME_TOKEN,
 } from './dropdown-item.theme.service';
 
-export { DropdownDividerComponent } from './dropdown-divider.component';
+export {
+  DropdownDividerComponent,
+  FLOWBITE_DROPDOWN_DIVIDER_CUSTOM_STYLE_DEFAULT_VALUE,
+  dropdownDividerDefaultValueProvider,
+} from './dropdown-divider.component';
 export type {
   DropdownDividerProperties,
   DropdownDividerClass,
@@ -32,7 +47,11 @@ export {
   FLOWBITE_DROPDOWN_DIVIDER_THEME_TOKEN,
 } from './dropdown-divider.theme.service';
 
-export { DropdownHeaderComponent } from './dropdown-header.component';
+export {
+  DropdownHeaderComponent,
+  FLOWBITE_DROPDOWN_HEADER_CUSTOM_STYLE_DEFAULT_VALUE,
+  dropdownHeaderDefaultValueProvider,
+} from './dropdown-header.component';
 export type {
   DropdownHeaderProperties,
   DropdownHeaderClass,

@@ -12,10 +12,23 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_MODAL_HEADER_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<ModalHeaderTheme>
+>('FLOWBITE_MODAL_HEADER_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const modalHeaderDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_MODAL_HEADER_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -64,7 +77,7 @@ export class ModalHeaderComponent extends BaseComponent<ModalHeaderClass> implem
   /**
    * Set the custom style for this modal header
    */
-  public customStyle = model<DeepPartial<ModalHeaderTheme>>({});
+  public customStyle = model(inject(FLOWBITE_MODAL_HEADER_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

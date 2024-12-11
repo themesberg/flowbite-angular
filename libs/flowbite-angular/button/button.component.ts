@@ -17,9 +17,78 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_BUTTON_COLOR_DEFAULT_VALUE = new InjectionToken<keyof ButtonColors>(
+  'FLOWBITE_BUTTON_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BUTTON_SIZE_DEFAULT_VALUE = new InjectionToken<keyof ButtonSizes>(
+  'FLOWBITE_BUTTON_SIZE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BUTTON_IS_PILL_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_BUTTON_IS_PILL_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BUTTON_FILL_DEFAULT_VALUE = new InjectionToken<keyof ButtonFill>(
+  'FLOWBITE_BUTTON_FILL_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BUTTON_IS_DISABLED_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_BUTTON_IS_DISABLED_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_BUTTON_GRADIENT_MONOCHROME_DEFAULT_VALUE = new InjectionToken<
+  keyof ButtonMonochromeColors | undefined
+>('FLOWBITE_BUTTON_GRADIENT_MONOCHROME_DEFAULT_VALUE');
+
+export const FLOWBITE_BUTTON_GRADIENT_DUOTONE_DEFAULT_VALUE = new InjectionToken<
+  keyof ButtonDuoToneColors | undefined
+>('FLOWBITE_BUTTON_GRADIENT_DUOTONE_DEFAULT_VALUE');
+
+export const FLOWBITE_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<ButtonTheme>
+>('FLOWBITE_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const buttonDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_BUTTON_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_BUTTON_SIZE_DEFAULT_VALUE,
+    useValue: 'md',
+  },
+  {
+    provide: FLOWBITE_BUTTON_IS_PILL_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_BUTTON_FILL_DEFAULT_VALUE,
+    useValue: 'solid',
+  },
+  {
+    provide: FLOWBITE_BUTTON_IS_DISABLED_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_BUTTON_GRADIENT_MONOCHROME_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_BUTTON_GRADIENT_DUOTONE_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/buttons/
@@ -59,47 +128,47 @@ export class ButtonComponent extends BaseComponent<ButtonClass> {
    *
    * @default primary
    */
-  public color = model<keyof ButtonColors>('primary');
+  public color = model(inject(FLOWBITE_BUTTON_COLOR_DEFAULT_VALUE));
   /**
    * Set the button size
    *
    * @default md
    */
-  public size = model<keyof ButtonSizes>('md');
+  public size = model(inject(FLOWBITE_BUTTON_SIZE_DEFAULT_VALUE));
   /**
    * Set if the button is pill
    *
    * @default false
    */
-  public isPill = model<boolean>(false);
+  public isPill = model(inject(FLOWBITE_BUTTON_IS_PILL_DEFAULT_VALUE));
   /**
    * Set the button fill
    *
    * @default solid
    */
-  public fill = model<keyof ButtonFill>('solid');
+  public fill = model(inject(FLOWBITE_BUTTON_FILL_DEFAULT_VALUE));
   /**
    * Set if the button is disabled
    *
    * @default false
    */
-  public isDisabled = model<boolean>(false);
+  public isDisabled = model(inject(FLOWBITE_BUTTON_IS_DISABLED_DEFAULT_VALUE));
   /**
    * Set the button gradient monochrome
    *
    * @default undefined
    */
-  public gradientMonochrome = model<keyof ButtonMonochromeColors | undefined>(undefined);
+  public gradientMonochrome = model(inject(FLOWBITE_BUTTON_GRADIENT_MONOCHROME_DEFAULT_VALUE));
   /**
    * Set the button gradient duotone
    *
    * @default undefined
    */
-  public gradientDuoTone = model<keyof ButtonDuoToneColors | undefined>(undefined);
+  public gradientDuoTone = model(inject(FLOWBITE_BUTTON_GRADIENT_DUOTONE_DEFAULT_VALUE));
   /**
    * Set the custom style for this button
    */
-  public customStyle = model<DeepPartial<ButtonTheme>>({});
+  public customStyle = model(inject(FLOWBITE_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

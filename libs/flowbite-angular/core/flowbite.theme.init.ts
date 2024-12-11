@@ -1,10 +1,14 @@
 import {
+  accordionContentDefaultValueProvider,
   accordionContentTheme,
   AccordionContentThemeService,
+  accordionDefaultValueProvider,
+  accordionPanelDefaultValueProvider,
   accordionPanelTheme,
   AccordionPanelThemeService,
   accordionTheme,
   AccordionThemeService,
+  accordionTitleDefaultValueProvider,
   accordionTitleTheme,
   AccordionTitleThemeService,
   FLOWBITE_ACCORDION_CONTENT_THEME_TOKEN,
@@ -12,9 +16,21 @@ import {
   FLOWBITE_ACCORDION_THEME_TOKEN,
   FLOWBITE_ACCORDION_TITLE_THEME_TOKEN,
 } from 'flowbite-angular/accordion';
-import { alertTheme, AlertThemeService, FLOWBITE_ALERT_THEME_TOKEN } from 'flowbite-angular/alert';
-import { badgeTheme, BadgeThemeService, FLOWBITE_BADGE_THEME_TOKEN } from 'flowbite-angular/badge';
 import {
+  alertDefaultValueProvider,
+  alertTheme,
+  AlertThemeService,
+  FLOWBITE_ALERT_THEME_TOKEN,
+} from 'flowbite-angular/alert';
+import {
+  badgeDefaultValueProvider,
+  badgeTheme,
+  BadgeThemeService,
+  FLOWBITE_BADGE_THEME_TOKEN,
+} from 'flowbite-angular/badge';
+import {
+  breadcrumbDefaultValueProvider,
+  breadcrumbItemDefaultValueProvider,
   breadcrumbItemTheme,
   BreadcrumbItemThemeService,
   breadcrumbTheme,
@@ -23,20 +39,26 @@ import {
   FLOWBITE_BREADCRUMB_THEME_TOKEN,
 } from 'flowbite-angular/breadcrumb';
 import {
+  buttonDefaultValueProvider,
   buttonTheme,
   ButtonThemeService,
   FLOWBITE_BUTTON_THEME_TOKEN,
 } from 'flowbite-angular/button';
 import {
+  darkThemeToggleDefaultValueProvider,
   darkThemeToggleTheme,
   DarkThemeToggleThemeService,
   FLOWBITE_DARK_THEME_TOGGLE_THEME_TOKEN,
 } from 'flowbite-angular/dark-theme-toggle';
 import {
+  dropdownDefaultValueProvider,
+  dropdownDividerDefaultValueProvider,
   dropdownDividerTheme,
   DropdownDividerThemeService,
+  dropdownHeaderDefaultValueProvider,
   dropdownHeaderTheme,
   DropdownHeaderThemeService,
+  dropdownItemDefaultValueProvider,
   dropdownItemTheme,
   DropdownItemThemeService,
   dropdownTheme,
@@ -48,6 +70,7 @@ import {
 } from 'flowbite-angular/dropdown';
 import {
   FLOWBITE_INDICATOR_THEME_TOKEN,
+  indicatorDefaultValueProvider,
   indicatorTheme,
   IndicatorThemeService,
 } from 'flowbite-angular/indicator';
@@ -56,10 +79,14 @@ import {
   FLOWBITE_MODAL_FOOTER_THEME_TOKEN,
   FLOWBITE_MODAL_HEADER_THEME_TOKEN,
   FLOWBITE_MODAL_THEME_TOKEN,
+  modalBodyDefaultValueProvider,
   modalBodyTheme,
   ModalBodyThemeService,
+  modalDefaultValueProvider,
+  modalFooterDefaultValueProvider,
   modalFooterTheme,
   ModalFooterThemeService,
+  modalHeaderDefaultValueProvider,
   modalHeaderTheme,
   ModalHeaderThemeService,
   modalTheme,
@@ -72,21 +99,28 @@ import {
   FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
   FLOWBITE_NAVBAR_THEME_TOKEN,
   FLOWBITE_NAVBAR_TOGGLE_THEME_TOKEN,
+  navbarBrandDefaultThemeProvider,
   navbarBrandTheme,
   NavbarBrandThemeService,
+  navbarContentDefaultValueProvider,
   navbarContentTheme,
   NavbarContentThemeService,
+  navbarDefaultValueProvider,
+  navbarIconButtonDefaultValueProvider,
   navbarIconButtonTheme,
   NavbarIconButtonThemeService,
+  navbarItemDefaultValueProvider,
   navbarItemTheme,
   NavbarItemThemeService,
   navbarTheme,
   NavbarThemeService,
+  navbarToggleDefaultValueProvider,
   navbarToggleTheme,
   NavbarToggleThemeService,
 } from 'flowbite-angular/navbar';
 import {
   FLOWBITE_SCROLL_TOP_THEME_TOKEN,
+  scrollTopDefaultValueProvider,
   scrollTopTheme,
   ScrollTopThemeService,
 } from 'flowbite-angular/scroll-top';
@@ -97,16 +131,22 @@ import {
   FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
   FLOWBITE_SIDEBAR_THEME_TOKEN,
   FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
+  sidebarDefaultValueProvider,
+  sidebarItemDefaultValueProvider,
+  sidebarItemGroupDefaultValueProvider,
   sidebarItemGroupTheme,
   SidebarItemGroupThemeService,
   sidebarItemTheme,
   SidebarItemThemeService,
+  sidebarMenuDefaultValueProvider,
   sidebarMenuTheme,
   SidebarMenuThemeService,
+  sidebarPageContentDefaultValueProvider,
   sidebarPageContentTheme,
   SidebarPageContentThemeService,
   sidebarTheme,
   SidebarThemeService,
+  sidebarToggleDefaultValueProvider,
   sidebarToggleTheme,
   SidebarToggleThemeService,
 } from 'flowbite-angular/sidebar';
@@ -381,5 +421,40 @@ export function initFlowbite(): EnvironmentProviders {
     },
   ]);
 
-  return makeEnvironmentProviders([serviceProviders, themeProviders]);
+  const defaultValueProvider = makeEnvironmentProviders([
+    accordionDefaultValueProvider,
+    accordionPanelDefaultValueProvider,
+    accordionTitleDefaultValueProvider,
+    accordionContentDefaultValueProvider,
+    alertDefaultValueProvider,
+    badgeDefaultValueProvider,
+    breadcrumbDefaultValueProvider,
+    breadcrumbItemDefaultValueProvider,
+    buttonDefaultValueProvider,
+    darkThemeToggleDefaultValueProvider,
+    dropdownDefaultValueProvider,
+    dropdownItemDefaultValueProvider,
+    dropdownHeaderDefaultValueProvider,
+    dropdownDividerDefaultValueProvider,
+    indicatorDefaultValueProvider,
+    modalDefaultValueProvider,
+    modalHeaderDefaultValueProvider,
+    modalFooterDefaultValueProvider,
+    modalBodyDefaultValueProvider,
+    navbarDefaultValueProvider,
+    navbarToggleDefaultValueProvider,
+    navbarItemDefaultValueProvider,
+    navbarIconButtonDefaultValueProvider,
+    navbarContentDefaultValueProvider,
+    navbarBrandDefaultThemeProvider,
+    scrollTopDefaultValueProvider,
+    sidebarDefaultValueProvider,
+    sidebarToggleDefaultValueProvider,
+    sidebarPageContentDefaultValueProvider,
+    sidebarMenuDefaultValueProvider,
+    sidebarItemDefaultValueProvider,
+    sidebarItemGroupDefaultValueProvider,
+  ]);
+
+  return makeEnvironmentProviders([serviceProviders, themeProviders, defaultValueProvider]);
 }

@@ -9,9 +9,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_MODAL_FOOTER_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<ModalFooterTheme>
+>('FLOWBITE_MODAL_FOOTER_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const modalFooterDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_MODAL_FOOTER_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -37,7 +50,7 @@ export class ModalFooterComponent extends BaseComponent<ModalFooterClass> {
   /**
    * Set the custom style for this modal footer
    */
-  public customStyle = model<DeepPartial<ModalFooterTheme>>({});
+  public customStyle = model(inject(FLOWBITE_MODAL_FOOTER_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

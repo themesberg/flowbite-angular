@@ -12,9 +12,22 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_SIDEBAR_PAGE_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<SidebarPageContentTheme>
+>('FLOWBITE_SIDEBAR_PAGE_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const sidebarPageContentDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SIDEBAR_PAGE_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -40,7 +53,7 @@ export class SidebarPageContentComponent extends BaseComponent<SidebarPageConten
   /**
    * Set the custom style for this sidebar page content
    */
-  public customStyle = model<DeepPartial<SidebarPageContentTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_PAGE_CONTENT_CUSTOM_STYLE_DEFAULT_VALUE));
   //endregion
 
   //region BaseComponent implementation

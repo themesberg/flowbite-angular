@@ -14,10 +14,23 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_BREADCRUMB_ITEM_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<BreadcrumbItemTheme>
+>('FLOWBITE_BREADCRUMB_ITEM_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const breadcrumbItemDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_BREADCRUMB_ITEM_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/breadcrumb/
@@ -67,7 +80,7 @@ export class BreadcrumbItemComponent extends BaseComponent<BreadcrumbItemClass> 
   /**
    * Set the custom style for this breadcrumb item
    */
-  public customStyle = model<DeepPartial<BreadcrumbItemTheme>>({});
+  public customStyle = model(inject(FLOWBITE_BREADCRUMB_ITEM_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

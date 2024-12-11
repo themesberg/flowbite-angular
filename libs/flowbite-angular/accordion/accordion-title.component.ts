@@ -13,10 +13,23 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_ACCORDION_TITLE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<AccordionTitleTheme>
+>('FLOWBITE_ACCORDION_TITLE_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const accordionTitleDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_ACCORDION_TITLE_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/accordion/
@@ -68,7 +81,7 @@ export class AccordionTitleComponent extends BaseComponent<AccordionTitleClass> 
   /**
    * Set the custom style for this accordion title
    */
-  public customStyle = model<DeepPartial<AccordionTitleTheme>>({});
+  public customStyle = model(inject(FLOWBITE_ACCORDION_TITLE_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

@@ -1,4 +1,8 @@
-export { DarkThemeToggleComponent } from './dark-theme-toggle.component';
+export {
+  DarkThemeToggleComponent,
+  FLOWBITE_DARK_THEME_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE,
+  darkThemeToggleDefaultValueProvider,
+} from './dark-theme-toggle.component';
 export {
   DarkThemeToggleClass,
   DarkThemeToggleProperties,

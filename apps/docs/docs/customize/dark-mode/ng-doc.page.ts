@@ -3,15 +3,15 @@ import CustomizeCategory from '../ng-doc.category';
 import type { NgDocPage } from '@ng-doc/core';
 
 /**
- * Customize flowbite-angular's component style by inheriting component.
+ * Add dark theme to your application.
  *
  * @status:info NEW
  */
-const OverrideBaseStyle: NgDocPage = {
-  title: 'Inherit component',
+const darkMode: NgDocPage = {
+  title: 'Dark mode',
   mdFile: './index.md',
   category: CustomizeCategory,
-  order: 5,
+  order: 6,
 };
 
-export default OverrideBaseStyle;
+export default darkMode;

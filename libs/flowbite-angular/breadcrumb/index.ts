@@ -1,4 +1,9 @@
-export { BreadcrumbComponent } from './breadcrumb.component';
+export {
+  BreadcrumbComponent,
+  FLOWBITE_BREADCRUMB_COLOR_DEFAULT_VALUE,
+  FLOWBITE_BREADCRUMB_CUSTOM_STYLE_DEFAULT_VALUE,
+  breadcrumbDefaultValueProvider,
+} from './breadcrumb.component';
 export type {
   BreadcrumbProperties,
   BreadcrumbClass,
@@ -11,7 +16,11 @@ export {
   FLOWBITE_BREADCRUMB_THEME_TOKEN,
 } from './breadcrumb.theme.service';
 
-export { BreadcrumbItemComponent } from './breadcrumb-item.component';
+export {
+  BreadcrumbItemComponent,
+  FLOWBITE_BREADCRUMB_ITEM_CUSTOM_STYLE_DEFAULT_VALUE,
+  breadcrumbItemDefaultValueProvider,
+} from './breadcrumb-item.component';
 export type {
   BreadcrumbItemProperties,
   BreadcrumbItemClass,

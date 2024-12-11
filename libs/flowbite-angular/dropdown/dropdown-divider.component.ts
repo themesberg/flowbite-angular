@@ -2,15 +2,29 @@ import type { DropdownDividerClass, DropdownDividerTheme } from './dropdown-divi
 import { DropdownDividerThemeService } from './dropdown-divider.theme.service';
 import { DropdownComponent } from './dropdown.component';
 
+import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_DROPDOWN_DIVIDER_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<DropdownDividerTheme>
+>('FLOWBITE_DROPDOWN_DIVIDER_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const dropdownDividerDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_DROPDOWN_DIVIDER_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/dropdowns/
@@ -36,7 +50,7 @@ export class DropdownDividerComponent extends BaseComponent<DropdownDividerClass
   /**
    * Set the custom style for this dropdown divider
    */
-  public customStyle = model<Partial<DropdownDividerTheme>>({});
+  public customStyle = model(inject(FLOWBITE_DROPDOWN_DIVIDER_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

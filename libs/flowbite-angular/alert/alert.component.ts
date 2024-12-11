@@ -13,10 +13,80 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_ALERT_COLOR_DEFAULT_VALUE = new InjectionToken<keyof AlertColors>(
+  'FLOWBITE_ALERT_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_ALERT_HAS_BORDER_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_ALERT_HAS_BORDER_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<AlertTheme>
+>('FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const FLOWBITE_ALERT_ICON_DEFAULT_VALUE = new InjectionToken<TemplateRef<unknown> | null>(
+  'FLOWBITE_ALERT_ICON_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_ALERT_ADDITIONAL_CONTENT_DEFAULT_VALUE =
+  new InjectionToken<TemplateRef<unknown> | null>(
+    'FLOWBITE_ALERT_ADDITIONAL_CONTENT_DEFAULT_VALUE'
+  );
+
+export const FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE = new InjectionToken<(() => void) | undefined>(
+  'FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE'
+);
+
+export const alertDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_ALERT_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_ALERT_HAS_BORDER_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+  {
+    provide: FLOWBITE_ALERT_ICON_DEFAULT_VALUE,
+    useValue: null,
+  },
+  {
+    provide: FLOWBITE_ALERT_ADDITIONAL_CONTENT_DEFAULT_VALUE,
+    useValue: null,
+  },
+  {
+    provide: FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/alerts/
@@ -79,47 +149,47 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
    *
    * @default primary
    */
-  public color = model<keyof AlertColors>('primary');
+  public color = model(inject(FLOWBITE_ALERT_COLOR_DEFAULT_VALUE));
   /**
    * Set if the alert has border
    *
    * @default false
    */
-  public hasBorder = model<boolean>(false);
+  public hasBorder = model(inject(FLOWBITE_ALERT_HAS_BORDER_DEFAULT_VALUE));
   /**
    * Set if the alert has border accent
    *
    * @default false
    */
-  public hasBorderAccent = model<boolean>(false);
+  public hasBorderAccent = model(inject(FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE));
   /**
    * Set the custom style for this alert
    */
-  public customStyle = model<DeepPartial<AlertTheme>>({});
+  public customStyle = model(inject(FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE));
   /**
    * Set the custom icon
    *
    * @default null
    */
-  public icon = model<TemplateRef<unknown> | null>(null);
+  public icon = model(inject(FLOWBITE_ALERT_ICON_DEFAULT_VALUE));
   /**
    * Set the additional content
    *
    * @default null
    */
-  public additionalContent = model<TemplateRef<unknown> | null>(null);
+  public additionalContent = model(inject(FLOWBITE_ALERT_ADDITIONAL_CONTENT_DEFAULT_VALUE));
   /**
    * Set if the alert is dismissable
    *
    * @default false
    */
-  public isDismissable = model<boolean>(false);
+  public isDismissable = model(inject(FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE));
   /**
    * Set the function called when the alert is dismissed
    *
    * @default undefined
    */
-  public onDismiss = model<() => void | undefined>();
+  public onDismiss = model(inject(FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

@@ -17,10 +17,39 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_SIDEBAR_TOGGLE_COLOR_DEFAULT_VALUE = new InjectionToken<keyof SidebarColors>(
+  'FLOWBITE_SIDEBAR_TOGGLE_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SIDEBAR_TOGGLE_SIZE_DEFAULT_VALUE = new InjectionToken<
+  keyof SidebarToggleSizes
+>('FLOWBITE_SIDEBAR_TOGGLE_SIZE_DEFAULT_VALUE');
+
+export const FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<SidebarToggleTheme>
+>('FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const sidebarToggleDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SIDEBAR_TOGGLE_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_TOGGLE_SIZE_DEFAULT_VALUE,
+    useValue: 'sm',
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -54,7 +83,7 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
    *
    * @default The injected `SidebarComponent`
    */
-  public readonly sidebarComponent = model<SidebarComponent>(inject(SidebarComponent));
+  public readonly sidebarComponent = model(inject(SidebarComponent));
 
   //#region properties
   /**
@@ -62,17 +91,17 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
    *
    * @default primary
    */
-  public color = model<keyof SidebarColors>('primary');
+  public color = model(inject(FLOWBITE_SIDEBAR_TOGGLE_COLOR_DEFAULT_VALUE));
   /**
    * Set the sidebar toggle size
    *
    * @default sm
    */
-  public size = model<keyof SidebarToggleSizes>('sm');
+  public size = model(inject(FLOWBITE_SIDEBAR_TOGGLE_SIZE_DEFAULT_VALUE));
   /**
    * Set the custom style for this sidebar toggle
    */
-  public customStyle = model<DeepPartial<SidebarToggleTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

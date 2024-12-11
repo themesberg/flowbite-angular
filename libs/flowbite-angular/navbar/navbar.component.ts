@@ -12,10 +12,63 @@ import {
   Component,
   contentChild,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   untracked,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_NAVBAR_COLOR_DEFAULT_VALUE = new InjectionToken<keyof NavbarColors>(
+  'FLOWBITE_NAVBAR_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_NAVBAR_IS_OPEN_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_NAVBAR_IS_OPEN_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_NAVBAR_IS_ROUNDED_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_NAVBAR_IS_ROUNDED_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_NAVBAR_HAS_BORDER_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_NAVBAR_HAS_BORDER_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_NAVBAR_IS_FIXED_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_NAVBAR_IS_FIXED_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_NAVBAR_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<NavbarTheme>
+>('FLOWBITE_NAVBAR_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const navbarDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_NAVBAR_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_NAVBAR_IS_OPEN_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_NAVBAR_IS_ROUNDED_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_NAVBAR_HAS_BORDER_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_NAVBAR_IS_FIXED_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_NAVBAR_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/navbar/
@@ -43,7 +96,7 @@ export class NavbarComponent extends BaseComponent<NavbarClass> {
   /**
    * The child `NavbarContentComponent`
    */
-  public readonly navbarContentChild = contentChild(NavbarContentComponent);
+  public readonly navbarContentChild = contentChild.required(NavbarContentComponent);
 
   //#region properties
   /**
@@ -51,35 +104,35 @@ export class NavbarComponent extends BaseComponent<NavbarClass> {
    *
    * @default primary
    */
-  public color = model<keyof NavbarColors>('primary');
+  public color = model(inject(FLOWBITE_NAVBAR_COLOR_DEFAULT_VALUE));
   /**
    * Set if the navbar is open
    *
    * @default false
    */
-  public isOpen = model<boolean>(false);
+  public isOpen = model(inject(FLOWBITE_NAVBAR_IS_OPEN_DEFAULT_VALUE));
   /**
    * Set if the navbar is rounded
    *
    * @default false
    */
-  public isRounded = model<boolean>(false);
+  public isRounded = model(inject(FLOWBITE_NAVBAR_IS_ROUNDED_DEFAULT_VALUE));
   /**
    * Set if the navbar has border
    *
    * @default false
    */
-  public hasBorder = model<boolean>(false);
+  public hasBorder = model(inject(FLOWBITE_NAVBAR_HAS_BORDER_DEFAULT_VALUE));
   /**
    * Set if the navbar is fixed
    *
    * @default false
    */
-  public isFixed = model<boolean>(false);
+  public isFixed = model(inject(FLOWBITE_NAVBAR_IS_FIXED_DEFAULT_VALUE));
   /**
    * Set the custom style for this navbar
    */
-  public customStyle = model<DeepPartial<NavbarTheme>>({});
+  public customStyle = model(inject(FLOWBITE_NAVBAR_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
@@ -90,12 +143,6 @@ export class NavbarComponent extends BaseComponent<NavbarClass> {
       isFixed: booleanToFlowbiteBoolean(this.isFixed()),
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.navbarContentChild() === undefined) {
-      throw new Error('No NavbarContentComponent available');
-    }
   }
   //#endregion
 

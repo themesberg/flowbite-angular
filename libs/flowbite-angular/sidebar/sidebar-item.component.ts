@@ -15,9 +15,38 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
+
+export const FLOWBITE_SIDEBAR_ITEM_ICON_DEFAULT_VALUE = new InjectionToken<string | undefined>(
+  'FLOWBITE_SIDEBAR_ITEM_ICON_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SIDEBAR_ITEM_LABEL_DEFAULT_VALUE = new InjectionToken<string | undefined>(
+  'FLOWBITE_SIDEBAR_ITEM_LABEL_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SIDEBAR_ITEM_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<SidebarItemTheme>
+>('FLOWBITE_SIDEBAR_ITEM_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const sidebarItemDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SIDEBAR_ITEM_ICON_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_ITEM_LABEL_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_SIDEBAR_ITEM_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -78,7 +107,7 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
    *
    * @default undefined
    */
-  public icon = model<string | undefined>(undefined);
+  public icon = model(inject(FLOWBITE_SIDEBAR_ITEM_ICON_DEFAULT_VALUE));
   /**
    * Set the sidebar item color
    *
@@ -93,11 +122,11 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
    *
    * @default undefined
    */
-  public label = model<string | undefined>(undefined);
+  public label = model(inject(FLOWBITE_SIDEBAR_ITEM_LABEL_DEFAULT_VALUE));
   /**
    * Set the custom style for this sidebar item
    */
-  public customStyle = model<DeepPartial<SidebarItemTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_ITEM_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
@@ -108,12 +137,6 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
       label: this.label(),
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.sidebarMenuComponent === undefined && this.sidebarItemGroupComponent === undefined) {
-      throw new Error('No SidebarMenuComponent/SidebarItemGroupComponent available');
-    }
   }
   //#endregion
 

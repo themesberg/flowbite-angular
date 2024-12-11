@@ -13,6 +13,8 @@ import {
   Component,
   contentChild,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   TemplateRef,
   viewChild,
@@ -21,6 +23,49 @@ import {
 } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { filter, Subject, takeUntil } from 'rxjs';
+
+export const FLOWBITE_MODAL_SIZE_DEFAULT_VALUE = new InjectionToken<keyof ModalSizes>(
+  'FLOWBITE_MODAL_SIZE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_MODAL_POSITION_DEFAULT_VALUE = new InjectionToken<keyof ModalPositions>(
+  'FLOWBITE_MODAL_POSITION_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_MODAL_IS_DISMISSABLE_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_MODAL_IS_DISMISSABLE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_MODAL_IS_OPEN_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_MODAL_IS_OPEN_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_MODAL_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<ModalTheme>
+>('FLOWBITE_MODAL_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const modalDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_MODAL_SIZE_DEFAULT_VALUE,
+    useValue: 'md',
+  },
+  {
+    provide: FLOWBITE_MODAL_POSITION_DEFAULT_VALUE,
+    useValue: 'center',
+  },
+  {
+    provide: FLOWBITE_MODAL_IS_DISMISSABLE_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_MODAL_IS_OPEN_DEFAULT_VALUE,
+    useValue: false,
+  },
+  {
+    provide: FLOWBITE_MODAL_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/modal/
@@ -64,7 +109,7 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   /**
    * The child `ModalBodyComponent`
    */
-  public readonly modalBodyChild = contentChild(ModalBodyComponent);
+  public readonly modalBodyChild = contentChild.required(ModalBodyComponent);
   /**
    * The child `ModalFooterComponent`
    */
@@ -85,29 +130,29 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
    *
    * @default md
    */
-  public size = model<keyof ModalSizes>('md');
+  public size = model(inject(FLOWBITE_MODAL_SIZE_DEFAULT_VALUE));
   /**
    * Set the modal position
    *
    * @default center
    */
-  public position = model<keyof ModalPositions>('center');
+  public position = model(inject(FLOWBITE_MODAL_POSITION_DEFAULT_VALUE));
   /**
    * Set if the modal is dismissable
    *
    * @default false
    */
-  public isDismissable = model<boolean>(false);
+  public isDismissable = model(inject(FLOWBITE_MODAL_IS_DISMISSABLE_DEFAULT_VALUE));
   /**
    * Set if the modal is open
    *
    * @default false
    */
-  public isOpen = model<boolean>(false);
+  public isOpen = model(inject(FLOWBITE_MODAL_IS_OPEN_DEFAULT_VALUE));
   /**
    * Set the custom style for this modal
    */
-  public customStyle = model<DeepPartial<ModalTheme>>({});
+  public customStyle = model(inject(FLOWBITE_MODAL_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
@@ -129,12 +174,6 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
         filter((event) => event instanceof NavigationStart)
       )
       .subscribe(() => this.close());
-  }
-
-  public override verify(): void {
-    if (this.modalBodyChild() === undefined) {
-      throw new Error('No ModalBodyComponent available');
-    }
   }
   //#endregion
 
@@ -180,7 +219,6 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   }
 
   onKeydownHandler(event: KeyboardEvent) {
-    console.log('hello');
     if (event.key === 'Escape') {
       this.close();
     }

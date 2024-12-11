@@ -14,11 +14,24 @@ import {
   Component,
   contentChildren,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   untracked,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_SIDEBAR_ITEM_GROUP_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<SidebarItemGroupTheme>
+>('FLOWBITE_SIDEBAR_ITEM_GROUP_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const sidebarItemGroupDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SIDEBAR_ITEM_GROUP_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * @see https://flowbite.com/docs/components/sidebar/
@@ -89,7 +102,7 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
   /**
    * Set the custom style for this sidebar item group
    */
-  public customStyle = model<DeepPartial<SidebarItemGroupTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_ITEM_GROUP_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation
@@ -98,12 +111,6 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
       color: this.color(),
       customStyle: this.customStyle(),
     });
-  }
-
-  public override verify(): void {
-    if (this.sidebarItemChildren().length === 0) {
-      throw new Error('No SidebarItemComponent available');
-    }
   }
 
   public override init(): void {

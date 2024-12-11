@@ -16,10 +16,39 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  InjectionToken,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+
+export const FLOWBITE_SCROLL_TOP_COLOR_DEFAULT_VALUE = new InjectionToken<keyof ScrollTopColors>(
+  'FLOWBITE_SCROLL_TOP_COLOR_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE = new InjectionToken<
+  keyof ScrollTopPositions
+>('FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE');
+
+export const FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<ScrollTopTheme>
+>('FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const scrollTopDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_SCROLL_TOP_COLOR_DEFAULT_VALUE,
+    useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE,
+    useValue: 'bottom-right',
+  },
+  {
+    provide: FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
 
 /**
  * Provide a way to go at the top of the page via a button
@@ -57,17 +86,17 @@ export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements
    *
    * @default primary
    */
-  public color = model<keyof ScrollTopColors>('primary');
+  public color = model(inject(FLOWBITE_SCROLL_TOP_COLOR_DEFAULT_VALUE));
   /**
    * Set the scroll top position
    *
    * @default bottom-right
    */
-  public position = model<keyof ScrollTopPositions>('bottom-right');
+  public position = model(inject(FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE));
   /**
    * Set the custom style for this scroll top
    */
-  public customStyle = model<DeepPartial<ScrollTopTheme>>({});
+  public customStyle = model(inject(FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implemenation
