@@ -36,7 +36,7 @@ export class FlowbiteThemeDirective implements OnInit {
    * @returns The current theme saved in the `localStorage` with the key `color-theme`
    */
   public getLocalStorageTheme(): FlowbiteTheme {
-    return localStorage.getItem('color-theme') === 'dark' ? 'dark' : 'light';
+    return localStorage.getItem(this.localStorageKey) === 'dark' ? 'dark' : 'light';
   }
 
   /**
@@ -61,7 +61,11 @@ export class FlowbiteThemeDirective implements OnInit {
    * @param theme Theme to apply
    */
   public setTheme(theme: FlowbiteTheme): void {
-    localStorage.setItem(this.localStorageKey, theme);
+    try {
+      localStorage.setItem(this.localStorageKey, theme);
+    } catch (error) {
+      console.warn('Failed to save theme to localStorage:', error);
+    }
     this._currentTheme.set(theme);
 
     theme === 'dark'

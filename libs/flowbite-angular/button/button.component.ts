@@ -32,7 +32,7 @@ export const FLOWBITE_BUTTON_SIZE_DEFAULT_VALUE = new InjectionToken<keyof Butto
 );
 
 export const FLOWBITE_BUTTON_IS_PILL_DEFAULT_VALUE = new InjectionToken<boolean>(
-  'FLOWBITE8_BUTTON_IS_PILL_DEFAULT_VALUE'
+  'FLOWBITE_BUTTON_IS_PILL_DEFAULT_VALUE'
 );
 
 export const FLOWBITE_BUTTON_FILL_DEFAULT_VALUE = new InjectionToken<keyof ButtonFill>(

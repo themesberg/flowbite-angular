@@ -32,9 +32,9 @@ export const FLOWBITE_SIDEBAR_TOGGLE_SIZE_DEFAULT_VALUE = new InjectionToken<
   keyof SidebarToggleSizes
 >('FLOWBITE_SIDEBAR_TOGGLE_SIZE_DEFAULT_VALUE');
 
-export const FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAUL_VALUE = new InjectionToken<
+export const FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<SidebarToggleTheme>
->('FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAUL_VALUE');
+>('FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE');
 
 export const sidebarToggleDefaultValueProvider = makeEnvironmentProviders([
   {
@@ -46,7 +46,7 @@ export const sidebarToggleDefaultValueProvider = makeEnvironmentProviders([
     useValue: 'sm',
   },
   {
-    provide: FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAUL_VALUE,
+    provide: FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE,
     useValue: {},
   },
 ]);
@@ -101,7 +101,7 @@ export class SidebarToggleComponent extends BaseComponent<SidebarToggleClass> im
   /**
    * Set the custom style for this sidebar toggle
    */
-  public customStyle = model(inject(FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAUL_VALUE));
+  public customStyle = model(inject(FLOWBITE_SIDEBAR_TOGGLE_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
   //#region BaseComponent implementation

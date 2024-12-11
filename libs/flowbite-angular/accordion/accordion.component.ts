@@ -30,7 +30,7 @@ export const FLOWBITE_ACCORDION_IS_FLUSH_DEFAULT_VALUE = new InjectionToken<bool
 
 export const FLOWBITE_ACCORDION_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<AccordionTheme>
->('FLOWBITEèACCORDION_CUSTOM_STYLE_DEFAULT_VALUE');
+>('FLOWBITE_ACCORDION_CUSTOM_STYLE_DEFAULT_VALUE');
 
 export const accordionDefaultValueProvider = makeEnvironmentProviders([
   {

@@ -34,7 +34,7 @@ export const FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE = new InjectionToken
 
 export const FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<AlertTheme>
->('FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT8VALUE');
+>('FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE');
 
 export const FLOWBITE_ALERT_ICON_DEFAULT_VALUE = new InjectionToken<TemplateRef<unknown> | null>(
   'FLOWBITE_ALERT_ICON_DEFAULT_VALUE'
@@ -49,7 +49,7 @@ export const FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE = new InjectionToken<bo
   'FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE'
 );
 
-export const FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE = new InjectionToken<() => void | undefined>(
+export const FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE = new InjectionToken<(() => void) | undefined>(
   'FLOWBITE_ALERT_ON_DISMISS_DEFAULT_VALUE'
 );
 
