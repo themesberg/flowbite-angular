@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.1.0...flowbite-angular@v1.1.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* **navbar:** isFixed theme was missing fixed class ([2408269](https://github.com/themesberg/flowbite-angular/commit/2408269b60d1b192f8f824cca6fc466b583a8e6e))
+
 # [1.1.0](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.0.0...flowbite-angular@v1.1.0) (2024-12-11)
 
 
