@@ -8,7 +8,6 @@ import type { DeepPartial } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
-import { NgClass } from '@angular/common';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -37,10 +36,10 @@ export const accordionTitleDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass, IconComponent],
+  imports: [IconComponent],
   selector: 'flowbite-accordion-title',
   template: `
-    <h2 [ngClass]="contentClasses().textClass">
+    <h2 [class]="contentClasses().textClass">
       <ng-content />
     </h2>
     <flowbite-icon

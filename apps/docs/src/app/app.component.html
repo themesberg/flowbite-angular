@@ -4,19 +4,17 @@
   [footerContent]="footerContent">
   <flowbite-navbar
     ngDocCustomNavbar
-    [isFixed]="true"
-    [customStyle]="{
-      root: { base: 'flex flex-wrap items-center 2xl:justify-between p-4 2xl:px-60' },
-    }">
+    [isFixed]="true">
     <div class="flex flex-row flex-1 items-center gap-2">
-      <flowbite-navbar-icon-button
-        *ngIf="!isLandingPage"
-        class="block lg:hidden"
-        (click)="sidebarService.toggle()">
-        <flowbite-icon
-          svgIcon="outline:bars"
-          class="h-5 w-5 block" />
-      </flowbite-navbar-icon-button>
+      @if (!isLandingPage) {
+        <flowbite-navbar-icon-button
+          class="block lg:hidden"
+          (click)="sidebarService.toggle()">
+          <flowbite-icon
+            svgIcon="outline:bars"
+            class="h-5 w-5 block" />
+        </flowbite-navbar-icon-button>
+      }
       <flowbite-navbar-brand
         flowbiteRouterLink
         routerLink="/">
@@ -31,7 +29,7 @@
       </flowbite-navbar-brand>
       <ng-doc-search class="hidden lg:block pl-2" />
     </div>
-    <flowbite-navbar-content class="hidden xl:block pr-1">
+    <flowbite-navbar-content>
       <flowbite-navbar-item
         flowbiteRouterLink
         flowbiteRouterLinkActive
@@ -111,9 +109,11 @@
     </div>
   </flowbite-navbar>
 
-  <ng-doc-sidebar />
+  <ng-doc-sidebar class="mt-2" />
 
-  <router-outlet></router-outlet>
+  <div class="mt-2">
+    <router-outlet />
+  </div>
 
   <ng-template #footerContent>
     <section class="flex flex-col items-center">

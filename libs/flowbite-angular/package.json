@@ -29,7 +29,6 @@
     "./tailwind.config": "./tailwind.config.js"
   },
   "peerDependencies": {
-    "@floating-ui/dom": "1.2.6",
     "tailwind-merge": "2.2.1"
   }
 }

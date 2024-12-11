@@ -5,7 +5,6 @@ import { DropdownComponent } from './dropdown.component';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -32,10 +31,9 @@ export const dropdownHeaderDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-dropdown-header',
   template: `
-    <div [ngClass]="contentClasses().root">
+    <div [class]="contentClasses().root">
       <ng-content />
     </div>
   `,

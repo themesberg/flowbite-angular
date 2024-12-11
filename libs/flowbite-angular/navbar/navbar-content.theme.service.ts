@@ -32,7 +32,7 @@ export class NavbarContentThemeService implements FlowbiteThemeService<NavbarCon
     const theme: NavbarContentTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: NavbarContentClass = {
-      rootClass: twMerge(theme.root.base, theme.root.isOpen[properties.isOpen]),
+      rootClass: twMerge(theme.root.base),
       navbarContentListClass: twMerge(theme.list.base),
     };
 

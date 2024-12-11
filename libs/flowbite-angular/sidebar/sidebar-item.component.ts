@@ -11,7 +11,6 @@ import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 import { SanitizeHtmlPipe } from 'flowbite-angular/sanitize-html';
 
-import { NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -54,19 +53,23 @@ export const sidebarItemDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgIf, NgClass, SanitizeHtmlPipe, BadgeComponent],
+  imports: [SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
+    @if (icon()) {
+      <span
+        class="flex-shrink-0"
+        [innerHTML]="icon()! | sanitizeHtml"></span>
+    }
+
     <span
-      class="flex-shrink-0"
-      [innerHTML]="icon()! | sanitizeHtml"
-      *ngIf="icon()"></span>
-    <span
-      [ngClass]="contentClasses().sidebarIconClass"
+      [class]="contentClasses().sidebarIconClass"
       [class.ml-3]="icon()">
       <ng-content />
     </span>
-    <flowbite-badge *ngIf="label()">{{ label() }}</flowbite-badge>
+    @if (label()) {
+      <flowbite-badge>{{ label() }}</flowbite-badge>
+    }
   `,
   host: {
     '(click)': 'onClick()',

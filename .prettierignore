@@ -5,6 +5,7 @@
 /coverage
 
 .angular
+.github
 
 /.nx/cache
 /.nx/workspace-data

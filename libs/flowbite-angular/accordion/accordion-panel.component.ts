@@ -45,7 +45,6 @@ export const accordionPanelDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [],
   selector: 'flowbite-accordion-panel',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,

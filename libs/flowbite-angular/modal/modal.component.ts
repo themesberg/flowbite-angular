@@ -7,7 +7,6 @@ import { ModalThemeService } from './modal.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
 import type { EmbeddedViewRef, OnDestroy } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -73,17 +72,16 @@ export const modalDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  imports: [NgClass],
   selector: 'flowbite-modal',
   template: `
     <ng-template #modal>
       <div class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-[99]"></div>
 
       <div
-        [ngClass]="contentClasses().modalWrapperClass"
+        [class]="contentClasses().modalWrapperClass"
         (click)="onBackdropClick($event)">
-        <div [ngClass]="contentClasses().modalContainerClass">
-          <div [ngClass]="contentClasses().modalContentClass">
+        <div [class]="contentClasses().modalContainerClass">
+          <div [class]="contentClasses().modalContentClass">
             <ng-content />
           </div>
         </div>

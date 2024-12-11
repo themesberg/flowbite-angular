@@ -2,13 +2,12 @@ name: Release
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - next
-      - next-major
-      - alpha
-      - beta
+    inputs:
+      dryRun:
+        description: 'Start the release with dryRun parameter'
+        required: true
+        type: boolean
+        default: true
 
 jobs:
   release:
@@ -35,7 +34,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Release new version 🛠
-        run: pnpm lib:release -- --ci --verbose --skip-nx-cache
+        run: pnpm lib:release -- --ci --verbose --skip-nx-cache --dryRun=${{ github.event.inputs.dryRun }}
         env:
           GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

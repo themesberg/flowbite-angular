@@ -2,9 +2,6 @@
 keyword: IntroductionPage
 ---
 
-> **Warning** This documentation is not synced with the available `flowbite-angular` library. We're
-> doing a refacto right now ; also if you want to help us, feel free to check the repo !
-
 ## Introduction
 
 Flowbite Angular is an open-source library of UI components based on the utility-first Tailwind CSS

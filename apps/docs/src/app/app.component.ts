@@ -15,7 +15,7 @@ import {
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
 
-import { Location, NgIf } from '@angular/common';
+import { Location } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
@@ -30,7 +30,6 @@ import {
   standalone: true,
   imports: [
     RouterOutlet,
-    NgIf,
     NgDocRootComponent,
     NgDocSidebarComponent,
     NgDocThemeToggleComponent,

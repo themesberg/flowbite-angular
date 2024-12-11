@@ -4,9 +4,9 @@ import { NavbarComponent } from './navbar.component';
 import type { NavbarColors } from './navbar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
+import { BaseComponent } from 'flowbite-angular';
 
-import { NgClass } from '@angular/common';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
@@ -35,12 +35,21 @@ export const navbarContentDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   selector: 'flowbite-navbar-content',
   standalone: true,
-  imports: [NgClass],
   template: `
-    <div [ngClass]="contentClasses().navbarContentListClass">
+    <div [class]="contentClasses().navbarContentListClass">
       <ng-content />
     </div>
   `,
+  host: {
+    '[@isOpenAnimation]': 'navbarComponent().isOpen()',
+  },
+  animations: [
+    trigger('isOpenAnimation', [
+      state('true', style({ height: '*', class: 'test' })),
+      state('false', style({ height: '0px' })),
+      transition('true <=> false', animate('300ms')),
+    ]),
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -70,7 +79,6 @@ export class NavbarContentComponent extends BaseComponent<NavbarContentClass> im
   //#region BaseComponent implementation
   public override fetchClass(): NavbarContentClass {
     return this.themeService.getClasses({
-      isOpen: booleanToFlowbiteBoolean(this.navbarComponent().isOpen()),
       customStyle: this.customStyle(),
     });
   }
