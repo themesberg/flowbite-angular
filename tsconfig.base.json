@@ -32,6 +32,7 @@
       "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/index.ts"],
       "flowbite-angular/modal": ["libs/flowbite-angular/modal/index.ts"],
       "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/index.ts"],
+      "flowbite-angular/pagination": ["libs/flowbite-angular/pagination/index.ts"],
       "flowbite-angular/router-link": ["libs/flowbite-angular/router-link/index.ts"],
       "flowbite-angular/router-link-active": ["libs/flowbite-angular/router-link-active/index.ts"],
       "flowbite-angular/sanitize-html": ["libs/flowbite-angular/sanitize-html/index.ts"],
