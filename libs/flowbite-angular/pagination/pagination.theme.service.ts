@@ -22,7 +22,7 @@ export const FLOWBITE_PAGINATION_THEME_TOKEN = new InjectionToken<PaginationThem
   providedIn: 'root',
 })
 export class PaginationThemeService implements FlowbiteThemeService<PaginationProperties> {
-  private readonly baseTheme = inject(FLOWBITE_PAGINATION_THEME_TOKEN);
+  public readonly baseTheme = inject(FLOWBITE_PAGINATION_THEME_TOKEN);
 
   public getClasses(properties: PaginationProperties): PaginationClass {
     const theme: PaginationTheme = mergeTheme(this.baseTheme, properties.customStyle);
@@ -30,7 +30,6 @@ export class PaginationThemeService implements FlowbiteThemeService<PaginationPr
     const output: PaginationClass = {
       rootClass: twMerge(theme.root.base),
       navigationClass: twMerge(theme.navigation.base),
-      listItemClass: twMerge(theme.listItem.base),
     };
 
     return output;

@@ -1,6 +1,11 @@
-import type { PaginationClass, PaginationNavigation } from './pagination.theme';
+import {
+  FLOWBITE_PAGINATION_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE,
+  PaginationButtonDirective,
+} from './pagination-button.directive';
+import type { PaginationClass, PaginationNavigation, PaginationTheme } from './pagination.theme';
 import { PaginationThemeService } from './pagination.theme.service';
 
+import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 
 import {
@@ -8,20 +13,35 @@ import {
   Component,
   computed,
   inject,
+  InjectionToken,
   input,
+  makeEnvironmentProviders,
   model,
   ViewEncapsulation,
 } from '@angular/core';
 
+export const FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
+  DeepPartial<PaginationTheme>
+>('FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const paginationDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE,
+    useValue: {},
+  },
+]);
+
 @Component({
   selector: 'flowbite-pagination',
   standalone: true,
+  imports: [PaginationButtonDirective],
   template: `<nav [class]="contentClasses().navigationClass">
     @if (firstLast()) {
       <button
         type="button"
         (click)="firstPage()"
-        [class]="contentClasses().listItemClass">
+        [customStyle]="buttonCustomStyle()"
+        flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
             <<
@@ -40,7 +60,8 @@ import {
       <button
         type="button"
         (click)="previousPage()"
-        [class]="contentClasses().listItemClass">
+        [customStyle]="buttonCustomStyle()"
+        flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
             <
@@ -59,7 +80,9 @@ import {
       <button
         type="button"
         (click)="changePage(page)"
-        [class]="contentClasses().listItemClass">
+        [customStyle]="buttonCustomStyle()"
+        flowbitePaginationButton
+        [active]="page === currentPage()">
         {{ page }}
       </button>
     }
@@ -68,7 +91,8 @@ import {
       <button
         type="button"
         (click)="nextPage()"
-        [class]="contentClasses().listItemClass">
+        [customStyle]="buttonCustomStyle()"
+        flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
             >
@@ -87,7 +111,8 @@ import {
       <button
         type="button"
         (click)="lastPage()"
-        [class]="contentClasses().listItemClass">
+        [customStyle]="buttonCustomStyle()"
+        flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
             >>
@@ -106,7 +131,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent extends BaseComponent<PaginationClass> {
-  private readonly _themeService = inject(PaginationThemeService);
+  public readonly themeService = inject(PaginationThemeService);
 
   readonly currentPage = model.required<number>();
   readonly totalItems = input.required<number>();
@@ -116,27 +141,27 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   readonly firstLast = input(true);
   readonly navigation = input<keyof PaginationNavigation>('icon');
 
-  private readonly _firstPage = computed(() => {
+  public readonly firstPageToShow = computed(() => {
     if (this.currentPage() <= Math.floor(this.tabs() / 2)) {
       return 1;
     }
 
-    if (this.currentPage() > this._maxPages() - Math.floor(this.tabs() / 2)) {
-      return this._maxPages() - this.tabs() + 1;
+    if (this.currentPage() > this.maxPages() - Math.floor(this.tabs() / 2)) {
+      return this.maxPages() - this.tabs() + 1;
     }
 
     return this.currentPage() - Math.floor(this.tabs() / 2);
   });
 
-  private readonly _maxPages = computed(() => {
+  readonly maxPages = computed(() => {
     return Math.max(Math.floor(this.totalItems() / this.pageSize()), 1);
   });
 
   readonly visiblePages = computed(() => {
     const pages: number[] = [];
-    const visibleTabs = Math.min(this.tabs(), this._maxPages());
+    const visibleTabs = Math.min(this.tabs(), this.maxPages());
 
-    for (let i = this._firstPage(); i < this._firstPage() + visibleTabs; i++) {
+    for (let i = this.firstPageToShow(); i < this.firstPageToShow() + visibleTabs; i++) {
       pages.push(i);
     }
 
@@ -144,12 +169,15 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   });
 
   readonly visibleCurrentPage = computed(() => {
-    return Math.min(this.currentPage(), this._maxPages());
+    return Math.min(this.currentPage(), this.maxPages());
   });
 
+  public customStyle = model(inject(FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE));
+  public buttonCustomStyle = model(inject(FLOWBITE_PAGINATION_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE));
+
   public override fetchClass(): PaginationClass {
-    return this._themeService.getClasses({
-      customStyle: {},
+    return this.themeService.getClasses({
+      customStyle: this.customStyle(),
     });
   }
 
@@ -163,17 +191,17 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   }
 
   nextPage() {
-    if (this.visibleCurrentPage() === this._maxPages()) return;
+    if (this.visibleCurrentPage() === this.maxPages()) return;
     this.currentPage.update((value) => value + 1);
   }
 
   firstPage() {
-    if (this.currentPage() === this._maxPages()) return;
+    if (this.currentPage() === this.maxPages()) return;
     this.currentPage.set(1);
   }
 
   lastPage() {
-    if (this.currentPage() === this._maxPages()) return;
-    this.currentPage.set(this._maxPages());
+    if (this.currentPage() === this.maxPages()) return;
+    this.currentPage.set(this.maxPages());
   }
 }
