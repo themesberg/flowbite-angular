@@ -24,10 +24,6 @@ export interface PaginationTheme {
   navigation: {
     base: string;
   };
-  listItem: {
-    base: string;
-    active: string;
-  };
 }
 
 /**
@@ -40,10 +36,6 @@ export const paginationTheme: PaginationTheme = createTheme({
   navigation: {
     base: 'inline-flex -space-x-px',
   },
-  listItem: {
-    base: 'flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white first:rounded-l-lg last:rounded-r-lg',
-    active: '',
-  },
 });
 
 /**
@@ -51,5 +43,4 @@ export const paginationTheme: PaginationTheme = createTheme({
  */
 export interface PaginationClass extends FlowbiteClass {
   navigationClass: string;
-  listItemClass: string;
 }
