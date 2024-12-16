@@ -110,10 +110,14 @@ export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements
   public position = model(inject(FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE));
   /**
    * Set the scroll top icon
+   *
+   * @default undefined
    */
   public icon = model(inject(FLOWBITE_SCROLL_TOP_ICON_DEFAULT_VALUE));
   /**
    * Set the custom style for this scroll top
+   *
+   * @default {}
    */
   public customStyle = model(inject(FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
