@@ -1,5 +1,6 @@
 import ComponentCategory from '../ng-doc.category';
 import { FlowbiteAlwaysOpenComponent } from './_always-open.component';
+import { FlowbiteArrowStyleComponent } from './_arrow-style.component';
 import { FlowbiteColorOptionComponent } from './_color-option.component';
 import { FlowbiteDefaultComponent } from './_default.component';
 import { FlowbiteFlushComponent } from './_flush.component';
@@ -21,6 +22,7 @@ const Accordion: NgDocPage = {
     flowbiteAlwaysOpenComponent: FlowbiteAlwaysOpenComponent,
     flowbiteColorOptionComponent: FlowbiteColorOptionComponent,
     flowbiteFlushComponent: FlowbiteFlushComponent,
+    flowbiteArrowStyleComponent: FlowbiteArrowStyleComponent,
   },
 };
 
