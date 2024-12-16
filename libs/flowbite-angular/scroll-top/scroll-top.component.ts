@@ -11,7 +11,8 @@ import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_UP_SVG_ICON } from 'flowbite-angular/utils';
 
-import type { OnInit } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import type { OnInit, TemplateRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -31,6 +32,10 @@ export const FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE = new InjectionToken<
   keyof ScrollTopPositions
 >('FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE');
 
+export const FLOWBITE_SCROLL_TOP_ICON_DEFAULT_VALUE = new InjectionToken<
+  TemplateRef<unknown> | undefined
+>('FLOWBITE_SCROLL_TOP_ICON_DEFAULT_VALUE');
+
 export const FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<ScrollTopTheme>
 >('FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE');
@@ -45,6 +50,10 @@ export const scrollTopDefaultValueProvider = makeEnvironmentProviders([
     useValue: 'bottom-right',
   },
   {
+    provide: FLOWBITE_SCROLL_TOP_ICON_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
     provide: FLOWBITE_SCROLL_TOP_CUSTOM_STYLE_DEFAULT_VALUE,
     useValue: {},
   },
@@ -56,10 +65,16 @@ export const scrollTopDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   selector: 'flowbite-scroll-top',
   standalone: true,
-  imports: [IconComponent],
-  template: `<flowbite-icon
-    svgIcon="flowbite-angular:chevron-up"
-    class="w-5 h-5" />`,
+  imports: [IconComponent, NgTemplateOutlet],
+  template: `
+    @if (icon()) {
+      <ng-container [ngTemplateOutlet]="icon()!" />
+    } @else {
+      <flowbite-icon
+        svgIcon="flowbite-angular:chevron-up"
+        class="w-5 h-5" />
+    }
+  `,
   host: {
     '(click)': 'onClick()',
   },
@@ -93,6 +108,10 @@ export class ScrollTopComponent extends BaseComponent<ScrollTopClass> implements
    * @default bottom-right
    */
   public position = model(inject(FLOWBITE_SCROLL_TOP_POSITION_DEFAULT_VALUE));
+  /**
+   * Set the scroll top icon
+   */
+  public icon = model(inject(FLOWBITE_SCROLL_TOP_ICON_DEFAULT_VALUE));
   /**
    * Set the custom style for this scroll top
    */

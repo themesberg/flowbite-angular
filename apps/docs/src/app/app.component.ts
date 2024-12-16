@@ -14,6 +14,7 @@ import {
 } from 'flowbite-angular/navbar';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
 import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
+import { ScrollTopComponent } from 'flowbite-angular/scroll-top';
 
 import { Location } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
@@ -44,6 +45,7 @@ import {
     FlowbiteRouterLinkDirective,
     FlowbiteRouterLinkActiveDirective,
     BadgeComponent,
+    ScrollTopComponent,
   ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
