@@ -12,7 +12,7 @@ const Versioning: NgDocPage = {
   title: 'Versioning',
   mdFile: 'index.md',
   category: GettingStartedCategory,
-  order: 5,
+  order: 4,
 };
 
 export default Versioning;
