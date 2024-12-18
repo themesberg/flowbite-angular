@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.1.1...flowbite-angular@v1.2.0) (2024-12-18)
+
+
+### Features
+
+* **accordion:** add custom icon support ([5b184dd](https://github.com/themesberg/flowbite-angular/commit/5b184dd232993fd9d77ed3db7483fd5f04cb2b80))
+* **scroll-top:** add support for icon customisation ([bc3a60f](https://github.com/themesberg/flowbite-angular/commit/bc3a60fa5665083f77b298fb419e1f964a3728f5))
+
 ## [1.1.1](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.1.0...flowbite-angular@v1.1.1) (2024-12-11)
 
 ### Bug Fixes
