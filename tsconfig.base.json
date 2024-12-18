@@ -17,8 +17,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "paths": {
-      "@ng-doc/generated": ["ng-doc/docs/index.ts"],
-      "@ng-doc/generated/*": ["ng-doc/docs/*"],
+      "@ng-doc/generated": ["tmp/apps/docs/ng-doc/docs/index.ts"],
+      "@ng-doc/generated/*": ["tmp/apps/docs/ng-doc/docs/*"],
       "flowbite-angular": ["libs/flowbite-angular/common/index.ts"],
       "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/index.ts"],
       "flowbite-angular/alert": ["libs/flowbite-angular/alert/index.ts"],
