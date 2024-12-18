@@ -5,6 +5,7 @@ const config: NgDocConfiguration = {
   cache: false,
   routePrefix: 'docs',
   docsPath: 'apps/docs/docs',
+  outDir: 'tmp/apps/docs',
   tsConfig: 'apps/docs/tsconfig.app.json',
   guide: {
     anchorHeadings: ['h1', 'h2', 'h3', 'h4'],

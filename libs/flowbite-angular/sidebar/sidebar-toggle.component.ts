@@ -55,7 +55,6 @@ export const sidebarToggleDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/sidebar/
  */
 @Component({
-  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-sidebar-toggle',
   template: `<flowbite-icon svgIcon="flowbite-angular:bars" />`,

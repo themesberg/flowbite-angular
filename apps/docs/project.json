@@ -5,6 +5,7 @@
   "sourceRoot": "apps/docs/src",
   "prefix": "flowbite",
   "tags": [],
+  "implicitDependencies": ["flowbite-angular"],
   "targets": {
     "build": {
       "executor": "@ng-doc/builder:application",
@@ -30,7 +31,7 @@
           },
           {
             "glob": "**/*",
-            "input": "ng-doc/docs/assets",
+            "input": "tmp/apps/docs/ng-doc/docs/assets",
             "output": "assets/ng-doc"
           },
           "apps/docs/src/assets"

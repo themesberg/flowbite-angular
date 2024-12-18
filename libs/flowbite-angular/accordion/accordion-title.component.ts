@@ -44,7 +44,6 @@ export const accordionTitleDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/accordion/
  */
 @Component({
-  standalone: true,
   imports: [IconComponent, NgTemplateOutlet],
   selector: 'flowbite-accordion-title',
   template: `

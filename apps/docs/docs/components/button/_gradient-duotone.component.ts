@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-gradient-duotone',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './_gradient-duotone.component.html',
   host: {

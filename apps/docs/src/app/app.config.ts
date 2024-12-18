@@ -6,7 +6,7 @@ import { initFlowbite } from 'flowbite-angular/core';
 import { IconRegistry } from 'flowbite-angular/icon';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
-import { APP_INITIALIZER, PLATFORM_ID, type ApplicationConfig } from '@angular/core';
+import { inject, provideAppInitializer, type ApplicationConfig } from '@angular/core';
 import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
@@ -51,11 +51,9 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
     initFlowbite(),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initIcons,
-      deps: [IconRegistry, DomSanitizer, PLATFORM_ID],
-      multi: true,
-    },
+    provideAppInitializer(() => {
+      const initializerFn = initIcons(inject(IconRegistry), inject(DomSanitizer));
+      return initializerFn();
+    }),
   ],
 };

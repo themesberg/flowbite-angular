@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-modal-form',
-  standalone: true,
   imports: [ModalComponent, ModalBodyComponent, ModalHeaderComponent, ButtonComponent],
   templateUrl: './_form.component.html',
   host: {

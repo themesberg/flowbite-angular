@@ -2,11 +2,7 @@
   "root": true,
   "ignorePatterns": ["!**/*"],
   "plugins": ["@nx", "@typescript-eslint", "prettier"],
-  "extends": [
-    "plugin:@angular-eslint/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["plugin:@nx/angular", "plugin:@typescript-eslint/recommended", "prettier"],
   "overrides": [
     {
       "files": ["*.ts"],

@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-indicator-count',
-  standalone: true,
   imports: [IndicatorComponent, ButtonComponent, IconComponent],
   templateUrl: './_count.component.html',
 })
