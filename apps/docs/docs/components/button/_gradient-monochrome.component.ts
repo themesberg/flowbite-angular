@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-gradient-monochrome',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './_gradient-monochrome.component.html',
   host: {

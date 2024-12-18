@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-alert-dismissable',
-  standalone: true,
   imports: [AlertComponent],
   templateUrl: './_dismissable.component.html',
   host: {

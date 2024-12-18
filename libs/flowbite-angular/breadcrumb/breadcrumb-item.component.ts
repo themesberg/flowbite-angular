@@ -36,7 +36,6 @@ export const breadcrumbItemDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/breadcrumb/
  */
 @Component({
-  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-breadcrumb-item',
   template: `

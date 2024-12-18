@@ -5,7 +5,6 @@ import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'flowbite-doc-demo',
-  standalone: true,
   imports: [ButtonComponent, IconComponent],
   template: `
     <div class="flex flex-col grow rounded-t-xl border border-gray-200 dark:border-gray-700">

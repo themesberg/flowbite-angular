@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-dropdown-header',
-  standalone: true,
   imports: [
     DropdownComponent,
     DropdownItemComponent,

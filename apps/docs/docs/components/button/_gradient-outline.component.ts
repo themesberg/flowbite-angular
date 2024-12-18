@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-gradient-outline',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './_gradient-outline.component.html',
   host: {

@@ -28,7 +28,6 @@ import { DomSanitizer } from '@angular/platform-browser';
  * @see https://flowbite.com/docs/components/dropdowns/
  */
 @Component({
-  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-dropdown',
   template: `

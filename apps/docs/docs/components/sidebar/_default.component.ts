@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-sidebar-default',
-  standalone: true,
   imports: [
     SidebarComponent,
     SidebarMenuComponent,

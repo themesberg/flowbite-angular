@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-outline',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './_outline.component.html',
   host: {

@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-modal-dismissable',
-  standalone: true,
   imports: [
     ModalComponent,
     ModalBodyComponent,

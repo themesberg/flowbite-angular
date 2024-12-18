@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-alert-additional-content',
-  standalone: true,
   imports: [AlertComponent, IconComponent, ButtonComponent],
   templateUrl: './_additional-content.component.html',
   host: {

@@ -64,7 +64,6 @@ export const scrollTopDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   selector: 'flowbite-scroll-top',
-  standalone: true,
   imports: [IconComponent, NgTemplateOutlet],
   template: `
     @if (icon()) {

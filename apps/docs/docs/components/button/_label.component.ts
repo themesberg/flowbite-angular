@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-label',
-  standalone: true,
   imports: [ButtonComponent, BadgeComponent],
   templateUrl: './_label.component.html',
   host: {
