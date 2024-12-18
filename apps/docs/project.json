@@ -102,5 +102,6 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
-  }
+  },
+  "implicitDependencies": ["flowbite-angular"]
 }
