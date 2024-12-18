@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-modal-positioned',
-  standalone: true,
   imports: [
     ModalComponent,
     ModalBodyComponent,

@@ -94,7 +94,6 @@ export const buttonDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/buttons/
  */
 @Component({
-  standalone: true,
   imports: [NgTemplateOutlet],
   selector: 'flowbite-button',
   template: `

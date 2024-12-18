@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-navbar-responsive',
-  standalone: true,
   imports: [
     NavbarComponent,
     NavbarContentComponent,

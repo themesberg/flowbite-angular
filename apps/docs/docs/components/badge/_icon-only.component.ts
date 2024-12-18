@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-badge-icon-only',
-  standalone: true,
   imports: [BadgeComponent, IconComponent],
   templateUrl: './_icon-only.component.html',
   host: {

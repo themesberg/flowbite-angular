@@ -92,7 +92,6 @@ export const alertDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/alerts/
  */
 @Component({
-  standalone: true,
   imports: [NgTemplateOutlet, IconComponent],
   selector: 'flowbite-alert',
   template: `

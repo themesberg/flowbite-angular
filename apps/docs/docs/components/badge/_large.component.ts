@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-badge-large',
-  standalone: true,
   imports: [BadgeComponent],
   templateUrl: './_large.component.html',
   host: {

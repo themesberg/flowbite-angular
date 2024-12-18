@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-alert-border',
-  standalone: true,
   imports: [AlertComponent],
   templateUrl: './_border.component.html',
   host: {

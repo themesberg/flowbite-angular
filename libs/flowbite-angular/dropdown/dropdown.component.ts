@@ -62,7 +62,6 @@ export const dropdownDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/dropdowns/
  */
 @Component({
-  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-dropdown',
   template: `

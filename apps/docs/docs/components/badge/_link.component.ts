@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-badge-link',
-  standalone: true,
   imports: [BadgeComponent, FlowbiteRouterLinkDirective],
   templateUrl: './_link.component.html',
   host: {

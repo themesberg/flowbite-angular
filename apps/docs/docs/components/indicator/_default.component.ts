@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-indicator-default',
-  standalone: true,
   imports: [IndicatorComponent],
   templateUrl: './_default.component.html',
   host: {

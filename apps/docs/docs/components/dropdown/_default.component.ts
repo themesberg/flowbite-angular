@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-dropdown-default',
-  standalone: true,
   imports: [DropdownComponent, DropdownItemComponent],
   templateUrl: './_default.component.html',
   host: {

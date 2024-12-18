@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-breadcrumb-default',
-  standalone: true,
   imports: [
     BreadcrumbComponent,
     BreadcrumbItemComponent,

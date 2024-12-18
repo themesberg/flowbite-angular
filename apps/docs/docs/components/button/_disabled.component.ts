@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-disabled',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './_disabled.component.html',
   host: {

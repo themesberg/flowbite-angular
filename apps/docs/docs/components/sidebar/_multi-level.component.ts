@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-sidebar-multi-level',
-  standalone: true,
   imports: [
     SidebarComponent,
     SidebarMenuComponent,

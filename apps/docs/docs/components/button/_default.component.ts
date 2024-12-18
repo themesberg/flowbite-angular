@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-default',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './_default.component.html',
   host: {

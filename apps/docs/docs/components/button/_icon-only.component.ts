@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-button-icon-only',
-  standalone: true,
   imports: [ButtonComponent, IconComponent],
   templateUrl: './_icon-only.component.html',
   host: {

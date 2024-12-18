@@ -7,7 +7,6 @@ import { NgDocThemeService } from '@ng-doc/app/services/theme';
 
 @Component({
   selector: 'flowbite-landing',
-  standalone: true,
   imports: [IconComponent, ButtonComponent, FlowbiteRouterLinkDirective],
   templateUrl: './landing.component.html',
 })

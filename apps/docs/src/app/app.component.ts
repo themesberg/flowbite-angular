@@ -28,7 +28,6 @@ import {
 } from '@ng-doc/app';
 
 @Component({
-  standalone: true,
   imports: [
     RouterOutlet,
     NgDocRootComponent,
