@@ -4,7 +4,7 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Here is a reference table that matches versions of flowbite-angular with its Angular version. It
- * also shows the Typescript version used.
+ * also shows the TailwindCSS version used.
  *
  * @status:alert NEW
  */
