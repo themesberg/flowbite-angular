@@ -30,7 +30,7 @@
           },
           {
             "glob": "**/*",
-            "input": "ng-doc/docs/assets",
+            "input": "tmp/apps/docs/ng-doc/docs/assets",
             "output": "assets/ng-doc"
           },
           "apps/docs/src/assets"
