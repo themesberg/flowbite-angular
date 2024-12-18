@@ -5,6 +5,7 @@
   "sourceRoot": "apps/docs/src",
   "prefix": "flowbite",
   "tags": [],
+  "implicitDependencies": ["flowbite-angular"],
   "targets": {
     "build": {
       "executor": "@ng-doc/builder:application",
@@ -102,6 +103,5 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     }
-  },
-  "implicitDependencies": ["flowbite-angular"]
+  }
 }
