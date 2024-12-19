@@ -52,6 +52,7 @@ export const sidebarItemDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/sidebar/
  */
 @Component({
+  standalone: true,
   imports: [SanitizeHtmlPipe, BadgeComponent],
   selector: 'flowbite-sidebar-item',
   template: `
