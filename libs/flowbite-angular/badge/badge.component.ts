@@ -19,6 +19,10 @@ export const FLOWBITE_BADGE_COLOR_DEFAULT_VALUE = new InjectionToken<keyof Badge
   'FLOWBITE_BADGE_COLOR_DEFAULT_VALUE'
 );
 
+export const FLOWBITE_BADGE_HAS_BORDER_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_BADGE_HAS_BORDER_DEFAULT_VALUE'
+);
+
 export const FLOWBITE_BADGE_SIZE_DEFAULT_VALUE = new InjectionToken<keyof BadgeSizes>(
   'FLOWBITE_BADGE_SIZE_DEFAULT_VALUE'
 );
@@ -39,6 +43,10 @@ export const badgeDefaultValueProvider = makeEnvironmentProviders([
   {
     provide: FLOWBITE_BADGE_COLOR_DEFAULT_VALUE,
     useValue: 'primary',
+  },
+  {
+    provide: FLOWBITE_BADGE_HAS_BORDER_DEFAULT_VALUE,
+    useValue: false,
   },
   {
     provide: FLOWBITE_BADGE_SIZE_DEFAULT_VALUE,
@@ -86,6 +94,10 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
    */
   public color = model(inject(FLOWBITE_BADGE_COLOR_DEFAULT_VALUE));
   /**
+   * Set if the badge has border
+   */
+  public hasBorder = model(inject(FLOWBITE_BADGE_HAS_BORDER_DEFAULT_VALUE));
+  /**
    * Set the badge size
    *
    * @default xs
@@ -113,6 +125,7 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
   public override fetchClass(): BadgeClass {
     return this.themeService.getClasses({
       color: this.color(),
+      hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
       size: this.size(),
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
       isPill: booleanToFlowbiteBoolean(this.isPill()),

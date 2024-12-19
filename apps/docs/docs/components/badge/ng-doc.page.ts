@@ -1,4 +1,5 @@
 import ComponentCategory from '../ng-doc.category';
+import { FlowbiteBorderedComponent } from './_bordered.component';
 import { FlowbiteDefaultComponent } from './_default.component';
 import { FlowbiteIconOnlyComponent } from './_icon-only.component';
 import { FlowbiteIconComponent } from './_icon.component';
@@ -19,6 +20,7 @@ const badge: NgDocPage = {
   order: 3,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
+    flowbiteBorderedComponent: FlowbiteBorderedComponent,
     flowbiteIconOnlyComponent: FlowbiteIconOnlyComponent,
     flowbiteIconComponent: FlowbiteIconComponent,
     flowbiteLargeComponent: FlowbiteLargeComponent,

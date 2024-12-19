@@ -31,6 +31,7 @@ export class BadgeThemeService implements FlowbiteThemeService<BadgeProperties> 
       rootClass: twMerge(
         theme.root.base,
         theme.root.color[properties.color],
+        theme.root.hasBorder[properties.hasBorder],
         theme.root.size[properties.size],
         theme.root.isPill[
           properties.isPill == 'enabled' || properties.isIconOnly == 'enabled'
