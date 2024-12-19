@@ -26,7 +26,8 @@ export const paginationButtonTheme: PaginationButtonTheme = createTheme({
   root: {
     base: 'flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white first:rounded-l-lg last:rounded-r-lg',
     active: {
-      enabled: 'bg-red-500 dark:bg-red-700',
+      enabled:
+        'border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white',
       disabled: '',
     },
   },

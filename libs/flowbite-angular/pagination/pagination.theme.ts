@@ -1,6 +1,9 @@
 import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
+/**
+ * Available navigation types for `PaginationButtonDirective`
+ */
 export interface PaginationNavigation {
   icon: string;
   text: string;

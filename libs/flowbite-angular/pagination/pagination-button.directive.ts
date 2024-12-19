@@ -29,16 +29,26 @@ export const paginationButtonDefaultValueProvider = makeEnvironmentProviders([
   selector: 'button[flowbitePaginationButton]',
 })
 export class PaginationButtonDirective extends BaseComponent<PaginationButtonClass> {
+  /**
+   * Service injected used to generate class
+   */
   public readonly themeService = inject(PaginationButtonThemeService);
 
+  /**
+   * Whether the page is currently active
+   */
   public readonly active = input(false);
-
+  /**
+   * Set the custom style for this button
+   */
   public customStyle = model(inject(FLOWBITE_PAGINATION_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE));
 
+  //#region BaseComponent implementation
   public override fetchClass(): PaginationButtonClass {
     return this.themeService.getClasses({
       active: booleanToFlowbiteBoolean(this.active()),
       customStyle: this.customStyle(),
     });
   }
+  //#endregion
 }
