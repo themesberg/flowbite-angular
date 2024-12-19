@@ -254,10 +254,6 @@ export function initFlowbite(): EnvironmentProviders {
       useClass: NavbarBrandThemeService,
     },
     {
-      provide: PaginationThemeService,
-      useClass: PaginationThemeService,
-    },
-    {
       provide: NavbarContentThemeService,
       useClass: NavbarContentThemeService,
     },
@@ -396,10 +392,6 @@ export function initFlowbite(): EnvironmentProviders {
     {
       provide: FLOWBITE_NAVBAR_CONTENT_THEME_TOKEN,
       useValue: navbarContentTheme,
-    },
-    {
-      provide: FLOWBITE_PAGINATION_THEME_TOKEN,
-      useValue: paginationTheme,
     },
     {
       provide: FLOWBITE_NAVBAR_ITEM_THEME_TOKEN,
