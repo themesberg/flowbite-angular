@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.2.0...flowbite-angular@v1.3.0) (2024-12-19)
+
+
+### Bug Fixes
+
+* add standalone property on components ([cae1779](https://github.com/themesberg/flowbite-angular/commit/cae17798f79475b128f3df848eff3066fbbf2a48))
+
+
+### Features
+
+* **badge:** add bordered badge ([c4cf8b7](https://github.com/themesberg/flowbite-angular/commit/c4cf8b74a8ad410fd97c389a96052ed7436a2d85))
+* **badge:** add dismissable badge ([3ba45e7](https://github.com/themesberg/flowbite-angular/commit/3ba45e786655775ccd4ca738eafc795f4e3d9572))
+
 # [1.2.0](https://github.com/themesberg/flowbite-angular/compare/flowbite-angular@v1.1.1...flowbite-angular@v1.2.0) (2024-12-18)
 
 
