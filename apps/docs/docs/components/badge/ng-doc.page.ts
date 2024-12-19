@@ -1,6 +1,7 @@
 import ComponentCategory from '../ng-doc.category';
 import { FlowbiteBorderedComponent } from './_bordered.component';
 import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteDismissableComponent } from './_dismissable.component';
 import { FlowbiteIconOnlyComponent } from './_icon-only.component';
 import { FlowbiteIconComponent } from './_icon.component';
 import { FlowbiteLargeComponent } from './_large.component';
@@ -25,6 +26,7 @@ const badge: NgDocPage = {
     flowbiteIconComponent: FlowbiteIconComponent,
     flowbiteLargeComponent: FlowbiteLargeComponent,
     flowbiteLinkComponent: FlowbiteLinkComponent,
+    flowbiteDismissableComponent: FlowbiteDismissableComponent,
   },
 };
 
