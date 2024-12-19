@@ -14,7 +14,7 @@ const config: NgDocConfiguration = {
   repoConfig: {
     url: 'https://github.com/themesberg/flowbite-angular',
     mainBranch: 'main',
-    releaseBranch: 'main',
+    releaseBranch: 'release',
   },
   shiki: {
     themes: {
