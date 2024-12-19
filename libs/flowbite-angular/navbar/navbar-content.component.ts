@@ -33,8 +33,8 @@ export const navbarContentDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/navbar/
  */
 @Component({
-  selector: 'flowbite-navbar-content',
   standalone: true,
+  selector: 'flowbite-navbar-content',
   template: `
     <div [class]="contentClasses().navbarContentListClass">
       <ng-content />

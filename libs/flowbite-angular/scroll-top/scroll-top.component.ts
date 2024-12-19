@@ -63,6 +63,7 @@ export const scrollTopDefaultValueProvider = makeEnvironmentProviders([
  * Provide a way to go at the top of the page via a button
  */
 @Component({
+  standalone: true,
   selector: 'flowbite-scroll-top',
   imports: [IconComponent, NgTemplateOutlet],
   template: `
