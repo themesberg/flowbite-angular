@@ -73,3 +73,19 @@ keyword: BadgePage
 ```angular-ts file="./_icon-only.component.ts"#L1-L2 group="icon-only" name="typescript"
 
 ```
+
+## Dismissable badge
+
+{{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
+
+```angular-html file="./_dismissable.component.html" group="dismissable" name="html"
+
+```
+
+```angular-ts file="./_dismissable.component.ts"#L1-L1 group="dismissable" name="typescript"
+
+```
+
+```angular-ts file="./_dismissable.component.ts"#L14 group="dismissable" name="typescript"
+
+```
