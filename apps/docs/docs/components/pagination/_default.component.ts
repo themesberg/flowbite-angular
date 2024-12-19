@@ -4,7 +4,7 @@ import { Component, signal } from '@angular/core';
 
 @Component({
   // ng-doc-ignore-line
-  selector: 'flowbite-demo-navbar-default',
+  selector: 'flowbite-demo-pagination-default',
   imports: [PaginationComponent],
   // ng-doc-ignore-line
   templateUrl: './_default.component.html',
