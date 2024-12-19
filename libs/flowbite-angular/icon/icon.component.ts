@@ -20,8 +20,8 @@ import {
 import { take } from 'rxjs';
 
 @Component({
-  selector: 'flowbite-icon',
   standalone: true,
+  selector: 'flowbite-icon',
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

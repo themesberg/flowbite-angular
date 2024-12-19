@@ -34,6 +34,7 @@ export const modalHeaderDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/modal/
  */
 @Component({
+  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-modal-header',
   template: `

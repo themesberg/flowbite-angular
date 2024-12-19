@@ -33,6 +33,7 @@ export const darkThemeToggleDefaultValueProvider = makeEnvironmentProviders([
  * Use to toggle light/dark mode accross the site
  */
 @Component({
+  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-dark-theme-toggle',
   template: `

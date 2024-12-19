@@ -37,6 +37,7 @@ export const sidebarItemGroupDefaultValueProvider = makeEnvironmentProviders([
  * @see https://flowbite.com/docs/components/sidebar/
  */
 @Component({
+  standalone: true,
   imports: [IconComponent],
   selector: 'flowbite-sidebar-item-group',
   template: `
