@@ -26,6 +26,18 @@ keyword: BadgePage
 
 ```
 
+## Bordered badge
+
+{{ NgDocActions.demo('flowbiteBorderedComponent', {container: false}) }}
+
+```angular-html file="./_bordered.component.html" group="bordered" name="html"
+
+```
+
+```angular-ts file="./_bordered.component.ts" group="bordered" name="typescript"
+
+```
+
 ## Badge as link
 
 {{ NgDocActions.demo('flowbiteLinkComponent', {container: false}) }}
