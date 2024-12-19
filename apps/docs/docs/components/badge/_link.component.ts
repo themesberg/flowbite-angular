@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   imports: [BadgeComponent, FlowbiteRouterLinkDirective],
   templateUrl: './_link.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteLinkComponent {}
