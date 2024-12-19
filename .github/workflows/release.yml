@@ -11,6 +11,7 @@ on:
 
 jobs:
   release:
+    if: (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/release') || (github.event_name == 'workflow_dispatch' && github.event.inputs.dryRun == 'true' && github.ref == 'refs/heads/main')
     name: Release new version 🛠
     runs-on: ubuntu-latest
     permissions:
@@ -19,12 +20,6 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - name: Fail if branch is not release
-        if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/release'
-        run: |
-          echo "This workflow should not be triggered with workflow_dispatch on a branch other than release"
-          exit 1
-
       - name: Check out the code 🗄
         uses: actions/checkout@v4
         with:
