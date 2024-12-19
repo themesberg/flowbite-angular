@@ -119,7 +119,6 @@ import {
   NavbarToggleThemeService,
 } from 'flowbite-angular/navbar';
 import {
-  FLOWBITE_PAGINATION_THEME_TOKEN,
   FLOWBITE_PAGINATION_BUTTON_THEME_TOKEN,
   FLOWBITE_PAGINATION_THEME_TOKEN,
   paginationButtonDefaultValueProvider,
