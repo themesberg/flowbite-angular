@@ -54,6 +54,10 @@ export interface BadgeTheme {
     isIconOnly: FlowbiteBoolean;
     link: FlowbiteBoolean;
   };
+  closeButton: {
+    base: string;
+    color: BadgeColors;
+  };
 }
 
 /**
@@ -99,9 +103,26 @@ export const badgeTheme: BadgeTheme = createTheme({
       disabled: 'px-2 py-0.5',
     },
   },
+  closeButton: {
+    base: 'ms-1 inline-flex items-center rounded-sm p-1 focus:ring-2',
+    color: {
+      primary:
+        'text-primary-500 dark:text-primary-600 hover:bg-primary-200 dark:hover:bg-primary-300',
+      dark: 'text-gray-500 dark:text-gray-600 hover:bg-gray-200 dark:hover:bg-gray-300',
+      blue: 'text-blue-500 dark:text-blue-600 hover:bg-blue-200 dark:hover:bg-blue-300',
+      red: 'text-red-500 dark:text-red-600 hover:bg-red-200 dark:hover:bg-red-300',
+      green: 'text-green-500 dark:text-green-600 hover:bg-green-200 dark:hover:bg-green-300',
+      yellow: 'text-yellow-500 dark:text-yellow-600 hover:bg-yellow-200 dark:hover:bg-yellow-300',
+      indigo: 'text-indigo-500 dark:text-indigo-600 hover:bg-indigo-200 dark:hover:bg-indigo-300',
+      purple: 'text-purple-500 dark:text-purple-600 hover:bg-purple-200 dark:hover:bg-purple-300',
+      pink: 'text-pink-500 dark:text-pink-600 hover:bg-pink-200 dark:hover:bg-pink-300',
+    },
+  },
 });
 
 /**
  * Generated class definition for `BadgeComponent`
  */
-export type BadgeClass = FlowbiteClass;
+export interface BadgeClass extends FlowbiteClass {
+  closeButtonClass: string;
+}

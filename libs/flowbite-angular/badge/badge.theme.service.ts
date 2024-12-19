@@ -41,6 +41,7 @@ export class BadgeThemeService implements FlowbiteThemeService<BadgeProperties> 
         theme.root.isIconOnly[properties.isIconOnly],
         theme.root.link[properties.link ? 'enabled' : 'disabled']
       ),
+      closeButtonClass: twMerge(theme.closeButton.base, theme.closeButton.color[properties.color]),
     };
 
     return output;
