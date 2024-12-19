@@ -19,7 +19,6 @@ import {
   input,
   makeEnvironmentProviders,
   model,
-  output,
   ViewEncapsulation,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -230,8 +229,6 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * @default Pagination navigation
    */
   readonly ariaLabel = input('Pagination navigation');
-
-  readonly pageChange = output<number>();
 
   /**
    * Value of the first visible page
