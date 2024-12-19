@@ -39,7 +39,7 @@
         "npm": true,
         "changelog": true,
         "branches": [
-          "main",
+          "release",
           {
             "name": "beta",
             "prerelease": true
