@@ -177,23 +177,23 @@ export class ModalComponent extends BaseComponent<ModalClass> {
   }
   //#endregion
 
-  open() {
+  public open(): void {
     this.isOpen.set(true);
     this.changeBackdrop();
   }
 
-  close() {
+  public close(): void {
     this.isOpen.set(false);
     this.changeBackdrop();
   }
 
-  toggle() {
+  public toggle(): void {
     this.isOpen.set(!this.isOpen());
     this.changeBackdrop();
   }
 
   // If isOpen changes, add or remove template
-  changeBackdrop() {
+  public changeBackdrop(): void {
     if (this.isOpen()) {
       this.createTemplate();
     } else {
@@ -201,7 +201,19 @@ export class ModalComponent extends BaseComponent<ModalClass> {
     }
   }
 
-  private createTemplate() {
+  protected onKeydownHandler(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.close();
+    }
+  }
+
+  protected onBackdropClick(event: MouseEvent): void {
+    if (event.target == event.currentTarget && this.isDismissable()) {
+      this.close();
+    }
+  }
+
+  private createTemplate(): void {
     if (this.embeddedView) {
       this.destroyTemplate();
     }
@@ -209,19 +221,7 @@ export class ModalComponent extends BaseComponent<ModalClass> {
     this.embeddedView = this.viewContainer.createEmbeddedView(this.template());
   }
 
-  private destroyTemplate() {
+  private destroyTemplate(): void {
     this.embeddedView?.destroy();
-  }
-
-  onKeydownHandler(event: KeyboardEvent) {
-    if (event.key === 'Escape') {
-      this.close();
-    }
-  }
-
-  onBackdropClick(event: MouseEvent) {
-    if (event.target == event.currentTarget && this.isDismissable()) {
-      this.close();
-    }
   }
 }
