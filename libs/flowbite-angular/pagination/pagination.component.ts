@@ -238,8 +238,8 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
       return 1;
     }
 
-    if (this.currentPage() > this.maxPages() - Math.floor(this.tabs() / 2)) {
-      return this.maxPages() - this.tabs() + 1;
+    if (this.currentPage() > this.maxPages() - Math.ceil(this.tabs() / 2)) {
+      return this.maxPages() - this.visiblePagesCount() + 1;
     }
 
     return this.currentPage() - Math.floor(this.tabs() / 2);
@@ -257,9 +257,12 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    */
   readonly visiblePages = computed(() => {
     const pages: number[] = [];
-    const visibleTabs = Math.min(this.tabs(), this.maxPages());
 
-    for (let i = this.firstPageToShow(); i < this.firstPageToShow() + visibleTabs; i++) {
+    for (
+      let i = this.firstPageToShow();
+      i < this.firstPageToShow() + this.visiblePagesCount();
+      i++
+    ) {
       pages.push(i);
     }
 
@@ -274,6 +277,13 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    */
   readonly visibleCurrentPage = computed(() => {
     return Math.min(this.currentPage(), this.maxPages());
+  });
+
+  /**
+   * Value of how many page tabs to display
+   */
+  readonly visiblePagesCount = computed(() => {
+    return Math.min(this.tabs(), this.maxPages());
   });
 
   /**
