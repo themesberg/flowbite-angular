@@ -42,6 +42,30 @@ export const FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE = new InjectionToken<
   TemplateRef<unknown> | undefined
 >('FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE');
 
+export const FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE = new InjectionToken<number>(
+  'FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE = new InjectionToken<number>(
+  'FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE'
+);
+
+export const FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE = new InjectionToken<
+  keyof PaginationNavigation
+>('FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE');
+
+export const FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE = new InjectionToken<keyof PaginationSizes>(
+  'FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE'
+);
+
 export const paginationDefaultValueProvider = makeEnvironmentProviders([
   {
     provide: FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE,
@@ -54,6 +78,30 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
   {
     provide: FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE,
     useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE,
+    useValue: 5,
+  },
+  {
+    provide: FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE,
+    useValue: 25,
+  },
+  {
+    provide: FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE,
+    useValue: true,
+  },
+  {
+    provide: FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE,
+    useValue: true,
+  },
+  {
+    provide: FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE,
+    useValue: 'icon',
+  },
+  {
+    provide: FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE,
+    useValue: 'md',
   },
 ]);
 
@@ -258,37 +306,39 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    *
    * @default 5
    */
-  readonly tabs = input(5);
+  readonly tabs = input(inject(FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE));
   /**
    * Value of how many items are in a tab
    *
    * @default 25
    */
-  readonly pageSize = input(25);
+  readonly pageSize = input(inject(FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE));
   /**
    * Whether to show or hide previous and next buttons
    *
    * @default true
    */
-  readonly prevNext = input(true);
+  readonly prevNext = input(inject(FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE));
   /**
    * Whether to show or hide first and last buttons
    *
    * @default true
    */
-  readonly firstLast = input(true);
+  readonly firstLast = input(inject(FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE));
   /**
    * Value of the navigation button's type
    *
    * @default icon
    */
-  readonly navigation = input<keyof PaginationNavigation>('icon');
+  readonly navigation = input<keyof PaginationNavigation>(
+    inject(FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE)
+  );
   /**
    * Value of the component's size
    *
    * @default md
    */
-  readonly size = input<keyof PaginationSizes>('md');
+  readonly size = input<keyof PaginationSizes>(inject(FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE));
   /**
    * Value of the next icon
    *
