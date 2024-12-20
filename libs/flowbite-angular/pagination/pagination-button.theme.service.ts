@@ -34,7 +34,11 @@ export class PaginationButtonThemeService
     const theme: PaginationButtonTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: PaginationButtonClass = {
-      rootClass: twMerge(theme.root.base, theme.root.active[properties.active]),
+      rootClass: twMerge(
+        theme.root.base,
+        theme.root.active[properties.active],
+        theme.root.size[properties.size]
+      ),
     };
 
     return output;

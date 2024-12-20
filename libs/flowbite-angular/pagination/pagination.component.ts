@@ -2,14 +2,21 @@ import {
   FLOWBITE_PAGINATION_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE,
   PaginationButtonDirective,
 } from './pagination-button.directive';
-import type { PaginationClass, PaginationNavigation, PaginationTheme } from './pagination.theme';
+import type {
+  PaginationClass,
+  PaginationNavigation,
+  PaginationSizes,
+  PaginationTheme,
+} from './pagination.theme';
 import { PaginationThemeService } from './pagination.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
-import { CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
+import { CHEVRON_DOUBLE_RIGHT_SVG_ICON, CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
 
+import { NgTemplateOutlet } from '@angular/common';
+import type { TemplateRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -27,17 +34,33 @@ export const FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken
   DeepPartial<PaginationTheme>
 >('FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE');
 
+export const FLOWBITE_PAGINATION_NEXT_ICON_DEFAULT_VALUE = new InjectionToken<
+  TemplateRef<unknown> | undefined
+>('FLOWBITE_PAGINATION_NEXT_ICON_DEFAULT_VALUE');
+
+export const FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE = new InjectionToken<
+  TemplateRef<unknown> | undefined
+>('FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE');
+
 export const paginationDefaultValueProvider = makeEnvironmentProviders([
   {
     provide: FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE,
     useValue: {},
+  },
+  {
+    provide: FLOWBITE_PAGINATION_NEXT_ICON_DEFAULT_VALUE,
+    useValue: undefined,
+  },
+  {
+    provide: FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE,
+    useValue: undefined,
   },
 ]);
 
 @Component({
   selector: 'flowbite-pagination',
   standalone: true,
-  imports: [PaginationButtonDirective, IconComponent],
+  imports: [PaginationButtonDirective, IconComponent, NgTemplateOutlet],
   template: `<nav
     [class]="contentClasses().navigationClass"
     [ariaLabel]="ariaLabel()">
@@ -46,26 +69,35 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         type="button"
         (click)="firstPage()"
         [customStyle]="buttonCustomStyle()"
+        [size]="size()"
         flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5 rotate-180" />
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5 rotate-180" />
+            @if (lastIcon()) {
+              <div class="rotate-180">
+                <ng-container [ngTemplateOutlet]="lastIcon()!" />
+              </div>
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-double-right"
+                [class]="contentClasses().iconClass"
+                class="rotate-180" />
+            }
           }
           @case ('text') {
             <span>First</span>
           }
           @case ('both') {
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5 rotate-180" />
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5 rotate-180" />
+            @if (lastIcon()) {
+              <div class="rotate-180">
+                <ng-container [ngTemplateOutlet]="lastIcon()!" />
+              </div>
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-double-right"
+                [class]="contentClasses().iconClass"
+                class="rotate-180" />
+            }
             <span>First</span>
           }
         }
@@ -77,20 +109,35 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         type="button"
         (click)="previousPage()"
         [customStyle]="buttonCustomStyle()"
+        [size]="size()"
         flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5 rotate-180" />
+            @if (nextIcon()) {
+              <div class="rotate-180">
+                <ng-container [ngTemplateOutlet]="nextIcon()!" />
+              </div>
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-right"
+                [class]="contentClasses().iconClass"
+                class="rotate-180" />
+            }
           }
           @case ('text') {
             <span>Previous</span>
           }
           @case ('both') {
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5 rotate-180" />
+            @if (nextIcon()) {
+              <div class="rotate-180">
+                <ng-container [ngTemplateOutlet]="nextIcon()!" />
+              </div>
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-right"
+                [class]="contentClasses().iconClass"
+                class="rotate-180" />
+            }
             <span>Previous</span>
           }
         }
@@ -102,6 +149,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         type="button"
         (click)="changePage(page)"
         [customStyle]="buttonCustomStyle()"
+        [size]="size()"
         flowbitePaginationButton
         [active]="page === currentPage()">
         {{ page }}
@@ -113,21 +161,30 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         type="button"
         (click)="nextPage()"
         [customStyle]="buttonCustomStyle()"
+        [size]="size()"
         flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5" />
+            @if (nextIcon()) {
+              <ng-container [ngTemplateOutlet]="nextIcon()!" />
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-right"
+                [class]="contentClasses().iconClass" />
+            }
           }
           @case ('text') {
             <span>Next</span>
           }
           @case ('both') {
             <span>Next</span>
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5" />
+            @if (nextIcon()) {
+              <ng-container [ngTemplateOutlet]="nextIcon()!" />
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-right"
+                [class]="contentClasses().iconClass" />
+            }
           }
         }
       </button>
@@ -138,27 +195,30 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         type="button"
         (click)="lastPage()"
         [customStyle]="buttonCustomStyle()"
+        [size]="size()"
         flowbitePaginationButton>
         @switch (navigation()) {
           @case ('icon') {
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5" />
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5" />
+            @if (lastIcon()) {
+              <ng-container [ngTemplateOutlet]="lastIcon()!" />
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-double-right"
+                [class]="contentClasses().iconClass" />
+            }
           }
           @case ('text') {
             <span>Last</span>
           }
           @case ('both') {
             <span>Last</span>
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5" />
-            <flowbite-icon
-              svgIcon="flowbite-angular:chevron-right"
-              class="w-5 h-5" />
+            @if (lastIcon()) {
+              <ng-container [ngTemplateOutlet]="lastIcon()!" />
+            } @else {
+              <flowbite-icon
+                svgIcon="flowbite-angular:chevron-double-right"
+                [class]="contentClasses().iconClass" />
+            }
           }
         }
       </button>
@@ -223,6 +283,24 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * @default icon
    */
   readonly navigation = input<keyof PaginationNavigation>('icon');
+  /**
+   * Value of the component's size
+   *
+   * @default md
+   */
+  readonly size = input<keyof PaginationSizes>('md');
+  /**
+   * Value of the next icon
+   *
+   * @default undefined
+   */
+  readonly nextIcon = input(inject(FLOWBITE_PAGINATION_NEXT_ICON_DEFAULT_VALUE));
+  /**
+   * Value of the last icon
+   *
+   * @default undefined
+   */
+  readonly lastIcon = input(inject(FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE));
   /**
    * Value of the aria-label
    *
@@ -299,6 +377,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   public override fetchClass(): PaginationClass {
     return this.themeService.getClasses({
       customStyle: this.customStyle(),
+      size: this.size(),
     });
   }
 
@@ -307,6 +386,12 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
       'flowbite-angular',
       'chevron-right',
       this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_RIGHT_SVG_ICON)
+    );
+
+    this.iconRegistry.addRawSvgIconInNamepsace(
+      'flowbite-angular',
+      'chevron-double-right',
+      this.domSanitizer.bypassSecurityTrustHtml(CHEVRON_DOUBLE_RIGHT_SVG_ICON)
     );
   }
   //#endregion

@@ -1,5 +1,6 @@
 import type { PaginationButtonClass, PaginationButtonTheme } from './pagination-button.theme';
 import { PaginationButtonThemeService } from './pagination-button.theme.service';
+import type { PaginationSizes } from './pagination.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
@@ -39,6 +40,12 @@ export class PaginationButtonDirective extends BaseComponent<PaginationButtonCla
    */
   public readonly active = input(false);
   /**
+   * Size of the component
+   *
+   * @default md
+   */
+  public readonly size = input.required<keyof PaginationSizes>();
+  /**
    * Set the custom style for this button
    */
   public customStyle = model(inject(FLOWBITE_PAGINATION_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE));
@@ -47,6 +54,7 @@ export class PaginationButtonDirective extends BaseComponent<PaginationButtonCla
   public override fetchClass(): PaginationButtonClass {
     return this.themeService.getClasses({
       active: booleanToFlowbiteBoolean(this.active()),
+      size: this.size(),
       customStyle: this.customStyle(),
     });
   }

@@ -29,7 +29,8 @@ export class PaginationThemeService implements FlowbiteThemeService<PaginationPr
 
     const output: PaginationClass = {
       rootClass: twMerge(theme.root.base),
-      navigationClass: twMerge(theme.navigation.base),
+      navigationClass: twMerge(theme.navigation.base, theme.navigation.size[properties.size]),
+      iconClass: twMerge(theme.icon.size[properties.size]),
     };
 
     return output;

@@ -1,3 +1,5 @@
+import type { PaginationSizes } from './pagination.theme';
+
 import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
@@ -6,6 +8,7 @@ import { createTheme } from 'flowbite-angular/utils';
  */
 export interface PaginationButtonProperties {
   active: keyof FlowbiteBoolean;
+  size: keyof PaginationSizes;
   customStyle: DeepPartial<PaginationButtonTheme>;
 }
 
@@ -16,6 +19,7 @@ export interface PaginationButtonTheme {
   root: {
     base: string;
     active: FlowbiteBoolean;
+    size: PaginationSizes;
   };
 }
 
@@ -29,6 +33,10 @@ export const paginationButtonTheme: PaginationButtonTheme = createTheme({
       enabled:
         'border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white',
       disabled: '',
+    },
+    size: {
+      sm: 'px-3 h-8 text-sm',
+      md: 'px-4 h-10 text-base',
     },
   },
 });
