@@ -7,7 +7,7 @@ import { ModalThemeService } from './modal.theme.service';
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 
-import type { EmbeddedViewRef, OnDestroy } from '@angular/core';
+import type { EmbeddedViewRef } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -21,8 +21,8 @@ import {
   ViewContainerRef,
   ViewEncapsulation,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationStart, Router } from '@angular/router';
-import { filter, Subject, takeUntil } from 'rxjs';
 
 export const FLOWBITE_MODAL_SIZE_DEFAULT_VALUE = new InjectionToken<keyof ModalSizes>(
   'FLOWBITE_MODAL_SIZE_DEFAULT_VALUE'
@@ -95,9 +95,7 @@ export const modalDefaultValueProvider = makeEnvironmentProviders([
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ModalComponent extends BaseComponent<ModalClass> implements OnDestroy {
-  private readonly destroyed = new Subject<void>();
-
+export class ModalComponent extends BaseComponent<ModalClass> {
   /**
    * Service injected used to generate class
    */
@@ -155,6 +153,19 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
   public customStyle = model(inject(FLOWBITE_MODAL_CUSTOM_STYLE_DEFAULT_VALUE));
   //#endregion
 
+  //#region constructor
+  constructor() {
+    super();
+
+    // close modal if it's not destroyed on route change
+    this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
+      if (this.isOpen() && event instanceof NavigationStart) {
+        this.close();
+      }
+    });
+  }
+  //#endregion
+
   //#region BaseComponent implementation
   public override fetchClass(): ModalClass {
     return this.themeService.getClasses({
@@ -164,41 +175,25 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
       customStyle: this.customStyle(),
     });
   }
-
-  public override init(): void {
-    // close modal if it's not destroyed on route change
-    this.router.events
-      .pipe(
-        takeUntil(this.destroyed),
-        filter(() => this.isOpen()),
-        filter((event) => event instanceof NavigationStart)
-      )
-      .subscribe(() => this.close());
-  }
   //#endregion
 
-  ngOnDestroy(): void {
-    this.destroyed.next();
-    this.destroyed.complete();
-  }
-
-  open() {
+  public open(): void {
     this.isOpen.set(true);
     this.changeBackdrop();
   }
 
-  close() {
+  public close(): void {
     this.isOpen.set(false);
     this.changeBackdrop();
   }
 
-  toggle() {
+  public toggle(): void {
     this.isOpen.set(!this.isOpen());
     this.changeBackdrop();
   }
 
   // If isOpen changes, add or remove template
-  changeBackdrop() {
+  public changeBackdrop(): void {
     if (this.isOpen()) {
       this.createTemplate();
     } else {
@@ -206,7 +201,19 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
     }
   }
 
-  private createTemplate() {
+  protected onKeydownHandler(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.close();
+    }
+  }
+
+  protected onBackdropClick(event: MouseEvent): void {
+    if (event.target == event.currentTarget && this.isDismissable()) {
+      this.close();
+    }
+  }
+
+  private createTemplate(): void {
     if (this.embeddedView) {
       this.destroyTemplate();
     }
@@ -214,19 +221,7 @@ export class ModalComponent extends BaseComponent<ModalClass> implements OnDestr
     this.embeddedView = this.viewContainer.createEmbeddedView(this.template());
   }
 
-  private destroyTemplate() {
+  private destroyTemplate(): void {
     this.embeddedView?.destroy();
-  }
-
-  onKeydownHandler(event: KeyboardEvent) {
-    if (event.key === 'Escape') {
-      this.close();
-    }
-  }
-
-  onBackdropClick(event: MouseEvent) {
-    if (event.target == event.currentTarget && this.isDismissable()) {
-      this.close();
-    }
   }
 }
