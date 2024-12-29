@@ -49,7 +49,7 @@ export const paginationTheme: PaginationTheme = createTheme({
     base: '',
   },
   navigation: {
-    base: 'inline-flex -space-x-px',
+    base: 'group inline-flex -space-x-px border-gray-300 dark:border-gray-700',
     size: {
       sm: 'text-sm',
       md: 'text-base',
