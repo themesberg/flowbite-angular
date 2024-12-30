@@ -2,6 +2,10 @@
 keyword: AlertPage
 ---
 
+{% import "../../shared/configuration-standard.md" as confStd %}
+
+{{ confStd.not_implements() }}
+
 ## Default alert
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}

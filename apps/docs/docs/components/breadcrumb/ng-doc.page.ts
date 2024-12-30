@@ -5,8 +5,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Show the location of the current page in a hierarchical structure using the Tailwind CSS breadcrumb components
- *
- * @status:alert BREAKING CHANGES
  */
 const breadcrumb: NgDocPage = {
   title: 'Breadcrumb',

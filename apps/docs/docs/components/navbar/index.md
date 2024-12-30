@@ -2,6 +2,10 @@
 keyword: NavbarPage
 ---
 
+{% import "../../shared/configuration-standard.md" as confStd %}
+
+{{ confStd.not_implements() }}
+
 ## Default navbar
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}

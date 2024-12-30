@@ -2,6 +2,10 @@
 keyword: BadgePage
 ---
 
+{% import "../../shared/configuration-standard.md" as confStd %}
+
+{{ confStd.not_implements() }}
+
 ## Default badge
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}

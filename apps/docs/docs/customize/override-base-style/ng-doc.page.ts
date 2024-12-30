@@ -4,8 +4,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Customize flowbite-angular's component style by override their default style.
- *
- * @status:info NEW
  */
 const OverrideBaseStyle: NgDocPage = {
   title: 'Override base style',

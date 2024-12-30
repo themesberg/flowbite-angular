@@ -4,8 +4,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Customize flowbite-angular's component input default value.
- *
- * @status:info NEW
  */
 const OverrideComponentDefaultValue: NgDocPage = {
   title: 'Override component default value',
