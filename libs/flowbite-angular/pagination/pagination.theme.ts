@@ -21,12 +21,12 @@ export interface PaginationSizes extends Pick<FlowbiteSizes, 'sm' | 'md'> {
  * Required properties for class generation of `PaginationComponent`
  */
 export interface PaginationProperties {
-  customStyle: DeepPartial<PaginationTheme>;
   size: keyof PaginationSizes;
+  customStyle: DeepPartial<PaginationTheme>;
 }
 
 /**
- * Theme definition for `NavbarComponent`
+ * Theme definition for `PaginationComponent`
  */
 export interface PaginationTheme {
   root: {

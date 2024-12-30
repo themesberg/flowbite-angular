@@ -31,6 +31,10 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+export const FLOWBITE_PAGINATION_CURRENT_PAGE_DEFAULT_VALUE = new InjectionToken<number>(
+  'FLOWBITE_PAGINATION_CURRENT_PAGE_DEFAULT_VALUE'
+);
+
 export const FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<PaginationTheme>
 >('FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE');
@@ -59,17 +63,17 @@ export const FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE = new InjectionToken<nu
   'FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE'
 );
 
-export const FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE = new InjectionToken<boolean>(
-  'FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE'
+export const FLOWBITE_PAGINATION_HAS_FIRST_LAST_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_PAGINATION_HAS_FIRST_LAST_DEFAULT_VALUE'
 );
 
-export const FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE = new InjectionToken<boolean>(
-  'FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE'
+export const FLOWBITE_PAGINATION_HAS_PREV_NEXT_DEFAULT_VALUE = new InjectionToken<boolean>(
+  'FLOWBITE_PAGINATION_HAS_PREV_NEXT_DEFAULT_VALUE'
 );
 
-export const FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE = new InjectionToken<
+export const FLOWBITE_PAGINATION_NAVIGATION_MODE_DEFAULT_VALUE = new InjectionToken<
   keyof PaginationNavigation
->('FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE');
+>('FLOWBITE_PAGINATION_NAVIGATION_MODE_DEFAULT_VALUE');
 
 export const FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE = new InjectionToken<keyof PaginationSizes>(
   'FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE'
@@ -80,6 +84,10 @@ export const FLOWBITE_PAGINATION_BUTTON_PROPERTIES_DEFAULT_VALUE = new Injection
 >('FLOWBITE_PAGINATION_BUTTON_PROPERTIES_DEFAULT_VALUE');
 
 export const paginationDefaultValueProvider = makeEnvironmentProviders([
+  {
+    provide: FLOWBITE_PAGINATION_CURRENT_PAGE_DEFAULT_VALUE,
+    useValue: 1,
+  },
   {
     provide: FLOWBITE_PAGINATION_CUSTOM_STYLE_DEFAULT_VALUE,
     useValue: {},
@@ -109,15 +117,15 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
     useValue: 25,
   },
   {
-    provide: FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE,
+    provide: FLOWBITE_PAGINATION_HAS_FIRST_LAST_DEFAULT_VALUE,
     useValue: true,
   },
   {
-    provide: FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE,
+    provide: FLOWBITE_PAGINATION_HAS_PREV_NEXT_DEFAULT_VALUE,
     useValue: true,
   },
   {
-    provide: FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE,
+    provide: FLOWBITE_PAGINATION_NAVIGATION_MODE_DEFAULT_VALUE,
     useValue: 'icon',
   },
   {
@@ -150,7 +158,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
   standalone: true,
   imports: [IconComponent, NgTemplateOutlet, ButtonComponent],
   template: `
-    @if (firstLast()) {
+    @if (hasFirstLast()) {
       <flowbite-button
         type="button"
         data-active="false"
@@ -159,7 +167,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         [fill]="buttonProperties().fill!"
         [size]="size()"
         [customStyle]="buttonProperties().customStyle!">
-        @if (['icon', 'both'].includes(navigation())) {
+        @if (['icon', 'both'].includes(navigationMode())) {
           @if (firstIcon()) {
             <ng-container [ngTemplateOutlet]="firstIcon()!" />
           } @else {
@@ -168,13 +176,13 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
               [class]="contentClasses().iconClass" />
           }
         }
-        @if (['text', 'both'].includes(navigation())) {
+        @if (['text', 'both'].includes(navigationMode())) {
           <span>First</span>
         }
       </flowbite-button>
     }
 
-    @if (prevNext()) {
+    @if (hasPrevNext()) {
       <flowbite-button
         type="button"
         data-active="false"
@@ -183,7 +191,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         [fill]="buttonProperties().fill!"
         [size]="size()"
         [customStyle]="buttonProperties().customStyle!">
-        @if (['icon', 'both'].includes(navigation())) {
+        @if (['icon', 'both'].includes(navigationMode())) {
           @if (previousIcon()) {
             <ng-container [ngTemplateOutlet]="previousIcon()!" />
           } @else {
@@ -192,7 +200,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
               [class]="contentClasses().iconClass" />
           }
         }
-        @if (['text', 'both'].includes(navigation())) {
+        @if (['text', 'both'].includes(navigationMode())) {
           <span>Previous</span>
         }
       </flowbite-button>
@@ -202,7 +210,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
       <flowbite-button
         type="button"
         [attr.data-active]="page === currentPage()"
-        (click)="changePage(page)"
+        (click)="goToPage(page)"
         [color]="buttonProperties().color!"
         [fill]="buttonProperties().fill!"
         [size]="size()"
@@ -211,7 +219,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
       </flowbite-button>
     }
 
-    @if (prevNext()) {
+    @if (hasPrevNext()) {
       <flowbite-button
         type="button"
         data-active="false"
@@ -220,10 +228,10 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         [fill]="buttonProperties().fill!"
         [size]="size()"
         [customStyle]="buttonProperties().customStyle!">
-        @if (['text', 'both'].includes(navigation())) {
+        @if (['text', 'both'].includes(navigationMode())) {
           <span>Next</span>
         }
-        @if (['icon', 'both'].includes(navigation())) {
+        @if (['icon', 'both'].includes(navigationMode())) {
           @if (lastIcon()) {
             <ng-container [ngTemplateOutlet]="lastIcon()!" />
           } @else {
@@ -235,7 +243,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
       </flowbite-button>
     }
 
-    @if (firstLast()) {
+    @if (hasFirstLast()) {
       <flowbite-button
         type="button"
         data-active="false"
@@ -244,10 +252,10 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         [fill]="buttonProperties().fill!"
         [size]="size()"
         [customStyle]="buttonProperties().customStyle!">
-        @if (['text', 'both'].includes(navigation())) {
+        @if (['text', 'both'].includes(navigationMode())) {
           <span>Last</span>
         }
-        @if (['icon', 'both'].includes(navigation())) {
+        @if (['icon', 'both'].includes(navigationMode())) {
           @if (lastIcon()) {
             <ng-container [ngTemplateOutlet]="lastIcon()!" />
           } @else {
@@ -277,17 +285,17 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   public readonly domSanitizer = inject(DomSanitizer);
 
   /**
-   * Value of the current page
-   *
-   * @required
-   */
-  public readonly currentPage = model.required<number>();
-  /**
    * Value of the total items
    *
    * @required
    */
   public readonly totalItems = model.required<number>();
+  /**
+   * Value of the current page
+   *
+   * @default 1
+   */
+  public readonly currentPage = model(inject(FLOWBITE_PAGINATION_CURRENT_PAGE_DEFAULT_VALUE));
   /**
    * Value of how many tabs are displayed
    *
@@ -305,19 +313,19 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    *
    * @default true
    */
-  public readonly prevNext = model(inject(FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE));
+  public readonly hasPrevNext = model(inject(FLOWBITE_PAGINATION_HAS_PREV_NEXT_DEFAULT_VALUE));
   /**
    * Whether to show or hide first and last buttons
    *
    * @default true
    */
-  public readonly firstLast = model(inject(FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE));
+  public readonly hasFirstLast = model(inject(FLOWBITE_PAGINATION_HAS_FIRST_LAST_DEFAULT_VALUE));
   /**
    * Value of the navigation button's type
    *
    * @default icon
    */
-  public readonly navigation = model(inject(FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE));
+  public readonly navigationMode = model(inject(FLOWBITE_PAGINATION_NAVIGATION_MODE_DEFAULT_VALUE));
   /**
    * Value of the component's size
    *
@@ -474,27 +482,27 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   //#endregion
 
   /**
-   * Sets the value of the `currentPage`
+   * Sets the value of the `currentPage` if it's between 1 and `maxPages`
    * @param page number of the active page
    */
-  public changePage(page: number) {
-    if (this.visibleCurrentPage() === page) return;
+  public goToPage(page: number) {
+    if (page < 1 || page > this.maxPages()) return;
     this.currentPage.set(page);
   }
 
   /**
-   * Decreases the value of `currentPage` if it's bigger than 1
+   * Decreases the value of `currentPage` if it's more than 1
    */
   public goToPreviousPage() {
-    if (this.visibleCurrentPage() === 1) return;
+    if (this.visibleCurrentPage() <= 1) return;
     this.currentPage.update((value) => value - 1);
   }
 
   /**
-   * Increases the value of `currentPage` if it's smaller than `maxPages`
+   * Increases the value of `currentPage` if it's less than `maxPages`
    */
   public goToNextPage() {
-    if (this.visibleCurrentPage() === this.maxPages()) return;
+    if (this.visibleCurrentPage() >= this.maxPages()) return;
     this.currentPage.update((value) => value + 1);
   }
 
@@ -502,7 +510,6 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * Sets the value of `currentPage` to 1
    */
   public goToFirstPage() {
-    if (this.currentPage() === 1) return;
     this.currentPage.set(1);
   }
 
@@ -510,7 +517,6 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * Sets the value of `currentPage` equal to `maxPages`
    */
   public goToLastPage() {
-    if (this.currentPage() === this.maxPages()) return;
     this.currentPage.set(this.maxPages());
   }
 }
