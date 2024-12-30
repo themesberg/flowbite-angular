@@ -1,4 +1,10 @@
-import type { DeepPartial, FlowbiteBoolean, FlowbiteClass, FlowbiteColors } from 'flowbite-angular';
+import type {
+  DeepPartial,
+  FlowbiteBoolean,
+  FlowbiteClass,
+  FlowbiteStandardColors,
+  StandardThemeInput,
+} from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
 //#region Component theme option
@@ -6,7 +12,7 @@ import { createTheme } from 'flowbite-angular/utils';
  * Available colors for `AlertComponent`
  */
 export type AlertColors = Pick<
-  FlowbiteColors,
+  FlowbiteStandardColors,
   'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'
 >;
 //#endregion
@@ -19,6 +25,7 @@ export interface AlertProperties {
   hasBorder: keyof FlowbiteBoolean;
   hasBorderAccent: keyof FlowbiteBoolean;
   customStyle: DeepPartial<AlertTheme>;
+  standardThemeConfig: StandardThemeInput;
 }
 
 /**
@@ -44,15 +51,42 @@ export const alertTheme: AlertTheme = createTheme({
   root: {
     base: 'flex flex-col gap-2 p-4 text-sm rounded-lg',
     color: {
-      primary:
-        'text-primary-800 dark:text-primary-400 bg-primary-50 dark:bg-gray-800 border-primary-300 dark:border-primary-800',
-      dark: 'text-gray-800 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600',
-      blue: 'text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-gray-800 border-blue-300 dark:border-blue-800',
-      red: 'text-red-800 dark:text-red-400 bg-red-100 dark:bg-gray-800 border-red-300 dark:border-red-800',
-      green:
-        'text-green-800 dark:text-green-400 bg-green-100 dark:bg-gray-800 border-green-300 dark:border-green-800',
-      yellow:
-        'text-yellow-800 dark:text-yellow-300 bg-yellow-100 dark:bg-gray-800 border-yellow-300 dark:border-yellow-800',
+      primary: {
+        base: {
+          light: 'text-primary-800 bg-primary-50 border-primary-300',
+          dark: 'dark:text-primary-400 dark:bg-gray-800 dark:border-primary-800',
+        },
+      },
+      dark: {
+        base: {
+          light: 'text-gray-800 bg-gray-100 border-gray-300',
+          dark: 'dark:text-gray-300 dark:bg-gray-800 dark:border-gray-600',
+        },
+      },
+      blue: {
+        base: {
+          light: 'text-blue-800 bg-blue-50 border-blue-300',
+          dark: 'dark:text-blue-400 dark:bg-gray-800 dark:border-blue-800',
+        },
+      },
+      red: {
+        base: {
+          light: 'text-red-800 bg-red-100 border-red-300',
+          dark: 'dark:text-red-400 dark:bg-gray-800 dark:border-red-800',
+        },
+      },
+      green: {
+        base: {
+          light: 'text-green-800 bg-green-100 border-green-300',
+          dark: 'dark:text-green-400 dark:bg-gray-800 dark:border-green-800',
+        },
+      },
+      yellow: {
+        base: {
+          light: 'text-yellow-800 bg-yellow-100  border-yellow-300',
+          dark: 'dark:text-yellow-300 dark:bg-gray-800 dark:border-yellow-800',
+        },
+      },
     },
     hasBorder: {
       enabled: 'border',
@@ -66,13 +100,66 @@ export const alertTheme: AlertTheme = createTheme({
   closeButton: {
     base: '-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-2',
     color: {
-      primary:
-        'text-primary-500 dark:text-primary-600 hover:bg-primary-200 dark:hover:bg-primary-300',
-      dark: 'text-gray-500 dark:text-gray-600 hover:bg-gray-200 dark:hover:bg-gray-300',
-      blue: 'text-blue-500 dark:text-blue-600 hover:bg-blue-200 dark:hover:bg-blue-300',
-      red: 'text-red-500 dark:text-red-600 hover:bg-red-200 dark:hover:bg-red-300',
-      green: 'text-green-500 dark:text-green-600 hover:bg-green-200 dark:hover:bg-green-300',
-      yellow: 'text-yellow-500 dark:text-yellow-600 hover:bg-yellow-200 dark:hover:bg-yellow-300',
+      primary: {
+        base: {
+          light: 'text-primary-500',
+          dark: 'dark:text-primary-600',
+        },
+        hover: {
+          light: 'hover:bg-primary-200',
+          dark: 'hover:dark:bg-primary-300',
+        },
+      },
+      dark: {
+        base: {
+          light: 'text-gray-500',
+          dark: 'dark:text-gray-600',
+        },
+        hover: {
+          light: 'hover:bg-gray-200',
+          dark: 'hover:dark:bg-gray-300',
+        },
+      },
+      blue: {
+        base: {
+          light: 'text-blue-500',
+          dark: 'dark:text-blue-600',
+        },
+        hover: {
+          light: 'hover:bg-blue-200',
+          dark: 'hover:dark:bg-blue-300',
+        },
+      },
+      red: {
+        base: {
+          light: 'text-red-500',
+          dark: 'dark:text-red-600',
+        },
+        hover: {
+          light: 'hover:bg-red-200',
+          dark: 'hover:dark:bg-red-300',
+        },
+      },
+      green: {
+        base: {
+          light: 'text-green-500',
+          dark: 'dark:text-green-600',
+        },
+        hover: {
+          light: 'hover:bg-green-200',
+          dark: 'hover:dark:bg-green-300',
+        },
+      },
+      yellow: {
+        base: {
+          light: 'text-yellow-500',
+          dark: 'dark:text-yellow-600',
+        },
+        hover: {
+          light: 'hover:bg-yellow-200',
+          dark: 'hover:dark:bg-yellow-300',
+        },
+      },
     },
   },
 });

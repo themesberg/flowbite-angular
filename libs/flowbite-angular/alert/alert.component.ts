@@ -2,7 +2,7 @@ import type { AlertClass, AlertColors, AlertTheme } from './alert.theme';
 import { AlertThemeService } from './alert.theme.service';
 
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
-import type { DeepPartial } from 'flowbite-angular';
+import type { DeepPartial, StandardThemeInput } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CLOSE_SVG_ICON } from 'flowbite-angular/utils';
 
@@ -35,6 +35,9 @@ export const FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE = new InjectionToken
 export const FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<AlertTheme>
 >('FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE');
+
+export const FLOWBITE_ALERT_STANDARD_THEME_CONFIG_DEFAULT_VALUE =
+  new InjectionToken<StandardThemeInput>('FLOWBITE_ALERT_STANDARD_THEME_CONFIG_DEFAULT_VALUE');
 
 export const FLOWBITE_ALERT_ICON_DEFAULT_VALUE = new InjectionToken<TemplateRef<unknown> | null>(
   'FLOWBITE_ALERT_ICON_DEFAULT_VALUE'
@@ -77,6 +80,10 @@ export const alertDefaultValueProvider = makeEnvironmentProviders([
   {
     provide: FLOWBITE_ALERT_ADDITIONAL_CONTENT_DEFAULT_VALUE,
     useValue: null,
+  },
+  {
+    provide: FLOWBITE_ALERT_STANDARD_THEME_CONFIG_DEFAULT_VALUE,
+    useValue: { hasDark: true, hasHover: true, hasFocus: false, hasDisabled: false },
   },
   {
     provide: FLOWBITE_ALERT_IS_DISMISSABLE_DEFAULT_VALUE,
@@ -164,8 +171,17 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
   public hasBorderAccent = model(inject(FLOWBITE_ALERT_HAS_BORDER_ACCENT_DEFAULT_VALUE));
   /**
    * Set the custom style for this alert
+   *
+   * @default {}
    */
   public customStyle = model(inject(FLOWBITE_ALERT_CUSTOM_STYLE_DEFAULT_VALUE));
+  /**
+   * Set the standard theme configuration for this alert
+   *
+   * @default
+   * { hasDark: true, hasHover: true, hasFocus: false, hasDisabled: false }
+   */
+  public standardThemeConfig = model(inject(FLOWBITE_ALERT_STANDARD_THEME_CONFIG_DEFAULT_VALUE));
   /**
    * Set the custom icon
    *
@@ -199,6 +215,7 @@ export class AlertComponent extends BaseComponent<AlertClass> implements OnInit 
       hasBorder: booleanToFlowbiteBoolean(this.hasBorder()),
       hasBorderAccent: booleanToFlowbiteBoolean(this.hasBorderAccent()),
       customStyle: this.customStyle(),
+      standardThemeConfig: this.standardThemeConfig(),
     });
   }
 

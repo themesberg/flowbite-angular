@@ -81,4 +81,6 @@ In every component's page of the documentation, you will see an indicator.
 
 {{ confStd.implements() }}
 
+{{ confStd.partial_implements() }}
+
 {{ confStd.not_implements() }}
