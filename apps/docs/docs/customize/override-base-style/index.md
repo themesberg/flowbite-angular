@@ -26,10 +26,9 @@ by setting, after <span class="text-primary-500">initFlowbite()</span>, some new
 <span class="text-primary-500">InjectionToken</span> are named as follow :
 
 <span class="text-xs md:text-base">
-
-- COMPONENT : FLOWBITE\_<span class="text-primary-500">COMPONENT_NAME</span>\_THEME_TOKEN
-- COMPONENT : FLOWBITE\_<span class="text-primary-500">COMPONENT_NAME</span>\_THEME_TOKEN
-
+  <ul class="list-disc list-outside">
+    <li>COMPONENT : FLOWBITE\_<span class="text-primary-500">COMPONENT_NAME</span>\_THEME_TOKEN</li>
+  </ul>
 </span>
 
 Each <span class="text-primary-500">InjectionToken</span> are linked to a
@@ -37,10 +36,10 @@ Each <span class="text-primary-500">InjectionToken</span> are linked to a
 value</span> values are named as follow :
 
 <span class="text-xs md:text-base">
-
-- COMPONENT : <span class="text-primary-500">componentName</span>Theme
-- DIRECTIVE : <span class="text-primary-500">directiveName</span>DirectiveTheme
-
+  <ul class="list-disc list-outside">
+    <li>COMPONENT : <span class="text-primary-500">componentName</span>Theme</li>
+    <li>DIRECTIVE : <span class="text-primary-500">directiveName</span>DirectiveTheme</li>
+  </ul>
 </span>
 
 In order to combine both base style and component (or directive) parameter, flowbite-angular uses
@@ -48,10 +47,10 @@ In order to combine both base style and component (or directive) parameter, flow
 can be override. Each <span class="text-primary-500">ThemeServices</span> are named as follow :
 
 <span class="text-xs md:text-base">
-
-- COMPONENT : <span class="text-primary-500">ComponentName</span>ThemeService
-- DIRECTIVE : <span class="text-primary-500">DirectiveName</span>DirectiveThemeService
-
+  <ul class="list-disc list-outside">
+    <li>COMPONENT : <span class="text-primary-500">ComponentName</span>ThemeService</li>
+    <li>DIRECTIVE : <span class="text-primary-500">DirectiveName</span>DirectiveThemeService</li>
+  </ul>
 </span>
 
 ### Examples
