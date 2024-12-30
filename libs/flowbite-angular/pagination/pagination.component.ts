@@ -8,8 +8,7 @@ import { PaginationThemeService } from './pagination.theme.service';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { BaseComponent } from 'flowbite-angular';
-import type { ButtonTheme } from 'flowbite-angular/button';
-import { ButtonComponent, type ButtonProperties } from 'flowbite-angular/button';
+import { ButtonComponent, type ButtonProperties, type ButtonTheme } from 'flowbite-angular/button';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOUBLE_RIGHT_SVG_ICON, CHEVRON_RIGHT_SVG_ICON } from 'flowbite-angular/utils';
 
@@ -44,8 +43,8 @@ export const FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE = new InjectionToken<number>
   'FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE'
 );
 
-export const FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE = new InjectionToken<number>(
-  'FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE'
+export const FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE = new InjectionToken<number>(
+  'FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE'
 );
 
 export const FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE = new InjectionToken<boolean>(
@@ -86,7 +85,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
     useValue: 5,
   },
   {
-    provide: FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE,
+    provide: FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE,
     useValue: 25,
   },
   {
@@ -138,7 +137,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         <flowbite-button
           type="button"
           data-active="false"
-          (click)="firstPage()"
+          (click)="goToFirstPage()"
           [color]="buttonProperties().color!"
           [fill]="buttonProperties().fill!"
           [size]="size()"
@@ -163,7 +162,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         <flowbite-button
           type="button"
           data-active="false"
-          (click)="previousPage()"
+          (click)="goToPreviousPage()"
           [color]="buttonProperties().color!"
           [fill]="buttonProperties().fill!"
           [size]="size()"
@@ -201,7 +200,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         <flowbite-button
           type="button"
           data-active="false"
-          (click)="nextPage()"
+          (click)="goToNextPage()"
           [color]="buttonProperties().color!"
           [fill]="buttonProperties().fill!"
           [size]="size()"
@@ -225,7 +224,7 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         <flowbite-button
           type="button"
           data-active="false"
-          (click)="lastPage()"
+          (click)="goToLastPage()"
           [color]="buttonProperties().color!"
           [fill]="buttonProperties().fill!"
           [size]="size()"
@@ -286,7 +285,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    *
    * @default 25
    */
-  readonly pageSize = input(inject(FLOWBITE_PAGINATION_PAGESIZE_DEFAULT_VALUE));
+  readonly pageSize = input(inject(FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE));
   /**
    * Whether to show or hide previous and next buttons
    *
@@ -375,14 +374,14 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   /**
    * Value of the maximum pages calculated from `totalItems`
    */
-  readonly maxPages = computed(() => {
+  public readonly maxPages = computed(() => {
     return Math.max(Math.ceil(this.totalItems() / this.pageSize()), 1);
   });
 
   /**
    * Array of the visible page tabs
    */
-  readonly visiblePages = computed(() => {
+  public readonly visiblePages = computed(() => {
     const pages: number[] = [];
 
     for (
@@ -402,14 +401,14 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * If the given `currentPage` is bigger than the `maxPages`,
    * the last page will be the active one
    */
-  readonly visibleCurrentPage = computed(() => {
+  public readonly visibleCurrentPage = computed(() => {
     return Math.min(this.currentPage(), this.maxPages());
   });
 
   /**
    * Value of how many page tabs to display
    */
-  readonly visiblePagesCount = computed(() => {
+  public readonly visiblePagesCount = computed(() => {
     return Math.min(this.tabs(), this.maxPages());
   });
 
@@ -440,7 +439,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * Sets the value of the `currentPage`
    * @param page number of the active page
    */
-  changePage(page: number) {
+  public changePage(page: number) {
     if (this.visibleCurrentPage() === page) return;
     this.currentPage.set(page);
   }
@@ -448,7 +447,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   /**
    * Decreases the value of `currentPage` if it's bigger than 1
    */
-  previousPage() {
+  public goToPreviousPage() {
     if (this.visibleCurrentPage() === 1) return;
     this.currentPage.update((value) => value - 1);
   }
@@ -456,7 +455,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   /**
    * Increases the value of `currentPage` if it's smaller than `maxPages`
    */
-  nextPage() {
+  public goToNextPage() {
     if (this.visibleCurrentPage() === this.maxPages()) return;
     this.currentPage.update((value) => value + 1);
   }
@@ -464,7 +463,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   /**
    * Sets the value of `currentPage` to 1
    */
-  firstPage() {
+  public goToFirstPage() {
     if (this.currentPage() === 1) return;
     this.currentPage.set(1);
   }
@@ -472,7 +471,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   /**
    * Sets the value of `currentPage` equal to `maxPages`
    */
-  lastPage() {
+  public goToLastPage() {
     if (this.currentPage() === this.maxPages()) return;
     this.currentPage.set(this.maxPages());
   }
