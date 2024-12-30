@@ -220,6 +220,9 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         [fill]="buttonProperties().fill!"
         [size]="size()"
         [customStyle]="buttonProperties().customStyle!">
+        @if (['text', 'both'].includes(navigation())) {
+          <span>Next</span>
+        }
         @if (['icon', 'both'].includes(navigation())) {
           @if (lastIcon()) {
             <ng-container [ngTemplateOutlet]="lastIcon()!" />
@@ -228,9 +231,6 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
               svgIcon="flowbite-angular:chevron-right"
               [class]="contentClasses().iconClass" />
           }
-        }
-        @if (['text', 'both'].includes(navigation())) {
-          <span>Next</span>
         }
       </flowbite-button>
     }
@@ -244,6 +244,9 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
         [fill]="buttonProperties().fill!"
         [size]="size()"
         [customStyle]="buttonProperties().customStyle!">
+        @if (['text', 'both'].includes(navigation())) {
+          <span>Last</span>
+        }
         @if (['icon', 'both'].includes(navigation())) {
           @if (lastIcon()) {
             <ng-container [ngTemplateOutlet]="lastIcon()!" />
@@ -252,9 +255,6 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
               svgIcon="flowbite-angular:chevron-double-right"
               [class]="contentClasses().iconClass" />
           }
-        }
-        @if (['text', 'both'].includes(navigation())) {
-          <span>Last</span>
         }
       </flowbite-button>
     }
