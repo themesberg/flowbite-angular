@@ -10,8 +10,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Show contextual information to your users using alert elements based on Tailwind CSS
- *
- * @status:info UPDATE
  */
 const Accordion: NgDocPage = {
   title: 'Alert',
