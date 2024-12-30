@@ -9,4 +9,10 @@ export type { FlowbiteTheme } from './flowbite.themes';
 export type { Combination } from './flowbite.combination';
 export type { DeepPartial } from './flowbite.deep-partial';
 export type { RouterLinkParameter } from './flowbite.router-link-parameter';
+export type { StandardThemeConfiguration } from './flowbite.standard-theme-configuration';
+export type { StandardThemeInput } from './flowbite.standard-theme-input';
+export {
+  allFalseStandardThemeInput,
+  allTrueStandardThemeInput,
+} from './flowbite.standard-theme-input';
 export * from './colors';
