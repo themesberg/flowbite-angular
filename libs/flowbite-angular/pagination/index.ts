@@ -17,18 +17,3 @@ export {
   PaginationThemeService,
   FLOWBITE_PAGINATION_THEME_TOKEN,
 } from './pagination.theme.service';
-
-export {
-  paginationButtonDefaultValueProvider,
-  FLOWBITE_PAGINATION_BUTTON_CUSTOM_STYLE_DEFAULT_VALUE,
-} from './pagination-button.directive';
-export type {
-  PaginationButtonProperties,
-  PaginationButtonClass,
-  PaginationButtonTheme,
-} from './pagination-button.theme';
-export { paginationButtonTheme } from './pagination-button.theme';
-export {
-  PaginationButtonThemeService,
-  FLOWBITE_PAGINATION_BUTTON_THEME_TOKEN,
-} from './pagination-button.theme.service';
