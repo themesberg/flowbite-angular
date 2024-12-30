@@ -129,120 +129,116 @@ export const paginationDefaultValueProvider = makeEnvironmentProviders([
   standalone: true,
   imports: [IconComponent, NgTemplateOutlet, ButtonComponent],
   template: `
-    <nav
-      [class]="contentClasses().navigationClass"
-      [ariaLabel]="ariaLabel()">
-      @if (firstLast()) {
-        <flowbite-button
-          type="button"
-          data-active="false"
-          (click)="goToFirstPage()"
-          [color]="buttonProperties().color!"
-          [fill]="buttonProperties().fill!"
-          [size]="size()"
-          [customStyle]="buttonProperties().customStyle!">
-          @if (['icon', 'both'].includes(navigation())) {
-            @if (lastIcon()) {
-              <ng-container [ngTemplateOutlet]="lastIcon()!" />
-            } @else {
-              <flowbite-icon
-                svgIcon="flowbite-angular:chevron-double-right"
-                [class]="contentClasses().iconClass"
-                class="rotate-180" />
-            }
+    @if (firstLast()) {
+      <flowbite-button
+        type="button"
+        data-active="false"
+        (click)="goToFirstPage()"
+        [color]="buttonProperties().color!"
+        [fill]="buttonProperties().fill!"
+        [size]="size()"
+        [customStyle]="buttonProperties().customStyle!">
+        @if (['icon', 'both'].includes(navigation())) {
+          @if (lastIcon()) {
+            <ng-container [ngTemplateOutlet]="lastIcon()!" />
+          } @else {
+            <flowbite-icon
+              svgIcon="flowbite-angular:chevron-double-right"
+              [class]="contentClasses().iconClass"
+              class="rotate-180" />
           }
-          @if (['text', 'both'].includes(navigation())) {
-            <span>First</span>
-          }
-        </flowbite-button>
-      }
+        }
+        @if (['text', 'both'].includes(navigation())) {
+          <span>First</span>
+        }
+      </flowbite-button>
+    }
 
-      @if (prevNext()) {
-        <flowbite-button
-          type="button"
-          data-active="false"
-          (click)="goToPreviousPage()"
-          [color]="buttonProperties().color!"
-          [fill]="buttonProperties().fill!"
-          [size]="size()"
-          [customStyle]="buttonProperties().customStyle!">
-          @if (['icon', 'both'].includes(navigation())) {
-            @if (lastIcon()) {
-              <ng-container [ngTemplateOutlet]="lastIcon()!" />
-            } @else {
-              <flowbite-icon
-                svgIcon="flowbite-angular:chevron-right"
-                [class]="contentClasses().iconClass"
-                class="rotate-180" />
-            }
+    @if (prevNext()) {
+      <flowbite-button
+        type="button"
+        data-active="false"
+        (click)="goToPreviousPage()"
+        [color]="buttonProperties().color!"
+        [fill]="buttonProperties().fill!"
+        [size]="size()"
+        [customStyle]="buttonProperties().customStyle!">
+        @if (['icon', 'both'].includes(navigation())) {
+          @if (lastIcon()) {
+            <ng-container [ngTemplateOutlet]="lastIcon()!" />
+          } @else {
+            <flowbite-icon
+              svgIcon="flowbite-angular:chevron-right"
+              [class]="contentClasses().iconClass"
+              class="rotate-180" />
           }
-          @if (['text', 'both'].includes(navigation())) {
-            <span>Previous</span>
-          }
-        </flowbite-button>
-      }
+        }
+        @if (['text', 'both'].includes(navigation())) {
+          <span>Previous</span>
+        }
+      </flowbite-button>
+    }
 
-      @for (page of visiblePages(); track $index) {
-        <flowbite-button
-          type="button"
-          [attr.data-active]="page === currentPage()"
-          (click)="changePage(page)"
-          [color]="buttonProperties().color!"
-          [fill]="buttonProperties().fill!"
-          [size]="size()"
-          [customStyle]="buttonProperties().customStyle!">
-          {{ page }}
-        </flowbite-button>
-      }
+    @for (page of visiblePages(); track $index) {
+      <flowbite-button
+        type="button"
+        [attr.data-active]="page === currentPage()"
+        (click)="changePage(page)"
+        [color]="buttonProperties().color!"
+        [fill]="buttonProperties().fill!"
+        [size]="size()"
+        [customStyle]="buttonProperties().customStyle!">
+        {{ page }}
+      </flowbite-button>
+    }
 
-      @if (prevNext()) {
-        <flowbite-button
-          type="button"
-          data-active="false"
-          (click)="goToNextPage()"
-          [color]="buttonProperties().color!"
-          [fill]="buttonProperties().fill!"
-          [size]="size()"
-          [customStyle]="buttonProperties().customStyle!">
-          @if (['icon', 'both'].includes(navigation())) {
-            @if (lastIcon()) {
-              <ng-container [ngTemplateOutlet]="lastIcon()!" />
-            } @else {
-              <flowbite-icon
-                svgIcon="flowbite-angular:chevron-right"
-                [class]="contentClasses().iconClass" />
-            }
+    @if (prevNext()) {
+      <flowbite-button
+        type="button"
+        data-active="false"
+        (click)="goToNextPage()"
+        [color]="buttonProperties().color!"
+        [fill]="buttonProperties().fill!"
+        [size]="size()"
+        [customStyle]="buttonProperties().customStyle!">
+        @if (['icon', 'both'].includes(navigation())) {
+          @if (lastIcon()) {
+            <ng-container [ngTemplateOutlet]="lastIcon()!" />
+          } @else {
+            <flowbite-icon
+              svgIcon="flowbite-angular:chevron-right"
+              [class]="contentClasses().iconClass" />
           }
-          @if (['text', 'both'].includes(navigation())) {
-            <span>Next</span>
-          }
-        </flowbite-button>
-      }
+        }
+        @if (['text', 'both'].includes(navigation())) {
+          <span>Next</span>
+        }
+      </flowbite-button>
+    }
 
-      @if (firstLast()) {
-        <flowbite-button
-          type="button"
-          data-active="false"
-          (click)="goToLastPage()"
-          [color]="buttonProperties().color!"
-          [fill]="buttonProperties().fill!"
-          [size]="size()"
-          [customStyle]="buttonProperties().customStyle!">
-          @if (['icon', 'both'].includes(navigation())) {
-            @if (lastIcon()) {
-              <ng-container [ngTemplateOutlet]="lastIcon()!" />
-            } @else {
-              <flowbite-icon
-                svgIcon="flowbite-angular:chevron-right"
-                [class]="contentClasses().iconClass" />
-            }
+    @if (firstLast()) {
+      <flowbite-button
+        type="button"
+        data-active="false"
+        (click)="goToLastPage()"
+        [color]="buttonProperties().color!"
+        [fill]="buttonProperties().fill!"
+        [size]="size()"
+        [customStyle]="buttonProperties().customStyle!">
+        @if (['icon', 'both'].includes(navigation())) {
+          @if (lastIcon()) {
+            <ng-container [ngTemplateOutlet]="lastIcon()!" />
+          } @else {
+            <flowbite-icon
+              svgIcon="flowbite-angular:chevron-right"
+              [class]="contentClasses().iconClass" />
           }
-          @if (['text', 'both'].includes(navigation())) {
-            <span>Last</span>
-          }
-        </flowbite-button>
-      }
-    </nav>
+        }
+        @if (['text', 'both'].includes(navigation())) {
+          <span>Last</span>
+        }
+      </flowbite-button>
+    }
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

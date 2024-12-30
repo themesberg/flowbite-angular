@@ -15,7 +15,7 @@ import { twMerge } from 'tailwind-merge';
  * ```
  */
 export const FLOWBITE_PAGINATION_THEME_TOKEN = new InjectionToken<PaginationTheme>(
-  'FLOWBITE_PAGINATION_THEME'
+  'FLOWBITE_PAGINATION_THEME_TOKEN'
 );
 
 @Injectable({
@@ -28,8 +28,7 @@ export class PaginationThemeService implements FlowbiteThemeService<PaginationPr
     const theme: PaginationTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: PaginationClass = {
-      rootClass: twMerge(theme.root.base),
-      navigationClass: twMerge(theme.navigation.base, theme.navigation.size[properties.size]),
+      rootClass: twMerge(theme.root.base, theme.root.size[properties.size]),
       iconClass: twMerge(theme.icon.size[properties.size]),
     };
 

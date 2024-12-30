@@ -31,9 +31,6 @@ export interface PaginationProperties {
 export interface PaginationTheme {
   root: {
     base: string;
-  };
-  navigation: {
-    base: string;
     size: PaginationSizes;
   };
   icon: {
@@ -46,9 +43,6 @@ export interface PaginationTheme {
  */
 export const paginationTheme: PaginationTheme = createTheme({
   root: {
-    base: '',
-  },
-  navigation: {
     base: 'group inline-flex -space-x-px border-gray-300 dark:border-gray-700',
     size: {
       sm: 'text-sm',
@@ -67,6 +61,5 @@ export const paginationTheme: PaginationTheme = createTheme({
  * Generated class definition for `PaginationComponent`
  */
 export interface PaginationClass extends FlowbiteClass {
-  navigationClass: string;
   iconClass: string;
 }
