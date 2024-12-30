@@ -9,8 +9,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles
- *
- * @status:alert BREAKING CHANGES
  */
 const modal: NgDocPage = {
   title: 'Modal',

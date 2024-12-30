@@ -2,6 +2,10 @@
 keyword: DropdownPage
 ---
 
+{% import "../../shared/configuration-standard.md" as confStd %}
+
+{{ confStd.not_implements() }}
+
 ## Default dropdown
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}

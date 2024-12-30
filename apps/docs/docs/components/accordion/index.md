@@ -2,6 +2,10 @@
 keyword: AccordionPage
 ---
 
+{% import "../../shared/configuration-standard.md" as confStd %}
+
+{{ confStd.not_implements() }}
+
 ## Default accordion
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}

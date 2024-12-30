@@ -2,6 +2,10 @@
 keyword: SidebarPage
 ---
 
+{% import "../../shared/configuration-standard.md" as confStd %}
+
+{{ confStd.not_implements() }}
+
 ## Default sidebar
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}

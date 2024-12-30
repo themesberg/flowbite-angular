@@ -4,8 +4,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Add dark theme to your application.
- *
- * @status:info NEW
  */
 const darkMode: NgDocPage = {
   title: 'Dark mode',

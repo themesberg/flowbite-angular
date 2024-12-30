@@ -15,8 +15,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Use the button component inside forms, as links with support for multiple styles, colors, sizes, gradients, and shadows
- *
- * @status:alert BREAKING CHANGES
  */
 const button: NgDocPage = {
   title: 'Button',
