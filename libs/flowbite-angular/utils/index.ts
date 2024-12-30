@@ -18,4 +18,3 @@ export {
   MOON_SVG_ICON,
   SUN_SVG_ICON,
 } from './icon.list';
-export { Guid, generateId } from './id.generator';
