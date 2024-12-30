@@ -20,7 +20,6 @@ import {
   computed,
   inject,
   InjectionToken,
-  input,
   makeEnvironmentProviders,
   model,
   ViewEncapsulation,
@@ -273,61 +272,61 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    *
    * @required
    */
-  readonly totalItems = input.required<number>();
+  readonly totalItems = model.required<number>();
   /**
    * Value of how many tabs are displayed
    *
    * @default 5
    */
-  readonly tabs = input(inject(FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE));
+  readonly tabs = model(inject(FLOWBITE_PAGINATION_TABS_DEFAULT_VALUE));
   /**
    * Value of how many items are in a tab
    *
    * @default 25
    */
-  readonly pageSize = input(inject(FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE));
+  readonly pageSize = model(inject(FLOWBITE_PAGINATION_PAGE_SIZE_DEFAULT_VALUE));
   /**
    * Whether to show or hide previous and next buttons
    *
    * @default true
    */
-  readonly prevNext = input(inject(FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE));
+  readonly prevNext = model(inject(FLOWBITE_PAGINATION_PREVNEXT_DEFAULT_VALUE));
   /**
    * Whether to show or hide first and last buttons
    *
    * @default true
    */
-  readonly firstLast = input(inject(FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE));
+  readonly firstLast = model(inject(FLOWBITE_PAGINATION_FIRSTLAST_DEFAULT_VALUE));
   /**
    * Value of the navigation button's type
    *
    * @default icon
    */
-  readonly navigation = input(inject(FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE));
+  readonly navigation = model(inject(FLOWBITE_PAGINATION_NAVIGATION_DEFAULT_VALUE));
   /**
    * Value of the component's size
    *
    * @default md
    */
-  readonly size = input(inject(FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE));
+  readonly size = model(inject(FLOWBITE_PAGINATION_SIZE_DEFAULT_VALUE));
   /**
    * Value of the next icon
    *
    * @default undefined
    */
-  readonly nextIcon = input(inject(FLOWBITE_PAGINATION_NEXT_ICON_DEFAULT_VALUE));
+  readonly nextIcon = model(inject(FLOWBITE_PAGINATION_NEXT_ICON_DEFAULT_VALUE));
   /**
    * Value of the last icon
    *
    * @default undefined
    */
-  readonly lastIcon = input(inject(FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE));
+  readonly lastIcon = model(inject(FLOWBITE_PAGINATION_LAST_ICON_DEFAULT_VALUE));
   /**
    * Value of the aria-label
    *
    * @default Pagination navigation
    */
-  readonly ariaLabel = input('Pagination navigation');
+  readonly ariaLabel = model('Pagination navigation');
   /**
    * Set the custom style for this pagination
    */
