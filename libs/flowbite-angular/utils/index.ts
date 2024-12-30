@@ -4,6 +4,7 @@ export { createTheme } from './theme/create-theme';
 export { isObject } from './theme/is-object';
 export { mergeTheme } from './theme/merge-theme';
 export { themeToString } from './theme/to-string';
+export { fetchStandardTheme } from './theme/fetch-standard-theme';
 
 export {
   BARS_SVG_ICON,

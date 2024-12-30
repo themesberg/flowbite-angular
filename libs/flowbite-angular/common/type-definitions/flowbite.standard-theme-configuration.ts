@@ -3,22 +3,16 @@ export type StandardThemeConfiguration = {
     light: string;
     dark: string;
   };
-  hover:
-    | {
-        light: string;
-        dark: string;
-      }
-    | undefined;
-  focus:
-    | {
-        light: string;
-        dark: string;
-      }
-    | undefined;
-  disabled:
-    | {
-        light: string;
-        dark: string;
-      }
-    | undefined;
+  hover?: {
+    light: string;
+    dark: string;
+  };
+  focus?: {
+    light: string;
+    dark: string;
+  };
+  disabled?: {
+    light: string;
+    dark: string;
+  };
 };

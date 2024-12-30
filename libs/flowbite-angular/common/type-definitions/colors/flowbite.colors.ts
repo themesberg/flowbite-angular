@@ -1,3 +1,5 @@
+import type { StandardThemeConfiguration } from '../flowbite.standard-theme-configuration';
+
 /**
  * Base definition of colors used in flowbite-angular.
  */
@@ -16,4 +18,21 @@ export interface FlowbiteColors {
   red: string;
   teal: string;
   yellow: string;
+}
+
+export interface FlowbiteStandardColors {
+  primary: StandardThemeConfiguration;
+  light: StandardThemeConfiguration;
+  dark: StandardThemeConfiguration;
+  blue: StandardThemeConfiguration;
+  cyan: StandardThemeConfiguration;
+  gray: StandardThemeConfiguration;
+  green: StandardThemeConfiguration;
+  indigo: StandardThemeConfiguration;
+  lime: StandardThemeConfiguration;
+  pink: StandardThemeConfiguration;
+  purple: StandardThemeConfiguration;
+  red: StandardThemeConfiguration;
+  teal: StandardThemeConfiguration;
+  yellow: StandardThemeConfiguration;
 }

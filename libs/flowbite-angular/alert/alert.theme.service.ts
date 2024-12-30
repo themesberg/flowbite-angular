@@ -1,7 +1,7 @@
 import type { AlertClass, AlertProperties, AlertTheme } from './alert.theme';
 
 import type { FlowbiteThemeService } from 'flowbite-angular';
-import { mergeTheme } from 'flowbite-angular/utils';
+import { fetchStandardTheme, mergeTheme } from 'flowbite-angular/utils';
 
 import { inject, Injectable, InjectionToken } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -30,11 +30,17 @@ export class AlertThemeService implements FlowbiteThemeService<AlertProperties> 
     const output: AlertClass = {
       rootClass: twMerge(
         theme.root.base,
-        theme.root.color[properties.color],
+        fetchStandardTheme(properties.standardThemeConfig, theme.root.color[properties.color]),
         theme.root.hasBorder[properties.hasBorder],
         theme.root.hasBorderAccent[properties.hasBorderAccent]
       ),
-      closeButtonClass: twMerge(theme.closeButton.base, theme.closeButton.color[properties.color]),
+      closeButtonClass: twMerge(
+        theme.closeButton.base,
+        fetchStandardTheme(
+          properties.standardThemeConfig,
+          theme.closeButton.color[properties.color]
+        )
+      ),
     };
 
     return output;
