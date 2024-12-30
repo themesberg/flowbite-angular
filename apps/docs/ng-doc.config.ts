@@ -52,6 +52,10 @@ const config: NgDocConfiguration = {
         title: 'Tailwind CSS Theming documentation',
         url: 'https://tailwindcss.com/docs/theme',
       },
+      TailwindState: {
+        title: 'Tailwind CSS states',
+        url: 'https://tailwindcss.com/docs/hover-focus-and-other-states',
+      },
     },
     loaders: [ngKeywordsLoader(), rxjsKeywordsLoader()],
   },
