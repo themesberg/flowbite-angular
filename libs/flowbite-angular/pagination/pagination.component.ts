@@ -286,10 +286,12 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
 
   /**
    * Value of the total items
-   *
-   * @required
    */
-  public readonly totalItems = model.required<number>();
+  public readonly totalItems = model<number>();
+  /**
+   * Value of the total pages
+   */
+  public readonly totalPages = model<number>();
   /**
    * Value of the current page
    *
@@ -406,10 +408,26 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   });
 
   /**
-   * Value of the maximum pages calculated from `totalItems`
+   * Value of the maximum pages. If `totalPages` is given, it will be
+   * equal to that; otherwise, it is calculated from `totalItems`.
    */
   public readonly maxPages = computed(() => {
-    return Math.max(Math.ceil(this.totalItems() / this.pageSize()), 1);
+    if (this.totalPages() !== undefined) {
+      /**
+       * Note that if we return just `this.totalPages()`, the type of the computed
+       * will be `Signal<number | undefined>`, even though there is a check.
+       * So instead of that, we return `this.totalPages()!` to ensure
+       * the type is always `Signal<number>`.
+       */
+      return this.totalPages()!;
+    }
+
+    /**
+     * The same applies here, except there is no need to check for undefined,
+     * because if `totalPages` is undefined, `totalItems` must have
+     * a valid number value. We check it in the init function.
+     */
+    return Math.max(Math.ceil(this.totalItems()! / this.pageSize()), 1);
   });
 
   /**
@@ -455,6 +473,10 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
   }
 
   public override init(): void {
+    if (this.totalPages() === undefined && this.totalItems() === undefined) {
+      throw new Error('Either `totalPages` or `totalItems` must have a value');
+    }
+
     this.iconRegistry.addRawSvgIconInNamepsace(
       'flowbite-angular',
       'chevron-left',
