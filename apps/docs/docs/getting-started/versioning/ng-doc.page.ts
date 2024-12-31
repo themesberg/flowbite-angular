@@ -6,7 +6,7 @@ import type { NgDocPage } from '@ng-doc/core';
  * Here is a reference table that matches versions of flowbite-angular with its Angular version. It
  * also shows the TailwindCSS version used.
  *
- * @status:alert NEW
+ * @status:info NEW
  */
 const Versioning: NgDocPage = {
   title: 'Versioning',

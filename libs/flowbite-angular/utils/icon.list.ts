@@ -17,9 +17,27 @@ export const CHEVRON_DOWN_SVG_ICON = `
 </svg>
 `;
 
+export const CHEVRON_LEFT_SVG_ICON = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14 8-4 4 4 4"/>
+</svg>
+`;
+
 export const CHEVRON_RIGHT_SVG_ICON = `
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4" />
+</svg>
+`;
+
+export const CHEVRON_DOUBLE_LEFT_SVG_ICON = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 16-4-4 4-4m-6 8-4-4 4-4"/>
+</svg>
+`;
+
+export const CHEVRON_DOUBLE_RIGHT_SVG_ICON = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 16 4-4-4-4m6 8 4-4-4-4"/>
 </svg>
 `;
 
