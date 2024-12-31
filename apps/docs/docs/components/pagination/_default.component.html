@@ -1,14 +1,1 @@
-<table>
-  @for (item of testDatas().items; track $index) {
-    <tr>
-      <td>{{ item.id }}</td>
-      <td>{{ item.name }}</td>
-    </tr>
-  }
-</table>
-
-<flowbite-pagination
-  [currentPage]="currentPage()"
-  (currentPageChange)="pageChangeHandler($event)"
-  [totalItems]="testDatas().totalItems"
-  [pageSize]="pageSize()" />
+<flowbite-pagination [totalItems]="1000" />
