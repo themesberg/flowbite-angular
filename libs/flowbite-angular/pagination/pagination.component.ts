@@ -434,17 +434,7 @@ export class PaginationComponent extends BaseComponent<PaginationClass> {
    * Array of the visible page tabs
    */
   public readonly visiblePages = computed(() => {
-    const pages: number[] = [];
-
-    for (
-      let i = this.firstPageToShow();
-      i < this.firstPageToShow() + this.visiblePagesCount();
-      i++
-    ) {
-      pages.push(i);
-    }
-
-    return pages;
+    return Array.from({ length: this.visiblePagesCount() }, (_, i) => this.firstPageToShow() + i);
   });
 
   /**
