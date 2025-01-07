@@ -11,6 +11,8 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Use Tailwind CSS badges as elements to show counts or labels separately or inside other components
+ *
+ * @status:info UPDATE
  */
 const badge: NgDocPage = {
   title: 'Badge',
