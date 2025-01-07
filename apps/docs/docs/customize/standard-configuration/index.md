@@ -67,7 +67,13 @@ const allFalseStandardThemeInput = {
 ---
 
 The `StandardThemeConfiguration` type will provide a standardized way for theme to be defined, with
-support of light and dark themes, as well as common `TailwindState`.
+support for separate light and dark themes, as well as common `TailwindState`.
+
+_**Here is a list of theme impacted by this type :**_
+
+<ul class="list-disc list-inside font-bold">
+  <li>Colors</li>
+</ul>
 
 The `StandardThemeInput` is used as an input of components to provide an API controling if we use
 this or this `TailwindState` or not. This comes with the pair `allTrueStandardThemeInput` and

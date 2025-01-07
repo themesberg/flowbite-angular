@@ -4,7 +4,7 @@ keyword: AlertPage
 
 {% import "../../shared/configuration-standard.md" as confStd %}
 
-{{ confStd.partial_implements() }}
+{{ confStd.implements() }}
 
 ## Default alert
 
@@ -54,7 +54,7 @@ keyword: AlertPage
 
 ```
 
-```angular-ts file="./_dismissable.component.ts"#L15 group="dismissable" name="typescript"
+```angular-ts file="./_dismissable.component.ts"#L14 group="dismissable" name="typescript"
 
 ```
 
