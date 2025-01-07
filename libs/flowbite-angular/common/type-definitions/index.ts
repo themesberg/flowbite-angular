@@ -15,6 +15,5 @@ export {
   allFalseStandardThemeInput,
   allTrueStandardThemeInput,
 } from './flowbite.standard-theme-input';
-export type { Guid } from './flowbite.id';
-export { generateId } from './flowbite.id';
+export { Guid, generateId } from './flowbite.id';
 export * from './colors';
