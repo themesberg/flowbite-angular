@@ -1,7 +1,7 @@
 import type { BadgeClass, BadgeColors, BadgeSizes, BadgeTheme } from './badge.theme';
 import { BadgeThemeService } from './badge.theme.service';
 
-import type { DeepPartial } from 'flowbite-angular';
+import type { DeepPartial, StandardThemeInput } from 'flowbite-angular';
 import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
@@ -38,6 +38,9 @@ export const FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE = new InjectionToken<boolean>(
   'FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE'
 );
 
+export const FLOWBITE_BADGE_STANDARD_THEME_CONFIG_DEFAULT_VALUE =
+  new InjectionToken<StandardThemeInput>('FLOWBITE_BADGE_STANDARD_THEME_CONFIG_DEFAULT_VALUE');
+
 export const FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE = new InjectionToken<
   DeepPartial<BadgeTheme>
 >('FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE');
@@ -70,6 +73,10 @@ export const badgeDefaultValueProvider = makeEnvironmentProviders([
   {
     provide: FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE,
     useValue: false,
+  },
+  {
+    provide: FLOWBITE_BADGE_STANDARD_THEME_CONFIG_DEFAULT_VALUE,
+    useValue: { hasDark: true, hasHover: true, hasFocus: false, hasDisabled: false },
   },
   {
     provide: FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE,
@@ -160,6 +167,13 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
    */
   public isPill = model(inject(FLOWBITE_BADGE_IS_PILL_DEFAULT_VALUE));
   /**
+   * Set the standard theme configuration for this badge
+   *
+   * @default
+   * { hasDark: true, hasHover: true, hasFocus: false, hasDisabled: false }
+   */
+  public standardThemeConfig = model(inject(FLOWBITE_BADGE_STANDARD_THEME_CONFIG_DEFAULT_VALUE));
+  /**
    * Set the custom style for this badge
    */
   public customStyle = model(inject(FLOWBITE_BADGE_CUSTOM_STYLE_DEFAULT_VALUE));
@@ -186,6 +200,7 @@ export class BadgeComponent extends BaseComponent<BadgeClass> {
       isIconOnly: booleanToFlowbiteBoolean(this.isIconOnly()),
       isPill: booleanToFlowbiteBoolean(this.isPill()),
       link: this.flowbiteRouterLink?.routerLink.urlTree ?? null,
+      standardThemeConfig: this.standardThemeConfig(),
       customStyle: this.customStyle(),
     });
   }
