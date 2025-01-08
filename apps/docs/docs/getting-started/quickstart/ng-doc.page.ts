@@ -13,4 +13,3 @@ const Quickstart: NgDocPage = {
 };
 
 export default Quickstart;
-
