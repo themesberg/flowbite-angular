@@ -10,6 +10,7 @@
     "url": "git+https://github.com/themesberg/flowbite-angular.git"
   },
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "all:build": "nx run-many --target build --all",
     "all:lint": "nx run-many --target lint --all",
