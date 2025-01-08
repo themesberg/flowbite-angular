@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   displayName: 'flowbite-angular',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset.cjs',
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   globals: {},
   coverageDirectory: '../../coverage/libs/flowbite-angular',
