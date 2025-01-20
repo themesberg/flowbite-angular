@@ -96,7 +96,11 @@ export const buttonDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   standalone: true,
   imports: [NgTemplateOutlet],
-  selector: 'flowbite-button',
+  selector: `
+    flowbite-button,
+    button[flowbite-button],
+    a[flowbite-button]
+  `,
   template: `
     @if (gradientDuoTone() && fill() === 'outline') {
       <span [class]="contentClasses().spanClass">
@@ -111,7 +115,7 @@ export const buttonDefaultValueProvider = makeEnvironmentProviders([
     </ng-template>
   `,
   host: {
-    '[attr.type]': 'button',
+    type: 'button',
   },
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
