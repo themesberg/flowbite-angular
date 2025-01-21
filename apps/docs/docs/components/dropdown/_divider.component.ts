@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
   imports: [DropdownComponent, DropdownItemComponent, DropdownDividerComponent],
   templateUrl: '_divider.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteDividerComponent {}

@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
   ],
   templateUrl: './_default.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteDefaultComponent {}

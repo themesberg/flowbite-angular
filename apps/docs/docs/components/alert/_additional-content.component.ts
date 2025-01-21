@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   imports: [AlertComponent, IconComponent, ButtonComponent],
   templateUrl: './_additional-content.component.html',
   host: {
-    class: 'flex flex wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3',
   },
 })
 export class FlowbiteAdditionalContentComponent {}

@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
   ],
   templateUrl: '_dismissable.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteDismissableComponent {}

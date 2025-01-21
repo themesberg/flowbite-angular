@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   imports: [AlertComponent, IconComponent],
   templateUrl: './_icon.component.html',
   host: {
-    class: 'flex flex wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3',
   },
 })
 export class FlowbiteIconComponent {}

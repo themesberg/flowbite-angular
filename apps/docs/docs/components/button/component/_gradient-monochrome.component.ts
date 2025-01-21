@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   imports: [ButtonComponent],
   templateUrl: './_gradient-monochrome.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteGradientMonochromeComponent {}

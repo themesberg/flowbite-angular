@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
   ],
   templateUrl: './_positioned.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbitePositionedComponent {}

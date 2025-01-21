@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   imports: [ButtonComponent],
   templateUrl: './_size.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3 items-center',
+    class: 'flex flex-wrap flex-row gap-3 items-center',
   },
 })
 export class FlowbiteSizeComponent {}
