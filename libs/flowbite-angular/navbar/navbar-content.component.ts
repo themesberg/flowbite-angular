@@ -34,11 +34,14 @@ export const navbarContentDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-navbar-content',
+  selector: `
+    flowbite-navbar-content,
+    div[flowbite-navbar-content]
+  `,
   template: `
-    <div [class]="contentClasses().navbarContentListClass">
+    <ul [class]="contentClasses().navbarContentListClass">
       <ng-content />
-    </div>
+    </ul>
   `,
   host: {
     '[@isOpenAnimation]': 'navbarComponent().isOpen()',

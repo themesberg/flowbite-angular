@@ -34,7 +34,10 @@ export const navbarItemDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-navbar-item',
+  selector: `
+    flowbite-navbar-item,
+    li[flowbite-navbar-item]
+  `,
   template: `<ng-content />`,
   host: {
     '(click)': 'onClick()',

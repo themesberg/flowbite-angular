@@ -34,7 +34,10 @@ export const navbarToggleDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-navbar-toggle',
+  selector: `
+    flowbite-navbar-toggle,
+    button[flowbite-navbar-toggle]
+  `,
   imports: [IconComponent],
   template: `
     <flowbite-icon
