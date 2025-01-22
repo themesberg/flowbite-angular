@@ -1,5 +1,5 @@
 ---
-title: Component
+title: Button Component
 route: component
 keyword: ButtonComponentPage
 ---
