@@ -33,7 +33,11 @@ export const navbarIconButtonDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-navbar-icon-button',
+  selector: `
+    flowbite-navbar-icon-button,
+    button[flowbite-navbar-icon-button],
+    a[flowbite-navbar-icon-button]
+  `,
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

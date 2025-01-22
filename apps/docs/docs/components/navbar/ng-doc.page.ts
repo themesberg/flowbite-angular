@@ -1,8 +1,12 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteBrandComponent } from './_brand.component';
-import { FlowbiteDefaultComponent } from './_default.component';
-import { FlowbiteDropdownComponent } from './_dropdown.component';
-import { FlowbiteResponsiveComponent } from './_responsive.component';
+import { FlowbiteBrandComponent as c_brand } from './component/_brand.component';
+import { FlowbiteDefaultComponent as c_default } from './component/_default.component';
+import { FlowbiteDropdownComponent as c_dropdown } from './component/_dropdown.component';
+import { FlowbiteResponsiveComponent as c_responsive } from './component/_responsive.component';
+import { FlowbiteBrandComponent as d_brand } from './directive/_brand.component';
+import { FlowbiteDefaultComponent as d_default } from './directive/_default.component';
+import { FlowbiteDropdownComponent as d_dropdown } from './directive/_dropdown.component';
+import { FlowbiteResponsiveComponent as d_responsive } from './directive/_responsive.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
@@ -13,14 +17,18 @@ import type { NgDocPage } from '@ng-doc/core';
  */
 const navbar: NgDocPage = {
   title: 'Navbar',
-  mdFile: './index.md',
+  mdFile: ['./index.md', './component.md'],
   category: ComponentCategory,
   order: 10,
   demos: {
-    flowbiteDefaultComponent: FlowbiteDefaultComponent,
-    flowbiteBrandComponent: FlowbiteBrandComponent,
-    flowbiteDropdownComponent: FlowbiteDropdownComponent,
-    flowbiteResponsiveComponent: FlowbiteResponsiveComponent,
+    c_brand: c_brand,
+    c_default: c_default,
+    c_dropdown: c_dropdown,
+    c_responsive: c_responsive,
+    d_brand: d_brand,
+    d_default: d_default,
+    d_dropdown: d_dropdown,
+    d_responsive: d_responsive,
   },
 };
 
