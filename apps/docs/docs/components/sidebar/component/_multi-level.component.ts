@@ -2,21 +2,16 @@ import {
   SidebarComponent,
   SidebarItemComponent,
   SidebarItemGroupComponent,
-  SidebarMenuComponent,
-  SidebarPageContentComponent,
 } from 'flowbite-angular/sidebar';
 
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'flowbite-demo-sidebar-multi-level',
-  imports: [
-    SidebarComponent,
-    SidebarMenuComponent,
-    SidebarItemComponent,
-    SidebarItemGroupComponent,
-    SidebarPageContentComponent,
-  ],
+  imports: [SidebarComponent, SidebarItemComponent, SidebarItemGroupComponent],
   templateUrl: './_multi-level.component.html',
+  host: {
+    class: 'flex flex-row',
+  },
 })
 export class FlowbiteMultiLevelComponent {}
