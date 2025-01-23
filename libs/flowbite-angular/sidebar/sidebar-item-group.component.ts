@@ -1,11 +1,11 @@
 import type { SidebarItemGroupClass, SidebarItemGroupTheme } from './sidebar-item-group.theme';
 import { SidebarItemGroupThemeService } from './sidebar-item-group.theme.service';
 import { SidebarItemComponent } from './sidebar-item.component';
-import { SidebarMenuComponent } from './sidebar-menu.component';
+import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { BaseComponent } from 'flowbite-angular';
+import { BaseComponent, booleanToFlowbiteBoolean } from 'flowbite-angular';
 import { IconComponent, IconRegistry } from 'flowbite-angular/icon';
 import { CHEVRON_DOWN_SVG_ICON } from 'flowbite-angular/utils';
 
@@ -39,20 +39,24 @@ export const sidebarItemGroupDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   standalone: true,
   imports: [IconComponent],
-  selector: 'flowbite-sidebar-item-group',
+  selector: `
+    flowbite-sidebar-item-group,
+    li[flowbite-sidebar-item-group]
+  `,
   template: `
-    <span
-      [class]="contentClasses().spanClass"
+    <button
+      type="button"
+      [class]="contentClasses().buttonClass"
       (click)="toggleVisibility()">
-      <h4>{{ title() }}</h4>
+      {{ title() }}
       <flowbite-icon
         svgIcon="flowbite-angular:chevron-down"
         class="h-6 w-6 shrink-0 duration-200"
         [class.rotate-180]="!isOpen()" />
-    </span>
-    @if (isOpen()) {
+    </button>
+    <ul [class]="contentClasses().listClass">
       <ng-content />
-    }
+    </ul>
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -71,9 +75,9 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
    */
   public readonly domSanitizer = inject(DomSanitizer);
   /**
-   * The parent `SidebarMenuComponent`
+   * The parent `SidebarComponent`
    */
-  public readonly sidebarMenuComponent = inject(SidebarMenuComponent);
+  public readonly sidebarComponent = inject(SidebarComponent);
   /**
    * List of `SidebarItemComponent`
    */
@@ -92,9 +96,9 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
   /**
    * Set the sidebar item group color
    *
-   * @default `SidebarMenuComponent`'s color
+   * @default `SidebarComponent`'s color
    */
-  public color = model<keyof SidebarColors>(this.sidebarMenuComponent.color());
+  public color = model<keyof SidebarColors>(this.sidebarComponent.color());
   /**
    * Set the sidebar item group title
    */
@@ -109,6 +113,7 @@ export class SidebarItemGroupComponent extends BaseComponent<SidebarItemGroupCla
   public override fetchClass(): SidebarItemGroupClass {
     return this.themeService.getClasses({
       color: this.color(),
+      isOpen: booleanToFlowbiteBoolean(this.isOpen()),
       customStyle: this.customStyle(),
     });
   }

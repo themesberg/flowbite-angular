@@ -133,8 +133,6 @@ import {
 import {
   FLOWBITE_SIDEBAR_ITEM_GROUP_THEME_TOKEN,
   FLOWBITE_SIDEBAR_ITEM_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_MENU_THEME_TOKEN,
-  FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
   FLOWBITE_SIDEBAR_THEME_TOKEN,
   FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
   sidebarDefaultValueProvider,
@@ -144,12 +142,6 @@ import {
   SidebarItemGroupThemeService,
   sidebarItemTheme,
   SidebarItemThemeService,
-  sidebarMenuDefaultValueProvider,
-  sidebarMenuTheme,
-  SidebarMenuThemeService,
-  sidebarPageContentDefaultValueProvider,
-  sidebarPageContentTheme,
-  SidebarPageContentThemeService,
   sidebarTheme,
   SidebarThemeService,
   sidebarToggleDefaultValueProvider,
@@ -286,14 +278,6 @@ export function initFlowbite(): EnvironmentProviders {
       useClass: SidebarItemThemeService,
     },
     {
-      provide: SidebarMenuThemeService,
-      useClass: SidebarMenuThemeService,
-    },
-    {
-      provide: SidebarPageContentThemeService,
-      useClass: SidebarPageContentThemeService,
-    },
-    {
       provide: SidebarToggleThemeService,
       useClass: SidebarToggleThemeService,
     },
@@ -418,14 +402,6 @@ export function initFlowbite(): EnvironmentProviders {
       useValue: sidebarItemTheme,
     },
     {
-      provide: FLOWBITE_SIDEBAR_MENU_THEME_TOKEN,
-      useValue: sidebarMenuTheme,
-    },
-    {
-      provide: FLOWBITE_SIDEBAR_PAGE_CONTENT_THEME_TOKEN,
-      useValue: sidebarPageContentTheme,
-    },
-    {
       provide: FLOWBITE_SIDEBAR_TOGGLE_THEME_TOKEN,
       useValue: sidebarToggleTheme,
     },
@@ -465,8 +441,6 @@ export function initFlowbite(): EnvironmentProviders {
     scrollTopDefaultValueProvider,
     sidebarDefaultValueProvider,
     sidebarToggleDefaultValueProvider,
-    sidebarPageContentDefaultValueProvider,
-    sidebarMenuDefaultValueProvider,
     sidebarItemDefaultValueProvider,
     sidebarItemGroupDefaultValueProvider,
   ]);

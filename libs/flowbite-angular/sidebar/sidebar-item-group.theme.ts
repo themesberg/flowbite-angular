@@ -1,6 +1,6 @@
 import type { SidebarColors } from './sidebar.theme';
 
-import type { DeepPartial, FlowbiteClass } from 'flowbite-angular';
+import type { DeepPartial, FlowbiteBoolean, FlowbiteClass } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular/utils';
 
 /**
@@ -8,6 +8,7 @@ import { createTheme } from 'flowbite-angular/utils';
  */
 export interface SidebarItemGroupProperties {
   color: keyof SidebarColors;
+  isOpen: keyof FlowbiteBoolean;
   customStyle: DeepPartial<SidebarItemGroupTheme>;
 }
 
@@ -18,9 +19,13 @@ export interface SidebarItemGroupTheme {
   root: {
     base: string;
   };
-  spanText: {
+  buttonText: {
     base: string;
     color: SidebarColors;
+  };
+  list: {
+    base: string;
+    isOpen: FlowbiteBoolean;
   };
 }
 
@@ -31,7 +36,7 @@ export const sidebarItemGroupTheme: SidebarItemGroupTheme = createTheme({
   root: {
     base: 'flex flex-col py-2 font-semibold cursor-pointer',
   },
-  spanText: {
+  buttonText: {
     base: 'flex flex-row justify-between m-2',
     color: {
       primary: 'text-primary-600',
@@ -42,11 +47,19 @@ export const sidebarItemGroupTheme: SidebarItemGroupTheme = createTheme({
       yellow: 'text-yellow-600',
     },
   },
+  list: {
+    base: 'py-2 space-y-2',
+    isOpen: {
+      enabled: '',
+      disabled: 'collapse',
+    },
+  },
 });
 
 /**
  * Generated class definition for `SidebarItemGroupComponent`
  */
 export interface SidebarItemGroupClass extends FlowbiteClass {
-  spanClass: string;
+  buttonClass: string;
+  listClass: string;
 }

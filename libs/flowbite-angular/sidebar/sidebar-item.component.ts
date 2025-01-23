@@ -1,7 +1,7 @@
 import { SidebarItemGroupComponent } from './sidebar-item-group.component';
 import type { SidebarItemClass, SidebarItemTheme } from './sidebar-item.theme';
 import { SidebarItemThemeService } from './sidebar-item.theme.service';
-import { SidebarMenuComponent } from './sidebar-menu.component';
+import { SidebarComponent } from './sidebar.component';
 import type { SidebarColors } from './sidebar.theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -54,7 +54,10 @@ export const sidebarItemDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   standalone: true,
   imports: [SanitizeHtmlPipe, BadgeComponent],
-  selector: 'flowbite-sidebar-item',
+  selector: `
+    flowbite-sidebar-item,
+    li[flowbite-sidebar-item]
+  `,
   template: `
     @if (icon()) {
       <span
@@ -97,9 +100,9 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
    */
   public readonly sidebarItemGroupComponent = inject(SidebarItemGroupComponent, { optional: true });
   /**
-   * The optional parent `SidebarMenuComponent`
+   * The parent `SidebarComponent`
    */
-  public readonly sidebarMenuComponent = inject(SidebarMenuComponent, { optional: true });
+  public readonly sidebarComponent = inject(SidebarComponent);
 
   //#region properties
   /**
@@ -115,7 +118,7 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
    * @default `SidebarMenuComponent`'s color
    */
   public color = model<keyof SidebarColors>(
-    (this.sidebarItemGroupComponent ?? this.sidebarMenuComponent)!.color()
+    (this.sidebarItemGroupComponent ?? this.sidebarComponent).color()
   );
   /**
    * Set the sidebar item label
@@ -144,9 +147,6 @@ export class SidebarItemComponent extends BaseComponent<SidebarItemClass> {
    * Toggle sidebar menu visibility
    */
   onClick(): void {
-    (this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent)?.closeAll();
-    (
-      this.sidebarMenuComponent || this.sidebarItemGroupComponent?.sidebarMenuComponent
-    )?.sidebarComponent.toggleVisibility(false);
+    this.sidebarComponent.closeAll();
   }
 }

@@ -11,11 +11,11 @@ keyword: SidebarPage
 
 ```
 
-```angular-ts file="./directive/_default.component.ts"#L1-L6 group="default" name="typescript"
+```angular-ts file="./directive/_default.component.ts"#L1-L3 group="default" name="typescript"
 
 ```
 
-# Multi-level menu
+## Multi-level menu
 
 {{ NgDocActions.demo('d_multilevel', {container: false}) }}
 

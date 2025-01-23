@@ -35,7 +35,8 @@ export class SidebarItemGroupThemeService
 
     const output: SidebarItemGroupClass = {
       rootClass: twMerge(theme.root.base),
-      spanClass: twMerge(theme.spanText.base, theme.spanText.color[properties.color]),
+      buttonClass: twMerge(theme.buttonText.base, theme.buttonText.color[properties.color]),
+      listClass: twMerge(theme.list.base, theme.list.isOpen[properties.isOpen]),
     };
 
     return output;

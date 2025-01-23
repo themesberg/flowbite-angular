@@ -1,5 +1,4 @@
-import { SidebarMenuComponent } from './sidebar-menu.component';
-import { SidebarPageContentComponent } from './sidebar-page-content.component';
+import { SidebarItemGroupComponent } from './sidebar-item-group.component';
 import type {
   SidebarClass,
   SidebarColors,
@@ -15,7 +14,7 @@ import type { OnInit } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
-  contentChild,
+  contentChildren,
   inject,
   InjectionToken,
   makeEnvironmentProviders,
@@ -72,8 +71,17 @@ export const sidebarDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-sidebar',
-  template: `<ng-content />`,
+  selector: `
+    flowbite-sidebar,
+    aside[flowbite-sidebar]
+  `,
+  template: `
+    <div [class]="contentClasses().containerClass">
+      <ul [class]="contentClasses().listClass">
+        <ng-content />
+      </ul>
+    </div>
+  `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -83,13 +91,9 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
    */
   public readonly themeService = inject(SidebarThemeService);
   /**
-   * The child `SidebarMenuComponent`
+   * List of `SidebarItemGroupComponent`
    */
-  public readonly sidebarMenuChild = contentChild.required(SidebarMenuComponent);
-  /**
-   * The child `SidebarPageContentComponent`
-   */
-  public readonly sidebarPageContentChild = contentChild.required(SidebarPageContentComponent);
+  public readonly sidebarItemGroupChildren = contentChildren(SidebarItemGroupComponent);
 
   //#region properties
   /**
@@ -126,6 +130,8 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
   public override fetchClass(): SidebarClass {
     return this.themeService.getClasses({
       displayMode: this.displayMode(),
+      isOpen: booleanToFlowbiteBoolean(this.isOpen()),
+      color: this.color(),
       isRounded: booleanToFlowbiteBoolean(this.isRounded()),
       customStyle: this.customStyle(),
     });
@@ -143,5 +149,12 @@ export class SidebarComponent extends BaseComponent<SidebarClass> implements OnI
     }
 
     this.isOpen.set(isOpen);
+  }
+
+  /**
+   * Toggle visibility of ll children to false
+   */
+  public closeAll(): void {
+    this.sidebarItemGroupChildren().forEach((x) => x.toggleVisibility(false));
   }
 }

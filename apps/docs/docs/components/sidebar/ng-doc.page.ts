@@ -13,7 +13,7 @@ import type { NgDocPage } from '@ng-doc/core';
  */
 const sidebar: NgDocPage = {
   title: 'Sidebar',
-  mdFile: './index.md',
+  mdFile: ['./index.md', './component.md'],
   category: ComponentCategory,
   order: 9,
   demos: {

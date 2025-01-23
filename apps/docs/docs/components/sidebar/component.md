@@ -4,6 +4,10 @@ route: component
 keyword: SidebarPage
 ---
 
+{% import "../../shared/component-deprecated-usage.md" as cdu %}
+
+{{ cdu.deprecated() }}
+
 ## Default sidebar
 
 {{ NgDocActions.demo('c_default', {container: false}) }}
@@ -12,11 +16,11 @@ keyword: SidebarPage
 
 ```
 
-```angular-ts file="./component/_default.component.ts"#L1-L6 group="default" name="typescript"
+```angular-ts file="./component/_default.component.ts"#L1-L3 group="default" name="typescript"
 
 ```
 
-# Multi-level menu
+## Multi-level menu
 
 {{ NgDocActions.demo('c_multilevel', {container: false}) }}
 

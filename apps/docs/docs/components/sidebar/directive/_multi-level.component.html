@@ -1,15 +1,20 @@
-<flowbite-sidebar [isOpen]="true">
-  <flowbite-sidebar-menu>
-    <flowbite-sidebar-item>Dashboard</flowbite-sidebar-item>
-    <flowbite-sidebar-item-group title="E-commerce">
-      <flowbite-sidebar-item>Products</flowbite-sidebar-item>
-      <flowbite-sidebar-item>Billing</flowbite-sidebar-item>
-      <flowbite-sidebar-item>Invoice</flowbite-sidebar-item>
-    </flowbite-sidebar-item-group>
-    <flowbite-sidebar-item>Kanban</flowbite-sidebar-item>
-    <flowbite-sidebar-item>Inbox</flowbite-sidebar-item>
-    <flowbite-sidebar-item>Users</flowbite-sidebar-item>
-    <flowbite-sidebar-item>Products</flowbite-sidebar-item>
-  </flowbite-sidebar-menu>
-  <flowbite-sidebar-page-content>Hello world !</flowbite-sidebar-page-content>
-</flowbite-sidebar>
+<aside
+  flowbite-sidebar
+  [isOpen]="true">
+  <li flowbite-sidebar-item>Dashboard</li>
+  <li
+    flowbite-sidebar-item-group
+    title="E-commerce">
+    <ng-container>
+      <li flowbite-sidebar-item>Products</li>
+      <li flowbite-sidebar-item>Billing</li>
+      <li flowbite-sidebar-item>Invoice</li>
+    </ng-container>
+  </li>
+  <li flowbite-sidebar-item>Kanban</li>
+  <li flowbite-sidebar-item>Inbox</li>
+  <li flowbite-sidebar-item>Users</li>
+  <li flowbite-sidebar-item>Products</li>
+</aside>
+
+<div>Hello world !</div>
