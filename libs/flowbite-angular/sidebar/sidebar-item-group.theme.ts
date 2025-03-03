@@ -51,7 +51,7 @@ export const sidebarItemGroupTheme: SidebarItemGroupTheme = createTheme({
     base: 'py-2 space-y-2',
     isOpen: {
       enabled: '',
-      disabled: 'collapse',
+      disabled: 'hidden',
     },
   },
 });

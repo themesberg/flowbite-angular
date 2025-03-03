@@ -19,12 +19,12 @@ export interface AccordionTitleProperties {
 export interface AccordionTitleTheme {
   root: {
     base: string;
+  };
+  button: {
+    base: string;
     color: AccordionColors;
     isFlush: FlowbiteBoolean;
     isOpen: FlowbiteBoolean;
-  };
-  text: {
-    base: string;
   };
 }
 
@@ -33,7 +33,10 @@ export interface AccordionTitleTheme {
  */
 export const accordionTitleTheme: AccordionTitleTheme = createTheme({
   root: {
-    base: 'cursor-pointer flex items-center p-5 justify-between group-first:rounded-t-lg',
+    base: '',
+  },
+  button: {
+    base: 'cursor-pointer flex items-center w-full p-5 justify-between group-first:rounded-t-lg font-medium',
     color: {
       primary:
         'text-primary-900 dark:text-primary-50 border-primary-200 dark:border-primary-700 bg-primary-100 hover:bg-primary-100 dark:bg-primary-800 dark:hover:bg-primary-800',
@@ -55,14 +58,11 @@ export const accordionTitleTheme: AccordionTitleTheme = createTheme({
       disabled: 'bg-transparent dark:bg-transparent',
     },
   },
-  text: {
-    base: 'font-semibold text-base',
-  },
 });
 
 /**
  * Generated class definition for `AccordionTitleComponent`
  */
 export interface AccordionTitleClass extends FlowbiteClass {
-  textClass: string;
+  buttonClass: string;
 }
