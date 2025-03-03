@@ -40,11 +40,15 @@ export const breadcrumbDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-breadcrumb',
-  template: `<ng-content />`,
-  host: {
-    '[attr.aria-label]': 'breadcrumb',
-  },
+  selector: `
+    flowbite-breadcrumb,
+    nav[flowbite-breadcrumb]
+  `,
+  template: `
+    <ol [class]="contentClasses().listClass">
+      <ng-content />
+    </ol>
+  `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

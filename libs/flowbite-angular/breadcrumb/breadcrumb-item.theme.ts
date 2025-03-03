@@ -20,6 +20,9 @@ export interface BreadcrumbItemProperties {
 export interface BreadcrumbItemTheme {
   root: {
     base: string;
+  };
+  item: {
+    base: string;
     color: BreadcrumbColors;
   };
   icon: {
@@ -32,7 +35,10 @@ export interface BreadcrumbItemTheme {
  */
 export const breadcrumbItemTheme: BreadcrumbItemTheme = createTheme({
   root: {
-    base: 'group flex items-center text-sm font-medium cursor-pointer',
+    base: 'inline-flex items-center group',
+  },
+  item: {
+    base: 'inline-flex items-center text-sm font-medium',
     color: {
       primary:
         'text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-500',
@@ -53,5 +59,6 @@ export const breadcrumbItemTheme: BreadcrumbItemTheme = createTheme({
  * Generated class definition for `BreadcrumbItemComponent`
  */
 export interface BreadcrumbItemClass extends FlowbiteClass {
-  breadcrumbIconClass: string;
+  itemClass: string;
+  iconClass: string;
 }

@@ -32,8 +32,9 @@ export class BreadcrumbItemThemeService implements FlowbiteThemeService<Breadcru
     const theme: BreadcrumbItemTheme = mergeTheme(this.baseTheme, properties.customStyle);
 
     const output: BreadcrumbItemClass = {
-      rootClass: twMerge(theme.root.base, theme.root.color[properties.color]),
-      breadcrumbIconClass: twMerge(theme.icon.base),
+      rootClass: twMerge(theme.root.base),
+      itemClass: twMerge(theme.item.base, theme.item.color[properties.color]),
+      iconClass: twMerge(theme.icon.base),
     };
 
     return output;
