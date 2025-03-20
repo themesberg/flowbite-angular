@@ -13,14 +13,6 @@
             "prefix": "flowbite",
             "style": "camelCase"
           }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "flowbite",
-            "style": "kebab-case"
-          }
         ]
       }
     },
