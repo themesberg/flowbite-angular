@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   imports: [IndicatorComponent],
   templateUrl: './_default.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3 justify-around',
+    class: 'flex flex-wrap flex-row gap-3 justify-around',
   },
 })
 export class FlowbiteDefaultComponent {}

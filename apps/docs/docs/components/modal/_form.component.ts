@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   imports: [ModalComponent, ModalBodyComponent, ModalHeaderComponent, ButtonComponent],
   templateUrl: './_form.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteFormComponent {}

@@ -1,5 +1,6 @@
 import ComponentCategory from '../ng-doc.category';
-import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteDefaultComponent as c_default } from './component/_default.component';
+import { FlowbiteDefaultComponent as d_default } from './directive/_default.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
@@ -10,11 +11,12 @@ import type { NgDocPage } from '@ng-doc/core';
  */
 const breadcrumb: NgDocPage = {
   title: 'Breadcrumb',
-  mdFile: './index.md',
+  mdFile: ['./index.md', './component.md'],
   category: ComponentCategory,
   order: 4,
   demos: {
-    flowbiteDefaultComponent: FlowbiteDefaultComponent,
+    c_default: c_default,
+    d_default: d_default,
   },
 };
 

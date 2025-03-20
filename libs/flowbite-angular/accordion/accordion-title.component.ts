@@ -46,23 +46,26 @@ export const accordionTitleDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   standalone: true,
   imports: [IconComponent, NgTemplateOutlet],
-  selector: 'flowbite-accordion-title',
-  template: `
-    <h2 [class]="contentClasses().textClass">
-      <ng-content />
-    </h2>
-    @if (icon()) {
-      <ng-container [ngTemplateOutlet]="icon()!" />
-    } @else {
-      <flowbite-icon
-        svgIcon="flowbite-angular:chevron-down"
-        class="h-6 w-6 shrink-0 duration-300"
-        [class.rotate-180]="accordionPanelComponent.isOpen()" />
-    }
+  selector: `
+    flowbite-accordion-title,
+    h2[flowbite-accordion-title]
   `,
-  host: {
-    '(click)': 'onClick()',
-  },
+  template: `
+    <button
+      [class]="contentClasses().buttonClass"
+      type="button"
+      (click)="onClick()">
+      <ng-content />
+      @if (icon()) {
+        <ng-container [ngTemplateOutlet]="icon()!" />
+      } @else {
+        <flowbite-icon
+          svgIcon="flowbite-angular:chevron-down"
+          class="h-6 w-6 shrink-0 duration-300"
+          [class.rotate-180]="accordionPanelComponent.isOpen()" />
+      }
+    </button>
+  `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

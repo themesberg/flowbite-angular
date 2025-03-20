@@ -25,6 +25,9 @@ export interface BreadcrumbTheme {
   root: {
     base: string;
   };
+  list: {
+    base: string;
+  };
 }
 
 /**
@@ -32,11 +35,16 @@ export interface BreadcrumbTheme {
  */
 export const breadcrumbTheme: BreadcrumbTheme = createTheme({
   root: {
-    base: 'flex items-center',
+    base: 'flex',
+  },
+  list: {
+    base: 'inline-flex items-center space-x-1 md:space-x-2',
   },
 });
 
 /**
  * Generated class definition for `BreadcrumbComponent`
  */
-export type BreadcrumbClass = FlowbiteClass;
+export interface BreadcrumbClass extends FlowbiteClass {
+  listClass: string;
+}

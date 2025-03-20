@@ -38,12 +38,17 @@ export const breadcrumbItemDefaultValueProvider = makeEnvironmentProviders([
 @Component({
   standalone: true,
   imports: [IconComponent],
-  selector: 'flowbite-breadcrumb-item',
+  selector: `
+    flowbite-breadcrumb-item,
+    li[flowbite-breadcrumb-item]
+  `,
   template: `
-    <flowbite-icon
-      [class]="contentClasses().breadcrumbIconClass"
-      svgIcon="flowbite-angular:chevron-right" />
-    <ng-content />
+    <a [class]="contentClasses().itemClass">
+      <flowbite-icon
+        [class]="contentClasses().iconClass"
+        svgIcon="flowbite-angular:chevron-right" />
+      <ng-content />
+    </a>
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

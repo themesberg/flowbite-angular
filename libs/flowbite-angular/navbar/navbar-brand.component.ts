@@ -31,7 +31,13 @@ export const navbarBrandDefaultThemeProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-navbar-brand',
+  selector: `
+    flowbite-navbar-brand,
+    span[flowbite-navbar-brand],
+    div[flowbite-navbar-brand],
+    a[flowbite-navbar-brand],
+    button[flowbite-navbar-brand]
+  `,
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

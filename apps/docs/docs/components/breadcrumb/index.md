@@ -4,12 +4,12 @@ keyword: BreadcrumbPage
 
 ## Default breadcrumb
 
-{{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
+{{ NgDocActions.demo('d_default', {container: false}) }}
 
-```angular-html file="./_default.component.html" group="default" name="html"
+```angular-html file="./directive/_default.component.html" group="default" name="html"
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L3 group="default" name="typescript"
+```angular-ts file="./directive/_default.component.ts"#L1-L3 group="default" name="typescript"
 
 ```

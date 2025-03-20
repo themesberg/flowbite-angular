@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
   ],
   templateUrl: '_header.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3',
   },
 })
 export class FlowbiteHeaderComponent {}

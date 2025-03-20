@@ -75,7 +75,10 @@ export const navbarDefaultValueProvider = makeEnvironmentProviders([
  */
 @Component({
   standalone: true,
-  selector: 'flowbite-navbar',
+  selector: `
+    flowbite-navbar,
+    nav[flowbite-navbar]
+  `,
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -29,6 +29,7 @@ export class BreadcrumbThemeService implements FlowbiteThemeService<BreadcrumbPr
 
     const output: BreadcrumbClass = {
       rootClass: twMerge(theme.root.base),
+      listClass: twMerge(theme.list.base),
     };
 
     return output;

@@ -1,16 +1,17 @@
 ---
-keyword: NavbarPage
+title: Navbar Directive
+keyword: NavbarDirectivePage
 ---
 
 ## Default navbar
 
-{{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
+{{ NgDocActions.demo('d_default', {container: false}) }}
 
-```angular-html file="./_default.component.html" group="default" name="html"
+```angular-html file="./directive/_default.component.html" group="default" name="html"
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L5 group="default" name="typescript"
+```angular-ts file="./directive/_default.component.ts"#L1-L5 group="default" name="typescript"
 
 ```
 
@@ -19,13 +20,13 @@ keyword: NavbarPage
 Use this example to display a brand element inside the navbar by importing the
 `NavbarBrandComponent` component.
 
-{{ NgDocActions.demo('flowbiteBrandComponent', {container: false}) }}
+{{ NgDocActions.demo('d_brand', {container: false}) }}
 
-```angular-html file="./_brand.component.html" group="brand" name="html"
+```angular-html file="./directive/_brand.component.html" group="brand" name="html"
 
 ```
 
-```angular-ts file="./_brand.component.ts"#L1-L6 group="brand" name="typescript"
+```angular-ts file="./directive/_brand.component.ts"#L1-L6 group="brand" name="typescript"
 
 ```
 
@@ -34,13 +35,13 @@ Use this example to display a brand element inside the navbar by importing the
 Use this example to feature a dropdown menu when clicking on the settings dropdown inside the navbar
 by importing the `DropdownComponent` and `DropdownItemComponent` components.
 
-{{ NgDocActions.demo('flowbiteDropdownComponent', {container: false}) }}
+{{ NgDocActions.demo('d_dropdown', {container: false}) }}
 
-```angular-html file="./_dropdown.component.html" group="dropdown" name="html"
+```angular-html file="./directive/_dropdown.component.html" group="dropdown" name="html"
 
 ```
 
-```angular-ts file="./_dropdown.component.ts"#L1-L7 group="dropdown" name="typescript"
+```angular-ts file="./directive/_dropdown.component.ts"#L1-L7 group="dropdown" name="typescript"
 
 ```
 
@@ -49,12 +50,12 @@ by importing the `DropdownComponent` and `DropdownItemComponent` components.
 On mobile device the navigation bar will be collapsed and you will be able to use the hamburger menu
 to toggle the menu items by adding the `NavbarToggleComponent` component.
 
-{{ NgDocActions.demo('flowbiteResponsiveComponent', {container: false}) }}
+{{ NgDocActions.demo('d_responsive', {container: false}) }}
 
-```angular-html file="./_responsive.component.html" group="responsive" name="html"
+```angular-html file="./directive/_responsive.component.html" group="responsive" name="html"
 
 ```
 
-```angular-ts file="./_responsive.component.ts"#L1-L7 group="responsive" name="typescript"
+```angular-ts file="./directive/_responsive.component.ts"#L1-L7 group="responsive" name="typescript"
 
 ```

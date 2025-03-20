@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
   ],
   templateUrl: './_size.component.html',
   host: {
-    class: 'flex flex wrap flex-row gap-3 justify-around',
+    class: 'flex flex-wrap flex-row gap-3 justify-around',
   },
 })
 export class FlowbiteSizeComponent {}
