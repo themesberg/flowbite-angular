@@ -3,8 +3,6 @@ import { flowbiteButtonTheme } from './theme';
 
 import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
 
-type StoryType = ButtonComponent & { content: string };
-
 export default {
   title: 'Button',
   component: ButtonComponent,
@@ -32,11 +30,19 @@ export default {
         category: 'Input',
       },
     },
+    customStyle: {
+      control: 'object',
+      type: 'symbol',
+      table: {
+        category: 'Input',
+      },
+    },
   },
   args: {
     color: 'primary',
-    size: 'md',
     isPill: false,
+    size: 'md',
+    customStyle: {},
   },
   render: (args) => ({
     props: args,
@@ -44,8 +50,8 @@ export default {
       <button flowbite-button ${argsToTemplate(args)}>Button</button>
     `,
   }),
-} as Meta<StoryType>;
-type Story = StoryObj<StoryType>;
+} as Meta<ButtonComponent>;
+type Story = StoryObj<ButtonComponent>;
 
 export const Default: Story = {
   name: 'Default',
