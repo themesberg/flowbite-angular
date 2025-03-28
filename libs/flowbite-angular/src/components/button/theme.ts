@@ -30,7 +30,7 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   root: {
     base: 'font-medium border',
     focus: 'focus:ring-4 focus:outline-none',
-    disabled: 'disabled:cursor-not-allowed disabled:bg-opacity-50',
+    disabled: 'disabled:cursor-not-allowed disabled:bg-current/50',
     size: {
       xs: 'px-3 py-2 text-xs',
       sm: 'px-3 py-2 text-sm',
