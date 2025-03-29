@@ -1,7 +1,10 @@
 import { ButtonComponent } from './button.component';
 import { flowbiteButtonTheme } from './theme';
 
-import { argsToTemplate, type Meta, type StoryObj } from '@storybook/angular';
+import { argsToTemplate } from '@storybook/angular';
+import type { Meta, StoryObj } from '@storybook/angular';
+
+type StoryType = ButtonComponent & { disabled: boolean };
 
 export default {
   title: 'Button',
@@ -30,6 +33,13 @@ export default {
         category: 'Input',
       },
     },
+    disabled: {
+      control: 'boolean',
+      type: 'boolean',
+      table: {
+        category: 'Input',
+      },
+    },
     customStyle: {
       control: 'object',
       type: 'symbol',
@@ -42,6 +52,7 @@ export default {
     color: 'primary',
     isPill: false,
     size: 'md',
+    disabled: false,
     customStyle: {},
   },
   render: (args) => ({
@@ -50,8 +61,8 @@ export default {
       <button flowbite-button ${argsToTemplate(args)}>Button</button>
     `,
   }),
-} as Meta<ButtonComponent>;
-type Story = StoryObj<ButtonComponent>;
+} as Meta<StoryType>;
+type Story = StoryObj<StoryType>;
 
 export const Default: Story = {
   name: 'Default',
