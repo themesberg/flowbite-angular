@@ -26,10 +26,10 @@
     "lib:release": "nx run flowbite-angular:semantic-release",
     "lib:test": "nx run flowbite-angular:test",
     "prepare": "husky",
-    "storybook:build": "nx run flowbite-angular:build-storybook",
-    "storybook:serve": "nx run flowbite-angular:storybook",
-    "storybook:static-build": "nx run flowbite-angular:static-storybook",
-    "storybook:test": "nx run flowbite-angular:test-storybook"
+    "storybook:build": "nx run storybook:build",
+    "storybook:serve": "nx run storybook:serve",
+    "storybook:static-build": "nx run storybook:static-storybook",
+    "storybook:test": "nx run storybook:test"
   },
   "dependencies": {
     "@angular/animations": "19.0.4",
@@ -113,6 +113,7 @@
     "ng-packagr": "19.0.1",
     "ng-primitives": "^0.25.0",
     "nx": "20.2.2",
+    "postcss-loader": "8.1.1",
     "prettier": "3.4.2",
     "prettier-eslint": "16.3.0",
     "prettier-plugin-packagejson": "2.5.6",
@@ -121,9 +122,10 @@
     "storybook": "8.6.11",
     "stylelint": "16.12.0",
     "stylelint-config-standard": "36.0.1",
-    "tailwindcss": "4.0.17",
+    "tailwindcss": "4.1.1",
     "ts-jest": "29.1.1",
     "ts-node": "10.9.2",
     "typescript": "5.6.3"
   }
 }
+

@@ -29,8 +29,8 @@ export interface FlowbiteButtonRootTheme {
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   root: {
     base: 'border font-medium',
-    focus: 'focus:outline-none focus:ring-4',
-    disabled: 'disabled:cursor-not-allowed disabled:bg-opacity-50',
+    focus: 'focus:ring-4 focus:outline-none',
+    disabled: 'disabled:bg-opacity-50 disabled:cursor-not-allowed',
     size: {
       xs: 'px-3 py-2 text-xs',
       sm: 'px-3 py-2 text-sm',

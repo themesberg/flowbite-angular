@@ -1,0 +1,69 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "storybook",
+  "sourceRoot": "apps/storybook/src",
+  "tags": [],
+  "implicitDependencies": ["flowbite-angular"],
+  "targets": {
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "storybook:build",
+        "staticFilePath": "dist/apps/storybook/browser",
+        "spa": true
+      }
+    },
+    "build": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/storybook",
+        "configDir": "apps/storybook/.storybook",
+        "browserTarget": "storybook:build",
+        "styles": ["apps/storybook/styles.css"],
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "apps/storybook/.storybook",
+        "browserTarget": "storybook:build",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c apps/storybook/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build-storybook"],
+      "options": {
+        "buildTarget": "storybook:build-storybook",
+        "staticFilePath": "dist/storybook/storybook",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "storybook:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

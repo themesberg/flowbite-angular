@@ -1,5 +1,5 @@
-import { ButtonComponent } from './button.component';
-import { flowbiteButtonTheme } from './theme';
+import { ButtonComponent } from 'libs/flowbite-angular/src/components/button/button.component';
+import { flowbiteButtonTheme } from 'libs/flowbite-angular/src/components/button/theme';
 
 import { argsToTemplate } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';

@@ -1,0 +1,3 @@
+@config './storybook-tailwind.config.ts';
+
+@import 'tailwindcss';
