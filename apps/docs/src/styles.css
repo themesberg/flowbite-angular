@@ -1,9 +1,9 @@
-@import url('assets/styles/base.scss');
-@import url('assets/styles/dark.scss');
-
 @config '../tailwind.config.js';
 
-@tailwind base;
+@import 'tailwindcss';
+
+@import url('assets/styles/base.scss');
+@import url('assets/styles/dark.scss');
 
 @layer base {
   @font-face {
@@ -11,6 +11,3 @@
     src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
   }
 }
-
-@tailwind components;
-@tailwind utilities;
