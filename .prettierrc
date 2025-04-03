@@ -7,7 +7,11 @@
   "bracketSpacing": true,
   "proseWrap": "always",
   "singleAttributePerLine": true,
-  "plugins": ["prettier-plugin-packagejson", "@ianvs/prettier-plugin-sort-imports"],
+  "plugins": [
+    "prettier-plugin-packagejson",
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
   "importOrder": [
     "^~/(.*)$",
     "^[.]",
@@ -18,5 +22,6 @@
     "",
     "<BUILTIN_MODULES>"
   ],
-  "importOrderParserPlugins": ["typescript", "decorators-legacy"]
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "tailwindFunctions": ["twMerge", "createTheme"]
 }

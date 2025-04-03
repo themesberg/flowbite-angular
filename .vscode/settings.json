@@ -6,10 +6,7 @@
   "files.eol": "\r\n",
   "editor.formatOnSave": true,
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "customStyle"],
-  "tailwindCSS.experimental.classRegex": [
-    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["createTheme\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
+  "tailwindCSS.classFunctions": ["twMerge", "createTheme"],
   "typescript.tsdk": "node_modules/typescript/lib",
 
   "[markdown]": {
