@@ -39,7 +39,9 @@
       "flowbite-angular/scroll-top": ["libs/flowbite-angular/scroll-top/index.ts"],
       "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/index.ts"],
       "flowbite-angular/theme": ["libs/flowbite-angular/theme/index.ts"],
-      "flowbite-angular/utils": ["libs/flowbite-angular/utils/index.ts"]
+      "flowbite-angular/utils": ["libs/flowbite-angular/utils/index.ts"],
+      "next-flowbite-angular": ["libs/flowbite-angular/src/core/index.ts"],
+      "next-flowbite-angular/button": ["libs/flowbite-angular/src/components/button/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
