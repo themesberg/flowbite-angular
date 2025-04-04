@@ -16,6 +16,9 @@ export default {
       options: Object.keys(flowbiteButtonTheme.root.color),
       table: {
         category: 'Input',
+        defaultValue: {
+          summary: 'primary',
+        },
       },
     },
     size: {
@@ -24,6 +27,9 @@ export default {
       options: Object.keys(flowbiteButtonTheme.root.size),
       table: {
         category: 'Input',
+        defaultValue: {
+          summary: 'md',
+        },
       },
     },
     isPill: {
@@ -31,6 +37,9 @@ export default {
       type: 'boolean',
       table: {
         category: 'Input',
+        defaultValue: {
+          summary: 'true',
+        },
       },
     },
     disabled: {
@@ -38,6 +47,9 @@ export default {
       type: 'boolean',
       table: {
         category: 'Input',
+        defaultValue: {
+          summary: 'false',
+        },
       },
     },
     customStyle: {
@@ -45,6 +57,9 @@ export default {
       type: 'symbol',
       table: {
         category: 'Input',
+        defaultValue: {
+          summary: '{}',
+        },
       },
     },
   },
@@ -62,8 +77,7 @@ export default {
     `,
   }),
 } as Meta<StoryType>;
-type Story = StoryObj<StoryType>;
 
-export const Default: Story = {
+export const Default: StoryObj<StoryType> = {
   name: 'Default',
 };

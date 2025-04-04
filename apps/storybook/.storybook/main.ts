@@ -4,10 +4,17 @@ console.log('✅ Chargement de `.storybook/main.js`');
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-themes',
+  ],
   framework: {
     name: '@storybook/angular',
     options: {},
+  },
+  docs: {
+    defaultName: 'Documentation',
   },
   webpackFinal: (config) => {
     config.module?.rules?.push({
