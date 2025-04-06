@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@angular/animations": "19.0.4",
-    "@angular/cdk": "19.0.3",
+    "@angular/cdk": "19.0.4",
     "@angular/common": "19.0.4",
     "@angular/compiler": "19.0.4",
     "@angular/core": "19.0.4",
@@ -50,6 +50,7 @@
     "@ng-doc/ui-kit": "19.0.1",
     "@tailwindcss/postcss": "^4.1.1",
     "express": "4.18.3",
+    "ng-primitives": "0.28.0",
     "postcss": "^8.5.3",
     "rxjs": "7.5.0",
     "tailwind-merge": "2.5.5",
@@ -111,7 +112,6 @@
     "jsonc-eslint-parser": "2.4.0",
     "lint-staged": "15.2.10",
     "ng-packagr": "19.0.1",
-    "ng-primitives": "^0.25.0",
     "nx": "20.2.2",
     "postcss-loader": "8.1.1",
     "prettier": "3.4.2",
@@ -128,4 +128,3 @@
     "typescript": "5.6.3"
   }
 }
-

@@ -1,7 +1,5 @@
 import type { StorybookConfig } from '@storybook/angular';
 
-console.log('✅ Chargement de `.storybook/main.js`');
-
 const config: StorybookConfig = {
   stories: ['../src/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
   addons: [

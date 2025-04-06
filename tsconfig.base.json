@@ -40,8 +40,9 @@
       "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/index.ts"],
       "flowbite-angular/theme": ["libs/flowbite-angular/theme/index.ts"],
       "flowbite-angular/utils": ["libs/flowbite-angular/utils/index.ts"],
-      "next-flowbite-angular": ["libs/flowbite-angular/src/core/index.ts"],
-      "next-flowbite-angular/button": ["libs/flowbite-angular/src/components/button/index.ts"]
+      "next-flowbite-angular": ["libs/flowbite-angular/src/core/src/index.ts"],
+      "next-flowbite-angular/button": ["libs/flowbite-angular/src/components/button/src/index.ts"],
+      "next-flowbite-angular/injection": ["libs/flowbite-angular/src/injection/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

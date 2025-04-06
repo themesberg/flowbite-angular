@@ -1,5 +1,5 @@
-import type { FlowbiteBoolean, FlowbiteColors, FlowbiteSizes } from '../../core';
-import { createTheme } from '../../core/utils/create-theme';
+import type { FlowbiteBoolean, FlowbiteColors, FlowbiteSizes } from 'next-flowbite-angular';
+import { createTheme } from 'next-flowbite-angular';
 
 export interface ButtonSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;

@@ -1,7 +1,9 @@
-import type { DeepPartial } from '../../core';
-import { mergeDeep } from '../../core/utils/merge-theme';
+import { fb_it_button } from './i';
 import type { ButtonColors, ButtonSizes, FlowbiteButtonTheme } from './theme';
 import { flowbiteButtonTheme } from './theme';
+
+import type { DeepPartial } from 'next-flowbite-angular';
+import { mergeDeep } from 'next-flowbite-angular';
 
 import { Component, computed, inject, model } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
@@ -18,15 +20,16 @@ import { twMerge } from 'tailwind-merge';
   template: `<ng-content />`,
 })
 export class ButtonComponent {
-  ngpButton = inject(NgpButton, { optional: false, self: true });
+  readonly ngpButton = inject(NgpButton, { self: true });
+  readonly baseTheme = inject(fb_it_button);
 
-  color = model<keyof ButtonColors>('primary');
-  size = model<keyof ButtonSizes>('md');
-  isPill = model<boolean>(false);
-  customStyle = model<DeepPartial<FlowbiteButtonTheme>>({});
+  readonly color = model<keyof ButtonColors>('primary');
+  readonly size = model<keyof ButtonSizes>('md');
+  readonly isPill = model<boolean>(false);
+  readonly customTheme = model<DeepPartial<FlowbiteButtonTheme>>({});
 
-  theme = computed(() => {
-    const mergedTheme = mergeDeep(flowbiteButtonTheme, this.customStyle());
+  readonly theme = computed(() => {
+    const mergedTheme = mergeDeep(flowbiteButtonTheme, this.customTheme());
 
     return {
       host: twMerge(
