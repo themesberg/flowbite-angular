@@ -33,12 +33,12 @@ export class ButtonComponent {
 
     return {
       host: twMerge(
-        mergedTheme.root.base,
-        mergedTheme.root.focus,
-        mergedTheme.root.disabled,
-        mergedTheme.root.size[this.size()],
-        mergedTheme.root.isPill[this.isPill() ? 'on' : 'off'],
-        mergedTheme.root.color[this.color()]
+        mergedTheme.host.base,
+        mergedTheme.host.focus,
+        mergedTheme.host.disabled,
+        mergedTheme.host.size[this.size()],
+        mergedTheme.host.isPill[this.isPill() ? 'on' : 'off'],
+        mergedTheme.host.color[this.color()]
       ),
     };
   });

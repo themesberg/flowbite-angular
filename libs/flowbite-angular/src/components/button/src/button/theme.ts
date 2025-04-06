@@ -14,10 +14,10 @@ export interface ButtonColors
 }
 
 export interface FlowbiteButtonTheme {
-  root: FlowbiteButtonRootTheme;
+  host: FlowbiteButtonHostTheme;
 }
 
-export interface FlowbiteButtonRootTheme {
+export interface FlowbiteButtonHostTheme {
   base: string;
   focus: string;
   disabled: string;
@@ -27,7 +27,7 @@ export interface FlowbiteButtonRootTheme {
 }
 
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
-  root: {
+  host: {
     base: 'border font-medium',
     focus: 'focus:ring-4 focus:outline-none',
     disabled: 'disabled:bg-opacity-50 disabled:cursor-not-allowed',

@@ -2,7 +2,7 @@ export { ButtonComponent } from './button/button.component';
 export {
   ButtonColors,
   ButtonSizes,
-  FlowbiteButtonRootTheme,
+  FlowbiteButtonHostTheme,
   FlowbiteButtonTheme,
   flowbiteButtonTheme,
 } from './button/theme';
