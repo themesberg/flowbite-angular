@@ -1,18 +1,18 @@
-import { ButtonComponent, flowbiteButtonTheme } from 'next-flowbite-angular/button';
+import { FlowbiteButtonComponent, flowbiteButtonTheme } from 'next-flowbite-angular/button';
 
 import { argsToTemplate } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = ButtonComponent & { disabled: boolean };
+type StoryType = FlowbiteButtonComponent & { disabled: boolean };
 
 export default {
   title: 'Button',
-  component: ButtonComponent,
+  component: FlowbiteButtonComponent,
   argTypes: {
     color: {
       control: 'select',
       type: 'string',
-      options: Object.keys(flowbiteButtonTheme.root.color),
+      options: Object.keys(flowbiteButtonTheme.host.color),
       table: {
         category: 'Input',
         defaultValue: {
@@ -23,7 +23,7 @@ export default {
     size: {
       control: 'select',
       type: 'string',
-      options: Object.keys(flowbiteButtonTheme.root.size),
+      options: Object.keys(flowbiteButtonTheme.host.size),
       table: {
         category: 'Input',
         defaultValue: {
@@ -51,7 +51,7 @@ export default {
         },
       },
     },
-    customStyle: {
+    customTheme: {
       control: 'object',
       type: 'symbol',
       table: {
@@ -67,7 +67,7 @@ export default {
     isPill: false,
     size: 'md',
     disabled: false,
-    customStyle: {},
+    customTheme: {},
   },
   render: (args) => ({
     props: args,

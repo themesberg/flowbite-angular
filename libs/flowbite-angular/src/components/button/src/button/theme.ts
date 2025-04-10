@@ -1,11 +1,11 @@
 import type { FlowbiteBoolean, FlowbiteColors, FlowbiteSizes } from 'next-flowbite-angular';
 import { createTheme } from 'next-flowbite-angular';
 
-export interface ButtonSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+export interface FlowbiteButtonSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
-export interface ButtonColors
+export interface FlowbiteButtonColors
   extends Pick<
     FlowbiteColors,
     'primary' | 'dark' | 'light' | 'green' | 'red' | 'yellow' | 'purple'
@@ -21,16 +21,16 @@ export interface FlowbiteButtonHostTheme {
   base: string;
   focus: string;
   disabled: string;
-  size: ButtonSizes;
+  size: FlowbiteButtonSizes;
   isPill: FlowbiteBoolean;
-  color: ButtonColors;
+  color: FlowbiteButtonColors;
 }
 
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   host: {
     base: 'border font-medium',
     focus: 'focus:ring-4 focus:outline-none',
-    disabled: 'disabled:bg-opacity-50 disabled:cursor-not-allowed',
+    disabled: 'disabled-disabled:opacity-50 data-disabled:cursor-not-allowed',
     size: {
       xs: 'px-3 py-2 text-xs',
       sm: 'px-3 py-2 text-sm',
