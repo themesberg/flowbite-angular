@@ -9,6 +9,7 @@ import { mergeDeep } from 'flowbite-angular';
 import type { BooleanInput } from '@angular/cdk/coercion';
 import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
@@ -17,13 +18,14 @@ import { twMerge } from 'tailwind-merge';
     button[flowbite-button],
     a[flowbite-button]
   `,
-  hostDirectives: [{ directive: NgpButton, inputs: ['disabled'] }],
+  hostDirectives: [{ directive: NgpButton, inputs: ['disabled'] }, NgpFocus],
   providers: [provideFlowbiteButtonState()],
   host: { '[class]': `theme().host` },
   template: ` <ng-content />`,
 })
 export class FlowbiteButtonComponent {
   readonly ngpButton = inject(NgpButton, { self: true });
+  readonly ngpFocus = inject(NgpFocus, { self: true });
   readonly baseTheme = inject(fb_it_button);
 
   /**
