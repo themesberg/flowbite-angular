@@ -39,6 +39,10 @@ export class FlowbiteButtonComponent {
    */
   readonly isPill = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
   /**
+   * @default false
+   */
+  readonly isOutline = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
+  /**
    * @default {}
    */
   readonly customTheme = input<DeepPartial<FlowbiteButtonTheme>>({});
@@ -53,7 +57,9 @@ export class FlowbiteButtonComponent {
         mergedTheme.host.disabled,
         mergedTheme.host.size[this.state.size()],
         mergedTheme.host.isPill[this.state.isPill() ? 'on' : 'off'],
-        mergedTheme.host.color[this.state.color()]
+        this.state.isOutline()
+          ? mergedTheme.host.colorOutline[this.state.color()]
+          : mergedTheme.host.color[this.state.color()]
       ),
     };
   });

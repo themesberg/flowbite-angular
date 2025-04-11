@@ -37,7 +37,17 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'true',
+          summary: 'false',
+        },
+      },
+    },
+    isOutline: {
+      control: 'boolean',
+      type: 'boolean',
+      table: {
+        category: 'Input',
+        defaultValue: {
+          summary: 'false',
         },
       },
     },
@@ -64,8 +74,9 @@ export default {
   },
   args: {
     color: 'primary',
-    isPill: false,
     size: 'md',
+    isPill: false,
+    isOutline: false,
     disabled: false,
     customTheme: {},
   },
