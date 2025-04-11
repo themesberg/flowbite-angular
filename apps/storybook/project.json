@@ -11,7 +11,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "storybook:build",
-        "staticFilePath": "dist/apps/storybook/browser",
+        "staticFilePath": "dist/storybook",
         "spa": true
       }
     },
@@ -19,7 +19,7 @@
       "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/storybook",
+        "outputDir": "dist/storybook",
         "configDir": "apps/storybook/.storybook",
         "browserTarget": "storybook:build",
         "styles": ["apps/storybook/styles.css"],
@@ -49,20 +49,6 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "test-storybook -c apps/storybook/.storybook --url=http://localhost:4400"
-      }
-    },
-    "static-storybook": {
-      "executor": "@nx/web:file-server",
-      "dependsOn": ["build-storybook"],
-      "options": {
-        "buildTarget": "storybook:build-storybook",
-        "staticFilePath": "dist/storybook/storybook",
-        "spa": true
-      },
-      "configurations": {
-        "ci": {
-          "buildTarget": "storybook:build-storybook:ci"
-        }
       }
     }
   }
