@@ -28,18 +28,12 @@
   "exports": {
     "./tailwind.config": "./tailwind.config.js"
   },
-  "devDependencies": {
-    "@angular-devkit/build-angular": ">=19.0.0 < 20.0.0"
-  },
   "peerDependencies": {
-    "@angular/animations": ">=19.0.0 < 20.0.0",
-    "@angular/cdk": "19.0.4",
+    "@angular/cdk": ">=19.0.0 < 20.0.0",
     "@angular/common": ">=19.0.0 < 20.0.0",
     "@angular/core": ">=19.0.0 < 20.0.0",
-    "@angular/platform-browser": ">=19.0.0 < 20.0.0",
-    "@angular/router": ">=19.0.0 < 20.0.0",
     "@ng-primitives/state": "0.29.0",
-    "jest-preset-angular": "^14.0.0",
+    "jest-preset-angular": "14.4.2",
     "ng-primitives": "0.29.0",
     "rxjs": "7.5.0",
     "tailwind-merge": "2.5.5"
