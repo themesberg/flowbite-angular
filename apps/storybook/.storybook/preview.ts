@@ -1,4 +1,4 @@
-import { makeFlowbiteProviders } from 'next-flowbite-angular/injection';
+import { makeFlowbiteProviders } from 'flowbite-angular/injection';
 
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { moduleMetadata, type Decorator, type Preview } from '@storybook/angular';
