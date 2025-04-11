@@ -1,3 +1,5 @@
 @config './storybook-tailwind.config.ts';
 
-@import 'tailwindcss';
+@custom-variant dark (&:where([data-mode='dark'] &, .dark &));
+
+@import '../../libs/flowbite-angular/styles/flowbite-angular.css';

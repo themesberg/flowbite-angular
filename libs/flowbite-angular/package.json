@@ -26,7 +26,9 @@
     "url": "https://github.com/MGREMY"
   },
   "exports": {
-    "./tailwind.config": "./tailwind.config.js"
+    "./styles": {
+      "sass": "./styles/**/*.css"
+    }
   },
   "dependencies": {
     "rxjs": "7.5.0"

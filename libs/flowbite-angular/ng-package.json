@@ -4,6 +4,6 @@
   "lib": {
     "entryFile": "core/src/index.ts"
   },
-  "assets": ["tailwind.config.js", "README.md", "LICENSE"],
+  "assets": ["./styles/**/*.css", "./README.md", "./LICENSE"],
   "allowedNonPeerDependencies": ["rxjs"]
 }

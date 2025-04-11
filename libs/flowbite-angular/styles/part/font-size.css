@@ -1,0 +1,67 @@
+@theme {
+  /* FontSize */
+  --text-xs: 0.75rem; /* 12px */
+  --text-xs--line-height: 1;
+  --text-xs--letter-spacing: normal;
+  --text-xs--font-weight: 400;
+
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1;
+  --text-sm--letter-spacing: normal;
+  --text-sm--font-weight: 400;
+
+  --text-base: 1rem; /* 16px */
+  --text-base--line-height: 1;
+  --text-base--letter-spacing: normal;
+  --text-base--font-weight: 400;
+
+  --text-lg: 1.125rem; /* 18px */
+  --text-lg--line-height: 1;
+  --text-lg--letter-spacing: normal;
+  --text-lg--font-weight: 400;
+
+  --text-xl: 1.25rem; /* 20px */
+  --text-xl--line-height: 1;
+  --text-xl--letter-spacing: normal;
+  --text-xl--font-weight: 400;
+
+  --text-2xl: 1.5rem; /* 24px */
+  --text-2xl--line-height: 1;
+  --text-2xl--letter-spacing: normal;
+  --text-2xl--font-weight: 400;
+
+  --text-3xl: 1.875rem; /* 30px */
+  --text-3xl--line-height: 1;
+  --text-3xl--letter-spacing: normal;
+  --text-3xl--font-weight: 400;
+
+  --text-4xl: 2.25rem; /* 36px */
+  --text-4xl--line-height: 1;
+  --text-4xl--letter-spacing: normal;
+  --text-4xl--font-weight: 400;
+
+  --text-5xl: 3rem; /* 48px */
+  --text-5xl--line-height: 1;
+  --text-5xl--letter-spacing: normal;
+  --text-5xl--font-weight: 400;
+
+  --text-6xl: 3.75rem; /* 60px */
+  --text-6xl--line-height: 1;
+  --text-6xl--letter-spacing: normal;
+  --text-6xl--font-weight: 400;
+
+  --text-7xl: 4.5rem; /* 72px */
+  --text-7xl--line-height: 1;
+  --text-7xl--letter-spacing: normal;
+  --text-7xl--font-weight: 400;
+
+  --text-8xl: 6rem; /* 96px */
+  --text-8xl--line-height: 1;
+  --text-8xl--letter-spacing: normal;
+  --text-8xl--font-weight: 400;
+
+  --text-9xl: 8rem; /* 128px */
+  --text-9xl--line-height: 1;
+  --text-9xl--letter-spacing: normal;
+  --text-9xl--font-weight: 400;
+}
