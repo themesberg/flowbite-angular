@@ -7,9 +7,9 @@ import { Component, signal } from '@angular/core';
   selector: 'flowbite-doc-demo',
   imports: [ButtonComponent, IconComponent],
   template: `
-    <div class="flex flex-col grow rounded-t-xl border border-gray-200 dark:border-gray-700">
+    <div class="flex grow flex-col rounded-t-xl border border-gray-200 dark:border-gray-700">
       <div
-        class="flex flex-row justify-between items-center rounded-t-xl p-6 border-b border-b-gray-200 dark:border-b-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+        class="flex flex-row items-center justify-between rounded-t-xl border-b border-b-gray-200 bg-gray-50 p-6 dark:border-b-gray-700 dark:bg-gray-800 dark:text-gray-400">
         <span>
           <flowbite-button
             [isDisabled]="true"
@@ -17,7 +17,7 @@ import { Component, signal } from '@angular/core';
             size="sm">
             <flowbite-icon
               svgIcon="solid:github"
-              class="mr-2 w-4 h-4" />
+              class="mr-2 h-4 w-4" />
             Show on Github
           </flowbite-button>
         </span>
@@ -29,7 +29,7 @@ import { Component, signal } from '@angular/core';
             [isPill]="true">
             <flowbite-icon
               svgIcon="outline:desktop-pc"
-              class="w-4 h-4" />
+              class="h-4 w-4" />
           </flowbite-button>
           <flowbite-button
             [isDisabled]="true"
@@ -38,7 +38,7 @@ import { Component, signal } from '@angular/core';
             [isPill]="true">
             <flowbite-icon
               svgIcon="outline:tablet"
-              class="w-4 h-4" />
+              class="h-4 w-4" />
           </flowbite-button>
           <flowbite-button
             [isDisabled]="true"
@@ -47,7 +47,7 @@ import { Component, signal } from '@angular/core';
             [isPill]="true">
             <flowbite-icon
               svgIcon="outline:mobile-phone"
-              class="w-4 h-4" />
+              class="h-4 w-4" />
           </flowbite-button>
         </span>
         <span class="flex flex-row gap-2">
@@ -58,7 +58,7 @@ import { Component, signal } from '@angular/core';
             (click)="themeMode.set('light')">
             <flowbite-icon
               svgIcon="outline:sun"
-              class="w-5 h-5" />
+              class="h-5 w-5" />
           </flowbite-button>
           <flowbite-button
             color="light"
@@ -67,13 +67,13 @@ import { Component, signal } from '@angular/core';
             (click)="themeMode.set('dark')">
             <flowbite-icon
               svgIcon="outline:moon"
-              class="w-5 h-5" />
+              class="h-5 w-5" />
           </flowbite-button>
         </span>
       </div>
       <div
         [attr.data-theme]="themeMode()"
-        class="p-6 bg-white dark:bg-gray-900">
+        class="bg-white p-6 dark:bg-gray-900">
         <ng-content />
       </div>
     </div>
