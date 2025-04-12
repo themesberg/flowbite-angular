@@ -1,7 +1,8 @@
 import { makeFlowbiteProviders } from 'flowbite-angular/injection';
 
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { moduleMetadata, type Decorator, type Preview } from '@storybook/angular';
+import type { Decorator, Preview } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
 
 export const decorators: Decorator[] = [
   withThemeByDataAttribute({

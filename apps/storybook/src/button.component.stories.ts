@@ -1,4 +1,4 @@
-import { FlowbiteButtonComponent, flowbiteButtonTheme } from 'flowbite-angular/button';
+import { FlowbiteButtonComponent } from 'flowbite-angular/button';
 
 import { argsToTemplate } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -6,13 +6,13 @@ import type { Meta, StoryObj } from '@storybook/angular';
 type StoryType = FlowbiteButtonComponent & { disabled: boolean };
 
 export default {
-  title: 'Button',
+  title: 'Component/Button',
   component: FlowbiteButtonComponent,
   argTypes: {
     color: {
       control: 'select',
       type: 'string',
-      options: Object.keys(flowbiteButtonTheme.host.color),
+      options: ['primary', 'dark', 'light', 'green', 'red', 'yellow', 'purple'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -23,7 +23,7 @@ export default {
     size: {
       control: 'select',
       type: 'string',
-      options: Object.keys(flowbiteButtonTheme.host.size),
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -31,7 +31,7 @@ export default {
         },
       },
     },
-    isPill: {
+    pill: {
       control: 'boolean',
       type: 'boolean',
       table: {
@@ -41,7 +41,7 @@ export default {
         },
       },
     },
-    isOutline: {
+    outline: {
       control: 'boolean',
       type: 'boolean',
       table: {
@@ -75,8 +75,8 @@ export default {
   args: {
     color: 'primary',
     size: 'md',
-    isPill: false,
-    isOutline: false,
+    pill: false,
+    outline: false,
     disabled: false,
     customTheme: {},
   },

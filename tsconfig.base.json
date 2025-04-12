@@ -19,8 +19,8 @@
     "paths": {
       "@ng-doc/generated": ["tmp/apps/docs/ng-doc/docs/index.ts"],
       "@ng-doc/generated/*": ["tmp/apps/docs/ng-doc/docs/*"],
-
       "flowbite-angular": ["libs/flowbite-angular/core/src/index.ts"],
+      "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/src/index.ts"],
       "flowbite-angular/button": ["libs/flowbite-angular/button/src/index.ts"],
       "flowbite-angular/injection": ["libs/flowbite-angular/injection/src/index.ts"]
     }

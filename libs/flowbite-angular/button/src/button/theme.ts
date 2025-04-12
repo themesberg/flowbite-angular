@@ -19,10 +19,11 @@ export interface FlowbiteButtonTheme {
 
 export interface FlowbiteButtonHostTheme {
   base: string;
+  transition: string;
   focus: string;
   disabled: string;
   size: FlowbiteButtonSizes;
-  isPill: FlowbiteBoolean;
+  pill: FlowbiteBoolean;
   color: FlowbiteButtonColors;
   colorOutline: FlowbiteButtonColors;
 }
@@ -30,6 +31,7 @@ export interface FlowbiteButtonHostTheme {
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   host: {
     base: 'relative flex cursor-pointer items-center justify-center border border-transparent text-center font-medium',
+    transition: 'transition-colors duration-150 ease-in-out',
     focus:
       'data-focus:ring-0 data-focus:outline-none data-focus-visible:ring-2 data-focus-visible:outline-none',
     disabled: 'data-disabled:cursor-not-allowed data-disabled:opacity-50',
@@ -40,7 +42,7 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
       lg: 'px-5 py-3 text-base',
       xl: 'px-6 py-3.5 text-base',
     },
-    isPill: {
+    pill: {
       on: 'rounded-full',
       off: 'rounded-lg',
     },

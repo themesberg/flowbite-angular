@@ -1,14 +1,13 @@
 import { flowbiteButtonState, provideFlowbiteButtonState } from './button-state';
 import { fb_it_button } from './i';
 import type { FlowbiteButtonColors, FlowbiteButtonSizes, FlowbiteButtonTheme } from './theme';
-import { flowbiteButtonTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
 import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
-import { NgpButton } from 'ng-primitives/button';
+import { NgpButton, provideButtonState } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
@@ -19,13 +18,12 @@ import { twMerge } from 'tailwind-merge';
     a[flowbite-button]
   `,
   hostDirectives: [{ directive: NgpButton, inputs: ['disabled'] }, NgpFocus],
-  providers: [provideFlowbiteButtonState()],
-  host: { '[class]': `theme().host` },
+  imports: [],
+  providers: [provideFlowbiteButtonState(), provideButtonState()],
+  host: { '[class]': `theme().host.root` },
   template: ` <ng-content />`,
 })
 export class FlowbiteButtonComponent {
-  readonly ngpButton = inject(NgpButton, { self: true });
-  readonly ngpFocus = inject(NgpFocus, { self: true });
   readonly baseTheme = inject(fb_it_button);
 
   /**
@@ -39,30 +37,33 @@ export class FlowbiteButtonComponent {
   /**
    * @default false
    */
-  readonly isPill = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
+  readonly pill = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
   /**
    * @default false
    */
-  readonly isOutline = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
+  readonly outline = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
   /**
    * @default {}
    */
   readonly customTheme = input<DeepPartial<FlowbiteButtonTheme>>({});
 
   readonly theme = computed(() => {
-    const mergedTheme = mergeDeep(flowbiteButtonTheme, this.state.customTheme());
+    const mergedTheme = mergeDeep(this.baseTheme, this.state.customTheme());
 
     return {
-      host: twMerge(
-        mergedTheme.host.base,
-        mergedTheme.host.focus,
-        mergedTheme.host.disabled,
-        mergedTheme.host.size[this.state.size()],
-        mergedTheme.host.isPill[this.state.isPill() ? 'on' : 'off'],
-        this.state.isOutline()
-          ? mergedTheme.host.colorOutline[this.state.color()]
-          : mergedTheme.host.color[this.state.color()]
-      ),
+      host: {
+        root: twMerge(
+          mergedTheme.host.base,
+          mergedTheme.host.transition,
+          mergedTheme.host.focus,
+          mergedTheme.host.disabled,
+          mergedTheme.host.size[this.state.size()],
+          mergedTheme.host.pill[this.state.pill() ? 'on' : 'off'],
+          this.state.outline()
+            ? mergedTheme.host.colorOutline[this.state.color()]
+            : mergedTheme.host.color[this.state.color()]
+        ),
+      },
     };
   });
 

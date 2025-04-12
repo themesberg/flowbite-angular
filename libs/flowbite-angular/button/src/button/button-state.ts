@@ -5,7 +5,7 @@ import {
   createStateInjector,
   createStateProvider,
   createStateToken,
-} from '@ng-primitives/state';
+} from 'ng-primitives/state';
 
 export const FlowbiteButtonStateToken = createStateToken<FlowbiteButtonComponent>;
 export const provideFlowbiteButtonState = createStateProvider(FlowbiteButtonStateToken);
