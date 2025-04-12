@@ -31,12 +31,11 @@
     }
   },
   "dependencies": {
-    "rxjs": "7.5.0"
+    "jest-preset-angular": "14.4.2"
   },
   "peerDependencies": {
     "@angular/cdk": ">=19.0.0 < 20.0.0",
     "@angular/core": ">=19.0.0 < 20.0.0",
-    "@ng-primitives/state": "0.29.0",
     "ng-primitives": "0.29.0",
     "tailwind-merge": "2.5.5"
   }

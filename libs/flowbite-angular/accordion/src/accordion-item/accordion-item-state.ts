@@ -7,7 +7,8 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteAccordionItemStateToken = createStateToken<FlowbiteAccordionItemComponent>;
+export const FlowbiteAccordionItemStateToken =
+  createStateToken<FlowbiteAccordionItemComponent>('Flowbite Accordion Item');
 export const provideFlowbiteAccordionItemState = createStateProvider(
   FlowbiteAccordionItemStateToken
 );
