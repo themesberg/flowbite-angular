@@ -1,16 +1,16 @@
 import { injectFlowbiteAccordionState } from '../accordion/accordion-state';
 import type { FlowbiteAccordionComponent } from '../accordion/accordion.component';
+import { injectFlowbiteAccordionItemConfig } from '../config/accordion-item-config';
 import {
   flowbiteAccordionItemState,
   provideFlowbiteAccordionItemState,
 } from './accordion-item-state';
-import { fb_it_accordion_item } from './i';
 import type { FlowbiteAccordionItemTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import {
   injectAccordionItemState,
   NgpAccordionContent,
@@ -57,16 +57,16 @@ export class FlowbiteAccordionItemComponent {
     injectFlowbiteAccordionState<FlowbiteAccordionComponent>();
   private readonly ngpAccordionItemState = injectAccordionItemState();
 
-  readonly baseTheme = inject(fb_it_accordion_item);
+  readonly config = injectFlowbiteAccordionItemConfig();
 
   readonly title = input.required<string>();
   /**
-   * @default {}
+   * @see {@link injectFlowbiteAccordionItemConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAccordionItemTheme>>({});
+  readonly customTheme = input<DeepPartial<FlowbiteAccordionItemTheme>>(this.config.customTheme);
 
   readonly theme = computed(() => {
-    const mergedTheme = mergeDeep(this.baseTheme, this.state.customTheme());
+    const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
       host: {

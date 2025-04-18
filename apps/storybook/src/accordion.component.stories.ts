@@ -1,4 +1,5 @@
 import {
+  defaultFlowbiteAccordionConfig,
   FlowbiteAccordionComponent,
   FlowbiteAccordionItemComponent,
 } from 'flowbite-angular/accordion';
@@ -28,7 +29,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'primary',
+          summary: JSON.stringify(defaultFlowbiteAccordionConfig.color),
         },
       },
     },
@@ -38,7 +39,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'false',
+          summary: JSON.stringify(defaultFlowbiteAccordionConfig.flush),
         },
       },
     },
@@ -48,7 +49,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: '{}',
+          summary: JSON.stringify(defaultFlowbiteAccordionConfig.customTheme),
         },
       },
     },
@@ -58,7 +59,10 @@ export default {
       options: ['single', 'multiple'],
       table: {
         category: 'Input',
-        defaultValue: 'single',
+        subcategory: 'NG-PRIMITIVES',
+        defaultValue: {
+          summary: 'single',
+        },
       },
     },
     disabled: {
@@ -66,6 +70,7 @@ export default {
       type: 'boolean',
       table: {
         category: 'Input',
+        subcategory: 'NG-PRIMITIVES',
         defaultValue: {
           summary: 'false',
         },
@@ -76,6 +81,7 @@ export default {
       type: 'boolean',
       table: {
         category: 'Input',
+        subcategory: 'NG-PRIMITIVES',
         defaultValue: {
           summary: 'false',
         },
@@ -83,9 +89,9 @@ export default {
     },
   },
   args: {
-    color: 'primary',
-    flush: false,
-    customTheme: {},
+    color: defaultFlowbiteAccordionConfig.color,
+    flush: defaultFlowbiteAccordionConfig.flush,
+    customTheme: defaultFlowbiteAccordionConfig.customTheme,
     type: 'single',
     disabled: false,
     collapsible: false,

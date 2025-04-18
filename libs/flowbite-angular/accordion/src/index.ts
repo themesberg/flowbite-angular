@@ -6,7 +6,6 @@ export {
   injectFlowbiteAccordionState,
   provideFlowbiteAccordionState,
 } from './accordion/accordion-state';
-export { fb_it_accordion, fb_it_p_accordion } from './accordion/i';
 export {
   FlowbiteAccordionColors,
   FlowbiteAccordionHostTheme,
@@ -21,7 +20,6 @@ export {
   injectFlowbiteAccordionItemState,
   provideFlowbiteAccordionItemState,
 } from './accordion-item/accordion-item-state';
-export { fb_it_accordion_item, fb_it_p_accordion_item } from './accordion-item/i';
 export {
   FlowbiteAccordionItemHostTheme,
   FlowbiteAccordionItemTheme,
@@ -29,3 +27,18 @@ export {
   FlowbiteAccordionItemContentTheme,
   FlowbiteAccordionItemTitleTheme,
 } from './accordion-item/theme';
+/* Config */
+export {
+  FlowbiteAccordionItemConfig,
+  FlowbiteAccordionItemConfigToken,
+  defaultFlowbiteAccordionItemConfig,
+  injectFlowbiteAccordionItemConfig,
+  provideFlowbiteAccordionItemConfig,
+} from './config/accordion-item-config';
+export {
+  FlowbiteAccordionConfig,
+  FlowbiteAccordionConfigToken,
+  defaultFlowbiteAccordionConfig,
+  injectFlowbiteAccordionConfig,
+  provideFlowbiteAccordionConfig,
+} from './config/accordion-config';

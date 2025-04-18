@@ -1,12 +1,12 @@
+import { injectFlowbiteButtonConfig } from '../config/button-config';
 import { flowbiteButtonState, provideFlowbiteButtonState } from './button-state';
-import { fb_it_button } from './i';
 import type { FlowbiteButtonColors, FlowbiteButtonSizes, FlowbiteButtonTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
+import { booleanAttribute, Component, computed, input } from '@angular/core';
 import { NgpButton, provideButtonState } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
@@ -24,31 +24,33 @@ import { twMerge } from 'tailwind-merge';
   template: ` <ng-content />`,
 })
 export class FlowbiteButtonComponent {
-  readonly baseTheme = inject(fb_it_button);
+  protected readonly config = injectFlowbiteButtonConfig();
 
   /**
-   * @default primary
+   * @see {@link injectFlowbiteButtonConfig}
    */
-  readonly color = input<keyof FlowbiteButtonColors>('primary');
+  readonly color = input<keyof FlowbiteButtonColors>(this.config.color);
   /**
-   * @default md
+   * @see {@link injectFlowbiteButtonConfig}
    */
-  readonly size = input<keyof FlowbiteButtonSizes>('md');
+  readonly size = input<keyof FlowbiteButtonSizes>(this.config.size);
   /**
-   * @default false
+   * @see {@link injectFlowbiteButtonConfig}
    */
-  readonly pill = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
+  readonly pill = input<boolean, BooleanInput>(this.config.pill, { transform: booleanAttribute });
   /**
-   * @default false
+   * @see {@link injectFlowbiteButtonConfig}
    */
-  readonly outline = input<boolean, BooleanInput>(false, { transform: booleanAttribute });
+  readonly outline = input<boolean, BooleanInput>(this.config.outline, {
+    transform: booleanAttribute,
+  });
   /**
-   * @default {}
+   * @see {@link injectFlowbiteButtonConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteButtonTheme>>({});
+  readonly customTheme = input<DeepPartial<FlowbiteButtonTheme>>(this.config.customTheme);
 
   readonly theme = computed(() => {
-    const mergedTheme = mergeDeep(this.baseTheme, this.state.customTheme());
+    const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
       host: {

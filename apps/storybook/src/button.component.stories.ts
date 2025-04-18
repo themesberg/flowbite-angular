@@ -1,4 +1,4 @@
-import { FlowbiteButtonComponent } from 'flowbite-angular/button';
+import { defaultFlowbiteButtonConfig, FlowbiteButtonComponent } from 'flowbite-angular/button';
 
 import { argsToTemplate } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -16,7 +16,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'primary',
+          summary: JSON.stringify(defaultFlowbiteButtonConfig.color),
         },
       },
     },
@@ -27,7 +27,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'md',
+          summary: JSON.stringify(defaultFlowbiteButtonConfig.size),
         },
       },
     },
@@ -37,7 +37,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'false',
+          summary: JSON.stringify(defaultFlowbiteButtonConfig.pill),
         },
       },
     },
@@ -47,17 +47,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: 'false',
-        },
-      },
-    },
-    disabled: {
-      control: 'boolean',
-      type: 'boolean',
-      table: {
-        category: 'Input',
-        defaultValue: {
-          summary: 'false',
+          summary: JSON.stringify(defaultFlowbiteButtonConfig.outline),
         },
       },
     },
@@ -67,18 +57,29 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: '{}',
+          summary: JSON.stringify(defaultFlowbiteButtonConfig.customTheme),
+        },
+      },
+    },
+    disabled: {
+      control: 'boolean',
+      type: 'boolean',
+      table: {
+        category: 'Input',
+        subcategory: 'NG-PRIMITIVES',
+        defaultValue: {
+          summary: 'false',
         },
       },
     },
   },
   args: {
-    color: 'primary',
-    size: 'md',
-    pill: false,
-    outline: false,
+    color: defaultFlowbiteButtonConfig.color,
+    size: defaultFlowbiteButtonConfig.size,
+    pill: defaultFlowbiteButtonConfig.pill,
+    outline: defaultFlowbiteButtonConfig.outline,
+    customTheme: defaultFlowbiteButtonConfig.customTheme,
     disabled: false,
-    customTheme: {},
   },
   render: (args) => ({
     props: args,

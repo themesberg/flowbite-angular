@@ -1,11 +1,11 @@
+import { injectFlowbiteAccordionConfig } from '../config/accordion-config';
 import { flowbiteAccordionState, provideFlowbiteAccordionState } from './accordion-state';
-import { fb_it_accordion } from './i';
 import type { FlowbiteAccordionColors, FlowbiteAccordionTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
+import { booleanAttribute, Component, computed, input } from '@angular/core';
 import { NgpAccordion, provideAccordionState } from 'ng-primitives/accordion';
 import { twMerge } from 'tailwind-merge';
 
@@ -30,25 +30,25 @@ import { twMerge } from 'tailwind-merge';
   template: `<ng-content />`,
 })
 export class FlowbiteAccordionComponent {
-  readonly baseTheme = inject(fb_it_accordion);
+  protected readonly config = injectFlowbiteAccordionConfig();
 
   /**
-   * @default primary
+   * @see {@link injectFlowbiteAccordionConfig}
    */
-  readonly color = input<keyof FlowbiteAccordionColors>('primary');
+  readonly color = input<keyof FlowbiteAccordionColors>(this.config.color);
   /**
-   * @default false
+   * @see {@link injectFlowbiteAccordionConfig}
    */
-  readonly flush = input<boolean, BooleanInput>(false, {
+  readonly flush = input<boolean, BooleanInput>(this.config.flush, {
     transform: booleanAttribute,
   });
   /**
-   * @default {}
+   * @see {@link injectFlowbiteAccordionConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAccordionTheme>>({});
+  readonly customTheme = input<DeepPartial<FlowbiteAccordionTheme>>(this.config.customTheme);
 
   readonly theme = computed(() => {
-    const mergedTheme = mergeDeep(this.baseTheme, this.state.customTheme());
+    const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
       host: {

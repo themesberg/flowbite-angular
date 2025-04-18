@@ -6,7 +6,6 @@ export {
   injectFlowbiteButtonState,
   provideFlowbiteButtonState,
 } from './button/button-state';
-export { fb_it_p_button, fb_it_button } from './button/i';
 export {
   FlowbiteButtonColors,
   FlowbiteButtonSizes,
@@ -14,3 +13,11 @@ export {
   FlowbiteButtonTheme,
   flowbiteButtonTheme,
 } from './button/theme';
+/* Config */
+export {
+  FlowbiteButtonConfig,
+  FlowbiteButtonConfigToken,
+  defaultFlowbiteButtonConfig,
+  injectFlowbiteButtonConfig,
+  provideFlowbiteButtonConfig,
+} from './config/button-config';
