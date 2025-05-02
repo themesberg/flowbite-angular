@@ -5,7 +5,14 @@ import type { FlowbiteAccordionColors, FlowbiteAccordionTheme } from './theme';
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import { booleanAttribute, Component, computed, input } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { NgpAccordion, provideAccordionState } from 'ng-primitives/accordion';
 import { twMerge } from 'tailwind-merge';
 
@@ -29,6 +36,8 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteAccordionState(), provideAccordionState()],
   host: { '[class]': `theme().host.root` },
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteAccordionComponent {
   protected readonly config = injectFlowbiteAccordionConfig();

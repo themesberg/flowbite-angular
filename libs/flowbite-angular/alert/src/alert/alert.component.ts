@@ -1,11 +1,18 @@
-import { injectFlowbiteAlertConfig } from '../config/alert.config';
-import { flowbiteAlertState, provideFlowbiteAlertState } from './alert.state';
+import { injectFlowbiteAlertConfig } from '../config/alert-config';
+import { flowbiteAlertState, provideFlowbiteAlertState } from './alert-state';
 import type { FlowbiteAlertColors, FlowbiteAlertTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import { booleanAttribute, Component, computed, input } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
@@ -22,6 +29,8 @@ import { twMerge } from 'tailwind-merge';
     '[attr.role]': 'alert',
   },
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteAlertComponent {
   protected readonly config = injectFlowbiteAlertConfig();

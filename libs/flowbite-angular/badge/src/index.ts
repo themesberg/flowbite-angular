@@ -5,7 +5,7 @@ export {
   flowbiteBadgeState,
   injectFlowbiteBadgeState,
   provideFlowbiteBadgeState,
-} from './badge/badge.state';
+} from './badge/badge-state';
 export {
   FlowbiteBadgeColors,
   FlowbiteBadgeHostTheme,
@@ -20,4 +20,4 @@ export {
   defaultFlowbiteBadgeConfig,
   injectFlowbiteBadgeConfig,
   provideFlowbiteBadgeConfig,
-} from './config/badge.config';
+} from './config/badge-config';

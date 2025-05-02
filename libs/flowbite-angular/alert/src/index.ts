@@ -5,7 +5,7 @@ export {
   flowbiteAlertState,
   injectFlowbiteAlertState,
   provideFlowbiteAlertState,
-} from './alert/alert.state';
+} from './alert/alert-state';
 export {
   FlowbiteAlertColors,
   FlowbiteAlertHostTheme,
@@ -19,4 +19,4 @@ export {
   defaultFlowbiteAlertConfig,
   injectFlowbiteAlertConfig,
   provideFlowbiteAlertConfig,
-} from './config/alert.config';
+} from './config/alert-config';

@@ -1,11 +1,18 @@
-import { injectFlowbiteBadgeConfig } from '../config/badge.config';
-import { flowbiteBadgeState, provideFlowbiteBadgeState } from './badge.state';
+import { injectFlowbiteBadgeConfig } from '../config/badge-config';
+import { flowbiteBadgeState, provideFlowbiteBadgeState } from './badge-state';
 import type { FlowbiteBadgeColors, FlowbiteBadgeSizes, FlowbiteBadgeTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import { booleanAttribute, Component, computed, input } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
@@ -21,6 +28,8 @@ import { twMerge } from 'tailwind-merge';
     '[class]': `theme().host.root`,
   },
   template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteBadgeComponent {
   protected readonly config = injectFlowbiteBadgeConfig();

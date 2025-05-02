@@ -6,7 +6,14 @@ import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import { booleanAttribute, Component, computed, input } from '@angular/core';
+import {
+  booleanAttribute,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { NgpButton, provideButtonState } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
@@ -23,6 +30,8 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteButtonState(), provideButtonState()],
   host: { '[class]': `theme().host.root` },
   template: ` <ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteButtonComponent {
   protected readonly config = injectFlowbiteButtonConfig();

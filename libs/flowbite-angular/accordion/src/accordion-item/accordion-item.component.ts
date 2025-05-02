@@ -10,7 +10,13 @@ import type { FlowbiteAccordionItemTheme } from './theme';
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
-import { Component, computed, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 import {
   injectAccordionItemState,
   NgpAccordionContent,
@@ -52,6 +58,8 @@ import { twMerge } from 'tailwind-merge';
       <ng-content />
     </div>
   `,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteAccordionItemComponent {
   protected readonly flowbiteAccordionState =
