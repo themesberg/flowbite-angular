@@ -22,6 +22,7 @@
       "flowbite-angular": ["libs/flowbite-angular/core/src/index.ts"],
       "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/src/index.ts"],
       "flowbite-angular/alert": ["libs/flowbite-angular/alert/src/index.ts"],
+      "flowbite-angular/badge": ["libs/flowbite-angular/badge/src/index.ts"],
       "flowbite-angular/button": ["libs/flowbite-angular/button/src/index.ts"]
     }
   },
