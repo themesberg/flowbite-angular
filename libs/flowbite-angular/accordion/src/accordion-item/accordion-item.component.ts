@@ -27,6 +27,7 @@ import { twMerge } from 'tailwind-merge';
     flowbite-accordion-item,
     div[flowbite-accordion-item]
   `,
+  exportAs: 'flowbiteAccordionItem',
   hostDirectives: [
     {
       directive: NgpAccordionItem,
