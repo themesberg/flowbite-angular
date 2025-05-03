@@ -12,6 +12,8 @@ export {
   FlowbiteIndicatorHostTheme,
   FlowbiteIndicatorTheme,
   flowbiteIndicatorTheme,
+  FlowbiteIndicatorColors,
+  FlowbiteIndicatorSizes,
 } from './indicator/theme';
 /* Config */
 export {

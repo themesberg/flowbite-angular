@@ -27,7 +27,8 @@
       "flowbite-angular/breadcrumb": ["libs/flowbite-angular/breadcrumb/src/index.ts"],
       "flowbite-angular/button": ["libs/flowbite-angular/button/src/index.ts"],
       "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/src/index.ts"],
-      "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/src/index.ts"]
+      "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/src/index.ts"],
+      "flowbite-angular/modal": ["libs/flowbite-angular/modal/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
