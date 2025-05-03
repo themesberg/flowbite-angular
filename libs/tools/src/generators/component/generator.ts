@@ -1,4 +1,5 @@
 import { addExportToIndex } from '../../utils';
+import storybookGenerator from '../storybook/generator';
 import type { ComponentGeneratorSchema } from './schema';
 
 import { librarySecondaryEntryPointGenerator } from '@nx/angular/generators';
@@ -57,6 +58,13 @@ export async function componentGenerator(tree: Tree, options: ComponentGenerator
   } from './config/${nameFormats.fileName}-config';
       `
     );
+  }
+
+  if (options.addStorybook) {
+    await storybookGenerator(tree, {
+      name: options.name,
+      directoryName: options.directoryName,
+    });
   }
 
   await formatFiles(tree);

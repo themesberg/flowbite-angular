@@ -4,6 +4,11 @@
       "factory": "./src/generators/component/generator",
       "schema": "./src/generators/component/schema.json",
       "description": "component generator"
+    },
+    "storybook": {
+      "factory": "./src/generators/storybook/generator",
+      "schema": "./src/generators/storybook/schema.json",
+      "description": "storybook generator"
     }
   }
 }

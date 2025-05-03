@@ -1,0 +1,34 @@
+import { defaultFlowbite<%= className %>Config, Flowbite<%= className %>Component } from 'flowbite-angular/<%= fileName %>';
+
+import type { Meta, StoryObj } from '@storybook/angular';
+import { argsToTemplate } from '@storybook/angular';
+
+type StoryType = Flowbite<%= className %>Component;
+
+export default {
+  title: 'Component/<%= className %>',
+  component: Flowbite<%= className %>Component,
+  argTypes: {
+    customTheme: {
+      control: 'object',
+      type: 'symbol',
+      table: {
+        category: 'Input',
+        defaultValue: {
+          summary: JSON.stringify(defaultFlowbite<%= className %>Config.customTheme),
+        },
+      },
+    },
+  },
+  args: {
+    customTheme: defaultFlowbite<%= className %>Config.customTheme,
+  },
+  render: (args) => ({
+    props: args,
+    template: ``,
+  }),
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
+};
