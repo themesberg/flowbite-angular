@@ -1,4 +1,4 @@
-import { addExportToIndex } from '../utils';
+import { addExportToIndex } from '../../utils';
 import type { ComponentGeneratorSchema } from './schema';
 
 import { librarySecondaryEntryPointGenerator } from '@nx/angular/generators';
