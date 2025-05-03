@@ -22,7 +22,7 @@ import { twMerge } from 'tailwind-merge';
   hostDirectives: [],
   imports: [],
   providers: [provideFlowbite<%= className %>State()],
-  host: {},
+  host: { '[class]': `theme().host.root` },
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
