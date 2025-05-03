@@ -1,13 +1,3 @@
-@config '../tailwind.config.js';
+@custom-variant dark (&:where([data-theme='dark'] &, .dark &));
 
-@import 'tailwindcss';
-
-@import url('assets/styles/base.scss');
-@import url('assets/styles/dark.scss');
-
-@layer base {
-  @font-face {
-    font-family: Inter;
-    src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
-  }
-}
+@import '../../../libs/flowbite-angular/styles/flowbite-angular.css';
