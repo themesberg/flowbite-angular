@@ -1,5 +1,4 @@
 import { injectFlowbiteAccordionState } from '../accordion/accordion-state';
-import type { FlowbiteAccordionComponent } from '../accordion/accordion.component';
 import { injectFlowbiteAccordionItemConfig } from '../config/accordion-item-config';
 import {
   flowbiteAccordionItemState,
@@ -62,11 +61,10 @@ import { twMerge } from 'tailwind-merge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteAccordionItemComponent {
-  protected readonly flowbiteAccordionState =
-    injectFlowbiteAccordionState<FlowbiteAccordionComponent>();
-  private readonly ngpAccordionItemState = injectAccordionItemState();
+  protected readonly config = injectFlowbiteAccordionItemConfig();
 
-  readonly config = injectFlowbiteAccordionItemConfig();
+  protected readonly flowbiteAccordionState = injectFlowbiteAccordionState();
+  protected readonly ngpAccordionItemState = injectAccordionItemState();
 
   readonly title = input.required<string>();
   /**

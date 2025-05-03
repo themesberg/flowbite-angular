@@ -5,6 +5,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.eol": "\r\n",
   "editor.formatOnSave": true,
+  "tailwindCSS.experimental.configFile": "libs/flowbite-angular/styles/flowbite-angular.css",
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "customStyle"],
   "tailwindCSS.classFunctions": ["twMerge", "createTheme"],
   "typescript.tsdk": "node_modules/typescript/lib",

@@ -25,7 +25,18 @@ import { twMerge } from 'tailwind-merge';
     a[flowbiteButton]
   `,
   exportAs: 'flowbiteButton',
-  hostDirectives: [{ directive: NgpButton, inputs: ['disabled'] }, NgpFocus],
+  hostDirectives: [
+    {
+      directive: NgpButton,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+    {
+      directive: NgpFocus,
+      inputs: [],
+      outputs: [],
+    },
+  ],
   imports: [],
   providers: [provideFlowbiteButtonState(), provideButtonState()],
   host: { '[class]': `theme().host.root` },
