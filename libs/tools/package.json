@@ -1,0 +1,13 @@
+{
+  "name": "tools",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@nx/devkit": "20.7.2",
+    "tslib": "^2.3.0"
+  },
+  "generators": "./generators.json"
+}

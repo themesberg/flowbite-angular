@@ -1,0 +1,15 @@
+import { createTheme } from 'flowbite-angular';
+
+export interface Flowbite<%= className %>Theme {
+  host: Flowbite<%= className %>HostTheme;
+}
+
+export interface Flowbite<%= className %>HostTheme {
+  base: string;
+}
+
+export const flowbite<%= className %>Theme: Flowbite<%= className %>Theme = createTheme({
+  host: {
+    base: '',
+  },
+});

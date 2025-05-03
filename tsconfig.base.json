@@ -20,6 +20,7 @@
       "@ng-doc/generated": ["tmp/apps/docs/ng-doc/docs/index.ts"],
       "@ng-doc/generated/*": ["tmp/apps/docs/ng-doc/docs/*"],
       "flowbite-angular": ["libs/flowbite-angular/core/src/index.ts"],
+      "flowbite-angular-tools": ["libs/tools/src/index.ts"],
       "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/src/index.ts"],
       "flowbite-angular/alert": ["libs/flowbite-angular/alert/src/index.ts"],
       "flowbite-angular/badge": ["libs/flowbite-angular/badge/src/index.ts"],

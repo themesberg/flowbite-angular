@@ -1,0 +1,49 @@
+import { injectFlowbite<%= className %>Config } from '../config/<%= fileName %>-config';
+import { flowbite<%= className %>State, provideFlowbite<%= className %>State } from './<%= fileName %>-state';
+import type { Flowbite<%= className %>Theme } from './theme';
+
+import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
+import { twMerge } from 'tailwind-merge';
+
+@Component({
+  standalone: true,
+  selector: `
+    [flowbite<%= className %>]
+  `,
+  exportAs: 'flowbite<%= className %>',
+  hostDirectives: [],
+  imports: [],
+  providers: [provideFlowbite<%= className %>State()],
+  host: {},
+  template: `<ng-content />`,
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class Flowbite<%= className %>Component {
+  protected readonly config = injectFlowbite<%= className %>Config();
+
+  /**
+   * @see {@link injectFlowbite<%= className %>Config}
+   */
+  readonly customTheme = input<DeepPartial<Flowbite<%= className %>Theme>>(this.config.customTheme);
+
+  readonly theme = computed(() => {
+    const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
+
+    return {
+      host: {
+        root: twMerge(mergedTheme.host.base),
+      },
+    };
+  });
+
+  protected readonly state = flowbite<%= className %>State<Flowbite<%= className %>Component>(this);
+}

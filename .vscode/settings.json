@@ -8,7 +8,6 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "customStyle"],
   "tailwindCSS.classFunctions": ["twMerge", "createTheme"],
   "typescript.tsdk": "node_modules/typescript/lib",
-
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
@@ -19,5 +18,6 @@
       "strings": "off",
       "other": "off"
     }
-  }
+  },
+  "eslint.validate": ["json"]
 }

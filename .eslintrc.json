@@ -5,6 +5,11 @@
   "extends": ["plugin:@nx/angular", "plugin:@typescript-eslint/recommended", "prettier"],
   "overrides": [
     {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {}
+    },
+    {
       "files": ["*.ts"],
       "rules": {
         "prettier/prettier": [
@@ -13,19 +18,13 @@
             "endOfLine": "auto"
           }
         ],
-
-        // ESLint
         "no-extra-semi": "off",
         "comma-dangle": "off",
         "no-empty-function": "off",
-
-        // TypeScript
         "@typescript-eslint/no-extra-semi": "error",
         "@typescript-eslint/no-empty-function": "warn",
         "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/consistent-type-imports": "error",
-
-        // Nx specific rules
         "@nx/enforce-module-boundaries": "error"
       }
     }

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Component",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "directoryName": {
+      "type": "string",
+      "description": "The name of the parent directory",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What directory name would you like to use?"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the component",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What name would you like to use?"
+    }
+  },
+  "required": ["directoryName", "name"]
+}
