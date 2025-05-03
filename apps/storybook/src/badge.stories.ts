@@ -60,7 +60,7 @@ export default {
   },
   render: (args) => ({
     props: args,
-    template: `<span flowbite-badge ${argsToTemplate(args)}>Badge</span>`,
+    template: `<span flowbiteBadge ${argsToTemplate(args)}>Badge</span>`,
   }),
 } as Meta<StoryType>;
 

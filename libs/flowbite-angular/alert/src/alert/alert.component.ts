@@ -18,7 +18,7 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    div[flowbite-alert]
+    div[flowbiteAlert]
   `,
   exportAs: 'flowbiteAlert',
   hostDirectives: [],

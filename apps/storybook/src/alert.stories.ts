@@ -59,7 +59,7 @@ export default {
   },
   render: (args) => ({
     props: args,
-    template: `<div flowbite-alert ${argsToTemplate(args)}>Alert</div>`,
+    template: `<div flowbiteAlert ${argsToTemplate(args)}>Alert</div>`,
   }),
 } as Meta<StoryType>;
 

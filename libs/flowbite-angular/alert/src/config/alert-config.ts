@@ -44,6 +44,11 @@ export const FlowbiteAlertConfigToken = new InjectionToken<FlowbiteAlertConfig>(
   'FlowbiteAlertConfigToken'
 );
 
+/**
+ * Provide the default Alert configuration
+ * @param config The Alert configuration
+ * @returns The provider
+ */
 export const provideFlowbiteAlertConfig = (config: Partial<FlowbiteAlertConfig>): Provider[] => [
   {
     provide: FlowbiteAlertConfigToken,
@@ -51,5 +56,10 @@ export const provideFlowbiteAlertConfig = (config: Partial<FlowbiteAlertConfig>)
   },
 ];
 
+/**
+ * Inject the Alert configuration
+ * @see {@link defaultFlowbiteAlertConfig}
+ * @returns The configuration
+ */
 export const injectFlowbiteAlertConfig = (): FlowbiteAlertConfig =>
   inject(FlowbiteAlertConfigToken, { optional: true }) ?? defaultFlowbiteAlertConfig;

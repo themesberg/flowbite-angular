@@ -19,8 +19,8 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    flowbite-accordion,
-    div[flowbite-accordion]
+    flowbiteAccordion,
+    div[flowbiteAccordion]
   `,
   exportAs: 'flowbiteAccordion',
   hostDirectives: [
@@ -33,6 +33,7 @@ import { twMerge } from 'tailwind-merge';
       ],
     },
   ],
+  imports: [],
   providers: [provideFlowbiteAccordionState(), provideAccordionState()],
   host: { '[class]': `theme().host.root` },
   template: `<ng-content />`,

@@ -21,15 +21,15 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    button[flowbite-button],
-    a[flowbite-button]
+    button[flowbiteButton],
+    a[flowbiteButton]
   `,
   exportAs: 'flowbiteButton',
   hostDirectives: [{ directive: NgpButton, inputs: ['disabled'] }, NgpFocus],
   imports: [],
   providers: [provideFlowbiteButtonState(), provideButtonState()],
   host: { '[class]': `theme().host.root` },
-  template: ` <ng-content />`,
+  template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

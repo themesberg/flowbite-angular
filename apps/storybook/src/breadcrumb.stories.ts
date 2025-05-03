@@ -47,10 +47,10 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <nav flowbite-breadcrumb ${argsToTemplate(args)}>
-        <li flowbite-breadcrumb-item>Home</li>
-        <li flowbite-breadcrumb-item>Projects</li>
-        <li flowbite-breadcrumb-item>Flowbite</li>
+      <nav flowbiteBreadcrumb ${argsToTemplate(args)}>
+        <li flowbiteBreadcrumbItem>Home</li>
+        <li flowbiteBreadcrumbItem>Projects</li>
+        <li flowbiteBreadcrumbItem>Flowbite</li>
       </nav>
     `,
   }),

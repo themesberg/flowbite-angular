@@ -50,6 +50,11 @@ export const FlowbiteBadgeConfigToken = new InjectionToken<FlowbiteBadgeConfig>(
   'FlowbiteBadgeConfigToken'
 );
 
+/**
+ * Provide the default Badge configuration
+ * @param config The Badge configuration
+ * @returns The provider
+ */
 export const provideFlowbiteBadgeConfig = (config: Partial<FlowbiteBadgeConfig>): Provider[] => [
   {
     provide: FlowbiteBadgeConfigToken,
@@ -57,5 +62,10 @@ export const provideFlowbiteBadgeConfig = (config: Partial<FlowbiteBadgeConfig>)
   },
 ];
 
+/**
+ * Inject the Badge configuration
+ * @see {@link defaultFlowbiteBadgeConfig}
+ * @returns The configuration
+ */
 export const injectFlowbiteBadgeConfig = (): FlowbiteBadgeConfig =>
   inject(FlowbiteBadgeConfigToken, { optional: true }) ?? defaultFlowbiteBadgeConfig;

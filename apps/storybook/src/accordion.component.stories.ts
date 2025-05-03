@@ -99,11 +99,11 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <div flowbite-accordion ${argsToTemplate(args)}>
-        <div flowbite-accordion-item title="Title 1" value="accordion-item-1">
+      <div flowbiteAccordion ${argsToTemplate(args)}>
+        <div flowbiteAccordionItem title="Title 1" value="accordion-item-1">
           <p>Content 1</p>
         </div>
-        <div flowbite-accordion-item title="Title 2" value="accordion-item-2">
+        <div flowbiteAccordionItem title="Title 2" value="accordion-item-2">
           <p>Content 2</p>
         </div>
       </div>

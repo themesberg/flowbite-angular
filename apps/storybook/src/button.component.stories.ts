@@ -84,7 +84,7 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbite-button ${argsToTemplate(args)}>Button</button>
+      <button flowbiteButton ${argsToTemplate(args)}>Button</button>
     `,
   }),
 } as Meta<StoryType>;

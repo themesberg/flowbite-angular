@@ -17,7 +17,7 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    nav[flowbite-breadcrumb]
+    nav[flowbiteBreadcrumb]
   `,
   exportAs: 'flowbiteBreadcrumb',
   hostDirectives: [],

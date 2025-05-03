@@ -22,7 +22,7 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    li[flowbite-breadcrumb-item]
+    li[flowbiteBreadcrumbItem]
   `,
   exportAs: 'flowbiteBreadcrumbItem',
   hostDirectives: [],
@@ -66,6 +66,7 @@ export class FlowbiteBreadcrumbItemComponent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           mergedTheme.host.color[this.flowbiteBreadcrumbState().color()]
         ),
       },

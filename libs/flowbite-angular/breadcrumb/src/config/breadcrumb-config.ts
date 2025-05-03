@@ -34,6 +34,11 @@ export const FlowbiteBreadcrumbConfigToken = new InjectionToken<FlowbiteBreadcru
   'FlowbiteBreadcrumbConfigToken'
 );
 
+/**
+ * Provide the default Breadcrumb configuration
+ * @param config The Breadcrumb configuration
+ * @returns The provider
+ */
 export const provideFlowbiteBreadcrumbConfig = (
   config: Partial<FlowbiteBreadcrumbConfig>
 ): Provider[] => [
@@ -43,5 +48,10 @@ export const provideFlowbiteBreadcrumbConfig = (
   },
 ];
 
+/**
+ * Inject the Breadcrumb configuration
+ * @see {@link defaultFlowbiteBreadcrumbConfig}
+ * @returns The configuration
+ */
 export const injectFlowbiteBreadcrumbConfig = (): FlowbiteBreadcrumbConfig =>
   inject(FlowbiteBreadcrumbConfigToken, { optional: true }) ?? defaultFlowbiteBreadcrumbConfig;

@@ -18,7 +18,7 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    span[flowbite-badge]
+    span[flowbiteBadge]
   `,
   exportAs: 'flowbiteBadge',
   hostDirectives: [],

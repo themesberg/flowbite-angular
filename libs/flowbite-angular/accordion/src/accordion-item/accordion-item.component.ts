@@ -30,8 +30,8 @@ import { twMerge } from 'tailwind-merge';
 @Component({
   standalone: true,
   selector: `
-    flowbite-accordion-item,
-    div[flowbite-accordion-item]
+    flowbiteAccordionItem,
+    div[flowbiteAccordionItem]
   `,
   exportAs: 'flowbiteAccordionItem',
   hostDirectives: [
