@@ -1,10 +1,18 @@
 import { addExportToIndex } from '../utils';
 import type { ComponentGeneratorSchema } from './schema';
 
+import { librarySecondaryEntryPointGenerator } from '@nx/angular/generators';
 import type { Tree } from '@nx/devkit';
 import { formatFiles, generateFiles, joinPathFragments, names } from '@nx/devkit';
 
 export async function componentGenerator(tree: Tree, options: ComponentGeneratorSchema) {
+  await librarySecondaryEntryPointGenerator(tree, {
+    library: 'flowbite-angular',
+    name: options.name,
+    skipFormat: true,
+    skipModule: true,
+  });
+
   generateFiles(
     tree,
     joinPathFragments(__dirname, './files'),
