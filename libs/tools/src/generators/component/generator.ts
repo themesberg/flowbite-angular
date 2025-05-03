@@ -6,12 +6,16 @@ import type { Tree } from '@nx/devkit';
 import { formatFiles, generateFiles, joinPathFragments, names } from '@nx/devkit';
 
 export async function componentGenerator(tree: Tree, options: ComponentGeneratorSchema) {
-  await librarySecondaryEntryPointGenerator(tree, {
-    library: 'flowbite-angular',
-    name: options.name,
-    skipFormat: true,
-    skipModule: true,
-  });
+  try {
+    await librarySecondaryEntryPointGenerator(tree, {
+      library: 'flowbite-angular',
+      name: options.directoryName,
+      skipFormat: true,
+      skipModule: true,
+    });
+  } catch (err) {
+    console.log('Secondary entrypoint cannot be created.\n\rMaybe it was created before.');
+  }
 
   generateFiles(
     tree,
