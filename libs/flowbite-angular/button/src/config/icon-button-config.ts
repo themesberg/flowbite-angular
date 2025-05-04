@@ -54,7 +54,7 @@ export const defaultFlowbiteIconButtonConfig: FlowbiteIconButtonConfig = {
   iconSize: defaultFlowbiteIconConfig.flowbiteSize,
   iconColor: defaultFlowbiteIconConfig.flowbiteColor,
   iconStrokeWidth: defaultFlowbiteIconConfig.flowbiteStrokeWidth,
-  iconCustomTheme: defaultFlowbiteIconConfig.customTheme,
+  iconCustomTheme: defaultFlowbiteIconConfig.flowbiteCustomTheme,
   customTheme: {},
 };
 

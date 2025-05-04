@@ -55,7 +55,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.customTheme),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteCustomTheme),
         },
       },
     },
@@ -64,7 +64,7 @@ export default {
     flowbiteSize: defaultFlowbiteIconConfig.flowbiteSize,
     flowbiteColor: defaultFlowbiteIconConfig.flowbiteColor,
     flowbiteStrokeWidth: defaultFlowbiteIconConfig.flowbiteStrokeWidth,
-    customTheme: defaultFlowbiteIconConfig.customTheme,
+    customTheme: defaultFlowbiteIconConfig.flowbiteCustomTheme,
   },
   render: (args) => ({
     props: args,
