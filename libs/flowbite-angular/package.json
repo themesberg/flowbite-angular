@@ -33,6 +33,7 @@
   "peerDependencies": {
     "@angular/cdk": ">=19.0.0 < 20.0.0",
     "@angular/core": ">=19.0.0 < 20.0.0",
+    "@ng-icons/core": "31.3.0",
     "@ng-primitives/state": "0.38.0",
     "jest-preset-angular": "14.4.2",
     "ng-primitives": "0.38.0",

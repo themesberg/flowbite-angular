@@ -1,3 +1,13 @@
 @custom-variant dark (&:where([data-theme='dark'] &, .dark &));
 
 @import '../../../libs/flowbite-angular/styles/flowbite-angular.css';
+
+@import url('assets/styles/base.scss');
+@import url('assets/styles/dark.scss');
+
+@layer base {
+  @font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  }
+}

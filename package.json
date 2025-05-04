@@ -48,6 +48,7 @@
     "@ng-doc/builder": "19.0.1",
     "@ng-doc/core": "19.0.1",
     "@ng-doc/ui-kit": "19.0.1",
+    "@ng-icons/core": "31.3.0",
     "@ng-primitives/state": "0.38.0",
     "@nx/devkit": "20.7.2",
     "@tailwindcss/postcss": "^4.1.1",
@@ -131,3 +132,4 @@
     "typescript": "5.7.3"
   }
 }
+
