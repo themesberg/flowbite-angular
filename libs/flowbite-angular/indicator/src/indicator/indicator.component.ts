@@ -8,9 +8,7 @@ import type {
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import type { BooleanInput } from '@angular/cdk/coercion';
 import {
-  booleanAttribute,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -44,9 +42,6 @@ export class FlowbiteIndicatorComponent {
    * @see {@link injectFlowbiteIndicatorConfig}
    */
   readonly size = input<keyof FlowbiteIndicatorSizes>(this.config.size);
-  readonly rounded = input<boolean, BooleanInput>(this.config.rounded, {
-    transform: booleanAttribute,
-  });
 
   /**
    * @see {@link injectFlowbiteIndicatorConfig}
@@ -61,8 +56,7 @@ export class FlowbiteIndicatorComponent {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.color[this.state.color()],
-          mergedTheme.host.size[this.state.size()],
-          mergedTheme.host.rounded[this.state.rounded() ? 'on' : 'off']
+          mergedTheme.host.size[this.state.size()]
         ),
       },
     };

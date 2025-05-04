@@ -15,7 +15,26 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['primary', 'dark', 'blue', 'red', 'green', 'yellow'],
+      options: [
+        'info',
+        'failure',
+        'success',
+        'warning',
+        'primary',
+        'dark',
+        'light',
+        'blue',
+        'cyan',
+        'gray',
+        'green',
+        'indigo',
+        'lime',
+        'pink',
+        'purple',
+        'red',
+        'teal',
+        'yellow',
+      ],
       table: {
         category: 'Input',
         defaultValue: {
@@ -34,16 +53,6 @@ export default {
         },
       },
     },
-    rounded: {
-      control: 'boolean',
-      type: 'boolean',
-      table: {
-        category: 'Input',
-        defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIndicatorConfig.rounded),
-        },
-      },
-    },
     customTheme: {
       control: 'object',
       type: 'symbol',
@@ -58,7 +67,6 @@ export default {
   args: {
     color: defaultFlowbiteIndicatorConfig.color,
     size: defaultFlowbiteIndicatorConfig.size,
-    rounded: defaultFlowbiteIndicatorConfig.rounded,
     customTheme: defaultFlowbiteIndicatorConfig.customTheme,
   },
   render: (args) => ({

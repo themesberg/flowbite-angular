@@ -20,10 +20,6 @@ export interface FlowbiteIndicatorConfig {
    */
   size: keyof FlowbiteIndicatorSizes;
   /**
-   * Wether the indicator is rounded
-   */
-  rounded: boolean;
-  /**
    * The custom theme of indicator
    */
   customTheme: DeepPartial<FlowbiteIndicatorTheme>;
@@ -31,9 +27,8 @@ export interface FlowbiteIndicatorConfig {
 
 export const defaultFlowbiteIndicatorConfig: FlowbiteIndicatorConfig = {
   baseTheme: flowbiteIndicatorTheme,
-  color: 'primary',
+  color: 'info',
   size: 'md',
-  rounded: false,
   customTheme: {},
 };
 
