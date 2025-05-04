@@ -30,7 +30,27 @@ export default {
     flowbiteColor: {
       control: 'select',
       type: 'string',
-      options: ['primary', 'dark', 'light'],
+      options: [
+        'info',
+        'failure',
+        'success',
+        'warning',
+        'primary',
+        'dark',
+        'light',
+        'blue',
+        'cyan',
+        'gray',
+        'green',
+        'indigo',
+        'lime',
+        'pink',
+        'purple',
+        'red',
+        'teal',
+        'yellow',
+        undefined,
+      ],
       table: {
         category: 'Input',
         defaultValue: {

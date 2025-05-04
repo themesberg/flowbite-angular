@@ -8,13 +8,13 @@ export interface FlowbiteStateColors {
 export interface FlowbiteColors extends FlowbiteStateColors {
   [key: string]: string;
   primary: string;
+  dark: string;
+  light: string;
   blue: string;
   cyan: string;
-  dark: string;
   gray: string;
   green: string;
   indigo: string;
-  light: string;
   lime: string;
   pink: string;
   purple: string;

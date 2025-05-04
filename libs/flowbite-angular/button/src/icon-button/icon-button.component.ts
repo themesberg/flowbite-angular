@@ -5,12 +5,7 @@ import { flowbiteIconButtonState, provideFlowbiteIconButtonState } from './icon-
 import type { FlowbiteIconButtonTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import type {
-  FlowbiteIconColors,
-  FlowbiteIconSizes,
-  FlowbiteIconStrokeWidths,
-  FlowbiteIconTheme,
-} from 'flowbite-angular/icon';
+import type { FlowbiteIconStrokeWidths, FlowbiteIconTheme } from 'flowbite-angular/icon';
 import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 
 import {
@@ -21,7 +16,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import type { IconType } from '@ng-icons/core';
-import { twMerge } from 'tailwind-merge';
 
 @Component({
   standalone: true,
@@ -46,8 +40,8 @@ import { twMerge } from 'tailwind-merge';
     <flowbite-icon
       [name]="iconName()"
       [svg]="iconSvg()"
-      [flowbiteSize]="iconSize()"
-      [flowbiteColor]="iconColor()"
+      [flowbiteSize]="baseButtonState().size()"
+      [flowbiteColor]="undefined"
       [flowbiteStrokeWidth]="iconStrokeWidth()"
       [flowbiteCustomTheme]="iconCustomTheme()" />
     <ng-content />
@@ -70,14 +64,6 @@ export class FlowbiteIconButtonComponent {
   /**
    * @see {@link injectFlowbiteIconButtonConfig}
    */
-  readonly iconSize = input<keyof FlowbiteIconSizes>(this.config.iconSize);
-  /**
-   * @see {@link injectFlowbiteIconButtonConfig}
-   */
-  readonly iconColor = input<keyof FlowbiteIconColors>(this.config.iconColor);
-  /**
-   * @see {@link injectFlowbiteIconButtonConfig}
-   */
   readonly iconStrokeWidth = input<keyof FlowbiteIconStrokeWidths>(this.config.iconStrokeWidth);
   /**
    * @see {@link injectFlowbiteIconButtonConfig}
@@ -92,19 +78,7 @@ export class FlowbiteIconButtonComponent {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
-      host: {
-        root: twMerge(
-          mergedTheme.host.base,
-          mergedTheme.host.transition,
-          mergedTheme.host.focus,
-          mergedTheme.host.disabled,
-          mergedTheme.host.size[this.baseButtonState().size()],
-          mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
-          this.baseButtonState().outline()
-            ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
-            : mergedTheme.host.color[this.baseButtonState().color()]
-        ),
-      },
+      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButtonState()),
     };
   });
 

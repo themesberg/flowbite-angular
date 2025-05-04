@@ -3,7 +3,6 @@ import { flowbiteIconButtonTheme, type FlowbiteIconButtonTheme } from '../icon-b
 import type { DeepPartial } from 'flowbite-angular';
 import {
   defaultFlowbiteIconConfig,
-  type FlowbiteIconColors,
   type FlowbiteIconSizes,
   type FlowbiteIconStrokeWidths,
   type FlowbiteIconTheme,
@@ -30,10 +29,6 @@ export interface FlowbiteIconButtonConfig {
    */
   iconSize: keyof FlowbiteIconSizes;
   /**
-   * The custom iconColor of icon-button
-   */
-  iconColor: keyof FlowbiteIconColors;
-  /**
    * The custom iconStrokeWidth of icon-button
    */
   iconStrokeWidth: keyof FlowbiteIconStrokeWidths;
@@ -52,7 +47,6 @@ export const defaultFlowbiteIconButtonConfig: FlowbiteIconButtonConfig = {
   iconName: '',
   iconSvg: undefined,
   iconSize: defaultFlowbiteIconConfig.flowbiteSize,
-  iconColor: defaultFlowbiteIconConfig.flowbiteColor,
   iconStrokeWidth: defaultFlowbiteIconConfig.flowbiteStrokeWidth,
   iconCustomTheme: defaultFlowbiteIconConfig.flowbiteCustomTheme,
   customTheme: {},

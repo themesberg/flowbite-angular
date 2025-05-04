@@ -23,7 +23,26 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['primary', 'dark', 'light'],
+      options: [
+        'info',
+        'failure',
+        'success',
+        'warning',
+        'primary',
+        'dark',
+        'light',
+        'blue',
+        'cyan',
+        'gray',
+        'green',
+        'indigo',
+        'lime',
+        'pink',
+        'purple',
+        'red',
+        'teal',
+        'yellow',
+      ],
       table: {
         category: 'Input',
         defaultValue: {
@@ -34,7 +53,7 @@ export default {
     size: {
       control: 'select',
       type: 'string',
-      options: ['sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -84,30 +103,6 @@ export default {
         },
       },
     },
-    iconSize: {
-      control: 'select',
-      type: 'string',
-      options: ['sm', 'md', 'lg'],
-      table: {
-        category: 'Input',
-        subcategory: 'ICON',
-        defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconButtonConfig.iconSize),
-        },
-      },
-    },
-    iconColor: {
-      control: 'select',
-      type: 'string',
-      options: ['primary', 'dark', 'light'],
-      table: {
-        category: 'Input',
-        subcategory: 'ICON',
-        defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconButtonConfig.iconColor),
-        },
-      },
-    },
     iconStrokeWidth: {
       control: 'select',
       type: 'string',
@@ -149,8 +144,6 @@ export default {
     pill: defaultFlowbiteBaseButtonConfig.pill,
     outline: defaultFlowbiteBaseButtonConfig.outline,
     iconName: 'close',
-    iconSize: defaultFlowbiteIconButtonConfig.iconSize,
-    iconColor: defaultFlowbiteIconButtonConfig.iconColor,
     iconStrokeWidth: defaultFlowbiteIconButtonConfig.iconStrokeWidth,
     iconCustomTheme: defaultFlowbiteIconButtonConfig.iconCustomTheme,
     customTheme: defaultFlowbiteIconButtonConfig.customTheme,

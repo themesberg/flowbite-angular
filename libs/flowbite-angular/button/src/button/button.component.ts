@@ -14,7 +14,6 @@ import {
   input,
   ViewEncapsulation,
 } from '@angular/core';
-import { twMerge } from 'tailwind-merge';
 
 @Component({
   standalone: true,
@@ -50,19 +49,7 @@ export class FlowbiteButtonComponent {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
-      host: {
-        root: twMerge(
-          mergedTheme.host.base,
-          mergedTheme.host.transition,
-          mergedTheme.host.focus,
-          mergedTheme.host.disabled,
-          mergedTheme.host.size[this.baseButtonState().size()],
-          mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
-          this.baseButtonState().outline()
-            ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
-            : mergedTheme.host.color[this.baseButtonState().color()]
-        ),
-      },
+      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButtonState()),
     };
   });
 

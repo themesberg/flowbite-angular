@@ -53,7 +53,9 @@ export class FlowbiteIconComponent extends NgIcon {
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly flowbiteColor = input<keyof FlowbiteIconColors>(this.flowbiteConfig.flowbiteColor);
+  readonly flowbiteColor = input<keyof FlowbiteIconColors | undefined>(
+    this.flowbiteConfig.flowbiteColor
+  );
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
@@ -75,7 +77,7 @@ export class FlowbiteIconComponent extends NgIcon {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.size[this.state.flowbiteSize()],
-          mergedTheme.host.color[this.state.flowbiteColor()],
+          this.state.flowbiteColor() && mergedTheme.host.color[this.state.flowbiteColor()!],
           mergedTheme.host.strokeWidth[this.state.flowbiteStrokeWidth()]
         ),
       },
