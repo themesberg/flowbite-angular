@@ -6,13 +6,7 @@ export {
   injectFlowbiteButtonState,
   provideFlowbiteButtonState,
 } from './button/button-state';
-export {
-  FlowbiteButtonColors,
-  FlowbiteButtonSizes,
-  FlowbiteButtonHostTheme,
-  FlowbiteButtonTheme,
-  flowbiteButtonTheme,
-} from './button/theme';
+export { FlowbiteButtonHostTheme, FlowbiteButtonTheme, flowbiteButtonTheme } from './button/theme';
 /* Config */
 export {
   FlowbiteButtonConfig,
@@ -21,3 +15,43 @@ export {
   injectFlowbiteButtonConfig,
   provideFlowbiteButtonConfig,
 } from './config/button-config';
+
+/* IconButton */
+export { FlowbiteIconButtonComponent } from './icon-button/icon-button.component';
+export {
+  FlowbiteIconButtonStateToken,
+  flowbiteIconButtonState,
+  injectFlowbiteIconButtonState,
+  provideFlowbiteIconButtonState,
+} from './icon-button/icon-button-state';
+export {
+  FlowbiteIconButtonHostTheme,
+  FlowbiteIconButtonTheme,
+  flowbiteIconButtonTheme,
+} from './icon-button/theme';
+/* Config */
+export {
+  FlowbiteIconButtonConfig,
+  FlowbiteIconButtonConfigToken,
+  defaultFlowbiteIconButtonConfig,
+  injectFlowbiteIconButtonConfig,
+  provideFlowbiteIconButtonConfig,
+} from './config/icon-button-config';
+
+/* BaseButton */
+export { FlowbiteBaseButtonDirective } from './base-button/base-button.directive';
+export {
+  FlowbiteBaseButtonStateToken,
+  flowbiteBaseButtonState,
+  injectFlowbiteBaseButtonState,
+  provideFlowbiteBaseButtonState,
+} from './base-button/base-button-state';
+export { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from './base-button/theme';
+/* Config */
+export {
+  FlowbiteBaseButtonConfig,
+  FlowbiteBaseButtonConfigToken,
+  defaultFlowbiteBaseButtonConfig,
+  injectFlowbiteBaseButtonConfig,
+  provideFlowbiteBaseButtonConfig,
+} from './config/base-button-config';

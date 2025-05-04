@@ -1,21 +1,19 @@
+import { injectFlowbiteBaseButtonState } from '../base-button/base-button-state';
+import { FlowbiteBaseButtonDirective } from '../base-button/base-button.directive';
 import { injectFlowbiteButtonConfig } from '../config/button-config';
 import { flowbiteButtonState, provideFlowbiteButtonState } from './button-state';
-import type { FlowbiteButtonColors, FlowbiteButtonSizes, FlowbiteButtonTheme } from './theme';
+import type { FlowbiteButtonTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
-import type { BooleanInput } from '@angular/cdk/coercion';
 import {
-  booleanAttribute,
   ChangeDetectionStrategy,
   Component,
   computed,
   input,
   ViewEncapsulation,
 } from '@angular/core';
-import { NgpButton, provideButtonState } from 'ng-primitives/button';
-import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
@@ -27,18 +25,13 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteButton',
   hostDirectives: [
     {
-      directive: NgpButton,
-      inputs: ['disabled:disabled'],
-      outputs: [],
-    },
-    {
-      directive: NgpFocus,
-      inputs: [],
+      directive: FlowbiteBaseButtonDirective,
+      inputs: ['color:color', 'size:size', 'pill:pill', 'outline:outline'],
       outputs: [],
     },
   ],
   imports: [],
-  providers: [provideFlowbiteButtonState(), provideButtonState()],
+  providers: [provideFlowbiteButtonState()],
   host: { '[class]': `theme().host.root` },
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
@@ -46,25 +39,8 @@ import { twMerge } from 'tailwind-merge';
 })
 export class FlowbiteButtonComponent {
   protected readonly config = injectFlowbiteButtonConfig();
+  protected readonly baseButtonState = injectFlowbiteBaseButtonState();
 
-  /**
-   * @see {@link injectFlowbiteButtonConfig}
-   */
-  readonly color = input<keyof FlowbiteButtonColors>(this.config.color);
-  /**
-   * @see {@link injectFlowbiteButtonConfig}
-   */
-  readonly size = input<keyof FlowbiteButtonSizes>(this.config.size);
-  /**
-   * @see {@link injectFlowbiteButtonConfig}
-   */
-  readonly pill = input<boolean, BooleanInput>(this.config.pill, { transform: booleanAttribute });
-  /**
-   * @see {@link injectFlowbiteButtonConfig}
-   */
-  readonly outline = input<boolean, BooleanInput>(this.config.outline, {
-    transform: booleanAttribute,
-  });
   /**
    * @see {@link injectFlowbiteButtonConfig}
    */
@@ -80,11 +56,11 @@ export class FlowbiteButtonComponent {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.size[this.state.size()],
-          mergedTheme.host.pill[this.state.pill() ? 'on' : 'off'],
-          this.state.outline()
-            ? mergedTheme.host.colorOutline[this.state.color()]
-            : mergedTheme.host.color[this.state.color()]
+          mergedTheme.host.size[this.baseButtonState().size()],
+          mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
+          this.baseButtonState().outline()
+            ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
+            : mergedTheme.host.color[this.baseButtonState().color()]
         ),
       },
     };

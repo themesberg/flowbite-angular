@@ -1,9 +1,4 @@
-import {
-  flowbiteButtonTheme,
-  type FlowbiteButtonColors,
-  type FlowbiteButtonSizes,
-  type FlowbiteButtonTheme,
-} from '../button/theme';
+import { flowbiteButtonTheme, type FlowbiteButtonTheme } from '../button/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 
@@ -16,22 +11,6 @@ export interface FlowbiteButtonConfig {
    */
   baseTheme: FlowbiteButtonTheme;
   /**
-   * The default color of button.
-   */
-  color: keyof FlowbiteButtonColors;
-  /**
-   * The default size of button.
-   */
-  size: keyof FlowbiteButtonSizes;
-  /**
-   * Whether the button is pill.
-   */
-  pill: boolean;
-  /**
-   * Whether the button is outline.
-   */
-  outline: boolean;
-  /**
    * The custom theme of button.
    */
   customTheme: DeepPartial<FlowbiteButtonTheme>;
@@ -39,10 +18,6 @@ export interface FlowbiteButtonConfig {
 
 export const defaultFlowbiteButtonConfig: FlowbiteButtonConfig = {
   baseTheme: flowbiteButtonTheme,
-  color: 'primary',
-  size: 'md',
-  pill: false,
-  outline: false,
   customTheme: {},
 };
 

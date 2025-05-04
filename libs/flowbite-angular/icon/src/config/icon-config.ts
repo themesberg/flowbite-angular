@@ -18,27 +18,27 @@ export interface FlowbiteIconConfig {
   /**
    * The default size of icon
    */
-  size: keyof FlowbiteIconSizes;
+  flowbiteSize: keyof FlowbiteIconSizes;
   /**
    * The default color of icon
    */
-  color: keyof FlowbiteIconColors;
+  flowbiteColor: keyof FlowbiteIconColors;
   /**
    * The default stroke width of icon
    */
-  strokeWidth: keyof FlowbiteIconStrokeWidths;
+  flowbiteStrokeWidth: keyof FlowbiteIconStrokeWidths;
   /**
    * The custom theme of icon
    */
-  customTheme: DeepPartial<FlowbiteIconTheme>;
+  flowbiteCustomTheme: DeepPartial<FlowbiteIconTheme>;
 }
 
 export const defaultFlowbiteIconConfig: FlowbiteIconConfig = {
   baseTheme: flowbiteIconTheme,
-  size: 'md',
-  color: 'light',
-  strokeWidth: 'md',
-  customTheme: {},
+  flowbiteSize: 'md',
+  flowbiteColor: 'light',
+  flowbiteStrokeWidth: 'md',
+  flowbiteCustomTheme: {},
 };
 
 export const FlowbiteIconConfigToken = new InjectionToken<FlowbiteIconConfig>(

@@ -16,36 +16,36 @@ export default {
     }),
   ],
   argTypes: {
-    size: {
+    flowbiteSize: {
       control: 'select',
       type: 'string',
       options: ['sm', 'md', 'lg'],
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.size),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteSize),
         },
       },
     },
-    color: {
+    flowbiteColor: {
       control: 'select',
       type: 'string',
       options: ['primary', 'dark', 'light'],
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.color),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteColor),
         },
       },
     },
-    strokeWidth: {
+    flowbiteStrokeWidth: {
       control: 'select',
       type: 'string',
       options: ['sm', 'md', 'lg'],
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.strokeWidth),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteStrokeWidth),
         },
       },
     },
@@ -61,9 +61,9 @@ export default {
     },
   },
   args: {
-    size: defaultFlowbiteIconConfig.size,
-    color: defaultFlowbiteIconConfig.color,
-    strokeWidth: defaultFlowbiteIconConfig.strokeWidth,
+    flowbiteSize: defaultFlowbiteIconConfig.flowbiteSize,
+    flowbiteColor: defaultFlowbiteIconConfig.flowbiteColor,
+    flowbiteStrokeWidth: defaultFlowbiteIconConfig.flowbiteStrokeWidth,
     customTheme: defaultFlowbiteIconConfig.customTheme,
   },
   render: (args) => ({

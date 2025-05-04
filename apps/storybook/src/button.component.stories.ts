@@ -1,4 +1,8 @@
-import { defaultFlowbiteButtonConfig, FlowbiteButtonComponent } from 'flowbite-angular/button';
+import {
+  defaultFlowbiteBaseButtonConfig,
+  defaultFlowbiteButtonConfig,
+  FlowbiteButtonComponent,
+} from 'flowbite-angular/button';
 
 import { argsToTemplate } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -16,7 +20,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteButtonConfig.color),
+          summary: JSON.stringify(defaultFlowbiteBaseButtonConfig.color),
         },
       },
     },
@@ -27,7 +31,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteButtonConfig.size),
+          summary: JSON.stringify(defaultFlowbiteBaseButtonConfig.size),
         },
       },
     },
@@ -37,7 +41,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteButtonConfig.pill),
+          summary: JSON.stringify(defaultFlowbiteBaseButtonConfig.pill),
         },
       },
     },
@@ -47,7 +51,7 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteButtonConfig.outline),
+          summary: JSON.stringify(defaultFlowbiteBaseButtonConfig.outline),
         },
       },
     },
@@ -74,10 +78,10 @@ export default {
     },
   },
   args: {
-    color: defaultFlowbiteButtonConfig.color,
-    size: defaultFlowbiteButtonConfig.size,
-    pill: defaultFlowbiteButtonConfig.pill,
-    outline: defaultFlowbiteButtonConfig.outline,
+    color: defaultFlowbiteBaseButtonConfig.color,
+    size: defaultFlowbiteBaseButtonConfig.size,
+    pill: defaultFlowbiteBaseButtonConfig.pill,
+    outline: defaultFlowbiteBaseButtonConfig.outline,
     customTheme: defaultFlowbiteButtonConfig.customTheme,
     disabled: false,
   },

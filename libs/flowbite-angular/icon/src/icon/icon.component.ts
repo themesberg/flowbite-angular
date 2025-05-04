@@ -49,28 +49,26 @@ export class FlowbiteIconComponent extends NgIcon {
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly flowbiteSize = input<keyof FlowbiteIconSizes>(this.flowbiteConfig.size, {
-    // eslint-disable-next-line @angular-eslint/no-input-rename
-    alias: 'size',
-  });
-  readonly flowbiteColor = input<keyof FlowbiteIconColors>(this.flowbiteConfig.color, {
-    // eslint-disable-next-line @angular-eslint/no-input-rename
-    alias: 'color',
-  });
+  readonly flowbiteSize = input<keyof FlowbiteIconSizes>(this.flowbiteConfig.flowbiteSize);
+  /**
+   * @see {@link injectFlowbiteIconConfig}
+   */
+  readonly flowbiteColor = input<keyof FlowbiteIconColors>(this.flowbiteConfig.flowbiteColor);
+  /**
+   * @see {@link injectFlowbiteIconConfig}
+   */
   readonly flowbiteStrokeWidth = input<keyof FlowbiteIconStrokeWidths>(
-    this.flowbiteConfig.strokeWidth,
-    {
-      // eslint-disable-next-line @angular-eslint/no-input-rename
-      alias: 'strokeWidth',
-    }
+    this.flowbiteConfig.flowbiteStrokeWidth
   );
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteIconTheme>>(this.flowbiteConfig.customTheme);
+  readonly flowbiteCustomTheme = input<DeepPartial<FlowbiteIconTheme>>(
+    this.flowbiteConfig.flowbiteCustomTheme
+  );
 
   readonly theme = computed(() => {
-    const mergedTheme = mergeDeep(this.flowbiteConfig.baseTheme, this.state.customTheme());
+    const mergedTheme = mergeDeep(this.flowbiteConfig.baseTheme, this.state.flowbiteCustomTheme());
 
     return {
       host: {
