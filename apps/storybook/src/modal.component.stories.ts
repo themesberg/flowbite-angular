@@ -59,7 +59,7 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton outline [ngpDialogTrigger]="dialog">Modal</button>
+      <button flowbiteButton [ngpDialogTrigger]="dialog">Modal</button>
 
       <ng-template #dialog let-close="close">
         <div flowbiteModalOverlay>

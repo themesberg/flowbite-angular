@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-
-@import './part/color.css';
-@import './part/font-size.css';
-@import './part/rounded.css';
-@import './part/shadow.css';
-@import './part/spacing.css';
+@import url('tailwindcss');
+@import url('./part/animation.css');
+@import url('./part/color.css');
+@import url('./part/font-size.css');
+@import url('./part/rounded.css');
+@import url('./part/shadow.css');
+@import url('./part/spacing.css');

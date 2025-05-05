@@ -1,0 +1,15 @@
+/*
+@theme {
+  --animate-fade-in: fade-in var(--default-transition-duration)
+    var(--default-transition-timing-function);
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+*/

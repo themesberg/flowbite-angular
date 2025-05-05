@@ -4,6 +4,5 @@
   "lib": {
     "entryFile": "core/src/index.ts"
   },
-  "assets": ["./styles/**/*.css", "./README.md", "./LICENSE"],
-  "allowedNonPeerDependencies": ["rxjs"]
+  "assets": ["./styles/**/*.css", "./README.md", "./LICENSE"]
 }
