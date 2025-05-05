@@ -69,8 +69,8 @@ export const flowbiteAccordionItemTheme: FlowbiteAccordionItemTheme = createThem
       yellow: 'border-yellow-200 dark:border-yellow-700',
     },
     open: {
-      on: 'data-open:max-h-full data-open:p-2 data-open:opacity-100',
-      off: 'max-h-0 opacity-0',
+      on: 'data-open:p-2',
+      off: 'hidden',
     },
     flush: {
       on: '',

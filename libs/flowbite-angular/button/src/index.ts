@@ -46,7 +46,13 @@ export {
   injectFlowbiteBaseButtonState,
   provideFlowbiteBaseButtonState,
 } from './base-button/base-button-state';
-export { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from './base-button/theme';
+export {
+  FlowbiteBaseButtonColors,
+  FlowbiteBaseButtonHostTheme,
+  FlowbiteBaseButtonTheme,
+  flowbiteBaseButtonTheme,
+  FlowbiteBaseButtonSizes,
+} from './base-button/theme';
 /* Config */
 export {
   FlowbiteBaseButtonConfig,
