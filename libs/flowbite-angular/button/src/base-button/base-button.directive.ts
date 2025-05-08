@@ -10,7 +10,7 @@ import type { BooleanInput } from '@angular/cdk/coercion';
 import { booleanAttribute, Directive, input } from '@angular/core';
 import { NgpButton, provideButtonState } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
-import type { CreatedState } from 'ng-primitives/state';
+import type { State } from 'ng-primitives/state';
 import { twMerge } from 'tailwind-merge';
 
 @Directive({
@@ -54,7 +54,7 @@ export class FlowbiteBaseButtonDirective {
 
   static computeTheme(
     mergedTheme: FlowbiteBaseButtonTheme,
-    state: CreatedState<FlowbiteBaseButtonDirective>
+    state: State<FlowbiteBaseButtonDirective>
   ) {
     return {
       host: {
@@ -73,5 +73,8 @@ export class FlowbiteBaseButtonDirective {
     };
   }
 
-  protected readonly state = flowbiteBaseButtonState<FlowbiteBaseButtonDirective>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteBaseButtonState<FlowbiteBaseButtonDirective>(this);
 }

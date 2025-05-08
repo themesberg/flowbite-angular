@@ -62,5 +62,8 @@ export class FlowbiteIndicatorComponent {
     };
   });
 
-  protected readonly state = flowbiteIndicatorState<FlowbiteIndicatorComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteIndicatorState<FlowbiteIndicatorComponent>(this);
 }

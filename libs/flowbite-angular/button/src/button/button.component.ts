@@ -1,4 +1,3 @@
-import { injectFlowbiteBaseButtonState } from '../base-button/base-button-state';
 import { FlowbiteBaseButtonDirective } from '../base-button/base-button.directive';
 import { injectFlowbiteButtonConfig } from '../config/button-config';
 import { flowbiteButtonState, provideFlowbiteButtonState } from './button-state';
@@ -11,6 +10,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -38,8 +38,11 @@ import {
 })
 export class FlowbiteButtonComponent {
   protected readonly config = injectFlowbiteButtonConfig();
-  protected readonly baseButtonState = injectFlowbiteBaseButtonState();
 
+  /**
+   * @see {@link injectFlowbiteButtonConfig}
+   */
+  readonly baseButton = input(inject(FlowbiteBaseButtonDirective));
   /**
    * @see {@link injectFlowbiteButtonConfig}
    */
@@ -49,9 +52,12 @@ export class FlowbiteButtonComponent {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
-      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButtonState()),
+      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButton().state),
     };
   });
 
-  protected readonly state = flowbiteButtonState<FlowbiteButtonComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteButtonState<FlowbiteButtonComponent>(this);
 }

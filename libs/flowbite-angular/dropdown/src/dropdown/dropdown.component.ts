@@ -61,5 +61,8 @@ export class FlowbiteDropdownComponent {
     };
   });
 
-  protected readonly state = flowbiteDropdownState<FlowbiteDropdownComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteDropdownState<FlowbiteDropdownComponent>(this);
 }

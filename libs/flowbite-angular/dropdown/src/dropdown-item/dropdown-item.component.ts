@@ -40,6 +40,9 @@ import { twMerge } from 'tailwind-merge';
 export class FlowbiteDropdownItemComponent {
   protected readonly config = injectFlowbiteDropdownItemConfig();
 
+  /**
+   * @see {@link injectFlowbiteDropdownItemConfig}
+   */
   readonly customTheme = input<DeepPartial<FlowbiteDropdownItemTheme>>(this.config.customTheme);
 
   readonly theme = computed(() => {
@@ -52,5 +55,8 @@ export class FlowbiteDropdownItemComponent {
     };
   });
 
-  protected readonly state = flowbiteDropdownItemState<FlowbiteDropdownItemComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteDropdownItemState<FlowbiteDropdownItemComponent>(this);
 }

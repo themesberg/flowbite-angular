@@ -1,5 +1,5 @@
 import { injectFlowbiteNavbarContentConfig } from '../config/navbar-content-config';
-import { injectFlowbiteNavbarState } from '../navbar/navbar-state';
+import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
 import {
   flowbiteNavbarContentState,
   provideFlowbiteNavbarContentState,
@@ -12,6 +12,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -37,8 +38,11 @@ import { twMerge } from 'tailwind-merge';
 })
 export class FlowbiteNavbarContentComponent {
   protected readonly config = injectFlowbiteNavbarContentConfig();
-  protected readonly flowbiteNavbarState = injectFlowbiteNavbarState();
 
+  /**
+   * @see {@link injectFlowbiteNavbarContentConfig}
+   */
+  readonly navbar = input<FlowbiteNavbarComponent>(inject(FlowbiteNavbarComponent));
   /**
    * @see {@link injectFlowbiteNavbarContentConfig}
    */
@@ -51,17 +55,20 @@ export class FlowbiteNavbarContentComponent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.open[this.flowbiteNavbarState().open() ? 'on' : 'off']
+          mergedTheme.host.open[this.navbar().state.open() ? 'on' : 'off']
         ),
       },
       container: {
         root: twMerge(
           mergedTheme.container.base,
-          mergedTheme.container.color[this.flowbiteNavbarState().color()]
+          mergedTheme.container.color[this.navbar().state.color()]
         ),
       },
     };
   });
 
-  protected readonly state = flowbiteNavbarContentState<FlowbiteNavbarContentComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteNavbarContentState<FlowbiteNavbarContentComponent>(this);
 }

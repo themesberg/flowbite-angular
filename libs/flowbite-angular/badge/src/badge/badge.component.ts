@@ -73,5 +73,8 @@ export class FlowbiteBadgeComponent {
     };
   });
 
-  protected readonly state = flowbiteBadgeState<FlowbiteBadgeComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteBadgeState<FlowbiteBadgeComponent>(this);
 }

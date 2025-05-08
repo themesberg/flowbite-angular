@@ -60,5 +60,8 @@ export class FlowbiteBreadcrumbComponent {
     };
   });
 
-  protected readonly state = flowbiteBreadcrumbState<FlowbiteBreadcrumbComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteBreadcrumbState<FlowbiteBreadcrumbComponent>(this);
 }

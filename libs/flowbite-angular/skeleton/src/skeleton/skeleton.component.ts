@@ -60,5 +60,8 @@ export class FlowbiteSkeletonComponent {
     };
   });
 
-  protected readonly state = flowbiteSkeletonState<FlowbiteSkeletonComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteSkeletonState<FlowbiteSkeletonComponent>(this);
 }

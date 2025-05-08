@@ -56,5 +56,8 @@ export class FlowbiteModalOverlayComponent {
     };
   });
 
-  protected readonly state = flowbiteModalOverlayState<FlowbiteModalOverlayComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteModalOverlayState<FlowbiteModalOverlayComponent>(this);
 }

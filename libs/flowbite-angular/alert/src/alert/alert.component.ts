@@ -70,6 +70,8 @@ export class FlowbiteAlertComponent {
       },
     };
   });
-
-  protected readonly state = flowbiteAlertState<FlowbiteAlertComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteAlertState<FlowbiteAlertComponent>(this);
 }

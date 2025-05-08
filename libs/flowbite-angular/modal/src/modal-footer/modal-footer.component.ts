@@ -45,5 +45,8 @@ export class FlowbiteModalFooterComponent {
     };
   });
 
-  protected readonly state = flowbiteModalFooterState<FlowbiteModalFooterComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteModalFooterState<FlowbiteModalFooterComponent>(this);
 }

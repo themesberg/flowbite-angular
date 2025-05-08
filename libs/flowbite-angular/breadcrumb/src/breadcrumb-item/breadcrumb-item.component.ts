@@ -1,5 +1,4 @@
-import { injectFlowbiteBreadcrumbState } from '../breadcrumb/breadcrumb-state';
-import type { FlowbiteBreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
+import { FlowbiteBreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { injectFlowbiteBreadcrumbItemConfig } from '../config/breadcrumb-item-config';
 import {
   flowbiteBreadcrumbItemState,
@@ -14,6 +13,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -51,9 +51,11 @@ import { twMerge } from 'tailwind-merge';
 })
 export class FlowbiteBreadcrumbItemComponent {
   protected readonly config = injectFlowbiteBreadcrumbItemConfig();
-  protected readonly flowbiteBreadcrumbState =
-    injectFlowbiteBreadcrumbState<FlowbiteBreadcrumbComponent>();
 
+  /**
+   * @see {@link injectFlowbiteBreadcrumbItemConfig}
+   */
+  readonly breadcrumb = input(inject(FlowbiteBreadcrumbComponent));
   /**
    * @see {@link injectFlowbiteBreadcrumbItemConfig}
    */
@@ -67,7 +69,7 @@ export class FlowbiteBreadcrumbItemComponent {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.flowbiteBreadcrumbState().color()]
+          mergedTheme.host.color[this.breadcrumb().state.color()]
         ),
       },
       icon: {
@@ -76,5 +78,8 @@ export class FlowbiteBreadcrumbItemComponent {
     };
   });
 
-  protected readonly state = flowbiteBreadcrumbItemState<FlowbiteBreadcrumbItemComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteBreadcrumbItemState<FlowbiteBreadcrumbItemComponent>(this);
 }

@@ -70,5 +70,17 @@ export class FlowbiteNavbarComponent {
     };
   });
 
-  protected readonly state = flowbiteNavbarState<FlowbiteNavbarComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteNavbarState<FlowbiteNavbarComponent>(this);
+
+  /**
+   * @internal
+   */
+  toggle(newState?: boolean): void {
+    newState ??= !this.state.open();
+
+    this.state.open.set(newState);
+  }
 }

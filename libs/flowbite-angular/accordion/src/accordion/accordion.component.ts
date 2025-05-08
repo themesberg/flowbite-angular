@@ -68,5 +68,8 @@ export class FlowbiteAccordionComponent {
     };
   });
 
-  protected readonly state = flowbiteAccordionState<FlowbiteAccordionComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteAccordionState<FlowbiteAccordionComponent>(this);
 }

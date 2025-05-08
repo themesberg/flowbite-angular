@@ -100,6 +100,7 @@ export default {
     template: `
       <nav flowbiteNavbar ${argsToTemplate(args)}>
         <a flowbiteNavbarBrand href="#">
+          <span class="sr-only">Open navbar</span>
           <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
         </a>

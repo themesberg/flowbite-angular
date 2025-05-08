@@ -1,5 +1,5 @@
 import { injectFlowbiteNavbarToggleConfig } from '../config/navbar-toggle-config';
-import { injectFlowbiteNavbarState } from '../navbar/navbar-state';
+import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
 import { flowbiteNavbarToggleState, provideFlowbiteNavbarToggleState } from './navbar-toggle-state';
 import type { FlowbiteNavbarToggleTheme } from './theme';
 
@@ -12,6 +12,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -43,8 +44,11 @@ import { twMerge } from 'tailwind-merge';
 })
 export class FlowbiteNavbarToggleComponent {
   protected readonly config = injectFlowbiteNavbarToggleConfig();
-  protected readonly flowbiteNavbarState = injectFlowbiteNavbarState();
 
+  /**
+   * @see {@link injectFlowbiteNavbarToggleConfig}
+   */
+  readonly navbar = input(inject(FlowbiteNavbarComponent));
   /**
    * @see {@link injectFlowbiteNavbarToggleConfig}
    */
@@ -60,17 +64,25 @@ export class FlowbiteNavbarToggleComponent {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.flowbiteNavbarState().color()]
+          mergedTheme.host.color[this.navbar().state.color()]
         ),
       },
     };
   });
 
-  protected readonly state = flowbiteNavbarToggleState<FlowbiteNavbarToggleComponent>(this);
+  readonly state = flowbiteNavbarToggleState<FlowbiteNavbarToggleComponent>(this);
 
-  protected onClick(): void {
-    const open = this.flowbiteNavbarState().open();
+  /**
+   * @internal
+   */
+  onClick(): void {
+    this.toggleNavbar();
+  }
 
-    this.flowbiteNavbarState().open.set(!open);
+  /**
+   * @internal
+   */
+  toggleNavbar(): void {
+    this.navbar().toggle();
   }
 }

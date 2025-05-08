@@ -1,4 +1,4 @@
-import { injectFlowbiteAccordionState } from '../accordion/accordion-state';
+import { FlowbiteAccordionComponent } from '../accordion/accordion.component';
 import { injectFlowbiteAccordionItemConfig } from '../config/accordion-item-config';
 import {
   flowbiteAccordionItemState,
@@ -13,6 +13,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -63,10 +64,13 @@ import { twMerge } from 'tailwind-merge';
 export class FlowbiteAccordionItemComponent {
   protected readonly config = injectFlowbiteAccordionItemConfig();
 
-  protected readonly flowbiteAccordionState = injectFlowbiteAccordionState();
   protected readonly ngpAccordionItemState = injectAccordionItemState();
 
   readonly title = input.required<string>();
+  /**
+   * @see {@link injectFlowbiteAccordionItemConfig}
+   */
+  readonly accordion = input(inject(FlowbiteAccordionComponent));
   /**
    * @see {@link injectFlowbiteAccordionItemConfig}
    */
@@ -83,8 +87,8 @@ export class FlowbiteAccordionItemComponent {
         root: twMerge(
           mergedTheme.title.base,
           mergedTheme.title.transition,
-          mergedTheme.title.color[this.flowbiteAccordionState().color()],
-          mergedTheme.title.flush[this.flowbiteAccordionState().flush() ? 'on' : 'off']
+          mergedTheme.title.color[this.accordion().state.color()],
+          mergedTheme.title.flush[this.accordion().state.flush() ? 'on' : 'off']
         ),
         text: twMerge(mergedTheme.title.text.base),
       },
@@ -92,13 +96,16 @@ export class FlowbiteAccordionItemComponent {
         root: twMerge(
           mergedTheme.content.base,
           mergedTheme.content.transition,
-          mergedTheme.content.color[this.flowbiteAccordionState().color()],
-          mergedTheme.content.flush[this.flowbiteAccordionState().flush() ? 'on' : 'off'],
+          mergedTheme.content.color[this.accordion().state.color()],
+          mergedTheme.content.flush[this.accordion().state.flush() ? 'on' : 'off'],
           mergedTheme.content.open[this.ngpAccordionItemState().open() ? 'on' : 'off']
         ),
       },
     };
   });
 
-  protected readonly state = flowbiteAccordionItemState<FlowbiteAccordionItemComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteAccordionItemState<FlowbiteAccordionItemComponent>(this);
 }

@@ -57,5 +57,8 @@ export class FlowbiteModalHeaderComponent {
     };
   });
 
-  protected readonly state = flowbiteModalHeaderState<FlowbiteModalHeaderComponent>(this);
+  /**
+   * @internal
+   */
+  readonly state = flowbiteModalHeaderState<FlowbiteModalHeaderComponent>(this);
 }

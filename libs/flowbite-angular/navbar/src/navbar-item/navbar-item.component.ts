@@ -1,5 +1,5 @@
 import { injectFlowbiteNavbarItemConfig } from '../config/navbar-item-config';
-import { injectFlowbiteNavbarState } from '../navbar/navbar-state';
+import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
 import { flowbiteNavbarItemState, provideFlowbiteNavbarItemState } from './navbar-item-state';
 import type { FlowbiteNavbarItemTheme } from './theme';
 
@@ -10,6 +10,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -31,15 +32,21 @@ import { twMerge } from 'tailwind-merge';
   ],
   imports: [],
   providers: [provideFlowbiteNavbarItemState()],
-  host: { '[class]': `theme().host.root` },
+  host: {
+    '[class]': `theme().host.root`,
+    '(click)': 'onClick()',
+  },
   template: `<ng-content />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteNavbarItemComponent {
   protected readonly config = injectFlowbiteNavbarItemConfig();
-  protected readonly flowbiteNavbarState = injectFlowbiteNavbarState();
 
+  /**
+   * @see {@link injectFlowbiteNavbarItemConfig}
+   */
+  readonly navbar = input(inject(FlowbiteNavbarComponent));
   /**
    * @see {@link injectFlowbiteNavbarItemConfig}
    */
@@ -55,11 +62,25 @@ export class FlowbiteNavbarItemComponent {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.flowbiteNavbarState().color()]
+          mergedTheme.host.color[this.navbar().state.color()]
         ),
       },
     };
   });
 
-  protected readonly state = flowbiteNavbarItemState<FlowbiteNavbarItemComponent>(this);
+  readonly state = flowbiteNavbarItemState<FlowbiteNavbarItemComponent>(this);
+
+  /**
+   * @internal
+   */
+  onClick(): void {
+    this.toggleNavbar();
+  }
+
+  /**
+   * @internal
+   */
+  toggleNavbar(): void {
+    this.navbar().toggle();
+  }
 }
