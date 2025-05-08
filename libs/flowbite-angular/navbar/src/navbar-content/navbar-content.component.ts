@@ -55,7 +55,10 @@ export class FlowbiteNavbarContentComponent {
         ),
       },
       container: {
-        root: twMerge(mergedTheme.container.base),
+        root: twMerge(
+          mergedTheme.container.base,
+          mergedTheme.container.color[this.flowbiteNavbarState().color()]
+        ),
       },
     };
   });
