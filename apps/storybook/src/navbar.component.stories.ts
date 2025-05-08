@@ -6,6 +6,7 @@ import {
   FlowbiteNavbarItemComponent,
   FlowbiteNavbarToggleComponent,
 } from 'flowbite-angular/navbar';
+import { FlowbiteSkeletonComponent } from 'flowbite-angular/skeleton';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
@@ -22,6 +23,7 @@ export default {
         FlowbiteNavbarItemComponent,
         FlowbiteNavbarToggleComponent,
         FlowbiteNavbarBrandComponent,
+        FlowbiteSkeletonComponent,
       ],
     }),
   ],
@@ -108,6 +110,8 @@ export default {
           <li><a flowbiteNavbarItem href="#">Item 3</a></li>
         </div>
       </nav>
+
+      <div flowbiteSkeleton></div>
     `,
   }),
 } as Meta<StoryType>;

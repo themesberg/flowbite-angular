@@ -80,7 +80,8 @@
       ],
       "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/src/index.ts"],
       "flowbite-angular/modal": ["libs/flowbite-angular/modal/src/index.ts"],
-      "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/src/index.ts"]
+      "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/src/index.ts"],
+      "flowbite-angular/skeleton": ["libs/flowbite-angular/skeleton/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
