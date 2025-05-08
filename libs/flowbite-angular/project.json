@@ -22,13 +22,6 @@
       },
       "defaultConfiguration": "production"
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/flowbite-angular"],
-      "options": {
-        "jestConfig": "libs/flowbite-angular/jest.config.ts"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
     },

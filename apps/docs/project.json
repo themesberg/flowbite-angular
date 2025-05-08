@@ -84,13 +84,6 @@
       },
       "defaultConfiguration": "development"
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/docs"],
-      "options": {
-        "jestConfig": "apps/docs/jest.config.ts"
-      }
-    },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
