@@ -7,7 +7,7 @@ export interface FlowbiteIndicatorColors extends FlowbiteColors {
 
 export interface FlowbiteIndicatorSizes
   extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
-  [ket: string]: string;
+  [key: string]: string;
 }
 
 export interface FlowbiteIndicatorTheme {

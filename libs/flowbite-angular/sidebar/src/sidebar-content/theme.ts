@@ -10,6 +10,7 @@ export interface FlowbiteSidebarContentTheme {
 
 export interface FlowbiteSidebarContentHostTheme {
   base: string;
+  transition: string;
   open: FlowbiteBoolean;
   color: FlowbiteSidebarColors;
 }
@@ -20,10 +21,11 @@ export interface FlowbiteSidebarContentContainerTheme {
 
 export const flowbiteSidebarContentTheme: FlowbiteSidebarContentTheme = createTheme({
   host: {
-    base: 'h-full overflow-y-auto md:w-full md:border-e',
+    base: 'h-full w-44 overflow-y-auto md:translate-x-0 md:border-e',
+    transition: 'transition-transform duration-150 ease-in-out',
     open: {
-      on: 'w-44 border-e',
-      off: '',
+      on: 'translate-x-0 border-e',
+      off: '-translate-x-full',
     },
     color: {
       info: 'border-blue-300 bg-blue-50 dark:bg-blue-950',
