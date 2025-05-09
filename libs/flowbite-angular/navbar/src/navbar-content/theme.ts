@@ -32,7 +32,7 @@ export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createThem
     },
   },
   container: {
-    base: 'mt-4 flex flex-col rounded-lg border p-4 md:mt-0 md:flex-row md:space-x-4 md:border-0 md:p-0',
+    base: 'mt-4 flex flex-col rounded-lg border p-4 font-medium md:mt-0 md:flex-row md:space-x-4 md:border-0 md:p-0',
     color: {
       info: 'text-blue-600 max-md:bg-blue-100 max-md:dark:bg-blue-900',
       failure: 'text-red-600 max-md:bg-red-100 max-md:dark:bg-red-900',

@@ -1,28 +1,29 @@
 import type { FlowbiteBoolean } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
-import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from 'flowbite-angular/button';
-import {
-  flowbiteBaseButtonTheme,
-  type FlowbiteBaseButtonHostTheme,
-  type FlowbiteBaseButtonTheme,
+import type {
+  FlowbiteBaseButtonColors,
+  FlowbiteBaseButtonHostTheme,
+  FlowbiteBaseButtonSizes,
+  FlowbiteBaseButtonTheme,
 } from 'flowbite-angular/button';
+import { flowbiteBaseButtonTheme } from 'flowbite-angular/button';
 
-export interface FlowbiteNavbarItemTheme extends FlowbiteBaseButtonTheme {
-  host: FlowbiteNavbarItemHostTheme;
+export interface FlowbiteSidebarItemTheme extends FlowbiteBaseButtonTheme {
+  host: FlowbiteSidebarItemHostTheme;
 }
 
-export interface FlowbiteNavbarItemHostTheme extends FlowbiteBaseButtonHostTheme {
+export interface FlowbiteSidebarItemHostTheme extends FlowbiteBaseButtonHostTheme {
   base: string;
 }
 
-export const flowbiteNavbarItemTheme: FlowbiteNavbarItemTheme = createTheme({
+export const flowbiteSidebarItemTheme: FlowbiteSidebarItemTheme = createTheme({
   host: {
     base: 'm-0 block cursor-pointer rounded-sm px-3 py-2',
     transition: flowbiteBaseButtonTheme.host.transition,
     focus: flowbiteBaseButtonTheme.host.focus,
     disabled: flowbiteBaseButtonTheme.host.disabled,
-    size: {} as FlowbiteBaseButtonSizes, // Not used for NavbarItem
-    pill: {} as FlowbiteBoolean, // Not used for NavbarItem
+    size: {} as FlowbiteBaseButtonSizes, // Not used for SidebarItem
+    pill: {} as FlowbiteBoolean, // Not used for SidebarItem
     color: {
       info: 'text-gray-900 data-focus-visible:ring-blue-400 data-hover:text-blue-600 dark:text-gray-100 dark:data-focus-visible:ring-blue-600',
       failure:
@@ -52,6 +53,6 @@ export const flowbiteNavbarItemTheme: FlowbiteNavbarItemTheme = createTheme({
       yellow:
         'text-gray-900 data-focus-visible:ring-yellow-300 data-hover:text-yellow-400 dark:text-gray-100 dark:data-focus-visible:ring-yellow-500',
     },
-    colorOutline: {} as FlowbiteBaseButtonColors, // Not used for NavbarItem
+    colorOutline: {} as FlowbiteBaseButtonColors, // Not used for SidebarItem
   },
 });
