@@ -26,6 +26,7 @@
       "flowbite-angular/badge": ["libs/flowbite-angular/badge/src/index.ts"],
       "flowbite-angular/breadcrumb": ["libs/flowbite-angular/breadcrumb/src/index.ts"],
       "flowbite-angular/button": ["libs/flowbite-angular/button/src/index.ts"],
+      "flowbite-angular/button-group": ["libs/flowbite-angular/button-group/src/index.ts"],
       "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/src/index.ts"],
       "flowbite-angular/icon": ["libs/flowbite-angular/icon/src/index.ts"],
       "flowbite-angular/icon/brand": ["libs/flowbite-angular/icon/brand/src/index.ts"],
