@@ -81,6 +81,7 @@
       "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/src/index.ts"],
       "flowbite-angular/modal": ["libs/flowbite-angular/modal/src/index.ts"],
       "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/src/index.ts"],
+      "flowbite-angular/pagination": ["libs/flowbite-angular/pagination/src/index.ts"],
       "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/src/index.ts"],
       "flowbite-angular/skeleton": ["libs/flowbite-angular/skeleton/src/index.ts"],
       "flowbite-angular/theme-toggle": ["libs/flowbite-angular/theme-toggle/src/index.ts"]
