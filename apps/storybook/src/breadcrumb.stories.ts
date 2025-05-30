@@ -3,7 +3,10 @@ import {
   FlowbiteBreadcrumbComponent,
   FlowbiteBreadcrumbItemComponent,
 } from 'flowbite-angular/breadcrumb';
+import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { home } from 'flowbite-angular/icon/outline/general';
 
+import { provideIcons } from '@ng-icons/core';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
@@ -14,7 +17,8 @@ export default {
   component: FlowbiteBreadcrumbComponent,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteBreadcrumbItemComponent],
+      providers: [provideIcons({ home })],
+      imports: [FlowbiteBreadcrumbItemComponent, FlowbiteIconComponent],
     }),
   ],
   argTypes: {
@@ -48,7 +52,10 @@ export default {
     props: args,
     template: `
       <nav flowbiteBreadcrumb ${argsToTemplate(args)}>
-        <li flowbiteBreadcrumbItem>Home</li>
+        <li flowbiteBreadcrumbItem>
+          <flowbite-icon name="home" />
+          Home
+        </li>
         <li flowbiteBreadcrumbItem>Projects</li>
         <li flowbiteBreadcrumbItem>Flowbite</li>
       </nav>

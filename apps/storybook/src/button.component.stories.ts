@@ -1,3 +1,4 @@
+import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from 'flowbite-angular/button';
 import {
   defaultFlowbiteBaseButtonConfig,
   defaultFlowbiteButtonConfig,
@@ -7,7 +8,13 @@ import {
 import { argsToTemplate } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = FlowbiteButtonComponent & { disabled: boolean };
+type StoryType = FlowbiteButtonComponent & {
+  disabled: boolean;
+  color: keyof FlowbiteBaseButtonColors;
+  size: keyof FlowbiteBaseButtonSizes;
+  pill: boolean;
+  outline: boolean;
+};
 
 export default {
   title: 'Component/Button',
@@ -107,7 +114,7 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton ${argsToTemplate(args)}>Button</button>
+      <button flowbiteButton ${argsToTemplate(args)}>${args.color}</button>
     `,
   }),
 } as Meta<StoryType>;

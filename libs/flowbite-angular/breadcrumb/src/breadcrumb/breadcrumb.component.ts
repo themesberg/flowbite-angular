@@ -25,7 +25,6 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteBreadcrumbState()],
   host: {
     '[class]': `theme().host.root`,
-    '[aria-label]': 'Breadcrumb',
   },
   template: `
     <ol [class]="theme().list.root">

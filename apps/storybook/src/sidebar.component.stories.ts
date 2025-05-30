@@ -1,3 +1,7 @@
+import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { cart } from 'flowbite-angular/icon/solid/e-commerce';
+import { chartPie, drawSquare, inbox } from 'flowbite-angular/icon/solid/general';
+import { users } from 'flowbite-angular/icon/solid/user';
 import {
   defaultFlowbiteSidebarConfig,
   FlowbiteSidebarComponent,
@@ -7,6 +11,7 @@ import {
 } from 'flowbite-angular/sidebar';
 import { FlowbiteSkeletonComponent } from 'flowbite-angular/skeleton';
 
+import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
@@ -17,11 +22,13 @@ export default {
   component: FlowbiteSidebarComponent,
   decorators: [
     moduleMetadata({
+      providers: [provideIcons({ chartPie, inbox, users, cart, drawSquare })],
       imports: [
         FlowbiteSidebarContentComponent,
         FlowbiteSidebarToggleComponent,
         FlowbiteSidebarItemComponent,
         FlowbiteSkeletonComponent,
+        FlowbiteIconComponent,
       ],
     }),
   ],
@@ -87,9 +94,13 @@ export default {
     template: `
       <aside flowbiteSidebar ${argsToTemplate(args)} #sidebar>
         <div flowbiteSidebarContent>
-          <li><a flowbiteSidebarItem>Item 1</a></li>
-          <li><a flowbiteSidebarItem>Item 2</a></li>
-          <li><a flowbiteSidebarItem>Item 3</a></li>
+          <li><a flowbiteSidebarItem><flowbite-icon name="chartPie" />Dashboard</a></li>
+          <li><a flowbiteSidebarItem><flowbite-icon name="drawSquare" />Kanban</a></li>
+          <li><a flowbiteSidebarItem><flowbite-icon name="inbox" />Inbox</a></li>
+          <li><a flowbiteSidebarItem><flowbite-icon name="users" />Users</a></li>
+          <li><a flowbiteSidebarItem><flowbite-icon name="cart" />Products</a></li>
+          <li><a flowbiteSidebarItem>Sign In</a></li>
+          <li><a flowbiteSidebarItem>Sign Up</a></li>
         </div>
       </aside>
       <div class="md:ml-48">

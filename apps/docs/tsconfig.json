@@ -8,9 +8,6 @@
     },
     {
       "path": "./tsconfig.editor.json"
-    },
-    {
-      "path": "./tsconfig.server.json"
     }
   ],
   "compilerOptions": {

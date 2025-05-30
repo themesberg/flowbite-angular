@@ -1,3 +1,4 @@
+import { injectFlowbiteBaseButtonState } from '../base-button/base-button-state';
 import { FlowbiteBaseButtonDirective } from '../base-button/base-button.directive';
 import { injectFlowbiteIconButtonConfig } from '../config/icon-button-config';
 import { flowbiteIconButtonState, provideFlowbiteIconButtonState } from './icon-button-state';
@@ -11,7 +12,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -40,7 +40,7 @@ import type { IconType } from '@ng-icons/core';
     <flowbite-icon
       [name]="iconName()"
       [svg]="iconSvg()"
-      [flowbiteSize]="baseButton().state.size()"
+      [flowbiteSize]="baseButtonState().size()"
       [flowbiteColor]="undefined"
       [flowbiteStrokeWidth]="iconStrokeWidth()"
       [flowbiteCustomTheme]="iconCustomTheme()" />
@@ -52,7 +52,7 @@ import type { IconType } from '@ng-icons/core';
 export class FlowbiteIconButtonComponent {
   protected readonly config = injectFlowbiteIconButtonConfig();
 
-  readonly baseButton = input(inject(FlowbiteBaseButtonDirective));
+  readonly baseButtonState = injectFlowbiteBaseButtonState();
   /**
    * @see {@link injectFlowbiteIconButtonConfig}
    */
@@ -78,7 +78,7 @@ export class FlowbiteIconButtonComponent {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
-      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButton().state),
+      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButtonState()),
     };
   });
 

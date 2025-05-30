@@ -64,12 +64,18 @@ export default {
       <ng-template #dialog let-close="close">
         <div flowbiteModalOverlay>
           <div flowbiteModal ${argsToTemplate(args)}>
-            <h3 flowbiteModalHeader>Title of the modal</h3>
+            <h3 flowbiteModalHeader>Terms of Service</h3>
             <div flowbiteModalContent>
-              Content of the modal
+              <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                  With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+              </p>
+              <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                  The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+              </p>
             </div>
             <div flowbiteModalFooter>
-              <button flowbiteButton (click)="close()">Cancel</button>
+              <button flowbiteButton (click)="close()" color="info">I accept</button>
+              <button flowbiteButton (click)="close()" color="light" outline>Decline</button>
             </div>
           </div>
         </div>

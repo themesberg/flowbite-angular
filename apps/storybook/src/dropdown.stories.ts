@@ -37,7 +37,7 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown</button>
+      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown button</button>
 
       <ng-template #dropdownMenu>
         <div flowbiteDropdown flowbiteDropdown ${argsToTemplate(args)}>

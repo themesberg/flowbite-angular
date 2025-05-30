@@ -59,7 +59,11 @@ export default {
   },
   render: (args) => ({
     props: args,
-    template: `<div flowbiteAlert ${argsToTemplate(args)}>Alert</div>`,
+    template: `
+      <div flowbiteAlert ${argsToTemplate(args)}>
+        <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
+      </div>
+    `,
   }),
 } as Meta<StoryType>;
 

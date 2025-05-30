@@ -106,9 +106,11 @@ export default {
         </a>
         <button flowbiteNavbarToggle></button>
         <div flowbiteNavbarContent>
-          <li><a flowbiteNavbarItem href="#">Item 1</a></li>
-          <li><a flowbiteNavbarItem href="#">Item 2</a></li>
-          <li><a flowbiteNavbarItem href="#">Item 3</a></li>
+          <li><a flowbiteNavbarItem href="#">Home</a></li>
+          <li><a flowbiteNavbarItem href="#">About</a></li>
+          <li><a flowbiteNavbarItem href="#">Services</a></li>
+          <li><a flowbiteNavbarItem href="#">Pricing</a></li>
+          <li><a flowbiteNavbarItem href="#">Contact</a></li>
         </div>
       </nav>
 
