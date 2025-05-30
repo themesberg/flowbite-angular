@@ -84,7 +84,8 @@
       "flowbite-angular/pagination": ["libs/flowbite-angular/pagination/src/index.ts"],
       "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/src/index.ts"],
       "flowbite-angular/skeleton": ["libs/flowbite-angular/skeleton/src/index.ts"],
-      "flowbite-angular/theme-toggle": ["libs/flowbite-angular/theme-toggle/src/index.ts"]
+      "flowbite-angular/theme-toggle": ["libs/flowbite-angular/theme-toggle/src/index.ts"],
+      "flowbite-angular/tooltip": ["libs/flowbite-angular/tooltip/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
