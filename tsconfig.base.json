@@ -28,6 +28,7 @@
       "flowbite-angular/button": ["libs/flowbite-angular/button/src/index.ts"],
       "flowbite-angular/button-group": ["libs/flowbite-angular/button-group/src/index.ts"],
       "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/src/index.ts"],
+      "flowbite-angular/form": ["libs/flowbite-angular/form/src/index.ts"],
       "flowbite-angular/icon": ["libs/flowbite-angular/icon/src/index.ts"],
       "flowbite-angular/icon/brand": ["libs/flowbite-angular/icon/brand/src/index.ts"],
       "flowbite-angular/icon/outline/arrows": [
@@ -40,7 +41,7 @@
         "libs/flowbite-angular/icon/outline/emoji/src/index.ts"
       ],
       "flowbite-angular/icon/outline/files-folders": [
-        "libs/flowbite-angular/icon/outline/files-folder/src/index.ts"
+        "libs/flowbite-angular/icon/outline/files-folders/src/index.ts"
       ],
       "flowbite-angular/icon/outline/general": [
         "libs/flowbite-angular/icon/outline/general/src/index.ts"

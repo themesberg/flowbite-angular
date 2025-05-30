@@ -1,5 +1,3 @@
-export const greeting = 'Hello World!';
-
 /* Pagination */
 export { FlowbitePaginationComponent } from './pagination/pagination.component';
 export {
@@ -12,6 +10,9 @@ export {
   FlowbitePaginationHostTheme,
   FlowbitePaginationTheme,
   flowbitePaginationTheme,
+  FlowbitePaginationColors,
+  FlowbitePaginationContainerTheme,
+  FlowbitePaginationSizes,
 } from './pagination/theme';
 /* Config */
 export {
@@ -33,6 +34,8 @@ export {
 export {
   FlowbitePaginationFirstHostTheme,
   FlowbitePaginationFirstTheme,
+  FlowbitePaginationFirstColors,
+  FlowbitePaginationFirstSizes,
   flowbitePaginationFirstTheme,
 } from './pagination-first/theme';
 /* Config */
@@ -56,6 +59,8 @@ export {
   FlowbitePaginationPreviousHostTheme,
   FlowbitePaginationPreviousTheme,
   flowbitePaginationPreviousTheme,
+  FlowbitePaginationPreviousColors,
+  FlowbitePaginationPreviousSizes,
 } from './pagination-previous/theme';
 /* Config */
 export {
@@ -77,6 +82,8 @@ export {
 export {
   FlowbitePaginationNextHostTheme,
   FlowbitePaginationNextTheme,
+  FlowbitePaginationNextColors,
+  FlowbitePaginationNextSizes,
   flowbitePaginationNextTheme,
 } from './pagination-next/theme';
 /* Config */
@@ -100,6 +107,8 @@ export {
   FlowbitePaginationLastHostTheme,
   FlowbitePaginationLastTheme,
   flowbitePaginationLastTheme,
+  FlowbitePaginationLastColors,
+  FlowbitePaginationLastSizes,
 } from './pagination-last/theme';
 /* Config */
 export {
@@ -122,6 +131,8 @@ export {
   FlowbitePaginationButtonHostTheme,
   FlowbitePaginationButtonTheme,
   flowbitePaginationButtonTheme,
+  FlowbitePaginationButtonColors,
+  FlowbitePaginationButtonSizes,
 } from './pagination-button/theme';
 /* Config */
 export {

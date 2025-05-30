@@ -8,7 +8,12 @@ export {
   injectFlowbiteModalState,
   provideFlowbiteModalState,
 } from './modal/modal-state';
-export { FlowbiteModalHostTheme, FlowbiteModalTheme, flowbiteModalTheme } from './modal/theme';
+export {
+  FlowbiteModalHostTheme,
+  FlowbiteModalTheme,
+  flowbiteModalTheme,
+  FlowbiteModalSizes,
+} from './modal/theme';
 /* Config */
 export {
   FlowbiteModalConfig,
@@ -30,6 +35,7 @@ export {
   FlowbiteModalOverlayHostTheme,
   FlowbiteModalOverlayTheme,
   flowbiteModalOverlayTheme,
+  FlowbiteModalOverlayPositions,
 } from './modal-overlay/theme';
 /* Config */
 export {

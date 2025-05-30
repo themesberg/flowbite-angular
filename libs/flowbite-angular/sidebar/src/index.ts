@@ -34,6 +34,7 @@ export {
   FlowbiteSidebarContentHostTheme,
   FlowbiteSidebarContentTheme,
   flowbiteSidebarContentTheme,
+  FlowbiteSidebarContentContainerTheme,
 } from './sidebar-content/theme';
 /* Config */
 export {

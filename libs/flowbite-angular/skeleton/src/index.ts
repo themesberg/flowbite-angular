@@ -12,6 +12,7 @@ export {
   FlowbiteSkeletonHostTheme,
   FlowbiteSkeletonTheme,
   flowbiteSkeletonTheme,
+  FlowbiteSkeletonItemTheme,
 } from './skeleton/theme';
 /* Config */
 export {

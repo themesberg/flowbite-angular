@@ -1,5 +1,3 @@
-export const greeting = 'Hello World!';
-
 /* ButtonGroup */
 export { FlowbiteButtonGroupComponent } from './button-group/button-group.component';
 export {

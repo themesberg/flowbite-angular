@@ -23,14 +23,13 @@ export {
 } from './config/theme-toggle-config';
 
 /* Theme */
-export { FlowbiteThemeComponent } from './theme/theme.directive';
+export { FlowbiteThemeDirective } from './theme/theme.directive';
 export {
   FlowbiteThemeStateToken,
   flowbiteThemeState,
   injectFlowbiteThemeState,
   provideFlowbiteThemeState,
 } from './theme/theme-state';
-export { FlowbiteThemeHostTheme, FlowbiteThemeTheme, flowbiteThemeTheme } from './theme/theme';
 /* Config */
 export {
   FlowbiteThemeConfig,

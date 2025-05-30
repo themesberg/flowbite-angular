@@ -12,6 +12,7 @@ export {
   FlowbiteTooltipHostTheme,
   FlowbiteTooltipTheme,
   flowbiteTooltipTheme,
+  FlowbiteTooltipColors,
 } from './tooltip/theme';
 /* Config */
 export {
