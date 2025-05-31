@@ -22,12 +22,12 @@ import { provideIcons } from '@ng-icons/core';
             size="sm">
             <flowbite-icon
               flowbiteIconButton
-              name="arrowRight" />
+              name="github" />
           </button>
         </span>
         <span class="hidden gap-2 lg:flex lg:flex-row">
           <button
-            flowbiteIconButton
+            flowbiteButton
             disabled
             color="light"
             size="sm">
@@ -36,7 +36,7 @@ import { provideIcons } from '@ng-icons/core';
               name="desktopPc" />
           </button>
           <button
-            flowbiteIconButton
+            flowbiteButton
             disabled
             color="light"
             size="sm">
@@ -45,7 +45,7 @@ import { provideIcons } from '@ng-icons/core';
               name="tablet" />
           </button>
           <button
-            flowbiteIconButton
+            flowbiteButton
             disabled
             color="light"
             size="sm">
@@ -56,20 +56,18 @@ import { provideIcons } from '@ng-icons/core';
         </span>
         <span class="flex flex-row gap-2">
           <button
-            flowbiteIconButton
+            flowbiteButton
             color="light"
             size="sm"
-            pill
             (click)="themeMode.set('light')">
             <flowbite-icon
               flowbiteIconButton
               name="sun" />
           </button>
           <button
-            flowbiteIconButton
+            flowbiteButton
             color="light"
             size="sm"
-            pill
             (click)="themeMode.set('dark')">
             <flowbite-icon
               flowbiteIconButton

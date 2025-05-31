@@ -12,7 +12,7 @@ const <%= className %>: NgDocPage = {
   category: ComponentCategory,
   order: <%= order %>,
   demos: {
-    flowbiteDefaultComponent: FlowbiteDefaultComponent
+    flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
 };
 

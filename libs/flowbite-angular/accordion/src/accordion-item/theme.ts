@@ -35,7 +35,7 @@ export const flowbiteAccordionItemTheme: FlowbiteAccordionItemTheme = createThem
     base: 'group/item',
   },
   title: {
-    base: 'flex w-full cursor-pointer items-center justify-between p-3 group-first/item:rounded-t-lg',
+    base: 'flex w-full cursor-pointer items-center justify-between p-5 group-first/item:rounded-t-lg',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
       primary:

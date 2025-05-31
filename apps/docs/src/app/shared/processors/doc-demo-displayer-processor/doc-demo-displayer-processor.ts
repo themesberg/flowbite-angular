@@ -13,8 +13,6 @@ export const docDemoDisplayerProcessor: NgDocPageProcessor<FlowbiteDocDemoCompon
     // Create an anchor element to insert the `FlowbiteDocDemoDisplayerComponent` in the correct place.
     const anchor: Element = renderer.createElement('div');
 
-    renderer.setStyle(element, 'margin', '0px');
-
     // Insert the anchor before the table and return it
     return element.parentNode?.insertBefore(anchor, element) ?? element;
   },
