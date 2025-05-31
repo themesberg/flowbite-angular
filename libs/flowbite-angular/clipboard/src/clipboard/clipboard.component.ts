@@ -1,5 +1,3 @@
-import { fileCopy } from '../../../icon/outline/files-folders/src/index';
-import { FlowbiteTooltipComponent } from '../../../tooltip/src/tooltip/tooltip.component';
 import { injectFlowbiteClipboardConfig } from '../config/clipboard-config';
 import { flowbiteClipboardState, provideFlowbiteClipboardState } from './clipboard-state';
 import type { FlowbiteClipboardTheme } from './theme';
@@ -7,6 +5,8 @@ import type { FlowbiteClipboardTheme } from './theme';
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteButtonComponent, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
 import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { fileCopy } from 'flowbite-angular/icon/outline/files-folders';
+import { FlowbiteTooltipComponent } from 'flowbite-angular/tooltip';
 
 import { Clipboard } from '@angular/cdk/clipboard';
 import {

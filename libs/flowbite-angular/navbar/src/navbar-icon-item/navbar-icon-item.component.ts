@@ -1,4 +1,3 @@
-import { FlowbiteIconComponent } from '../../../icon/src/icon/icon.component';
 import { injectFlowbiteNavbarIconItemConfig } from '../config/navbar-icon-item-config';
 import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
 import {
@@ -12,6 +11,7 @@ import {
   FlowbiteBaseButtonDirective,
   injectFlowbiteBaseButtonState,
 } from 'flowbite-angular/button';
+import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 
 import {
   ChangeDetectionStrategy,
