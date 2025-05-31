@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'flowbite-demo-<%= fileName %>-default',
+  imports: [],
+  templateUrl: './_default.component.html',
+  host: {
+    class: 'flex flex wrap flex-col gap-3',
+  },
+})
+export class FlowbiteDefaultComponent {}

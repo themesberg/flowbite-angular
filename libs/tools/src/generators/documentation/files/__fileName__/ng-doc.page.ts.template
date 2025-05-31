@@ -1,0 +1,19 @@
+import ComponentCategory from '../ng-doc.category';
+import { FlowbiteDefaultComponent } from './_default.component';
+
+import type { NgDocPage } from '@ng-doc/core';
+
+/**
+ * 
+ */
+const <%= className %>: NgDocPage = {
+  title: 'Alert',
+  mdFile: './index.md',
+  category: ComponentCategory,
+  order: <%= order %>,
+  demos: {
+    flowbiteDefaultComponent: FlowbiteDefaultComponent
+  },
+};
+
+export default <%= className %>;
