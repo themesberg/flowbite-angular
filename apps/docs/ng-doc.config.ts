@@ -4,7 +4,7 @@ import { ngKeywordsLoader, rxjsKeywordsLoader } from '@ng-doc/keywords-loaders';
 const config: NgDocConfiguration = {
   cache: false,
   routePrefix: 'docs',
-  //docsPath: 'apps/docs/docs',
+  docsPath: 'apps/docs/docs',
   outDir: 'tmp/apps/docs',
   tsConfig: 'apps/docs/tsconfig.app.json',
   guide: {

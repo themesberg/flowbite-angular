@@ -1,6 +1,8 @@
 import { injectFlowbiteThemeConfig } from '../config/theme-config';
 import { flowbiteThemeState, provideFlowbiteThemeState } from './theme-state';
 
+import type { FlowbiteTheme } from 'flowbite-angular';
+
 import { afterNextRender, Directive, input, untracked } from '@angular/core';
 
 @Directive({
@@ -17,7 +19,7 @@ export class FlowbiteThemeDirective {
   protected readonly config = injectFlowbiteThemeConfig();
 
   readonly localStorageKey = input<string>(this.config.localStorageKey);
-  readonly currentTheme = input<'light' | 'dark'>(this.config.theme);
+  readonly currentTheme = input<FlowbiteTheme>(this.config.theme);
   readonly type = input<{ type: 'class' } | { type: 'attr'; name: string }>(this.config.type);
 
   constructor() {
@@ -26,7 +28,7 @@ export class FlowbiteThemeDirective {
     });
   }
 
-  getLocalStorageTheme(): 'light' | 'dark' | undefined {
+  getLocalStorageTheme(): FlowbiteTheme | undefined {
     const localStorageValue = localStorage.getItem(this.state.localStorageKey());
 
     if (
@@ -39,7 +41,7 @@ export class FlowbiteThemeDirective {
     return localStorageValue;
   }
 
-  toggleTheme(theme?: 'light' | 'dark'): void {
+  toggleTheme(theme?: FlowbiteTheme): void {
     if (!theme) {
       theme = untracked(() => (this.state.currentTheme() === 'light' ? 'dark' : 'light'));
     }
@@ -47,7 +49,7 @@ export class FlowbiteThemeDirective {
     this.setTheme(theme);
   }
 
-  setTheme(theme: 'light' | 'dark'): void {
+  setTheme(theme: FlowbiteTheme): void {
     try {
       localStorage.setItem(this.state.localStorageKey(), theme);
     } catch (error) {

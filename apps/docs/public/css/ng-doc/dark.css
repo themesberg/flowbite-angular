@@ -16,7 +16,7 @@
   --ng-doc-text-muted: var(--ng-doc-base-10);
   --ng-doc-text-selection: rgba(255, 44, 81, 0.5);
   --ng-doc-shadow-color: rgba(0, 0, 0, 0.4);
-  --ng-doc-link-color: #30a5ff;
+  --ng-doc-link-color: var(--ng-doc-primary);
   --ng-doc-code-background: #1f2937;
   --ng-doc-tab-group-tabs-background: #1f2937;
   --ng-doc-inline-code-background: #b9b9b9;

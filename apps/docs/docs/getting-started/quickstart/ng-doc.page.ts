@@ -4,8 +4,6 @@ import type { NgDocPage } from '@ng-doc/core';
 
 /**
  * Get started with flowbite-angular by including it into your project using NPM
- *
- * @status:success UPDATES
  */
 const Quickstart: NgDocPage = {
   title: 'Quickstart',

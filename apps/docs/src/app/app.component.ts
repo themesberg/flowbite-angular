@@ -3,7 +3,6 @@
 import flowbiteAngularPackageJson from '../../../../libs/flowbite-angular/package.json';
 
 import { FlowbiteBadgeComponent } from 'flowbite-angular/badge';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 import { bars } from 'flowbite-angular/icon/outline/general';
 import { discord, github, youtube } from 'flowbite-angular/icon/solid/brands';
 import {
@@ -27,7 +26,6 @@ import {
   NgDocSearchComponent,
   NgDocSidebarComponent,
   NgDocSidebarService,
-  NgDocThemeToggleComponent,
 } from '@ng-doc/app';
 import { provideIcons } from '@ng-icons/core';
 
@@ -37,7 +35,6 @@ import { provideIcons } from '@ng-icons/core';
     RouterOutlet,
     NgDocRootComponent,
     NgDocSidebarComponent,
-    NgDocThemeToggleComponent,
     NgDocSearchComponent,
     FlowbiteNavbarComponent,
     FlowbiteNavbarBrandComponent,
@@ -46,12 +43,14 @@ import { provideIcons } from '@ng-icons/core';
     FlowbiteNavbarContentComponent,
     FlowbiteNavbarToggleComponent,
     FlowbiteBadgeComponent,
-    FlowbiteThemeDirective,
     FlowbiteThemeToggleComponent,
     RouterLink,
-    FlowbiteIconComponent,
   ],
-  hostDirectives: [],
+  hostDirectives: [
+    {
+      directive: FlowbiteThemeDirective,
+    },
+  ],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
   host: {

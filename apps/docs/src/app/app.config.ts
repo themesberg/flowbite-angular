@@ -1,6 +1,8 @@
 import { appRoutes } from './app.routes';
 import { docDemoDisplayerProcessor } from './shared/processors/doc-demo-displayer-processor/doc-demo-displayer-processor';
 
+import { provideFlowbiteThemeConfig } from 'flowbite-angular/theme-toggle';
+
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { type ApplicationConfig } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -46,5 +48,8 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' })
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
+    provideFlowbiteThemeConfig({
+      type: { type: 'attr', name: 'data-theme' },
+    }),
   ],
 };

@@ -1,6 +1,4 @@
 <ng-doc-root
-  flowbiteTheme
-  [type]="{ type: 'attr', name: 'data-theme' }"
   [sidebar]="!isLandingPage"
   [noWidthLimit]="isLandingPage"
   [footerContent]="footerContent">
@@ -17,7 +15,9 @@
           class="block lg:hidden"
           (click)="sidebarService.toggle()"></button>
       }
-      <a flowbiteNavbarBrand>
+      <a
+        flowbiteNavbarBrand
+        [routerLink]="['/']">
         <img
           src="favicon.svg"
           class="h-8"
@@ -38,7 +38,7 @@
       </a>
       <a
         flowbiteNavbarItem
-        [routerLink]="['/docs', '/getting-started', '/quickstart']">
+        [routerLink]="['/docs', 'getting-started', 'quickstart']">
         Quickstart
       </a>
       <a

@@ -10,6 +10,6 @@ export interface FlowbiteNavbarBrandHostTheme {
 
 export const flowbiteNavbarBrandTheme: FlowbiteNavbarBrandTheme = createTheme({
   host: {
-    base: 'flex items-center space-x-3',
+    base: 'flex cursor-pointer items-center space-x-3',
   },
 });
