@@ -5,7 +5,8 @@ import { flowbiteClipboardState, provideFlowbiteClipboardState } from './clipboa
 import type { FlowbiteClipboardTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteIconButtonComponent } from 'flowbite-angular/button';
+import { FlowbiteButtonComponent, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 
 import { Clipboard } from '@angular/cdk/clipboard';
 import {
@@ -27,7 +28,13 @@ import { twMerge } from 'tailwind-merge';
   `,
   exportAs: 'flowbiteClipboard',
   hostDirectives: [],
-  imports: [FlowbiteIconButtonComponent, NgpTooltipTrigger, FlowbiteTooltipComponent],
+  imports: [
+    FlowbiteButtonComponent,
+    FlowbiteIconButtonDirective,
+    FlowbiteIconComponent,
+    NgpTooltipTrigger,
+    FlowbiteTooltipComponent,
+  ],
   providers: [provideFlowbiteClipboardState(), provideIcons({ fileCopy })],
   host: {
     '[class]': `theme().host.root`,
@@ -51,9 +58,12 @@ import { twMerge } from 'tailwind-merge';
         Label
       </label>
       <button
-        flowbiteIconButton
-        color="gray"
-        iconName="fileCopy"></button>
+        flowbiteButton
+        color="gray">
+        <flowbite-icon
+          flowbiteIconButton
+          name="fileCopy" />
+      </button>
     </div>
     <ng-template #tooltip>
       <div flowbiteTooltip>Copy to clipboard</div>

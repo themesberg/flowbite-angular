@@ -26,7 +26,7 @@ export interface FlowbiteIconHostTheme {
 
 export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
   host: {
-    base: 'inline-block overflow-hidden',
+    base: 'overflow-hidden',
     size: {
       xs: 'h-2.5 w-2.5',
       sm: 'h-3 w-3',

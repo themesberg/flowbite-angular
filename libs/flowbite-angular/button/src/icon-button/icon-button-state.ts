@@ -1,4 +1,4 @@
-import type { FlowbiteIconButtonComponent } from './icon-button.component';
+import type { FlowbiteIconButtonDirective } from './icon-button.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteIconButtonStateToken =
-  createStateToken<FlowbiteIconButtonComponent>('Flowbite IconButton');
+  createStateToken<FlowbiteIconButtonDirective>('Flowbite IconButton');
 export const provideFlowbiteIconButtonState = createStateProvider(FlowbiteIconButtonStateToken);
 export const injectFlowbiteIconButtonState = createStateInjector(FlowbiteIconButtonStateToken);
 export const flowbiteIconButtonState = createState(FlowbiteIconButtonStateToken);

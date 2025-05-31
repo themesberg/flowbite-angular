@@ -11,7 +11,7 @@ import { afterNextRender, Directive, input, untracked } from '@angular/core';
   exportAs: 'flowbiteTheme',
   hostDirectives: [],
   providers: [provideFlowbiteThemeState()],
-  host: { '[class]': `theme().host.root` },
+  host: {},
 })
 export class FlowbiteThemeDirective {
   protected readonly config = injectFlowbiteThemeConfig();
@@ -41,7 +41,7 @@ export class FlowbiteThemeDirective {
 
   toggleTheme(theme?: 'light' | 'dark'): void {
     if (!theme) {
-      theme = untracked(() => this.state.currentTheme());
+      theme = untracked(() => (this.state.currentTheme() === 'light' ? 'dark' : 'light'));
     }
 
     this.setTheme(theme);
@@ -59,7 +59,9 @@ export class FlowbiteThemeDirective {
     const type = untracked(() => this.state.type());
 
     if (type.type === 'class') {
-      document.documentElement.classList.add(theme);
+      theme === 'light'
+        ? document.documentElement.classList.remove('dark')
+        : document.documentElement.classList.add('dark');
     } else if (type.type === 'attr') {
       document.documentElement.setAttribute(type.name, theme);
     }

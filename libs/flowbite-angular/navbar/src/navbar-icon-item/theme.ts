@@ -1,23 +1,24 @@
 import type { FlowbiteBoolean } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
-import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from 'flowbite-angular/button';
+import type { FlowbiteBaseButtonColors } from 'flowbite-angular/button';
 import {
   flowbiteBaseButtonTheme,
   type FlowbiteBaseButtonHostTheme,
+  type FlowbiteBaseButtonSizes,
   type FlowbiteBaseButtonTheme,
 } from 'flowbite-angular/button';
 
-export interface FlowbiteThemeToggleTheme extends FlowbiteBaseButtonTheme {
-  host: FlowbiteThemeToggleHostTheme;
+export interface FlowbiteNavbarIconItemTheme extends FlowbiteBaseButtonTheme {
+  host: FlowbiteNavbarIconItemHostTheme;
 }
 
-export interface FlowbiteThemeToggleHostTheme extends FlowbiteBaseButtonHostTheme {
+export interface FlowbiteNavbarIconItemHostTheme extends FlowbiteBaseButtonHostTheme {
   base: string;
 }
 
-export const flowbiteThemeToggleTheme: FlowbiteThemeToggleTheme = createTheme({
+export const flowbiteNavbarIconItemTheme: FlowbiteNavbarIconItemTheme = createTheme({
   host: {
-    base: 'inline-flex cursor-pointer items-center justify-center rounded-lg p-2 text-sm',
+    base: 'hidden cursor-pointer items-center justify-center rounded-lg p-2 text-sm sm:inline-flex',
     transition: flowbiteBaseButtonTheme.host.transition,
     focus: flowbiteBaseButtonTheme.host.focus,
     disabled: flowbiteBaseButtonTheme.host.disabled,

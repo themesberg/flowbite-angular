@@ -1,74 +1,80 @@
-import { ButtonComponent } from 'flowbite-angular/button';
-import { IconComponent } from 'flowbite-angular/icon';
+import { FlowbiteButtonComponent, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { desktopPc, mobilePhone, tablet } from 'flowbite-angular/icon/outline/general';
+import { moon, sun } from 'flowbite-angular/icon/outline/weather';
+import { github } from 'flowbite-angular/icon/solid/brands';
 
 import { Component, signal } from '@angular/core';
+import { provideIcons } from '@ng-icons/core';
 
 @Component({
   selector: 'flowbite-doc-demo',
-  imports: [ButtonComponent, IconComponent],
+  imports: [FlowbiteIconButtonDirective, FlowbiteButtonComponent, FlowbiteIconComponent],
+  providers: [provideIcons({ github, desktopPc, tablet, mobilePhone, sun, moon })],
   template: `
     <div class="flex grow flex-col rounded-t-xl border border-gray-200 dark:border-gray-700">
       <div
         class="flex flex-row items-center justify-between rounded-t-xl border-b border-b-gray-200 bg-gray-50 p-6 dark:border-b-gray-700 dark:bg-gray-800 dark:text-gray-400">
         <span>
-          <flowbite-button
-            [isDisabled]="true"
+          <button
+            flowbiteButton
             color="light"
             size="sm">
             <flowbite-icon
-              svgIcon="solid:github"
-              class="mr-2 h-4 w-4" />
-            Show on Github
-          </flowbite-button>
+              flowbiteIconButton
+              name="arrowRight" />
+          </button>
         </span>
         <span class="hidden gap-2 lg:flex lg:flex-row">
-          <flowbite-button
-            [isDisabled]="true"
+          <button
+            flowbiteIconButton
+            disabled
             color="light"
-            size="sm"
-            [isPill]="true">
+            size="sm">
             <flowbite-icon
-              svgIcon="outline:desktop-pc"
-              class="h-4 w-4" />
-          </flowbite-button>
-          <flowbite-button
-            [isDisabled]="true"
+              flowbiteIconButton
+              name="desktopPc" />
+          </button>
+          <button
+            flowbiteIconButton
+            disabled
             color="light"
-            size="sm"
-            [isPill]="true">
+            size="sm">
             <flowbite-icon
-              svgIcon="outline:tablet"
-              class="h-4 w-4" />
-          </flowbite-button>
-          <flowbite-button
-            [isDisabled]="true"
+              flowbiteIconButton
+              name="tablet" />
+          </button>
+          <button
+            flowbiteIconButton
+            disabled
             color="light"
-            size="sm"
-            [isPill]="true">
+            size="sm">
             <flowbite-icon
-              svgIcon="outline:mobile-phone"
-              class="h-4 w-4" />
-          </flowbite-button>
+              flowbiteIconButton
+              name="mobilePhone" />
+          </button>
         </span>
         <span class="flex flex-row gap-2">
-          <flowbite-button
+          <button
+            flowbiteIconButton
             color="light"
             size="sm"
-            [isPill]="true"
+            pill
             (click)="themeMode.set('light')">
             <flowbite-icon
-              svgIcon="outline:sun"
-              class="h-5 w-5" />
-          </flowbite-button>
-          <flowbite-button
+              flowbiteIconButton
+              name="sun" />
+          </button>
+          <button
+            flowbiteIconButton
             color="light"
             size="sm"
-            [isPill]="true"
+            pill
             (click)="themeMode.set('dark')">
             <flowbite-icon
-              svgIcon="outline:moon"
-              class="h-5 w-5" />
-          </flowbite-button>
+              flowbiteIconButton
+              name="moon" />
+          </button>
         </span>
       </div>
       <div

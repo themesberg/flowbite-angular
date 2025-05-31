@@ -2,23 +2,26 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import flowbiteAngularPackageJson from '../../../../libs/flowbite-angular/package.json';
 
-import { BadgeComponent } from 'flowbite-angular/badge';
-import { IconComponent } from 'flowbite-angular/icon';
+import { FlowbiteBadgeComponent } from 'flowbite-angular/badge';
+import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { bars } from 'flowbite-angular/icon/outline/general';
+import { discord, github, youtube } from 'flowbite-angular/icon/solid/brands';
 import {
-  NavbarBrandComponent,
-  NavbarComponent,
-  NavbarContentComponent,
-  NavbarIconButtonComponent,
-  NavbarItemComponent,
-  NavbarToggleComponent,
+  FlowbiteNavbarBrandComponent,
+  FlowbiteNavbarComponent,
+  FlowbiteNavbarContentComponent,
+  FlowbiteNavbarIconItemComponent,
+  FlowbiteNavbarItemComponent,
+  FlowbiteNavbarToggleComponent,
 } from 'flowbite-angular/navbar';
-import { FlowbiteRouterLinkDirective } from 'flowbite-angular/router-link';
-import { FlowbiteRouterLinkActiveDirective } from 'flowbite-angular/router-link-active';
-import { ScrollTopComponent } from 'flowbite-angular/scroll-top';
+import {
+  FlowbiteThemeDirective,
+  FlowbiteThemeToggleComponent,
+} from 'flowbite-angular/theme-toggle';
 
 import { Location } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import {
   NgDocRootComponent,
   NgDocSearchComponent,
@@ -26,26 +29,29 @@ import {
   NgDocSidebarService,
   NgDocThemeToggleComponent,
 } from '@ng-doc/app';
+import { provideIcons } from '@ng-icons/core';
 
 @Component({
+  providers: [provideIcons({ github, discord, youtube, bars })],
   imports: [
     RouterOutlet,
     NgDocRootComponent,
     NgDocSidebarComponent,
     NgDocThemeToggleComponent,
     NgDocSearchComponent,
-    IconComponent,
-    NavbarComponent,
-    NavbarContentComponent,
-    NavbarItemComponent,
-    NavbarBrandComponent,
-    NavbarToggleComponent,
-    NavbarIconButtonComponent,
-    FlowbiteRouterLinkDirective,
-    FlowbiteRouterLinkActiveDirective,
-    BadgeComponent,
-    ScrollTopComponent,
+    FlowbiteNavbarComponent,
+    FlowbiteNavbarBrandComponent,
+    FlowbiteNavbarItemComponent,
+    FlowbiteNavbarIconItemComponent,
+    FlowbiteNavbarContentComponent,
+    FlowbiteNavbarToggleComponent,
+    FlowbiteBadgeComponent,
+    FlowbiteThemeDirective,
+    FlowbiteThemeToggleComponent,
+    RouterLink,
+    FlowbiteIconComponent,
   ],
+  hostDirectives: [],
   selector: 'flowbite-root',
   templateUrl: './app.component.html',
   host: {

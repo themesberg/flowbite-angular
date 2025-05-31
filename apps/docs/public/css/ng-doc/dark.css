@@ -1,0 +1,38 @@
+:root[data-theme='dark'] {
+  --ng-doc-base-rgb: 43 43 43;
+  --ng-doc-base-0: #111928;
+  --ng-doc-base-1: #262626;
+  --ng-doc-base-2: #2d2d2d;
+  --ng-doc-base-3: #353535;
+  --ng-doc-base-4: #3e3e3e;
+  --ng-doc-base-5: #484848;
+  --ng-doc-base-6: #515151;
+  --ng-doc-base-7: #5b5b5b;
+  --ng-doc-base-8: #656565;
+  --ng-doc-base-9: #707070;
+  --ng-doc-base-10: #7b7b7b;
+  --ng-doc-heading-color: #e3e3e3;
+  --ng-doc-text: #a9a9a9;
+  --ng-doc-text-muted: var(--ng-doc-base-10);
+  --ng-doc-text-selection: rgba(255, 44, 81, 0.5);
+  --ng-doc-shadow-color: rgba(0, 0, 0, 0.4);
+  --ng-doc-link-color: #30a5ff;
+  --ng-doc-code-background: #1f2937;
+  --ng-doc-tab-group-tabs-background: #1f2937;
+  --ng-doc-inline-code-background: #b9b9b9;
+  --ng-doc-primary: #ff9ba8;
+  --ng-doc-info: #7095ff;
+  --ng-doc-mark-background: rgba(48, 165, 255, 0.3);
+  --ng-doc-search-result-color: #c6c6c6;
+  --ng-doc-api-tag-background: #ff5959;
+  --ng-doc-api-tag-color: var(--ng-doc-base-0);
+  --ng-doc-guide-tag-background: #faab00;
+  --ng-doc-guide-tag-color: var(--ng-doc-base-0);
+  --ng-doc-navbar-border: 1px solid var(--ng-doc-base-4);
+  --ng-doc-hover-background: #c3002f;
+}
+
+:root[data-theme='dark'] .shiki,
+:root[data-theme='dark'] .shiki span {
+  color: var(--shiki-dark) !important;
+}

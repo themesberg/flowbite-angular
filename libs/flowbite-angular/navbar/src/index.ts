@@ -1,5 +1,3 @@
-export const greeting = 'Hello World!';
-
 /* Navbar */
 export { FlowbiteNavbarComponent } from './navbar/navbar.component';
 export {
@@ -112,3 +110,25 @@ export {
   injectFlowbiteNavbarBrandConfig,
   provideFlowbiteNavbarBrandConfig,
 } from './config/navbar-brand-config';
+
+/* NavbarIconItem */
+export { FlowbiteNavbarIconItemComponent } from './navbar-icon-item/navbar-icon-item.component';
+export {
+  FlowbiteNavbarIconItemStateToken,
+  flowbiteNavbarIconItemState,
+  injectFlowbiteNavbarIconItemState,
+  provideFlowbiteNavbarIconItemState,
+} from './navbar-icon-item/navbar-icon-item-state';
+export {
+  FlowbiteNavbarIconItemHostTheme,
+  FlowbiteNavbarIconItemTheme,
+  flowbiteNavbarIconItemTheme,
+} from './navbar-icon-item/theme';
+/* Config */
+export {
+  FlowbiteNavbarIconItemConfig,
+  FlowbiteNavbarIconItemConfigToken,
+  defaultFlowbiteNavbarIconItemConfig,
+  injectFlowbiteNavbarIconItemConfig,
+  provideFlowbiteNavbarIconItemConfig,
+} from './config/navbar-icon-item-config';

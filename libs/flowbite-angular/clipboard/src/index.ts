@@ -1,5 +1,3 @@
-export const greeting = 'Hello World!';
-
 /* Clipboard */
 export { FlowbiteClipboardComponent } from './clipboard/clipboard.component';
 export {

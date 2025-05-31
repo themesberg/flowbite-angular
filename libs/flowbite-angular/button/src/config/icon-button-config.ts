@@ -1,12 +1,7 @@
-import { flowbiteIconButtonTheme, type FlowbiteIconButtonTheme } from '../icon-button/theme';
+import type { FlowbiteIconButtonTheme } from '../icon-button/theme';
+import { flowbiteIconButtonTheme } from '../icon-button/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import {
-  defaultFlowbiteIconConfig,
-  type FlowbiteIconSizes,
-  type FlowbiteIconStrokeWidths,
-  type FlowbiteIconTheme,
-} from 'flowbite-angular/icon';
 
 import type { Provider } from '@angular/core';
 import { inject, InjectionToken } from '@angular/core';
@@ -17,26 +12,6 @@ export interface FlowbiteIconButtonConfig {
    */
   baseTheme: FlowbiteIconButtonTheme;
   /**
-   * The custom iconName of icon-button
-   */
-  iconName: string;
-  /**
-   * The custom iconSvg of icon-button
-   */
-  iconSvg: string | undefined;
-  /**
-   * The custom iconSize of icon-button
-   */
-  iconSize: keyof FlowbiteIconSizes;
-  /**
-   * The custom iconStrokeWidth of icon-button
-   */
-  iconStrokeWidth: keyof FlowbiteIconStrokeWidths;
-  /**
-   * The custom iconCustomTheme of icon-button
-   */
-  iconCustomTheme: DeepPartial<FlowbiteIconTheme>;
-  /**
    * The custom theme of icon-button
    */
   customTheme: DeepPartial<FlowbiteIconButtonTheme>;
@@ -44,11 +19,6 @@ export interface FlowbiteIconButtonConfig {
 
 export const defaultFlowbiteIconButtonConfig: FlowbiteIconButtonConfig = {
   baseTheme: flowbiteIconButtonTheme,
-  iconName: '',
-  iconSvg: undefined,
-  iconSize: defaultFlowbiteIconConfig.flowbiteSize,
-  iconStrokeWidth: defaultFlowbiteIconConfig.flowbiteStrokeWidth,
-  iconCustomTheme: defaultFlowbiteIconConfig.flowbiteCustomTheme,
   customTheme: {},
 };
 

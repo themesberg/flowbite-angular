@@ -21,7 +21,7 @@ export interface FlowbiteNavbarContentContainerTheme {
 
 export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createTheme({
   host: {
-    base: 'w-full overflow-hidden md:flex md:w-auto',
+    base: 'w-full overflow-hidden max-md:order-last md:flex md:w-auto',
     fixed: {
       on: '',
       off: '',

@@ -42,17 +42,17 @@ import { provideIcons } from '@ng-icons/core';
   },
   template: `
     <flowbite-icon
-      class="inline-block dark:hidden"
+      class="block dark:hidden"
       name="sun"
       [flowbiteSize]="baseButtonState().size()"
       [flowbiteColor]="undefined"
-      flowbiteStrokeWidth="md" />
+      flowbiteStrokeWidth="lg" />
     <flowbite-icon
-      class="hidden dark:inline-block"
+      class="hidden dark:inline"
       name="moon"
       [flowbiteSize]="baseButtonState().size()"
       [flowbiteColor]="undefined"
-      flowbiteStrokeWidth="md" />
+      flowbiteStrokeWidth="lg" />
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

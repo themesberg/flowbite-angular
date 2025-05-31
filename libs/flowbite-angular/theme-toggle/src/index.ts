@@ -1,5 +1,3 @@
-export const greeting = 'Hello World!';
-
 /* ThemeToggle */
 export { FlowbiteThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 export {

@@ -17,18 +17,13 @@ export {
 } from './config/button-config';
 
 /* IconButton */
-export { FlowbiteIconButtonComponent } from './icon-button/icon-button.component';
+export { FlowbiteIconButtonDirective } from './icon-button/icon-button.directive';
 export {
   FlowbiteIconButtonStateToken,
   flowbiteIconButtonState,
   injectFlowbiteIconButtonState,
   provideFlowbiteIconButtonState,
 } from './icon-button/icon-button-state';
-export {
-  FlowbiteIconButtonHostTheme,
-  FlowbiteIconButtonTheme,
-  flowbiteIconButtonTheme,
-} from './icon-button/theme';
 /* Config */
 export {
   FlowbiteIconButtonConfig,

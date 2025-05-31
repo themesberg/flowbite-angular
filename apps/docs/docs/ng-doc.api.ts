@@ -13,11 +13,6 @@ const api: NgDocApi = {
       include: 'libs/flowbite-angular/core/index.ts',
     },
     {
-      name: 'common',
-      route: 'common',
-      include: 'libs/flowbite-angular/common/index.ts',
-    },
-    {
       name: 'components',
       route: 'components',
       include: [
@@ -26,35 +21,20 @@ const api: NgDocApi = {
         'libs/flowbite-angular/badge/index.ts',
         'libs/flowbite-angular/breadcrumb/index.ts',
         'libs/flowbite-angular/button/index.ts',
-        'libs/flowbite-angular/dark-theme-toggle/index.ts',
+        'libs/flowbite-angular/card/index.ts',
+        'libs/flowbite-angular/clipboard/index.ts',
         'libs/flowbite-angular/dropdown/index.ts',
+        'libs/flowbite-angular/form/index.ts',
         'libs/flowbite-angular/icon/index.ts',
         'libs/flowbite-angular/indicator/index.ts',
         'libs/flowbite-angular/modal/index.ts',
         'libs/flowbite-angular/navbar/index.ts',
         'libs/flowbite-angular/pagination/index.ts',
-        'libs/flowbite-angular/scroll-top/index.ts',
         'libs/flowbite-angular/sidebar/index.ts',
-        'libs/flowbite-angular/theme/index.ts',
+        'libs/flowbite-angular/skeleton/index.ts',
+        'libs/flowbite-angular/theme-toggle/index.ts',
+        'libs/flowbite-angular/tooltip/index.ts',
       ],
-    },
-    {
-      name: 'directives',
-      route: 'directives',
-      include: [
-        'libs/flowbite-angular/router-link/index.ts',
-        'libs/flowbite-angular/router-link-active/index.ts',
-      ],
-    },
-    {
-      name: 'pipes',
-      route: 'pipes',
-      include: ['libs/flowbite-angular/sanitize-html/index.ts'],
-    },
-    {
-      name: 'utils',
-      route: 'utils',
-      include: 'libs/flowbite-angular/utils/index.ts',
     },
   ],
 };
