@@ -1,7 +1,9 @@
+import { FlowbiteButtonComponent } from 'flowbite-angular/button';
+
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
+  imports: [FlowbiteButtonComponent],
   templateUrl: './_default.component.html',
   host: {
     class: 'flex flex-wrap flex-row gap-3',

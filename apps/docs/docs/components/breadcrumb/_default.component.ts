@@ -13,7 +13,7 @@ import { provideIcons } from '@ng-icons/core';
   providers: [provideIcons({ home })],
   templateUrl: './_default.component.html',
   host: {
-    class: 'flex flex wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3',
   },
 })
 export class FlowbiteDefaultComponent {}
