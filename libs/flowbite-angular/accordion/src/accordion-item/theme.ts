@@ -50,7 +50,7 @@ export const flowbiteAccordionItemTheme: FlowbiteAccordionItemTheme = createThem
         'border-yellow-200 bg-yellow-100 text-yellow-900 data-hover:bg-yellow-100 dark:border-yellow-700 dark:bg-yellow-800 dark:text-yellow-50 dark:data-hover:bg-yellow-800',
     },
     flush: {
-      on: 'border-b bg-transparent data-hover:bg-transparent',
+      on: 'border-b bg-transparent data-hover:bg-transparent dark:bg-transparent dark:data-hover:bg-transparent',
       off: 'border not-data-open:bg-transparent not-data-open:dark:bg-transparent',
     },
     text: {

@@ -40,7 +40,7 @@ export default {
       <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown button</button>
 
       <ng-template #dropdownMenu>
-        <div flowbiteDropdown flowbiteDropdown ${argsToTemplate(args)}>
+        <div flowbiteDropdown ${argsToTemplate(args)}>
           <li flowbiteDropdownItem>Hello World !</li>
           <li flowbiteDropdownItem>Hello World 2 !</li>
         </div>
