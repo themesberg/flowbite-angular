@@ -18,7 +18,7 @@ export interface FlowbiteSidebarToggleHostTheme extends FlowbiteBaseButtonHostTh
 
 export const flowbiteSidebarToggleTheme: FlowbiteSidebarToggleTheme = createTheme({
   host: {
-    base: 'inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg p-2 text-sm md:hidden',
+    base: 'inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg p-2 text-sm lg:hidden',
     transition: flowbiteBaseButtonTheme.host.transition,
     focus: flowbiteBaseButtonTheme.host.focus,
     disabled: flowbiteBaseButtonTheme.host.disabled,

@@ -30,7 +30,6 @@ const api: NgDocApi = {
         'libs/flowbite-angular/navbar/src/index.ts',
         'libs/flowbite-angular/pagination/src/index.ts',
         'libs/flowbite-angular/sidebar/src/index.ts',
-        'libs/flowbite-angular/skeleton/src/index.ts',
         'libs/flowbite-angular/theme-toggle/src/index.ts',
         'libs/flowbite-angular/tooltip/src/index.ts',
       ],

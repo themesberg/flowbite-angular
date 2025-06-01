@@ -11,7 +11,7 @@ import { provideIcons } from '@ng-icons/core';
   providers: [provideIcons({ arrowLeft, arrowRight, infoCircle, brain })],
   templateUrl: './_icon.component.html',
   host: {
-    class: 'flex flex-wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3 p-6',
   },
 })
 export class FlowbiteIconComponent {}

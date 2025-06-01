@@ -5,7 +5,6 @@ import {
   FlowbiteNavbarItemComponent,
   FlowbiteNavbarToggleComponent,
 } from 'flowbite-angular/navbar';
-import { FlowbiteSkeletonComponent } from 'flowbite-angular/skeleton';
 
 import { Component } from '@angular/core';
 
@@ -16,11 +15,10 @@ import { Component } from '@angular/core';
     FlowbiteNavbarContentComponent,
     FlowbiteNavbarItemComponent,
     FlowbiteNavbarToggleComponent,
-    FlowbiteSkeletonComponent,
   ],
   templateUrl: './_default.component.html',
   host: {
-    class: 'flex flex-wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3 p-6',
   },
 })
 export class FlowbiteDefaultComponent {}

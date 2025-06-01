@@ -10,7 +10,7 @@ import { provideIcons } from '@ng-icons/core';
   providers: [provideIcons({ infoCircle })],
   templateUrl: './_icon.component.html',
   host: {
-    class: 'flex flex-wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3 p-6',
   },
 })
 export class FlowbiteIconComponent {}

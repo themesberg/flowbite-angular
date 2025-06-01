@@ -9,7 +9,7 @@ import { provideIcons } from '@ng-icons/core';
   providers: [provideIcons({ close })],
   templateUrl: './_default.component.html',
   host: {
-    class: 'flex flex-wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3 p-6',
   },
 })
 export class FlowbiteDefaultComponent {}

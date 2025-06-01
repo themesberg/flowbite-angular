@@ -55,8 +55,7 @@ export class FlowbiteSidebarComponent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.open[this.state.open() ? 'on' : 'off'],
-          mergedTheme.host.color[this.state.color()]
+          mergedTheme.host.open[this.state.open() ? 'on' : 'off']
         ),
       },
     };

@@ -11,7 +11,7 @@ import { provideIcons } from '@ng-icons/core';
   providers: [provideIcons({ close })],
   templateUrl: './_dismissable.component.html',
   host: {
-    class: 'flex flex-wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3 p-6',
   },
 })
 export class FlowbiteDismissableComponent {

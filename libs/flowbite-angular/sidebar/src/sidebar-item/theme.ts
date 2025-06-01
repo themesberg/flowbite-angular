@@ -18,7 +18,7 @@ export interface FlowbiteSidebarItemHostTheme extends FlowbiteBaseButtonHostThem
 
 export const flowbiteSidebarItemTheme: FlowbiteSidebarItemTheme = createTheme({
   host: {
-    base: 'm-0 block cursor-pointer rounded-sm px-3 py-2',
+    base: 'm-0 flex cursor-pointer flex-row rounded-sm px-3 py-2',
     transition: flowbiteBaseButtonTheme.host.transition,
     focus: flowbiteBaseButtonTheme.host.focus,
     disabled: flowbiteBaseButtonTheme.host.disabled,
