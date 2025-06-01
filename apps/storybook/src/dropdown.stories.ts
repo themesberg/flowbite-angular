@@ -1,4 +1,4 @@
-import { FlowbiteButtonComponent } from 'flowbite-angular/button';
+import { FlowbiteButtonDirective } from 'flowbite-angular/button';
 import {
   defaultFlowbiteDropdownConfig,
   FlowbiteDropdownComponent,
@@ -16,7 +16,7 @@ export default {
   component: FlowbiteDropdownComponent,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteDropdownItemComponent, NgpMenuTrigger, FlowbiteButtonComponent],
+      imports: [FlowbiteDropdownItemComponent, NgpMenuTrigger, FlowbiteButtonDirective],
     }),
   ],
   argTypes: {

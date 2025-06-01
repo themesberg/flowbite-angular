@@ -1,34 +1,12 @@
 import { injectFlowbiteBaseButtonConfig } from '../config/base-button-config';
 import { flowbiteBaseButtonState, provideFlowbiteBaseButtonState } from './base-button-state';
-import type {
-  FlowbiteBaseButtonColors,
-  FlowbiteBaseButtonSizes,
-  FlowbiteBaseButtonTheme,
-} from './theme';
+import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from './theme';
 
-import type { BooleanInput } from '@angular/cdk/coercion';
 import { booleanAttribute, Directive, input } from '@angular/core';
-import { NgpButton, provideButtonState } from 'ng-primitives/button';
-import { NgpFocus } from 'ng-primitives/interactions';
-import type { State } from 'ng-primitives/state';
-import { twMerge } from 'tailwind-merge';
 
 @Directive({
   standalone: true,
-  hostDirectives: [
-    {
-      directive: NgpButton,
-      inputs: ['disabled:disabled'],
-      outputs: [],
-    },
-    {
-      directive: NgpFocus,
-      inputs: [],
-      outputs: [],
-    },
-  ],
-  providers: [provideFlowbiteBaseButtonState(), provideButtonState()],
-  host: {},
+  providers: [provideFlowbiteBaseButtonState()],
 })
 export class FlowbiteBaseButtonDirective {
   protected readonly config = injectFlowbiteBaseButtonConfig();
@@ -44,34 +22,11 @@ export class FlowbiteBaseButtonDirective {
   /**
    * @see {@link injectFlowbiteBaseButtonConfig}
    */
-  readonly pill = input<boolean, BooleanInput>(this.config.pill, { transform: booleanAttribute });
+  readonly pill = input(this.config.pill, { transform: booleanAttribute });
   /**
    * @see {@link injectFlowbiteBaseButtonConfig}
    */
-  readonly outline = input<boolean, BooleanInput>(this.config.outline, {
-    transform: booleanAttribute,
-  });
-
-  static computeTheme(
-    mergedTheme: FlowbiteBaseButtonTheme,
-    state: State<FlowbiteBaseButtonDirective>
-  ) {
-    return {
-      host: {
-        root: twMerge(
-          mergedTheme.host.base,
-          mergedTheme.host.transition,
-          mergedTheme.host.focus,
-          mergedTheme.host.disabled,
-          mergedTheme.host.size[state.size()],
-          mergedTheme.host.pill[state.pill() ? 'on' : 'off'],
-          state.outline()
-            ? mergedTheme.host.colorOutline[state.color()]
-            : mergedTheme.host.color[state.color()]
-        ),
-      },
-    };
-  }
+  readonly outline = input(this.config.outline, { transform: booleanAttribute });
 
   /**
    * @internal

@@ -1,4 +1,4 @@
-import { FlowbiteButtonComponent } from 'flowbite-angular/button';
+import { FlowbiteButtonDirective } from 'flowbite-angular/button';
 import { defaultFlowbiteTooltipConfig, FlowbiteTooltipComponent } from 'flowbite-angular/tooltip';
 
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -12,7 +12,7 @@ export default {
   component: FlowbiteTooltipComponent,
   decorators: [
     moduleMetadata({
-      imports: [NgpTooltipTrigger, FlowbiteButtonComponent],
+      imports: [NgpTooltipTrigger, FlowbiteButtonDirective],
     }),
   ],
   argTypes: {

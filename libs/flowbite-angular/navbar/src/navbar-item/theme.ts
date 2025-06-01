@@ -1,26 +1,29 @@
 import type { FlowbiteBoolean } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from 'flowbite-angular/button';
-import {
-  flowbiteBaseButtonTheme,
-  type FlowbiteBaseButtonHostTheme,
-  type FlowbiteBaseButtonTheme,
-} from 'flowbite-angular/button';
 
-export interface FlowbiteNavbarItemTheme extends FlowbiteBaseButtonTheme {
+export interface FlowbiteNavbarItemTheme {
   host: FlowbiteNavbarItemHostTheme;
 }
 
-export interface FlowbiteNavbarItemHostTheme extends FlowbiteBaseButtonHostTheme {
+export interface FlowbiteNavbarItemHostTheme {
   base: string;
+  transition: string;
+  focus: string;
+  disabled: string;
+  size: FlowbiteBaseButtonSizes;
+  pill: FlowbiteBoolean;
+  color: FlowbiteBaseButtonColors;
+  colorOutline: FlowbiteBaseButtonColors;
 }
 
 export const flowbiteNavbarItemTheme: FlowbiteNavbarItemTheme = createTheme({
   host: {
     base: 'm-0 block cursor-pointer rounded-sm px-3 py-2',
-    transition: flowbiteBaseButtonTheme.host.transition,
-    focus: flowbiteBaseButtonTheme.host.focus,
-    disabled: flowbiteBaseButtonTheme.host.disabled,
+    transition: 'transition-colors duration-150 ease-in-out',
+    focus:
+      'data-focus:ring-0 data-focus:outline-none data-focus-visible:ring-2 data-focus-visible:outline-none',
+    disabled: 'data-disabled:cursor-not-allowed data-disabled:opacity-50',
     size: {} as FlowbiteBaseButtonSizes, // Not used for NavbarItem
     pill: {} as FlowbiteBoolean, // Not used for NavbarItem
     color: {

@@ -1,4 +1,4 @@
-import { FlowbiteButtonComponent } from 'flowbite-angular/button';
+import { FlowbiteButtonDirective } from 'flowbite-angular/button';
 import {
   defaultFlowbiteButtonGroupConfig,
   FlowbiteButtonGroupComponent,
@@ -14,7 +14,7 @@ export default {
   component: FlowbiteButtonGroupComponent,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteButtonComponent],
+      imports: [FlowbiteButtonDirective],
     }),
   ],
   argTypes: {

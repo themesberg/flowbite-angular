@@ -5,7 +5,6 @@ import type { FlowbiteIconButtonTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
-import { injectFlowbiteIconState } from 'flowbite-angular/icon';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -21,26 +20,24 @@ import { twMerge } from 'tailwind-merge';
 export class FlowbiteIconButtonDirective {
   protected readonly config = injectFlowbiteIconButtonConfig();
   protected readonly baseButtonState = injectFlowbiteBaseButtonState();
-  protected readonly iconState = injectFlowbiteIconState();
 
   /**
    * @see {@link injectFlowbiteIconButtonConfig}
    */
   readonly customTheme = input<DeepPartial<FlowbiteIconButtonTheme>>(this.config.customTheme);
 
-  constructor() {
-    this.iconState().flowbiteSize.set(this.baseButtonState().size());
-  }
+  /**
+   * @see {@link injectFlowbiteIconButtonConfig}
+   */
+  protected readonly state = flowbiteIconButtonState<FlowbiteIconButtonDirective>(this);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base),
+        root: twMerge(mergedTheme.host.base, mergedTheme.host.size[this.baseButtonState().size()]),
       },
     };
   });
-
-  protected readonly state = flowbiteIconButtonState<FlowbiteIconButtonDirective>(this);
 }

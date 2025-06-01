@@ -55,7 +55,7 @@ import { twMerge } from 'tailwind-merge';
   host: { '[class]': `theme().host.root` },
   template: `
     <flowbite-icon
-      [flowbiteSize]="state.size()"
+      [size]="state.size()"
       name="chevronLeft" />
   `,
   encapsulation: ViewEncapsulation.None,

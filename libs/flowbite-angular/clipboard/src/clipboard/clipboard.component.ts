@@ -3,7 +3,7 @@ import { flowbiteClipboardState, provideFlowbiteClipboardState } from './clipboa
 import type { FlowbiteClipboardTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteButtonComponent, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteButtonDirective, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
 import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 import { fileCopy } from 'flowbite-angular/icon/outline/files-folders';
 import { FlowbiteTooltipComponent } from 'flowbite-angular/tooltip';
@@ -29,7 +29,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteClipboard',
   hostDirectives: [],
   imports: [
-    FlowbiteButtonComponent,
+    FlowbiteButtonDirective,
     FlowbiteIconButtonDirective,
     FlowbiteIconComponent,
     NgpTooltipTrigger,

@@ -1,4 +1,4 @@
-import { FlowbiteButtonComponent } from 'flowbite-angular/button';
+import { FlowbiteButtonDirective } from 'flowbite-angular/button';
 import {
   defaultFlowbiteModalConfig,
   FlowbiteModalComponent,
@@ -24,7 +24,7 @@ export default {
         FlowbiteModalFooterComponent,
         FlowbiteModalHeaderComponent,
         FlowbiteModalOverlayComponent,
-        FlowbiteButtonComponent,
+        FlowbiteButtonDirective,
         NgpDialogTrigger,
       ],
     }),

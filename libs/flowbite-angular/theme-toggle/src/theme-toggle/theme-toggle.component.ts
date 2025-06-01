@@ -20,6 +20,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
+import { twMerge } from 'tailwind-merge';
 
 @Component({
   standalone: true,
@@ -44,14 +45,14 @@ import { provideIcons } from '@ng-icons/core';
     <flowbite-icon
       class="block dark:hidden"
       name="sun"
-      [flowbiteSize]="baseButtonState().size()"
-      [flowbiteColor]="undefined"
+      [size]="baseButtonState().size()"
+      [color]="undefined"
       flowbiteStrokeWidth="lg" />
     <flowbite-icon
       class="hidden dark:inline"
       name="moon"
-      [flowbiteSize]="baseButtonState().size()"
-      [flowbiteColor]="undefined"
+      [size]="baseButtonState().size()"
+      [color]="undefined"
       flowbiteStrokeWidth="lg" />
   `,
   encapsulation: ViewEncapsulation.None,
@@ -71,7 +72,19 @@ export class FlowbiteThemeToggleComponent {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
-      ...FlowbiteBaseButtonDirective.computeTheme(mergedTheme, this.baseButtonState()),
+      host: {
+        root: twMerge(
+          mergedTheme.host.base,
+          mergedTheme.host.transition,
+          mergedTheme.host.focus,
+          mergedTheme.host.disabled,
+          mergedTheme.host.size[this.baseButtonState().size()],
+          mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
+          this.baseButtonState().outline()
+            ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
+            : mergedTheme.host.color[this.baseButtonState().color()]
+        ),
+      },
     };
   });
 

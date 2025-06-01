@@ -1,5 +1,5 @@
 /* Button */
-export { FlowbiteButtonComponent } from './button/button.component';
+export { FlowbiteButtonDirective } from './button/button.directive';
 export {
   FlowbiteButtonStateToken,
   flowbiteButtonState,
@@ -41,13 +41,7 @@ export {
   injectFlowbiteBaseButtonState,
   provideFlowbiteBaseButtonState,
 } from './base-button/base-button-state';
-export {
-  FlowbiteBaseButtonColors,
-  FlowbiteBaseButtonHostTheme,
-  FlowbiteBaseButtonTheme,
-  flowbiteBaseButtonTheme,
-  FlowbiteBaseButtonSizes,
-} from './base-button/theme';
+export { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from './base-button/theme';
 /* Config */
 export {
   FlowbiteBaseButtonConfig,
