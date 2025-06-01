@@ -7,7 +7,7 @@ import type { NgDocPage } from '@ng-doc/core';
  * 
  */
 const <%= className %>: NgDocPage = {
-  title: 'Alert',
+  title: '<%= className %>',
   mdFile: './index.md',
   category: ComponentCategory,
   order: <%= order %>,

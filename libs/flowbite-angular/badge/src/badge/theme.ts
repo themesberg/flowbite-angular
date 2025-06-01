@@ -27,7 +27,7 @@ export interface FlowbiteBadgeHostTheme {
 
 export const flowbiteBadgeTheme: FlowbiteBadgeTheme = createTheme({
   host: {
-    base: 'font-medium',
+    base: 'flex flex-row items-center font-medium',
     border: {
       on: 'border',
       off: 'border-0',

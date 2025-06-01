@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   imports: [FlowbiteAlertComponent],
   templateUrl: './_border-accent.component.html',
   host: {
-    class: 'flex flex wrap flex-col gap-3',
+    class: 'flex flex-wrap flex-col gap-3',
   },
 })
 export class FlowbiteBorderComponent {}
