@@ -1,8 +1,8 @@
 ---
-keyword: DropdownPage
+keyword: IconPage
 ---
 
-## Default dropdown
+## Default icon
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 

@@ -2,7 +2,7 @@
 keyword: ClipboardPage
 ---
 
-## Default alert
+## Default clipboard
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
