@@ -10,7 +10,6 @@ const <%= className %>: NgDocPage = {
   title: '<%= className %>',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: <%= order %>,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },

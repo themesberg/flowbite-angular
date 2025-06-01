@@ -14,7 +14,6 @@ const Alert: NgDocPage = {
   title: 'Alert',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 2,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbiteIconComponent: FlowbiteIconComponent,

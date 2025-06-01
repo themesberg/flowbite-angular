@@ -13,7 +13,6 @@ const Accordion: NgDocPage = {
   title: 'Accordion',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 1,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbiteAlwaysOpenComponent: FlowbiteAlwaysOpenComponent,

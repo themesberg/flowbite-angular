@@ -15,7 +15,6 @@ const Badge: NgDocPage = {
   title: 'Badge',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 3,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbiteSmallComponent: FlowbiteSmallComponent,

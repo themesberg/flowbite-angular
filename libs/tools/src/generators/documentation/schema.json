@@ -12,15 +12,6 @@
         "index": 0
       },
       "x-prompt": "What component name would you like to use?"
-    },
-    "order": {
-      "type": "number",
-      "description": "The position of the generated documentation",
-      "$default": {
-        "$source": "argv",
-        "index": 1
-      },
-      "x-prompt": "What position for the generated documentation do you want?"
     }
   },
   "required": ["componentName", "order"]

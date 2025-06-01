@@ -15,7 +15,6 @@ const Button: NgDocPage = {
   title: 'Button',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 5,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
     flowbitePillComponent: FlowbitePillComponent,

@@ -10,7 +10,6 @@ const Breadcrumb: NgDocPage = {
   title: 'Breadcrumb',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 4,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
