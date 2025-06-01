@@ -1,0 +1,10 @@
+<button
+  flowbiteButton
+  [ngpTooltipTrigger]="tooltip"
+  [ngpTooltipTriggerContainer]="elementRef.nativeElement">
+  tooltip
+</button>
+
+<ng-template #tooltip>
+  <div flowbiteTooltip>Tooltip content</div>
+</ng-template>
