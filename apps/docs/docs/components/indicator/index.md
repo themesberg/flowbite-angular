@@ -1,8 +1,8 @@
 ---
-keyword: <%= className %>Page
+keyword: IndicatorPage
 ---
 
-## Default <%= className %>
+## Default indicator
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
