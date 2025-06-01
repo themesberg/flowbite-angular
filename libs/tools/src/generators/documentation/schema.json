@@ -14,5 +14,5 @@
       "x-prompt": "What component name would you like to use?"
     }
   },
-  "required": ["componentName", "order"]
+  "required": ["componentName"]
 }
