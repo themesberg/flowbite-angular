@@ -1,5 +1,5 @@
 /* Accordion */
-export { FlowbiteAccordionComponent } from './accordion/accordion.component';
+export { FlowbiteAccordionDirective } from './accordion/accordion.directive';
 export {
   FlowbiteAccordionStateToken,
   flowbiteAccordionState,
@@ -12,8 +12,9 @@ export {
   FlowbiteAccordionTheme,
   flowbiteAccordionTheme,
 } from './accordion/theme';
+
 /* AccordionItem */
-export { FlowbiteAccordionItemComponent } from './accordion-item/accordion-item.component';
+export { FlowbiteAccordionItemDirective } from './accordion-item/accordion-item.directive';
 export {
   FlowbiteAccordionItemStateToken,
   flowbiteAccordionItemState,
@@ -24,8 +25,6 @@ export {
   FlowbiteAccordionItemHostTheme,
   FlowbiteAccordionItemTheme,
   flowbiteAccordionItemTheme,
-  FlowbiteAccordionItemContentTheme,
-  FlowbiteAccordionItemTitleTheme,
 } from './accordion-item/theme';
 /* Config */
 export {
@@ -42,3 +41,47 @@ export {
   injectFlowbiteAccordionConfig,
   provideFlowbiteAccordionConfig,
 } from './config/accordion-config';
+
+/* AccordionTitle */
+export { FlowbiteAccordionTitleDirective } from './accordion-title/accordion-title.directive';
+export {
+  FlowbiteAccordionTitleStateToken,
+  flowbiteAccordionTitleState,
+  injectFlowbiteAccordionTitleState,
+  provideFlowbiteAccordionTitleState,
+} from './accordion-title/accordion-title-state';
+export {
+  FlowbiteAccordionTitleHostTheme,
+  FlowbiteAccordionTitleTheme,
+  flowbiteAccordionTitleTheme,
+} from './accordion-title/theme';
+/* Config */
+export {
+  FlowbiteAccordionTitleConfig,
+  FlowbiteAccordionTitleConfigToken,
+  defaultFlowbiteAccordionTitleConfig,
+  injectFlowbiteAccordionTitleConfig,
+  provideFlowbiteAccordionTitleConfig,
+} from './config/accordion-title-config';
+
+/* AccordionContent */
+export { FlowbiteAccordionContentDirective } from './accordion-content/accordion-content.directive';
+export {
+  FlowbiteAccordionContentStateToken,
+  flowbiteAccordionContentState,
+  injectFlowbiteAccordionContentState,
+  provideFlowbiteAccordionContentState,
+} from './accordion-content/accordion-content-state';
+export {
+  FlowbiteAccordionContentHostTheme,
+  FlowbiteAccordionContentTheme,
+  flowbiteAccordionContentTheme,
+} from './accordion-content/theme';
+/* Config */
+export {
+  FlowbiteAccordionContentConfig,
+  FlowbiteAccordionContentConfigToken,
+  defaultFlowbiteAccordionContentConfig,
+  injectFlowbiteAccordionContentConfig,
+  provideFlowbiteAccordionContentConfig,
+} from './config/accordion-content-config';

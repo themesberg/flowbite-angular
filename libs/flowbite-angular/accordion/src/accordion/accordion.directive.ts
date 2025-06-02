@@ -12,7 +12,6 @@ import { twMerge } from 'tailwind-merge';
 @Directive({
   standalone: true,
   selector: `
-    flowbiteAccordion,
     div[flowbiteAccordion]
   `,
   exportAs: 'flowbiteAccordion',
