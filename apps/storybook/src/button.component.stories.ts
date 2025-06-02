@@ -91,6 +91,16 @@ export default {
         },
       },
     },
+    disabled: {
+      control: 'boolean',
+      type: 'boolean',
+      table: {
+        category: 'Input',
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
     customTheme: {
       control: 'object',
       type: 'symbol',
@@ -101,25 +111,14 @@ export default {
         },
       },
     },
-    disabled: {
-      control: 'boolean',
-      type: 'boolean',
-      table: {
-        category: 'Input',
-        subcategory: 'NG-PRIMITIVES',
-        defaultValue: {
-          summary: 'false',
-        },
-      },
-    },
   },
   args: {
     color: defaultFlowbiteBaseButtonConfig.color,
     size: defaultFlowbiteBaseButtonConfig.size,
     pill: defaultFlowbiteBaseButtonConfig.pill,
     outline: defaultFlowbiteBaseButtonConfig.outline,
-    customTheme: defaultFlowbiteButtonConfig.customTheme,
     disabled: false,
+    customTheme: defaultFlowbiteButtonConfig.customTheme,
   },
 } as Meta<StoryType>;
 
@@ -140,6 +139,18 @@ export const IconButton: StoryObj<StoryType> = {
     template: `
       <button flowbiteButton ${argsToTemplate(args)}>
         <span>${args.color} button with icon</span>
+        <flowbite-icon flowbiteIconButton name="close" />
+      </button>
+    `,
+  }),
+};
+
+export const IconButtonOnly: StoryObj<StoryType> = {
+  name: 'Icon Button Only',
+  render: (args) => ({
+    props: args,
+    template: `
+      <button flowbiteButton ${argsToTemplate(args)}>
         <flowbite-icon flowbiteIconButton name="close" />
       </button>
     `,

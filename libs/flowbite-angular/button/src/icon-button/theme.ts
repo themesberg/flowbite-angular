@@ -13,7 +13,7 @@ export interface FlowbiteIconButtonHostTheme {
 
 export const flowbiteIconButtonTheme: FlowbiteIconButtonTheme = createTheme({
   host: {
-    base: '',
+    base: 'only:m-0',
     size: {
       xs: 'h-2.5 w-2.5 first:mr-2.5 last:ml-2.5',
       sm: 'h-3 w-3 first:mr-3 last:ml-3',
