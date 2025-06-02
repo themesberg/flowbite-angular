@@ -163,8 +163,8 @@ export const AccordionIcon: StoryObj<StoryType> = {
           </div>
           <div flowbiteAccordionItem value="accordion-item-2" #accordionItem2="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle>
-              <flowbite-icon name="chevronDown" class="transition-transform duration-150" [ngClass]="{ 'rotate-180': accordionItem2.ngpAccordionItemState().open() }" />
               <span>Is there a Figma file available?</span>
+              <flowbite-icon name="chevronDown" class="transition-transform duration-150" [ngClass]="{ 'rotate-180': accordionItem2.ngpAccordionItemState().open() }" />
             </h5>
             <div flowbiteAccordionContent class="p-5">
               <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>

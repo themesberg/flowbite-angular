@@ -23,19 +23,25 @@ export interface FlowbiteBadgeHostTheme {
   border: FlowbiteBoolean;
   size: FlowbiteBadgeSizes;
   pill: FlowbiteBoolean;
+  children: {
+    base: string;
+    icon: {
+      base: string;
+    };
+  };
 }
 
 export const flowbiteBadgeTheme: FlowbiteBadgeTheme = createTheme({
   host: {
-    base: 'flex flex-row items-center font-medium',
+    base: 'inline-flex items-center font-medium',
     border: {
       on: 'border',
       off: 'border-0',
     },
     color: {
       primary:
-        'bg-primary-100 dark:bg-primary-700 text-primary-800 dark:text-primary-300 border-primary-300 dark:border-primary-800',
-      dark: 'border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300',
+        'bg-primary-100 dark:bg-primary-200 text-primary-800 dark:text-primary-900 border-primary-300 dark:border-primary-800',
+      dark: 'border-gray-300 bg-gray-200 text-gray-800 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-300',
       blue: 'border-blue-300 bg-blue-100 text-blue-800 dark:border-blue-800 dark:bg-blue-200 dark:text-blue-800',
       red: 'border-red-300 bg-red-100 text-red-800 dark:border-red-800 dark:bg-red-200 dark:text-red-900',
       green:
@@ -55,6 +61,12 @@ export const flowbiteBadgeTheme: FlowbiteBadgeTheme = createTheme({
     size: {
       xs: 'p-1 text-xs',
       sm: 'p-1.5 text-sm',
+    },
+    children: {
+      base: '*:not-[flowbite-icon]:not-[&_[flowbiteBadgeButton]]:flex-1',
+      icon: {
+        base: '*:[flowbite-icon]:first:mr-2 *:[flowbite-icon]:last:ml-2 *:[flowbite-icon]:only:m-0',
+      },
     },
   },
 });

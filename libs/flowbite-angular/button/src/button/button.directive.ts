@@ -30,7 +30,7 @@ import { twMerge } from 'tailwind-merge';
     },
     {
       directive: FlowbiteBaseButtonDirective,
-      inputs: ['color:color', 'size:size', 'pill:pill', 'outline:outline'],
+      inputs: ['color', 'size', 'pill', 'outline'],
       outputs: [],
     },
   ],

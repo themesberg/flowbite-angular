@@ -3,48 +3,22 @@ import { flowbiteBadgeState, provideFlowbiteBadgeState } from './badge-state';
 
 import { mergeDeep } from 'flowbite-angular';
 
-import {
-  booleanAttribute,
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
-import { NgpButton } from 'ng-primitives/button';
-import { NgpFocus } from 'ng-primitives/interactions';
+import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
-    span[flowbiteBadge],
-    button[flowbiteBadge],
-    a[flowbiteBadge]
+    span[flowbiteBadge]
   `,
   exportAs: 'flowbiteBadge',
-  hostDirectives: [
-    {
-      directive: NgpButton,
-      inputs: ['disabled:disabled'],
-      outputs: [],
-    },
-    {
-      directive: NgpFocus,
-      inputs: [],
-      outputs: [],
-    },
-  ],
-  imports: [],
+  hostDirectives: [],
   providers: [provideFlowbiteBadgeState()],
   host: {
     '[class]': `theme().host.root`,
   },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteBadgeComponent {
+export class FlowbiteBadgeDirective {
   readonly config = injectFlowbiteBadgeConfig();
 
   /**
@@ -78,7 +52,11 @@ export class FlowbiteBadgeComponent {
           mergedTheme.host.color[this.state.color()],
           mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
           mergedTheme.host.pill[this.state.pill() ? 'on' : 'off'],
-          mergedTheme.host.size[this.state.size()]
+          mergedTheme.host.size[this.state.size()],
+
+          /* children */
+          mergedTheme.host.children.base,
+          mergedTheme.host.children.icon.base
         ),
       },
     };
@@ -87,5 +65,5 @@ export class FlowbiteBadgeComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteBadgeState<FlowbiteBadgeComponent>(this);
+  readonly state = flowbiteBadgeState<FlowbiteBadgeDirective>(this);
 }
