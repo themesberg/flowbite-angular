@@ -139,7 +139,7 @@ export const IconButton: StoryObj<StoryType> = {
     template: `
       <button flowbiteButton ${argsToTemplate(args)}>
         <span>${args.color} button with icon</span>
-        <flowbite-icon flowbiteIconButton name="close" />
+        <flowbite-icon name="close" />
       </button>
     `,
   }),

@@ -5,35 +5,23 @@ import type { FlowbiteAlertColors, FlowbiteAlertTheme } from './theme';
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import {
-  booleanAttribute,
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     div[flowbiteAlert]
   `,
   exportAs: 'flowbiteAlert',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteAlertState()],
   host: {
     '[class]': `theme().host.root`,
-    '[attr.role]': 'alert',
   },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteAlertComponent {
-  protected readonly config = injectFlowbiteAlertConfig();
+export class FlowbiteAlertDirective {
+  readonly config = injectFlowbiteAlertConfig();
 
   /**
    * @see {@link injectFlowbiteAlertConfig}
@@ -73,5 +61,5 @@ export class FlowbiteAlertComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteAlertState<FlowbiteAlertComponent>(this);
+  readonly state = flowbiteAlertState<FlowbiteAlertDirective>(this);
 }

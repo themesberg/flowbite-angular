@@ -19,7 +19,7 @@ export interface FlowbiteAlertHostTheme {
 
 export const flowbiteAlertTheme: FlowbiteAlertTheme = createTheme({
   host: {
-    base: 'mb-4 flex flex-row items-center rounded-lg p-4 text-sm',
+    base: 'mb-4 rounded-lg p-4',
     color: {
       primary:
         'border-primary-300 bg-primary-50 text-primary-800 dark:border-primary-800 dark:text-primary-400 dark:bg-gray-800',

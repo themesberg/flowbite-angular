@@ -28,7 +28,7 @@ import { twMerge } from 'tailwind-merge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Flowbite<%= className %>Component {
-  protected readonly config = injectFlowbite<%= className %>Config();
+  readonly config = injectFlowbite<%= className %>Config();
 
   /**
    * @see {@link injectFlowbite<%= className %>Config}

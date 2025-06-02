@@ -1,20 +1,31 @@
-import { defaultFlowbiteAlertConfig, FlowbiteAlertComponent } from 'flowbite-angular/alert';
+import {
+  defaultFlowbiteAlertConfig,
+  FlowbiteAlertButtonDirective,
+  FlowbiteAlertContentDirective,
+  FlowbiteAlertDirective,
+} from 'flowbite-angular/alert';
+import { FlowbiteButtonDirective } from 'flowbite-angular/button';
 import { FlowbiteIconComponent } from 'flowbite-angular/icon';
-import { infoCircle } from 'flowbite-angular/icon/outline/general';
+import { close, eye, infoCircle } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteAlertComponent;
+type StoryType = FlowbiteAlertDirective;
 
 export default {
   title: 'Component/Alert',
-  component: FlowbiteAlertComponent,
+  component: FlowbiteAlertDirective,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteIconComponent],
-      providers: [provideIcons({ infoCircle })],
+      imports: [
+        FlowbiteIconComponent,
+        FlowbiteAlertButtonDirective,
+        FlowbiteAlertContentDirective,
+        FlowbiteButtonDirective,
+      ],
+      providers: [provideIcons({ infoCircle, close, eye })],
     }),
   ],
   argTypes: {
@@ -66,19 +77,85 @@ export default {
     accent: defaultFlowbiteAlertConfig.accent,
     customTheme: defaultFlowbiteAlertConfig.customTheme,
   },
-  render: (args) => ({
-    props: args,
-    template: `
-      <div flowbiteAlert ${argsToTemplate(args)}>
-        <flowbite-icon name="infoCircle" flowbiteSize="lg" />
-        <span>
-          <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
-        </span>
-      </div>
-    `,
-  }),
 } as Meta<StoryType>;
 
 export const Default: StoryObj<StoryType> = {
   name: 'Default',
+  render: (args) => ({
+    props: args,
+    template: `
+      <div flowbiteAlert ${argsToTemplate(args)}>
+          <div flowbiteAlertContent>
+            <span>
+              <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
+            </span>
+          </div>
+      </div>
+    `,
+  }),
+};
+
+export const AlertIcon: StoryObj<StoryType> = {
+  name: 'Alert with icon',
+  render: (args) => ({
+    props: args,
+    template: `
+      <div flowbiteAlert ${argsToTemplate(args)}>
+          <div flowbiteAlertContent>
+            <flowbite-icon name="infoCircle" />
+            <span>
+              <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
+            </span>
+          </div>
+      </div>
+    `,
+  }),
+};
+
+export const DismissableAlert: StoryObj<StoryType> = {
+  name: 'Dismissable Alert',
+  render: (args) => ({
+    props: args,
+    template: `
+      <div flowbiteAlert ${argsToTemplate(args)}>
+          <div flowbiteAlertContent>
+            <flowbite-icon name="infoCircle" />
+            <span>
+              <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
+            </span>
+            <button flowbiteAlertButton>
+              <flowbite-icon name="close" />
+            </button>
+          </div>
+      </div>
+    `,
+  }),
+};
+
+export const AlertMoreContent: StoryObj<StoryType> = {
+  name: 'Alert with more content',
+  render: (args) => ({
+    props: args,
+    template: `
+      <div flowbiteAlert ${argsToTemplate(args)}>
+        <div flowbiteAlertContent>
+          <flowbite-icon size="lg" name="infoCircle" />
+          <h3 class="font-medium text-lg">This is a ${args.color} alert</h3>
+          <button flowbiteAlertButton>
+            <flowbite-icon size="lg" name="close" />
+          </button>
+        </div>
+        <div>
+          <div class="mt-2 mb-4 text-sm leading-6">
+            More ${args.color} about this ${args.color} alert goes here. This example text is going to run a bit longer so
+            that you can see how spacing within an alert works with this kind of content.
+          </div>
+          <div class="flex gap-2 items-center">
+            <button flowbiteButton color="${args.color}"><flowbite-icon name="eye" />View more</button>
+            <button flowbiteButton outline color="${args.color}">Dismiss</button>
+          </div>
+        </div>
+      </div>
+    `,
+  }),
 };
