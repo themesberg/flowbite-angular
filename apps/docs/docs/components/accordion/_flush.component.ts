@@ -1,12 +1,12 @@
 import {
-  FlowbiteAccordionComponent,
-  FlowbiteAccordionItemComponent,
+  FlowbiteAccordionDirective,
+  FlowbiteAccordionItemDirective,
 } from 'flowbite-angular/accordion';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [FlowbiteAccordionComponent, FlowbiteAccordionItemComponent],
+  imports: [FlowbiteAccordionDirective, FlowbiteAccordionItemDirective],
   templateUrl: './_flush.component.html',
   host: {
     class: 'flex flex-wrap flex-col gap-3 p-6',

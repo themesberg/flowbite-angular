@@ -65,7 +65,12 @@ export class FlowbiteButtonDirective {
           mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
           this.baseButtonState().outline()
             ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
-            : mergedTheme.host.color[this.baseButtonState().color()]
+            : mergedTheme.host.color[this.baseButtonState().color()],
+
+          /* Children */
+          mergedTheme.host.children.base,
+          mergedTheme.host.children.icon.base,
+          mergedTheme.host.children.icon.size[this.baseButtonState().size()]
         ),
       },
     };

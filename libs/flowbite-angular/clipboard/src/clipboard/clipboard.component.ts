@@ -3,7 +3,7 @@ import { flowbiteClipboardState, provideFlowbiteClipboardState } from './clipboa
 import type { FlowbiteClipboardTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteButtonDirective, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteButtonDirective } from 'flowbite-angular/button';
 import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 import { fileCopy } from 'flowbite-angular/icon/outline/files-folders';
 import { FlowbiteTooltipComponent } from 'flowbite-angular/tooltip';
@@ -30,7 +30,6 @@ import { twMerge } from 'tailwind-merge';
   hostDirectives: [],
   imports: [
     FlowbiteButtonDirective,
-    FlowbiteIconButtonDirective,
     FlowbiteIconComponent,
     NgpTooltipTrigger,
     FlowbiteTooltipComponent,
@@ -60,9 +59,7 @@ import { twMerge } from 'tailwind-merge';
       <button
         flowbiteButton
         color="gray">
-        <flowbite-icon
-          flowbiteIconButton
-          name="fileCopy" />
+        <flowbite-icon name="fileCopy" />
       </button>
     </div>
     <ng-template #tooltip>

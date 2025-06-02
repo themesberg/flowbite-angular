@@ -16,23 +16,6 @@ export {
   provideFlowbiteButtonConfig,
 } from './config/button-config';
 
-/* IconButton */
-export { FlowbiteIconButtonDirective } from './icon-button/icon-button.directive';
-export {
-  FlowbiteIconButtonStateToken,
-  flowbiteIconButtonState,
-  injectFlowbiteIconButtonState,
-  provideFlowbiteIconButtonState,
-} from './icon-button/icon-button-state';
-/* Config */
-export {
-  FlowbiteIconButtonConfig,
-  FlowbiteIconButtonConfigToken,
-  defaultFlowbiteIconButtonConfig,
-  injectFlowbiteIconButtonConfig,
-  provideFlowbiteIconButtonConfig,
-} from './config/icon-button-config';
-
 /* BaseButton */
 export { FlowbiteBaseButtonDirective } from './base-button/base-button.directive';
 export {

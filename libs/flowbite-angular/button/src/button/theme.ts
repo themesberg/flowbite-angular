@@ -16,11 +16,18 @@ export interface FlowbiteButtonHostTheme {
   pill: FlowbiteBoolean;
   color: FlowbiteBaseButtonColors;
   colorOutline: FlowbiteBaseButtonColors;
+  children: {
+    base: string;
+    icon: {
+      base: string;
+      size: FlowbiteBaseButtonSizes;
+    };
+  };
 }
 
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   host: {
-    base: 'inline-flex cursor-pointer items-center justify-center border border-transparent text-center font-medium',
+    base: 'flex cursor-pointer items-center justify-center border border-transparent text-center font-medium',
     transition: 'transition-colors duration-150 ease-in-out',
     focus:
       'data-focus:ring-0 data-focus:outline-none data-focus-visible:ring-2 data-focus-visible:outline-none',
@@ -93,6 +100,19 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
       teal: 'border-teal-700 text-teal-700 data-focus-visible:ring-teal-400 data-hover:bg-teal-700 data-hover:text-gray-100 dark:data-focus-visible:ring-teal-600',
       yellow:
         'border-yellow-400 text-yellow-400 data-focus-visible:ring-yellow-300 data-hover:bg-yellow-400 data-hover:text-gray-100 dark:data-focus-visible:ring-yellow-500',
+    },
+    children: {
+      base: '',
+      icon: {
+        base: '*:[flowbite-icon]:only:m-0',
+        size: {
+          xs: '*:[flowbite-icon]:h-2.5 *:[flowbite-icon]:w-2.5 *:[flowbite-icon]:first:mr-2.5 *:[flowbite-icon]:last:ml-2.5',
+          sm: '*:[flowbite-icon]:h-3 *:[flowbite-icon]:w-3 *:[flowbite-icon]:first:mr-3 *:[flowbite-icon]:last:ml-3',
+          md: '*:[flowbite-icon]:h-4 *:[flowbite-icon]:w-4 *:[flowbite-icon]:first:mr-4 *:[flowbite-icon]:last:ml-4',
+          lg: '*:[flowbite-icon]:h-5 *:[flowbite-icon]:w-5 *:[flowbite-icon]:first:mr-5 *:[flowbite-icon]:last:ml-5',
+          xl: '*:[flowbite-icon]:h-6 *:[flowbite-icon]:w-6 *:[flowbite-icon]:first:mr-6 *:[flowbite-icon]:last:ml-6',
+        },
+      },
     },
   },
 });

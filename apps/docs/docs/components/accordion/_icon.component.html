@@ -1,8 +1,15 @@
 <div flowbiteAccordion>
   <div
     flowbiteAccordionItem
-    value="accordion-item-1">
-    <h5 flowbiteAccordionTitle>What is Flowbite?</h5>
+    value="accordion-item-1"
+    #accordionItem1="flowbiteAccordionItem">
+    <h5 flowbiteAccordionTitle>
+      <span>What is Flowbite?</span>
+      <flowbite-icon
+        name="chevronDown"
+        class="transition-transform duration-150"
+        [ngClass]="{ 'rotate-180': accordionItem1.ngpAccordionItemState().open() }" />
+    </h5>
     <div
       flowbiteAccordionContent
       class="p-5">
@@ -14,17 +21,24 @@
         Check out this guide to learn how to
         <a
           href="/docs/getting-started/introduction/"
-          class="text-blue-600 hover:underline dark:text-blue-500">
-          get started
-        </a>
+          class="text-blue-600 hover:underline dark:text-blue-500"
+          >get started</a
+        >
         and start developing websites even faster with components on top of Tailwind CSS.
       </p>
     </div>
   </div>
   <div
     flowbiteAccordionItem
-    value="accordion-item-2">
-    <h5 flowbiteAccordionTitle>Is there a Figma file available?</h5>
+    value="accordion-item-2"
+    #accordionItem2="flowbiteAccordionItem">
+    <h5 flowbiteAccordionTitle>
+      <span>Is there a Figma file available?</span>
+      <flowbite-icon
+        name="chevronDown"
+        class="transition-transform duration-150"
+        [ngClass]="{ 'rotate-180': accordionItem2.ngpAccordionItemState().open() }" />
+    </h5>
     <div
       flowbiteAccordionContent
       class="p-5">
@@ -36,17 +50,24 @@
         Check out the
         <a
           href="https://flowbite.com/figma/"
-          class="text-blue-600 hover:underline dark:text-blue-500">
-          Figma design system
-        </a>
+          class="text-blue-600 hover:underline dark:text-blue-500"
+          >Figma design system</a
+        >
         based on the utility classes from Tailwind CSS and components from Flowbite.
       </p>
     </div>
   </div>
   <div
     flowbiteAccordionItem
-    value="accordion-item-3">
-    <h5 flowbiteAccordionTitle>What are the differences between Flowbite and Tailwind UI?</h5>
+    value="accordion-item-3"
+    #accordionItem3="flowbiteAccordionItem">
+    <h5 flowbiteAccordionTitle>
+      <span>What are the differences between Flowbite and Tailwind UI?</span>
+      <flowbite-icon
+        name="chevronDown"
+        class="transition-transform duration-150"
+        [ngClass]="{ 'rotate-180': accordionItem3.ngpAccordionItemState().open() }" />
+    </h5>
     <div
       flowbiteAccordionContent
       class="p-5">

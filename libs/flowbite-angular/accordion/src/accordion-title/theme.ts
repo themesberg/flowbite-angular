@@ -12,11 +12,17 @@ export interface FlowbiteAccordionTitleHostTheme {
   transition: string;
   color: FlowbiteAccordionColors;
   flush: FlowbiteBoolean;
+  children: {
+    base: string;
+    icon: {
+      base: string;
+    };
+  };
 }
 
 export const flowbiteAccordionTitleTheme: FlowbiteAccordionTitleTheme = createTheme({
   host: {
-    base: 'flex w-full cursor-pointer flex-row items-center justify-between p-5 text-base font-semibold group-first/item:rounded-t-lg',
+    base: 'flex w-full cursor-pointer flex-row items-center p-5 text-base font-semibold group-first/item:rounded-t-lg',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
       primary:
@@ -33,6 +39,12 @@ export const flowbiteAccordionTitleTheme: FlowbiteAccordionTitleTheme = createTh
     flush: {
       on: 'border-b bg-transparent data-hover:bg-transparent dark:bg-transparent dark:data-hover:bg-transparent',
       off: 'border not-data-open:bg-transparent not-data-open:dark:bg-transparent',
+    },
+    children: {
+      base: '*:not-[flowbite-icon]:flex-1',
+      icon: {
+        base: '*:[flowbite-icon]:first:mr-2',
+      },
     },
   },
 });

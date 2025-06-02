@@ -58,7 +58,11 @@ export class FlowbiteAccordionTitleDirective {
           mergedTheme.host.base,
           mergedTheme.host.transition,
           mergedTheme.host.color[this.accordionState().color()],
-          mergedTheme.host.flush[this.accordionState().flush() ? 'on' : 'off']
+          mergedTheme.host.flush[this.accordionState().flush() ? 'on' : 'off'],
+
+          /* Children */
+          mergedTheme.host.children.base,
+          mergedTheme.host.children.icon.base
         ),
       },
     };
