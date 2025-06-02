@@ -4,6 +4,7 @@ import {
   defaultFlowbiteButtonConfig,
   FlowbiteButtonDirective,
 } from 'flowbite-angular/button';
+import { FlowbiteButtonGroupDirective } from 'flowbite-angular/button-group';
 import { FlowbiteIconComponent } from 'flowbite-angular/icon';
 import { close } from 'flowbite-angular/icon/outline/general';
 
@@ -24,7 +25,7 @@ export default {
   component: FlowbiteButtonDirective,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteIconComponent],
+      imports: [FlowbiteIconComponent, FlowbiteButtonGroupDirective],
       providers: [provideIcons({ close })],
     }),
   ],
@@ -152,6 +153,20 @@ export const IconButtonOnly: StoryObj<StoryType> = {
       <button flowbiteButton ${argsToTemplate(args)}>
         <flowbite-icon name="close" />
       </button>
+    `,
+  }),
+};
+
+export const ButtonGroup: StoryObj<StoryType> = {
+  name: 'Button Group',
+  render: (args) => ({
+    props: args,
+    template: `
+      <div flowbiteButtonGroup>
+        <button flowbiteButton>Button 1</button>
+        <button flowbiteButton>Button 2</button>
+        <button flowbiteButton>Button 3</button>
+      </div>
     `,
   }),
 };

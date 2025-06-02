@@ -10,6 +10,6 @@ export interface FlowbiteButtonGroupHostTheme {
 
 export const flowbiteButtonGroupTheme: FlowbiteButtonGroupTheme = createTheme({
   host: {
-    base: 'inline-flex rounded-lg shadow-xs *:rounded-none *:first:rounded-l-lg *:last:rounded-r-lg',
+    base: 'flex flex-row rounded-lg shadow-xs *:rounded-none *:first:rounded-l-lg *:last:rounded-r-lg',
   },
 });

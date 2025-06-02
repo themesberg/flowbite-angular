@@ -4,30 +4,20 @@ import type { FlowbiteButtonGroupTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     div[flowbiteButtonGroup]
   `,
   exportAs: 'flowbiteButtonGroup',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteButtonGroupState()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteButtonGroupComponent {
+export class FlowbiteButtonGroupDirective {
   protected readonly config = injectFlowbiteButtonGroupConfig();
 
   /**
@@ -48,5 +38,5 @@ export class FlowbiteButtonGroupComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteButtonGroupState<FlowbiteButtonGroupComponent>(this);
+  readonly state = flowbiteButtonGroupState<FlowbiteButtonGroupDirective>(this);
 }

@@ -1,5 +1,5 @@
 /* ButtonGroup */
-export { FlowbiteButtonGroupComponent } from './button-group/button-group.component';
+export { FlowbiteButtonGroupDirective } from './button-group/button-group.directive';
 export {
   FlowbiteButtonGroupStateToken,
   flowbiteButtonGroupState,
