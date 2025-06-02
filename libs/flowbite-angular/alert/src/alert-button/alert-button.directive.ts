@@ -1,9 +1,8 @@
 import { injectFlowbiteAlertState } from '../alert/alert-state';
 import { injectFlowbiteAlertButtonConfig } from '../config/alert-button-config';
 import { flowbiteAlertButtonState, provideFlowbiteAlertButtonState } from './alert-button-state';
-import type { FlowbiteAlertButtonTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
@@ -39,7 +38,7 @@ export class FlowbiteAlertButtonDirective {
   /**
    * @see {@link injectFlowbiteAlertButtonConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAlertButtonTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

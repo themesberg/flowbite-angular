@@ -1,10 +1,8 @@
 import { injectFlowbiteBadgeConfig } from '../config/badge-config';
 import { flowbiteBadgeState, provideFlowbiteBadgeState } from './badge-state';
-import type { FlowbiteBadgeColors, FlowbiteBadgeSizes, FlowbiteBadgeTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
-import type { BooleanInput } from '@angular/cdk/coercion';
 import {
   booleanAttribute,
   ChangeDetectionStrategy,
@@ -13,15 +11,30 @@ import {
   input,
   ViewEncapsulation,
 } from '@angular/core';
+import { NgpButton } from 'ng-primitives/button';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
   standalone: true,
   selector: `
-    span[flowbiteBadge]
+    span[flowbiteBadge],
+    button[flowbiteBadge],
+    a[flowbiteBadge]
   `,
   exportAs: 'flowbiteBadge',
-  hostDirectives: [],
+  hostDirectives: [
+    {
+      directive: NgpButton,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+    {
+      directive: NgpFocus,
+      inputs: [],
+      outputs: [],
+    },
+  ],
   imports: [],
   providers: [provideFlowbiteBadgeState()],
   host: {
@@ -32,30 +45,28 @@ import { twMerge } from 'tailwind-merge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteBadgeComponent {
-  protected readonly config = injectFlowbiteBadgeConfig();
+  readonly config = injectFlowbiteBadgeConfig();
 
   /**
    * @see {@link injectFlowbiteBadgeConfig}
    */
-  readonly color = input<keyof FlowbiteBadgeColors>(this.config.color);
+  readonly color = input(this.config.color);
   /**
    * @see {@link injectFlowbiteBadgeConfig}
    */
-  readonly border = input<boolean, BooleanInput>(this.config.border, {
-    transform: booleanAttribute,
-  });
+  readonly border = input(this.config.border, { transform: booleanAttribute });
   /**
    * @see {@link injectFlowbiteBadgeConfig}
    */
-  readonly pill = input<boolean, BooleanInput>(this.config.pill, { transform: booleanAttribute });
+  readonly pill = input(this.config.pill, { transform: booleanAttribute });
   /**
    * @see {@link injectFlowbiteBadgeConfig}
    */
-  readonly size = input<keyof FlowbiteBadgeSizes>(this.config.size);
+  readonly size = input(this.config.size);
   /**
    * @see {@link injectFlowbiteBadgeConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteBadgeTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

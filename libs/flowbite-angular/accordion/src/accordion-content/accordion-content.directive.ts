@@ -4,9 +4,8 @@ import {
   flowbiteAccordionContentState,
   provideFlowbiteAccordionContentState,
 } from './accordion-content-state';
-import type { FlowbiteAccordionContentTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { injectAccordionItemState, NgpAccordionContent } from 'ng-primitives/accordion';
@@ -36,7 +35,7 @@ export class FlowbiteAccordionContentDirective {
   /**
    * @see {@link injectFlowbiteAccordionContentConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAccordionContentTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

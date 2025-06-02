@@ -4,9 +4,8 @@ import {
   flowbiteAccordionTitleState,
   provideFlowbiteAccordionTitleState,
 } from './accordion-title-state';
-import type { FlowbiteAccordionTitleTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpAccordionTrigger } from 'ng-primitives/accordion';
@@ -47,7 +46,7 @@ export class FlowbiteAccordionTitleDirective {
   /**
    * @see {@link injectFlowbiteAccordionTitleConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAccordionTitleTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

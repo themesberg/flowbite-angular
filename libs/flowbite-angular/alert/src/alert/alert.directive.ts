@@ -1,10 +1,8 @@
 import { injectFlowbiteAlertConfig } from '../config/alert-config';
 import { flowbiteAlertState, provideFlowbiteAlertState } from './alert-state';
-import type { FlowbiteAlertColors, FlowbiteAlertTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
-import type { BooleanInput } from '@angular/cdk/coercion';
 import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
@@ -26,23 +24,19 @@ export class FlowbiteAlertDirective {
   /**
    * @see {@link injectFlowbiteAlertConfig}
    */
-  readonly color = input<keyof FlowbiteAlertColors>(this.config.color);
+  readonly color = input(this.config.color);
   /**
    * @see {@link injectFlowbiteAlertConfig}
    */
-  readonly border = input<boolean, BooleanInput>(this.config.border, {
-    transform: booleanAttribute,
-  });
+  readonly border = input(this.config.border, { transform: booleanAttribute });
   /**
    * @see {@link injectFlowbiteAlertConfig}
    */
-  readonly accent = input<boolean, BooleanInput>(this.config.accent, {
-    transform: booleanAttribute,
-  });
+  readonly accent = input(this.config.accent, { transform: booleanAttribute });
   /**
    * @see {@link injectFlowbiteAlertConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAlertTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

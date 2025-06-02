@@ -1,8 +1,7 @@
 import { injectFlowbiteAlertContentConfig } from '../config/alert-content-config';
 import { flowbiteAlertContentState, provideFlowbiteAlertContentState } from './alert-content-state';
-import type { FlowbiteAlertContentTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -23,7 +22,7 @@ export class FlowbiteAlertContentDirective {
   /**
    * @see {@link injectFlowbiteAlertContentConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteAlertContentTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
