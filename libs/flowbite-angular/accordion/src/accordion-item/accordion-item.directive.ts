@@ -33,11 +33,10 @@ import { twMerge } from 'tailwind-merge';
   host: { '[class]': `theme().host.root` },
 })
 export class FlowbiteAccordionItemDirective {
-  protected readonly config = injectFlowbiteAccordionItemConfig();
-  protected readonly accordionState = injectFlowbiteAccordionState();
-  protected readonly ngpAccordionItemState = injectAccordionItemState();
+  readonly config = injectFlowbiteAccordionItemConfig();
+  readonly accordionState = injectFlowbiteAccordionState();
+  readonly ngpAccordionItemState = injectAccordionItemState();
 
-  readonly title = input.required<string>();
   /**
    * @see {@link injectFlowbiteAccordionItemConfig}
    */

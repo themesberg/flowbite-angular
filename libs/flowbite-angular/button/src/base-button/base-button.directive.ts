@@ -9,7 +9,7 @@ import { booleanAttribute, Directive, input } from '@angular/core';
   providers: [provideFlowbiteBaseButtonState()],
 })
 export class FlowbiteBaseButtonDirective {
-  protected readonly config = injectFlowbiteBaseButtonConfig();
+  readonly config = injectFlowbiteBaseButtonConfig();
 
   /**
    * @see {@link injectFlowbiteBaseButtonConfig}

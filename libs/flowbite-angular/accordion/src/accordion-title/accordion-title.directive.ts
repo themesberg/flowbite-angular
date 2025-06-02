@@ -41,8 +41,8 @@ import { twMerge } from 'tailwind-merge';
   host: { '[class]': `theme().host.root` },
 })
 export class FlowbiteAccordionTitleDirective {
-  protected readonly config = injectFlowbiteAccordionTitleConfig();
-  protected readonly accordionState = injectFlowbiteAccordionState();
+  readonly config = injectFlowbiteAccordionTitleConfig();
+  readonly accordionState = injectFlowbiteAccordionState();
 
   /**
    * @see {@link injectFlowbiteAccordionTitleConfig}

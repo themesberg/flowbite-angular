@@ -18,8 +18,8 @@ import { twMerge } from 'tailwind-merge';
   host: { '[class]': `theme().host.root` },
 })
 export class FlowbiteIconButtonDirective {
-  protected readonly config = injectFlowbiteIconButtonConfig();
-  protected readonly baseButtonState = injectFlowbiteBaseButtonState();
+  readonly config = injectFlowbiteIconButtonConfig();
+  readonly baseButtonState = injectFlowbiteBaseButtonState();
 
   /**
    * @see {@link injectFlowbiteIconButtonConfig}

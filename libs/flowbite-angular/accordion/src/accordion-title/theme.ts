@@ -16,7 +16,7 @@ export interface FlowbiteAccordionTitleHostTheme {
 
 export const flowbiteAccordionTitleTheme: FlowbiteAccordionTitleTheme = createTheme({
   host: {
-    base: 'flex w-full cursor-pointer items-center justify-between p-5 text-base font-semibold group-first/item:rounded-t-lg',
+    base: 'flex w-full cursor-pointer flex-row items-center justify-between p-5 text-base font-semibold group-first/item:rounded-t-lg',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
       primary:
