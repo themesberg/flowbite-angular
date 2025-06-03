@@ -17,7 +17,7 @@ import { twMerge } from 'tailwind-merge';
   host: { '[class]': `theme().host.root` },
 })
 export class FlowbiteButtonGroup {
-  protected readonly config = injectFlowbiteButtonGroupConfig();
+  readonly config = injectFlowbiteButtonGroupConfig();
 
   /**
    * @see {@link injectFlowbiteButtonGroupConfig}

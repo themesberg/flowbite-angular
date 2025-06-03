@@ -65,8 +65,8 @@ import { twMerge } from 'tailwind-merge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteClipboard {
-  protected readonly config = injectFlowbiteClipboardConfig();
-  protected readonly clipboard = inject(Clipboard);
+  readonly config = injectFlowbiteClipboardConfig();
+  readonly clipboard = inject(Clipboard);
 
   readonly id = input.required<string>();
   readonly value = input.required<string>();

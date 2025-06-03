@@ -1,4 +1,4 @@
-import type { FlowbiteDropdown } from './dropdown.component';
+import type { FlowbiteDropdown } from './dropdown.directive';
 
 import {
   createState,

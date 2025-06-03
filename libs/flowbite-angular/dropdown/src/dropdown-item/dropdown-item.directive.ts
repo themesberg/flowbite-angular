@@ -1,21 +1,17 @@
 import { injectFlowbiteDropdownItemConfig } from '../config/dropdown-item-config';
+import { injectFlowbiteDropdownState } from '../dropdown/dropdown-state';
 import { flowbiteDropdownItemState, provideFlowbiteDropdownItemState } from './dropdown-item-state';
 import type { FlowbiteDropdownItemTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { NgpMenuItem } from 'ng-primitives/menu';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     li[flowbiteDropdownItem]
@@ -27,18 +23,20 @@ import { twMerge } from 'tailwind-merge';
       inputs: [],
       outputs: [],
     },
+    {
+      directive: NgpFocus,
+      inputs: [],
+      outputs: [],
+    },
   ],
-  imports: [],
   providers: [provideFlowbiteDropdownItemState()],
   host: {
     '[class]': `theme().host.root`,
   },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteDropdownItem {
-  protected readonly config = injectFlowbiteDropdownItemConfig();
+  readonly config = injectFlowbiteDropdownItemConfig();
+  readonly dropdownState = injectFlowbiteDropdownState();
 
   /**
    * @see {@link injectFlowbiteDropdownItemConfig}
@@ -50,7 +48,15 @@ export class FlowbiteDropdownItem {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.transition),
+        root: twMerge(
+          mergedTheme.host.base,
+          mergedTheme.host.transition,
+          mergedTheme.host.color[this.dropdownState().color()],
+
+          /* children */
+          mergedTheme.host.children.base,
+          mergedTheme.host.children.icon.base
+        ),
       },
     };
   });

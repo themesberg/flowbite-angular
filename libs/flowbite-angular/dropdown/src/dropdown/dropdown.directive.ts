@@ -1,20 +1,13 @@
 import { injectFlowbiteDropdownConfig } from '../config/dropdown-config';
 import { flowbiteDropdownState, provideFlowbiteDropdownState } from './dropdown-state';
-import type { FlowbiteDropdownTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpMenu } from 'ng-primitives/menu';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     div[flowbiteDropdown]
@@ -27,36 +20,29 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
   ],
-  imports: [],
   providers: [provideFlowbiteDropdownState()],
   host: {
     '[class]': `theme().host.root`,
   },
-  template: `
-    <ul [class]="theme().list.root">
-      <ng-content />
-    </ul>
-  `,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteDropdown {
-  protected readonly config = injectFlowbiteDropdownConfig();
+  readonly config = injectFlowbiteDropdownConfig();
 
   /**
    * @see {@link injectFlowbiteDropdownConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteDropdownTheme>>(this.config.customTheme);
+  readonly color = input(this.config.color);
+  /**
+   * @see {@link injectFlowbiteDropdownConfig}
+   */
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base),
-      },
-      list: {
-        root: twMerge(mergedTheme.list.base),
+        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.state.color()]),
       },
     };
   });

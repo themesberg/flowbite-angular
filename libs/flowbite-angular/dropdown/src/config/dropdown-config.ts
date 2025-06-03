@@ -1,4 +1,4 @@
-import type { FlowbiteDropdownTheme } from '../dropdown/theme';
+import type { FLowbiteDropdownColors, FlowbiteDropdownTheme } from '../dropdown/theme';
 import { flowbiteDropdownTheme } from '../dropdown/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -9,6 +9,10 @@ import { inject, InjectionToken } from '@angular/core';
 export interface FlowbiteDropdownConfig {
   baseTheme: FlowbiteDropdownTheme;
   /**
+   * The custom color of dropdown
+   */
+  color: keyof FLowbiteDropdownColors;
+  /**
    * The custom theme of dropdown
    */
   customTheme: DeepPartial<FlowbiteDropdownTheme>;
@@ -16,6 +20,7 @@ export interface FlowbiteDropdownConfig {
 
 export const defaultFlowbiteDropdownConfig: FlowbiteDropdownConfig = {
   baseTheme: flowbiteDropdownTheme,
+  color: 'gray',
   customTheme: {},
 };
 

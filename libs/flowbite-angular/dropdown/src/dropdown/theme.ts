@@ -1,23 +1,24 @@
+import type { FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
+
+export interface FLowbiteDropdownColors extends Pick<FlowbiteColors, 'gray'> {
+  [key: string]: string;
+}
 
 export interface FlowbiteDropdownTheme {
   host: FlowbiteDropdownHostTheme;
-  list: FlowbiteDropdownListTheme;
 }
 
 export interface FlowbiteDropdownHostTheme {
   base: string;
-}
-
-export interface FlowbiteDropdownListTheme {
-  base: string;
+  color: FLowbiteDropdownColors;
 }
 
 export const flowbiteDropdownTheme: FlowbiteDropdownTheme = createTheme({
   host: {
-    base: 'fixed z-10 w-max divide-y divide-gray-100 rounded-lg bg-white shadow-sm dark:bg-gray-700',
-  },
-  list: {
-    base: 'py-2 text-sm text-gray-700 dark:text-gray-200',
+    base: 'fixed z-10 w-max divide-y rounded-lg shadow-sm',
+    color: {
+      gray: 'divide-gray-200 bg-white dark:bg-gray-700',
+    },
   },
 });
