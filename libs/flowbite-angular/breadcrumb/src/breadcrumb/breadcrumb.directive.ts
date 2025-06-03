@@ -1,8 +1,6 @@
 import { injectFlowbiteBreadcrumbConfig } from '../config/breadcrumb-config';
 import { flowbiteBreadcrumbState, provideFlowbiteBreadcrumbState } from './breadcrumb-state';
-import type { FlowbiteBreadcrumbColors, FlowbiteBreadcrumbTheme } from './theme';
 
-import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
 import { booleanAttribute, computed, Directive, input } from '@angular/core';
@@ -26,7 +24,7 @@ export class FlowbiteBreadcrumb {
   /**
    * @see {@link injectFlowbiteBreadcrumbConfig}
    */
-  readonly color = input<keyof FlowbiteBreadcrumbColors>(this.config.color);
+  readonly color = input(this.config.color);
   /**
    * @see {@link injectFlowbiteBreadcrumbConfig}
    */
@@ -34,7 +32,7 @@ export class FlowbiteBreadcrumb {
   /**
    * @see {@link injectFlowbiteBreadcrumbConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteBreadcrumbTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

@@ -1,7 +1,16 @@
-import type { FlowbiteColors } from 'flowbite-angular';
+import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
-export interface FlowbiteCardColors extends Pick<FlowbiteColors, 'gray'> {
+export interface FlowbiteCardOrientation {
+  vertical: string;
+  horizontal: string;
+}
+
+export interface FLowbiteCardColors extends Pick<FlowbiteColors, 'gray'> {
+  [key: string]: string;
+}
+
+export interface FlowbiteCardSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
@@ -11,14 +20,27 @@ export interface FlowbiteCardTheme {
 
 export interface FlowbiteCardHostTheme {
   base: string;
-  color: FlowbiteCardColors;
+  orientation: FlowbiteCardOrientation;
+  color: FLowbiteCardColors;
+  size: FlowbiteCardSizes;
 }
 
 export const flowbiteCardTheme: FlowbiteCardTheme = createTheme({
   host: {
-    base: 'block max-w-sm rounded-lg border p-6 shadow-sm',
+    base: 'flex size-fit rounded-lg border shadow-sm',
+    orientation: {
+      horizontal: 'flex-row',
+      vertical: 'flex-col',
+    },
     color: {
-      gray: 'border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800',
+      gray: 'border-gray-200 bg-white shadow-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
+    },
+    size: {
+      xs: 'max-w-xs',
+      sm: 'max-w-sm',
+      md: 'max-w-md',
+      lg: 'max-w-lg',
+      xl: 'max-w-xl',
     },
   },
 });

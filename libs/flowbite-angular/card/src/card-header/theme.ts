@@ -1,10 +1,6 @@
-import type { FlowbiteCardColors } from '../card/theme';
+import type { FLowbiteCardColors } from '../card/theme';
 
 import { createTheme } from 'flowbite-angular';
-
-export interface FlowbiteCardHeaderColors extends FlowbiteCardColors {
-  [key: string]: string;
-}
 
 export interface FlowbiteCardHeaderTheme {
   host: FlowbiteCardHeaderHostTheme;
@@ -12,7 +8,7 @@ export interface FlowbiteCardHeaderTheme {
 
 export interface FlowbiteCardHeaderHostTheme {
   base: string;
-  color: FlowbiteCardHeaderColors;
+  color: FLowbiteCardColors;
 }
 
 export const flowbiteCardHeaderTheme: FlowbiteCardHeaderTheme = createTheme({

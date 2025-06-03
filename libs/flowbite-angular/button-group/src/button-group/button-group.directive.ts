@@ -1,8 +1,7 @@
 import { injectFlowbiteButtonGroupConfig } from '../config/button-group-config';
 import { flowbiteButtonGroupState, provideFlowbiteButtonGroupState } from './button-group-state';
-import type { FlowbiteButtonGroupTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -23,7 +22,7 @@ export class FlowbiteButtonGroup {
   /**
    * @see {@link injectFlowbiteButtonGroupConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteButtonGroupTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

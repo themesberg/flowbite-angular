@@ -1,5 +1,5 @@
 /* Card */
-export { FlowbiteCard } from './card/card.component';
+export { FlowbiteCard } from './card/card.directive';
 export {
   FlowbiteCardStateToken,
   flowbiteCardState,
@@ -9,8 +9,9 @@ export {
 export {
   FlowbiteCardHostTheme,
   FlowbiteCardTheme,
+  FLowbiteCardColors,
   flowbiteCardTheme,
-  FlowbiteCardColors,
+  FlowbiteCardSizes,
 } from './card/theme';
 /* Config */
 export {
@@ -22,7 +23,7 @@ export {
 } from './config/card-config';
 
 /* CardHeader */
-export { FlowbiteCardHeader } from './card-header/card-header.component';
+export { FlowbiteCardHeader } from './card-header/card-header.directive';
 export {
   FlowbiteCardHeaderStateToken,
   flowbiteCardHeaderState,
@@ -33,7 +34,6 @@ export {
   FlowbiteCardHeaderHostTheme,
   FlowbiteCardHeaderTheme,
   flowbiteCardHeaderTheme,
-  FlowbiteCardHeaderColors,
 } from './card-header/theme';
 /* Config */
 export {
@@ -43,3 +43,25 @@ export {
   injectFlowbiteCardHeaderConfig,
   provideFlowbiteCardHeaderConfig,
 } from './config/card-header-config';
+
+/* CardContent */
+export { FlowbiteCardContent } from './card-content/card-content.directive';
+export {
+  FlowbiteCardContentStateToken,
+  flowbiteCardContentState,
+  injectFlowbiteCardContentState,
+  provideFlowbiteCardContentState,
+} from './card-content/card-content-state';
+export {
+  FlowbiteCardContentHostTheme,
+  FlowbiteCardContentTheme,
+  flowbiteCardContentTheme,
+} from './card-content/theme';
+/* Config */
+export {
+  FlowbiteCardContentConfig,
+  FlowbiteCardContentConfigToken,
+  defaultFlowbiteCardContentConfig,
+  injectFlowbiteCardContentConfig,
+  provideFlowbiteCardContentConfig,
+} from './config/card-content-config';

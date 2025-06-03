@@ -1,9 +1,8 @@
 import { injectFlowbiteBadgeState } from '../badge/badge-state';
 import { injectFlowbiteBadgeButtonConfig } from '../config/badge-button-config';
 import { flowbiteBadgeButtonState, provideFlowbiteBadgeButtonState } from './badge-button-state';
-import type { FlowbiteBadgeButtonTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
@@ -39,7 +38,7 @@ export class FlowbiteBadgeButton {
   /**
    * @see {@link injectFlowbiteBadgeButtonConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteBadgeButtonTheme>>(this.config.customTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

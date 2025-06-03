@@ -1,4 +1,4 @@
-import type { FlowbiteCardHeader } from './card-header.component';
+import type { FlowbiteCardHeader } from './card-header.directive';
 
 import {
   createState,

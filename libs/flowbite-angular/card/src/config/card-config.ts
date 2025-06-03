@@ -1,4 +1,4 @@
-import type { FlowbiteCardColors } from '../card/theme';
+import type { FLowbiteCardColors, FlowbiteCardOrientation, FlowbiteCardSizes } from '../card/theme';
 import { flowbiteCardTheme, type FlowbiteCardTheme } from '../card/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -14,7 +14,15 @@ export interface FlowbiteCardConfig {
   /**
    * The default color of card
    */
-  color: keyof FlowbiteCardColors;
+  color: keyof FLowbiteCardColors;
+  /**
+   * The default size of card
+   */
+  size: keyof FlowbiteCardSizes;
+  /**
+   * The default orientation of card
+   */
+  orientation: keyof FlowbiteCardOrientation;
   /**
    * The custom theme of card
    */
@@ -24,6 +32,8 @@ export interface FlowbiteCardConfig {
 export const defaultFlowbiteCardConfig: FlowbiteCardConfig = {
   baseTheme: flowbiteCardTheme,
   color: 'gray',
+  size: 'md',
+  orientation: 'vertical',
   customTheme: {},
 };
 

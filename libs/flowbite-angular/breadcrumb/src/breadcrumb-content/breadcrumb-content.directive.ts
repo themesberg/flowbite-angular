@@ -3,9 +3,8 @@ import {
   flowbiteBreadcrumbContentState,
   provideFlowbiteBreadcrumbContentState,
 } from './breadcrumb-content-state';
-import type { FlowbiteBreadcrumbContentTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -26,9 +25,7 @@ export class FlowbiteBreadcrumbContent {
   /**
    * @see {@link injectFlowbiteBreadcrumbContentConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteBreadcrumbContentTheme>>(
-    this.config.customTheme
-  );
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

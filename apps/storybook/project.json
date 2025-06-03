@@ -23,6 +23,7 @@
         "configDir": "apps/storybook/.storybook",
         "browserTarget": "storybook:build",
         "styles": ["apps/storybook/styles.css"],
+        "assets": [],
         "compodoc": false
       },
       "configurations": {

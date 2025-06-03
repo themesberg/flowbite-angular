@@ -1,4 +1,3 @@
-import type { FlowbiteCardHeaderColors } from '../card-header/theme';
 import { flowbiteCardHeaderTheme, type FlowbiteCardHeaderTheme } from '../card-header/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -12,10 +11,6 @@ export interface FlowbiteCardHeaderConfig {
    */
   baseTheme: FlowbiteCardHeaderTheme;
   /**
-   * The default theme of CardHeader
-   */
-  color: keyof FlowbiteCardHeaderColors;
-  /**
    * The custom theme of CardHeader
    */
   customTheme: DeepPartial<FlowbiteCardHeaderTheme>;
@@ -23,7 +18,6 @@ export interface FlowbiteCardHeaderConfig {
 
 export const defaultFlowbiteCardHeaderConfig: FlowbiteCardHeaderConfig = {
   baseTheme: flowbiteCardHeaderTheme,
-  color: 'gray',
   customTheme: {},
 };
 

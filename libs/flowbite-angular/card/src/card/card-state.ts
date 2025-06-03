@@ -1,4 +1,4 @@
-import type { FlowbiteCard } from './card.component';
+import type { FlowbiteCard } from './card.directive';
 
 import {
   createState,
