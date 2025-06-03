@@ -112,6 +112,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     color: defaultFlowbiteBaseButtonConfig.color,
     size: defaultFlowbiteBaseButtonConfig.size,
@@ -120,10 +124,6 @@ export default {
     disabled: false,
     customTheme: defaultFlowbiteButtonConfig.customTheme,
   },
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
   render: (args) => ({
     props: args,
     template: `
@@ -134,6 +134,14 @@ export const Default: StoryObj<StoryType> = {
 
 export const IconButton: StoryObj<StoryType> = {
   name: 'Icon Button',
+  args: {
+    color: defaultFlowbiteBaseButtonConfig.color,
+    size: defaultFlowbiteBaseButtonConfig.size,
+    pill: defaultFlowbiteBaseButtonConfig.pill,
+    outline: defaultFlowbiteBaseButtonConfig.outline,
+    disabled: false,
+    customTheme: defaultFlowbiteButtonConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -147,6 +155,14 @@ export const IconButton: StoryObj<StoryType> = {
 
 export const IconButtonOnly: StoryObj<StoryType> = {
   name: 'Icon Button Only',
+  args: {
+    color: defaultFlowbiteBaseButtonConfig.color,
+    size: defaultFlowbiteBaseButtonConfig.size,
+    pill: defaultFlowbiteBaseButtonConfig.pill,
+    outline: defaultFlowbiteBaseButtonConfig.outline,
+    disabled: false,
+    customTheme: defaultFlowbiteButtonConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -159,6 +175,14 @@ export const IconButtonOnly: StoryObj<StoryType> = {
 
 export const ButtonGroup: StoryObj<StoryType> = {
   name: 'Button Group',
+  args: {
+    color: defaultFlowbiteBaseButtonConfig.color,
+    size: defaultFlowbiteBaseButtonConfig.size,
+    pill: defaultFlowbiteBaseButtonConfig.pill,
+    outline: defaultFlowbiteBaseButtonConfig.outline,
+    disabled: false,
+    customTheme: defaultFlowbiteButtonConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
