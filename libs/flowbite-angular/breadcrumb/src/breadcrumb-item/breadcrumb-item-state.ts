@@ -1,4 +1,4 @@
-import type { FlowbiteBreadcrumbItemComponent } from './breadcrumb-item.component';
+import type { FlowbiteBreadcrumbItem } from './breadcrumb-item.component';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteBreadcrumbItemStateToken = createStateToken<FlowbiteBreadcrumbItemComponent>(
+export const FlowbiteBreadcrumbItemStateToken = createStateToken<FlowbiteBreadcrumbItem>(
   'Flowbite Breadcrumb Item'
 );
 export const provideFlowbiteBreadcrumbItemState = createStateProvider(

@@ -1,4 +1,4 @@
-import type { FlowbiteInputFieldComponent } from './input-field.component';
+import type { FlowbiteInputField } from './input-field.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteInputFieldStateToken =
-  createStateToken<FlowbiteInputFieldComponent>('Flowbite InputField');
+  createStateToken<FlowbiteInputField>('Flowbite InputField');
 export const provideFlowbiteInputFieldState = createStateProvider(FlowbiteInputFieldStateToken);
 export const injectFlowbiteInputFieldState = createStateInjector(FlowbiteInputFieldStateToken);
 export const flowbiteInputFieldState = createState(FlowbiteInputFieldStateToken);

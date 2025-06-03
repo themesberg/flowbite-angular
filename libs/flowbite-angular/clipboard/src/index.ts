@@ -1,5 +1,5 @@
 /* Clipboard */
-export { FlowbiteClipboardComponent } from './clipboard/clipboard.component';
+export { FlowbiteClipboard } from './clipboard/clipboard.component';
 export {
   FlowbiteClipboardStateToken,
   flowbiteClipboardState,

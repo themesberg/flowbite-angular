@@ -27,7 +27,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteModalFooterComponent {
+export class FlowbiteModalFooter {
   protected readonly config = injectFlowbiteModalFooterConfig();
 
   /**
@@ -48,5 +48,5 @@ export class FlowbiteModalFooterComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteModalFooterState<FlowbiteModalFooterComponent>(this);
+  readonly state = flowbiteModalFooterState<FlowbiteModalFooter>(this);
 }

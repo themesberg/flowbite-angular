@@ -1,4 +1,4 @@
-import type { FlowbiteAlertButtonDirective } from './alert-button.directive';
+import type { FlowbiteAlertButton } from './alert-button.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteAlertButtonStateToken =
-  createStateToken<FlowbiteAlertButtonDirective>('Flowbite AlertButton');
+  createStateToken<FlowbiteAlertButton>('Flowbite AlertButton');
 export const provideFlowbiteAlertButtonState = createStateProvider(FlowbiteAlertButtonStateToken);
 export const injectFlowbiteAlertButtonState = createStateInjector(FlowbiteAlertButtonStateToken);
 export const flowbiteAlertButtonState = createState(FlowbiteAlertButtonStateToken);

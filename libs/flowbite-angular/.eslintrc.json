@@ -13,7 +13,9 @@
             "prefix": "flowbite",
             "style": "camelCase"
           }
-        ]
+        ],
+        "@angular-eslint/directive-class-suffix": "off",
+        "@angular-eslint/component-class-suffix": "off"
       }
     },
     {

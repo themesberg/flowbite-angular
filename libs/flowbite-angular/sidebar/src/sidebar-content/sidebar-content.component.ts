@@ -1,5 +1,5 @@
 import { injectFlowbiteSidebarContentConfig } from '../config/sidebar-content-config';
-import { FlowbiteSidebarComponent } from '../sidebar/sidebar.component';
+import { FlowbiteSidebar } from '../sidebar/sidebar.component';
 import {
   flowbiteSidebarContentState,
   provideFlowbiteSidebarContentState,
@@ -39,13 +39,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteSidebarContentComponent {
+export class FlowbiteSidebarContent {
   protected readonly config = injectFlowbiteSidebarContentConfig();
 
   /**
    * @see {@link injectFlowbiteSidebarContentConfig}
    */
-  readonly sidebar = input(inject(FlowbiteSidebarComponent));
+  readonly sidebar = input(inject(FlowbiteSidebar));
   /**
    * @see {@link injectFlowbiteSidebarContentConfig}
    */
@@ -72,7 +72,7 @@ export class FlowbiteSidebarContentComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarContentState<FlowbiteSidebarContentComponent>(this);
+  readonly state = flowbiteSidebarContentState<FlowbiteSidebarContent>(this);
 
   /**
    * @internal

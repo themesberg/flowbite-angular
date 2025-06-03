@@ -8,7 +8,7 @@ import { booleanAttribute, Directive, input } from '@angular/core';
   standalone: true,
   providers: [provideFlowbiteBaseButtonState()],
 })
-export class FlowbiteBaseButtonDirective {
+export class FlowbiteBaseButton {
   readonly config = injectFlowbiteBaseButtonConfig();
 
   /**
@@ -31,5 +31,5 @@ export class FlowbiteBaseButtonDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteBaseButtonState<FlowbiteBaseButtonDirective>(this);
+  readonly state = flowbiteBaseButtonState<FlowbiteBaseButton>(this);
 }

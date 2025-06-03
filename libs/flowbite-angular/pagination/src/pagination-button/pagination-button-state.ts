@@ -1,4 +1,4 @@
-import type { FlowbitePaginationButtonComponent } from './pagination-button.component';
+import type { FlowbitePaginationButton } from './pagination-button.component';
 
 import {
   createState,
@@ -7,8 +7,9 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbitePaginationButtonStateToken =
-  createStateToken<FlowbitePaginationButtonComponent>('Flowbite PaginationButton');
+export const FlowbitePaginationButtonStateToken = createStateToken<FlowbitePaginationButton>(
+  'Flowbite PaginationButton'
+);
 export const provideFlowbitePaginationButtonState = createStateProvider(
   FlowbitePaginationButtonStateToken
 );

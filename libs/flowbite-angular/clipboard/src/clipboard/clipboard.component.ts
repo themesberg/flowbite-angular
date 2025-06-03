@@ -3,10 +3,10 @@ import { flowbiteClipboardState, provideFlowbiteClipboardState } from './clipboa
 import type { FlowbiteClipboardTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteButton } from 'flowbite-angular/button';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { fileCopy } from 'flowbite-angular/icon/outline/files-folders';
-import { FlowbiteTooltipComponent } from 'flowbite-angular/tooltip';
+import { FlowbiteTooltip } from 'flowbite-angular/tooltip';
 
 import { Clipboard } from '@angular/cdk/clipboard';
 import {
@@ -28,12 +28,7 @@ import { twMerge } from 'tailwind-merge';
   `,
   exportAs: 'flowbiteClipboard',
   hostDirectives: [],
-  imports: [
-    FlowbiteButtonDirective,
-    FlowbiteIconComponent,
-    NgpTooltipTrigger,
-    FlowbiteTooltipComponent,
-  ],
+  imports: [FlowbiteButton, FlowbiteIcon, NgpTooltipTrigger, FlowbiteTooltip],
   providers: [provideFlowbiteClipboardState(), provideIcons({ fileCopy })],
   host: {
     '[class]': `theme().host.root`,
@@ -69,7 +64,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteClipboardComponent {
+export class FlowbiteClipboard {
   protected readonly config = injectFlowbiteClipboardConfig();
   protected readonly clipboard = inject(Clipboard);
 
@@ -93,7 +88,7 @@ export class FlowbiteClipboardComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteClipboardState<FlowbiteClipboardComponent>(this);
+  readonly state = flowbiteClipboardState<FlowbiteClipboard>(this);
 
   /**
    * @internal

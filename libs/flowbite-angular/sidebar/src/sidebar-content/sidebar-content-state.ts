@@ -1,4 +1,4 @@
-import type { FlowbiteSidebarContentComponent } from './sidebar-content.component';
+import type { FlowbiteSidebarContent } from './sidebar-content.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteSidebarContentStateToken =
-  createStateToken<FlowbiteSidebarContentComponent>('Flowbite SidebarContent');
+  createStateToken<FlowbiteSidebarContent>('Flowbite SidebarContent');
 export const provideFlowbiteSidebarContentState = createStateProvider(
   FlowbiteSidebarContentStateToken
 );

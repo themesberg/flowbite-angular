@@ -1,4 +1,4 @@
-import type { FlowbiteTheme } from 'flowbite-angular';
+import type { FlowbiteThemes } from 'flowbite-angular';
 
 import type { Provider } from '@angular/core';
 import { inject, InjectionToken } from '@angular/core';
@@ -7,7 +7,7 @@ export interface FlowbiteThemeConfig {
   /**
    * The default theme of ThemeDirective
    */
-  theme: FlowbiteTheme;
+  theme: FlowbiteThemes;
   /**
    * The default local storage key of ThemeDirective
    */

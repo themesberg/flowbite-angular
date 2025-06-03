@@ -1,10 +1,10 @@
 import { injectFlowbiteNavbarItemConfig } from '../config/navbar-item-config';
-import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
+import { FlowbiteNavbar } from '../navbar/navbar.component';
 import { flowbiteNavbarItemState, provideFlowbiteNavbarItemState } from './navbar-item-state';
 import type { FlowbiteNavbarItemTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
 import {
   ChangeDetectionStrategy,
@@ -25,7 +25,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbarItem',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: [],
       outputs: [],
     },
@@ -40,13 +40,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarItemComponent {
+export class FlowbiteNavbarItem {
   protected readonly config = injectFlowbiteNavbarItemConfig();
 
   /**
    * @see {@link injectFlowbiteNavbarItemConfig}
    */
-  readonly navbar = input(inject(FlowbiteNavbarComponent));
+  readonly navbar = input(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarItemConfig}
    */
@@ -68,7 +68,7 @@ export class FlowbiteNavbarItemComponent {
     };
   });
 
-  readonly state = flowbiteNavbarItemState<FlowbiteNavbarItemComponent>(this);
+  readonly state = flowbiteNavbarItemState<FlowbiteNavbarItem>(this);
 
   /**
    * @internal

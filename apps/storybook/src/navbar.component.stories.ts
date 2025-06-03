@@ -1,27 +1,27 @@
 import {
   defaultFlowbiteNavbarConfig,
-  FlowbiteNavbarBrandComponent,
-  FlowbiteNavbarComponent,
-  FlowbiteNavbarContentComponent,
-  FlowbiteNavbarItemComponent,
-  FlowbiteNavbarToggleComponent,
+  FlowbiteNavbar,
+  FlowbiteNavbarBrand,
+  FlowbiteNavbarContent,
+  FlowbiteNavbarItem,
+  FlowbiteNavbarToggle,
 } from 'flowbite-angular/navbar';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteNavbarComponent;
+type StoryType = FlowbiteNavbar;
 
 export default {
   title: 'Component/Navbar',
-  component: FlowbiteNavbarComponent,
+  component: FlowbiteNavbar,
   decorators: [
     moduleMetadata({
       imports: [
-        FlowbiteNavbarContentComponent,
-        FlowbiteNavbarItemComponent,
-        FlowbiteNavbarToggleComponent,
-        FlowbiteNavbarBrandComponent,
+        FlowbiteNavbarContent,
+        FlowbiteNavbarItem,
+        FlowbiteNavbarToggle,
+        FlowbiteNavbarBrand,
       ],
     }),
   ],

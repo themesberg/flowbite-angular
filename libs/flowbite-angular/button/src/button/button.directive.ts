@@ -1,5 +1,5 @@
 import { injectFlowbiteBaseButtonState } from '../base-button/base-button-state';
-import { FlowbiteBaseButtonDirective } from '../base-button/base-button.directive';
+import { FlowbiteBaseButton } from '../base-button/base-button.directive';
 import { injectFlowbiteButtonConfig } from '../config/button-config';
 import { flowbiteButtonState, provideFlowbiteButtonState } from './button-state';
 
@@ -29,7 +29,7 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: ['color', 'size', 'pill', 'outline'],
       outputs: [],
     },
@@ -37,7 +37,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteButtonState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteButtonDirective {
+export class FlowbiteButton {
   readonly config = injectFlowbiteButtonConfig();
   readonly baseButtonState = injectFlowbiteBaseButtonState();
 
@@ -49,7 +49,7 @@ export class FlowbiteButtonDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteButtonState<FlowbiteButtonDirective>(this);
+  readonly state = flowbiteButtonState<FlowbiteButton>(this);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());

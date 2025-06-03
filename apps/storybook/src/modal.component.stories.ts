@@ -1,30 +1,30 @@
-import { FlowbiteButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteButton } from 'flowbite-angular/button';
 import {
   defaultFlowbiteModalConfig,
-  FlowbiteModalComponent,
-  FlowbiteModalContentComponent,
-  FlowbiteModalFooterComponent,
-  FlowbiteModalHeaderComponent,
-  FlowbiteModalOverlayComponent,
+  FlowbiteModal,
+  FlowbiteModalContent,
+  FlowbiteModalFooter,
+  FlowbiteModalHeader,
+  FlowbiteModalOverlay,
 } from 'flowbite-angular/modal';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpDialogTrigger } from 'ng-primitives/dialog';
 
-type StoryType = FlowbiteModalComponent;
+type StoryType = FlowbiteModal;
 
 export default {
   title: 'Component/Modal',
-  component: FlowbiteModalComponent,
+  component: FlowbiteModal,
   decorators: [
     moduleMetadata({
       imports: [
-        FlowbiteModalContentComponent,
-        FlowbiteModalFooterComponent,
-        FlowbiteModalHeaderComponent,
-        FlowbiteModalOverlayComponent,
-        FlowbiteButtonDirective,
+        FlowbiteModalContent,
+        FlowbiteModalFooter,
+        FlowbiteModalHeader,
+        FlowbiteModalOverlay,
+        FlowbiteButton,
         NgpDialogTrigger,
       ],
     }),

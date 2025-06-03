@@ -1,5 +1,5 @@
 /* ThemeToggle */
-export { FlowbiteThemeToggleComponent } from './theme-toggle/theme-toggle.component';
+export { FlowbiteThemeToggle } from './theme-toggle/theme-toggle.component';
 export {
   FlowbiteThemeToggleStateToken,
   flowbiteThemeToggleState,
@@ -21,7 +21,7 @@ export {
 } from './config/theme-toggle-config';
 
 /* Theme */
-export { FlowbiteThemeDirective } from './theme/theme.directive';
+export { FlowbiteTheme } from './theme/theme.directive';
 export {
   FlowbiteThemeStateToken,
   flowbiteThemeState,

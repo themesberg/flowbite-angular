@@ -1,4 +1,4 @@
-import type { FlowbiteClipboardComponent } from './clipboard.component';
+import type { FlowbiteClipboard } from './clipboard.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteClipboardStateToken =
-  createStateToken<FlowbiteClipboardComponent>('Flowbite Clipboard');
+  createStateToken<FlowbiteClipboard>('Flowbite Clipboard');
 export const provideFlowbiteClipboardState = createStateProvider(FlowbiteClipboardStateToken);
 export const injectFlowbiteClipboardState = createStateInjector(FlowbiteClipboardStateToken);
 export const flowbiteClipboardState = createState(FlowbiteClipboardStateToken);

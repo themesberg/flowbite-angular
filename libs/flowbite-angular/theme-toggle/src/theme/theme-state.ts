@@ -1,4 +1,4 @@
-import type { FlowbiteThemeDirective } from './theme.directive';
+import type { FlowbiteTheme } from './theme.directive';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteThemeStateToken = createStateToken<FlowbiteThemeDirective>('Flowbite Theme');
+export const FlowbiteThemeStateToken = createStateToken<FlowbiteTheme>('Flowbite Theme');
 export const provideFlowbiteThemeState = createStateProvider(FlowbiteThemeStateToken);
 export const injectFlowbiteThemeState = createStateInjector(FlowbiteThemeStateToken);
 export const flowbiteThemeState = createState(FlowbiteThemeStateToken);

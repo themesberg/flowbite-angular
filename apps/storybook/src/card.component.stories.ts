@@ -1,20 +1,16 @@
-import {
-  defaultFlowbiteCardConfig,
-  FlowbiteCardComponent,
-  FlowbiteCardHeaderComponent,
-} from 'flowbite-angular/card';
+import { defaultFlowbiteCardConfig, FlowbiteCard, FlowbiteCardHeader } from 'flowbite-angular/card';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteCardComponent;
+type StoryType = FlowbiteCard;
 
 export default {
   title: 'Component/Card',
-  component: FlowbiteCardComponent,
+  component: FlowbiteCard,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteCardHeaderComponent],
+      imports: [FlowbiteCardHeader],
     }),
   ],
   argTypes: {

@@ -1,4 +1,4 @@
-import type { FlowbiteSidebarToggleComponent } from './sidebar-toggle.component';
+import type { FlowbiteSidebarToggle } from './sidebar-toggle.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteSidebarToggleStateToken =
-  createStateToken<FlowbiteSidebarToggleComponent>('Flowbite SidebarToggle');
+  createStateToken<FlowbiteSidebarToggle>('Flowbite SidebarToggle');
 export const provideFlowbiteSidebarToggleState = createStateProvider(
   FlowbiteSidebarToggleStateToken
 );

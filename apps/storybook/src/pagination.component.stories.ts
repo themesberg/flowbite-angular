@@ -1,12 +1,9 @@
-import {
-  defaultFlowbitePaginationConfig,
-  FlowbitePaginationComponent,
-} from 'flowbite-angular/pagination';
+import { defaultFlowbitePaginationConfig, FlowbitePagination } from 'flowbite-angular/pagination';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = FlowbitePaginationComponent & {
+type StoryType = FlowbitePagination & {
   page: number;
   pageCount: number;
   disabled: boolean;
@@ -14,7 +11,7 @@ type StoryType = FlowbitePaginationComponent & {
 
 export default {
   title: 'Component/Pagination',
-  component: FlowbitePaginationComponent,
+  component: FlowbitePagination,
   argTypes: {
     color: {
       control: 'select',

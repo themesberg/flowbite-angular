@@ -1,5 +1,5 @@
 /* Pagination */
-export { FlowbitePaginationComponent } from './pagination/pagination.component';
+export { FlowbitePagination } from './pagination/pagination.component';
 export {
   FlowbitePaginationStateToken,
   flowbitePaginationState,
@@ -24,7 +24,7 @@ export {
 } from './config/pagination-config';
 
 /* PaginationFirst */
-export { FlowbitePaginationFirstComponent } from './pagination-first/pagination-first.component';
+export { FlowbitePaginationFirst } from './pagination-first/pagination-first.component';
 export {
   FlowbitePaginationFirstStateToken,
   flowbitePaginationFirstState,
@@ -48,7 +48,7 @@ export {
 } from './config/pagination-first-config';
 
 /* PaginationPrevious */
-export { FlowbitePaginationPreviousComponent } from './pagination-previous/pagination-previous.component';
+export { FlowbitePaginationPrevious } from './pagination-previous/pagination-previous.component';
 export {
   FlowbitePaginationPreviousStateToken,
   flowbitePaginationPreviousState,
@@ -72,7 +72,7 @@ export {
 } from './config/pagination-previous-config';
 
 /* PaginationNext */
-export { FlowbitePaginationNextComponent } from './pagination-next/pagination-next.component';
+export { FlowbitePaginationNext } from './pagination-next/pagination-next.component';
 export {
   FlowbitePaginationNextStateToken,
   flowbitePaginationNextState,
@@ -96,7 +96,7 @@ export {
 } from './config/pagination-next-config';
 
 /* PaginationLast */
-export { FlowbitePaginationLastComponent } from './pagination-last/pagination-last.component';
+export { FlowbitePaginationLast } from './pagination-last/pagination-last.component';
 export {
   FlowbitePaginationLastStateToken,
   flowbitePaginationLastState,
@@ -120,7 +120,7 @@ export {
 } from './config/pagination-last-config';
 
 /* PaginationButton */
-export { FlowbitePaginationButtonComponent } from './pagination-button/pagination-button.component';
+export { FlowbitePaginationButton } from './pagination-button/pagination-button.component';
 export {
   FlowbitePaginationButtonStateToken,
   flowbitePaginationButtonState,

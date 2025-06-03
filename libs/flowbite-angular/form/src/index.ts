@@ -1,5 +1,5 @@
 /* InputField */
-export { FlowbiteInputFieldComponent } from './input-field/input-field.component';
+export { FlowbiteInputField } from './input-field/input-field.component';
 export {
   FlowbiteInputFieldStateToken,
   flowbiteInputFieldState,

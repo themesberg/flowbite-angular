@@ -1,5 +1,5 @@
 /* Alert */
-export { FlowbiteAlertDirective } from './alert/alert.directive';
+export { FlowbiteAlert } from './alert/alert.directive';
 export {
   FlowbiteAlertStateToken,
   flowbiteAlertState,
@@ -22,7 +22,7 @@ export {
 } from './config/alert-config';
 
 /* AlertButton */
-export { FlowbiteAlertButtonDirective } from './alert-button/alert-button.directive';
+export { FlowbiteAlertButton } from './alert-button/alert-button.directive';
 export {
   FlowbiteAlertButtonStateToken,
   flowbiteAlertButtonState,
@@ -44,7 +44,7 @@ export {
 } from './config/alert-button-config';
 
 /* AlertContent */
-export { FlowbiteAlertContentDirective } from './alert-content/alert-content.directive';
+export { FlowbiteAlertContent } from './alert-content/alert-content.directive';
 export {
   FlowbiteAlertContentStateToken,
   flowbiteAlertContentState,

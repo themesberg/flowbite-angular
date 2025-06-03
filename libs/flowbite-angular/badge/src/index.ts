@@ -1,5 +1,5 @@
 /* Badge */
-export { FlowbiteBadgeDirective } from './badge/badge.directive';
+export { FlowbiteBadge } from './badge/badge.directive';
 export {
   FlowbiteBadgeStateToken,
   flowbiteBadgeState,
@@ -23,7 +23,7 @@ export {
 } from './config/badge-config';
 
 /* BadgeLink */
-export { FlowbiteBadgeLinkDirective } from './badge-link/badge-link.directive';
+export { FlowbiteBadgeLink } from './badge-link/badge-link.directive';
 export {
   FlowbiteBadgeLinkStateToken,
   flowbiteBadgeLinkState,
@@ -45,7 +45,7 @@ export {
 } from './config/badge-link-config';
 
 /* BadgeButton */
-export { FlowbiteBadgeButtonDirective } from './badge-button/badge-button.directive';
+export { FlowbiteBadgeButton } from './badge-button/badge-button.directive';
 export {
   FlowbiteBadgeButtonStateToken,
   flowbiteBadgeButtonState,

@@ -27,7 +27,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteTooltipComponent {
+export class FlowbiteTooltip {
   protected readonly config = injectFlowbiteTooltipConfig();
 
   /**
@@ -52,5 +52,5 @@ export class FlowbiteTooltipComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteTooltipState<FlowbiteTooltipComponent>(this);
+  readonly state = flowbiteTooltipState<FlowbiteTooltip>(this);
 }

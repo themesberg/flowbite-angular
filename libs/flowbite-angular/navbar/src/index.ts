@@ -1,5 +1,5 @@
 /* Navbar */
-export { FlowbiteNavbarComponent } from './navbar/navbar.component';
+export { FlowbiteNavbar } from './navbar/navbar.component';
 export {
   FlowbiteNavbarStateToken,
   flowbiteNavbarState,
@@ -23,7 +23,7 @@ export {
 } from './config/navbar-config';
 
 /* NavbarItem */
-export { FlowbiteNavbarItemComponent } from './navbar-item/navbar-item.component';
+export { FlowbiteNavbarItem } from './navbar-item/navbar-item.component';
 export {
   FlowbiteNavbarItemStateToken,
   flowbiteNavbarItemState,
@@ -45,7 +45,7 @@ export {
 } from './config/navbar-item-config';
 
 /* NavbarContent */
-export { FlowbiteNavbarContentComponent } from './navbar-content/navbar-content.component';
+export { FlowbiteNavbarContent } from './navbar-content/navbar-content.component';
 export {
   FlowbiteNavbarContentStateToken,
   flowbiteNavbarContentState,
@@ -68,7 +68,7 @@ export {
 } from './config/navbar-content-config';
 
 /* NavbarToggle */
-export { FlowbiteNavbarToggleComponent } from './navbar-toggle/navbar-toggle.component';
+export { FlowbiteNavbarToggle } from './navbar-toggle/navbar-toggle.component';
 export {
   FlowbiteNavbarToggleStateToken,
   flowbiteNavbarToggleState,
@@ -90,7 +90,7 @@ export {
 } from './config/navbar-toggle-config';
 
 /* NavbarBrand */
-export { FlowbiteNavbarBrandComponent } from './navbar-brand/navbar-brand.component';
+export { FlowbiteNavbarBrand } from './navbar-brand/navbar-brand.component';
 export {
   FlowbiteNavbarBrandStateToken,
   flowbiteNavbarBrandState,
@@ -112,7 +112,7 @@ export {
 } from './config/navbar-brand-config';
 
 /* NavbarIconItem */
-export { FlowbiteNavbarIconItemComponent } from './navbar-icon-item/navbar-icon-item.component';
+export { FlowbiteNavbarIconItem } from './navbar-icon-item/navbar-icon-item.component';
 export {
   FlowbiteNavbarIconItemStateToken,
   flowbiteNavbarIconItemState,

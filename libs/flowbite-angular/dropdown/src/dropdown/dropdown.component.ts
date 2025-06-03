@@ -40,7 +40,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteDropdownComponent {
+export class FlowbiteDropdown {
   protected readonly config = injectFlowbiteDropdownConfig();
 
   /**
@@ -64,5 +64,5 @@ export class FlowbiteDropdownComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteDropdownState<FlowbiteDropdownComponent>(this);
+  readonly state = flowbiteDropdownState<FlowbiteDropdown>(this);
 }

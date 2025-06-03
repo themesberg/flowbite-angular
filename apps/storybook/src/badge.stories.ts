@@ -1,10 +1,10 @@
 import {
   defaultFlowbiteBadgeConfig,
-  FlowbiteBadgeButtonDirective,
-  FlowbiteBadgeDirective,
-  FlowbiteBadgeLinkDirective,
+  FlowbiteBadge,
+  FlowbiteBadgeButton,
+  FlowbiteBadgeLink,
 } from 'flowbite-angular/badge';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { close, infoCircle } from 'flowbite-angular/icon/outline/general';
 import { clock } from 'flowbite-angular/icon/solid/general';
 
@@ -12,14 +12,14 @@ import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteBadgeDirective;
+type StoryType = FlowbiteBadge;
 
 export default {
   title: 'Component/Badge',
-  component: FlowbiteBadgeDirective,
+  component: FlowbiteBadge,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteBadgeLinkDirective, FlowbiteIconComponent, FlowbiteBadgeButtonDirective],
+      imports: [FlowbiteBadgeLink, FlowbiteIcon, FlowbiteBadgeButton],
       providers: [provideIcons({ clock, infoCircle, close })],
     }),
   ],

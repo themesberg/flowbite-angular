@@ -1,4 +1,4 @@
-import type { FlowbiteModalFooterComponent } from './modal-footer.component';
+import type { FlowbiteModalFooter } from './modal-footer.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteModalFooterStateToken =
-  createStateToken<FlowbiteModalFooterComponent>('Flowbite ModalFooter');
+  createStateToken<FlowbiteModalFooter>('Flowbite ModalFooter');
 export const provideFlowbiteModalFooterState = createStateProvider(FlowbiteModalFooterStateToken);
 export const injectFlowbiteModalFooterState = createStateInjector(FlowbiteModalFooterStateToken);
 export const flowbiteModalFooterState = createState(FlowbiteModalFooterStateToken);

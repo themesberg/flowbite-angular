@@ -1,14 +1,11 @@
 import { injectFlowbiteThemeToggleConfig } from '../config/theme-toggle-config';
-import { FlowbiteThemeDirective } from '../theme/theme.directive';
+import { FlowbiteTheme } from '../theme/theme.directive';
 import type { FlowbiteThemeToggleTheme } from './theme';
 import { flowbiteThemeToggleState, provideFlowbiteThemeToggleState } from './theme-toggle-state';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import {
-  FlowbiteBaseButtonDirective,
-  injectFlowbiteBaseButtonState,
-} from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteBaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { moon, sun } from 'flowbite-angular/icon/outline/weather';
 
 import {
@@ -30,12 +27,12 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteThemeToggle',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: ['color:color', 'size:size', 'pill:pill', 'outline:outline'],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIconComponent],
+  imports: [FlowbiteIcon],
   providers: [provideFlowbiteThemeToggleState(), provideIcons({ sun, moon })],
   host: {
     '[class]': `theme().host.root`,
@@ -58,10 +55,10 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteThemeToggleComponent {
+export class FlowbiteThemeToggle {
   protected readonly baseButtonState = injectFlowbiteBaseButtonState();
   protected readonly config = injectFlowbiteThemeToggleConfig();
-  protected readonly themeDirective = inject(FlowbiteThemeDirective);
+  protected readonly themeDirective = inject(FlowbiteTheme);
 
   /**
    * @see {@link injectFlowbiteThemeToggleConfig}
@@ -91,7 +88,7 @@ export class FlowbiteThemeToggleComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteThemeToggleState<FlowbiteThemeToggleComponent>(this);
+  readonly state = flowbiteThemeToggleState<FlowbiteThemeToggle>(this);
 
   /**
    * @internal

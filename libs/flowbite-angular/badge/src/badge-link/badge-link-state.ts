@@ -1,4 +1,4 @@
-import type { FlowbiteBadgeLinkDirective } from './badge-link.directive';
+import type { FlowbiteBadgeLink } from './badge-link.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteBadgeLinkStateToken =
-  createStateToken<FlowbiteBadgeLinkDirective>('Flowbite BadgeLink');
+  createStateToken<FlowbiteBadgeLink>('Flowbite BadgeLink');
 export const provideFlowbiteBadgeLinkState = createStateProvider(FlowbiteBadgeLinkStateToken);
 export const injectFlowbiteBadgeLinkState = createStateInjector(FlowbiteBadgeLinkStateToken);
 export const flowbiteBadgeLinkState = createState(FlowbiteBadgeLinkStateToken);

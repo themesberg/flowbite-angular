@@ -1,5 +1,5 @@
 import { injectFlowbiteNavbarIconItemConfig } from '../config/navbar-icon-item-config';
-import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
+import { FlowbiteNavbar } from '../navbar/navbar.component';
 import {
   flowbiteNavbarIconItemState,
   provideFlowbiteNavbarIconItemState,
@@ -7,11 +7,8 @@ import {
 import type { FlowbiteNavbarIconItemTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import {
-  FlowbiteBaseButtonDirective,
-  injectFlowbiteBaseButtonState,
-} from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteBaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 
 import {
   ChangeDetectionStrategy,
@@ -33,12 +30,12 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbarIconItem',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: ['color:color', 'size:size', 'pill:pill', 'outline:outline'],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIconComponent],
+  imports: [FlowbiteIcon],
   providers: [provideFlowbiteNavbarIconItemState()],
   host: { '[class]': `theme().host.root` },
   template: `<flowbite-icon
@@ -49,7 +46,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarIconItemComponent {
+export class FlowbiteNavbarIconItem {
   protected readonly baseButtonState = injectFlowbiteBaseButtonState();
   protected readonly config = injectFlowbiteNavbarIconItemConfig();
 
@@ -57,7 +54,7 @@ export class FlowbiteNavbarIconItemComponent {
   /**
    * @see {@link injectFlowbiteNavbarToggleConfig}
    */
-  readonly navbar = input(inject(FlowbiteNavbarComponent));
+  readonly navbar = input(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarIconItemConfig}
    */
@@ -82,5 +79,5 @@ export class FlowbiteNavbarIconItemComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteNavbarIconItemState<FlowbiteNavbarIconItemComponent>(this);
+  readonly state = flowbiteNavbarIconItemState<FlowbiteNavbarIconItem>(this);
 }

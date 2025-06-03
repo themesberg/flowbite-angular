@@ -27,7 +27,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Flowbite<%= className %>Component {
+export class Flowbite<%= className %> {
   readonly config = injectFlowbite<%= className %>Config();
 
   /**

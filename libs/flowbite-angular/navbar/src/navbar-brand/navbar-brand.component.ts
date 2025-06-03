@@ -30,7 +30,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarBrandComponent {
+export class FlowbiteNavbarBrand {
   protected readonly config = injectFlowbiteNavbarBrandConfig();
 
   /**
@@ -48,5 +48,5 @@ export class FlowbiteNavbarBrandComponent {
     };
   });
 
-  protected readonly state = flowbiteNavbarBrandState<FlowbiteNavbarBrandComponent>(this);
+  protected readonly state = flowbiteNavbarBrandState<FlowbiteNavbarBrand>(this);
 }

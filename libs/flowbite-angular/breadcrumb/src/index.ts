@@ -1,5 +1,5 @@
 /* Breadcrumb */
-export { FlowbiteBreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+export { FlowbiteBreadcrumb } from './breadcrumb/breadcrumb.component';
 export {
   FlowbiteBreadcrumbStateToken,
   flowbiteBreadcrumbState,
@@ -14,7 +14,7 @@ export {
   FlowbiteBreadcrumbListTheme,
 } from './breadcrumb/theme';
 /* BreadcrumbItem */
-export { FlowbiteBreadcrumbItemComponent } from './breadcrumb-item/breadcrumb-item.component';
+export { FlowbiteBreadcrumbItem } from './breadcrumb-item/breadcrumb-item.component';
 export {
   FlowbiteBreadcrumbItemStateToken,
   flowbiteBreadcrumbItemState,

@@ -1,5 +1,5 @@
 /* Icon */
-export { FlowbiteIconComponent } from './icon/icon.component';
+export { FlowbiteIcon } from './icon/icon.component';
 export {
   FlowbiteIconStateToken,
   flowbiteIconState,

@@ -1,16 +1,13 @@
-import {
-  defaultFlowbiteIndicatorConfig,
-  FlowbiteIndicatorComponent,
-} from 'flowbite-angular/indicator';
+import { defaultFlowbiteIndicatorConfig, FlowbiteIndicator } from 'flowbite-angular/indicator';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = FlowbiteIndicatorComponent;
+type StoryType = FlowbiteIndicator;
 
 export default {
   title: 'Component/Indicator',
-  component: FlowbiteIndicatorComponent,
+  component: FlowbiteIndicator,
   argTypes: {
     color: {
       control: 'select',

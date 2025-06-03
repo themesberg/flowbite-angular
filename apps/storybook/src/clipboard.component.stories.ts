@@ -1,16 +1,13 @@
-import {
-  defaultFlowbiteClipboardConfig,
-  FlowbiteClipboardComponent,
-} from 'flowbite-angular/clipboard';
+import { defaultFlowbiteClipboardConfig, FlowbiteClipboard } from 'flowbite-angular/clipboard';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = FlowbiteClipboardComponent;
+type StoryType = FlowbiteClipboard;
 
 export default {
   title: 'Component/Clipboard',
-  component: FlowbiteClipboardComponent,
+  component: FlowbiteClipboard,
   argTypes: {
     id: {
       control: 'text',

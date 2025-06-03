@@ -1,4 +1,4 @@
-import { FlowbiteBreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
+import { FlowbiteBreadcrumb } from '../breadcrumb/breadcrumb.component';
 import { injectFlowbiteBreadcrumbItemConfig } from '../config/breadcrumb-item-config';
 import {
   flowbiteBreadcrumbItemState,
@@ -49,13 +49,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteBreadcrumbItemComponent {
+export class FlowbiteBreadcrumbItem {
   protected readonly config = injectFlowbiteBreadcrumbItemConfig();
 
   /**
    * @see {@link injectFlowbiteBreadcrumbItemConfig}
    */
-  readonly breadcrumb = input(inject(FlowbiteBreadcrumbComponent));
+  readonly breadcrumb = input(inject(FlowbiteBreadcrumb));
   /**
    * @see {@link injectFlowbiteBreadcrumbItemConfig}
    */
@@ -81,5 +81,5 @@ export class FlowbiteBreadcrumbItemComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteBreadcrumbItemState<FlowbiteBreadcrumbItemComponent>(this);
+  readonly state = flowbiteBreadcrumbItemState<FlowbiteBreadcrumbItem>(this);
 }

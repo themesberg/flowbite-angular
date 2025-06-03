@@ -1,5 +1,5 @@
 /* Button */
-export { FlowbiteButtonDirective } from './button/button.directive';
+export { FlowbiteButton } from './button/button.directive';
 export {
   FlowbiteButtonStateToken,
   flowbiteButtonState,
@@ -17,7 +17,7 @@ export {
 } from './config/button-config';
 
 /* BaseButton */
-export { FlowbiteBaseButtonDirective } from './base-button/base-button.directive';
+export { FlowbiteBaseButton } from './base-button/base-button.directive';
 export {
   FlowbiteBaseButtonStateToken,
   flowbiteBaseButtonState,

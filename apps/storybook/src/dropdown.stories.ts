@@ -1,22 +1,22 @@
-import { FlowbiteButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteButton } from 'flowbite-angular/button';
 import {
   defaultFlowbiteDropdownConfig,
-  FlowbiteDropdownComponent,
-  FlowbiteDropdownItemComponent,
+  FlowbiteDropdown,
+  FlowbiteDropdownItem,
 } from 'flowbite-angular/dropdown';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpMenuTrigger } from 'ng-primitives/menu';
 
-type StoryType = FlowbiteDropdownComponent;
+type StoryType = FlowbiteDropdown;
 
 export default {
   title: 'Component/Dropdown',
-  component: FlowbiteDropdownComponent,
+  component: FlowbiteDropdown,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteDropdownItemComponent, NgpMenuTrigger, FlowbiteButtonDirective],
+      imports: [FlowbiteDropdownItem, NgpMenuTrigger, FlowbiteButton],
     }),
   ],
   argTypes: {

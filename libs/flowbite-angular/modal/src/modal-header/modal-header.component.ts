@@ -39,7 +39,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteModalHeaderComponent {
+export class FlowbiteModalHeader {
   protected readonly config = injectFlowbiteModalHeaderConfig();
 
   /**
@@ -60,5 +60,5 @@ export class FlowbiteModalHeaderComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteModalHeaderState<FlowbiteModalHeaderComponent>(this);
+  readonly state = flowbiteModalHeaderState<FlowbiteModalHeader>(this);
 }

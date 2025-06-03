@@ -1,5 +1,5 @@
 /* Accordion */
-export { FlowbiteAccordionDirective } from './accordion/accordion.directive';
+export { FlowbiteAccordion } from './accordion/accordion.directive';
 export {
   FlowbiteAccordionStateToken,
   flowbiteAccordionState,
@@ -14,7 +14,7 @@ export {
 } from './accordion/theme';
 
 /* AccordionItem */
-export { FlowbiteAccordionItemDirective } from './accordion-item/accordion-item.directive';
+export { FlowbiteAccordionItem } from './accordion-item/accordion-item.directive';
 export {
   FlowbiteAccordionItemStateToken,
   flowbiteAccordionItemState,
@@ -43,7 +43,7 @@ export {
 } from './config/accordion-config';
 
 /* AccordionTitle */
-export { FlowbiteAccordionTitleDirective } from './accordion-title/accordion-title.directive';
+export { FlowbiteAccordionTitle } from './accordion-title/accordion-title.directive';
 export {
   FlowbiteAccordionTitleStateToken,
   flowbiteAccordionTitleState,
@@ -65,7 +65,7 @@ export {
 } from './config/accordion-title-config';
 
 /* AccordionContent */
-export { FlowbiteAccordionContentDirective } from './accordion-content/accordion-content.directive';
+export { FlowbiteAccordionContent } from './accordion-content/accordion-content.directive';
 export {
   FlowbiteAccordionContentStateToken,
   flowbiteAccordionContentState,

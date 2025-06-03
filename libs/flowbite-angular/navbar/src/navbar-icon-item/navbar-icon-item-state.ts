@@ -1,4 +1,4 @@
-import type { FlowbiteNavbarIconItemComponent } from './navbar-icon-item.component';
+import type { FlowbiteNavbarIconItem } from './navbar-icon-item.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteNavbarIconItemStateToken =
-  createStateToken<FlowbiteNavbarIconItemComponent>('Flowbite NavbarIconItem');
+  createStateToken<FlowbiteNavbarIconItem>('Flowbite NavbarIconItem');
 export const provideFlowbiteNavbarIconItemState = createStateProvider(
   FlowbiteNavbarIconItemStateToken
 );

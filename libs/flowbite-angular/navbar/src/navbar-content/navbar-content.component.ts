@@ -1,5 +1,5 @@
 import { injectFlowbiteNavbarContentConfig } from '../config/navbar-content-config';
-import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
+import { FlowbiteNavbar } from '../navbar/navbar.component';
 import {
   flowbiteNavbarContentState,
   provideFlowbiteNavbarContentState,
@@ -36,13 +36,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarContentComponent {
+export class FlowbiteNavbarContent {
   protected readonly config = injectFlowbiteNavbarContentConfig();
 
   /**
    * @see {@link injectFlowbiteNavbarContentConfig}
    */
-  readonly navbar = input<FlowbiteNavbarComponent>(inject(FlowbiteNavbarComponent));
+  readonly navbar = input<FlowbiteNavbar>(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarContentConfig}
    */
@@ -70,5 +70,5 @@ export class FlowbiteNavbarContentComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteNavbarContentState<FlowbiteNavbarContentComponent>(this);
+  readonly state = flowbiteNavbarContentState<FlowbiteNavbarContent>(this);
 }

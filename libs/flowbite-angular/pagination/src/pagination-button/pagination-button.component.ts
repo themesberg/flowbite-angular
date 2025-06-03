@@ -50,7 +50,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbitePaginationButtonComponent {
+export class FlowbitePaginationButton {
   protected readonly config = injectFlowbitePaginationButtonConfig();
 
   /**
@@ -92,5 +92,5 @@ export class FlowbitePaginationButtonComponent {
   /**
    * @internal
    */
-  readonly state = flowbitePaginationButtonState<FlowbitePaginationButtonComponent>(this);
+  readonly state = flowbitePaginationButtonState<FlowbitePaginationButton>(this);
 }

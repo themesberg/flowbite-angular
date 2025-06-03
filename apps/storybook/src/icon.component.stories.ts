@@ -1,15 +1,15 @@
-import { defaultFlowbiteIconConfig, FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { defaultFlowbiteIconConfig, FlowbiteIcon } from 'flowbite-angular/icon';
 import { close } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteIconComponent;
+type StoryType = FlowbiteIcon;
 
 export default {
   title: 'Component/Icon',
-  component: FlowbiteIconComponent,
+  component: FlowbiteIcon,
   decorators: [
     moduleMetadata({
       providers: [provideIcons({ close })],

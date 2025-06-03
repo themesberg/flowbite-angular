@@ -1,4 +1,4 @@
-import type { FlowbiteThemeToggleComponent } from './theme-toggle.component';
+import type { FlowbiteThemeToggle } from './theme-toggle.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteThemeToggleStateToken =
-  createStateToken<FlowbiteThemeToggleComponent>('Flowbite ThemeToggle');
+  createStateToken<FlowbiteThemeToggle>('Flowbite ThemeToggle');
 export const provideFlowbiteThemeToggleState = createStateProvider(FlowbiteThemeToggleStateToken);
 export const injectFlowbiteThemeToggleState = createStateInjector(FlowbiteThemeToggleStateToken);
 export const flowbiteThemeToggleState = createState(FlowbiteThemeToggleStateToken);

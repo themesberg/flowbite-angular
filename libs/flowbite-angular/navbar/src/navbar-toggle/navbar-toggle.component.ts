@@ -1,11 +1,11 @@
 import { injectFlowbiteNavbarToggleConfig } from '../config/navbar-toggle-config';
-import { FlowbiteNavbarComponent } from '../navbar/navbar.component';
+import { FlowbiteNavbar } from '../navbar/navbar.component';
 import { flowbiteNavbarToggleState, provideFlowbiteNavbarToggleState } from './navbar-toggle-state';
 import type { FlowbiteNavbarToggleTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteBaseButton } from 'flowbite-angular/button';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { bars } from 'flowbite-angular/icon/outline/general';
 
 import {
@@ -27,12 +27,12 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbarToggle',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: [],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIconComponent],
+  imports: [FlowbiteIcon],
   providers: [provideFlowbiteNavbarToggleState(), provideIcons({ bars })],
   host: {
     '[class]': `theme().host.root`,
@@ -42,13 +42,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarToggleComponent {
+export class FlowbiteNavbarToggle {
   protected readonly config = injectFlowbiteNavbarToggleConfig();
 
   /**
    * @see {@link injectFlowbiteNavbarToggleConfig}
    */
-  readonly navbar = input(inject(FlowbiteNavbarComponent));
+  readonly navbar = input(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarToggleConfig}
    */
@@ -70,7 +70,7 @@ export class FlowbiteNavbarToggleComponent {
     };
   });
 
-  readonly state = flowbiteNavbarToggleState<FlowbiteNavbarToggleComponent>(this);
+  readonly state = flowbiteNavbarToggleState<FlowbiteNavbarToggle>(this);
 
   /**
    * @internal

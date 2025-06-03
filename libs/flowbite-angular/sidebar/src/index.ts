@@ -1,7 +1,5 @@
-export const greeting = 'Hello World!';
-
 /* Sidebar */
-export { FlowbiteSidebarComponent } from './sidebar/sidebar.component';
+export { FlowbiteSidebar } from './sidebar/sidebar.component';
 export {
   FlowbiteSidebarStateToken,
   flowbiteSidebarState,
@@ -23,7 +21,7 @@ export {
 } from './config/sidebar-config';
 
 /* SidebarContent */
-export { FlowbiteSidebarContentComponent } from './sidebar-content/sidebar-content.component';
+export { FlowbiteSidebarContent } from './sidebar-content/sidebar-content.component';
 export {
   FlowbiteSidebarContentStateToken,
   flowbiteSidebarContentState,
@@ -46,7 +44,7 @@ export {
 } from './config/sidebar-content-config';
 
 /* SidebarToggle */
-export { FlowbiteSidebarToggleComponent } from './sidebar-toggle/sidebar-toggle.component';
+export { FlowbiteSidebarToggle } from './sidebar-toggle/sidebar-toggle.component';
 export {
   FlowbiteSidebarToggleStateToken,
   flowbiteSidebarToggleState,
@@ -68,7 +66,7 @@ export {
 } from './config/sidebar-toggle-config';
 
 /* SidebarItem */
-export { FlowbiteSidebarItemComponent } from './sidebar-item/sidebar-item.component';
+export { FlowbiteSidebarItem } from './sidebar-item/sidebar-item.component';
 export {
   FlowbiteSidebarItemStateToken,
   flowbiteSidebarItemState,

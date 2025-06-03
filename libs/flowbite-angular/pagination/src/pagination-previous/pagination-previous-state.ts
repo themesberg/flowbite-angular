@@ -1,4 +1,4 @@
-import type { FlowbitePaginationPreviousComponent } from './pagination-previous.component';
+import type { FlowbitePaginationPrevious } from './pagination-previous.component';
 
 import {
   createState,
@@ -7,8 +7,9 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbitePaginationPreviousStateToken =
-  createStateToken<FlowbitePaginationPreviousComponent>('Flowbite PaginationPrevious');
+export const FlowbitePaginationPreviousStateToken = createStateToken<FlowbitePaginationPrevious>(
+  'Flowbite PaginationPrevious'
+);
 export const provideFlowbitePaginationPreviousState = createStateProvider(
   FlowbitePaginationPreviousStateToken
 );

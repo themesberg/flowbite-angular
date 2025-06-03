@@ -27,7 +27,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteCardHeaderComponent {
+export class FlowbiteCardHeader {
   protected readonly config = injectFlowbiteCardHeaderConfig();
 
   /**
@@ -52,5 +52,5 @@ export class FlowbiteCardHeaderComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteCardHeaderState<FlowbiteCardHeaderComponent>(this);
+  readonly state = flowbiteCardHeaderState<FlowbiteCardHeader>(this);
 }

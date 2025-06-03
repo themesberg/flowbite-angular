@@ -1,30 +1,25 @@
 import {
   defaultFlowbiteAlertConfig,
-  FlowbiteAlertButtonDirective,
-  FlowbiteAlertContentDirective,
-  FlowbiteAlertDirective,
+  FlowbiteAlert,
+  FlowbiteAlertButton,
+  FlowbiteAlertContent,
 } from 'flowbite-angular/alert';
-import { FlowbiteButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteButton } from 'flowbite-angular/button';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { close, eye, infoCircle } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteAlertDirective;
+type StoryType = FlowbiteAlert;
 
 export default {
   title: 'Component/Alert',
-  component: FlowbiteAlertDirective,
+  component: FlowbiteAlert,
   decorators: [
     moduleMetadata({
-      imports: [
-        FlowbiteIconComponent,
-        FlowbiteAlertButtonDirective,
-        FlowbiteAlertContentDirective,
-        FlowbiteButtonDirective,
-      ],
+      imports: [FlowbiteIcon, FlowbiteAlertButton, FlowbiteAlertContent, FlowbiteButton],
       providers: [provideIcons({ infoCircle, close, eye })],
     }),
   ],

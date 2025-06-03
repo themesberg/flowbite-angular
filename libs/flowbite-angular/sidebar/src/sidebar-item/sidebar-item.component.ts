@@ -1,10 +1,10 @@
 import { injectFlowbiteSidebarItemConfig } from '../config/sidebar-item-config';
-import { FlowbiteSidebarComponent } from '../sidebar/sidebar.component';
+import { FlowbiteSidebar } from '../sidebar/sidebar.component';
 import { flowbiteSidebarItemState, provideFlowbiteSidebarItemState } from './sidebar-item-state';
 import type { FlowbiteSidebarItemTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButtonDirective } from 'flowbite-angular/button';
+import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
 import {
   ChangeDetectionStrategy,
@@ -25,7 +25,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteSidebarItem',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: [],
       outputs: [],
     },
@@ -40,13 +40,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteSidebarItemComponent {
+export class FlowbiteSidebarItem {
   protected readonly config = injectFlowbiteSidebarItemConfig();
 
   /**
    * @see {@link injectFlowbiteSidebarItemConfig}
    */
-  readonly sidebar = input(inject(FlowbiteSidebarComponent));
+  readonly sidebar = input(inject(FlowbiteSidebar));
   /**
    * @see {@link injectFlowbiteSidebarItemConfig}
    */
@@ -71,7 +71,7 @@ export class FlowbiteSidebarItemComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarItemState<FlowbiteSidebarItemComponent>(this);
+  readonly state = flowbiteSidebarItemState<FlowbiteSidebarItem>(this);
 
   /**
    * @internal

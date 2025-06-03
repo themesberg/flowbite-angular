@@ -2,17 +2,17 @@ import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from 'flowbite
 import {
   defaultFlowbiteBaseButtonConfig,
   defaultFlowbiteButtonConfig,
-  FlowbiteButtonDirective,
+  FlowbiteButton,
 } from 'flowbite-angular/button';
-import { FlowbiteButtonGroupDirective } from 'flowbite-angular/button-group';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteButtonGroup } from 'flowbite-angular/button-group';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { close } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = FlowbiteButtonDirective & {
+type StoryType = FlowbiteButton & {
   disabled: boolean;
   color: keyof FlowbiteBaseButtonColors;
   size: keyof FlowbiteBaseButtonSizes;
@@ -22,10 +22,10 @@ type StoryType = FlowbiteButtonDirective & {
 
 export default {
   title: 'Component/Button',
-  component: FlowbiteButtonDirective,
+  component: FlowbiteButton,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteIconComponent, FlowbiteButtonGroupDirective],
+      imports: [FlowbiteIcon, FlowbiteButtonGroup],
       providers: [provideIcons({ close })],
     }),
   ],

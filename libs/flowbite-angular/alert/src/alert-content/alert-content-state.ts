@@ -1,4 +1,4 @@
-import type { FlowbiteAlertContentDirective } from './alert-content.directive';
+import type { FlowbiteAlertContent } from './alert-content.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteAlertContentStateToken =
-  createStateToken<FlowbiteAlertContentDirective>('Flowbite AlertContent');
+  createStateToken<FlowbiteAlertContent>('Flowbite AlertContent');
 export const provideFlowbiteAlertContentState = createStateProvider(FlowbiteAlertContentStateToken);
 export const injectFlowbiteAlertContentState = createStateInjector(FlowbiteAlertContentStateToken);
 export const flowbiteAlertContentState = createState(FlowbiteAlertContentStateToken);

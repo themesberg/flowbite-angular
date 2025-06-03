@@ -1,5 +1,5 @@
 import { injectFlowbiteSidebarToggleConfig } from '../config/sidebar-toggle-config';
-import type { FlowbiteSidebarComponent } from '../sidebar/sidebar.component';
+import type { FlowbiteSidebar } from '../sidebar/sidebar.component';
 import {
   flowbiteSidebarToggleState,
   provideFlowbiteSidebarToggleState,
@@ -7,8 +7,8 @@ import {
 import type { FlowbiteSidebarToggleTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteBaseButton } from 'flowbite-angular/button';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { barsFromLeft } from 'flowbite-angular/icon/outline/general';
 
 import {
@@ -29,12 +29,12 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteSidebarToggle',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButtonDirective,
+      directive: FlowbiteBaseButton,
       inputs: [],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIconComponent],
+  imports: [FlowbiteIcon],
   providers: [provideFlowbiteSidebarToggleState(), provideIcons({ barsFromLeft })],
   host: {
     '[class]': `theme().host.root`,
@@ -44,13 +44,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteSidebarToggleComponent {
+export class FlowbiteSidebarToggle {
   protected readonly config = injectFlowbiteSidebarToggleConfig();
 
   /**
    * @see {@link injectFlowbiteSidebarToggleConfig}
    */
-  readonly sidebar = input.required<FlowbiteSidebarComponent>();
+  readonly sidebar = input.required<FlowbiteSidebar>();
   /**
    * @see {@link injectFlowbiteSidebarToggleConfig}
    */
@@ -75,7 +75,7 @@ export class FlowbiteSidebarToggleComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarToggleState<FlowbiteSidebarToggleComponent>(this);
+  readonly state = flowbiteSidebarToggleState<FlowbiteSidebarToggle>(this);
 
   /**
    * @internal

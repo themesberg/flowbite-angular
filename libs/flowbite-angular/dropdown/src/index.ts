@@ -1,5 +1,5 @@
 /* Dropdown */
-export { FlowbiteDropdownComponent } from './dropdown/dropdown.component';
+export { FlowbiteDropdown } from './dropdown/dropdown.component';
 export {
   FlowbiteDropdownStateToken,
   flowbiteDropdownState,
@@ -13,7 +13,7 @@ export {
   flowbiteDropdownTheme,
 } from './dropdown/theme';
 /* DropdownItem */
-export { FlowbiteDropdownItemComponent } from './dropdown-item/dropdown-item.component';
+export { FlowbiteDropdownItem } from './dropdown-item/dropdown-item.component';
 export {
   FlowbiteDropdownItemStateToken,
   flowbiteDropdownItemState,

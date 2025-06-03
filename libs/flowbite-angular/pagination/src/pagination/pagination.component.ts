@@ -1,9 +1,9 @@
 import { injectFlowbitePaginationConfig } from '../config/pagination-config';
-import { FlowbitePaginationButtonComponent } from '../pagination-button/pagination-button.component';
-import { FlowbitePaginationFirstComponent } from '../pagination-first/pagination-first.component';
-import { FlowbitePaginationLastComponent } from '../pagination-last/pagination-last.component';
-import { FlowbitePaginationNextComponent } from '../pagination-next/pagination-next.component';
-import { FlowbitePaginationPreviousComponent } from '../pagination-previous/pagination-previous.component';
+import { FlowbitePaginationButton } from '../pagination-button/pagination-button.component';
+import { FlowbitePaginationFirst } from '../pagination-first/pagination-first.component';
+import { FlowbitePaginationLast } from '../pagination-last/pagination-last.component';
+import { FlowbitePaginationNext } from '../pagination-next/pagination-next.component';
+import { FlowbitePaginationPrevious } from '../pagination-previous/pagination-previous.component';
 import { flowbitePaginationState, provideFlowbitePaginationState } from './pagination-state';
 import type {
   FlowbitePaginationColors,
@@ -48,11 +48,11 @@ import { twMerge } from 'tailwind-merge';
     },
   ],
   imports: [
-    FlowbitePaginationLastComponent,
-    FlowbitePaginationNextComponent,
-    FlowbitePaginationFirstComponent,
-    FlowbitePaginationButtonComponent,
-    FlowbitePaginationPreviousComponent,
+    FlowbitePaginationLast,
+    FlowbitePaginationNext,
+    FlowbitePaginationFirst,
+    FlowbitePaginationButton,
+    FlowbitePaginationPrevious,
   ],
   providers: [
     provideFlowbitePaginationState(),
@@ -111,7 +111,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbitePaginationComponent {
+export class FlowbitePagination {
   protected readonly paginationState = injectPaginationState();
   protected readonly config = injectFlowbitePaginationConfig();
 
@@ -183,5 +183,5 @@ export class FlowbitePaginationComponent {
   /**
    * @internal
    */
-  readonly state = flowbitePaginationState<FlowbitePaginationComponent>(this);
+  readonly state = flowbitePaginationState<FlowbitePagination>(this);
 }

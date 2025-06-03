@@ -1,7 +1,5 @@
-export const greeting = 'Hello World!';
-
 /* Tooltip */
-export { FlowbiteTooltipComponent } from './tooltip/tooltip.component';
+export { FlowbiteTooltip } from './tooltip/tooltip.component';
 export {
   FlowbiteTooltipStateToken,
   flowbiteTooltipState,

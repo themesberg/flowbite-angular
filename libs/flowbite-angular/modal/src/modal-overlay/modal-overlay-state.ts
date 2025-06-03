@@ -1,4 +1,4 @@
-import type { FlowbiteModalOverlayComponent } from './modal-overlay.component';
+import type { FlowbiteModalOverlay } from './modal-overlay.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteModalOverlayStateToken =
-  createStateToken<FlowbiteModalOverlayComponent>('Flowbite ModalOverlay');
+  createStateToken<FlowbiteModalOverlay>('Flowbite ModalOverlay');
 export const provideFlowbiteModalOverlayState = createStateProvider(FlowbiteModalOverlayStateToken);
 export const injectFlowbiteModalOverlayState = createStateInjector(FlowbiteModalOverlayStateToken);
 export const flowbiteModalOverlayState = createState(FlowbiteModalOverlayStateToken);

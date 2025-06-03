@@ -16,7 +16,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteAlertContentState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteAlertContentDirective {
+export class FlowbiteAlertContent {
   readonly config = injectFlowbiteAlertContentConfig();
 
   /**
@@ -43,5 +43,5 @@ export class FlowbiteAlertContentDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteAlertContentState<FlowbiteAlertContentDirective>(this);
+  readonly state = flowbiteAlertContentState<FlowbiteAlertContent>(this);
 }

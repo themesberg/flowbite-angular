@@ -17,7 +17,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteButtonGroupState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteButtonGroupDirective {
+export class FlowbiteButtonGroup {
   protected readonly config = injectFlowbiteButtonGroupConfig();
 
   /**
@@ -38,5 +38,5 @@ export class FlowbiteButtonGroupDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteButtonGroupState<FlowbiteButtonGroupDirective>(this);
+  readonly state = flowbiteButtonGroupState<FlowbiteButtonGroup>(this);
 }

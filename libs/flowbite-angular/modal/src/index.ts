@@ -1,7 +1,5 @@
-export const greeting = 'Hello World!';
-
 /* Modal */
-export { FlowbiteModalComponent } from './modal/modal.component';
+export { FlowbiteModal } from './modal/modal.component';
 export {
   FlowbiteModalStateToken,
   flowbiteModalState,
@@ -24,7 +22,7 @@ export {
 } from './config/modal-config';
 
 /* ModalOverlay */
-export { FlowbiteModalOverlayComponent } from './modal-overlay/modal-overlay.component';
+export { FlowbiteModalOverlay } from './modal-overlay/modal-overlay.component';
 export {
   FlowbiteModalOverlayStateToken,
   flowbiteModalOverlayState,
@@ -47,7 +45,7 @@ export {
 } from './config/modal-overlay-config';
 
 /* ModalHeader */
-export { FlowbiteModalHeaderComponent } from './modal-header/modal-header.component';
+export { FlowbiteModalHeader } from './modal-header/modal-header.component';
 export {
   FlowbiteModalHeaderStateToken,
   flowbiteModalHeaderState,
@@ -69,7 +67,7 @@ export {
 } from './config/modal-header-config';
 
 /* ModalContent */
-export { FlowbiteModalContentComponent } from './modal-content/modal-content.component';
+export { FlowbiteModalContent } from './modal-content/modal-content.component';
 export {
   FlowbiteModalContentStateToken,
   flowbiteModalContentState,
@@ -91,7 +89,7 @@ export {
 } from './config/modal-content-config';
 
 /* ModalFooter */
-export { FlowbiteModalFooterComponent } from './modal-footer/modal-footer.component';
+export { FlowbiteModalFooter } from './modal-footer/modal-footer.component';
 export {
   FlowbiteModalFooterStateToken,
   flowbiteModalFooterState,

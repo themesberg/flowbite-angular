@@ -1,4 +1,4 @@
-import type { FlowbiteButtonGroupDirective } from './button-group.directive';
+import type { FlowbiteButtonGroup } from './button-group.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteButtonGroupStateToken =
-  createStateToken<FlowbiteButtonGroupDirective>('Flowbite ButtonGroup');
+  createStateToken<FlowbiteButtonGroup>('Flowbite ButtonGroup');
 export const provideFlowbiteButtonGroupState = createStateProvider(FlowbiteButtonGroupStateToken);
 export const injectFlowbiteButtonGroupState = createStateInjector(FlowbiteButtonGroupStateToken);
 export const flowbiteButtonGroupState = createState(FlowbiteButtonGroupStateToken);

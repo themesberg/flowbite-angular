@@ -1,13 +1,10 @@
 import type { FlowbiteInputFieldColors, FlowbiteInputFieldSizes } from 'flowbite-angular/form';
-import {
-  defaultFlowbiteInputFieldConfig,
-  FlowbiteInputFieldComponent,
-} from 'flowbite-angular/form';
+import { defaultFlowbiteInputFieldConfig, FlowbiteInputField } from 'flowbite-angular/form';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = FlowbiteInputFieldComponent & {
+type StoryType = FlowbiteInputField & {
   disabled: boolean;
   color: keyof FlowbiteInputFieldColors;
   size: keyof FlowbiteInputFieldSizes;
@@ -15,7 +12,7 @@ type StoryType = FlowbiteInputFieldComponent & {
 
 export default {
   title: 'Component/InputField',
-  component: FlowbiteInputFieldComponent,
+  component: FlowbiteInputField,
   argTypes: {
     color: {
       control: 'select',

@@ -1,7 +1,5 @@
-export const greeting = 'Hello World!';
-
 /* Indicator */
-export { FlowbiteIndicatorComponent } from './indicator/indicator.component';
+export { FlowbiteIndicator } from './indicator/indicator.component';
 export {
   FlowbiteIndicatorStateToken,
   flowbiteIndicatorState,

@@ -1,24 +1,24 @@
 import {
   defaultFlowbiteBreadcrumbConfig,
-  FlowbiteBreadcrumbComponent,
-  FlowbiteBreadcrumbItemComponent,
+  FlowbiteBreadcrumb,
+  FlowbiteBreadcrumbItem,
 } from 'flowbite-angular/breadcrumb';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { home } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = FlowbiteBreadcrumbComponent;
+type StoryType = FlowbiteBreadcrumb;
 
 export default {
   title: 'Component/Breadcrumb',
-  component: FlowbiteBreadcrumbComponent,
+  component: FlowbiteBreadcrumb,
   decorators: [
     moduleMetadata({
       providers: [provideIcons({ home })],
-      imports: [FlowbiteBreadcrumbItemComponent, FlowbiteIconComponent],
+      imports: [FlowbiteBreadcrumbItem, FlowbiteIcon],
     }),
   ],
   argTypes: {

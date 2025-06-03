@@ -1,4 +1,4 @@
-import type { FlowbiteNavbarToggleComponent } from './navbar-toggle.component';
+import type { FlowbiteNavbarToggle } from './navbar-toggle.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteNavbarToggleStateToken =
-  createStateToken<FlowbiteNavbarToggleComponent>('Flowbite NavbarToggle');
+  createStateToken<FlowbiteNavbarToggle>('Flowbite NavbarToggle');
 export const provideFlowbiteNavbarToggleState = createStateProvider(FlowbiteNavbarToggleStateToken);
 export const injectFlowbiteNavbarToggleState = createStateInjector(FlowbiteNavbarToggleStateToken);
 export const flowbiteNavbarToggleState = createState(FlowbiteNavbarToggleStateToken);

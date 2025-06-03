@@ -34,7 +34,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteInputFieldComponent {
+export class FlowbiteInputField {
   protected readonly config = injectFlowbiteInputFieldConfig();
 
   /**
@@ -69,5 +69,5 @@ export class FlowbiteInputFieldComponent {
   /**
    * @internal
    */
-  readonly state = flowbiteInputFieldState<FlowbiteInputFieldComponent>(this);
+  readonly state = flowbiteInputFieldState<FlowbiteInputField>(this);
 }

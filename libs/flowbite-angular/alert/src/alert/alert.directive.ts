@@ -18,7 +18,7 @@ import { twMerge } from 'tailwind-merge';
     '[class]': `theme().host.root`,
   },
 })
-export class FlowbiteAlertDirective {
+export class FlowbiteAlert {
   readonly config = injectFlowbiteAlertConfig();
 
   /**
@@ -55,5 +55,5 @@ export class FlowbiteAlertDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteAlertState<FlowbiteAlertDirective>(this);
+  readonly state = flowbiteAlertState<FlowbiteAlert>(this);
 }

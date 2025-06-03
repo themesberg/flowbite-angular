@@ -32,7 +32,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteBadgeButtonState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteBadgeButtonDirective {
+export class FlowbiteBadgeButton {
   readonly config = injectFlowbiteBadgeButtonConfig();
   readonly badgeState = injectFlowbiteBadgeState();
 
@@ -54,5 +54,5 @@ export class FlowbiteBadgeButtonDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteBadgeButtonState<FlowbiteBadgeButtonDirective>(this);
+  readonly state = flowbiteBadgeButtonState<FlowbiteBadgeButton>(this);
 }

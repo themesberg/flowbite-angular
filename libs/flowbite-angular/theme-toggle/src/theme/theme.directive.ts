@@ -1,7 +1,7 @@
 import { injectFlowbiteThemeConfig } from '../config/theme-config';
 import { flowbiteThemeState, provideFlowbiteThemeState } from './theme-state';
 
-import type { FlowbiteTheme } from 'flowbite-angular';
+import type { FlowbiteThemes } from 'flowbite-angular';
 
 import { afterNextRender, Directive, input, untracked } from '@angular/core';
 
@@ -15,11 +15,11 @@ import { afterNextRender, Directive, input, untracked } from '@angular/core';
   providers: [provideFlowbiteThemeState()],
   host: {},
 })
-export class FlowbiteThemeDirective {
+export class FlowbiteTheme {
   protected readonly config = injectFlowbiteThemeConfig();
 
   readonly localStorageKey = input<string>(this.config.localStorageKey);
-  readonly currentTheme = input<FlowbiteTheme>(this.config.theme);
+  readonly currentTheme = input<FlowbiteThemes>(this.config.theme);
   readonly type = input<{ type: 'class' } | { type: 'attr'; name: string }>(this.config.type);
 
   constructor() {
@@ -28,7 +28,7 @@ export class FlowbiteThemeDirective {
     });
   }
 
-  getLocalStorageTheme(): FlowbiteTheme | undefined {
+  getLocalStorageTheme(): FlowbiteThemes | undefined {
     const localStorageValue = localStorage.getItem(this.state.localStorageKey());
 
     if (
@@ -41,7 +41,7 @@ export class FlowbiteThemeDirective {
     return localStorageValue;
   }
 
-  toggleTheme(theme?: FlowbiteTheme): void {
+  toggleTheme(theme?: FlowbiteThemes): void {
     if (!theme) {
       theme = untracked(() => (this.state.currentTheme() === 'light' ? 'dark' : 'light'));
     }
@@ -49,7 +49,7 @@ export class FlowbiteThemeDirective {
     this.setTheme(theme);
   }
 
-  setTheme(theme: FlowbiteTheme): void {
+  setTheme(theme: FlowbiteThemes): void {
     try {
       localStorage.setItem(this.state.localStorageKey(), theme);
     } catch (error) {
@@ -72,5 +72,5 @@ export class FlowbiteThemeDirective {
   /**
    * @internal
    */
-  readonly state = flowbiteThemeState<FlowbiteThemeDirective>(this);
+  readonly state = flowbiteThemeState<FlowbiteTheme>(this);
 }

@@ -1,18 +1,18 @@
-import { FlowbiteButtonDirective } from 'flowbite-angular/button';
-import { defaultFlowbiteTooltipConfig, FlowbiteTooltipComponent } from 'flowbite-angular/tooltip';
+import { FlowbiteButton } from 'flowbite-angular/button';
+import { defaultFlowbiteTooltipConfig, FlowbiteTooltip } from 'flowbite-angular/tooltip';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpTooltipTrigger } from 'ng-primitives/tooltip';
 
-type StoryType = FlowbiteTooltipComponent;
+type StoryType = FlowbiteTooltip;
 
 export default {
   title: 'Component/Tooltip',
-  component: FlowbiteTooltipComponent,
+  component: FlowbiteTooltip,
   decorators: [
     moduleMetadata({
-      imports: [NgpTooltipTrigger, FlowbiteButtonDirective],
+      imports: [NgpTooltipTrigger, FlowbiteButton],
     }),
   ],
   argTypes: {

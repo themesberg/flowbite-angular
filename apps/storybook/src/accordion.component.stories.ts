@@ -1,11 +1,11 @@
 import {
   defaultFlowbiteAccordionConfig,
-  FlowbiteAccordionContentDirective,
-  FlowbiteAccordionDirective,
-  FlowbiteAccordionItemDirective,
-  FlowbiteAccordionTitleDirective,
+  FlowbiteAccordion,
+  FlowbiteAccordionContent,
+  FlowbiteAccordionItem,
+  FlowbiteAccordionTitle,
 } from 'flowbite-angular/accordion';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { chevronDown } from 'flowbite-angular/icon/outline/arrows';
 
 import { NgClass } from '@angular/common';
@@ -13,7 +13,7 @@ import { provideIcons } from '@ng-icons/core';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = FlowbiteAccordionDirective & {
+type StoryType = FlowbiteAccordion & {
   type: string;
   disabled: boolean;
   collapsible: boolean;
@@ -21,14 +21,14 @@ type StoryType = FlowbiteAccordionDirective & {
 
 export default {
   title: 'Component/Accordion',
-  component: FlowbiteAccordionDirective,
+  component: FlowbiteAccordion,
   decorators: [
     moduleMetadata({
       imports: [
-        FlowbiteAccordionItemDirective,
-        FlowbiteAccordionTitleDirective,
-        FlowbiteAccordionContentDirective,
-        FlowbiteIconComponent,
+        FlowbiteAccordionItem,
+        FlowbiteAccordionTitle,
+        FlowbiteAccordionContent,
+        FlowbiteIcon,
         NgClass,
       ],
       providers: [provideIcons({ chevronDown })],

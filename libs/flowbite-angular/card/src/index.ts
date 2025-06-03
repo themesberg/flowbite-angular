@@ -1,7 +1,5 @@
-export const greeting = 'Hello World!';
-
 /* Card */
-export { FlowbiteCardComponent } from './card/card.component';
+export { FlowbiteCard } from './card/card.component';
 export {
   FlowbiteCardStateToken,
   flowbiteCardState,
@@ -24,7 +22,7 @@ export {
 } from './config/card-config';
 
 /* CardHeader */
-export { FlowbiteCardHeaderComponent } from './card-header/card-header.component';
+export { FlowbiteCardHeader } from './card-header/card-header.component';
 export {
   FlowbiteCardHeaderStateToken,
   flowbiteCardHeaderState,

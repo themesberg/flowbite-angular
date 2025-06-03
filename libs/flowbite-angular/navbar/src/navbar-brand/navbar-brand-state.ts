@@ -1,4 +1,4 @@
-import type { FlowbiteNavbarBrandComponent } from './navbar-brand.component';
+import type { FlowbiteNavbarBrand } from './navbar-brand.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteNavbarBrandStateToken =
-  createStateToken<FlowbiteNavbarBrandComponent>('Flowbite NavbarBrand');
+  createStateToken<FlowbiteNavbarBrand>('Flowbite NavbarBrand');
 export const provideFlowbiteNavbarBrandState = createStateProvider(FlowbiteNavbarBrandStateToken);
 export const injectFlowbiteNavbarBrandState = createStateInjector(FlowbiteNavbarBrandStateToken);
 export const flowbiteNavbarBrandState = createState(FlowbiteNavbarBrandStateToken);

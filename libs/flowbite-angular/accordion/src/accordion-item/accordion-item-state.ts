@@ -1,4 +1,4 @@
-import type { FlowbiteAccordionItemDirective } from './accordion-item.directive';
+import type { FlowbiteAccordionItem } from './accordion-item.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteAccordionItemStateToken =
-  createStateToken<FlowbiteAccordionItemDirective>('Flowbite Accordion Item');
+  createStateToken<FlowbiteAccordionItem>('Flowbite Accordion Item');
 export const provideFlowbiteAccordionItemState = createStateProvider(
   FlowbiteAccordionItemStateToken
 );
