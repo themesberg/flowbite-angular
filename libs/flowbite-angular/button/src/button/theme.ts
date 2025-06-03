@@ -106,11 +106,11 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
       icon: {
         base: '*:[flowbite-icon]:only:m-0',
         size: {
-          xs: '*:[flowbite-icon]:h-2.5 *:[flowbite-icon]:w-2.5 *:[flowbite-icon]:first:mr-2.5 *:[flowbite-icon]:last:ml-2.5',
-          sm: '*:[flowbite-icon]:h-3 *:[flowbite-icon]:w-3 *:[flowbite-icon]:first:mr-3 *:[flowbite-icon]:last:ml-3',
-          md: '*:[flowbite-icon]:h-4 *:[flowbite-icon]:w-4 *:[flowbite-icon]:first:mr-4 *:[flowbite-icon]:last:ml-4',
-          lg: '*:[flowbite-icon]:h-5 *:[flowbite-icon]:w-5 *:[flowbite-icon]:first:mr-5 *:[flowbite-icon]:last:ml-5',
-          xl: '*:[flowbite-icon]:h-6 *:[flowbite-icon]:w-6 *:[flowbite-icon]:first:mr-6 *:[flowbite-icon]:last:ml-6',
+          xs: '*:[flowbite-icon]:size-2.5 *:[flowbite-icon]:first:mr-2.5 *:[flowbite-icon]:last:ml-2.5',
+          sm: '*:[flowbite-icon]:size-3 *:[flowbite-icon]:first:mr-3 *:[flowbite-icon]:last:ml-3',
+          md: '*:[flowbite-icon]:size-4 *:[flowbite-icon]:first:mr-4 *:[flowbite-icon]:last:ml-4',
+          lg: '*:[flowbite-icon]:size-5 *:[flowbite-icon]:first:mr-5 *:[flowbite-icon]:last:ml-5',
+          xl: '*:[flowbite-icon]:size-6 *:[flowbite-icon]:first:mr-6 *:[flowbite-icon]:last:ml-6',
         },
       },
     },

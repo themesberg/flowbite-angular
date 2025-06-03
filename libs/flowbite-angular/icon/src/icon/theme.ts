@@ -28,11 +28,11 @@ export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
   host: {
     base: 'self-center overflow-hidden',
     size: {
-      xs: 'h-2.5 w-2.5',
-      sm: 'h-3 w-3',
-      md: 'h-4 w-4',
-      lg: 'h-5 w-5',
-      xl: 'h-6 w-6',
+      xs: 'size-2.5',
+      sm: 'size-3',
+      md: 'size-4',
+      lg: 'size-5',
+      xl: 'size-6',
     },
     color: {
       info: 'text-blue-500',
