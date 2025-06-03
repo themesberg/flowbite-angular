@@ -1,4 +1,4 @@
-import type { FlowbiteInputField } from './input-field.component';
+import type { FlowbiteInputField } from './input-field.directive';
 
 import {
   createState,

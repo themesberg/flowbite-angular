@@ -1,4 +1,3 @@
-import type { FlowbiteInputFieldColors, FlowbiteInputFieldSizes } from 'flowbite-angular/form';
 import { defaultFlowbiteInputFieldConfig, FlowbiteInputField } from 'flowbite-angular/form';
 
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -6,12 +5,10 @@ import { argsToTemplate } from '@storybook/angular';
 
 type StoryType = FlowbiteInputField & {
   disabled: boolean;
-  color: keyof FlowbiteInputFieldColors;
-  size: keyof FlowbiteInputFieldSizes;
 };
 
 export default {
-  title: 'Component/InputField',
+  title: 'Component/Form/Input Field',
   component: FlowbiteInputField,
   argTypes: {
     color: {
@@ -39,20 +36,24 @@ export default {
       ],
       table: {
         category: 'Input',
-        defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteInputFieldConfig.color),
-        },
+        defaultValue: JSON.stringify(defaultFlowbiteInputFieldConfig.color),
       },
     },
     size: {
       control: 'select',
       type: 'string',
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md', 'xl'],
       table: {
         category: 'Input',
-        defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteInputFieldConfig.size),
-        },
+        defaultValue: JSON.stringify(defaultFlowbiteInputFieldConfig.size),
+      },
+    },
+    disabled: {
+      control: 'boolean',
+      type: 'boolean',
+      table: {
+        category: 'Input',
+        defaultValue: 'false',
       },
     },
     customTheme: {
@@ -65,18 +66,11 @@ export default {
         },
       },
     },
-    disabled: {
-      control: 'boolean',
-      type: 'boolean',
-      table: {
-        category: 'Input',
-        subcategory: 'NG-PRIMITIVES',
-        defaultValue: {
-          summary: 'false',
-        },
-      },
-    },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     color: defaultFlowbiteInputFieldConfig.color,
     size: defaultFlowbiteInputFieldConfig.size,
@@ -86,11 +80,7 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <input flowbiteInputField id="input" name="input" placeholder="Input" ${argsToTemplate(args)} />
+      <input flowbiteInputField id="name" name="name" placeholder="Name" ${argsToTemplate(args)} />
     `,
   }),
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
 };

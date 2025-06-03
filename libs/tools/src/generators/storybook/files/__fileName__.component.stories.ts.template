@@ -1,13 +1,13 @@
-import { defaultFlowbite<%= className %>Config, Flowbite<%= className %>Component } from 'flowbite-angular/<%= fileName %>';
+import { defaultFlowbite<%= className %>Config, Flowbite<%= className %> } from 'flowbite-angular/<%= fileName %>';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = Flowbite<%= className %>Component;
+type StoryType = Flowbite<%= className %>;
 
 export default {
   title: 'Component/<%= className %>',
-  component: Flowbite<%= className %>Component,
+  component: Flowbite<%= className %>,
   argTypes: {
     customTheme: {
       control: 'object',
@@ -20,6 +20,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     customTheme: defaultFlowbite<%= className %>Config.customTheme,
   },
@@ -27,8 +31,4 @@ export default {
     props: args,
     template: ``,
   }),
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
 };
