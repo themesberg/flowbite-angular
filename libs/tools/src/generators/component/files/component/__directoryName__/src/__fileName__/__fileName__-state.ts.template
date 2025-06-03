@@ -1,4 +1,4 @@
-import type { Flowbite<%= className %>Component } from './<%= fileName %>.component';
+import type { Flowbite<%= className %> } from './<%= fileName %>.component';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const Flowbite<%= className %>StateToken = createStateToken<Flowbite<%= className %>Component>('Flowbite <%= className %>');
+export const Flowbite<%= className %>StateToken = createStateToken<Flowbite<%= className %>>('Flowbite <%= className %>');
 export const provideFlowbite<%= className %>State = createStateProvider(Flowbite<%= className %>StateToken);
 export const injectFlowbite<%= className %>State = createStateInjector(Flowbite<%= className %>StateToken);
 export const flowbite<%= className %>State = createState(Flowbite<%= className %>StateToken);

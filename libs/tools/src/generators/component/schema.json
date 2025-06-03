@@ -22,6 +22,16 @@
       },
       "x-prompt": "What name would you like to use?"
     },
+    "type": {
+      "type": "string",
+      "description": "Whether it's a component or directive",
+      "enum": ["component", "string"],
+      "$default": {
+        "$source": "argv",
+        "index": 2
+      },
+      "x-prompt": "Is that a component or directive?"
+    },
     "addStorybook": {
       "type": "boolean",
       "description": "Add a storybook for the component.",
@@ -29,5 +39,5 @@
       "x-prompt": "Would you like to add a storybook for the component?"
     }
   },
-  "required": ["directoryName", "name"]
+  "required": ["directoryName", "name", "type"]
 }

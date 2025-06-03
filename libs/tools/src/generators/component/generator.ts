@@ -18,15 +18,27 @@ export async function componentGenerator(tree: Tree, options: ComponentGenerator
     console.log('Secondary entrypoint cannot be created.\n\rMaybe it was created before.');
   }
 
-  generateFiles(
-    tree,
-    joinPathFragments(__dirname, './files'),
-    joinPathFragments('libs', 'flowbite-angular'),
-    {
-      ...options,
-      ...names(options.name),
-    }
-  );
+  if (options.type === 'component') {
+    generateFiles(
+      tree,
+      joinPathFragments(__dirname, './files', 'component'),
+      joinPathFragments('libs', 'flowbite-angular'),
+      {
+        ...options,
+        ...names(options.name),
+      }
+    );
+  } else if (options.type === 'directive') {
+    generateFiles(
+      tree,
+      joinPathFragments(__dirname, './files', 'directive'),
+      joinPathFragments('libs', 'flowbite-angular'),
+      {
+        ...options,
+        ...names(options.name),
+      }
+    );
+  }
 
   {
     const nameFormats = names(options.name);
@@ -36,7 +48,8 @@ export async function componentGenerator(tree: Tree, options: ComponentGenerator
       options.directoryName,
       `
   /* ${nameFormats.className} */
-  export { Flowbite${nameFormats.className}Component } from './${nameFormats.fileName}/${nameFormats.fileName}.component';
+  <% if (type === 'component'){ %> export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.component'; <% } %>
+  <% if (type === 'directive'){ %> export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.directive'; <% } %>
   export {
     Flowbite${nameFormats.className}StateToken,
     flowbite${nameFormats.className}State,

@@ -4,28 +4,18 @@ import type { Flowbite<%= className %>Theme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Directive, computed, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     [flowbite<%= className %>]
   `,
   exportAs: 'flowbite<%= className %>',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbite<%= className %>State()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Flowbite<%= className %> {
   readonly config = injectFlowbite<%= className %>Config();
@@ -48,5 +38,5 @@ export class Flowbite<%= className %> {
   /**
    * @internal
    */
-  readonly state = flowbite<%= className %>State<Flowbite<%= className %>Component>(this);
+  readonly state = flowbite<%= className %>State<Flowbite<%= className %>>(this);
 }
