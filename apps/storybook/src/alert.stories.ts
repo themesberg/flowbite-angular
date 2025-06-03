@@ -66,16 +66,16 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     color: defaultFlowbiteAlertConfig.color,
     border: defaultFlowbiteAlertConfig.border,
     accent: defaultFlowbiteAlertConfig.accent,
     customTheme: defaultFlowbiteAlertConfig.customTheme,
   },
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
   render: (args) => ({
     props: args,
     template: `
@@ -92,6 +92,12 @@ export const Default: StoryObj<StoryType> = {
 
 export const AlertIcon: StoryObj<StoryType> = {
   name: 'Alert with icon',
+  args: {
+    color: defaultFlowbiteAlertConfig.color,
+    border: defaultFlowbiteAlertConfig.border,
+    accent: defaultFlowbiteAlertConfig.accent,
+    customTheme: defaultFlowbiteAlertConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -109,6 +115,12 @@ export const AlertIcon: StoryObj<StoryType> = {
 
 export const DismissableAlert: StoryObj<StoryType> = {
   name: 'Dismissable Alert',
+  args: {
+    color: defaultFlowbiteAlertConfig.color,
+    border: defaultFlowbiteAlertConfig.border,
+    accent: defaultFlowbiteAlertConfig.accent,
+    customTheme: defaultFlowbiteAlertConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -129,6 +141,12 @@ export const DismissableAlert: StoryObj<StoryType> = {
 
 export const AlertMoreContent: StoryObj<StoryType> = {
   name: 'Alert with more content',
+  args: {
+    color: defaultFlowbiteAlertConfig.color,
+    border: defaultFlowbiteAlertConfig.border,
+    accent: defaultFlowbiteAlertConfig.accent,
+    customTheme: defaultFlowbiteAlertConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `

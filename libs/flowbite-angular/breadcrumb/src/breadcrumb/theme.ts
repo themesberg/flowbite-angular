@@ -1,4 +1,4 @@
-import type { FlowbiteColors } from 'flowbite-angular';
+import type { FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteBreadcrumbColors
@@ -8,22 +8,28 @@ export interface FlowbiteBreadcrumbColors
 
 export interface FlowbiteBreadcrumbTheme {
   host: FlowbiteBreadcrumbHostTheme;
-  list: FlowbiteBreadcrumbListTheme;
 }
 
 export interface FlowbiteBreadcrumbHostTheme {
   base: string;
-}
-
-export interface FlowbiteBreadcrumbListTheme {
-  base: string;
+  solid: FlowbiteBoolean;
+  color: FlowbiteBreadcrumbColors;
 }
 
 export const flowbiteBreadcrumbTheme: FlowbiteBreadcrumbTheme = createTheme({
   host: {
-    base: 'flex',
-  },
-  list: {
-    base: 'inline-flex items-center space-x-1 md:space-x-2',
+    base: 'inline-flex items-center gap-1 rounded-lg px-5 py-3',
+    solid: {
+      on: 'border',
+      off: 'border-none bg-transparent',
+    },
+    color: {
+      primary: 'border-primary-300 bg-primary-100',
+      dark: 'border-gray-300 bg-gray-100',
+      blue: 'border-blue-300 bg-blue-100',
+      red: 'border-red-300 bg-red-100',
+      green: 'border-green-300 bg-green-100',
+      yellow: 'border-yellow-300 bg-yellow-100',
+    },
   },
 });

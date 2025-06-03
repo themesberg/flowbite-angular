@@ -1,5 +1,5 @@
 /* Breadcrumb */
-export { FlowbiteBreadcrumb } from './breadcrumb/breadcrumb.component';
+export { FlowbiteBreadcrumb } from './breadcrumb/breadcrumb.directive';
 export {
   FlowbiteBreadcrumbStateToken,
   flowbiteBreadcrumbState,
@@ -11,10 +11,9 @@ export {
   FlowbiteBreadcrumbHostTheme,
   FlowbiteBreadcrumbTheme,
   flowbiteBreadcrumbTheme,
-  FlowbiteBreadcrumbListTheme,
 } from './breadcrumb/theme';
 /* BreadcrumbItem */
-export { FlowbiteBreadcrumbItem } from './breadcrumb-item/breadcrumb-item.component';
+export { FlowbiteBreadcrumbItem } from './breadcrumb-item/breadcrumb-item.directive';
 export {
   FlowbiteBreadcrumbItemStateToken,
   flowbiteBreadcrumbItemState,
@@ -25,7 +24,6 @@ export {
   FlowbiteBreadcrumbItemHostTheme,
   FlowbiteBreadcrumbItemTheme,
   flowbiteBreadcrumbItemTheme,
-  FlowbiteBreadcrumbItemIconTheme,
 } from './breadcrumb-item/theme';
 /* Config */
 export {
@@ -42,3 +40,25 @@ export {
   injectFlowbiteBreadcrumbItemConfig,
   provideFlowbiteBreadcrumbItemConfig,
 } from './config/breadcrumb-item-config';
+
+/* BreadcrumbContent */
+export { FlowbiteBreadcrumbContent } from './breadcrumb-content/breadcrumb-content.directive';
+export {
+  FlowbiteBreadcrumbContentStateToken,
+  flowbiteBreadcrumbContentState,
+  injectFlowbiteBreadcrumbContentState,
+  provideFlowbiteBreadcrumbContentState,
+} from './breadcrumb-content/breadcrumb-content-state';
+export {
+  FlowbiteBreadcrumbContentHostTheme,
+  FlowbiteBreadcrumbContentTheme,
+  flowbiteBreadcrumbContentTheme,
+} from './breadcrumb-content/theme';
+/* Config */
+export {
+  FlowbiteBreadcrumbContentConfig,
+  FlowbiteBreadcrumbContentConfigToken,
+  defaultFlowbiteBreadcrumbContentConfig,
+  injectFlowbiteBreadcrumbContentConfig,
+  provideFlowbiteBreadcrumbContentConfig,
+} from './config/breadcrumb-content-config';

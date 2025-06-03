@@ -19,6 +19,10 @@ export interface FlowbiteBreadcrumbConfig {
    */
   color: keyof FlowbiteBreadcrumbColors;
   /**
+   * Whether the breadcrumb is solid
+   */
+  solid: boolean;
+  /**
    * The custom theme of breadcrumb
    */
   customTheme: DeepPartial<FlowbiteBreadcrumbTheme>;
@@ -27,6 +31,7 @@ export interface FlowbiteBreadcrumbConfig {
 export const defaultFlowbiteBreadcrumbConfig: FlowbiteBreadcrumbConfig = {
   baseTheme: flowbiteBreadcrumbTheme,
   color: 'primary',
+  solid: false,
   customTheme: {},
 };
 

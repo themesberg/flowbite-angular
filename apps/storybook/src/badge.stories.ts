@@ -77,6 +77,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     color: defaultFlowbiteBadgeConfig.color,
     border: defaultFlowbiteBadgeConfig.border,
@@ -84,10 +88,6 @@ export default {
     pill: defaultFlowbiteBadgeConfig.pill,
     customTheme: defaultFlowbiteBadgeConfig.customTheme,
   },
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
   render: (args) => ({
     props: args,
     template: `
@@ -99,6 +99,13 @@ export const Default: StoryObj<StoryType> = {
 
 export const BadgeLink: StoryObj<StoryType> = {
   name: 'Badge as link',
+  args: {
+    color: defaultFlowbiteBadgeConfig.color,
+    border: defaultFlowbiteBadgeConfig.border,
+    size: defaultFlowbiteBadgeConfig.size,
+    pill: defaultFlowbiteBadgeConfig.pill,
+    customTheme: defaultFlowbiteBadgeConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -110,6 +117,13 @@ export const BadgeLink: StoryObj<StoryType> = {
 
 export const BadgeIcon: StoryObj<StoryType> = {
   name: 'Badge with icon',
+  args: {
+    color: defaultFlowbiteBadgeConfig.color,
+    border: defaultFlowbiteBadgeConfig.border,
+    size: defaultFlowbiteBadgeConfig.size,
+    pill: defaultFlowbiteBadgeConfig.pill,
+    customTheme: defaultFlowbiteBadgeConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -122,6 +136,13 @@ export const BadgeIcon: StoryObj<StoryType> = {
 
 export const BadgeIconOnly: StoryObj<StoryType> = {
   name: 'Badge with icon only',
+  args: {
+    color: defaultFlowbiteBadgeConfig.color,
+    border: defaultFlowbiteBadgeConfig.border,
+    size: defaultFlowbiteBadgeConfig.size,
+    pill: true,
+    customTheme: defaultFlowbiteBadgeConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `
@@ -133,6 +154,13 @@ export const BadgeIconOnly: StoryObj<StoryType> = {
 
 export const DismissableBadge: StoryObj<StoryType> = {
   name: 'Dismissable Badge',
+  args: {
+    color: defaultFlowbiteBadgeConfig.color,
+    border: defaultFlowbiteBadgeConfig.border,
+    size: defaultFlowbiteBadgeConfig.size,
+    pill: defaultFlowbiteBadgeConfig.pill,
+    customTheme: defaultFlowbiteBadgeConfig.customTheme,
+  },
   render: (args) => ({
     props: args,
     template: `

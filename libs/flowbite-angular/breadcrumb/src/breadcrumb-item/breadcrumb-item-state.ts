@@ -1,4 +1,4 @@
-import type { FlowbiteBreadcrumbItem } from './breadcrumb-item.component';
+import type { FlowbiteBreadcrumbItem } from './breadcrumb-item.directive';
 
 import {
   createState,

@@ -98,6 +98,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     color: defaultFlowbiteAccordionConfig.color,
     flush: defaultFlowbiteAccordionConfig.flush,
@@ -106,10 +110,6 @@ export default {
     disabled: false,
     collapsible: false,
   },
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
   render: (args) => ({
     props: args,
     template: `
@@ -147,6 +147,14 @@ export const Default: StoryObj<StoryType> = {
 
 export const AccordionIcon: StoryObj<StoryType> = {
   name: 'Accordion with Icon',
+  args: {
+    color: defaultFlowbiteAccordionConfig.color,
+    flush: defaultFlowbiteAccordionConfig.flush,
+    customTheme: defaultFlowbiteAccordionConfig.customTheme,
+    type: 'single',
+    disabled: false,
+    collapsible: false,
+  },
   render: (args) => ({
     props: args,
     template: `

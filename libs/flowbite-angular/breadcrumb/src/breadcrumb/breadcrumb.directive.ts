@@ -5,42 +5,32 @@ import type { FlowbiteBreadcrumbColors, FlowbiteBreadcrumbTheme } from './theme'
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     nav[flowbiteBreadcrumb]
   `,
   exportAs: 'flowbiteBreadcrumb',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteBreadcrumbState()],
   host: {
     '[class]': `theme().host.root`,
   },
-  template: `
-    <ol [class]="theme().list.root">
-      <ng-content />
-    </ol>
-  `,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteBreadcrumb {
-  protected readonly config = injectFlowbiteBreadcrumbConfig();
+  readonly config = injectFlowbiteBreadcrumbConfig();
 
   /**
    * @see {@link injectFlowbiteBreadcrumbConfig}
    */
   readonly color = input<keyof FlowbiteBreadcrumbColors>(this.config.color);
+  /**
+   * @see {@link injectFlowbiteBreadcrumbConfig}
+   */
+  readonly solid = input(this.config.solid, { transform: booleanAttribute });
   /**
    * @see {@link injectFlowbiteBreadcrumbConfig}
    */
@@ -51,10 +41,12 @@ export class FlowbiteBreadcrumb {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base),
-      },
-      list: {
-        root: twMerge(mergedTheme.list.base),
+        root: twMerge(
+          mergedTheme.host.base,
+          this.state.solid() &&
+            mergedTheme.host.solid[this.state.solid() ? 'on' : 'off'] &&
+            mergedTheme.host.color[this.state.color()]
+        ),
       },
     };
   });

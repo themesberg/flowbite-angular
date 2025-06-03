@@ -1,4 +1,4 @@
-import { FlowbiteBreadcrumb } from '../breadcrumb/breadcrumb.component';
+import { FlowbiteBreadcrumb } from '../breadcrumb/breadcrumb.directive';
 import { injectFlowbiteBreadcrumbItemConfig } from '../config/breadcrumb-item-config';
 import {
   flowbiteBreadcrumbItemState,
@@ -9,48 +9,36 @@ import type { FlowbiteBreadcrumbItemTheme } from './theme';
 import type { DeepPartial } from 'flowbite-angular';
 import { mergeDeep } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, inject, input } from '@angular/core';
+import { NgpButton } from 'ng-primitives/button';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     li[flowbiteBreadcrumbItem]
   `,
   exportAs: 'flowbiteBreadcrumbItem',
-  hostDirectives: [],
-  imports: [],
+  hostDirectives: [
+    {
+      directive: NgpButton,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+    {
+      directive: NgpFocus,
+      inputs: [],
+      outputs: [],
+    },
+  ],
   providers: [provideFlowbiteBreadcrumbItemState()],
   host: {
     '[class]': `theme().host.root`,
   },
-  template: `
-    <svg
-      [class]="theme().icon.root"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24">
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="m10 16 4-4-4-4" />
-    </svg>
-    <ng-content />
-  `,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteBreadcrumbItem {
-  protected readonly config = injectFlowbiteBreadcrumbItemConfig();
+  readonly config = injectFlowbiteBreadcrumbItemConfig();
 
   /**
    * @see {@link injectFlowbiteBreadcrumbItemConfig}
@@ -69,11 +57,12 @@ export class FlowbiteBreadcrumbItem {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.breadcrumb().state.color()]
+          mergedTheme.host.color[this.breadcrumb().state.color()],
+
+          /* children */
+          mergedTheme.host.children.base,
+          mergedTheme.host.children.icon.base
         ),
-      },
-      icon: {
-        root: twMerge(mergedTheme.icon.base),
       },
     };
   });

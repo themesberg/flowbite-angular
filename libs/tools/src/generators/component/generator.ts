@@ -48,8 +48,7 @@ export async function componentGenerator(tree: Tree, options: ComponentGenerator
       options.directoryName,
       `
   /* ${nameFormats.className} */
-  <% if (type === 'component'){ %> export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.component'; <% } %>
-  <% if (type === 'directive'){ %> export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.directive'; <% } %>
+  ${options.type === 'component' ? `export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.component';` : `export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.directive';`}
   export {
     Flowbite${nameFormats.className}StateToken,
     flowbite${nameFormats.className}State,

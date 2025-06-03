@@ -4,22 +4,23 @@ import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteBreadcrumbItemTheme {
   host: FlowbiteBreadcrumbItemHostTheme;
-  icon: FlowbiteBreadcrumbItemIconTheme;
 }
 
 export interface FlowbiteBreadcrumbItemHostTheme {
   base: string;
   transition: string;
   color: FlowbiteBreadcrumbColors;
-}
-
-export interface FlowbiteBreadcrumbItemIconTheme {
-  base: string;
+  children: {
+    base: string;
+    icon: {
+      base: string;
+    };
+  };
 }
 
 export const flowbiteBreadcrumbItemTheme: FlowbiteBreadcrumbItemTheme = createTheme({
   host: {
-    base: 'group flex flex-row items-center text-sm font-medium',
+    base: 'group flex flex-row items-center text-sm font-medium data-hover:cursor-pointer',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
       primary:
@@ -31,8 +32,11 @@ export const flowbiteBreadcrumbItemTheme: FlowbiteBreadcrumbItemTheme = createTh
       yellow:
         'text-yellow-700 hover:text-yellow-900 dark:text-yellow-400 dark:hover:text-yellow-500',
     },
-  },
-  icon: {
-    base: 'mr-2 h-4 w-4 group-first:hidden md:mx-2',
+    children: {
+      base: '',
+      icon: {
+        base: '*:[flowbite-icon]:size-4 *:[flowbite-icon]:first:mr-2 *:[flowbite-icon]:last:ml-2',
+      },
+    },
   },
 });
