@@ -1,21 +1,6 @@
 /* Clipboard */
-export { FlowbiteClipboard } from './clipboard/clipboard.component';
-export {
-  FlowbiteClipboardStateToken,
-  flowbiteClipboardState,
-  injectFlowbiteClipboardState,
-  provideFlowbiteClipboardState,
-} from './clipboard/clipboard-state';
-export {
-  FlowbiteClipboardHostTheme,
-  FlowbiteClipboardTheme,
-  flowbiteClipboardTheme,
-} from './clipboard/theme';
+export * from './clipboard/clipboard.component';
+export * from './clipboard/clipboard-state';
+export * from './clipboard/theme';
 /* Config */
-export {
-  FlowbiteClipboardConfig,
-  FlowbiteClipboardConfigToken,
-  defaultFlowbiteClipboardConfig,
-  injectFlowbiteClipboardConfig,
-  provideFlowbiteClipboardConfig,
-} from './config/clipboard-config';
+export * from './config/clipboard-config';

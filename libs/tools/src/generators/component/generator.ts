@@ -48,26 +48,11 @@ export async function componentGenerator(tree: Tree, options: ComponentGenerator
       options.directoryName,
       `
   /* ${nameFormats.className} */
-  ${options.type === 'component' ? `export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.component';` : `export { Flowbite${nameFormats.className} } from './${nameFormats.fileName}/${nameFormats.fileName}.directive';`}
-  export {
-    Flowbite${nameFormats.className}StateToken,
-    flowbite${nameFormats.className}State,
-    injectFlowbite${nameFormats.className}State,
-    provideFlowbite${nameFormats.className}State,
-  } from './${nameFormats.fileName}/${nameFormats.fileName}-state';
-  export {
-    Flowbite${nameFormats.className}HostTheme,
-    Flowbite${nameFormats.className}Theme,
-    flowbite${nameFormats.className}Theme,
-  } from './${nameFormats.fileName}/theme';
+  ${options.type === 'component' ? `export * from './${nameFormats.fileName}/${nameFormats.fileName}.component';` : `export * from './${nameFormats.fileName}/${nameFormats.fileName}.directive';`}
+  export * from './${nameFormats.fileName}/${nameFormats.fileName}-state';
+  export * from './${nameFormats.fileName}/theme';
   /* Config */
-  export {
-    Flowbite${nameFormats.className}Config,
-    Flowbite${nameFormats.className}ConfigToken,
-    defaultFlowbite${nameFormats.className}Config,
-    injectFlowbite${nameFormats.className}Config,
-    provideFlowbite${nameFormats.className}Config,
-  } from './config/${nameFormats.fileName}-config';
+  export * from './config/${nameFormats.fileName}-config';
       `
     );
   }

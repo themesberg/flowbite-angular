@@ -1,23 +1,6 @@
 /* Indicator */
-export { FlowbiteIndicator } from './indicator/indicator.component';
-export {
-  FlowbiteIndicatorStateToken,
-  flowbiteIndicatorState,
-  injectFlowbiteIndicatorState,
-  provideFlowbiteIndicatorState,
-} from './indicator/indicator-state';
-export {
-  FlowbiteIndicatorHostTheme,
-  FlowbiteIndicatorTheme,
-  flowbiteIndicatorTheme,
-  FlowbiteIndicatorColors,
-  FlowbiteIndicatorSizes,
-} from './indicator/theme';
+export * from './indicator/indicator.component';
+export * from './indicator/indicator-state';
+export * from './indicator/theme';
 /* Config */
-export {
-  FlowbiteIndicatorConfig,
-  FlowbiteIndicatorConfigToken,
-  defaultFlowbiteIndicatorConfig,
-  injectFlowbiteIndicatorConfig,
-  provideFlowbiteIndicatorConfig,
-} from './config/indicator-config';
+export * from './config/indicator-config';

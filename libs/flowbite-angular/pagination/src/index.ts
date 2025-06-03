@@ -1,144 +1,41 @@
 /* Pagination */
-export { FlowbitePagination } from './pagination/pagination.component';
-export {
-  FlowbitePaginationStateToken,
-  flowbitePaginationState,
-  injectFlowbitePaginationState,
-  provideFlowbitePaginationState,
-} from './pagination/pagination-state';
-export {
-  FlowbitePaginationHostTheme,
-  FlowbitePaginationTheme,
-  flowbitePaginationTheme,
-  FlowbitePaginationColors,
-  FlowbitePaginationContainerTheme,
-  FlowbitePaginationSizes,
-} from './pagination/theme';
+export * from './pagination/pagination.component';
+export * from './pagination/pagination-state';
+export * from './pagination/theme';
 /* Config */
-export {
-  FlowbitePaginationConfig,
-  FlowbitePaginationConfigToken,
-  defaultFlowbitePaginationConfig,
-  injectFlowbitePaginationConfig,
-  provideFlowbitePaginationConfig,
-} from './config/pagination-config';
+export * from './config/pagination-config';
 
 /* PaginationFirst */
-export { FlowbitePaginationFirst } from './pagination-first/pagination-first.component';
-export {
-  FlowbitePaginationFirstStateToken,
-  flowbitePaginationFirstState,
-  injectFlowbitePaginationFirstState,
-  provideFlowbitePaginationFirstState,
-} from './pagination-first/pagination-first-state';
-export {
-  FlowbitePaginationFirstHostTheme,
-  FlowbitePaginationFirstTheme,
-  FlowbitePaginationFirstColors,
-  FlowbitePaginationFirstSizes,
-  flowbitePaginationFirstTheme,
-} from './pagination-first/theme';
+export * from './pagination-first/pagination-first.component';
+export * from './pagination-first/pagination-first-state';
+export * from './pagination-first/theme';
 /* Config */
-export {
-  FlowbitePaginationFirstConfig,
-  FlowbitePaginationFirstConfigToken,
-  defaultFlowbitePaginationFirstConfig,
-  injectFlowbitePaginationFirstConfig,
-  provideFlowbitePaginationFirstConfig,
-} from './config/pagination-first-config';
+export * from './config/pagination-first-config';
 
 /* PaginationPrevious */
-export { FlowbitePaginationPrevious } from './pagination-previous/pagination-previous.component';
-export {
-  FlowbitePaginationPreviousStateToken,
-  flowbitePaginationPreviousState,
-  injectFlowbitePaginationPreviousState,
-  provideFlowbitePaginationPreviousState,
-} from './pagination-previous/pagination-previous-state';
-export {
-  FlowbitePaginationPreviousHostTheme,
-  FlowbitePaginationPreviousTheme,
-  flowbitePaginationPreviousTheme,
-  FlowbitePaginationPreviousColors,
-  FlowbitePaginationPreviousSizes,
-} from './pagination-previous/theme';
+export * from './pagination-previous/pagination-previous.component';
+export * from './pagination-previous/pagination-previous-state';
+export * from './pagination-previous/theme';
 /* Config */
-export {
-  FlowbitePaginationPreviousConfig,
-  FlowbitePaginationPreviousConfigToken,
-  defaultFlowbitePaginationPreviousConfig,
-  injectFlowbitePaginationPreviousConfig,
-  provideFlowbitePaginationPreviousConfig,
-} from './config/pagination-previous-config';
+export * from './config/pagination-previous-config';
 
 /* PaginationNext */
-export { FlowbitePaginationNext } from './pagination-next/pagination-next.component';
-export {
-  FlowbitePaginationNextStateToken,
-  flowbitePaginationNextState,
-  injectFlowbitePaginationNextState,
-  provideFlowbitePaginationNextState,
-} from './pagination-next/pagination-next-state';
-export {
-  FlowbitePaginationNextHostTheme,
-  FlowbitePaginationNextTheme,
-  FlowbitePaginationNextColors,
-  FlowbitePaginationNextSizes,
-  flowbitePaginationNextTheme,
-} from './pagination-next/theme';
+export * from './pagination-next/pagination-next.component';
+export * from './pagination-next/pagination-next-state';
+export * from './pagination-next/theme';
 /* Config */
-export {
-  FlowbitePaginationNextConfig,
-  FlowbitePaginationNextConfigToken,
-  defaultFlowbitePaginationNextConfig,
-  injectFlowbitePaginationNextConfig,
-  provideFlowbitePaginationNextConfig,
-} from './config/pagination-next-config';
+export * from './config/pagination-next-config';
 
 /* PaginationLast */
-export { FlowbitePaginationLast } from './pagination-last/pagination-last.component';
-export {
-  FlowbitePaginationLastStateToken,
-  flowbitePaginationLastState,
-  injectFlowbitePaginationLastState,
-  provideFlowbitePaginationLastState,
-} from './pagination-last/pagination-last-state';
-export {
-  FlowbitePaginationLastHostTheme,
-  FlowbitePaginationLastTheme,
-  flowbitePaginationLastTheme,
-  FlowbitePaginationLastColors,
-  FlowbitePaginationLastSizes,
-} from './pagination-last/theme';
+export * from './pagination-last/pagination-last.component';
+export * from './pagination-last/pagination-last-state';
+export * from './pagination-last/theme';
 /* Config */
-export {
-  FlowbitePaginationLastConfig,
-  FlowbitePaginationLastConfigToken,
-  defaultFlowbitePaginationLastConfig,
-  injectFlowbitePaginationLastConfig,
-  provideFlowbitePaginationLastConfig,
-} from './config/pagination-last-config';
+export * from './config/pagination-last-config';
 
 /* PaginationButton */
-export { FlowbitePaginationButton } from './pagination-button/pagination-button.component';
-export {
-  FlowbitePaginationButtonStateToken,
-  flowbitePaginationButtonState,
-  injectFlowbitePaginationButtonState,
-  provideFlowbitePaginationButtonState,
-} from './pagination-button/pagination-button-state';
-export {
-  FlowbitePaginationButtonHostTheme,
-  FlowbitePaginationButtonTheme,
-  flowbitePaginationButtonTheme,
-  FlowbitePaginationButtonColors,
-  FlowbitePaginationButtonSizes,
-} from './pagination-button/theme';
+export * from './pagination-button/pagination-button.component';
+export * from './pagination-button/pagination-button-state';
+export * from './pagination-button/theme';
 /* Config */
-export {
-  FlowbitePaginationButtonConfig,
-  FlowbitePaginationButtonConfigToken,
-  defaultFlowbitePaginationButtonConfig,
-  injectFlowbitePaginationButtonConfig,
-  provideFlowbitePaginationButtonConfig,
-} from './config/pagination-button-config';
+export * from './config/pagination-button-config';

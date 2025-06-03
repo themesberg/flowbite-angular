@@ -1,87 +1,26 @@
 /* Accordion */
-export { FlowbiteAccordion } from './accordion/accordion.directive';
-export {
-  FlowbiteAccordionStateToken,
-  flowbiteAccordionState,
-  injectFlowbiteAccordionState,
-  provideFlowbiteAccordionState,
-} from './accordion/accordion-state';
-export {
-  FlowbiteAccordionColors,
-  FlowbiteAccordionHostTheme,
-  FlowbiteAccordionTheme,
-  flowbiteAccordionTheme,
-} from './accordion/theme';
+export * from './accordion/accordion.directive';
+export * from './accordion/accordion-state';
+export * from './accordion/theme';
 
 /* AccordionItem */
-export { FlowbiteAccordionItem } from './accordion-item/accordion-item.directive';
-export {
-  FlowbiteAccordionItemStateToken,
-  flowbiteAccordionItemState,
-  injectFlowbiteAccordionItemState,
-  provideFlowbiteAccordionItemState,
-} from './accordion-item/accordion-item-state';
-export {
-  FlowbiteAccordionItemHostTheme,
-  FlowbiteAccordionItemTheme,
-  flowbiteAccordionItemTheme,
-} from './accordion-item/theme';
+export * from './accordion-item/accordion-item.directive';
+export * from './accordion-item/accordion-item-state';
+export * from './accordion-item/theme';
 /* Config */
-export {
-  FlowbiteAccordionItemConfig,
-  FlowbiteAccordionItemConfigToken,
-  defaultFlowbiteAccordionItemConfig,
-  injectFlowbiteAccordionItemConfig,
-  provideFlowbiteAccordionItemConfig,
-} from './config/accordion-item-config';
-export {
-  FlowbiteAccordionConfig,
-  FlowbiteAccordionConfigToken,
-  defaultFlowbiteAccordionConfig,
-  injectFlowbiteAccordionConfig,
-  provideFlowbiteAccordionConfig,
-} from './config/accordion-config';
+export * from './config/accordion-item-config';
+export * from './config/accordion-config';
 
 /* AccordionTitle */
-export { FlowbiteAccordionTitle } from './accordion-title/accordion-title.directive';
-export {
-  FlowbiteAccordionTitleStateToken,
-  flowbiteAccordionTitleState,
-  injectFlowbiteAccordionTitleState,
-  provideFlowbiteAccordionTitleState,
-} from './accordion-title/accordion-title-state';
-export {
-  FlowbiteAccordionTitleHostTheme,
-  FlowbiteAccordionTitleTheme,
-  flowbiteAccordionTitleTheme,
-} from './accordion-title/theme';
+export * from './accordion-title/accordion-title.directive';
+export * from './accordion-title/accordion-title-state';
+export * from './accordion-title/theme';
 /* Config */
-export {
-  FlowbiteAccordionTitleConfig,
-  FlowbiteAccordionTitleConfigToken,
-  defaultFlowbiteAccordionTitleConfig,
-  injectFlowbiteAccordionTitleConfig,
-  provideFlowbiteAccordionTitleConfig,
-} from './config/accordion-title-config';
+export * from './config/accordion-title-config';
 
 /* AccordionContent */
-export { FlowbiteAccordionContent } from './accordion-content/accordion-content.directive';
-export {
-  FlowbiteAccordionContentStateToken,
-  flowbiteAccordionContentState,
-  injectFlowbiteAccordionContentState,
-  provideFlowbiteAccordionContentState,
-} from './accordion-content/accordion-content-state';
-export {
-  FlowbiteAccordionContentHostTheme,
-  FlowbiteAccordionContentTheme,
-  flowbiteAccordionContentTheme,
-} from './accordion-content/theme';
+export * from './accordion-content/accordion-content.directive';
+export * from './accordion-content/accordion-content-state';
+export * from './accordion-content/theme';
 /* Config */
-export {
-  FlowbiteAccordionContentConfig,
-  FlowbiteAccordionContentConfigToken,
-  defaultFlowbiteAccordionContentConfig,
-  injectFlowbiteAccordionContentConfig,
-  provideFlowbiteAccordionContentConfig,
-} from './config/accordion-content-config';
+export * from './config/accordion-content-config';
