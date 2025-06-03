@@ -19,11 +19,11 @@ export const flowbiteCardContentTheme: FlowbiteCardContentTheme = createTheme({
       gray: 'text-gray-700 dark:text-gray-400',
     },
     size: {
-      xs: 'max-w-xs',
-      sm: 'max-w-sm',
-      md: 'max-w-md',
-      lg: 'max-w-lg',
-      xl: 'max-w-xl',
+      xs: 'w-xs',
+      sm: 'w-sm',
+      md: 'w-md',
+      lg: 'w-lg',
+      xl: 'w-xl',
     },
   },
 });
