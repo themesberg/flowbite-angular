@@ -32,6 +32,8 @@ export const flowbiteInputFieldTheme: FlowbiteInputFieldTheme = createTheme({
       xl: 'p-4 text-xs',
     },
     color: {
+      default:
+        'border-gray-400 bg-gray-50 text-gray-900 placeholder-gray-300 data-focus-visible:ring-gray-400 dark:border-gray-600 dark:bg-gray-950 dark:text-white dark:placeholder-gray-400 dark:data-focus-visible:ring-gray-600',
       info: 'border-blue-400 bg-blue-50 text-gray-900 placeholder-blue-300 data-focus-visible:ring-blue-400 dark:border-blue-600 dark:bg-blue-950 dark:text-white dark:placeholder-blue-400 dark:data-focus-visible:ring-blue-600',
       failure:
         'border-red-400 bg-red-50 text-gray-900 placeholder-red-300 data-focus-visible:ring-red-400 dark:border-red-600 dark:bg-red-950 dark:text-white dark:placeholder-red-400 dark:data-focus-visible:ring-red-600',

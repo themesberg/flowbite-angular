@@ -4,7 +4,16 @@ import { createTheme } from 'flowbite-angular';
 export interface FlowbiteBadgeColors
   extends Pick<
     FlowbiteColors,
-    'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink'
+    | 'default'
+    | 'primary'
+    | 'dark'
+    | 'blue'
+    | 'red'
+    | 'green'
+    | 'yellow'
+    | 'indigo'
+    | 'purple'
+    | 'pink'
   > {
   [key: string]: string;
 }
@@ -39,9 +48,11 @@ export const flowbiteBadgeTheme: FlowbiteBadgeTheme = createTheme({
       off: 'border-0',
     },
     color: {
+      default:
+        'border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-300',
       primary:
         'bg-primary-100 dark:bg-primary-200 text-primary-800 dark:text-primary-900 border-primary-300 dark:border-primary-800',
-      dark: 'border-gray-300 bg-gray-200 text-gray-800 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-300',
+      dark: 'border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-300',
       blue: 'border-blue-300 bg-blue-100 text-blue-800 dark:border-blue-800 dark:bg-blue-200 dark:text-blue-800',
       red: 'border-red-300 bg-red-100 text-red-800 dark:border-red-800 dark:bg-red-200 dark:text-red-900',
       green:

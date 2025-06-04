@@ -15,6 +15,7 @@ export const flowbiteAlertButtonTheme: FlowbiteAlertButtonTheme = createTheme({
   host: {
     base: 'flex rounded-lg p-1 first:mr-2 data-hover:cursor-pointer',
     color: {
+      default: 'data-hover:bg-gray-300 dark:data-hover:bg-gray-700',
       primary: 'data-hover:bg-primary-200 dark:data-hover:bg-gray-700',
       dark: 'data-hover:bg-gray-200 dark:data-hover:bg-gray-700',
       blue: 'data-hover:bg-blue-200 dark:data-hover:bg-gray-700',

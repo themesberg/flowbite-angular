@@ -27,7 +27,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['primary', 'dark', 'blue', 'red', 'green', 'yellow'],
+      options: ['default', 'primary', 'dark', 'blue', 'red', 'green', 'yellow'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -164,8 +164,11 @@ export const AlertMoreContent: StoryObj<StoryType> = {
             that you can see how spacing within an alert works with this kind of content.
           </div>
           <div class="flex gap-2 items-center">
-            <button flowbiteButton color="${args.color}"><flowbite-icon name="eye" />View more</button>
-            <button flowbiteButton outline color="${args.color}">Dismiss</button>
+            <button flowbiteButton>
+              <flowbite-icon name="eye" color="light" />
+              <span>View more</span>
+            </button>
+            <button flowbiteButton outline>Dismiss</button>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export interface FlowbiteTooltipConfig {
 
 export const defaultFlowbiteTooltipConfig: FlowbiteTooltipConfig = {
   baseTheme: flowbiteTooltipTheme,
-  color: 'light',
+  color: 'default',
   customTheme: {},
 };
 

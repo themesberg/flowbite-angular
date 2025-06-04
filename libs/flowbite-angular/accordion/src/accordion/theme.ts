@@ -1,7 +1,10 @@
 import { createTheme, type FlowbiteColors } from 'flowbite-angular';
 
 export interface FlowbiteAccordionColors
-  extends Pick<FlowbiteColors, 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow'> {
+  extends Pick<
+    FlowbiteColors,
+    'default' | 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow'
+  > {
   [key: string]: string;
 }
 

@@ -2,7 +2,10 @@ import type { FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteBreadcrumbColors
-  extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
+  extends Pick<
+    FlowbiteColors,
+    'default' | 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'
+  > {
   [ket: string]: string;
 }
 
@@ -24,6 +27,7 @@ export const flowbiteBreadcrumbTheme: FlowbiteBreadcrumbTheme = createTheme({
       off: 'border-none bg-transparent',
     },
     color: {
+      default: 'border-gray-300 bg-gray-100',
       primary: 'border-primary-300 bg-primary-100',
       dark: 'border-gray-300 bg-gray-100',
       blue: 'border-blue-300 bg-blue-100',

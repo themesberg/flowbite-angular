@@ -33,7 +33,7 @@ export const defaultFlowbiteNavbarConfig: FlowbiteNavbarConfig = {
   baseTheme: flowbiteNavbarTheme,
   fixed: false,
   open: false,
-  color: 'light',
+  color: 'default',
   customTheme: {},
 };
 

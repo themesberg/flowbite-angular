@@ -38,6 +38,8 @@ export const flowbitePaginationNextTheme: FlowbitePaginationNextTheme = createTh
       xl: 'px-4 py-3.5 text-base',
     },
     colorOutline: {
+      default:
+        'border-gray-700 text-gray-700 data-focus-visible:ring-gray-400 data-hover:bg-gray-700 data-hover:text-gray-100 data-selected:bg-gray-700 data-selected:text-gray-100 dark:data-focus-visible:ring-gray-600',
       info: 'border-blue-700 text-blue-700 data-focus-visible:ring-blue-400 data-hover:bg-blue-700 data-hover:text-gray-100 data-selected:bg-blue-700 data-selected:text-gray-100 dark:data-focus-visible:ring-blue-600',
       failure:
         'border-red-700 text-red-700 data-focus-visible:ring-red-400 data-hover:bg-red-700 data-hover:text-gray-100 data-selected:bg-red-700 data-selected:text-gray-100 dark:data-focus-visible:ring-red-600',

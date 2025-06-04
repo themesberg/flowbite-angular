@@ -31,7 +31,7 @@ export interface FlowbiteCardConfig {
 
 export const defaultFlowbiteCardConfig: FlowbiteCardConfig = {
   baseTheme: flowbiteCardTheme,
-  color: 'gray',
+  color: 'default',
   size: 'md',
   orientation: 'vertical',
   customTheme: {},

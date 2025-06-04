@@ -15,6 +15,7 @@ export const flowbiteHelperTheme: FlowbiteHelperTheme = createTheme({
   host: {
     base: 'mt-2 text-sm',
     color: {
+      default: 'text-gray-500 dark:text-gray-500',
       info: 'text-blue-500 dark:text-blue-500',
       failure: 'text-red-500 dark:text-red-500',
       success: 'text-green-500 dark:text-green-500',

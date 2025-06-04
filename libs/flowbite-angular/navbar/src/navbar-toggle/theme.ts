@@ -27,6 +27,7 @@ export const flowbiteNavbarToggleTheme: FlowbiteNavbarToggleTheme = createTheme(
     size: {} as FlowbiteBaseButtonSizes, // Not used for NavbarToggle
     pill: {} as FlowbiteBoolean, // Not used for NavbarToggle
     color: {
+      default: 'text-gray-700 dark:text-gray-100',
       info: 'text-blue-700',
       failure: 'text-red-700',
       success: 'text-green-700',

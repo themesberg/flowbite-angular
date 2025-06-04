@@ -43,13 +43,13 @@ import { twMerge } from 'tailwind-merge';
       class="block dark:hidden"
       name="sun"
       [size]="baseButtonState().size()"
-      [color]="undefined"
+      color="default"
       flowbiteStrokeWidth="lg" />
     <flowbite-icon
       class="hidden dark:inline"
       name="moon"
       [size]="baseButtonState().size()"
-      [color]="undefined"
+      color="default"
       flowbiteStrokeWidth="lg" />
   `,
   encapsulation: ViewEncapsulation.None,

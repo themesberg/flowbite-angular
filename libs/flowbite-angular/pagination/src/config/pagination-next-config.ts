@@ -37,7 +37,7 @@ export interface FlowbitePaginationNextConfig {
 
 export const defaultFlowbitePaginationNextConfig: FlowbitePaginationNextConfig = {
   baseTheme: flowbitePaginationNextTheme,
-  color: 'info',
+  color: 'default',
   size: 'md',
   outline: false,
   customTheme: {},

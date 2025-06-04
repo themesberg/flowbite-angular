@@ -23,7 +23,7 @@ export interface FlowbiteHelperConfig {
 
 export const defaultFlowbiteHelperConfig: FlowbiteHelperConfig = {
   baseTheme: flowbiteHelperTheme,
-  color: 'info',
+  color: 'default',
   customTheme: {},
 };
 

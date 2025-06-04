@@ -28,6 +28,7 @@ export const flowbiteSidebarContentTheme: FlowbiteSidebarContentTheme = createTh
       off: '-translate-x-full',
     },
     color: {
+      default: 'bg-gray-50 dark:bg-gray-950',
       info: 'bg-blue-50 dark:bg-blue-950',
       failure: 'bg-red-50 dark:bg-red-950',
       success: 'bg-green-50 dark:bg-green-950',

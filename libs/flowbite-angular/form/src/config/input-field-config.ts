@@ -28,7 +28,7 @@ export interface FlowbiteInputFieldConfig {
 export const defaultFlowbiteInputFieldConfig: FlowbiteInputFieldConfig = {
   baseTheme: flowbiteInputFieldTheme,
   size: 'md',
-  color: 'info',
+  color: 'default',
   customTheme: {},
 };
 

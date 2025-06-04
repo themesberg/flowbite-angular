@@ -31,6 +31,7 @@ export default {
       control: 'select',
       type: 'string',
       options: [
+        'default',
         'info',
         'failure',
         'success',

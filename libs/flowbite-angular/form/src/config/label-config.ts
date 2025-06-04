@@ -23,7 +23,7 @@ export interface FlowbiteLabelConfig {
 
 export const defaultFlowbiteLabelConfig: FlowbiteLabelConfig = {
   baseTheme: flowbiteLabelTheme,
-  color: 'info',
+  color: 'default',
   customTheme: {},
 };
 

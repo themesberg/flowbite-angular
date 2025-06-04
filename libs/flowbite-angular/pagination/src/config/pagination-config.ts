@@ -32,7 +32,7 @@ export interface FlowbitePaginationConfig {
 export const defaultFlowbitePaginationConfig: FlowbitePaginationConfig = {
   baseTheme: flowbitePaginationTheme,
   tabs: 5,
-  color: 'info',
+  color: 'default',
   size: 'md',
   customTheme: {},
 };

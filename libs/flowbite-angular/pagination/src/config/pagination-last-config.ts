@@ -37,7 +37,7 @@ export interface FlowbitePaginationLastConfig {
 
 export const defaultFlowbitePaginationLastConfig: FlowbitePaginationLastConfig = {
   baseTheme: flowbitePaginationLastTheme,
-  color: 'info',
+  color: 'default',
   size: 'md',
   outline: false,
   customTheme: {},

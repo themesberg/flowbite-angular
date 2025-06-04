@@ -27,7 +27,7 @@ export interface FlowbiteIndicatorConfig {
 
 export const defaultFlowbiteIndicatorConfig: FlowbiteIndicatorConfig = {
   baseTheme: flowbiteIndicatorTheme,
-  color: 'info',
+  color: 'default',
   size: 'md',
   customTheme: {},
 };

@@ -35,7 +35,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['gray'],
+      options: ['default'],
       table: {
         category: 'Input',
         defaultValue: {

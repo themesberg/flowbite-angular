@@ -22,7 +22,7 @@ export interface FlowbiteIconConfig {
   /**
    * The default color of icon
    */
-  flowbiteColor: keyof FlowbiteIconColors | undefined;
+  flowbiteColor: keyof FlowbiteIconColors;
   /**
    * The default stroke width of icon
    */
@@ -36,7 +36,7 @@ export interface FlowbiteIconConfig {
 export const defaultFlowbiteIconConfig: FlowbiteIconConfig = {
   baseTheme: flowbiteIconTheme,
   flowbiteSize: 'md',
-  flowbiteColor: undefined,
+  flowbiteColor: 'default',
   flowbiteStrokeWidth: 'md',
   flowbiteCustomTheme: {},
 };

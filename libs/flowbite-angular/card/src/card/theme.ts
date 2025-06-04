@@ -6,7 +6,7 @@ export interface FlowbiteCardOrientation {
   horizontal: string;
 }
 
-export interface FLowbiteCardColors extends Pick<FlowbiteColors, 'gray'> {
+export interface FLowbiteCardColors extends Pick<FlowbiteColors, 'default'> {
   [key: string]: string;
 }
 
@@ -33,7 +33,8 @@ export const flowbiteCardTheme: FlowbiteCardTheme = createTheme({
       vertical: 'flex-col',
     },
     color: {
-      gray: 'border-gray-200 bg-white shadow-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
+      default:
+        'border-gray-200 bg-white shadow-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
     },
     size: {
       xs: 'w-xs',

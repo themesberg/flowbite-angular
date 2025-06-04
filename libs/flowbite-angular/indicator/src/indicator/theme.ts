@@ -24,6 +24,7 @@ export const flowbiteIndicatorTheme: FlowbiteIndicatorTheme = createTheme({
   host: {
     base: 'inline-flex shrink-0 items-center justify-center rounded-full font-bold',
     color: {
+      default: 'border-white bg-gray-200 text-gray-900 dark:border-gray-800',
       info: 'border-white bg-blue-500 text-white dark:border-blue-800',
       failure: 'border-white bg-red-500 text-white dark:border-red-800',
       success: 'border-white bg-green-500 text-white dark:border-green-800',

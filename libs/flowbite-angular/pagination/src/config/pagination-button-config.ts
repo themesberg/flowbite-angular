@@ -37,7 +37,7 @@ export interface FlowbitePaginationButtonConfig {
 
 export const defaultFlowbitePaginationButtonConfig: FlowbitePaginationButtonConfig = {
   baseTheme: flowbitePaginationButtonTheme,
-  color: 'info',
+  color: 'default',
   size: 'md',
   outline: false,
   customTheme: {},

@@ -1,4 +1,5 @@
 export interface FlowbiteStateColors {
+  default: string;
   info: string;
   failure: string;
   success: string;

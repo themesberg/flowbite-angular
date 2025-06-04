@@ -2,7 +2,10 @@ import type { FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteAlertColors
-  extends Pick<FlowbiteColors, 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'> {
+  extends Pick<
+    FlowbiteColors,
+    'default' | 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'
+  > {
   [key: string]: string;
 }
 
@@ -21,9 +24,11 @@ export const flowbiteAlertTheme: FlowbiteAlertTheme = createTheme({
   host: {
     base: 'mb-4 rounded-lg p-4',
     color: {
+      default:
+        'border-gray-300 bg-gray-50 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300',
       primary:
         'border-primary-300 bg-primary-50 text-primary-800 dark:border-primary-800 dark:text-primary-400 dark:bg-gray-800',
-      dark: 'border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300',
+      dark: 'border-gray-600 bg-gray-800 text-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300',
       blue: 'border-blue-300 bg-blue-50 text-blue-800 dark:border-blue-800 dark:bg-gray-800 dark:text-blue-400',
       red: 'border-red-300 bg-red-100 text-red-800 dark:border-red-800 dark:bg-gray-800 dark:text-red-400',
       green:

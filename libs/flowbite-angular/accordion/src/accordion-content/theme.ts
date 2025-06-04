@@ -20,6 +20,7 @@ export const flowbiteAccordionContentTheme: FlowbiteAccordionContentTheme = crea
     base: 'overflow-hidden',
     transition: 'transition-height duration-150 ease-in-out',
     color: {
+      default: 'border-gray-200 dark:border-gray-700',
       primary: 'border-primary-200 dark:border-primary-700',
       light: 'border-gray-200 dark:border-gray-700',
       blue: 'border-blue-200 dark:border-blue-700',

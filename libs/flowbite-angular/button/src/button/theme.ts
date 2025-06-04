@@ -44,6 +44,8 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
       off: 'rounded-lg',
     },
     color: {
+      default:
+        'bg-gray-500 text-gray-100 data-focus-visible:ring-gray-400 data-hover:bg-gray-700 dark:bg-gray-700 dark:data-focus-visible:ring-gray-500 dark:data-hover:bg-gray-900',
       info: 'bg-blue-700 text-gray-100 data-focus-visible:ring-blue-400 data-hover:bg-blue-800 dark:bg-blue-800 dark:data-focus-visible:ring-blue-600 dark:data-hover:bg-blue-900',
       failure:
         'bg-red-700 text-gray-100 data-focus-visible:ring-red-400 data-hover:bg-red-800 dark:bg-red-800 dark:data-focus-visible:ring-red-600 dark:data-hover:bg-red-900',
@@ -73,6 +75,8 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
         'bg-yellow-400 text-gray-100 data-focus-visible:ring-yellow-300 data-hover:bg-yellow-500 dark:bg-yellow-600 dark:data-focus-visible:ring-yellow-500 dark:data-hover:bg-yellow-700',
     },
     colorOutline: {
+      default:
+        'border-gray-700 text-gray-700 data-focus-visible:ring-gray-400 data-hover:bg-gray-700 data-hover:text-gray-100 dark:data-focus-visible:ring-gray-600',
       info: 'border-blue-700 text-blue-700 data-focus-visible:ring-blue-400 data-hover:bg-blue-700 data-hover:text-gray-100 dark:data-focus-visible:ring-blue-600',
       failure:
         'border-red-700 text-red-700 data-focus-visible:ring-red-400 data-hover:bg-red-700 data-hover:text-gray-100 dark:data-focus-visible:ring-red-600',

@@ -23,6 +23,7 @@ export const flowbiteBreadcrumbItemTheme: FlowbiteBreadcrumbItemTheme = createTh
     base: 'group flex flex-row items-center text-sm font-medium data-hover:cursor-pointer',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
+      default: 'text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
       primary:
         'text-primary-700 dark:text-primary-400 hover:text-primary-900 dark:hover:text-primary-500',
       dark: 'text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',

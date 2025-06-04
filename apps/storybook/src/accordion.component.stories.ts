@@ -38,7 +38,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['primary', 'light', 'blue', 'red', 'green', 'yellow'],
+      options: ['default', 'primary', 'light', 'blue', 'red', 'green', 'yellow'],
       table: {
         category: 'Input',
         defaultValue: {

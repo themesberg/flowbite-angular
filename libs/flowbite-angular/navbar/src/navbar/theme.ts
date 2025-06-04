@@ -28,6 +28,7 @@ export const flowbiteNavbarTheme: FlowbiteNavbarTheme = createTheme({
       off: '',
     },
     color: {
+      default: 'border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-950',
       info: 'border-blue-200 bg-blue-50 dark:border-blue-700 dark:bg-blue-950',
       failure: 'border-red-200 bg-red-50 dark:border-red-700 dark:bg-red-950',
       success: 'border-green-200 bg-green-50 dark:border-green-700 dark:bg-green-950',

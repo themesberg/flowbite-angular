@@ -20,7 +20,7 @@ export interface FlowbiteDropdownConfig {
 
 export const defaultFlowbiteDropdownConfig: FlowbiteDropdownConfig = {
   baseTheme: flowbiteDropdownTheme,
-  color: 'gray',
+  color: 'default',
   customTheme: {},
 };
 

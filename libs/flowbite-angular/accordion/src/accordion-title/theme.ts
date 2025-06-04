@@ -25,6 +25,8 @@ export const flowbiteAccordionTitleTheme: FlowbiteAccordionTitleTheme = createTh
     base: 'flex w-full cursor-pointer flex-row items-center p-5 text-base font-semibold group-first/item:rounded-t-lg',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
+      default:
+        'border-gray-200 bg-gray-100 text-gray-500 data-hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:data-hover:bg-gray-800',
       primary:
         'text-primary-900 dark:text-primary-50 border-primary-200 dark:border-primary-700 bg-primary-100 data-hover:bg-primary-100 dark:bg-primary-800 dark:data-hover:bg-primary-800',
       light:

@@ -27,6 +27,8 @@ export const flowbiteNavbarItemTheme: FlowbiteNavbarItemTheme = createTheme({
     size: {} as FlowbiteBaseButtonSizes, // Not used for NavbarItem
     pill: {} as FlowbiteBoolean, // Not used for NavbarItem
     color: {
+      default:
+        'text-gray-900 data-focus-visible:ring-gray-400 data-hover:text-gray-700 dark:text-gray-100 dark:data-focus-visible:ring-gray-600 dark:data-hover:text-gray-300',
       info: 'text-gray-900 data-focus-visible:ring-blue-400 data-hover:text-blue-600 dark:text-gray-100 dark:data-focus-visible:ring-blue-600',
       failure:
         'text-gray-900 data-focus-visible:ring-red-400 data-hover:text-red-600 dark:text-gray-100 dark:data-focus-visible:ring-red-600',

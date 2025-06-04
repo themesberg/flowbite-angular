@@ -27,7 +27,7 @@ export interface FlowbiteAccordionConfig {
 
 export const defaultFlowbiteAccordionConfig: FlowbiteAccordionConfig = {
   baseTheme: flowbiteAccordionTheme,
-  color: 'primary',
+  color: 'default',
   flush: false,
   customTheme: {},
 };

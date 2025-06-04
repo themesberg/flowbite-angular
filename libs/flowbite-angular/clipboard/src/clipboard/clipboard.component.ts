@@ -51,9 +51,7 @@ import { twMerge } from 'tailwind-merge';
         class="sr-only">
         Label
       </label>
-      <button
-        flowbiteButton
-        color="gray">
+      <button flowbiteButton>
         <flowbite-icon name="fileCopy" />
       </button>
     </div>

@@ -39,7 +39,7 @@ export interface FlowbiteBadgeConfig {
 
 export const defaultFlowbiteBadgeConfig: FlowbiteBadgeConfig = {
   baseTheme: flowbiteBadgeTheme,
-  color: 'primary',
+  color: 'default',
   border: false,
   pill: false,
   size: 'sm',

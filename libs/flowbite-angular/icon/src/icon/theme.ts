@@ -35,6 +35,7 @@ export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
       xl: 'size-6',
     },
     color: {
+      default: 'text-gray-800 dark:text-gray-300',
       info: 'text-blue-500',
       failure: 'text-red-500',
       success: 'text-green-500',

@@ -40,7 +40,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['primary', 'dark', 'blue', 'red', 'green', 'yellow'],
+      options: ['default', 'primary', 'dark', 'blue', 'red', 'green', 'yellow'],
       table: {
         category: 'Input',
         defaultValue: {

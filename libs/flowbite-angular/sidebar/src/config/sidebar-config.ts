@@ -28,7 +28,7 @@ export interface FlowbiteSidebarConfig {
 export const defaultFlowbiteSidebarConfig: FlowbiteSidebarConfig = {
   baseTheme: flowbiteSidebarTheme,
   open: false,
-  color: 'light',
+  color: 'default',
   customTheme: {},
 };
 

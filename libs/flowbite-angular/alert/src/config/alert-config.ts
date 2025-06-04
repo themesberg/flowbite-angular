@@ -34,7 +34,7 @@ export interface FlowbiteAlertConfig {
 
 export const defaultFlowbiteAlertConfig: FlowbiteAlertConfig = {
   baseTheme: flowbiteAlertTheme,
-  color: 'primary',
+  color: 'default',
   border: false,
   accent: false,
   customTheme: {},

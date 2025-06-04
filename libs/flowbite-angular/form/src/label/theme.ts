@@ -15,6 +15,7 @@ export const flowbiteLabelTheme: FlowbiteLabelTheme = createTheme({
   host: {
     base: 'mb-2 block text-sm font-medium',
     color: {
+      default: 'text-gray-500 dark:text-gray-500',
       info: 'text-blue-500 dark:text-blue-500',
       failure: 'text-red-500 dark:text-red-500',
       success: 'text-green-500 dark:text-green-500',

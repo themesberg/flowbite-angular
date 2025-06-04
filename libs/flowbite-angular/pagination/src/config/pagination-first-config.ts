@@ -37,7 +37,7 @@ export interface FlowbitePaginationFirstConfig {
 
 export const defaultFlowbitePaginationFirstConfig: FlowbitePaginationFirstConfig = {
   baseTheme: flowbitePaginationFirstTheme,
-  color: 'info',
+  color: 'default',
   size: 'md',
   outline: false,
   customTheme: {},

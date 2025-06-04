@@ -30,7 +30,7 @@ export interface FlowbiteBreadcrumbConfig {
 
 export const defaultFlowbiteBreadcrumbConfig: FlowbiteBreadcrumbConfig = {
   baseTheme: flowbiteBreadcrumbTheme,
-  color: 'primary',
+  color: 'default',
   solid: false,
   customTheme: {},
 };

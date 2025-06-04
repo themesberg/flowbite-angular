@@ -19,7 +19,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['light', 'dark'],
+      options: ['default', 'light', 'dark'],
       table: {
         category: 'Input',
         defaultValue: {

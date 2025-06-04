@@ -27,6 +27,7 @@ export const flowbiteSidebarToggleTheme: FlowbiteSidebarToggleTheme = createThem
     size: {} as FlowbiteBaseButtonSizes, // Not used for SidebarToggle
     pill: {} as FlowbiteBoolean, // Not used for SidebarToggle
     color: {
+      default: 'text-gray-700 dark:text-gray-100',
       info: 'text-blue-700',
       failure: 'text-red-700',
       success: 'text-green-700',

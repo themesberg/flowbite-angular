@@ -23,7 +23,7 @@ export interface FlowbiteBaseButtonConfig {
 }
 
 export const defaultFlowbiteBaseButtonConfig: FlowbiteBaseButtonConfig = {
-  color: 'info',
+  color: 'default',
   size: 'md',
   pill: false,
   outline: false,
