@@ -1,4 +1,4 @@
-import type { FlowbiteModalFooter } from './modal-footer.component';
+import type { FlowbiteModalFooter } from './modal-footer.directive';
 
 import {
   createState,

@@ -4,17 +4,11 @@ import type { FlowbiteModalOverlayPositions, FlowbiteModalOverlayTheme } from '.
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpDialogOverlay } from 'ng-primitives/dialog';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     div[flowbiteModalOverlay]
@@ -27,12 +21,8 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
   ],
-  imports: [],
   providers: [provideFlowbiteModalOverlayState()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteModalOverlay {
   protected readonly config = injectFlowbiteModalOverlayConfig();

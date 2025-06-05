@@ -4,28 +4,18 @@ import type { FlowbiteModalFooterTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     div[flowbiteModalFooter]
   `,
   exportAs: 'flowbiteModalFooter',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteModalFooterState()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteModalFooter {
   protected readonly config = injectFlowbiteModalFooterConfig();

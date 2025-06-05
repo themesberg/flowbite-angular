@@ -1,5 +1,11 @@
 import { FlowbiteButton } from 'flowbite-angular/button';
 import {
+  FlowbiteFormControl,
+  FlowbiteFormField,
+  FlowbiteHelper,
+  FlowbiteLabel,
+} from 'flowbite-angular/form';
+import {
   defaultFlowbiteModalConfig,
   FlowbiteModal,
   FlowbiteModalContent,
@@ -26,6 +32,11 @@ export default {
         FlowbiteModalOverlay,
         FlowbiteButton,
         NgpDialogTrigger,
+        FlowbiteFormControl,
+        FlowbiteFormField,
+        FlowbiteLabel,
+        FlowbiteHelper,
+        FlowbiteButton,
       ],
     }),
   ],
@@ -52,6 +63,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     size: defaultFlowbiteModalConfig.size,
     customTheme: defaultFlowbiteModalConfig.customTheme,
@@ -82,8 +97,43 @@ export default {
       </ng-template>
     `,
   }),
-} as Meta<StoryType>;
+};
 
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
+export const FormModal: StoryObj<StoryType> = {
+  name: 'Modal with Form',
+  args: {
+    size: defaultFlowbiteModalConfig.size,
+    customTheme: defaultFlowbiteModalConfig.customTheme,
+  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <button flowbiteButton [ngpDialogTrigger]="dialog">Modal</button>
+
+      <ng-template #dialog let-close="close">
+        <div flowbiteModalOverlay>
+          <div flowbiteModal ${argsToTemplate(args)}>
+            <h3 flowbiteModalHeader>Sign in to our platform</h3>
+            <form flowbiteModalContent class="max-w-sm mx-auto">
+              <div flowbiteFormField ${argsToTemplate(args)}>
+                <label flowbiteLabel for="email">Email address</label>
+                <input flowbiteFormControl id="email" name="email" placeholder="email@flowbite-angular.com" />
+                <p flowbiteHelper>
+                  We’ll never share your details. Read our <a href="#" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Privacy Policy</a>.
+                </p>
+              </div>
+              <div flowbiteFormField ${argsToTemplate(args)}>
+                <label flowbiteLabel for="password">Password</label>
+                <input flowbiteFormControl id="password" name="password" placeholder="•••••••••" />
+              </div>
+              <div class="flex justify-between">
+                <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+              </div>
+              <button flowbiteButton color="info" type="submit" class="w-full">Submit</button>
+            </form>
+          </div>
+        </div>
+      </ng-template>
+    `,
+  }),
 };

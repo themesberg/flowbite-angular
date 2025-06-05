@@ -4,17 +4,11 @@ import type { FlowbiteModalHeaderTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpDialogTitle } from 'ng-primitives/dialog';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     h1[flowbiteModalHeader],
@@ -32,12 +26,8 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
   ],
-  imports: [],
   providers: [provideFlowbiteModalHeaderState()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteModalHeader {
   protected readonly config = injectFlowbiteModalHeaderConfig();

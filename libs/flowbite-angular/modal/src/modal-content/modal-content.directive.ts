@@ -4,20 +4,14 @@ import type { FlowbiteModalContentTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpDialogDescription } from 'ng-primitives/dialog';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
-    div[flowbiteModalContent]
+    [flowbiteModalContent]
   `,
   exportAs: 'flowbiteModalContent',
   hostDirectives: [
@@ -27,12 +21,8 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
   ],
-  imports: [],
   providers: [provideFlowbiteModalContentState()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteModalContent {
   protected readonly config = injectFlowbiteModalContentConfig();

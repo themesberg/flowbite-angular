@@ -1,4 +1,4 @@
-import type { FlowbiteModalHeader } from './modal-header.component';
+import type { FlowbiteModalHeader } from './modal-header.directive';
 
 import {
   createState,

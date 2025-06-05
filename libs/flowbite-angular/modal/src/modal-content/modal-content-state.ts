@@ -1,4 +1,4 @@
-import type { FlowbiteModalContent } from './modal-content.component';
+import type { FlowbiteModalContent } from './modal-content.directive';
 
 import {
   createState,

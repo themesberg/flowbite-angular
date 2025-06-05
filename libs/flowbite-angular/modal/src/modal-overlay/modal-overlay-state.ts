@@ -1,4 +1,4 @@
-import type { FlowbiteModalOverlay } from './modal-overlay.component';
+import type { FlowbiteModalOverlay } from './modal-overlay.directive';
 
 import {
   createState,

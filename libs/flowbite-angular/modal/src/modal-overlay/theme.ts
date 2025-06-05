@@ -28,7 +28,7 @@ export interface FlowbiteModalOverlayHostTheme {
 
 export const flowbiteModalOverlayTheme: FlowbiteModalOverlayTheme = createTheme({
   host: {
-    base: 'fixed inset-0 flex bg-gray-900/50 dark:bg-gray-900/80',
+    base: 'fixed inset-0 flex bg-gray-900/50 p-4 dark:bg-gray-900/80',
     position: {
       'top-left': 'items-start justify-start',
       'top-center': 'items-start justify-center',
