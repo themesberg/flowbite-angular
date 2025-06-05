@@ -16,18 +16,18 @@ export default {
     }),
   ],
   argTypes: {
-    flowbiteSize: {
+    size: {
       control: 'select',
       type: 'string',
       options: ['sm', 'md', 'lg'],
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteSize),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.size),
         },
       },
     },
-    flowbiteColor: {
+    color: {
       control: 'select',
       type: 'string',
       options: [
@@ -55,18 +55,18 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteColor),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.color),
         },
       },
     },
-    flowbiteStrokeWidth: {
+    strokeWidth: {
       control: 'select',
       type: 'string',
       options: ['sm', 'md', 'lg'],
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteStrokeWidth),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.strokeWidth),
         },
       },
     },
@@ -76,23 +76,25 @@ export default {
       table: {
         category: 'Input',
         defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.flowbiteCustomTheme),
+          summary: JSON.stringify(defaultFlowbiteIconConfig.customTheme),
         },
       },
     },
   },
-  args: {
-    flowbiteSize: defaultFlowbiteIconConfig.flowbiteSize,
-    flowbiteColor: defaultFlowbiteIconConfig.flowbiteColor,
-    flowbiteStrokeWidth: defaultFlowbiteIconConfig.flowbiteStrokeWidth,
-    customTheme: defaultFlowbiteIconConfig.flowbiteCustomTheme,
-  },
-  render: (args) => ({
-    props: args,
-    template: `<flowbite-icon ${argsToTemplate(args)} name="close" />`,
-  }),
 } as Meta<StoryType>;
 
 export const Default: StoryObj<StoryType> = {
   name: 'Default',
+  args: {
+    size: defaultFlowbiteIconConfig.size,
+    color: defaultFlowbiteIconConfig.color,
+    strokeWidth: defaultFlowbiteIconConfig.strokeWidth,
+    customTheme: defaultFlowbiteIconConfig.customTheme,
+  },
+  render: (args) => ({
+    props: args,
+    template: `
+      <flowbite-icon ${argsToTemplate(args)} name="close" />
+    `,
+  }),
 };

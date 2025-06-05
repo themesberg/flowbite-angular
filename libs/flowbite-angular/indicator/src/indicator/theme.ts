@@ -1,4 +1,9 @@
-import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type {
+  FlowbiteBoolean,
+  FlowbiteColors,
+  FlowbitePositions,
+  FlowbiteSizes,
+} from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteIndicatorColors extends FlowbiteColors {
@@ -10,19 +15,29 @@ export interface FlowbiteIndicatorSizes
   [key: string]: string;
 }
 
+export interface FlowbiteIndicatorPositions extends FlowbitePositions {
+  [key: string]: string;
+}
+
 export interface FlowbiteIndicatorTheme {
   host: FlowbiteIndicatorHostTheme;
 }
 
 export interface FlowbiteIndicatorHostTheme {
   base: string;
+  border: FlowbiteBoolean;
   color: FlowbiteIndicatorColors;
   size: FlowbiteIndicatorSizes;
+  position: FlowbiteIndicatorPositions;
 }
 
 export const flowbiteIndicatorTheme: FlowbiteIndicatorTheme = createTheme({
   host: {
     base: 'inline-flex shrink-0 items-center justify-center rounded-full font-bold',
+    border: {
+      on: 'border-2',
+      off: 'border-none',
+    },
     color: {
       default: 'border-white bg-gray-200 text-gray-900 dark:border-gray-800',
       info: 'border-white bg-blue-500 text-white dark:border-blue-800',
@@ -46,10 +61,21 @@ export const flowbiteIndicatorTheme: FlowbiteIndicatorTheme = createTheme({
     },
     size: {
       xs: 'h-2 w-2 text-xs',
-      sm: 'h-2.5 w-2.5 text-sm',
-      md: 'h-3 w-3 text-sm',
-      lg: 'h-3.5 w-3.5 text-sm',
+      sm: 'h-3 w-3 text-sm',
+      md: 'h-4 w-4 text-sm',
+      lg: 'h-5 w-5 text-sm',
       xl: 'h-6 w-6 text-sm',
+    },
+    position: {
+      'top-left': 'top-0 left-0 -translate-x-1/3 -translate-y-1/3',
+      'top-center': 'top-0 left-1/2 -translate-x-1/2 -translate-y-1/3',
+      'top-right': 'top-0 right-0 translate-x-1/3 -translate-y-1/3',
+      'center-left': 'top-1/2 left-0 -translate-x-1/3 -translate-y-1/2',
+      center: 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+      'center-right': 'top-1/2 right-0 translate-x-1/3 -translate-y-1/2',
+      'bottom-left': 'bottom-0 left-0 -translate-x-1/3 translate-y-1/3',
+      'bottom-center': 'bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3',
+      'bottom-right': 'right-0 bottom-0 translate-x-1/3 translate-y-1/3',
     },
   },
 });

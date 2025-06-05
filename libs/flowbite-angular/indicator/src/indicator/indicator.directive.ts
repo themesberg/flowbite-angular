@@ -1,52 +1,44 @@
 import { injectFlowbiteIndicatorConfig } from '../config/indicator-config';
 import { flowbiteIndicatorState, provideFlowbiteIndicatorState } from './indicator-state';
-import type {
-  FlowbiteIndicatorColors,
-  FlowbiteIndicatorSizes,
-  FlowbiteIndicatorTheme,
-} from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { mergeDeep } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     span[flowbiteIndicator]
   `,
   exportAs: 'flowbiteIndicator',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteIndicatorState()],
   host: { '[class]': `theme().host.root` },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteIndicator {
-  protected readonly config = injectFlowbiteIndicatorConfig();
+  readonly config = injectFlowbiteIndicatorConfig();
 
   /**
    * @see {@link injectFlowbiteIndicatorConfig}
    */
-  readonly color = input<keyof FlowbiteIndicatorColors>(this.config.color);
+  readonly color = input(this.config.color);
   /**
    * @see {@link injectFlowbiteIndicatorConfig}
    */
-  readonly size = input<keyof FlowbiteIndicatorSizes>(this.config.size);
-
+  readonly size = input(this.config.size);
   /**
    * @see {@link injectFlowbiteIndicatorConfig}
    */
-  readonly customTheme = input<DeepPartial<FlowbiteIndicatorTheme>>(this.config.customTheme);
+  readonly border = input(this.config.border, { transform: booleanAttribute });
+  /**
+   * @see {@link injectFlowbiteIndicatorConfig}
+   */
+  readonly position = input(this.config.position);
+  /**
+   * @see {@link injectFlowbiteIndicatorConfig}
+   */
+  readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
     const mergedTheme = mergeDeep(this.config.baseTheme, this.state.customTheme());
@@ -56,7 +48,9 @@ export class FlowbiteIndicator {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.color[this.state.color()],
-          mergedTheme.host.size[this.state.size()]
+          mergedTheme.host.size[this.state.size()],
+          mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
+          this.state.position() && mergedTheme.host.position[this.state.position()!]
         ),
       },
     };

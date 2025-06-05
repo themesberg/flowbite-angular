@@ -68,7 +68,7 @@ let uniqueId = 0;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteIcon implements OnDestroy {
-  protected readonly config = injectFlowbiteIconConfig();
+  readonly config = injectFlowbiteIconConfig();
 
   /** Access the icons */
   private readonly icons = injectNgIcons();
@@ -109,19 +109,19 @@ export class FlowbiteIcon implements OnDestroy {
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly size = input(this.config.flowbiteSize);
+  readonly size = input(this.config.size);
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly color = input(this.config.flowbiteColor);
+  readonly color = input(this.config.color);
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly strokeWidth = input(this.config.flowbiteStrokeWidth);
+  readonly strokeWidth = input(this.config.strokeWidth);
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly customTheme = input(this.config.flowbiteCustomTheme);
+  readonly customTheme = input(this.config.customTheme);
 
   /** Store the inserted SVG */
   private svgElement?: SVGElement;

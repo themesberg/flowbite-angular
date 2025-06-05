@@ -1,4 +1,4 @@
-import type { FlowbiteIndicator } from './indicator.component';
+import type { FlowbiteIndicator } from './indicator.directive';
 
 import {
   createState,

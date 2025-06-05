@@ -1,4 +1,8 @@
-import type { FlowbiteIndicatorColors, FlowbiteIndicatorSizes } from '../indicator/theme';
+import type {
+  FlowbiteIndicatorColors,
+  FlowbiteIndicatorPositions,
+  FlowbiteIndicatorSizes,
+} from '../indicator/theme';
 import { flowbiteIndicatorTheme, type FlowbiteIndicatorTheme } from '../indicator/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -20,6 +24,14 @@ export interface FlowbiteIndicatorConfig {
    */
   size: keyof FlowbiteIndicatorSizes;
   /**
+   * Whether the indicator has border
+   */
+  border: boolean;
+  /**
+   * The default position of indicator
+   */
+  position: keyof FlowbiteIndicatorPositions | undefined;
+  /**
    * The custom theme of indicator
    */
   customTheme: DeepPartial<FlowbiteIndicatorTheme>;
@@ -29,6 +41,8 @@ export const defaultFlowbiteIndicatorConfig: FlowbiteIndicatorConfig = {
   baseTheme: flowbiteIndicatorTheme,
   color: 'default',
   size: 'md',
+  border: false,
+  position: undefined,
   customTheme: {},
 };
 
