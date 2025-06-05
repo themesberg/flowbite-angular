@@ -1,7 +1,7 @@
 import { injectFlowbiteBreadcrumbConfig } from '../config/breadcrumb-config';
 import { flowbiteBreadcrumbState, provideFlowbiteBreadcrumbState } from './breadcrumb-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -43,7 +43,7 @@ export class FlowbiteBreadcrumb {
           mergedTheme.host.base,
           this.state.solid() &&
             mergedTheme.host.solid[this.state.solid() ? 'on' : 'off'] &&
-            mergedTheme.host.color[this.state.color()]
+            colorToTheme(mergedTheme.host.color, this.state.color())
         ),
       },
     };

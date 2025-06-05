@@ -15,7 +15,10 @@ export const flowbiteCardHeaderTheme: FlowbiteCardHeaderTheme = createTheme({
   host: {
     base: 'mb-2 text-2xl font-bold tracking-tight',
     color: {
-      default: 'text-gray-900 dark:text-white',
+      default: {
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
+      },
     },
   },
 });

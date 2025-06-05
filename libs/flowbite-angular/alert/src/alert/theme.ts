@@ -1,12 +1,9 @@
-import type { FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteAlertColors
-  extends Pick<
-    FlowbiteColors,
-    'default' | 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'
-  > {
-  [key: string]: string;
+  extends Pick<FlowbiteColors, 'default' | 'success' | 'danger' | 'warning' | 'primary'> {
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteAlertTheme {
@@ -24,17 +21,26 @@ export const flowbiteAlertTheme: FlowbiteAlertTheme = createTheme({
   host: {
     base: 'mb-4 rounded-lg p-4',
     color: {
-      default:
-        'border-gray-300 bg-gray-50 text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300',
-      primary:
-        'border-primary-300 bg-primary-50 text-primary-800 dark:border-primary-800 dark:text-primary-400 dark:bg-gray-800',
-      dark: 'border-gray-600 bg-gray-800 text-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300',
-      blue: 'border-blue-300 bg-blue-50 text-blue-800 dark:border-blue-800 dark:bg-gray-800 dark:text-blue-400',
-      red: 'border-red-300 bg-red-100 text-red-800 dark:border-red-800 dark:bg-gray-800 dark:text-red-400',
-      green:
-        'border-green-300 bg-green-100 text-green-800 dark:border-green-800 dark:bg-gray-800 dark:text-green-400',
-      yellow:
-        'border-yellow-300 bg-yellow-100 text-yellow-800 dark:border-yellow-800 dark:bg-gray-800 dark:text-yellow-300',
+      danger: {
+        light: 'bg-red-50',
+        dark: 'dark:bg-gray-800',
+      },
+      default: {
+        light: 'bg-gray-50',
+        dark: 'dark:bg-gray-800',
+      },
+      primary: {
+        light: 'bg-primary-50',
+        dark: 'dark:bg-gray-800',
+      },
+      success: {
+        light: 'bg-green-50',
+        dark: 'dark:bg-gray-800',
+      },
+      warning: {
+        light: 'bg-yellow-50',
+        dark: 'dark:bg-gray-800',
+      },
     },
     border: {
       on: 'border',

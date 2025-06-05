@@ -1,7 +1,7 @@
 import { injectFlowbiteBadgeConfig } from '../config/badge-config';
 import { flowbiteBadgeState, provideFlowbiteBadgeState } from './badge-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -49,14 +49,10 @@ export class FlowbiteBadge {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.color[this.state.color()],
+          colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
           mergedTheme.host.pill[this.state.pill() ? 'on' : 'off'],
-          mergedTheme.host.size[this.state.size()],
-
-          /* children */
-          mergedTheme.host.children.base,
-          mergedTheme.host.children.icon.base
+          mergedTheme.host.size[this.state.size()]
         ),
       },
     };

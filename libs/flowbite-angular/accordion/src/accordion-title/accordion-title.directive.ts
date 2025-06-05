@@ -5,7 +5,7 @@ import {
   provideFlowbiteAccordionTitleState,
 } from './accordion-title-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpAccordionTrigger } from 'ng-primitives/accordion';
@@ -56,12 +56,8 @@ export class FlowbiteAccordionTitle {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.accordionState().color()],
-          mergedTheme.host.flush[this.accordionState().flush() ? 'on' : 'off'],
-
-          /* Children */
-          mergedTheme.host.children.base,
-          mergedTheme.host.children.icon.base
+          colorToTheme(mergedTheme.host.color, this.accordionState().color()),
+          mergedTheme.host.flush[this.accordionState().flush() ? 'on' : 'off']
         ),
       },
     };

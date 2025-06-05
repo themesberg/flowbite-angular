@@ -1,4 +1,4 @@
-import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteTabSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
@@ -7,7 +7,7 @@ export interface FlowbiteTabSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'
 }
 
 export interface FlowbiteTabColors extends Pick<FlowbiteColors, 'default'> {
-  [key: string]: string;
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteTabTheme {
@@ -30,7 +30,10 @@ export const flowbiteTabTheme: FlowbiteTabTheme = createTheme({
       full: 'w-full p-4',
     },
     color: {
-      default: 'border-gray-300 bg-gray-100 dark:border-gray-700 dark:bg-gray-800',
+      default: {
+        light: 'border-gray-300 bg-gray-100',
+        dark: 'dark:border-gray-700 dark:bg-gray-800',
+      },
     },
   },
 });

@@ -6,6 +6,7 @@ export * from './core/flowbite.sizes';
 export * from './core/flowbite.themes';
 
 export * from './utils/clone-deep';
+export * from './utils/color-to-theme';
 export * from './utils/create-theme';
 export * from './utils/is-object';
 export * from './utils/merge-theme';

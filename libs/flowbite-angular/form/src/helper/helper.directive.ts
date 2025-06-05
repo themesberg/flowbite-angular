@@ -2,7 +2,7 @@ import { injectFlowbiteHelperConfig } from '../config/helper-config';
 import { injectFlowbiteFormFieldState } from '../form-field/form-field-state';
 import { flowbiteHelperState, provideFlowbiteHelperState } from './helper-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpDescription } from 'ng-primitives/form-field';
@@ -38,7 +38,10 @@ export class FlowbiteHelper {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.formFieldState().color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.formFieldState().color())
+        ),
       },
     };
   });

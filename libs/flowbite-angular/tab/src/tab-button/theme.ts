@@ -17,8 +17,11 @@ export const flowbiteTabButtonTheme: FlowbiteTabButtonTheme = createTheme({
     base: 'inline-block p-4 data-disabled:cursor-not-allowed data-hover:cursor-pointer',
     transition: 'transition-colors duration-150 ease-in-out',
     color: {
-      default:
-        'text-gray-500 data-active:font-semibold data-active:text-gray-900 data-disabled:text-gray-300 dark:text-gray-500 dark:data-active:text-gray-100 dark:data-disabled:text-gray-700',
+      default: {
+        light:
+          'text-gray-500 data-active:font-semibold data-active:text-gray-900 data-disabled:text-gray-300',
+        dark: 'dark:text-gray-500 dark:data-active:text-gray-100 dark:data-disabled:text-gray-700',
+      },
     },
   },
 });

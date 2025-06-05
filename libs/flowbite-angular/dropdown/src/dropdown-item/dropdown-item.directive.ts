@@ -4,7 +4,7 @@ import { flowbiteDropdownItemState, provideFlowbiteDropdownItemState } from './d
 import type { FlowbiteDropdownItemTheme } from './theme';
 
 import type { DeepPartial } from 'flowbite-angular';
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpFocus } from 'ng-primitives/interactions';
@@ -51,7 +51,7 @@ export class FlowbiteDropdownItem {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.dropdownState().color()],
+          colorToTheme(mergedTheme.host.color, this.dropdownState().color()),
 
           /* children */
           mergedTheme.host.children.base,

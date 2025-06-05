@@ -1,7 +1,8 @@
+import { injectFlowbiteAlertState } from '../alert/alert-state';
 import { injectFlowbiteAlertContentConfig } from '../config/alert-content-config';
 import { flowbiteAlertContentState, provideFlowbiteAlertContentState } from './alert-content-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -18,6 +19,7 @@ import { twMerge } from 'tailwind-merge';
 })
 export class FlowbiteAlertContent {
   readonly config = injectFlowbiteAlertContentConfig();
+  readonly alertState = injectFlowbiteAlertState();
 
   /**
    * @see {@link injectFlowbiteAlertContentConfig}
@@ -31,10 +33,7 @@ export class FlowbiteAlertContent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-
-          /* children */
-          mergedTheme.host.children.base,
-          mergedTheme.host.children.icon.base
+          colorToTheme(mergedTheme.host.color, this.alertState().color())
         ),
       },
     };

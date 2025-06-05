@@ -5,7 +5,7 @@ import {
   provideFlowbiteDropdownContentState,
 } from './dropdown-content-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -34,7 +34,10 @@ export class FlowbiteDropdownContent {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.dropdownState().color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.dropdownState().color())
+        ),
       },
     };
   });

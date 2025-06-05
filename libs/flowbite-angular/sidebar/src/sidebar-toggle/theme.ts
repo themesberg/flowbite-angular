@@ -27,25 +27,82 @@ export const flowbiteSidebarToggleTheme: FlowbiteSidebarToggleTheme = createThem
     size: {} as FlowbiteBaseButtonSizes, // Not used for SidebarToggle
     pill: {} as FlowbiteBoolean, // Not used for SidebarToggle
     color: {
-      default: 'text-gray-700 dark:text-gray-100',
-      info: 'text-blue-700',
-      failure: 'text-red-700',
-      success: 'text-green-700',
-      warning: 'text-yellow-700',
-      primary: 'text-primary-700',
-      dark: 'text-gray-900 dark:text-gray-100',
-      light: 'text-gray-900 dark:text-gray-100',
-      blue: 'text-blue-700',
-      cyan: 'text-cyan-700',
-      gray: 'text-gray-700 dark:text-gray-100',
-      green: 'text-green-700',
-      indigo: 'text-indigo-700',
-      lime: 'text-lime-700',
-      pink: 'text-pink-700',
-      purple: 'text-purple-800',
-      red: 'text-red-700',
-      teal: 'text-teal-700',
-      yellow: 'text-yellow-400',
+      default: {
+        light: '',
+        dark: '',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
+      },
+      dark: {
+        light: '',
+        dark: '',
+      },
+      light: {
+        light: '',
+        dark: '',
+      },
+      blue: {
+        light: '',
+        dark: '',
+      },
+      cyan: {
+        light: '',
+        dark: '',
+      },
+      gray: {
+        light: '',
+        dark: '',
+      },
+      green: {
+        light: '',
+        dark: '',
+      },
+      indigo: {
+        light: '',
+        dark: '',
+      },
+      lime: {
+        light: '',
+        dark: '',
+      },
+      pink: {
+        light: '',
+        dark: '',
+      },
+      purple: {
+        light: '',
+        dark: '',
+      },
+      red: {
+        light: '',
+        dark: '',
+      },
+      teal: {
+        light: '',
+        dark: '',
+      },
+      yellow: {
+        light: '',
+        dark: '',
+      },
     },
     colorOutline: {} as FlowbiteBaseButtonColors, // Not used for SidebarToggle
   },

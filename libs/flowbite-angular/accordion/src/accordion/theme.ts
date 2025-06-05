@@ -1,11 +1,8 @@
+import type { ColorToTheme } from 'flowbite-angular';
 import { createTheme, type FlowbiteColors } from 'flowbite-angular';
 
-export interface FlowbiteAccordionColors
-  extends Pick<
-    FlowbiteColors,
-    'default' | 'primary' | 'light' | 'blue' | 'red' | 'green' | 'yellow'
-  > {
-  [key: string]: string;
+export interface FlowbiteAccordionColors extends Pick<FlowbiteColors, 'default'> {
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteAccordionTheme {
@@ -18,6 +15,6 @@ export interface FlowbiteAccordionHostTheme {
 
 export const flowbiteAccordionTheme: FlowbiteAccordionTheme = createTheme({
   host: {
-    base: '',
+    base: 'shadow-sm',
   },
 });

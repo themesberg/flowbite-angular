@@ -9,7 +9,7 @@ import type {
   FlowbitePaginationLastTheme,
 } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { chevronDoubleRight } from 'flowbite-angular/icon/outline/arrows';
 
@@ -94,7 +94,7 @@ export class FlowbitePaginationLast {
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
           mergedTheme.host.size[this.state.size()],
-          mergedTheme.host.colorOutline[this.state.color()]
+          colorToTheme(mergedTheme.host.colorOutline, this.state.color())
         ),
       },
     };

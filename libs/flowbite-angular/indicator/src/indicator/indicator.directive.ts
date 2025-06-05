@@ -1,7 +1,7 @@
 import { injectFlowbiteIndicatorConfig } from '../config/indicator-config';
 import { flowbiteIndicatorState, provideFlowbiteIndicatorState } from './indicator-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -47,7 +47,7 @@ export class FlowbiteIndicator {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.color[this.state.color()],
+          colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.size[this.state.size()],
           mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
           this.state.position() && mergedTheme.host.position[this.state.position()!]

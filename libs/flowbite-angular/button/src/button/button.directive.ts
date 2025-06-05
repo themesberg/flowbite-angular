@@ -3,7 +3,7 @@ import { FlowbiteBaseButton } from '../base-button/base-button.directive';
 import { injectFlowbiteButtonConfig } from '../config/button-config';
 import { flowbiteButtonState, provideFlowbiteButtonState } from './button-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
@@ -25,8 +25,8 @@ import { twMerge } from 'tailwind-merge';
     },
     {
       directive: NgpFocus,
-      inputs: [],
-      outputs: [],
+      inputs: ['ngpFocusDisabled:focusDisabled'],
+      outputs: ['ngpFocus'],
     },
     {
       directive: FlowbiteBaseButton,
@@ -64,13 +64,8 @@ export class FlowbiteButton {
           mergedTheme.host.size[this.baseButtonState().size()],
           mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
           this.baseButtonState().outline()
-            ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
-            : mergedTheme.host.color[this.baseButtonState().color()],
-
-          /* Children */
-          mergedTheme.host.children.base,
-          mergedTheme.host.children.icon.base,
-          mergedTheme.host.children.icon.size[this.baseButtonState().size()]
+            ? colorToTheme(mergedTheme.host.colorOutline, this.baseButtonState().color())
+            : colorToTheme(mergedTheme.host.color, this.baseButtonState().color())
         ),
       },
     };

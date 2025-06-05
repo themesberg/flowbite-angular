@@ -1,7 +1,7 @@
 import { injectFlowbiteDropdownConfig } from '../config/dropdown-config';
 import { flowbiteDropdownState, provideFlowbiteDropdownState } from './dropdown-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpMenu } from 'ng-primitives/menu';
@@ -42,7 +42,10 @@ export class FlowbiteDropdown {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.state.color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.state.color())
+        ),
       },
     };
   });

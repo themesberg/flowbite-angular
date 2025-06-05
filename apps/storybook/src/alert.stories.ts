@@ -27,7 +27,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['default', 'primary', 'dark', 'blue', 'red', 'green', 'yellow'],
+      options: ['danger', 'default', 'primary', 'success', 'warning'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -166,7 +166,7 @@ export const AlertMoreContent: StoryObj<StoryType> = {
           <div class="flex gap-2 items-center">
             <button flowbiteButton>
               <flowbite-icon name="eye" color="light" />
-              <span>View more</span>
+              View more
             </button>
             <button flowbiteButton outline>Dismiss</button>
           </div>

@@ -1,4 +1,4 @@
-import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteIconSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
@@ -6,7 +6,7 @@ export interface FlowbiteIconSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md
 }
 
 export interface FlowbiteIconColors extends Omit<FlowbiteColors, 'default'> {
-  [key: string]: string;
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteIconStrokeWidths extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
@@ -35,24 +35,78 @@ export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
       xl: 'size-6',
     },
     color: {
-      info: 'text-blue-500',
-      failure: 'text-red-500',
-      success: 'text-green-500',
-      warning: 'text-yellow-500',
-      primary: 'text-primary-500',
-      dark: 'text-gray-700',
-      light: 'text-gray-300',
-      blue: 'text-blue-500',
-      cyan: 'text-cyan-500',
-      gray: 'text-gray-500',
-      green: 'text-green-500',
-      indigo: 'text-indigo-500',
-      lime: 'text-lime-500',
-      pink: 'text-pink-500',
-      purple: 'text-purple-500',
-      red: 'text-red-500',
-      teal: 'text-teal-500',
-      yellow: 'text-yellow-500',
+      info: {
+        light: 'text-blue-500',
+        dark: '',
+      },
+      failure: {
+        light: 'text-red-500',
+        dark: '',
+      },
+      success: {
+        light: 'text-green-500',
+        dark: '',
+      },
+      warning: {
+        light: 'text-yellow-500',
+        dark: '',
+      },
+      primary: {
+        light: 'text-primary-500',
+        dark: '',
+      },
+      dark: {
+        light: 'text-gray-700',
+        dark: '',
+      },
+      light: {
+        light: 'text-gray-300',
+        dark: '',
+      },
+      blue: {
+        light: 'text-blue-500',
+        dark: '',
+      },
+      cyan: {
+        light: 'text-cyan-500',
+        dark: '',
+      },
+      gray: {
+        light: 'text-gray-500',
+        dark: '',
+      },
+      green: {
+        light: 'text-green-500',
+        dark: '',
+      },
+      indigo: {
+        light: 'text-indigo-500',
+        dark: '',
+      },
+      lime: {
+        light: 'text-lime-500',
+        dark: '',
+      },
+      pink: {
+        light: 'text-pink-500',
+        dark: '',
+      },
+      purple: {
+        light: 'text-purple-500',
+        dark: '',
+      },
+      red: {
+        light: 'text-red-500',
+        dark: '',
+      },
+      teal: {
+        light: 'text-teal-500',
+        dark: '',
+      },
+      yellow: {
+        light: 'text-yellow-500',
+        dark: '',
+      },
     },
     strokeWidth: {
       sm: 'stroke-1',

@@ -2,7 +2,7 @@ import { injectFlowbiteTooltipConfig } from '../config/tooltip-config';
 import type { FlowbiteTooltipColors, FlowbiteTooltipTheme } from './theme';
 import { flowbiteTooltipState, provideFlowbiteTooltipState } from './tooltip-state';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -34,7 +34,10 @@ export class FlowbiteTooltip {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.state.color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.state.color())
+        ),
       },
     };
   });

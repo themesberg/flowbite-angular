@@ -8,7 +8,7 @@ import {
   provideFlowbiteIconState,
 } from './icon-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { isPlatformServer } from '@angular/common';
 import type { OnDestroy } from '@angular/core';
@@ -134,7 +134,7 @@ export class FlowbiteIcon implements OnDestroy {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.size[this.state.size()],
-          this.state.color() && mergedTheme.host.color[this.state.color()!],
+          this.state.color() && colorToTheme(mergedTheme.host.color, this.state.color()!),
           mergedTheme.host.strokeWidth[this.state.strokeWidth()]
         ),
       },

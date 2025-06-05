@@ -1,7 +1,7 @@
 import { injectFlowbiteAlertConfig } from '../config/alert-config';
 import { flowbiteAlertState, provideFlowbiteAlertState } from './alert-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -45,7 +45,7 @@ export class FlowbiteAlert {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.color[this.state.color()],
+          colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
           mergedTheme.host.accent[this.state.accent() ? 'on' : 'off']
         ),

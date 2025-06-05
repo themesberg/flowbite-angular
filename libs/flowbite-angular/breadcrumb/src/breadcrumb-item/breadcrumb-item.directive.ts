@@ -1,13 +1,13 @@
-import { FlowbiteBreadcrumb } from '../breadcrumb/breadcrumb.directive';
+import { injectFlowbiteBreadcrumbState } from '../breadcrumb/breadcrumb-state';
 import { injectFlowbiteBreadcrumbItemConfig } from '../config/breadcrumb-item-config';
 import {
   flowbiteBreadcrumbItemState,
   provideFlowbiteBreadcrumbItemState,
 } from './breadcrumb-item-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
-import { computed, Directive, inject, input } from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
@@ -37,11 +37,8 @@ import { twMerge } from 'tailwind-merge';
 })
 export class FlowbiteBreadcrumbItem {
   readonly config = injectFlowbiteBreadcrumbItemConfig();
+  readonly breadcrumbState = injectFlowbiteBreadcrumbState();
 
-  /**
-   * @see {@link injectFlowbiteBreadcrumbItemConfig}
-   */
-  readonly breadcrumb = input(inject(FlowbiteBreadcrumb));
   /**
    * @see {@link injectFlowbiteBreadcrumbItemConfig}
    */
@@ -55,7 +52,7 @@ export class FlowbiteBreadcrumbItem {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.breadcrumb().state.color()],
+          colorToTheme(mergedTheme.host.color, this.breadcrumbState().color()),
 
           /* children */
           mergedTheme.host.children.base,

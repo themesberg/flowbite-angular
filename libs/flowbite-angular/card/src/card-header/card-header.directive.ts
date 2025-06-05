@@ -2,7 +2,7 @@ import { injectFlowbiteCardState } from '../card/card-state';
 import { injectFlowbiteCardHeaderConfig } from '../config/card-header-config';
 import { flowbiteCardHeaderState, provideFlowbiteCardHeaderState } from './card-header-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -31,7 +31,10 @@ export class FlowbiteCardHeader {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.cardState().color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.cardState().color())
+        ),
       },
     };
   });

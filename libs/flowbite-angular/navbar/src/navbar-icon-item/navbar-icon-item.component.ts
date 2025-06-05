@@ -6,7 +6,7 @@ import {
 } from './navbar-icon-item-state';
 import type { FlowbiteNavbarIconItemTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
 import { FlowbiteIcon } from 'flowbite-angular/icon';
 
@@ -70,7 +70,7 @@ export class FlowbiteNavbarIconItem {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.navbar().state.color()]
+          colorToTheme(mergedTheme.host.color, this.navbar().state.color())
         ),
       },
     };

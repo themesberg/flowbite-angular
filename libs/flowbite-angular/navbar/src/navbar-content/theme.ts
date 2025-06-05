@@ -34,25 +34,82 @@ export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createThem
   container: {
     base: 'mt-4 flex flex-col rounded-lg border p-4 font-medium md:mt-0 md:flex-row md:space-x-4 md:border-0 md:p-0',
     color: {
-      default: 'text-gray-700 max-md:bg-gray-100 dark:text-gray-300 max-md:dark:bg-gray-900',
-      info: 'text-blue-600 max-md:bg-blue-100 max-md:dark:bg-blue-900',
-      failure: 'text-red-600 max-md:bg-red-100 max-md:dark:bg-red-900',
-      success: 'text-green-600 max-md:bg-green-100 max-md:dark:bg-green-900',
-      warning: 'text-yellow-600 max-md:bg-yellow-100 max-md:dark:bg-yellow-900',
-      primary: 'max-md:bg-primary-100 text-primary-600 max-md:dark:bg-primary-900',
-      dark: 'text-gray-700 max-md:bg-gray-100 dark:text-gray-300 max-md:dark:bg-gray-900',
-      light: 'text-gray-700 max-md:bg-gray-100 dark:text-gray-300 max-md:dark:bg-gray-900',
-      blue: 'text-blue-600 max-md:bg-blue-100 max-md:dark:bg-blue-900',
-      cyan: 'text-cyan-700 max-md:bg-cyan-100 max-md:dark:bg-cyan-900',
-      gray: 'text-gray-700 max-md:bg-gray-100 dark:text-gray-300 max-md:dark:bg-gray-900',
-      green: 'text-green-600 max-md:bg-green-100 max-md:dark:bg-green-900',
-      indigo: 'text-indigo-700 max-md:bg-indigo-100 max-md:dark:bg-indigo-900',
-      lime: 'text-lime-700 max-md:bg-lime-100 max-md:dark:bg-lime-900',
-      pink: 'text-pink-700 max-md:bg-pink-100 max-md:dark:bg-pink-900',
-      purple: 'text-purple-600 max-md:bg-purple-100 max-md:dark:bg-purple-900',
-      red: 'text-red-700 max-md:bg-red-100 max-md:dark:bg-red-900',
-      teal: 'text-teal-700 max-md:bg-teal-100 max-md:dark:bg-teal-900',
-      yellow: 'text-yellow-400 max-md:bg-yellow-100 max-md:dark:bg-yellow-900',
+      default: {
+        light: '',
+        dark: '',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
+      },
+      dark: {
+        light: '',
+        dark: '',
+      },
+      light: {
+        light: '',
+        dark: '',
+      },
+      blue: {
+        light: '',
+        dark: '',
+      },
+      cyan: {
+        light: '',
+        dark: '',
+      },
+      gray: {
+        light: '',
+        dark: '',
+      },
+      green: {
+        light: '',
+        dark: '',
+      },
+      indigo: {
+        light: '',
+        dark: '',
+      },
+      lime: {
+        light: '',
+        dark: '',
+      },
+      pink: {
+        light: '',
+        dark: '',
+      },
+      purple: {
+        light: '',
+        dark: '',
+      },
+      red: {
+        light: '',
+        dark: '',
+      },
+      teal: {
+        light: '',
+        dark: '',
+      },
+      yellow: {
+        light: '',
+        dark: '',
+      },
     },
   },
 });

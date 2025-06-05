@@ -1,8 +1,8 @@
-import type { FlowbiteColors } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteTooltipColors extends Pick<FlowbiteColors, 'default' | 'light' | 'dark'> {
-  [key: string]: string;
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteTooltipTheme {
@@ -16,11 +16,20 @@ export interface FlowbiteTooltipHostTheme {
 
 export const flowbiteTooltipTheme: FlowbiteTooltipTheme = createTheme({
   host: {
-    base: 'absolute z-10 inline-block rounded-lg p-3 py-2 text-sm font-medium shadow-xs',
+    base: 'absolute z-10 inline-block rounded-lg border p-3 py-2 text-sm font-medium shadow-xs',
     color: {
-      default: 'border border-gray-200 bg-white text-gray-900',
-      light: 'border border-gray-200 bg-white text-gray-900',
-      dark: 'bg-gray-900 text-white dark:bg-gray-700',
+      default: {
+        light: 'border-gray-200 bg-white',
+        dark: 'text-gray-900',
+      },
+      light: {
+        light: 'border-gray-200 bg-white',
+        dark: 'text-gray-900',
+      },
+      dark: {
+        light: 'border-none bg-gray-900 text-white',
+        dark: 'border-none dark:bg-gray-700',
+      },
     },
   },
 });

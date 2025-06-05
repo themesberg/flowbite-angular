@@ -2,7 +2,7 @@ import { injectFlowbiteBadgeState } from '../badge/badge-state';
 import { injectFlowbiteBadgeButtonConfig } from '../config/badge-button-config';
 import { flowbiteBadgeButtonState, provideFlowbiteBadgeButtonState } from './badge-button-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
@@ -45,7 +45,10 @@ export class FlowbiteBadgeButton {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.badgeState().color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.badgeState().color())
+        ),
       },
     };
   });

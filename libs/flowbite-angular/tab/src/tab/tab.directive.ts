@@ -1,7 +1,7 @@
 import { injectFlowbiteTabConfig } from '../config/tab-config';
 import { flowbiteTabState, provideFlowbiteTabState } from './tab-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpTabset } from 'ng-primitives/tabs';
@@ -47,7 +47,7 @@ export class FlowbiteTab {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.size[this.state.size()],
-          mergedTheme.host.color[this.state.color()]
+          colorToTheme(mergedTheme.host.color, this.state.color())
         ),
       },
     };

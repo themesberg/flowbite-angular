@@ -1,4 +1,4 @@
-import type { FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteBreadcrumbColors
@@ -6,7 +6,7 @@ export interface FlowbiteBreadcrumbColors
     FlowbiteColors,
     'default' | 'primary' | 'dark' | 'blue' | 'red' | 'green' | 'yellow'
   > {
-  [ket: string]: string;
+  [ket: string]: ColorToTheme;
 }
 
 export interface FlowbiteBreadcrumbTheme {
@@ -27,13 +27,34 @@ export const flowbiteBreadcrumbTheme: FlowbiteBreadcrumbTheme = createTheme({
       off: 'border-none bg-transparent',
     },
     color: {
-      default: 'border-gray-300 bg-gray-100',
-      primary: 'border-primary-300 bg-primary-100',
-      dark: 'border-gray-300 bg-gray-100',
-      blue: 'border-blue-300 bg-blue-100',
-      red: 'border-red-300 bg-red-100',
-      green: 'border-green-300 bg-green-100',
-      yellow: 'border-yellow-300 bg-yellow-100',
+      default: {
+        light: 'border-gray-300 bg-gray-100',
+        dark: '',
+      },
+      primary: {
+        light: 'border-primary-300 bg-primary-100',
+        dark: '',
+      },
+      dark: {
+        light: 'border-gray-300 bg-gray-100',
+        dark: '',
+      },
+      blue: {
+        light: 'border-blue-300 bg-blue-100',
+        dark: '',
+      },
+      red: {
+        light: 'border-red-300 bg-red-100',
+        dark: '',
+      },
+      green: {
+        light: 'border-green-300 bg-green-100',
+        dark: '',
+      },
+      yellow: {
+        light: 'border-yellow-300 bg-yellow-100',
+        dark: '',
+      },
     },
   },
 });

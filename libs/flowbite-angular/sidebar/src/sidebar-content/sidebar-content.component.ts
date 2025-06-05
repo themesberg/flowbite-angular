@@ -1,18 +1,17 @@
 import { injectFlowbiteSidebarContentConfig } from '../config/sidebar-content-config';
-import { FlowbiteSidebar } from '../sidebar/sidebar.directive';
+import { injectFlowbiteSidebarState } from '../sidebar/sidebar-state';
 import {
   flowbiteSidebarContentState,
   provideFlowbiteSidebarContentState,
 } from './sidebar-content-state';
 import type { FlowbiteSidebarContentTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  inject,
   input,
   ViewEncapsulation,
 } from '@angular/core';
@@ -40,12 +39,9 @@ import { twMerge } from 'tailwind-merge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteSidebarContent {
-  protected readonly config = injectFlowbiteSidebarContentConfig();
+  readonly config = injectFlowbiteSidebarContentConfig();
+  readonly sidebarState = injectFlowbiteSidebarState();
 
-  /**
-   * @see {@link injectFlowbiteSidebarContentConfig}
-   */
-  readonly sidebar = input(inject(FlowbiteSidebar));
   /**
    * @see {@link injectFlowbiteSidebarContentConfig}
    */
@@ -59,8 +55,8 @@ export class FlowbiteSidebarContent {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.open[this.sidebar().state.open() ? 'on' : 'off'],
-          mergedTheme.host.color[this.sidebar().state.color()]
+          mergedTheme.host.open[this.sidebarState().state.open() ? 'on' : 'off'],
+          colorToTheme(mergedTheme.host.color, this.sidebarState().state.color())
         ),
       },
       container: {

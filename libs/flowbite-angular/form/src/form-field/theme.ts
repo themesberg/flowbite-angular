@@ -1,8 +1,8 @@
-import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteFormFieldColors extends FlowbiteColors {
-  [key: string]: string;
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteFormFieldSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'xl'> {

@@ -3,7 +3,7 @@ import { injectFlowbiteCardContentConfig } from '../config/card-content-config';
 import { flowbiteCardContentState, provideFlowbiteCardContentState } from './card-content-state';
 import type { FlowbiteCardContentTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -34,7 +34,7 @@ export class FlowbiteCardContent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.color[this.cardState().color()],
+          colorToTheme(mergedTheme.host.color, this.cardState().color()),
           this.cardState().orientation() === 'horizontal' &&
             mergedTheme.host.size[this.cardState().size()]
         ),

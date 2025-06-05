@@ -2,7 +2,7 @@ import { injectFlowbiteTabButtonConfig } from '../config/tab-button-config';
 import { injectFlowbiteTabState } from '../tab/tab-state';
 import { flowbiteTabButtonState, provideFlowbiteTabButtonState } from './tab-button-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
 import { computed, Directive, input } from '@angular/core';
@@ -53,7 +53,7 @@ export class FlowbiteTabButton {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.tabState().color()]
+          colorToTheme(mergedTheme.host.color, this.tabState().color())
         ),
       },
     };

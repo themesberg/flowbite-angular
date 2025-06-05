@@ -15,7 +15,10 @@ export const flowbiteTabContentTheme: FlowbiteTabContentTheme = createTheme({
   host: {
     base: 'p-6 not-data-active:hidden',
     color: {
-      default: 'text-gray-900 dark:text-gray-100',
+      default: {
+        light: 'text-gray-900',
+        dark: 'dark:text-gray-100',
+      },
     },
   },
 });

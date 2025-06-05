@@ -6,7 +6,7 @@ import {
 } from './navbar-content-state';
 import type { FlowbiteNavbarContentTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import {
   ChangeDetectionStrategy,
@@ -61,7 +61,7 @@ export class FlowbiteNavbarContent {
       container: {
         root: twMerge(
           mergedTheme.container.base,
-          mergedTheme.container.color[this.navbar().state.color()]
+          colorToTheme(mergedTheme.container.color, this.navbar().state.color())
         ),
       },
     };

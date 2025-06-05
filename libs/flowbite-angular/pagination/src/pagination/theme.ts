@@ -1,13 +1,14 @@
-import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteSizes } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
+import type { FlowbiteBaseButtonColors } from 'flowbite-angular/button';
 
 export interface FlowbitePaginationSizes
   extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
   [key: string]: string;
 }
 
-export interface FlowbitePaginationColors extends FlowbiteColors {
-  [key: string]: string;
+export interface FlowbitePaginationColors extends FlowbiteBaseButtonColors {
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbitePaginationTheme {

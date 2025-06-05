@@ -1,44 +1,49 @@
+export interface ColorToTheme {
+  light: string;
+  dark: string;
+}
+
 export interface FlowbiteStateColors {
-  default: string;
-  info: string;
-  failure: string;
-  success: string;
-  warning: string;
+  default: ColorToTheme;
+  info: ColorToTheme;
+  failure: ColorToTheme;
+  success: ColorToTheme;
+  warning: ColorToTheme;
 }
 
 export interface FlowbiteColors extends FlowbiteStateColors {
-  [key: string]: string;
-  primary: string;
-  dark: string;
-  light: string;
-  blue: string;
-  cyan: string;
-  gray: string;
-  green: string;
-  indigo: string;
-  lime: string;
-  pink: string;
-  purple: string;
-  red: string;
-  teal: string;
-  yellow: string;
+  [key: string]: ColorToTheme;
+  primary: ColorToTheme;
+  dark: ColorToTheme;
+  light: ColorToTheme;
+  blue: ColorToTheme;
+  cyan: ColorToTheme;
+  gray: ColorToTheme;
+  green: ColorToTheme;
+  indigo: ColorToTheme;
+  lime: ColorToTheme;
+  pink: ColorToTheme;
+  purple: ColorToTheme;
+  red: ColorToTheme;
+  teal: ColorToTheme;
+  yellow: ColorToTheme;
 }
 
 export interface FlowbiteGradientColors extends Omit<FlowbiteStateColors, 'warning'> {
-  [key: string]: string;
-  cyan: string;
-  lime: string;
-  pink: string;
-  purple: string;
-  teal: string;
+  [key: string]: ColorToTheme;
+  cyan: ColorToTheme;
+  lime: ColorToTheme;
+  pink: ColorToTheme;
+  purple: ColorToTheme;
+  teal: ColorToTheme;
 }
 
 export interface FlowbiteGradientDuoToneColors {
-  cyanToBlue: string;
-  greenToBlue: string;
-  pinkToOrange: string;
-  purpleToBlue: string;
-  purpleToPink: string;
-  redToYellow: string;
-  tealToLime: string;
+  cyanToBlue: ColorToTheme;
+  greenToBlue: ColorToTheme;
+  pinkToOrange: ColorToTheme;
+  purpleToBlue: ColorToTheme;
+  purpleToPink: ColorToTheme;
+  redToYellow: ColorToTheme;
+  tealToLime: ColorToTheme;
 }

@@ -9,7 +9,7 @@ import type {
   FlowbitePaginationButtonTheme,
 } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
 import {
@@ -83,7 +83,7 @@ export class FlowbitePaginationButton {
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
           mergedTheme.host.size[this.state.size()],
-          mergedTheme.host.colorOutline[this.state.color()]
+          colorToTheme(mergedTheme.host.colorOutline, this.state.color())
         ),
       },
     };

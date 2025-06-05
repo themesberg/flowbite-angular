@@ -38,7 +38,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['default', 'primary', 'light', 'blue', 'red', 'green', 'yellow'],
+      options: ['default'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -161,7 +161,7 @@ export const AccordionIcon: StoryObj<StoryType> = {
       <div flowbiteAccordion ${argsToTemplate(args)}>
           <div flowbiteAccordionItem value="accordion-item-1" #accordionItem1="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle>
-              <span>What is Flowbite?</span>
+              What is Flowbite?
               <flowbite-icon name="chevronDown" class="transition-transform duration-150" [ngClass]="{ 'rotate-180': accordionItem1.ngpAccordionItemState().open() }" />
             </h5>
             <div flowbiteAccordionContent class="p-5">
@@ -171,7 +171,7 @@ export const AccordionIcon: StoryObj<StoryType> = {
           </div>
           <div flowbiteAccordionItem value="accordion-item-2" #accordionItem2="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle>
-              <span>Is there a Figma file available?</span>
+              Is there a Figma file available?
               <flowbite-icon name="chevronDown" class="transition-transform duration-150" [ngClass]="{ 'rotate-180': accordionItem2.ngpAccordionItemState().open() }" />
             </h5>
             <div flowbiteAccordionContent class="p-5">
@@ -181,7 +181,7 @@ export const AccordionIcon: StoryObj<StoryType> = {
           </div>
           <div flowbiteAccordionItem value="accordion-item-3" #accordionItem3="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle>
-              <span>What are the differences between Flowbite and Tailwind UI?</span>
+              What are the differences between Flowbite and Tailwind UI?
               <flowbite-icon name="chevronDown" class="transition-transform duration-150" [ngClass]="{ 'rotate-180': accordionItem3.ngpAccordionItemState().open() }" />
             </h5>
             <div flowbiteAccordionContent class="p-5">

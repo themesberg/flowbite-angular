@@ -2,7 +2,7 @@ import { injectFlowbiteTabContentConfig } from '../config/tab-content-config';
 import { injectFlowbiteTabState } from '../tab/tab-state';
 import { flowbiteTabContentState, provideFlowbiteTabContentState } from './tab-content-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpTabPanel } from 'ng-primitives/tabs';
@@ -38,7 +38,10 @@ export class FlowbiteTabContent {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.color[this.tabState().color()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          colorToTheme(mergedTheme.host.color, this.tabState().color())
+        ),
       },
     };
   });

@@ -2,7 +2,7 @@ import { injectFlowbiteLabelConfig } from '../config/label-config';
 import { injectFlowbiteFormFieldState } from '../form-field/form-field-state';
 import { flowbiteLabelState, provideFlowbiteLabelState } from './label-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpLabel } from 'ng-primitives/form-field';
@@ -40,7 +40,7 @@ export class FlowbiteLabel {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.color[this.formFieldState().color()],
+          colorToTheme(mergedTheme.host.color, this.formFieldState().color()),
           mergedTheme.host.mode[this.formFieldState().mode()]
         ),
       },

@@ -3,7 +3,7 @@ import { FlowbiteNavbar } from '../navbar/navbar.component';
 import { flowbiteNavbarItemState, provideFlowbiteNavbarItemState } from './navbar-item-state';
 import type { FlowbiteNavbarItemTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
 import { computed, Directive, inject, input } from '@angular/core';
@@ -51,7 +51,7 @@ export class FlowbiteNavbarItem {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.navbar().state.color()]
+          colorToTheme(mergedTheme.host.color, this.navbar().state.color())
         ),
       },
     };

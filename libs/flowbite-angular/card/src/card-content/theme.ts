@@ -16,7 +16,10 @@ export const flowbiteCardContentTheme: FlowbiteCardContentTheme = createTheme({
   host: {
     base: 'p-6 font-normal',
     color: {
-      default: 'text-gray-700 dark:text-gray-400',
+      default: {
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-400',
+      },
     },
     size: {
       xs: 'w-xs',

@@ -15,7 +15,10 @@ export const flowbiteTabListTheme: FlowbiteTabListTheme = createTheme({
   host: {
     base: 'flex overflow-x-scroll overflow-y-clip border-b text-center',
     color: {
-      default: 'border-gray-200 dark:border-gray-700',
+      default: {
+        light: 'border-gray-200',
+        dark: 'dark:border-gray-700',
+      },
     },
   },
 });

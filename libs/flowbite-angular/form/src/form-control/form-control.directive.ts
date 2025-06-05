@@ -2,7 +2,7 @@ import { injectFlowbiteFormControlConfig } from '../config/form-control-config';
 import { injectFlowbiteFormFieldState } from '../form-field/form-field-state';
 import { flowbiteFormControlState, provideFlowbiteFormControlState } from './form-control-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpInput } from 'ng-primitives/input';
@@ -41,7 +41,7 @@ export class FlowbiteFormControl {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.formFieldState().color()],
+          colorToTheme(mergedTheme.host.color, this.formFieldState().color()),
           mergedTheme.host.mode[this.formFieldState().mode()],
           mergedTheme.host.size[this.formFieldState().size()]
         ),

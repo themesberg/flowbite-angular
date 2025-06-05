@@ -1,4 +1,4 @@
-import type { FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteCardOrientation {
@@ -7,7 +7,7 @@ export interface FlowbiteCardOrientation {
 }
 
 export interface FLowbiteCardColors extends Pick<FlowbiteColors, 'default'> {
-  [key: string]: string;
+  [key: string]: ColorToTheme;
 }
 
 export interface FlowbiteCardSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
@@ -33,8 +33,10 @@ export const flowbiteCardTheme: FlowbiteCardTheme = createTheme({
       vertical: 'flex-col',
     },
     color: {
-      default:
-        'border-gray-200 bg-white shadow-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
+      default: {
+        light: 'border-gray-200 bg-white shadow-gray-300',
+        dark: 'dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
+      },
     },
     size: {
       xs: 'w-xs',

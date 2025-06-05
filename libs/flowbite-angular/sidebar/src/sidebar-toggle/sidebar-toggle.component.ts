@@ -1,4 +1,5 @@
 import { injectFlowbiteSidebarToggleConfig } from '../config/sidebar-toggle-config';
+import { injectFlowbiteSidebarState } from '../sidebar/sidebar-state';
 import type { FlowbiteSidebar } from '../sidebar/sidebar.directive';
 import {
   flowbiteSidebarToggleState,
@@ -6,7 +7,7 @@ import {
 } from './sidebar-toggle-state';
 import type { FlowbiteSidebarToggleTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton } from 'flowbite-angular/button';
 import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { barsFromLeft } from 'flowbite-angular/icon/outline/general';
@@ -45,7 +46,8 @@ import { twMerge } from 'tailwind-merge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteSidebarToggle {
-  protected readonly config = injectFlowbiteSidebarToggleConfig();
+  readonly config = injectFlowbiteSidebarToggleConfig();
+  readonly sidebarState = injectFlowbiteSidebarState();
 
   /**
    * @see {@link injectFlowbiteSidebarToggleConfig}
@@ -66,7 +68,7 @@ export class FlowbiteSidebarToggle {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.sidebar().state.color()]
+          colorToTheme(mergedTheme.host.color, this.sidebarState().state.color())
         ),
       },
     };

@@ -5,7 +5,7 @@ import {
   provideFlowbiteAccordionContentState,
 } from './accordion-content-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { injectAccordionItemState, NgpAccordionContent } from 'ng-primitives/accordion';
@@ -45,7 +45,7 @@ export class FlowbiteAccordionContent {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.color[this.accordionState().color()],
+          colorToTheme(mergedTheme.host.color, this.accordionState().color()),
           mergedTheme.host.flush[this.accordionState().flush() ? 'on' : 'off'],
           mergedTheme.host.open[this.ngpAccordionItemState().open() ? 'on' : 'off']
         ),

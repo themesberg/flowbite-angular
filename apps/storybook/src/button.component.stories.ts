@@ -33,27 +33,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: [
-        'default',
-        'info',
-        'failure',
-        'success',
-        'warning',
-        'primary',
-        'dark',
-        'light',
-        'blue',
-        'cyan',
-        'gray',
-        'green',
-        'indigo',
-        'lime',
-        'pink',
-        'purple',
-        'red',
-        'teal',
-        'yellow',
-      ],
+      options: ['dark', 'default', 'gray', 'green', 'primary', 'red'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -147,7 +127,7 @@ export const IconButton: StoryObj<StoryType> = {
     props: args,
     template: `
       <button flowbiteButton ${argsToTemplate(args)}>
-        <span>${args.color} button with icon</span>
+        ${args.color} button with icon
         <flowbite-icon name="close" />
       </button>
     `,

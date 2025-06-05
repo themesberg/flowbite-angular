@@ -1,9 +1,10 @@
 import { injectFlowbiteSidebarItemConfig } from '../config/sidebar-item-config';
+import { injectFlowbiteSidebarState } from '../sidebar/sidebar-state';
 import { FlowbiteSidebar } from '../sidebar/sidebar.directive';
 import { flowbiteSidebarItemState, provideFlowbiteSidebarItemState } from './sidebar-item-state';
 import type { FlowbiteSidebarItemTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
 import { computed, Directive, inject, input } from '@angular/core';
@@ -30,12 +31,10 @@ import { twMerge } from 'tailwind-merge';
   },
 })
 export class FlowbiteSidebarItem {
-  protected readonly config = injectFlowbiteSidebarItemConfig();
+  readonly config = injectFlowbiteSidebarItemConfig();
+  readonly sidebarState = injectFlowbiteSidebarState();
 
-  /**
-   * @see {@link injectFlowbiteSidebarItemConfig}
-   */
-  readonly sidebar = input(inject(FlowbiteSidebar));
+  readonly sidebar = inject(FlowbiteSidebar);
   /**
    * @see {@link injectFlowbiteSidebarItemConfig}
    */
@@ -51,7 +50,7 @@ export class FlowbiteSidebarItem {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.color[this.sidebar().state.color()]
+          colorToTheme(mergedTheme.host.color, this.sidebarState().color())
         ),
       },
     };
@@ -73,6 +72,6 @@ export class FlowbiteSidebarItem {
    * @internal
    */
   toggleSidebar(): void {
-    this.sidebar().toggle();
+    this.sidebar.toggle();
   }
 }

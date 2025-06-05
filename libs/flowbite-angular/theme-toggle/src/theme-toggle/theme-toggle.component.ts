@@ -3,7 +3,7 @@ import { FlowbiteTheme } from '../theme/theme.directive';
 import type { FlowbiteThemeToggleTheme } from './theme';
 import { flowbiteThemeToggleState, provideFlowbiteThemeToggleState } from './theme-toggle-state';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
 import { FlowbiteIcon } from 'flowbite-angular/icon';
 import { moon, sun } from 'flowbite-angular/icon/outline/weather';
@@ -78,8 +78,8 @@ export class FlowbiteThemeToggle {
           mergedTheme.host.size[this.baseButtonState().size()],
           mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
           this.baseButtonState().outline()
-            ? mergedTheme.host.colorOutline[this.baseButtonState().color()]
-            : mergedTheme.host.color[this.baseButtonState().color()]
+            ? colorToTheme(mergedTheme.host.colorOutline, this.baseButtonState().color())
+            : colorToTheme(mergedTheme.host.color, this.baseButtonState().color())
         ),
       },
     };

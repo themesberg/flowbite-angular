@@ -15,7 +15,10 @@ export const flowbiteDropdownContentTheme: FlowbiteDropdownContentTheme = create
   host: {
     base: 'py-2 text-sm',
     color: {
-      default: 'text-gray-700 dark:text-gray-200',
+      default: {
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-200',
+      },
     },
   },
 });

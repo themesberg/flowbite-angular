@@ -2,7 +2,7 @@ import { injectFlowbiteNavbarConfig } from '../config/navbar-config';
 import { flowbiteNavbarState, provideFlowbiteNavbarState } from './navbar-state';
 import type { FlowbiteNavbarColors, FlowbiteNavbarTheme } from './theme';
 
-import { mergeDeep, type DeepPartial } from 'flowbite-angular';
+import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
 import {
@@ -61,7 +61,7 @@ export class FlowbiteNavbar {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.fixed[this.state.fixed() ? 'on' : 'off'],
-          mergedTheme.host.color[this.state.color()]
+          colorToTheme(mergedTheme.host.color, this.state.color())
         ),
       },
       container: {

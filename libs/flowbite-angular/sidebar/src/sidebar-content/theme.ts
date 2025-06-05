@@ -28,25 +28,82 @@ export const flowbiteSidebarContentTheme: FlowbiteSidebarContentTheme = createTh
       off: '-translate-x-full',
     },
     color: {
-      default: 'bg-gray-50 dark:bg-gray-950',
-      info: 'bg-blue-50 dark:bg-blue-950',
-      failure: 'bg-red-50 dark:bg-red-950',
-      success: 'bg-green-50 dark:bg-green-950',
-      warning: 'bg-yellow-50 dark:bg-yellow-950',
-      primary: 'bg-primary-50 dark:bg-primary-950',
-      dark: 'bg-gray-50 dark:bg-gray-950',
-      light: 'bg-gray-50 dark:bg-gray-800',
-      blue: 'bg-blue-50 dark:bg-blue-950',
-      cyan: 'bg-cyan-50 dark:bg-cyan-950',
-      gray: 'bg-gray-50 dark:bg-gray-950',
-      green: 'bg-green-50 dark:bg-green-950',
-      indigo: 'bg-indigo-50 dark:bg-indigo-950',
-      lime: 'bg-lime-50 dark:bg-lime-950',
-      pink: 'bg-pink-50 dark:bg-pink-950',
-      purple: 'bg-purple-50 dark:bg-purple-950',
-      red: 'bg-red-50 dark:bg-red-950',
-      teal: 'bg-teal-50 dark:bg-teal-950',
-      yellow: 'bg-yellow-50 dark:bg-yellow-950',
+      default: {
+        light: '',
+        dark: '',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
+      },
+      dark: {
+        light: '',
+        dark: '',
+      },
+      light: {
+        light: '',
+        dark: '',
+      },
+      blue: {
+        light: '',
+        dark: '',
+      },
+      cyan: {
+        light: '',
+        dark: '',
+      },
+      gray: {
+        light: '',
+        dark: '',
+      },
+      green: {
+        light: '',
+        dark: '',
+      },
+      indigo: {
+        light: '',
+        dark: '',
+      },
+      lime: {
+        light: '',
+        dark: '',
+      },
+      pink: {
+        light: '',
+        dark: '',
+      },
+      purple: {
+        light: '',
+        dark: '',
+      },
+      red: {
+        light: '',
+        dark: '',
+      },
+      teal: {
+        light: '',
+        dark: '',
+      },
+      yellow: {
+        light: '',
+        dark: '',
+      },
     },
   },
   container: {

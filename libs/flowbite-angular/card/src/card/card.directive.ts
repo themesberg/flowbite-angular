@@ -1,7 +1,7 @@
 import { injectFlowbiteCardConfig } from '../config/card-config';
 import { flowbiteCardState, provideFlowbiteCardState } from './card-state';
 
-import { mergeDeep } from 'flowbite-angular';
+import { colorToTheme, mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
@@ -43,7 +43,7 @@ export class FlowbiteCard {
       host: {
         root: twMerge(
           mergedTheme.host.base,
-          mergedTheme.host.color[this.state.color()],
+          colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.orientation[this.state.orientation()],
           this.state.orientation() === 'vertical' && mergedTheme.host.size[this.state.size()]
         ),
