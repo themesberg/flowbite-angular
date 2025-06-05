@@ -5,7 +5,7 @@ export interface FlowbiteIconSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md
   [key: string]: string;
 }
 
-export interface FlowbiteIconColors extends FlowbiteColors {
+export interface FlowbiteIconColors extends Omit<FlowbiteColors, 'default'> {
   [key: string]: string;
 }
 
@@ -35,7 +35,6 @@ export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
       xl: 'size-6',
     },
     color: {
-      default: 'text-gray-800 dark:text-gray-300',
       info: 'text-blue-500',
       failure: 'text-red-500',
       success: 'text-green-500',

@@ -57,7 +57,7 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
         'bg-primary-700 data-hover:bg-primary-800 dark:bg-primary-800 dark:data-hover:bg-primary-900 data-focus-visible:ring-primary-400 dark:data-focus-visible:ring-primary-600 text-gray-100',
       dark: 'bg-gray-800 text-white data-focus-visible:ring-gray-300 data-hover:bg-gray-900 dark:border-white dark:bg-gray-800 dark:data-focus-visible:ring-gray-700 dark:data-hover:bg-gray-700',
       light:
-        'border-gray-900 bg-white text-gray-900 data-focus-visible:ring-gray-100 data-hover:bg-gray-200 dark:border-white dark:bg-gray-800 dark:text-white dark:data-focus-visible:ring-gray-700 dark:data-hover:text-gray-900',
+        'border-gray-300 bg-white text-gray-900 data-focus-visible:ring-gray-100 data-hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:data-focus-visible:ring-gray-700 dark:data-hover:bg-gray-600 dark:data-hover:text-white',
       blue: 'bg-blue-500 text-gray-100 data-focus-visible:ring-blue-400 data-hover:bg-blue-700 dark:bg-blue-700 dark:data-focus-visible:ring-blue-500 dark:data-hover:bg-blue-900',
       cyan: 'bg-cyan-500 text-gray-100 data-focus-visible:ring-cyan-400 data-hover:bg-cyan-700 dark:bg-cyan-700 dark:data-focus-visible:ring-cyan-500 dark:data-hover:bg-cyan-900',
       gray: 'bg-gray-500 text-gray-100 data-focus-visible:ring-gray-400 data-hover:bg-gray-700 dark:bg-gray-700 dark:data-focus-visible:ring-gray-500 dark:data-hover:bg-gray-900',

@@ -1,5 +1,4 @@
 import { flowbiteHelperTheme, type FlowbiteHelperTheme } from '../helper/theme';
-import type { FlowbiteInputFieldColors } from '../input-field/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
 
@@ -12,10 +11,6 @@ export interface FlowbiteHelperConfig {
    */
   baseTheme: FlowbiteHelperTheme;
   /**
-   * The default theme of helper
-   */
-  color: keyof FlowbiteInputFieldColors;
-  /**
    * The custom theme of helper
    */
   customTheme: DeepPartial<FlowbiteHelperTheme>;
@@ -23,7 +18,6 @@ export interface FlowbiteHelperConfig {
 
 export const defaultFlowbiteHelperConfig: FlowbiteHelperConfig = {
   baseTheme: flowbiteHelperTheme,
-  color: 'default',
   customTheme: {},
 };
 

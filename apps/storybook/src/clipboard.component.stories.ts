@@ -34,6 +34,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const Default: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     id: 'clipboard',
     value: 'npm install flowbite-angular',
@@ -45,8 +49,4 @@ export default {
       <div flowbiteClipboard ${argsToTemplate(args)}></div>
     `,
   }),
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
 };

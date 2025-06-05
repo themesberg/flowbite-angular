@@ -1,10 +1,3 @@
-/* InputField */
-export * from './input-field/input-field.directive';
-export * from './input-field/input-field-state';
-export * from './input-field/theme';
-/* Config */
-export * from './config/input-field-config';
-
 /* Label */
 export * from './label/label.directive';
 export * from './label/label-state';
@@ -18,3 +11,17 @@ export * from './helper/helper-state';
 export * from './helper/theme';
 /* Config */
 export * from './config/helper-config';
+
+/* FormField */
+export * from './form-field/form-field.directive';
+export * from './form-field/form-field-state';
+export * from './form-field/theme';
+/* Config */
+export * from './config/form-field-config';
+
+/* FormControl */
+export * from './form-control/form-control.directive';
+export * from './form-control/form-control-state';
+export * from './form-control/theme';
+/* Config */
+export * from './config/form-control-config';

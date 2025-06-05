@@ -117,7 +117,7 @@ export const CardButton: StoryObj<StoryType> = {
         <div flowbiteCardContent>
           <h5 flowbiteCardHeader>Noteworthy technology acquisitions 2021</h5>
           <p class="mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-          <button flowbiteButton>
+          <button flowbiteButton color="info">
             <span>Read more</span>
             <flowbite-icon name="arrowRight" />
           </button>
@@ -168,7 +168,7 @@ export const CardImage: StoryObj<StoryType> = {
         <div flowbiteCardContent>
           <h5 flowbiteCardHeader>Noteworthy technology acquisitions 2021</h5>
           <p class="mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-          <button flowbiteButton>
+          <button flowbiteButton color="info">
             <span>Read more</span>
             <flowbite-icon name="arrowRight" />
           </button>
@@ -194,7 +194,7 @@ export const CardOrientation: StoryObj<StoryType> = {
         <div flowbiteCardContent>
           <h5 flowbiteCardHeader>Noteworthy technology acquisitions 2021</h5>
           <p class="mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-          <button flowbiteButton>
+          <button flowbiteButton color="info">
             <span>Read more</span>
             <flowbite-icon name="arrowRight" />
           </button>
@@ -237,8 +237,8 @@ export const UserProfileCard: StoryObj<StoryType> = {
             <h5 flowbiteCardHeader>Bonnie Green</h5>
             <span>Visual designer</span>
             <div class="flex mt-4 md:mt-6 gap-2">
-              <button flowbiteButton>Add frient</button>
-              <button flowbiteButton outline>Message</button>
+              <button flowbiteButton color="info">Add frient</button>
+              <button flowbiteButton outline color="light">Message</button>
             </div>
           </div>
         </div>

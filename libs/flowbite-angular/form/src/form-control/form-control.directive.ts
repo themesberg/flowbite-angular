@@ -1,35 +1,35 @@
-import { injectFlowbiteLabelConfig } from '../config/label-config';
+import { injectFlowbiteFormControlConfig } from '../config/form-control-config';
 import { injectFlowbiteFormFieldState } from '../form-field/form-field-state';
-import { flowbiteLabelState, provideFlowbiteLabelState } from './label-state';
+import { flowbiteFormControlState, provideFlowbiteFormControlState } from './form-control-state';
 
 import { mergeDeep } from 'flowbite-angular';
 
 import { computed, Directive, input } from '@angular/core';
-import { NgpLabel } from 'ng-primitives/form-field';
+import { NgpInput } from 'ng-primitives/input';
 import { twMerge } from 'tailwind-merge';
 
 @Directive({
   standalone: true,
   selector: `
-    label[flowbiteLabel]
+    [flowbiteFormControl]
   `,
-  exportAs: 'flowbiteLabel',
+  exportAs: 'flowbiteFormControl',
   hostDirectives: [
     {
-      directive: NgpLabel,
-      inputs: ['id:id'],
+      directive: NgpInput,
+      inputs: ['id:id', 'disabled:disabled'],
       outputs: [],
     },
   ],
-  providers: [provideFlowbiteLabelState()],
+  providers: [provideFlowbiteFormControlState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteLabel {
-  readonly config = injectFlowbiteLabelConfig();
+export class FlowbiteFormControl {
+  readonly config = injectFlowbiteFormControlConfig();
   readonly formFieldState = injectFlowbiteFormFieldState();
 
   /**
-   * @see {@link injectFlowbiteLabelConfig}
+   * @see {@link injectFlowbiteFormControlConfig}
    */
   readonly customTheme = input(this.config.customTheme);
 
@@ -40,8 +40,10 @@ export class FlowbiteLabel {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.disabled,
           mergedTheme.host.color[this.formFieldState().color()],
-          mergedTheme.host.mode[this.formFieldState().mode()]
+          mergedTheme.host.mode[this.formFieldState().mode()],
+          mergedTheme.host.size[this.formFieldState().size()]
         ),
       },
     };
@@ -50,5 +52,5 @@ export class FlowbiteLabel {
   /**
    * @internal
    */
-  readonly state = flowbiteLabelState<FlowbiteLabel>(this);
+  readonly state = flowbiteFormControlState<FlowbiteFormControl>(this);
 }

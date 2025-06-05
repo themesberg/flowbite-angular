@@ -1,4 +1,3 @@
-import type { FlowbiteInputFieldColors } from '../input-field/theme';
 import { flowbiteLabelTheme, type FlowbiteLabelTheme } from '../label/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -12,10 +11,6 @@ export interface FlowbiteLabelConfig {
    */
   baseTheme: FlowbiteLabelTheme;
   /**
-   * The default theme of Label
-   */
-  color: keyof FlowbiteInputFieldColors;
-  /**
    * The custom theme of Label
    */
   customTheme: DeepPartial<FlowbiteLabelTheme>;
@@ -23,7 +18,6 @@ export interface FlowbiteLabelConfig {
 
 export const defaultFlowbiteLabelConfig: FlowbiteLabelConfig = {
   baseTheme: flowbiteLabelTheme,
-  color: 'default',
   customTheme: {},
 };
 
