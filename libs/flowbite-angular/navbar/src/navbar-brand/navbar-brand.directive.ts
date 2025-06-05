@@ -4,31 +4,21 @@ import type { FlowbiteNavbarBrandTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     a[flowbiteNavbarBrand]
   `,
   exportAs: 'flowbiteNavbarBrand',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteNavbarBrandState()],
   host: {
     '[class]': `theme().host.root`,
     '[attr.type]': 'button',
   },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteNavbarBrand {
   protected readonly config = injectFlowbiteNavbarBrandConfig();

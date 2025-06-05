@@ -1,5 +1,5 @@
 /* Sidebar */
-export * from './sidebar/sidebar.component';
+export * from './sidebar/sidebar.directive';
 export * from './sidebar/sidebar-state';
 export * from './sidebar/theme';
 /* Config */
@@ -20,7 +20,7 @@ export * from './sidebar-toggle/theme';
 export * from './config/sidebar-toggle-config';
 
 /* SidebarItem */
-export * from './sidebar-item/sidebar-item.component';
+export * from './sidebar-item/sidebar-item.directive';
 export * from './sidebar-item/sidebar-item-state';
 export * from './sidebar-item/theme';
 /* Config */

@@ -1,4 +1,4 @@
-import type { FlowbiteTooltip } from './tooltip.component';
+import type { FlowbiteTooltip } from './tooltip.directive';
 
 import {
   createState,

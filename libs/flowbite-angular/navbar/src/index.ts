@@ -6,7 +6,7 @@ export * from './navbar/theme';
 export * from './config/navbar-config';
 
 /* NavbarItem */
-export * from './navbar-item/navbar-item.component';
+export * from './navbar-item/navbar-item.directive';
 export * from './navbar-item/navbar-item-state';
 export * from './navbar-item/theme';
 /* Config */
@@ -27,7 +27,7 @@ export * from './navbar-toggle/theme';
 export * from './config/navbar-toggle-config';
 
 /* NavbarBrand */
-export * from './navbar-brand/navbar-brand.component';
+export * from './navbar-brand/navbar-brand.directive';
 export * from './navbar-brand/navbar-brand-state';
 export * from './navbar-brand/theme';
 /* Config */

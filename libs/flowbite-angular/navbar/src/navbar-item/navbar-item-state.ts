@@ -1,4 +1,4 @@
-import type { FlowbiteNavbarItem } from './navbar-item.component';
+import type { FlowbiteNavbarItem } from './navbar-item.directive';
 
 import {
   createState,

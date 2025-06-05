@@ -5,32 +5,21 @@ import type { FlowbiteSidebarColors, FlowbiteSidebarTheme } from './theme';
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
-import {
-  booleanAttribute,
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { booleanAttribute, computed, Directive, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     aside[flowbiteSidebar]
   `,
   exportAs: 'flowbiteSidebar',
   hostDirectives: [],
-  imports: [],
   providers: [provideFlowbiteSidebarState()],
   host: {
     '[class]': `theme().host.root`,
     '(click)': 'onClick()',
   },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteSidebar {
   protected readonly config = injectFlowbiteSidebarConfig();

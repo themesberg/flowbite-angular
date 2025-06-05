@@ -1,22 +1,15 @@
 import { injectFlowbiteSidebarItemConfig } from '../config/sidebar-item-config';
-import { FlowbiteSidebar } from '../sidebar/sidebar.component';
+import { FlowbiteSidebar } from '../sidebar/sidebar.directive';
 import { flowbiteSidebarItemState, provideFlowbiteSidebarItemState } from './sidebar-item-state';
 import type { FlowbiteSidebarItemTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, inject, input } from '@angular/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     a[flowbiteSidebarItem],
@@ -30,15 +23,11 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
   ],
-  imports: [],
   providers: [provideFlowbiteSidebarItemState()],
   host: {
     '[class]': `theme().host.root`,
     '(click)': 'onClick()',
   },
-  template: `<ng-content />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlowbiteSidebarItem {
   protected readonly config = injectFlowbiteSidebarItemConfig();

@@ -1,5 +1,5 @@
 import { injectFlowbiteSidebarContentConfig } from '../config/sidebar-content-config';
-import { FlowbiteSidebar } from '../sidebar/sidebar.component';
+import { FlowbiteSidebar } from '../sidebar/sidebar.directive';
 import {
   flowbiteSidebarContentState,
   provideFlowbiteSidebarContentState,

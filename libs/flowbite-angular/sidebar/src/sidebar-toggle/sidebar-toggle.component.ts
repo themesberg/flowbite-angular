@@ -1,5 +1,5 @@
 import { injectFlowbiteSidebarToggleConfig } from '../config/sidebar-toggle-config';
-import type { FlowbiteSidebar } from '../sidebar/sidebar.component';
+import type { FlowbiteSidebar } from '../sidebar/sidebar.directive';
 import {
   flowbiteSidebarToggleState,
   provideFlowbiteSidebarToggleState,

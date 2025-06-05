@@ -1,4 +1,4 @@
-import type { FlowbiteSidebar } from './sidebar.component';
+import type { FlowbiteSidebar } from './sidebar.directive';
 
 import {
   createState,
