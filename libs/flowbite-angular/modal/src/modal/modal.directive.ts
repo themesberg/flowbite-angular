@@ -42,7 +42,11 @@ export class FlowbiteModal {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.size[this.state.size()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          mergedTheme.host.transition,
+          mergedTheme.host.size[this.state.size()]
+        ),
       },
     };
   });

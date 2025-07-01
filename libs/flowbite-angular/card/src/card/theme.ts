@@ -6,7 +6,8 @@ export interface FlowbiteCardOrientation {
   horizontal: string;
 }
 
-export interface FLowbiteCardColors extends Pick<FlowbiteColors, 'default'> {
+export interface FLowbiteCardColors
+  extends Pick<FlowbiteColors, 'default' | 'info' | 'failure' | 'success' | 'warning' | 'primary'> {
   [key: string]: ColorToTheme;
 }
 
@@ -20,6 +21,7 @@ export interface FlowbiteCardTheme {
 
 export interface FlowbiteCardHostTheme {
   base: string;
+  transition: string;
   orientation: FlowbiteCardOrientation;
   color: FLowbiteCardColors;
   size: FlowbiteCardSizes;
@@ -28,6 +30,7 @@ export interface FlowbiteCardHostTheme {
 export const flowbiteCardTheme: FlowbiteCardTheme = createTheme({
   host: {
     base: 'flex size-fit rounded-lg border shadow-sm',
+    transition: '',
     orientation: {
       horizontal: 'flex-row',
       vertical: 'flex-col',
@@ -36,6 +39,26 @@ export const flowbiteCardTheme: FlowbiteCardTheme = createTheme({
       default: {
         light: 'border-gray-200 bg-white shadow-gray-300',
         dark: 'dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
       },
     },
     size: {

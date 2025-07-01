@@ -48,7 +48,11 @@ export class FlowbiteFormField {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.mode[this.state.mode()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          mergedTheme.host.transition,
+          mergedTheme.host.mode[this.state.mode()]
+        ),
       },
     };
   });

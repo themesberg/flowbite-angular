@@ -1,7 +1,8 @@
 import type { ColorToTheme, FlowbiteBoolean, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
-export interface FlowbiteNavbarColors extends FlowbiteColors {
+export interface FlowbiteNavbarColors
+  extends Pick<FlowbiteColors, 'default' | 'info' | 'failure' | 'success' | 'warning' | 'primary'> {
   [key: string]: ColorToTheme;
 }
 
@@ -12,17 +13,20 @@ export interface FlowbiteNavbarTheme {
 
 export interface FlowbiteNavbarHostTheme {
   base: string;
+  transition: string;
   fixed: FlowbiteBoolean;
   color: FlowbiteNavbarColors;
 }
 
 export interface FlowbiteNavbarContainerTheme {
   base: string;
+  transition: string;
 }
 
 export const flowbiteNavbarTheme: FlowbiteNavbarTheme = createTheme({
   host: {
     base: '',
+    transition: '',
     fixed: {
       on: 'fixed start-0 top-0 z-20 w-full border-b',
       off: '',
@@ -52,61 +56,10 @@ export const flowbiteNavbarTheme: FlowbiteNavbarTheme = createTheme({
         light: '',
         dark: '',
       },
-      dark: {
-        light: '',
-        dark: '',
-      },
-      light: {
-        light: '',
-        dark: '',
-      },
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
-        light: '',
-        dark: '',
-      },
-      teal: {
-        light: '',
-        dark: '',
-      },
-      yellow: {
-        light: '',
-        dark: '',
-      },
     },
   },
   container: {
     base: 'mx-auto flex max-w-screen flex-wrap items-center justify-between p-4',
+    transition: '',
   },
 });

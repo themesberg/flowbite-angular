@@ -8,6 +8,7 @@ export interface FlowbiteLabelTheme {
 
 export interface FlowbiteLabelHostTheme {
   base: string;
+  transition: string;
   color: FlowbiteFormFieldColors;
   mode: FlowbiteFormFieldModes;
 }
@@ -15,36 +16,9 @@ export interface FlowbiteLabelHostTheme {
 export const flowbiteLabelTheme: FlowbiteLabelTheme = createTheme({
   host: {
     base: 'mb-2 block text-sm font-medium',
+    transition: '',
     color: {
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      dark: {
-        light: '',
-        dark: '',
-      },
       default: {
-        light: '',
-        dark: '',
-      },
-      failure: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
         light: '',
         dark: '',
       },
@@ -52,27 +26,7 @@ export const flowbiteLabelTheme: FlowbiteLabelTheme = createTheme({
         light: '',
         dark: '',
       },
-      light: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      primary: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
+      failure: {
         light: '',
         dark: '',
       },
@@ -80,15 +34,11 @@ export const flowbiteLabelTheme: FlowbiteLabelTheme = createTheme({
         light: '',
         dark: '',
       },
-      teal: {
-        light: '',
-        dark: '',
-      },
       warning: {
         light: '',
         dark: '',
       },
-      yellow: {
+      primary: {
         light: '',
         dark: '',
       },

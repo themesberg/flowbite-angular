@@ -11,12 +11,14 @@ export interface FlowbiteModalTheme {
 
 export interface FlowbiteModalHostTheme {
   base: string;
+  transition: string;
   size: FlowbiteModalSizes;
 }
 
 export const flowbiteModalTheme: FlowbiteModalTheme = createTheme({
   host: {
     base: 'h-max w-full rounded-lg bg-white shadow dark:bg-gray-700',
+    transition: '',
     size: {
       sm: 'max-w-md',
       md: 'max-w-lg',

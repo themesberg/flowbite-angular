@@ -40,7 +40,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['default', 'primary', 'dark', 'blue', 'red', 'green', 'yellow'],
+      options: ['default', 'info', 'failure', 'success', 'warning', 'primary'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -136,7 +136,7 @@ export const SolidBreadcrumb: StoryObj<StoryType> = {
 export const HeaderBreadcrumb: StoryObj<StoryType> = {
   name: 'Header Breadcrumb',
   args: {
-    color: 'dark',
+    color: defaultFlowbiteBreadcrumbConfig.color,
     solid: true,
     customTheme: defaultFlowbiteBreadcrumbConfig.customTheme,
   },
@@ -159,10 +159,10 @@ export const HeaderBreadcrumb: StoryObj<StoryType> = {
             <span>Issue #312</span>
           </li>
         </ol>
-        <span flowbiteBadge size="xs" color="blue">
+        <span flowbiteBadge size="xs" color="info">
           <span>docs</span>
         </span>
-        <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" color="dark" size="xs">Fix #6597</button>
+        <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" size="xs">Fix #6597</button>
 
         <ng-template #dropdownMenu>
           <div flowbiteDropdown ${argsToTemplate(args)}>

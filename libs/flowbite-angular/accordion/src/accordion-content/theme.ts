@@ -18,19 +18,39 @@ export interface FlowbiteAccordionContentHostTheme {
 export const flowbiteAccordionContentTheme: FlowbiteAccordionContentTheme = createTheme({
   host: {
     base: 'overflow-hidden',
-    transition: 'transition-height duration-150 ease-in-out',
+    transition: '',
     color: {
       default: {
         light: 'border-gray-200 bg-white',
         dark: 'dark:border-gray-700 dark:bg-gray-900',
       },
+      info: {
+        light: 'border-blue-200 bg-white',
+        dark: 'dark:border-blue-700 dark:bg-blue-900',
+      },
+      failure: {
+        light: 'border-red-200 bg-white',
+        dark: 'dark:border-red-700 dark:bg-red-900',
+      },
+      success: {
+        light: 'border-green-200 bg-white',
+        dark: 'dark:border-green-700 dark:bg-green-900',
+      },
+      warning: {
+        light: 'border-yellow-200 bg-white',
+        dark: 'dark:border-yellow-700 dark:bg-yellow-900',
+      },
+      primary: {
+        light: 'border-primary-200 bg-white',
+        dark: 'dark:border-primary-700 dark:bg-primary-900',
+      },
     },
     open: {
-      on: 'data-open:p-2',
-      off: 'hidden',
+      on: 'h-fit',
+      off: 'h-0',
     },
     flush: {
-      on: '',
+      on: 'bg-transparent dark:bg-transparent',
       off: 'border-x group-last/item:border-b',
     },
   },

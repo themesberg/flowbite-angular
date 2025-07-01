@@ -21,7 +21,7 @@ export interface FlowbiteButtonHostTheme {
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   host: {
     base: 'flex cursor-pointer items-center justify-between border text-center font-medium',
-    transition: 'transition-colors duration-150 ease-in-out',
+    transition: '',
     focus: 'data-focus:ring-2',
     disabled: 'data-disabled:cursor-not-allowed',
     size: {
@@ -36,53 +36,53 @@ export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
       off: 'rounded-lg',
     },
     color: {
-      dark: {
-        light: '',
-        dark: '',
-      },
       default: {
+        light: 'bg-gray-100 text-gray-900',
+        dark: '',
+      },
+      info: {
         light: '',
         dark: '',
       },
-      gray: {
+      failure: {
         light: '',
         dark: '',
       },
-      green: {
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
         light: '',
         dark: '',
       },
       primary: {
-        light: '',
-        dark: '',
-      },
-      red: {
         light: '',
         dark: '',
       },
     },
     colorOutline: {
-      dark: {
-        light: '',
-        dark: '',
-      },
       default: {
         light: '',
         dark: '',
       },
-      gray: {
+      info: {
         light: '',
         dark: '',
       },
-      green: {
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
         light: '',
         dark: '',
       },
       primary: {
-        light: '',
-        dark: '',
-      },
-      red: {
         light: '',
         dark: '',
       },

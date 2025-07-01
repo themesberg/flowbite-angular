@@ -6,7 +6,8 @@ export interface FlowbiteTabSizes extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'
   full: string;
 }
 
-export interface FlowbiteTabColors extends Pick<FlowbiteColors, 'default'> {
+export interface FlowbiteTabColors
+  extends Pick<FlowbiteColors, 'default' | 'info' | 'failure' | 'success' | 'warning' | 'primary'> {
   [key: string]: ColorToTheme;
 }
 
@@ -16,6 +17,7 @@ export interface FlowbiteTabTheme {
 
 export interface FlowbiteTabHostTheme {
   base: string;
+  transition: string;
   size: FlowbiteTabSizes;
   color: FlowbiteTabColors;
 }
@@ -23,6 +25,7 @@ export interface FlowbiteTabHostTheme {
 export const flowbiteTabTheme: FlowbiteTabTheme = createTheme({
   host: {
     base: 'w-full rounded-md border',
+    transition: '',
     size: {
       sm: 'max-w-md p-2',
       md: 'max-w-lg p-3',
@@ -33,6 +36,26 @@ export const flowbiteTabTheme: FlowbiteTabTheme = createTheme({
       default: {
         light: 'border-gray-300 bg-gray-100',
         dark: 'dark:border-gray-700 dark:bg-gray-800',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
       },
     },
   },

@@ -6,10 +6,12 @@ export interface FlowbiteModalContentTheme {
 
 export interface FlowbiteModalContentHostTheme {
   base: string;
+  transition: string;
 }
 
 export const flowbiteModalContentTheme: FlowbiteModalContentTheme = createTheme({
   host: {
     base: 'block space-y-6 p-6',
+    transition: '',
   },
 });

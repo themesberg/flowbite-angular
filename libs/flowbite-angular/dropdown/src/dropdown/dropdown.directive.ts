@@ -44,6 +44,7 @@ export class FlowbiteDropdown {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           colorToTheme(mergedTheme.host.color, this.state.color())
         ),
       },

@@ -8,16 +8,38 @@ export interface FlowbiteCardHeaderTheme {
 
 export interface FlowbiteCardHeaderHostTheme {
   base: string;
+  transition: string;
   color: FLowbiteCardColors;
 }
 
 export const flowbiteCardHeaderTheme: FlowbiteCardHeaderTheme = createTheme({
   host: {
     base: 'mb-2 text-2xl font-bold tracking-tight',
+    transition: '',
     color: {
       default: {
         light: 'text-gray-900',
         dark: 'dark:text-white',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
       },
     },
   },

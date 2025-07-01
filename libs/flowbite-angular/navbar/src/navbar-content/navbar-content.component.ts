@@ -55,12 +55,14 @@ export class FlowbiteNavbarContent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           mergedTheme.host.open[this.navbar().state.open() ? 'on' : 'off']
         ),
       },
       container: {
         root: twMerge(
           mergedTheme.container.base,
+          mergedTheme.container.transition,
           colorToTheme(mergedTheme.container.color, this.navbar().state.color())
         ),
       },

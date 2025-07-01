@@ -27,18 +27,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: [
-        'default',
-        'primary',
-        'dark',
-        'blue',
-        'red',
-        'green',
-        'yellow',
-        'indigo',
-        'purple',
-        'pink',
-      ],
+      options: ['default', 'info', 'failure', 'success', 'warning', 'primary'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -104,7 +93,8 @@ export const Default: StoryObj<StoryType> = {
     template: `
     <span flowbiteBadge ${argsToTemplate(args)}>
       <span>${args.color}</span>
-    </span>`,
+    </span>
+    `,
   }),
 };
 
@@ -122,7 +112,8 @@ export const BadgeLink: StoryObj<StoryType> = {
     template: `
     <a href="#" flowbiteBadgeLink ${argsToTemplate(args)}>
       <span>${args.color}</span>
-    </a>`,
+    </a>
+    `,
   }),
 };
 
@@ -140,8 +131,9 @@ export const BadgeIcon: StoryObj<StoryType> = {
     template: `
     <span flowbiteBadge ${argsToTemplate(args)}>
       <flowbite-icon name="clock" />
-      <span>${args.color}</span>
-    </span>`,
+      <span class="ml-2">${args.color}</span>
+    </span>
+    `,
   }),
 };
 
@@ -159,7 +151,8 @@ export const BadgeIconOnly: StoryObj<StoryType> = {
     template: `
     <span flowbiteBadge ${argsToTemplate(args)}>
       <flowbite-icon name="clock" />
-    </span>`,
+    </span>
+    `,
   }),
 };
 
@@ -177,10 +170,11 @@ export const DismissableBadge: StoryObj<StoryType> = {
     template: `
     <span flowbiteBadge ${argsToTemplate(args)}>
       <flowbite-icon name="infoCircle" />
-      <span>${args.color}</span>
+      <span class="ml-2">${args.color}</span>
       <button flowbiteBadgeButton>
         <flowbite-icon name="close" />
       </button>
-    </span>`,
+    </span>
+    `,
   }),
 };

@@ -49,6 +49,7 @@ export class FlowbiteBadge {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
           mergedTheme.host.pill[this.state.pill() ? 'on' : 'off'],

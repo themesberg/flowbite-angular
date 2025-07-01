@@ -47,7 +47,7 @@ export class FlowbiteAccordion {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base),
+        root: twMerge(mergedTheme.host.base, mergedTheme.host.transition),
       },
     };
   });

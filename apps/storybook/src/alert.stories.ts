@@ -27,7 +27,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['danger', 'default', 'primary', 'success', 'warning'],
+      options: ['default', 'info', 'failure', 'success', 'warning', 'primary'],
       table: {
         category: 'Input',
         defaultValue: {
@@ -103,8 +103,8 @@ export const AlertIcon: StoryObj<StoryType> = {
     template: `
       <div flowbiteAlert ${argsToTemplate(args)}>
           <div flowbiteAlertContent>
-            <flowbite-icon name="infoCircle" />
-            <span>
+            <span class="inline-flex gap-2 items-center">
+              <flowbite-icon name="infoCircle" />
               <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
             </span>
           </div>
@@ -126,9 +126,11 @@ export const DismissableAlert: StoryObj<StoryType> = {
     template: `
       <div flowbiteAlert ${argsToTemplate(args)}>
           <div flowbiteAlertContent>
-            <flowbite-icon name="infoCircle" />
-            <span>
-              <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
+            <span class="inline-flex gap-2 items-center">
+              <flowbite-icon name="infoCircle" />
+              <span>
+                <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
+              </span>
             </span>
             <button flowbiteAlertButton>
               <flowbite-icon name="close" />
@@ -152,8 +154,10 @@ export const AlertMoreContent: StoryObj<StoryType> = {
     template: `
       <div flowbiteAlert ${argsToTemplate(args)}>
         <div flowbiteAlertContent>
-          <flowbite-icon size="lg" name="infoCircle" />
-          <h3 class="font-medium text-lg">This is a ${args.color} alert</h3>
+          <span class="inline-flex gap-2 items-center">
+            <flowbite-icon size="lg" name="infoCircle" />
+            <h3 class="font-medium text-lg">This is a ${args.color} alert</h3>
+          </span>
           <button flowbiteAlertButton>
             <flowbite-icon size="lg" name="close" />
           </button>
@@ -165,7 +169,7 @@ export const AlertMoreContent: StoryObj<StoryType> = {
           </div>
           <div class="flex gap-2 items-center">
             <button flowbiteButton>
-              <flowbite-icon name="eye" color="light" />
+              <flowbite-icon name="eye" />
               View more
             </button>
             <button flowbiteButton outline>Dismiss</button>

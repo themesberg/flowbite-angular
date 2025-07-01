@@ -60,12 +60,13 @@ export class FlowbiteNavbar {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           mergedTheme.host.fixed[this.state.fixed() ? 'on' : 'off'],
           colorToTheme(mergedTheme.host.color, this.state.color())
         ),
       },
       container: {
-        root: twMerge(mergedTheme.container.base),
+        root: twMerge(mergedTheme.container.base, mergedTheme.container.transition),
       },
     };
   });

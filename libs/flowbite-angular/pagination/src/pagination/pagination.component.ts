@@ -172,10 +172,10 @@ export class FlowbitePagination {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base),
+        root: twMerge(mergedTheme.host.base, mergedTheme.host.transition),
       },
       container: {
-        root: twMerge(mergedTheme.container.base),
+        root: twMerge(mergedTheme.container.base, mergedTheme.container.transition),
       },
     };
   });

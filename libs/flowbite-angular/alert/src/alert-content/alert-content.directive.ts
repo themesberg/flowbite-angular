@@ -33,6 +33,7 @@ export class FlowbiteAlertContent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           colorToTheme(mergedTheme.host.color, this.alertState().color())
         ),
       },

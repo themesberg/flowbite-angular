@@ -7,7 +7,8 @@ import type {
 } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
-export interface FlowbiteIndicatorColors extends FlowbiteColors {
+export interface FlowbiteIndicatorColors
+  extends Pick<FlowbiteColors, 'default' | 'info' | 'failure' | 'success' | 'warning' | 'primary'> {
   [key: string]: ColorToTheme;
 }
 
@@ -26,6 +27,7 @@ export interface FlowbiteIndicatorTheme {
 
 export interface FlowbiteIndicatorHostTheme {
   base: string;
+  transition: string;
   border: FlowbiteBoolean;
   color: FlowbiteIndicatorColors;
   size: FlowbiteIndicatorSizes;
@@ -35,6 +37,7 @@ export interface FlowbiteIndicatorHostTheme {
 export const flowbiteIndicatorTheme: FlowbiteIndicatorTheme = createTheme({
   host: {
     base: 'inline-flex shrink-0 items-center justify-center rounded-full font-bold',
+    transition: '',
     border: {
       on: 'border-2',
       off: 'border-none',
@@ -61,58 +64,6 @@ export const flowbiteIndicatorTheme: FlowbiteIndicatorTheme = createTheme({
         dark: '',
       },
       primary: {
-        light: '',
-        dark: '',
-      },
-      dark: {
-        light: '',
-        dark: '',
-      },
-      light: {
-        light: '',
-        dark: '',
-      },
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
-        light: '',
-        dark: '',
-      },
-      teal: {
-        light: '',
-        dark: '',
-      },
-      yellow: {
         light: '',
         dark: '',
       },

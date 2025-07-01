@@ -8,6 +8,7 @@ export interface FlowbiteCardContentTheme {
 
 export interface FlowbiteCardContentHostTheme {
   base: string;
+  transition: string;
   color: FLowbiteCardColors;
   size: FlowbiteCardSizes;
 }
@@ -15,10 +16,31 @@ export interface FlowbiteCardContentHostTheme {
 export const flowbiteCardContentTheme: FlowbiteCardContentTheme = createTheme({
   host: {
     base: 'p-6 font-normal',
+    transition: '',
     color: {
       default: {
         light: 'text-gray-700',
         dark: 'dark:text-gray-400',
+      },
+      info: {
+        light: '',
+        dark: '',
+      },
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
+        light: '',
+        dark: '',
+      },
+      primary: {
+        light: '',
+        dark: '',
       },
     },
     size: {

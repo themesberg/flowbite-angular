@@ -21,12 +21,12 @@ export interface FlowbiteNavbarIconItemHostTheme {
 export const flowbiteNavbarIconItemTheme: FlowbiteNavbarIconItemTheme = createTheme({
   host: {
     base: 'hidden cursor-pointer items-center justify-center rounded-lg p-2 text-sm sm:inline-flex',
-    transition: 'transition-colors duration-150 ease-in-out',
+    transition: '',
     focus:
       'data-focus:ring-0 data-focus:outline-none data-focus-visible:ring-2 data-focus-visible:outline-none',
     disabled: 'data-disabled:cursor-not-allowed data-disabled:opacity-50',
-    size: {} as FlowbiteBaseButtonSizes, // Not used for NavbarToggle
-    pill: {} as FlowbiteBoolean, // Not used for NavbarToggle
+    size: {} as FlowbiteBaseButtonSizes,
+    pill: {} as FlowbiteBoolean,
     color: {
       default: {
         light: '',
@@ -52,59 +52,7 @@ export const flowbiteNavbarIconItemTheme: FlowbiteNavbarIconItemTheme = createTh
         light: '',
         dark: '',
       },
-      dark: {
-        light: '',
-        dark: '',
-      },
-      light: {
-        light: '',
-        dark: '',
-      },
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
-        light: '',
-        dark: '',
-      },
-      teal: {
-        light: '',
-        dark: '',
-      },
-      yellow: {
-        light: '',
-        dark: '',
-      },
     },
-    colorOutline: {} as FlowbiteBaseButtonColors, // Not used for NavbarToggle
+    colorOutline: {} as FlowbiteBaseButtonColors,
   },
 });

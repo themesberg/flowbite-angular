@@ -133,6 +133,7 @@ export class FlowbiteIcon implements OnDestroy {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           mergedTheme.host.size[this.state.size()],
           this.state.color() && colorToTheme(mergedTheme.host.color, this.state.color()!),
           mergedTheme.host.strokeWidth[this.state.strokeWidth()]

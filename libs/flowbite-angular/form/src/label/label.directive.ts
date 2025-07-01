@@ -40,6 +40,7 @@ export class FlowbiteLabel {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           colorToTheme(mergedTheme.host.color, this.formFieldState().color()),
           mergedTheme.host.mode[this.formFieldState().mode()]
         ),

@@ -27,7 +27,7 @@ export interface FlowbitePaginationPreviousHostTheme {
 export const flowbitePaginationPreviousTheme: FlowbitePaginationPreviousTheme = createTheme({
   host: {
     base: 'flex h-full cursor-pointer items-center justify-center border border-transparent text-center font-medium',
-    transition: 'transition-colors duration-150 ease-in-out',
+    transition: '',
     focus:
       'data-focus:ring-0 data-focus:outline-none data-focus-visible:ring-2 data-focus-visible:outline-none',
     disabled: 'data-disabled:cursor-not-allowed data-disabled:opacity-50',
@@ -39,27 +39,27 @@ export const flowbitePaginationPreviousTheme: FlowbitePaginationPreviousTheme = 
       xl: 'px-4 py-3.5 text-base',
     },
     colorOutline: {
-      dark: {
-        light: '',
-        dark: '',
-      },
       default: {
         light: '',
         dark: '',
       },
-      gray: {
+      info: {
         light: '',
         dark: '',
       },
-      green: {
+      failure: {
+        light: '',
+        dark: '',
+      },
+      success: {
+        light: '',
+        dark: '',
+      },
+      warning: {
         light: '',
         dark: '',
       },
       primary: {
-        light: '',
-        dark: '',
-      },
-      red: {
         light: '',
         dark: '',
       },

@@ -23,12 +23,14 @@ export interface FlowbiteModalOverlayTheme {
 
 export interface FlowbiteModalOverlayHostTheme {
   base: string;
+  transition: string;
   position: FlowbiteModalOverlayPositions;
 }
 
 export const flowbiteModalOverlayTheme: FlowbiteModalOverlayTheme = createTheme({
   host: {
     base: 'fixed inset-0 flex bg-gray-900/50 p-4 dark:bg-gray-900/80',
+    transition: '',
     position: {
       'top-left': 'items-start justify-start',
       'top-center': 'items-start justify-center',

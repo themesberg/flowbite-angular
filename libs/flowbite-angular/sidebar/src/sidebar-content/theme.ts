@@ -22,7 +22,7 @@ export interface FlowbiteSidebarContentContainerTheme {
 export const flowbiteSidebarContentTheme: FlowbiteSidebarContentTheme = createTheme({
   host: {
     base: 'h-full overflow-y-auto px-3 py-4 lg:translate-x-0',
-    transition: 'transition-transform duration-150 ease-in-out',
+    transition: '',
     open: {
       on: 'w-64 translate-x-0',
       off: '-translate-x-full',
@@ -49,58 +49,6 @@ export const flowbiteSidebarContentTheme: FlowbiteSidebarContentTheme = createTh
         dark: '',
       },
       primary: {
-        light: '',
-        dark: '',
-      },
-      dark: {
-        light: '',
-        dark: '',
-      },
-      light: {
-        light: '',
-        dark: '',
-      },
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
-        light: '',
-        dark: '',
-      },
-      teal: {
-        light: '',
-        dark: '',
-      },
-      yellow: {
         light: '',
         dark: '',
       },

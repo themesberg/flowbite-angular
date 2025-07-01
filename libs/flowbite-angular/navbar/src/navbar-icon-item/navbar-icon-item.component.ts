@@ -41,7 +41,6 @@ import { twMerge } from 'tailwind-merge';
   template: `<flowbite-icon
     [name]="iconName()"
     [size]="baseButtonState().size()"
-    [color]="undefined"
     flowbiteStrokeWidth="lg" />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

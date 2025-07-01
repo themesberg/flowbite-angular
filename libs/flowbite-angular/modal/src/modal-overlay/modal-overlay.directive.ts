@@ -41,7 +41,11 @@ export class FlowbiteModalOverlay {
 
     return {
       host: {
-        root: twMerge(mergedTheme.host.base, mergedTheme.host.position[this.state.position()]),
+        root: twMerge(
+          mergedTheme.host.base,
+          mergedTheme.host.transition,
+          mergedTheme.host.position[this.state.position()]
+        ),
       },
     };
   });

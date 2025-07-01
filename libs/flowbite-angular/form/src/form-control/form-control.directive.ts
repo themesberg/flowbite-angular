@@ -40,6 +40,7 @@ export class FlowbiteFormControl {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           mergedTheme.host.disabled,
           colorToTheme(mergedTheme.host.color, this.formFieldState().color()),
           mergedTheme.host.mode[this.formFieldState().mode()],

@@ -8,24 +8,26 @@ export interface FlowbiteAlertContentTheme {
 
 export interface FlowbiteAlertContentHostTheme {
   base: string;
+  transition: string;
   color: FlowbiteAlertColors;
 }
 
 export const flowbiteAlertContentTheme: FlowbiteAlertContentTheme = createTheme({
   host: {
     base: 'flex items-center justify-between text-sm font-normal',
+    transition: '',
     color: {
-      danger: {
-        light: 'text-red-800',
-        dark: 'dark:text-red-300',
-      },
       default: {
         light: 'text-gray-800',
         dark: 'dark:text-gray-300',
       },
-      primary: {
-        light: 'text-primary-800',
-        dark: 'dark:text-primary-300',
+      info: {
+        light: 'text-blue-800',
+        dark: 'dark:text-blue-300',
+      },
+      failure: {
+        light: 'text-red-800',
+        dark: 'dark:text-red-300',
       },
       success: {
         light: 'text-green-800',
@@ -34,6 +36,10 @@ export const flowbiteAlertContentTheme: FlowbiteAlertContentTheme = createTheme(
       warning: {
         light: 'text-yellow-800',
         dark: 'dark:text-yellow-300',
+      },
+      primary: {
+        light: 'text-primary-800',
+        dark: 'dark:text-primary-300',
       },
     },
   },

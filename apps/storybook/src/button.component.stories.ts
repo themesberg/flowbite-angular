@@ -33,7 +33,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['dark', 'default', 'gray', 'green', 'primary', 'red'],
+      options: ['default', 'info', 'failure', 'success', 'warning', 'primary'],
       table: {
         category: 'Input',
         defaultValue: {

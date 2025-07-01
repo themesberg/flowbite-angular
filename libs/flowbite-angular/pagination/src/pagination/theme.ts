@@ -18,17 +18,21 @@ export interface FlowbitePaginationTheme {
 
 export interface FlowbitePaginationHostTheme {
   base: string;
+  transition: string;
 }
 
 export interface FlowbitePaginationContainerTheme {
   base: string;
+  transition: string;
 }
 
 export const flowbitePaginationTheme: FlowbitePaginationTheme = createTheme({
   host: {
     base: '',
+    transition: '',
   },
   container: {
     base: 'inline-flex -space-x-px text-sm',
+    transition: '',
   },
 });

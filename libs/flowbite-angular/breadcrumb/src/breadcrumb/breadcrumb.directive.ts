@@ -41,6 +41,7 @@ export class FlowbiteBreadcrumb {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           this.state.solid() &&
             mergedTheme.host.solid[this.state.solid() ? 'on' : 'off'] &&
             colorToTheme(mergedTheme.host.color, this.state.color())

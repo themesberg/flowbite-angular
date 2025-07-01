@@ -5,7 +5,7 @@ export interface FlowbiteIconSizes extends Pick<FlowbiteSizes, 'xs' | 'sm' | 'md
   [key: string]: string;
 }
 
-export interface FlowbiteIconColors extends Omit<FlowbiteColors, 'default'> {
+export interface FlowbiteIconColors extends FlowbiteColors {
   [key: string]: ColorToTheme;
 }
 
@@ -19,6 +19,7 @@ export interface FlowbiteIconTheme {
 
 export interface FlowbiteIconHostTheme {
   base: string;
+  transition: string;
   size: FlowbiteIconSizes;
   color: FlowbiteIconColors;
   strokeWidth: FlowbiteIconStrokeWidths;
@@ -27,6 +28,7 @@ export interface FlowbiteIconHostTheme {
 export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
   host: {
     base: 'self-center overflow-hidden',
+    transition: '',
     size: {
       xs: 'size-2.5',
       sm: 'size-3',
@@ -35,6 +37,10 @@ export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
       xl: 'size-6',
     },
     color: {
+      default: {
+        light: '',
+        dark: '',
+      },
       info: {
         light: 'text-blue-500',
         dark: '',

@@ -46,6 +46,7 @@ export class FlowbiteTab {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           mergedTheme.host.size[this.state.size()],
           colorToTheme(mergedTheme.host.color, this.state.color())
         ),

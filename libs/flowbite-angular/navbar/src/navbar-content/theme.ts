@@ -10,18 +10,21 @@ export interface FlowbiteNavbarContentTheme {
 
 export interface FlowbiteNavbarContentHostTheme {
   base: string;
+  transition: string;
   fixed: FlowbiteBoolean;
   open: FlowbiteBoolean;
 }
 
 export interface FlowbiteNavbarContentContainerTheme {
   base: string;
+  transition: string;
   color: FlowbiteNavbarColors;
 }
 
 export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createTheme({
   host: {
     base: 'w-full overflow-hidden max-md:order-last md:flex md:w-auto',
+    transition: '',
     fixed: {
       on: '',
       off: '',
@@ -33,6 +36,7 @@ export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createThem
   },
   container: {
     base: 'mt-4 flex flex-col rounded-lg border p-4 font-medium md:mt-0 md:flex-row md:space-x-4 md:border-0 md:p-0',
+    transition: '',
     color: {
       default: {
         light: '',
@@ -55,58 +59,6 @@ export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createThem
         dark: '',
       },
       primary: {
-        light: '',
-        dark: '',
-      },
-      dark: {
-        light: '',
-        dark: '',
-      },
-      light: {
-        light: '',
-        dark: '',
-      },
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
-        light: '',
-        dark: '',
-      },
-      teal: {
-        light: '',
-        dark: '',
-      },
-      yellow: {
         light: '',
         dark: '',
       },

@@ -6,10 +6,12 @@ export interface FlowbiteAccordionItemTheme {
 
 export interface FlowbiteAccordionItemHostTheme {
   base: string;
+  transition: string;
 }
 
 export const flowbiteAccordionItemTheme: FlowbiteAccordionItemTheme = createTheme({
   host: {
     base: 'group/item',
+    transition: '',
   },
 });

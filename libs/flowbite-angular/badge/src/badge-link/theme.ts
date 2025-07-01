@@ -8,52 +8,38 @@ export interface FlowbiteBadgeLinkTheme {
 
 export interface FlowbiteBadgeLinkHostTheme {
   base: string;
+  transition: string;
   color: FlowbiteBadgeColors;
 }
 
 export const flowbiteBadgeLinkTheme: FlowbiteBadgeLinkTheme = createTheme({
   host: {
     base: 'data-hover:cursor-pointer',
+    transition: '',
     color: {
       default: {
-        light: 'data-hover:bg-gray-300',
-        dark: 'dark:data-hover:bg-gray-500',
+        light: 'data-hover:bg-gray-200',
+        dark: 'dark:data-hover:bg-gray-700',
+      },
+      info: {
+        light: 'data-hover:bg-blue-200',
+        dark: 'dark:data-hover:bg-blue-900',
+      },
+      failure: {
+        light: 'data-hover:bg-red-200',
+        dark: 'dark:data-hover:bg-red-900',
+      },
+      success: {
+        light: 'data-hover:bg-green-200',
+        dark: 'dark:data-hover:bg-green-900',
+      },
+      warning: {
+        light: 'data-hover:bg-yellow-200',
+        dark: 'dark:data-hover:bg-yellow-900',
       },
       primary: {
-        light: 'data-hover:bg-primary-300',
-        dark: 'dark:data-hover:bg-primary-400',
-      },
-      dark: {
-        light: 'data-hover:bg-gray-300',
-        dark: 'dark:data-hover:bg-gray-500',
-      },
-      blue: {
-        light: 'data-hover:bg-blue-300',
-        dark: 'dark:data-hover:bg-blue-400',
-      },
-      red: {
-        light: 'data-hover:bg-red-300',
-        dark: 'dark:data-hover:bg-red-400',
-      },
-      green: {
-        light: 'data-hover:bg-green-300',
-        dark: 'dark:data-hover:bg-green-400',
-      },
-      yellow: {
-        light: 'data-hover:bg-yellow-300',
-        dark: 'dark:data-hover:bg-yellow-400',
-      },
-      indigo: {
-        light: 'data-hover:bg-indigo-300',
-        dark: 'dark:data-hover:bg-indigo-400',
-      },
-      purple: {
-        light: 'data-hover:bg-purple-300',
-        dark: 'dark:data-hover:bg-purple-400',
-      },
-      pink: {
-        light: 'data-hover:bg-pink-300',
-        dark: 'dark:data-hover:bg-pink-400',
+        light: 'data-hover:bg-primary-200',
+        dark: 'dark:data-hover:bg-primary-900',
       },
     },
   },

@@ -6,6 +6,6 @@ export interface FlowbiteBaseButtonSizes
 }
 
 export interface FlowbiteBaseButtonColors
-  extends Pick<FlowbiteColors, 'default' | 'primary' | 'dark' | 'gray' | 'green' | 'red'> {
+  extends Pick<FlowbiteColors, 'default' | 'info' | 'failure' | 'success' | 'warning' | 'primary'> {
   [key: string]: ColorToTheme;
 }

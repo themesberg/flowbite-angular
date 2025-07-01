@@ -8,42 +8,16 @@ export interface FlowbiteHelperTheme {
 
 export interface FlowbiteHelperHostTheme {
   base: string;
+  transition: string;
   color: FlowbiteFormFieldColors;
 }
 
 export const flowbiteHelperTheme: FlowbiteHelperTheme = createTheme({
   host: {
     base: 'mt-2 text-sm',
+    transition: '',
     color: {
-      blue: {
-        light: '',
-        dark: '',
-      },
-      cyan: {
-        light: '',
-        dark: '',
-      },
-      dark: {
-        light: '',
-        dark: '',
-      },
       default: {
-        light: '',
-        dark: '',
-      },
-      failure: {
-        light: '',
-        dark: '',
-      },
-      gray: {
-        light: '',
-        dark: '',
-      },
-      green: {
-        light: '',
-        dark: '',
-      },
-      indigo: {
         light: '',
         dark: '',
       },
@@ -51,27 +25,7 @@ export const flowbiteHelperTheme: FlowbiteHelperTheme = createTheme({
         light: '',
         dark: '',
       },
-      light: {
-        light: '',
-        dark: '',
-      },
-      lime: {
-        light: '',
-        dark: '',
-      },
-      pink: {
-        light: '',
-        dark: '',
-      },
-      primary: {
-        light: '',
-        dark: '',
-      },
-      purple: {
-        light: '',
-        dark: '',
-      },
-      red: {
+      failure: {
         light: '',
         dark: '',
       },
@@ -79,15 +33,11 @@ export const flowbiteHelperTheme: FlowbiteHelperTheme = createTheme({
         light: '',
         dark: '',
       },
-      teal: {
-        light: '',
-        dark: '',
-      },
       warning: {
         light: '',
         dark: '',
       },
-      yellow: {
+      primary: {
         light: '',
         dark: '',
       },

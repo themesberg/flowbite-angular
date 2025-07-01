@@ -45,6 +45,7 @@ export class FlowbiteAlert {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.border[this.state.border() ? 'on' : 'off'],
           mergedTheme.host.accent[this.state.accent() ? 'on' : 'off']

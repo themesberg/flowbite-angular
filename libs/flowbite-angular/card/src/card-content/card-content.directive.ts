@@ -34,6 +34,7 @@ export class FlowbiteCardContent {
       host: {
         root: twMerge(
           mergedTheme.host.base,
+          mergedTheme.host.transition,
           colorToTheme(mergedTheme.host.color, this.cardState().color()),
           this.cardState().orientation() === 'horizontal' &&
             mergedTheme.host.size[this.cardState().size()]

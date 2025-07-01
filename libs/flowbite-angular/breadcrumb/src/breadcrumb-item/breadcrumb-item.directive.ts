@@ -52,11 +52,7 @@ export class FlowbiteBreadcrumbItem {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          colorToTheme(mergedTheme.host.color, this.breadcrumbState().color()),
-
-          /* children */
-          mergedTheme.host.children.base,
-          mergedTheme.host.children.icon.base
+          colorToTheme(mergedTheme.host.color, this.breadcrumbState().color())
         ),
       },
     };
