@@ -28,27 +28,27 @@ export const flowbiteBreadcrumbTheme: FlowbiteBreadcrumbTheme = createTheme({
     color: {
       default: {
         light: 'border-gray-300 bg-gray-100',
-        dark: '',
+        dark: 'dark:border-gray-900 dark:bg-gray-800',
       },
       info: {
         light: 'border-blue-300 bg-blue-100',
-        dark: '',
+        dark: 'dark:border-blue-900 dark:bg-blue-800',
       },
       failure: {
         light: 'border-red-300 bg-red-100',
-        dark: '',
+        dark: 'dark:border-red-900 dark:bg-red-800',
       },
       success: {
         light: 'border-green-300 bg-green-100',
-        dark: '',
+        dark: 'dark:border-green-900 dark:bg-green-800',
       },
       warning: {
         light: 'border-yellow-300 bg-yellow-100',
-        dark: '',
+        dark: 'dark:border-yellow-900 dark:bg-yellow-800',
       },
       primary: {
         light: 'border-primary-300 bg-primary-100',
-        dark: '',
+        dark: 'dark:border-primary-900 dark:bg-primary-800',
       },
     },
   },

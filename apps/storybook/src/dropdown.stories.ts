@@ -35,7 +35,7 @@ export default {
     color: {
       control: 'select',
       type: 'string',
-      options: ['default'],
+      options: ['default', 'info', 'failure', 'success', 'warning', 'primary'],
       table: {
         category: 'Input',
         defaultValue: {

@@ -18,28 +18,28 @@ export const flowbiteBreadcrumbItemTheme: FlowbiteBreadcrumbItemTheme = createTh
     transition: '',
     color: {
       default: {
-        light: 'text-gray-700 hover:text-gray-900',
-        dark: 'dark:text-gray-400 dark:hover:text-white',
+        light: 'text-gray-700 data-hover:text-gray-900',
+        dark: 'dark:text-gray-100 dark:data-hover:text-white',
       },
       info: {
-        light: 'text-blue-700 hover:text-blue-900',
-        dark: 'dark:text-blue-400 dark:hover:text-blue-500',
+        light: 'text-blue-700 data-hover:text-blue-900',
+        dark: 'dark:text-blue-100 dark:data-hover:text-blue-300',
       },
       failure: {
-        light: 'text-red-700 hover:text-red-900',
-        dark: 'dark:text-red-400 dark:hover:text-red-500',
+        light: 'text-red-700 data-hover:text-red-900',
+        dark: 'dark:text-red-100 dark:data-hover:text-red-300',
       },
       success: {
-        light: 'text-green-700 hover:text-green-900',
-        dark: 'dark:text-green-400 dark:hover:text-green-500',
+        light: 'text-green-700 data-hover:text-green-900',
+        dark: 'dark:text-green-100 dark:data-hover:text-green-300',
       },
       warning: {
-        light: 'text-yellow-700 hover:text-yellow-900',
-        dark: 'dark:text-yellow-400 dark:hover:text-yellow-500',
+        light: 'text-yellow-700 data-hover:text-yellow-900',
+        dark: 'dark:text-yellow-100 dark:data-hover:text-yellow-300',
       },
       primary: {
-        light: 'text-primary-700 dark:text-primary-400',
-        dark: 'hover:text-primary-900 dark:hover:text-primary-500',
+        light: 'data-hover:text-primary-900 text-primary-700',
+        dark: 'dark:text-primary-100 dark:data-hover:text-primary-300',
       },
     },
   },

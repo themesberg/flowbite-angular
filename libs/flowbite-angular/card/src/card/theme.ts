@@ -37,28 +37,28 @@ export const flowbiteCardTheme: FlowbiteCardTheme = createTheme({
     },
     color: {
       default: {
-        light: 'border-gray-200 bg-white shadow-gray-300',
-        dark: 'dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-600',
+        light: 'border-gray-100 bg-white shadow-gray-100',
+        dark: 'dark:border-gray-800 dark:bg-gray-900 dark:shadow-gray-800',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'border-blue-100 bg-white shadow-blue-100',
+        dark: 'dark:border-blue-900 dark:bg-gray-900 dark:shadow-blue-900',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'border-red-100 bg-white shadow-red-100',
+        dark: 'dark:border-red-900 dark:bg-gray-900 dark:shadow-red-900',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'border-green-100 bg-white shadow-green-100',
+        dark: 'dark:border-green-900 dark:bg-gray-900 dark:shadow-green-900',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'border-yellow-100 bg-white shadow-yellow-100',
+        dark: 'dark:border-yellow-900 dark:bg-gray-900 dark:shadow-yellow-900',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'border-primary-100 shadow-primary-100 bg-white',
+        dark: 'dark:border-primary-900 dark:shadow-primary-900 dark:bg-gray-900',
       },
     },
     size: {

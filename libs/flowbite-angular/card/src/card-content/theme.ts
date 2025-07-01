@@ -20,27 +20,27 @@ export const flowbiteCardContentTheme: FlowbiteCardContentTheme = createTheme({
     color: {
       default: {
         light: 'text-gray-700',
-        dark: 'dark:text-gray-400',
+        dark: 'dark:text-gray-100',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-100',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-100',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-100',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-100',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'text-gray-700',
+        dark: 'dark:text-gray-100',
       },
     },
     size: {

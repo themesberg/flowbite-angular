@@ -39,7 +39,7 @@ export const flowbiteBadgeTheme: FlowbiteBadgeTheme = createTheme({
     color: {
       default: {
         light: 'border-gray-300 bg-gray-100 text-gray-800',
-        dark: 'dark:border-gray-600 dark:bg-gray-600 dark:text-gray-300',
+        dark: 'dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100',
       },
       info: {
         light: 'border-blue-300 bg-blue-100 text-blue-800',

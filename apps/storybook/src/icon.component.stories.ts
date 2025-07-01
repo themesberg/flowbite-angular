@@ -50,7 +50,6 @@ export default {
         'red',
         'teal',
         'yellow',
-        undefined,
       ],
       table: {
         category: 'Input',

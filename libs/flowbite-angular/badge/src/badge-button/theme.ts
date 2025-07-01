@@ -17,7 +17,7 @@ export const flowbiteBadgeButtonTheme: FlowbiteBadgeButtonTheme = createTheme({
     color: {
       default: {
         light: 'data-hover:bg-gray-300',
-        dark: 'dark:data-hover:bg-gray-500',
+        dark: 'dark:data-hover:bg-gray-700',
       },
       info: {
         light: 'data-hover:bg-blue-300',
