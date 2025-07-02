@@ -53,11 +53,7 @@ import { twMerge } from 'tailwind-merge';
     provideIcons({ chevronDoubleLeft }),
   ],
   host: { '[class]': `theme().host.root` },
-  template: `
-    <flowbite-icon
-      [size]="state.size()"
-      name="chevronDoubleLeft" />
-  `,
+  template: ` <flowbite-icon name="chevronDoubleLeft" /> `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

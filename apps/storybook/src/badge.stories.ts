@@ -130,7 +130,7 @@ export const BadgeIcon: StoryObj<StoryType> = {
     props: args,
     template: `
     <span flowbiteBadge ${argsToTemplate(args)}>
-      <flowbite-icon name="clock" />
+      <flowbite-icon name="clock" class="size-4 stroke-2" />
       <span class="ml-2">${args.color}</span>
     </span>
     `,
@@ -150,7 +150,7 @@ export const BadgeIconOnly: StoryObj<StoryType> = {
     props: args,
     template: `
     <span flowbiteBadge ${argsToTemplate(args)}>
-      <flowbite-icon name="clock" />
+      <flowbite-icon name="clock" class="size-4 stroke-2" />
     </span>
     `,
   }),
@@ -172,7 +172,7 @@ export const DismissableBadge: StoryObj<StoryType> = {
       <flowbite-icon name="infoCircle" />
       <span class="ml-2">${args.color}</span>
       <button flowbiteBadgeButton>
-        <flowbite-icon name="close" />
+        <flowbite-icon name="close" class="size-4 stroke-2" />
       </button>
     </span>
     `,

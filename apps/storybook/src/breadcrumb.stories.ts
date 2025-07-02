@@ -84,15 +84,15 @@ export const Default: StoryObj<StoryType> = {
       <nav flowbiteBreadcrumb ${argsToTemplate(args)}>
         <ol flowbiteBreadcrumbContent>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="home" />
+            <flowbite-icon name="home" class="size-4 stroke-2" />
             <span>Home</span>
           </li>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="chevron-right" />
+            <flowbite-icon name="chevron-right" class="size-4 stroke-2" />
             <span>Projects</span>
           </li>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="chevron-right" />
+            <flowbite-icon name="chevron-right" class="size-4 stroke-2" />
             <span>Flowbite</span>
           </li>
         </ol>
@@ -116,15 +116,15 @@ export const SolidBreadcrumb: StoryObj<StoryType> = {
       <nav flowbiteBreadcrumb ${argsToTemplate(args)}>
         <ol flowbiteBreadcrumbContent>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="home" />
+            <flowbite-icon name="home" class="size-4 stroke-2" />
             <span>Home</span>
           </li>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="chevron-right" />
+            <flowbite-icon name="chevron-right" class="size-4 stroke-2" />
             <span>Projects</span>
           </li>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="chevron-right" />
+            <flowbite-icon name="chevron-right" class="size-4 stroke-2" />
             <span>Flowbite</span>
           </li>
         </ol>
@@ -151,15 +151,15 @@ export const HeaderBreadcrumb: StoryObj<StoryType> = {
             <span>flowbite-angular.com</span>
           </li>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="chevron-right" />
+            <flowbite-icon name="chevron-right" class="size-4 stroke-2" />
             <span>develop</span>
           </li>
           <li flowbiteBreadcrumbItem>
-            <flowbite-icon name="chevron-right" />
+            <flowbite-icon name="chevron-right" class="size-4 stroke-2" />
             <span>Issue #312</span>
           </li>
         </ol>
-        <span flowbiteBadge size="xs" color="info">
+        <span flowbiteBadge color="info">
           <span>docs</span>
         </span>
         <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" size="xs">Fix #6597</button>

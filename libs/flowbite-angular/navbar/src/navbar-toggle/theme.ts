@@ -19,7 +19,7 @@ export interface FlowbiteNavbarToggleHostTheme {
 
 export const flowbiteNavbarToggleTheme: FlowbiteNavbarToggleTheme = createTheme({
   host: {
-    base: 'block h-10 w-10 cursor-pointer items-center justify-center rounded-lg p-2 text-sm md:hidden',
+    base: 'inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg p-2 text-sm md:hidden',
     transition: '',
     focus:
       'data-focus:ring-0 data-focus:outline-none data-focus-visible:ring-2 data-focus-visible:outline-none',

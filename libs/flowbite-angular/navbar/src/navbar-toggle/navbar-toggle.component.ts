@@ -38,7 +38,9 @@ import { twMerge } from 'tailwind-merge';
     '[class]': `theme().host.root`,
     '(click)': 'onClick()',
   },
-  template: `<flowbite-icon name="bars" />`,
+  template: `<flowbite-icon
+    name="bars"
+    class="w-10 stroke-2" />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

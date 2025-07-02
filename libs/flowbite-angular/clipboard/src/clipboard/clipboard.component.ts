@@ -53,8 +53,10 @@ import { twMerge } from 'tailwind-merge';
       </label>
       <button
         flowbiteButton
-        color="light">
-        <flowbite-icon name="fileCopy" />
+        color="default">
+        <flowbite-icon
+          name="fileCopy"
+          class="size-4 stroke-2" />
       </button>
     </div>
     <ng-template #tooltip>
@@ -95,7 +97,6 @@ export class FlowbiteClipboard {
    */
   onClick(): void {
     this.copyToClipboard();
-    console.log('hello');
   }
 
   /**

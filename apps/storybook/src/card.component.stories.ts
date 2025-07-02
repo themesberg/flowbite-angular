@@ -217,8 +217,8 @@ export const UserProfileCard: StoryObj<StoryType> = {
     template: `
       <div flowbiteCard ${argsToTemplate(args)}>
         <div class="flex justify-end px-4 pt-4">
-          <button flowbiteButton color="light" class="border-none dark:border-none" [ngpMenuTrigger]="dropdownMenu">
-            <flowbite-icon name="dotsHorizontal" strokeWidth="lg" />
+          <button flowbiteButton color="default" class="border-none dark:border-none" [ngpMenuTrigger]="dropdownMenu">
+            <flowbite-icon name="dotsHorizontal" class="size-4 stroke-2" />
           </button>
 
           <ng-template #dropdownMenu>
@@ -238,7 +238,7 @@ export const UserProfileCard: StoryObj<StoryType> = {
             <span>Visual designer</span>
             <div class="flex mt-4 md:mt-6 gap-2">
               <button flowbiteButton color="info">Add frient</button>
-              <button flowbiteButton outline color="light">Message</button>
+              <button flowbiteButton outline color="default">Message</button>
             </div>
           </div>
         </div>

@@ -1,12 +1,8 @@
-import type { ColorToTheme, FlowbiteColors, FlowbiteSizes } from 'flowbite-angular';
+import type { ColorToTheme, FlowbiteColors } from 'flowbite-angular';
 import { createTheme } from 'flowbite-angular';
 
 export interface FlowbiteIconColors extends FlowbiteColors {
   [key: string]: ColorToTheme;
-}
-
-export interface FlowbiteIconStrokeWidths extends Pick<FlowbiteSizes, 'sm' | 'md' | 'lg'> {
-  [key: string]: string;
 }
 
 export interface FlowbiteIconTheme {
@@ -17,7 +13,6 @@ export interface FlowbiteIconHostTheme {
   base: string;
   transition: string;
   color: FlowbiteIconColors;
-  strokeWidth: FlowbiteIconStrokeWidths;
 }
 
 export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
@@ -101,11 +96,6 @@ export const flowbiteIconTheme: FlowbiteIconTheme = createTheme({
         light: 'text-yellow-500',
         dark: 'dark:text-yellow-500',
       },
-    },
-    strokeWidth: {
-      sm: 'stroke-1',
-      md: 'stroke-2',
-      lg: 'stroke-3',
     },
   },
 });

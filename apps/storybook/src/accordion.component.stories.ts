@@ -168,7 +168,7 @@ export const AccordionIcon: StoryObj<StoryType> = {
           <div flowbiteAccordionItem value="accordion-item-1" #accordionItem1="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle class="data-open:*:[flowbite-icon]:rotate-180">
               What is Flowbite?
-              <flowbite-icon name="chevronDown" class="transition-transform duration-150 ease-in-out" />
+              <flowbite-icon name="chevronDown" class="transition-transform duration-150 ease-in-out size-4" />
             </h5>
             <div flowbiteAccordionContent>
               <div class="p-5">
@@ -180,7 +180,7 @@ export const AccordionIcon: StoryObj<StoryType> = {
           <div flowbiteAccordionItem value="accordion-item-2" #accordionItem2="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle class="data-open:*:[flowbite-icon]:rotate-180">
               Is there a Figma file available?
-              <flowbite-icon name="chevronDown" class="transition-transform duration-150 ease-in-out" />
+              <flowbite-icon name="chevronDown" class="transition-transform duration-150 ease-in-out size-4" />
             </h5>
             <div flowbiteAccordionContent>
               <div class="p-5">
@@ -192,7 +192,7 @@ export const AccordionIcon: StoryObj<StoryType> = {
           <div flowbiteAccordionItem value="accordion-item-3" #accordionItem3="flowbiteAccordionItem">
             <h5 flowbiteAccordionTitle class="data-open:*:[flowbite-icon]:rotate-180">
               What are the differences between Flowbite and Tailwind UI?
-              <flowbite-icon name="chevronDown" class="transition-transform duration-150 ease-in-out" />
+              <flowbite-icon name="chevronDown" class="transition-transform duration-150 ease-in-out size-4" />
             </h5>
             <div flowbiteAccordionContent>
               <div class="p-5">

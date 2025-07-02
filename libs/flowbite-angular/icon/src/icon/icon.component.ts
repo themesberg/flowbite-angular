@@ -113,10 +113,6 @@ export class FlowbiteIcon implements OnDestroy {
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly strokeWidth = input(this.config.strokeWidth);
-  /**
-   * @see {@link injectFlowbiteIconConfig}
-   */
   readonly customTheme = input(this.config.customTheme);
 
   /** Store the inserted SVG */
@@ -130,8 +126,7 @@ export class FlowbiteIcon implements OnDestroy {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          this.state.color() && colorToTheme(mergedTheme.host.color, this.state.color()!),
-          mergedTheme.host.strokeWidth[this.state.strokeWidth()]
+          this.state.color() && colorToTheme(mergedTheme.host.color, this.state.color()!)
         ),
       },
     };

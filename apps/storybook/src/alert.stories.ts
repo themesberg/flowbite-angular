@@ -104,7 +104,7 @@ export const AlertIcon: StoryObj<StoryType> = {
       <div flowbiteAlert ${argsToTemplate(args)}>
           <div flowbiteAlertContent>
             <span class="inline-flex gap-2 items-center">
-              <flowbite-icon name="infoCircle" />
+              <flowbite-icon name="infoCircle" class="size-5 stroke-2" />
               <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
             </span>
           </div>
@@ -127,13 +127,13 @@ export const DismissableAlert: StoryObj<StoryType> = {
       <div flowbiteAlert ${argsToTemplate(args)}>
           <div flowbiteAlertContent>
             <span class="inline-flex gap-2 items-center">
-              <flowbite-icon name="infoCircle" />
+              <flowbite-icon name="infoCircle" class="size-5 stroke-2" />
               <span>
                 <span class="font-medium">${args.color} alert!</span> Change a few things up and try submitting again.
               </span>
             </span>
             <button flowbiteAlertButton>
-              <flowbite-icon name="close" />
+              <flowbite-icon name="close" class="size-5 stroke-2" />
             </button>
           </div>
       </div>
@@ -155,11 +155,11 @@ export const AlertMoreContent: StoryObj<StoryType> = {
       <div flowbiteAlert ${argsToTemplate(args)}>
         <div flowbiteAlertContent>
           <span class="inline-flex gap-2 items-center">
-            <flowbite-icon size="lg" name="infoCircle" />
+            <flowbite-icon name="infoCircle" class="size-5 stroke-2" />
             <h3 class="font-medium text-lg">This is a ${args.color} alert</h3>
           </span>
           <button flowbiteAlertButton>
-            <flowbite-icon size="lg" name="close" />
+            <flowbite-icon name="close" class="size-5 stroke-2" />
           </button>
         </div>
         <div>

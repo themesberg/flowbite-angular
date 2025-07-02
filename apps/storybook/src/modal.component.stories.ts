@@ -90,7 +90,7 @@ export const Default: StoryObj<StoryType> = {
             </div>
             <div flowbiteModalFooter>
               <button flowbiteButton (click)="close()" color="info">I accept</button>
-              <button flowbiteButton (click)="close()" color="light" outline>Decline</button>
+              <button flowbiteButton (click)="close()" color="default" outline>Decline</button>
             </div>
           </div>
         </div>

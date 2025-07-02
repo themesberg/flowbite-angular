@@ -67,7 +67,7 @@ export const Default: StoryObj<StoryType> = {
     template: `
       <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
         Dropdown button
-        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out size-4 stroke-2" />
       </button>
 
       <ng-template #dropdownMenu>
@@ -95,7 +95,7 @@ export const DropdownDivider: StoryObj<StoryType> = {
     template: `
       <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
         Dropdown button
-        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out size-4 stroke-2" />
       </button>
 
       <ng-template #dropdownMenu>
@@ -125,7 +125,7 @@ export const DropdownHeader: StoryObj<StoryType> = {
     template: `
       <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
         Dropdown button
-        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out size-4 stroke-2" />
       </button>
 
       <ng-template #dropdownMenu>
@@ -159,7 +159,7 @@ export const MultiLevelDropdown: StoryObj<StoryType> = {
     template: `
       <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
         Dropdown button
-        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out size-4 stroke-2" />
       </button>
 
       <ng-template #dropdownMenu>
@@ -172,7 +172,7 @@ export const MultiLevelDropdown: StoryObj<StoryType> = {
             <li flowbiteDropdownItem>Dashboard</li>
             <li flowbiteDropdownItem [ngpSubmenuTrigger]="subMenu">
               <span>Dropdown</span>
-              <flowbite-icon name="chevronRight" />
+              <flowbite-icon name="chevronRight" class="size-5 stroke-2" />
             </li>
             <li flowbiteDropdownItem>Earnings</li>
           </ul>

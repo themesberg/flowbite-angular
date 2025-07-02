@@ -1,4 +1,4 @@
-import type { FlowbiteIconColors, FlowbiteIconStrokeWidths } from '../icon/theme';
+import type { FlowbiteIconColors } from '../icon/theme';
 import { flowbiteIconTheme, type FlowbiteIconTheme } from '../icon/theme';
 
 import type { DeepPartial } from 'flowbite-angular';
@@ -16,10 +16,6 @@ export interface FlowbiteIconConfig {
    */
   color: keyof FlowbiteIconColors;
   /**
-   * The default stroke width of icon
-   */
-  strokeWidth: keyof FlowbiteIconStrokeWidths;
-  /**
    * The custom theme of icon
    */
   customTheme: DeepPartial<FlowbiteIconTheme>;
@@ -28,7 +24,6 @@ export interface FlowbiteIconConfig {
 export const defaultFlowbiteIconConfig: FlowbiteIconConfig = {
   baseTheme: flowbiteIconTheme,
   color: 'default',
-  strokeWidth: 'md',
   customTheme: {},
 };
 
