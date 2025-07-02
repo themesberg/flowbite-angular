@@ -66,7 +66,7 @@ export default {
   render: (args) => ({
     props: args,
     template: `
-      <aside flowbiteSidebar ${argsToTemplate(args)} #sidebar>
+      <aside flowbiteSidebar ${argsToTemplate(args)} #sidebar="flowbiteSidebar">
         <div flowbiteSidebarContent>
           <li><a flowbiteSidebarItem><flowbite-icon name="chartPie" />Dashboard</a></li>
           <li><a flowbiteSidebarItem><flowbite-icon name="drawSquare" />Kanban</a></li>
