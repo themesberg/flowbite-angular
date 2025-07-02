@@ -19,6 +19,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import type { IconType } from '@ng-icons/core';
+import { NgpButton } from 'ng-primitives/button';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
@@ -31,8 +33,18 @@ import { twMerge } from 'tailwind-merge';
   hostDirectives: [
     {
       directive: FlowbiteBaseButton,
-      inputs: ['color:color', 'size:size', 'pill:pill', 'outline:outline'],
+      inputs: ['color:color'],
       outputs: [],
+    },
+    {
+      directive: NgpButton,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+    {
+      directive: NgpFocus,
+      inputs: ['ngpFocusDisabled:focusDisabled'],
+      outputs: ['ngpFocus'],
     },
   ],
   imports: [FlowbiteIcon],
@@ -40,7 +52,6 @@ import { twMerge } from 'tailwind-merge';
   host: { '[class]': `theme().host.root` },
   template: `<flowbite-icon
     [name]="iconName()"
-    [size]="baseButtonState().size()"
     flowbiteStrokeWidth="lg" />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,

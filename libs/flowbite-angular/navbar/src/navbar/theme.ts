@@ -33,28 +33,28 @@ export const flowbiteNavbarTheme: FlowbiteNavbarTheme = createTheme({
     },
     color: {
       default: {
-        light: '',
-        dark: '',
+        light: 'border-gray-200 bg-gray-100',
+        dark: 'dark:border-gray-800 dark:bg-gray-900',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'border-blue-200 bg-gray-100',
+        dark: 'dark:border-blue-800 dark:bg-gray-900',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'border-red-200 bg-gray-100',
+        dark: 'dark:border-red-800 dark:bg-gray-900',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'border-green-200 bg-gray-100',
+        dark: 'dark:border-green-800 dark:bg-gray-900',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'border-yellow-200 bg-gray-100',
+        dark: 'dark:border-yellow-800 dark:bg-gray-900',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'border-primary-200 bg-gray-100',
+        dark: 'dark:border-primary-800 dark:bg-gray-900',
       },
     },
   },

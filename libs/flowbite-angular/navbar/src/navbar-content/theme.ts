@@ -39,28 +39,28 @@ export const flowbiteNavbarContentTheme: FlowbiteNavbarContentTheme = createThem
     transition: '',
     color: {
       default: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-200 md:bg-inherit',
+        dark: 'dark:bg-gray-800 dark:md:bg-inherit',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-200 md:bg-inherit',
+        dark: 'dark:bg-gray-800 dark:md:bg-inherit',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-200 md:bg-inherit',
+        dark: 'dark:bg-gray-800 dark:md:bg-inherit',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-200 md:bg-inherit',
+        dark: 'dark:bg-gray-800 dark:md:bg-inherit',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-200 md:bg-inherit',
+        dark: 'dark:bg-gray-800 dark:md:bg-inherit',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-200 md:bg-inherit',
+        dark: 'dark:bg-gray-800 dark:md:bg-inherit',
       },
     },
   },

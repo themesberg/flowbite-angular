@@ -7,6 +7,8 @@ import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
 import { FlowbiteBaseButton } from 'flowbite-angular/button';
 
 import { computed, Directive, inject, input } from '@angular/core';
+import { NgpButton } from 'ng-primitives/button';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
 @Directive({
@@ -19,8 +21,18 @@ import { twMerge } from 'tailwind-merge';
   hostDirectives: [
     {
       directive: FlowbiteBaseButton,
-      inputs: [],
+      inputs: ['color'],
       outputs: [],
+    },
+    {
+      directive: NgpButton,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+    {
+      directive: NgpFocus,
+      inputs: ['ngpFocusDisabled:focusDisabled'],
+      outputs: ['ngpFocus'],
     },
   ],
   providers: [provideFlowbiteNavbarItemState()],
