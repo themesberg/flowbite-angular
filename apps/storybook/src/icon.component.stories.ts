@@ -16,17 +16,6 @@ export default {
     }),
   ],
   argTypes: {
-    size: {
-      control: 'select',
-      type: 'string',
-      options: ['sm', 'md', 'lg'],
-      table: {
-        category: 'Input',
-        defaultValue: {
-          summary: JSON.stringify(defaultFlowbiteIconConfig.size),
-        },
-      },
-    },
     color: {
       control: 'select',
       type: 'string',
@@ -85,7 +74,6 @@ export default {
 export const Default: StoryObj<StoryType> = {
   name: 'Default',
   args: {
-    size: defaultFlowbiteIconConfig.size,
     color: defaultFlowbiteIconConfig.color,
     strokeWidth: defaultFlowbiteIconConfig.strokeWidth,
     customTheme: defaultFlowbiteIconConfig.customTheme,
@@ -93,7 +81,9 @@ export const Default: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <flowbite-icon ${argsToTemplate(args)} name="close" />
+      <span class="block size-6">
+        <flowbite-icon ${argsToTemplate(args)} name="close" />
+      </span>
     `,
   }),
 };

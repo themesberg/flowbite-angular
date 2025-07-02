@@ -109,10 +109,6 @@ export class FlowbiteIcon implements OnDestroy {
   /**
    * @see {@link injectFlowbiteIconConfig}
    */
-  readonly size = input(this.config.size);
-  /**
-   * @see {@link injectFlowbiteIconConfig}
-   */
   readonly color = input(this.config.color);
   /**
    * @see {@link injectFlowbiteIconConfig}
@@ -134,7 +130,6 @@ export class FlowbiteIcon implements OnDestroy {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.size[this.state.size()],
           this.state.color() && colorToTheme(mergedTheme.host.color, this.state.color()!),
           mergedTheme.host.strokeWidth[this.state.strokeWidth()]
         ),

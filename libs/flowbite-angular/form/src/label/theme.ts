@@ -19,28 +19,28 @@ export const flowbiteLabelTheme: FlowbiteLabelTheme = createTheme({
     transition: '',
     color: {
       default: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'text-blue-900',
+        dark: 'dark:text-blue-500',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'text-red-900',
+        dark: 'dark:text-red-500',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'text-green-900',
+        dark: 'dark:text-green-500',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'text-yellow-900',
+        dark: 'dark:text-yellow-500',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'text-primary-900',
+        dark: 'dark:text-primary-500',
       },
     },
     mode: {

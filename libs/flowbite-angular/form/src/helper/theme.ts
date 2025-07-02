@@ -18,28 +18,28 @@ export const flowbiteHelperTheme: FlowbiteHelperTheme = createTheme({
     transition: '',
     color: {
       default: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'text-gray-900',
+        dark: 'dark:text-white',
       },
     },
   },

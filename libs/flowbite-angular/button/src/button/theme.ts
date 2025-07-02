@@ -20,7 +20,7 @@ export interface FlowbiteButtonHostTheme {
 
 export const flowbiteButtonTheme: FlowbiteButtonTheme = createTheme({
   host: {
-    base: 'flex cursor-pointer items-center justify-between border text-center font-medium',
+    base: 'flex cursor-pointer items-center justify-center border text-center font-medium',
     transition: '',
     focus: 'data-focus:ring-2',
     disabled: 'data-disabled:cursor-not-allowed',
