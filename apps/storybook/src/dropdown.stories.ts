@@ -6,7 +6,7 @@ import {
   FlowbiteDropdownItem,
 } from 'flowbite-angular/dropdown';
 import { FlowbiteIcon } from 'flowbite-angular/icon';
-import { chevronRight } from 'flowbite-angular/icon/outline/arrows';
+import { chevronDown, chevronRight } from 'flowbite-angular/icon/outline/arrows';
 
 import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -28,7 +28,7 @@ export default {
         FlowbiteButton,
         FlowbiteIcon,
       ],
-      providers: [provideIcons({ chevronRight })],
+      providers: [provideIcons({ chevronRight, chevronDown })],
     }),
   ],
   argTypes: {
@@ -65,7 +65,10 @@ export const Default: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown button</button>
+      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
+        Dropdown button
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+      </button>
 
       <ng-template #dropdownMenu>
         <div flowbiteDropdown ${argsToTemplate(args)}>
@@ -90,7 +93,10 @@ export const DropdownDivider: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown button</button>
+      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
+        Dropdown button
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+      </button>
 
       <ng-template #dropdownMenu>
         <div flowbiteDropdown ${argsToTemplate(args)}>
@@ -117,12 +123,15 @@ export const DropdownHeader: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown button</button>
+      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
+        Dropdown button
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+      </button>
 
       <ng-template #dropdownMenu>
         <div flowbiteDropdown ${argsToTemplate(args)}>
           <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-            <div>Bonnie Green</div>
+            <div class="mb-1">Bonnie Green</div>
             <div class="font-medium truncate">name&#64;flowbite.com</div>
           </div>
           <ul flowbiteDropdownContent>
@@ -148,12 +157,15 @@ export const MultiLevelDropdown: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu">Dropdown button</button>
+      <button flowbiteButton [ngpMenuTrigger]="dropdownMenu" class="data-open:*:[flowbite-icon]:rotate-180">
+        Dropdown button
+        <flowbite-icon name="chevronDown" class=" ml-2 transition-transform duration-150 ease-in-out" />
+      </button>
 
       <ng-template #dropdownMenu>
         <div flowbiteDropdown ${argsToTemplate(args)}>
           <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-            <div>Bonnie Green</div>
+            <div class="mb-1">Bonnie Green</div>
             <div class="font-medium truncate">name&#64;flowbite.com</div>
           </div>
           <ul flowbiteDropdownContent>

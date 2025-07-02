@@ -18,28 +18,28 @@ export const flowbiteDropdownItemTheme: FlowbiteDropdownItemTheme = createTheme(
     transition: '',
     color: {
       default: {
-        light: 'hover:bg-gray-100',
-        dark: 'dark:hover:bg-gray-600 dark:hover:text-white',
+        light: 'data-hover:bg-gray-100',
+        dark: 'dark:data-hover:bg-gray-700 dark:data-hover:text-white',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'data-hover:bg-blue-100',
+        dark: 'dark:data-hover:bg-blue-700 dark:data-hover:text-white',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'data-hover:bg-red-100',
+        dark: 'dark:data-hover:bg-red-700 dark:data-hover:text-white',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'data-hover:bg-green-100',
+        dark: 'dark:data-hover:bg-green-700 dark:data-hover:text-white',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'data-hover:bg-yellow-100',
+        dark: 'dark:data-hover:bg-yellow-700 dark:data-hover:text-white',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'data-hover:bg-primary-100',
+        dark: 'dark:data-hover:bg-primary-700 dark:data-hover:text-white',
       },
     },
   },
