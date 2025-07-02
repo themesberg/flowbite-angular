@@ -44,28 +44,28 @@ export const flowbiteIndicatorTheme: FlowbiteIndicatorTheme = createTheme({
     },
     color: {
       default: {
-        light: '',
-        dark: '',
+        light: 'bg-gray-500',
+        dark: 'dark:bg-gray-500',
       },
       info: {
-        light: '',
-        dark: '',
+        light: 'bg-blue-500',
+        dark: 'dark:bg-blue-500',
       },
       failure: {
-        light: '',
-        dark: '',
+        light: 'bg-red-500',
+        dark: 'dark:bg-red-500',
       },
       success: {
-        light: '',
-        dark: '',
+        light: 'bg-green-500',
+        dark: 'dark:bg-green-500',
       },
       warning: {
-        light: '',
-        dark: '',
+        light: 'bg-yellow-500',
+        dark: 'dark:bg-yellow-500',
       },
       primary: {
-        light: '',
-        dark: '',
+        light: 'bg-primary-500',
+        dark: 'dark:bg-primary-500',
       },
     },
     size: {
