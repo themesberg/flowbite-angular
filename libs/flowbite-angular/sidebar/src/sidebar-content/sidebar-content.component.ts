@@ -55,8 +55,8 @@ export class FlowbiteSidebarContent {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          mergedTheme.host.open[this.sidebarState().state.open() ? 'on' : 'off'],
-          colorToTheme(mergedTheme.host.color, this.sidebarState().state.color())
+          mergedTheme.host.open[this.sidebarState().open() ? 'on' : 'off'],
+          colorToTheme(mergedTheme.host.color, this.sidebarState().color())
         ),
       },
       container: {
