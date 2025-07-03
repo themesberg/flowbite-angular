@@ -24,30 +24,6 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
-    },
-    "semantic-release": {
-      "executor": "@theunderscorer/nx-semantic-release:semantic-release",
-      "options": {
-        "github": true,
-        "npm": true,
-        "changelog": true,
-        "branches": [
-          "main",
-          "release",
-          {
-            "name": "beta",
-            "prerelease": true
-          },
-          {
-            "name": "alpha",
-            "prerelease": true
-          }
-        ],
-        "buildTarget": "flowbite-angular:build",
-        "outputPath": "{workspaceRoot}/dist/libs/flowbite-angular",
-        "tagFormat": "flowbite-angular@v${version}",
-        "commitMessage": "chore(flowbite-angular): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
     }
   }
 }

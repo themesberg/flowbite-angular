@@ -115,5 +115,22 @@
     ]
   },
   "useInferencePlugins": false,
-  "defaultBase": "main"
+  "defaultBase": "main",
+  "release": {
+    "version": {
+      "conventionalCommits": true,
+      "preVersionCommand": "pnpm lib:build"
+    },
+    "git": {
+      "commitMessage": "chore(flowbite-angular): {version}"
+    },
+    "changelog": {
+      "workspaceChangelog": {
+        "file": false,
+        "createRelease": "github"
+      }
+    },
+    "projects": ["libs/flowbite-angular"],
+    "releaseTagPattern": "flowbite-angular@v{version}"
+  }
 }
