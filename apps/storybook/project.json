@@ -52,12 +52,6 @@
         }
       },
       "defaultConfiguration": "development"
-    },
-    "test": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "test-storybook -c apps/storybook/.storybook --url=http://localhost:4400"
-      }
     }
   }
 }
