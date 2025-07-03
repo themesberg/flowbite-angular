@@ -60,8 +60,8 @@ importers:
         specifier: 31.3.0
         version: 31.3.0(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0)
       '@ng-primitives/state':
-        specifier: 0.49.0
-        version: 0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
+        specifier: 0.56.0
+        version: 0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
       '@nx/devkit':
         specifier: 20.7.2
         version: 20.7.2(nx@20.7.2(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
@@ -72,8 +72,8 @@ importers:
         specifier: 4.18.3
         version: 4.18.3
       ng-primitives:
-        specifier: 0.49.0
-        version: 0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
+        specifier: 0.56.0
+        version: 0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
       postcss:
         specifier: ^8.5.3
         version: 8.5.6
@@ -274,14 +274,14 @@ importers:
         specifier: 31.3.0
         version: 31.3.0(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0)
       '@ng-primitives/state':
-        specifier: 0.49.0
-        version: 0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
+        specifier: 0.56.0
+        version: 0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
       '@tailwindcss/postcss':
         specifier: ^4.0.0
         version: 4.1.11
       ng-primitives:
-        specifier: 0.49.0
-        version: 0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
+        specifier: 0.56.0
+        version: 0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
       rxjs:
         specifier: 7.5.0
         version: 7.5.0
@@ -2665,8 +2665,8 @@ packages:
       '@angular/core': '>=18.0.0'
       rxjs: ^6.5.3 || ^7.4.0
 
-  '@ng-primitives/state@0.49.0':
-    resolution: {integrity: sha512-Kqvet06uHdIadaaqE1PrZqZQSM1LNH7HZmPZglufBuLNViQ3jAgHmuEcqfjrXu8o0hvfbzFb200Wd87CPJEB9A==}
+  '@ng-primitives/state@0.56.0':
+    resolution: {integrity: sha512-IrQXmnZ3F8qBZBEwvMtrJRFvWEWxKkvLnWuUpCr1I5PQdojMxvkQVTAjREZMHHsj39dbKnw0qqCLDE7K902gEg==}
     peerDependencies:
       '@angular/core': '>=19.0.0'
 
@@ -8313,8 +8313,8 @@ packages:
       tailwindcss:
         optional: true
 
-  ng-primitives@0.49.0:
-    resolution: {integrity: sha512-Danu1h5kWU25TEwXFM25EyW+Yo03rZT3cnimDSc7hHRnS/l9OIeKPGmoECWb1qDY/E6BsmIts6GV9P65bDG7/g==}
+  ng-primitives@0.56.0:
+    resolution: {integrity: sha512-0tUY9zeICMLi+UzxQ6MgBCh2jrBTyXGQzsw3YOwGTKpTcrs4pUbU4glEztpkTGendqD8e/YC7+VcPLzXOdd9Qg==}
     peerDependencies:
       '@angular/cdk': '>=19.0.0'
       '@angular/common': '>=19.0.0'
@@ -14655,10 +14655,10 @@ snapshots:
       rxjs: 7.5.0
       tslib: 2.8.1
 
-  '@ng-primitives/state@0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)':
+  '@ng-primitives/state@0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)':
     dependencies:
       '@angular/core': 19.2.4(rxjs@7.5.0)(zone.js@0.15.0)
-      ng-primitives: 0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
+      ng-primitives: 0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@angular/cdk'
@@ -21922,7 +21922,7 @@ snapshots:
       rollup: 4.44.1
       tailwindcss: 4.1.11
 
-  ng-primitives@0.49.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3):
+  ng-primitives@0.56.0(@angular/cdk@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/forms@19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(@angular/platform-browser@19.2.4(@angular/animations@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0)))(rxjs@7.5.0))(@floating-ui/dom@1.7.2)(rxjs@7.5.0)(typescript@5.7.3):
     dependencies:
       '@angular/cdk': 19.2.4(@angular/common@19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0))(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0)
       '@angular/common': 19.2.4(@angular/core@19.2.4(rxjs@7.5.0)(zone.js@0.15.0))(rxjs@7.5.0)
