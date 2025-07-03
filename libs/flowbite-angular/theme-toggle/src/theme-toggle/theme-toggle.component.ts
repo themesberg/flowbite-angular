@@ -28,7 +28,7 @@ import { twMerge } from 'tailwind-merge';
   hostDirectives: [
     {
       directive: FlowbiteBaseButton,
-      inputs: ['color:color', 'size:size', 'pill:pill', 'outline:outline'],
+      inputs: ['color:color'],
       outputs: [],
     },
   ],
@@ -40,17 +40,11 @@ import { twMerge } from 'tailwind-merge';
   },
   template: `
     <flowbite-icon
-      class="block dark:hidden"
-      name="sun"
-      [size]="baseButtonState().size()"
-      color="default"
-      flowbiteStrokeWidth="lg" />
+      class="inline size-10 stroke-2 dark:hidden"
+      name="sun" />
     <flowbite-icon
-      class="hidden dark:inline"
-      name="moon"
-      [size]="baseButtonState().size()"
-      color="default"
-      flowbiteStrokeWidth="lg" />
+      class="hidden size-10 stroke-2 dark:inline"
+      name="moon" />
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -75,11 +69,7 @@ export class FlowbiteThemeToggle {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          mergedTheme.host.size[this.baseButtonState().size()],
-          mergedTheme.host.pill[this.baseButtonState().pill() ? 'on' : 'off'],
-          this.baseButtonState().outline()
-            ? colorToTheme(mergedTheme.host.colorOutline, this.baseButtonState().color())
-            : colorToTheme(mergedTheme.host.color, this.baseButtonState().color())
+          colorToTheme(mergedTheme.host.color, this.baseButtonState().color())
         ),
       },
     };
