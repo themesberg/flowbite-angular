@@ -1,4 +1,4 @@
-import type { FlowbiteTab } from './tab.directive';
+import type { Tab } from './tab.directive';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteTabStateToken = createStateToken<FlowbiteTab>('Flowbite Tab');
+export const FlowbiteTabStateToken = createStateToken<Tab>('Flowbite Tab');
 export const provideFlowbiteTabState = createStateProvider(FlowbiteTabStateToken);
 export const injectFlowbiteTabState = createStateInjector(FlowbiteTabStateToken);
 export const flowbiteTabState = createState(FlowbiteTabStateToken);

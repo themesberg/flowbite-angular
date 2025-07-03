@@ -1,11 +1,11 @@
 import { injectFlowbiteThemeToggleConfig } from '../config/theme-toggle-config';
-import { FlowbiteTheme } from '../theme/theme.directive';
+import { Theme } from '../theme/theme.directive';
 import type { FlowbiteThemeToggleTheme } from './theme';
 import { flowbiteThemeToggleState, provideFlowbiteThemeToggleState } from './theme-toggle-state';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { BaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
+import { Icon } from 'flowbite-angular/icon';
 import { moon, sun } from 'flowbite-angular/icon/outline/weather';
 
 import {
@@ -27,12 +27,12 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteThemeToggle',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: ['color:color'],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIcon],
+  imports: [Icon],
   providers: [provideFlowbiteThemeToggleState(), provideIcons({ sun, moon })],
   host: {
     '[class]': `theme().host.root`,
@@ -40,19 +40,19 @@ import { twMerge } from 'tailwind-merge';
   },
   template: `
     <flowbite-icon
-      class="inline size-10 stroke-2 dark:hidden"
+      class="inline size-5 stroke-2 dark:hidden"
       name="sun" />
     <flowbite-icon
-      class="hidden size-10 stroke-2 dark:inline"
+      class="hidden size-5 stroke-2 dark:inline"
       name="moon" />
   `,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteThemeToggle {
+export class ThemeToggle {
   protected readonly baseButtonState = injectFlowbiteBaseButtonState();
   protected readonly config = injectFlowbiteThemeToggleConfig();
-  protected readonly themeDirective = inject(FlowbiteTheme);
+  protected readonly themeDirective = inject(Theme);
 
   /**
    * @see {@link injectFlowbiteThemeToggleConfig}
@@ -78,7 +78,7 @@ export class FlowbiteThemeToggle {
   /**
    * @internal
    */
-  readonly state = flowbiteThemeToggleState<FlowbiteThemeToggle>(this);
+  readonly state = flowbiteThemeToggleState<ThemeToggle>(this);
 
   /**
    * @internal

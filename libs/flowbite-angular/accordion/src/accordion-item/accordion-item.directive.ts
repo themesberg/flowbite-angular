@@ -30,7 +30,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteAccordionItemState(), provideAccordionItemState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteAccordionItem {
+export class AccordionItem {
   readonly config = injectFlowbiteAccordionItemConfig();
   readonly accordionState = injectFlowbiteAccordionState();
   readonly ngpAccordionItemState = injectAccordionItemState();
@@ -53,5 +53,5 @@ export class FlowbiteAccordionItem {
   /**
    * @internal
    */
-  readonly state = flowbiteAccordionItemState<FlowbiteAccordionItem>(this);
+  readonly state = flowbiteAccordionItemState<AccordionItem>(this);
 }

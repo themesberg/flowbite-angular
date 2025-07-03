@@ -35,7 +35,7 @@ import { twMerge } from 'tailwind-merge';
     '[class]': `theme().host.root`,
   },
 })
-export class FlowbiteBreadcrumbItem {
+export class BreadcrumbItem {
   readonly config = injectFlowbiteBreadcrumbItemConfig();
   readonly breadcrumbState = injectFlowbiteBreadcrumbState();
 
@@ -61,5 +61,5 @@ export class FlowbiteBreadcrumbItem {
   /**
    * @internal
    */
-  readonly state = flowbiteBreadcrumbItemState<FlowbiteBreadcrumbItem>(this);
+  readonly state = flowbiteBreadcrumbItemState<BreadcrumbItem>(this);
 }

@@ -10,7 +10,7 @@ import type {
 } from './theme';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Icon } from 'flowbite-angular/icon';
 import { chevronDoubleLeft } from 'flowbite-angular/icon/outline/arrows';
 
 import type { BooleanInput } from '@angular/cdk/coercion';
@@ -46,18 +46,18 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
   ],
-  imports: [FlowbiteIcon],
+  imports: [Icon],
   providers: [
     provideFlowbitePaginationFirstState(),
     provideButtonState(),
     provideIcons({ chevronDoubleLeft }),
   ],
   host: { '[class]': `theme().host.root` },
-  template: ` <flowbite-icon name="chevronDoubleLeft" /> `,
+  template: `<flowbite-icon name="chevronDoubleLeft" />`,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbitePaginationFirst {
+export class PaginationFirst {
   protected readonly config = injectFlowbitePaginationFirstConfig();
 
   /**
@@ -99,5 +99,5 @@ export class FlowbitePaginationFirst {
   /**
    * @internal
    */
-  readonly state = flowbitePaginationFirstState<FlowbitePaginationFirst>(this);
+  readonly state = flowbitePaginationFirstState<PaginationFirst>(this);
 }

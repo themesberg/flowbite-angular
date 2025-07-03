@@ -1,9 +1,9 @@
-import { FlowbiteIndicatorComponent } from 'flowbite-angular/indicator';
+import { Indicator } from 'flowbite-angular/indicator';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [FlowbiteIndicatorComponent],
+  imports: [Indicator],
   templateUrl: './_default.component.html',
   host: {
     class: 'flex flex-wrap flex-row gap-3 p-6',

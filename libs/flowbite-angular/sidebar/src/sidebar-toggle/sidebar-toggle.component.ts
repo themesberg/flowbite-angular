@@ -1,5 +1,5 @@
 import { injectFlowbiteSidebarToggleConfig } from '../config/sidebar-toggle-config';
-import type { FlowbiteSidebar } from '../sidebar/sidebar.directive';
+import type { Sidebar } from '../sidebar/sidebar.directive';
 import {
   flowbiteSidebarToggleState,
   provideFlowbiteSidebarToggleState,
@@ -7,8 +7,8 @@ import {
 import type { FlowbiteSidebarToggleTheme } from './theme';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButton } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { BaseButton } from 'flowbite-angular/button';
+import { Icon } from 'flowbite-angular/icon';
 import { barsFromLeft } from 'flowbite-angular/icon/outline/general';
 
 import {
@@ -29,12 +29,12 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteSidebarToggle',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: [],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIcon],
+  imports: [Icon],
   providers: [provideFlowbiteSidebarToggleState(), provideIcons({ barsFromLeft })],
   host: {
     '[class]': `theme().host.root`,
@@ -46,13 +46,13 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteSidebarToggle {
+export class SidebarToggle {
   readonly config = injectFlowbiteSidebarToggleConfig();
 
   /**
    * @see {@link injectFlowbiteSidebarToggleConfig}
    */
-  readonly sidebar = input.required<FlowbiteSidebar>();
+  readonly sidebar = input.required<Sidebar>();
   /**
    * @see {@link injectFlowbiteSidebarToggleConfig}
    */
@@ -77,7 +77,7 @@ export class FlowbiteSidebarToggle {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarToggleState<FlowbiteSidebarToggle>(this);
+  readonly state = flowbiteSidebarToggleState<SidebarToggle>(this);
 
   /**
    * @internal

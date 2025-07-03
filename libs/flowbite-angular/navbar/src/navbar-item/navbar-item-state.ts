@@ -1,4 +1,4 @@
-import type { FlowbiteNavbarItem } from './navbar-item.directive';
+import type { NavbarItem } from './navbar-item.directive';
 
 import {
   createState,
@@ -7,8 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteNavbarItemStateToken =
-  createStateToken<FlowbiteNavbarItem>('Flowbite NavbarItem');
+export const FlowbiteNavbarItemStateToken = createStateToken<NavbarItem>('Flowbite NavbarItem');
 export const provideFlowbiteNavbarItemState = createStateProvider(FlowbiteNavbarItemStateToken);
 export const injectFlowbiteNavbarItemState = createStateInjector(FlowbiteNavbarItemStateToken);
 export const flowbiteNavbarItemState = createState(FlowbiteNavbarItemStateToken);

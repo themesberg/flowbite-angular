@@ -1,9 +1,9 @@
-import { FlowbitePaginationComponent } from 'flowbite-angular/pagination';
+import { Pagination } from 'flowbite-angular/pagination';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [FlowbitePaginationComponent],
+  imports: [Pagination],
   templateUrl: './_default.component.html',
   host: {
     class: 'flex flex-wrap flex-row gap-3 p-6',

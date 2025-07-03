@@ -1,25 +1,17 @@
 import { injectFlowbiteNavbarToggleConfig } from '../config/navbar-toggle-config';
-import { FlowbiteNavbar } from '../navbar/navbar.component';
+import { injectFlowbiteNavbarState } from '../navbar/navbar-state';
 import { flowbiteNavbarToggleState, provideFlowbiteNavbarToggleState } from './navbar-toggle-state';
 import type { FlowbiteNavbarToggleTheme } from './theme';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButton } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { BaseButton } from 'flowbite-angular/button';
 import { bars } from 'flowbite-angular/icon/outline/general';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     button[flowbiteNavbarToggle]
@@ -27,30 +19,21 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbarToggle',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: [],
       outputs: [],
     },
   ],
-  imports: [FlowbiteIcon],
   providers: [provideFlowbiteNavbarToggleState(), provideIcons({ bars })],
   host: {
     '[class]': `theme().host.root`,
     '(click)': 'onClick()',
   },
-  template: `<flowbite-icon
-    name="bars"
-    class="w-10 stroke-2" />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarToggle {
+export class NavbarToggle {
   protected readonly config = injectFlowbiteNavbarToggleConfig();
+  protected readonly navbarState = injectFlowbiteNavbarState();
 
-  /**
-   * @see {@link injectFlowbiteNavbarToggleConfig}
-   */
-  readonly navbar = input(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarToggleConfig}
    */
@@ -66,13 +49,13 @@ export class FlowbiteNavbarToggle {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          colorToTheme(mergedTheme.host.color, this.navbar().state.color())
+          colorToTheme(mergedTheme.host.color, this.navbarState().color())
         ),
       },
     };
   });
 
-  readonly state = flowbiteNavbarToggleState<FlowbiteNavbarToggle>(this);
+  readonly state = flowbiteNavbarToggleState<NavbarToggle>(this);
 
   /**
    * @internal
@@ -85,6 +68,6 @@ export class FlowbiteNavbarToggle {
    * @internal
    */
   toggleNavbar(): void {
-    this.navbar().toggle();
+    this.navbarState().toggle();
   }
 }

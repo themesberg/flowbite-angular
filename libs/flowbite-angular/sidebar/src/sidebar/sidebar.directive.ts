@@ -21,7 +21,7 @@ import { twMerge } from 'tailwind-merge';
     '(click)': 'onClick()',
   },
 })
-export class FlowbiteSidebar {
+export class Sidebar {
   protected readonly config = injectFlowbiteSidebarConfig();
 
   /**
@@ -54,7 +54,7 @@ export class FlowbiteSidebar {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarState<FlowbiteSidebar>(this);
+  readonly state = flowbiteSidebarState<Sidebar>(this);
 
   /**
    * @internal

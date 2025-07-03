@@ -1,4 +1,4 @@
-import type { FlowbiteModalContent } from './modal-content.directive';
+import type { ModalContent } from './modal-content.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteModalContentStateToken =
-  createStateToken<FlowbiteModalContent>('Flowbite ModalContent');
+  createStateToken<ModalContent>('Flowbite ModalContent');
 export const provideFlowbiteModalContentState = createStateProvider(FlowbiteModalContentStateToken);
 export const injectFlowbiteModalContentState = createStateInjector(FlowbiteModalContentStateToken);
 export const flowbiteModalContentState = createState(FlowbiteModalContentStateToken);

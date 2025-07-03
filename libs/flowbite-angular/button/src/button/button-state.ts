@@ -1,4 +1,4 @@
-import type { FlowbiteButton } from './button.directive';
+import type { Button } from './button.directive';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteButtonStateToken = createStateToken<FlowbiteButton>('Flowbite Button');
+export const FlowbiteButtonStateToken = createStateToken<Button>('Flowbite Button');
 export const provideFlowbiteButtonState = createStateProvider(FlowbiteButtonStateToken);
 export const injectFlowbiteButtonState = createStateInjector(FlowbiteButtonStateToken);
 export const flowbiteButtonState = createState(FlowbiteButtonStateToken);

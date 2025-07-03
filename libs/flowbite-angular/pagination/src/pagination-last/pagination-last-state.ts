@@ -1,4 +1,4 @@
-import type { FlowbitePaginationLast } from './pagination-last.component';
+import type { PaginationLast } from './pagination-last.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbitePaginationLastStateToken =
-  createStateToken<FlowbitePaginationLast>('Flowbite PaginationLast');
+  createStateToken<PaginationLast>('Flowbite PaginationLast');
 export const provideFlowbitePaginationLastState = createStateProvider(
   FlowbitePaginationLastStateToken
 );

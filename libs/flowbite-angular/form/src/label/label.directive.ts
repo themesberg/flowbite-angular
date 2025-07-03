@@ -24,7 +24,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteLabelState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteLabel {
+export class Label {
   readonly config = injectFlowbiteLabelConfig();
   readonly formFieldState = injectFlowbiteFormFieldState();
 
@@ -51,5 +51,5 @@ export class FlowbiteLabel {
   /**
    * @internal
    */
-  readonly state = flowbiteLabelState<FlowbiteLabel>(this);
+  readonly state = flowbiteLabelState<Label>(this);
 }

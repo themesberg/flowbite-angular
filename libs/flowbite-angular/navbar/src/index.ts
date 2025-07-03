@@ -34,7 +34,7 @@ export * from './navbar-brand/theme';
 export * from './config/navbar-brand-config';
 
 /* NavbarIconItem */
-export * from './navbar-icon-item/navbar-icon-item.component';
+export * from './navbar-icon-item/navbar-icon-item.directive';
 export * from './navbar-icon-item/navbar-icon-item-state';
 export * from './navbar-icon-item/theme';
 /* Config */

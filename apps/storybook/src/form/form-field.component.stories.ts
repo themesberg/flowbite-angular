@@ -1,25 +1,25 @@
-import { FlowbiteButton } from 'flowbite-angular/button';
+import { Button } from 'flowbite-angular/button';
 import {
   defaultFlowbiteFormFieldConfig,
-  FlowbiteFormControl,
-  FlowbiteFormField,
-  FlowbiteHelper,
-  FlowbiteLabel,
+  FormControl,
+  FormField,
+  Helper,
+  Label,
 } from 'flowbite-angular/form';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteFormField & {
+type StoryType = FormField & {
   disabled: boolean;
 };
 
 export default {
   title: 'Component/Form/FormField',
-  component: FlowbiteFormField,
+  component: FormField,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteFormControl, FlowbiteLabel, FlowbiteHelper, FlowbiteButton],
+      imports: [FormControl, Label, Helper, Button],
     }),
   ],
   argTypes: {
@@ -69,7 +69,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     size: defaultFlowbiteFormFieldConfig.size,
@@ -98,7 +98,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const OutlineFormField: StoryObj<StoryType> = {
+export const OutlineFormFieldStory: StoryObj<StoryType> = {
   name: 'Outline Form Field',
   args: {
     size: defaultFlowbiteFormFieldConfig.size,
@@ -127,7 +127,7 @@ export const OutlineFormField: StoryObj<StoryType> = {
   }),
 };
 
-export const DisabledFormControl: StoryObj<StoryType> = {
+export const DisabledFormControlStory: StoryObj<StoryType> = {
   name: 'Disabled Form Control',
   args: {
     size: defaultFlowbiteFormFieldConfig.size,

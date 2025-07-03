@@ -35,7 +35,12 @@
             "output": "."
           }
         ]
-      }
+      },
+      "configurations": {
+        "production": {},
+        "development": {}
+      },
+      "defaultConfiguration": "production"
     },
     "lint": {
       "executor": "@nx/eslint:lint"

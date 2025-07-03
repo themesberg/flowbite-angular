@@ -67,7 +67,7 @@ let uniqueId = 0;
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteIcon implements OnDestroy {
+export class Icon implements OnDestroy {
   readonly config = injectFlowbiteIconConfig();
 
   /** Access the icons */
@@ -132,7 +132,7 @@ export class FlowbiteIcon implements OnDestroy {
     };
   });
 
-  protected readonly state = flowbiteIconState<FlowbiteIcon>(this);
+  protected readonly state = flowbiteIconState<Icon>(this);
 
   constructor() {
     // update the icon anytime the name or svg changes

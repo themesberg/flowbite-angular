@@ -73,3 +73,15 @@ keyword: ButtonPage
 ```angular-ts file="./_disabled.component.ts" group="disabled" name="typescript"
 
 ```
+
+## Button group
+
+{{ NgDocActions.demo('flowbiteGroupComponent', {container: false}) }}
+
+```angular-html file="./_group.component.html" group="group" name="html"
+
+```
+
+```angular-ts file="./_group.component.ts" group="group" name="typescript"
+
+```

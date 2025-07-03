@@ -1,9 +1,9 @@
-import { FlowbiteBadgeComponent } from 'flowbite-angular/badge';
+import { BadgeLink } from 'flowbite-angular/badge';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [FlowbiteBadgeComponent],
+  imports: [BadgeLink],
   templateUrl: './_link.component.html',
   host: {
     class: 'flex flex-wrap flex-row gap-3 p-6',

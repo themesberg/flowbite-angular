@@ -1,4 +1,4 @@
-import type { FlowbiteNavbarContent } from './navbar-content.component';
+import type { NavbarContent } from './navbar-content.component';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteNavbarContentStateToken =
-  createStateToken<FlowbiteNavbarContent>('Flowbite NavbarContent');
+  createStateToken<NavbarContent>('Flowbite NavbarContent');
 export const provideFlowbiteNavbarContentState = createStateProvider(
   FlowbiteNavbarContentStateToken
 );

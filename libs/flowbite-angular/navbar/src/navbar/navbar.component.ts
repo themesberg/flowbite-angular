@@ -33,7 +33,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbar {
+export class Navbar {
   protected readonly config = injectFlowbiteNavbarConfig();
 
   /**
@@ -74,7 +74,7 @@ export class FlowbiteNavbar {
   /**
    * @internal
    */
-  readonly state = flowbiteNavbarState<FlowbiteNavbar>(this);
+  readonly state = flowbiteNavbarState<Navbar>(this);
 
   /**
    * @internal

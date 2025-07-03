@@ -1,4 +1,4 @@
-import type { FlowbiteLabel } from './label.directive';
+import type { Label } from './label.directive';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteLabelStateToken = createStateToken<FlowbiteLabel>('Flowbite Label');
+export const FlowbiteLabelStateToken = createStateToken<Label>('Flowbite Label');
 export const provideFlowbiteLabelState = createStateProvider(FlowbiteLabelStateToken);
 export const injectFlowbiteLabelState = createStateInjector(FlowbiteLabelStateToken);
 export const flowbiteLabelState = createState(FlowbiteLabelStateToken);

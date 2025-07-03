@@ -17,7 +17,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteTooltipState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteTooltip {
+export class Tooltip {
   protected readonly config = injectFlowbiteTooltipConfig();
 
   /**
@@ -45,5 +45,5 @@ export class FlowbiteTooltip {
   /**
    * @internal
    */
-  readonly state = flowbiteTooltipState<FlowbiteTooltip>(this);
+  readonly state = flowbiteTooltipState<Tooltip>(this);
 }

@@ -49,3 +49,15 @@ keyword: AccordionPage
 ```angular-ts file="./_flush.component.ts" group="flush" name="typescript"
 
 ```
+
+## Accordion with Icon
+
+{{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
+
+```angular-html file="./_icon.component.html" group="icon" name="html"
+
+```
+
+```angular-ts file="./_icon.component.ts" group="icon" name="typescript"
+
+```

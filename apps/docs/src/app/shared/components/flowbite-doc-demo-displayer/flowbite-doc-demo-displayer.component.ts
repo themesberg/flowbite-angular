@@ -1,5 +1,5 @@
-import { FlowbiteButtonComponent, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Icon } from 'flowbite-angular/icon';
 import { desktopPc, mobilePhone, tablet } from 'flowbite-angular/icon/outline/general';
 import { moon, sun } from 'flowbite-angular/icon/outline/weather';
 import { github } from 'flowbite-angular/icon/solid/brands';
@@ -9,7 +9,7 @@ import { provideIcons } from '@ng-icons/core';
 
 @Component({
   selector: 'flowbite-doc-demo',
-  imports: [FlowbiteIconButtonDirective, FlowbiteButtonComponent, FlowbiteIconComponent],
+  imports: [Button, Icon],
   providers: [provideIcons({ github, desktopPc, tablet, mobilePhone, sun, moon })],
   template: `
     <div class="flex grow flex-col rounded-t-xl border border-gray-200 dark:border-gray-700">
@@ -18,60 +18,66 @@ import { provideIcons } from '@ng-icons/core';
         <span>
           <button
             flowbiteButton
-            color="light"
+            color="default"
             size="sm">
             <flowbite-icon
               flowbiteIconButton
-              name="github" />
+              name="github"
+              class="size-5 stroke-2" />
           </button>
         </span>
         <span class="hidden gap-2 lg:flex lg:flex-row">
           <button
             flowbiteButton
             disabled
-            color="light"
+            color="default"
             size="sm">
             <flowbite-icon
               flowbiteIconButton
-              name="desktopPc" />
+              name="desktopPc"
+              class="size-5 stroke-2" />
           </button>
           <button
             flowbiteButton
             disabled
-            color="light"
+            color="default"
             size="sm">
             <flowbite-icon
               flowbiteIconButton
-              name="tablet" />
+              name="tablet"
+              class="size-5 stroke-2" />
           </button>
           <button
             flowbiteButton
             disabled
-            color="light"
+            color="default"
             size="sm">
             <flowbite-icon
               flowbiteIconButton
-              name="mobilePhone" />
+              name="mobilePhone"
+              class="size-5 stroke-2" />
           </button>
         </span>
         <span class="flex flex-row gap-2">
           <button
             flowbiteButton
-            color="light"
+            color="default"
             size="sm"
             (click)="themeMode.set('light')">
             <flowbite-icon
               flowbiteIconButton
-              name="sun" />
+              name="sun"
+              class="size-5 stroke-2" />
           </button>
           <button
             flowbiteButton
-            color="light"
+            color="default"
             size="sm"
             (click)="themeMode.set('dark')">
             <flowbite-icon
               flowbiteIconButton
-              name="moon" />
+              name="moon"
+              class="size-5 stroke-2" />
           </button>
         </span>
       </div>

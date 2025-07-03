@@ -1,12 +1,12 @@
-import { FlowbiteAlertComponent } from 'flowbite-angular/alert';
-import { FlowbiteIconComponent as fic } from 'flowbite-angular/icon';
+import { Alert } from 'flowbite-angular/alert';
+import { Icon } from 'flowbite-angular/icon';
 import { infoCircle } from 'flowbite-angular/icon/outline/general';
 
 import { Component } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 
 @Component({
-  imports: [FlowbiteAlertComponent, fic],
+  imports: [Alert, Icon],
   providers: [provideIcons({ infoCircle })],
   templateUrl: './_icon.component.html',
   host: {

@@ -1,4 +1,4 @@
-import type { FlowbiteIndicator } from './indicator.directive';
+import type { Indicator } from './indicator.directive';
 
 import {
   createState,
@@ -7,8 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteIndicatorStateToken =
-  createStateToken<FlowbiteIndicator>('Flowbite Indicator');
+export const FlowbiteIndicatorStateToken = createStateToken<Indicator>('Flowbite Indicator');
 export const provideFlowbiteIndicatorState = createStateProvider(FlowbiteIndicatorStateToken);
 export const injectFlowbiteIndicatorState = createStateInjector(FlowbiteIndicatorStateToken);
 export const flowbiteIndicatorState = createState(FlowbiteIndicatorStateToken);

@@ -1,13 +1,12 @@
 import { injectFlowbiteSidebarItemConfig } from '../config/sidebar-item-config';
 import { injectFlowbiteSidebarState } from '../sidebar/sidebar-state';
-import { FlowbiteSidebar } from '../sidebar/sidebar.directive';
 import { flowbiteSidebarItemState, provideFlowbiteSidebarItemState } from './sidebar-item-state';
 import type { FlowbiteSidebarItemTheme } from './theme';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButton } from 'flowbite-angular/button';
+import { BaseButton } from 'flowbite-angular/button';
 
-import { computed, Directive, inject, input } from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
@@ -21,7 +20,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteSidebarItem',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: [],
       outputs: [],
     },
@@ -42,11 +41,10 @@ import { twMerge } from 'tailwind-merge';
     '(click)': 'onClick()',
   },
 })
-export class FlowbiteSidebarItem {
+export class SidebarItem {
   readonly config = injectFlowbiteSidebarItemConfig();
   readonly sidebarState = injectFlowbiteSidebarState();
 
-  readonly sidebar = inject(FlowbiteSidebar);
   /**
    * @see {@link injectFlowbiteSidebarItemConfig}
    */
@@ -71,7 +69,7 @@ export class FlowbiteSidebarItem {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarItemState<FlowbiteSidebarItem>(this);
+  readonly state = flowbiteSidebarItemState<SidebarItem>(this);
 
   /**
    * @internal
@@ -84,6 +82,6 @@ export class FlowbiteSidebarItem {
    * @internal
    */
   toggleSidebar(): void {
-    this.sidebar.toggle();
+    this.sidebarState().toggle();
   }
 }

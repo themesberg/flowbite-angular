@@ -1,16 +1,17 @@
 import {
-  FlowbiteAccordionDirective,
-  FlowbiteAccordionItemDirective,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTitle,
 } from 'flowbite-angular/accordion';
-import { FlowbiteIconComponent as fic } from 'flowbite-angular/icon';
+import { Icon } from 'flowbite-angular/icon';
 import { chevronDown } from 'flowbite-angular/icon/outline/arrows';
 
-import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 
 @Component({
-  imports: [FlowbiteAccordionDirective, FlowbiteAccordionItemDirective, fic, NgClass],
+  imports: [Accordion, AccordionItem, AccordionTitle, AccordionContent, Icon],
   providers: [provideIcons({ chevronDown })],
   templateUrl: './_icon.component.html',
   host: {

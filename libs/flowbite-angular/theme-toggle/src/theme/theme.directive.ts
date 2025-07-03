@@ -15,7 +15,7 @@ import { afterNextRender, Directive, input, untracked } from '@angular/core';
   providers: [provideFlowbiteThemeState()],
   host: {},
 })
-export class FlowbiteTheme {
+export class Theme {
   protected readonly config = injectFlowbiteThemeConfig();
 
   readonly localStorageKey = input<string>(this.config.localStorageKey);
@@ -72,5 +72,5 @@ export class FlowbiteTheme {
   /**
    * @internal
    */
-  readonly state = flowbiteThemeState<FlowbiteTheme>(this);
+  readonly state = flowbiteThemeState<Theme>(this);
 }

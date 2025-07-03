@@ -1,4 +1,4 @@
-import type { FlowbiteCardHeader } from './card-header.directive';
+import type { CardHeader } from './card-header.directive';
 
 import {
   createState,
@@ -7,8 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteCardHeaderStateToken =
-  createStateToken<FlowbiteCardHeader>('Flowbite CardHeader');
+export const FlowbiteCardHeaderStateToken = createStateToken<CardHeader>('Flowbite CardHeader');
 export const provideFlowbiteCardHeaderState = createStateProvider(FlowbiteCardHeaderStateToken);
 export const injectFlowbiteCardHeaderState = createStateInjector(FlowbiteCardHeaderStateToken);
 export const flowbiteCardHeaderState = createState(FlowbiteCardHeaderStateToken);

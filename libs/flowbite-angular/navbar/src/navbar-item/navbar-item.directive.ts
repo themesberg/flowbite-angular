@@ -1,12 +1,12 @@
 import { injectFlowbiteNavbarItemConfig } from '../config/navbar-item-config';
-import { FlowbiteNavbar } from '../navbar/navbar.component';
+import { injectFlowbiteNavbarState } from '../navbar/navbar-state';
 import { flowbiteNavbarItemState, provideFlowbiteNavbarItemState } from './navbar-item-state';
 import type { FlowbiteNavbarItemTheme } from './theme';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButton } from 'flowbite-angular/button';
+import { BaseButton } from 'flowbite-angular/button';
 
-import { computed, Directive, inject, input } from '@angular/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
@@ -20,7 +20,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbarItem',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: ['color'],
       outputs: [],
     },
@@ -41,13 +41,10 @@ import { twMerge } from 'tailwind-merge';
     '(click)': 'onClick()',
   },
 })
-export class FlowbiteNavbarItem {
+export class NavbarItem {
   protected readonly config = injectFlowbiteNavbarItemConfig();
+  protected readonly navbarState = injectFlowbiteNavbarState();
 
-  /**
-   * @see {@link injectFlowbiteNavbarItemConfig}
-   */
-  readonly navbar = input(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarItemConfig}
    */
@@ -63,13 +60,13 @@ export class FlowbiteNavbarItem {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          colorToTheme(mergedTheme.host.color, this.navbar().state.color())
+          colorToTheme(mergedTheme.host.color, this.navbarState().color())
         ),
       },
     };
   });
 
-  readonly state = flowbiteNavbarItemState<FlowbiteNavbarItem>(this);
+  readonly state = flowbiteNavbarItemState<NavbarItem>(this);
 
   /**
    * @internal
@@ -82,6 +79,6 @@ export class FlowbiteNavbarItem {
    * @internal
    */
   toggleNavbar(): void {
-    this.navbar().toggle();
+    this.navbarState().toggle();
   }
 }

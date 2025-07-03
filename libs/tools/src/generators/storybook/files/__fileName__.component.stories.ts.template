@@ -1,13 +1,13 @@
-import { defaultFlowbite<%= className %>Config, Flowbite<%= className %> } from 'flowbite-angular/<%= fileName %>';
+import { defaultFlowbite<%= className %>Config, <%= className %> } from 'flowbite-angular/<%= fileName %>';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = Flowbite<%= className %>;
+type StoryType = <%= className %>;
 
 export default {
   title: 'Component/<%= className %>',
-  component: Flowbite<%= className %>,
+  component: <%= className %>,
   argTypes: {
     customTheme: {
       control: 'object',

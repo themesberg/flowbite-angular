@@ -24,7 +24,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteHelperState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteHelper {
+export class Helper {
   readonly config = injectFlowbiteHelperConfig();
   readonly formFieldState = injectFlowbiteFormFieldState();
 
@@ -50,5 +50,5 @@ export class FlowbiteHelper {
   /**
    * @internal
    */
-  readonly state = flowbiteHelperState<FlowbiteHelper>(this);
+  readonly state = flowbiteHelperState<Helper>(this);
 }

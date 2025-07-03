@@ -68,37 +68,12 @@
   },
   "defaultProject": "docs",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
-      "cache": true
-    },
-    "server": {
-      "cache": true
-    },
-    "@nx/eslint:lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "cache": true
-    },
-    "build-storybook": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        "{projectRoot}/.storybook/**/*",
-        "{projectRoot}/tsconfig.storybook.json"
-      ]
-    },
-    "@angular-devkit/build-angular:application": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nx/devkit/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint", "e2e"]
+      }
     }
   },
   "namedInputs": {

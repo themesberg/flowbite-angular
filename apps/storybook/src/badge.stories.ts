@@ -1,10 +1,5 @@
-import {
-  defaultFlowbiteBadgeConfig,
-  FlowbiteBadge,
-  FlowbiteBadgeButton,
-  FlowbiteBadgeLink,
-} from 'flowbite-angular/badge';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Badge, BadgeButton, BadgeLink, defaultFlowbiteBadgeConfig } from 'flowbite-angular/badge';
+import { Icon } from 'flowbite-angular/icon';
 import { close, infoCircle } from 'flowbite-angular/icon/outline/general';
 import { clock } from 'flowbite-angular/icon/solid/general';
 
@@ -12,14 +7,14 @@ import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteBadge;
+type StoryType = Badge;
 
 export default {
   title: 'Component/Badge',
-  component: FlowbiteBadge,
+  component: Badge,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteBadgeLink, FlowbiteIcon, FlowbiteBadgeButton],
+      imports: [BadgeLink, Icon, BadgeButton],
       providers: [provideIcons({ clock, infoCircle, close })],
     }),
   ],
@@ -79,7 +74,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteBadgeConfig.color,
@@ -98,7 +93,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const BadgeLink: StoryObj<StoryType> = {
+export const BadgeLinkStory: StoryObj<StoryType> = {
   name: 'Badge as link',
   args: {
     color: defaultFlowbiteBadgeConfig.color,
@@ -117,7 +112,7 @@ export const BadgeLink: StoryObj<StoryType> = {
   }),
 };
 
-export const BadgeIcon: StoryObj<StoryType> = {
+export const BadgeIconStory: StoryObj<StoryType> = {
   name: 'Badge with icon',
   args: {
     color: defaultFlowbiteBadgeConfig.color,
@@ -137,7 +132,7 @@ export const BadgeIcon: StoryObj<StoryType> = {
   }),
 };
 
-export const BadgeIconOnly: StoryObj<StoryType> = {
+export const BadgeIconOnlyStory: StoryObj<StoryType> = {
   name: 'Badge with icon only',
   args: {
     color: defaultFlowbiteBadgeConfig.color,
@@ -156,7 +151,7 @@ export const BadgeIconOnly: StoryObj<StoryType> = {
   }),
 };
 
-export const DismissableBadge: StoryObj<StoryType> = {
+export const DismissableBadgeStory: StoryObj<StoryType> = {
   name: 'Dismissable Badge',
   args: {
     color: defaultFlowbiteBadgeConfig.color,

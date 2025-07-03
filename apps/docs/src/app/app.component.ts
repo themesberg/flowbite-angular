@@ -2,21 +2,19 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import flowbiteAngularPackageJson from '../../../../libs/flowbite-angular/package.json';
 
-import { FlowbiteBadgeComponent } from 'flowbite-angular/badge';
+import { Badge } from 'flowbite-angular/badge';
+import { Icon } from 'flowbite-angular/icon';
 import { bars } from 'flowbite-angular/icon/outline/general';
 import { discord, github, youtube } from 'flowbite-angular/icon/solid/brands';
 import {
-  FlowbiteNavbarBrandComponent,
-  FlowbiteNavbarComponent,
-  FlowbiteNavbarContentComponent,
-  FlowbiteNavbarIconItemComponent,
-  FlowbiteNavbarItemComponent,
-  FlowbiteNavbarToggleComponent,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarIconItem,
+  NavbarItem,
+  NavbarToggle,
 } from 'flowbite-angular/navbar';
-import {
-  FlowbiteThemeDirective,
-  FlowbiteThemeToggleComponent,
-} from 'flowbite-angular/theme-toggle';
+import { Theme, ThemeToggle } from 'flowbite-angular/theme-toggle';
 
 import { Location } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
@@ -36,19 +34,20 @@ import { provideIcons } from '@ng-icons/core';
     NgDocRootComponent,
     NgDocSidebarComponent,
     NgDocSearchComponent,
-    FlowbiteNavbarComponent,
-    FlowbiteNavbarBrandComponent,
-    FlowbiteNavbarItemComponent,
-    FlowbiteNavbarIconItemComponent,
-    FlowbiteNavbarContentComponent,
-    FlowbiteNavbarToggleComponent,
-    FlowbiteBadgeComponent,
-    FlowbiteThemeToggleComponent,
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarIconItem,
+    NavbarItem,
+    NavbarToggle,
+    Badge,
+    ThemeToggle,
     RouterLink,
+    Icon,
   ],
   hostDirectives: [
     {
-      directive: FlowbiteThemeDirective,
+      directive: Theme,
     },
   ],
   selector: 'flowbite-root',

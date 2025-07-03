@@ -38,7 +38,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteSidebarContent {
+export class SidebarContent {
   readonly config = injectFlowbiteSidebarContentConfig();
   readonly sidebarState = injectFlowbiteSidebarState();
 
@@ -68,7 +68,7 @@ export class FlowbiteSidebarContent {
   /**
    * @internal
    */
-  readonly state = flowbiteSidebarContentState<FlowbiteSidebarContent>(this);
+  readonly state = flowbiteSidebarContentState<SidebarContent>(this);
 
   /**
    * @internal

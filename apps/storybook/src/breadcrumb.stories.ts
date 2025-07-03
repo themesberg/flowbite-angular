@@ -1,13 +1,13 @@
-import { FlowbiteBadge } from 'flowbite-angular/badge';
+import { Badge } from 'flowbite-angular/badge';
 import {
+  Breadcrumb,
+  BreadcrumbContent,
+  BreadcrumbItem,
   defaultFlowbiteBreadcrumbConfig,
-  FlowbiteBreadcrumb,
-  FlowbiteBreadcrumbContent,
-  FlowbiteBreadcrumbItem,
 } from 'flowbite-angular/breadcrumb';
-import { FlowbiteButton } from 'flowbite-angular/button';
-import { FlowbiteDropdown, FlowbiteDropdownItem } from 'flowbite-angular/dropdown';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Dropdown, DropdownItem } from 'flowbite-angular/dropdown';
+import { Icon } from 'flowbite-angular/icon';
 import { chevronRight } from 'flowbite-angular/icon/outline/arrows';
 import { home } from 'flowbite-angular/icon/outline/general';
 
@@ -16,23 +16,23 @@ import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { NgpMenuTrigger } from 'ng-primitives/menu';
 
-type StoryType = FlowbiteBreadcrumb;
+type StoryType = Breadcrumb;
 
 export default {
   title: 'Component/Breadcrumb',
-  component: FlowbiteBreadcrumb,
+  component: Breadcrumb,
   decorators: [
     moduleMetadata({
       providers: [provideIcons({ home, chevronRight })],
       imports: [
-        FlowbiteBreadcrumbContent,
-        FlowbiteBreadcrumbItem,
-        FlowbiteIcon,
-        FlowbiteBadge,
-        FlowbiteButton,
+        BreadcrumbContent,
+        BreadcrumbItem,
+        Icon,
+        Badge,
+        Button,
         NgpMenuTrigger,
-        FlowbiteDropdown,
-        FlowbiteDropdownItem,
+        Dropdown,
+        DropdownItem,
       ],
     }),
   ],
@@ -71,7 +71,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteBreadcrumbConfig.color,
@@ -101,7 +101,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const SolidBreadcrumb: StoryObj<StoryType> = {
+export const SolidBreadcrumbStory: StoryObj<StoryType> = {
   name: 'Solid Breadcrumb',
   args: {
     color: defaultFlowbiteBreadcrumbConfig.color,
@@ -133,7 +133,7 @@ export const SolidBreadcrumb: StoryObj<StoryType> = {
   }),
 };
 
-export const HeaderBreadcrumb: StoryObj<StoryType> = {
+export const HeaderBreadcrumbStory: StoryObj<StoryType> = {
   name: 'Header Breadcrumb',
   args: {
     color: defaultFlowbiteBreadcrumbConfig.color,

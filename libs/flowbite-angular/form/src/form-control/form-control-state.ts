@@ -1,4 +1,4 @@
-import type { FlowbiteFormControl } from './form-control.directive';
+import type { FormControl } from './form-control.directive';
 
 import {
   createState,
@@ -7,8 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteFormControlStateToken =
-  createStateToken<FlowbiteFormControl>('Flowbite FormControl');
+export const FlowbiteFormControlStateToken = createStateToken<FormControl>('Flowbite FormControl');
 export const provideFlowbiteFormControlState = createStateProvider(FlowbiteFormControlStateToken);
 export const injectFlowbiteFormControlState = createStateInjector(FlowbiteFormControlStateToken);
 export const flowbiteFormControlState = createState(FlowbiteFormControlStateToken);

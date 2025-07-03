@@ -1,22 +1,22 @@
 import {
   defaultFlowbiteTabConfig,
-  FlowbiteTab,
-  FlowbiteTabButton,
-  FlowbiteTabContent,
-  FlowbiteTabList,
+  Tab,
+  TabButton,
+  TabContent,
+  TabList,
 } from 'flowbite-angular/tab';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteTab;
+type StoryType = Tab;
 
 export default {
   title: 'Component/Tab',
-  component: FlowbiteTab,
+  component: Tab,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteTabButton, FlowbiteTabContent, FlowbiteTabList],
+      imports: [TabButton, TabContent, TabList],
     }),
   ],
   argTypes: {
@@ -55,7 +55,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     size: defaultFlowbiteTabConfig.size,

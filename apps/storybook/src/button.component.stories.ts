@@ -1,18 +1,18 @@
 import type { FlowbiteBaseButtonColors, FlowbiteBaseButtonSizes } from 'flowbite-angular/button';
 import {
+  Button,
   defaultFlowbiteBaseButtonConfig,
   defaultFlowbiteButtonConfig,
-  FlowbiteButton,
 } from 'flowbite-angular/button';
-import { FlowbiteButtonGroup } from 'flowbite-angular/button-group';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { ButtonGroup } from 'flowbite-angular/button-group';
+import { Icon } from 'flowbite-angular/icon';
 import { close } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = FlowbiteButton & {
+type StoryType = Button & {
   disabled: boolean;
   color: keyof FlowbiteBaseButtonColors;
   size: keyof FlowbiteBaseButtonSizes;
@@ -22,10 +22,10 @@ type StoryType = FlowbiteButton & {
 
 export default {
   title: 'Component/Button',
-  component: FlowbiteButton,
+  component: Button,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteIcon, FlowbiteButtonGroup],
+      imports: [Icon, ButtonGroup],
       providers: [provideIcons({ close })],
     }),
   ],
@@ -95,7 +95,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteBaseButtonConfig.color,
@@ -113,7 +113,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const IconButton: StoryObj<StoryType> = {
+export const IconButtonStory: StoryObj<StoryType> = {
   name: 'Icon Button',
   args: {
     color: defaultFlowbiteBaseButtonConfig.color,
@@ -134,7 +134,7 @@ export const IconButton: StoryObj<StoryType> = {
   }),
 };
 
-export const IconButtonOnly: StoryObj<StoryType> = {
+export const IconButtonOnlyStory: StoryObj<StoryType> = {
   name: 'Icon Button Only',
   args: {
     color: defaultFlowbiteBaseButtonConfig.color,
@@ -154,7 +154,7 @@ export const IconButtonOnly: StoryObj<StoryType> = {
   }),
 };
 
-export const ButtonGroup: StoryObj<StoryType> = {
+export const ButtonGroupStory: StoryObj<StoryType> = {
   name: 'Button Group',
   args: {
     color: defaultFlowbiteBaseButtonConfig.color,

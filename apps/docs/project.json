@@ -43,7 +43,7 @@
         "scripts": [],
         "browser": "apps/docs/src/main.ts",
         "server": "apps/docs/src/main.server.ts",
-        "prerender": true,
+        "prerender": false,
         "allowedCommonJsDependencies": ["@ng-doc/core"]
       },
       "configurations": {

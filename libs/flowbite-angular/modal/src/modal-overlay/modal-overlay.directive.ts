@@ -24,7 +24,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteModalOverlayState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteModalOverlay {
+export class ModalOverlay {
   protected readonly config = injectFlowbiteModalOverlayConfig();
 
   /**
@@ -53,5 +53,5 @@ export class FlowbiteModalOverlay {
   /**
    * @internal
    */
-  readonly state = flowbiteModalOverlayState<FlowbiteModalOverlay>(this);
+  readonly state = flowbiteModalOverlayState<ModalOverlay>(this);
 }

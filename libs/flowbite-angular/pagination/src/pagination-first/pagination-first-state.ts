@@ -1,4 +1,4 @@
-import type { FlowbitePaginationFirst } from './pagination-first.component';
+import type { PaginationFirst } from './pagination-first.component';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbitePaginationFirstStateToken = createStateToken<FlowbitePaginationFirst>(
+export const FlowbitePaginationFirstStateToken = createStateToken<PaginationFirst>(
   'Flowbite PaginationFirst'
 );
 export const provideFlowbitePaginationFirstState = createStateProvider(

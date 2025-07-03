@@ -1,11 +1,11 @@
-import { FlowbiteButton } from 'flowbite-angular/button';
+import { Button } from 'flowbite-angular/button';
 import {
   defaultFlowbiteDropdownConfig,
-  FlowbiteDropdown,
-  FlowbiteDropdownContent,
-  FlowbiteDropdownItem,
+  Dropdown,
+  DropdownContent,
+  DropdownItem,
 } from 'flowbite-angular/dropdown';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Icon } from 'flowbite-angular/icon';
 import { chevronDown, chevronRight } from 'flowbite-angular/icon/outline/arrows';
 
 import { provideIcons } from '@ng-icons/core';
@@ -13,21 +13,14 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpMenuTrigger, NgpSubmenuTrigger } from 'ng-primitives/menu';
 
-type StoryType = FlowbiteDropdown;
+type StoryType = Dropdown;
 
 export default {
   title: 'Component/Dropdown',
-  component: FlowbiteDropdown,
+  component: Dropdown,
   decorators: [
     moduleMetadata({
-      imports: [
-        FlowbiteDropdownContent,
-        FlowbiteDropdownItem,
-        NgpMenuTrigger,
-        NgpSubmenuTrigger,
-        FlowbiteButton,
-        FlowbiteIcon,
-      ],
+      imports: [DropdownContent, DropdownItem, NgpMenuTrigger, NgpSubmenuTrigger, Button, Icon],
       providers: [provideIcons({ chevronRight, chevronDown })],
     }),
   ],
@@ -56,7 +49,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteDropdownConfig.color,
@@ -84,7 +77,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const DropdownDivider: StoryObj<StoryType> = {
+export const DropdownDividerStory: StoryObj<StoryType> = {
   name: 'Dropdown with divider',
   args: {
     color: defaultFlowbiteDropdownConfig.color,
@@ -114,7 +107,7 @@ export const DropdownDivider: StoryObj<StoryType> = {
   }),
 };
 
-export const DropdownHeader: StoryObj<StoryType> = {
+export const DropdownHeaderStory: StoryObj<StoryType> = {
   name: 'Dropdown with header',
   args: {
     color: defaultFlowbiteDropdownConfig.color,
@@ -148,7 +141,7 @@ export const DropdownHeader: StoryObj<StoryType> = {
   }),
 };
 
-export const MultiLevelDropdown: StoryObj<StoryType> = {
+export const MultiLevelDropdownStory: StoryObj<StoryType> = {
   name: 'Multi level Dropdown',
   args: {
     color: defaultFlowbiteDropdownConfig.color,

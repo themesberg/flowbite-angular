@@ -3,12 +3,12 @@ import { flowbiteClipboardState, provideFlowbiteClipboardState } from './clipboa
 import type { FlowbiteClipboardTheme } from './theme';
 
 import { mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteButton } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Icon } from 'flowbite-angular/icon';
 import { fileCopy } from 'flowbite-angular/icon/outline/files-folders';
-import { FlowbiteTooltip } from 'flowbite-angular/tooltip';
+import { Tooltip } from 'flowbite-angular/tooltip';
 
-import { Clipboard } from '@angular/cdk/clipboard';
+import { Clipboard as CdkClipboard } from '@angular/cdk/clipboard';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -28,7 +28,7 @@ import { twMerge } from 'tailwind-merge';
   `,
   exportAs: 'flowbiteClipboard',
   hostDirectives: [],
-  imports: [FlowbiteButton, FlowbiteIcon, NgpTooltipTrigger, FlowbiteTooltip],
+  imports: [Button, Icon, NgpTooltipTrigger, Tooltip],
   providers: [provideFlowbiteClipboardState(), provideIcons({ fileCopy })],
   host: {
     '[class]': `theme().host.root`,
@@ -66,12 +66,12 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteClipboard {
+export class Clipboard {
   readonly config = injectFlowbiteClipboardConfig();
-  readonly clipboard = inject(Clipboard);
+  readonly clipboard = inject(CdkClipboard);
 
-  readonly id = input.required<string>();
-  readonly value = input.required<string>();
+  readonly id = input<string>();
+  readonly value = input<string>();
   /**
    * @see {@link injectFlowbiteClipboardConfig}
    */
@@ -90,7 +90,7 @@ export class FlowbiteClipboard {
   /**
    * @internal
    */
-  readonly state = flowbiteClipboardState<FlowbiteClipboard>(this);
+  readonly state = flowbiteClipboardState<Clipboard>(this);
 
   /**
    * @internal
@@ -103,6 +103,10 @@ export class FlowbiteClipboard {
    * @internal
    */
   copyToClipboard(): void {
-    this.clipboard.copy(this.value());
+    const value = this.value();
+
+    if (value) {
+      this.clipboard.copy(value);
+    }
   }
 }

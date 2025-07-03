@@ -1,11 +1,11 @@
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTitle,
   defaultFlowbiteAccordionConfig,
-  FlowbiteAccordion,
-  FlowbiteAccordionContent,
-  FlowbiteAccordionItem,
-  FlowbiteAccordionTitle,
 } from 'flowbite-angular/accordion';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Icon } from 'flowbite-angular/icon';
 import { chevronDown } from 'flowbite-angular/icon/outline/arrows';
 
 import { NgClass } from '@angular/common';
@@ -13,7 +13,7 @@ import { provideIcons } from '@ng-icons/core';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
 
-type StoryType = FlowbiteAccordion & {
+type StoryType = Accordion & {
   type: string;
   disabled: boolean;
   collapsible: boolean;
@@ -21,16 +21,10 @@ type StoryType = FlowbiteAccordion & {
 
 export default {
   title: 'Component/Accordion',
-  component: FlowbiteAccordion,
+  component: Accordion,
   decorators: [
     moduleMetadata({
-      imports: [
-        FlowbiteAccordionItem,
-        FlowbiteAccordionTitle,
-        FlowbiteAccordionContent,
-        FlowbiteIcon,
-        NgClass,
-      ],
+      imports: [AccordionItem, AccordionTitle, AccordionContent, Icon, NgClass],
       providers: [provideIcons({ chevronDown })],
     }),
   ],
@@ -100,7 +94,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteAccordionConfig.color,
@@ -151,7 +145,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const AccordionIcon: StoryObj<StoryType> = {
+export const AccordionIconStory: StoryObj<StoryType> = {
   name: 'Accordion with Icon',
   args: {
     color: defaultFlowbiteAccordionConfig.color,

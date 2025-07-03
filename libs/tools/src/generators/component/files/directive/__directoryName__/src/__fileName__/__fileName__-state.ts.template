@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const Flowbite<%= className %>StateToken = createStateToken<Flowbite<%= className %>>('Flowbite <%= className %>');
-export const provideFlowbite<%= className %>State = createStateProvider(Flowbite<%= className %>StateToken);
-export const injectFlowbite<%= className %>State = createStateInjector(Flowbite<%= className %>StateToken);
-export const flowbite<%= className %>State = createState(Flowbite<%= className %>StateToken);
+export const Flowbite<%= className %>StateToken = createStateToken<<%= className %>>('Flowbite <%= className %>');
+export const provideFlowbite<%= className %>State = createStateProvider(<%= className %>StateToken);
+export const injectFlowbite<%= className %>State = createStateInjector(<%= className %>StateToken);
+export const flowbite<%= className %>State = createState(<%= className %>StateToken);

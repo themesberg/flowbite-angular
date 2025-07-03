@@ -1,25 +1,25 @@
 import {
+  Alert,
+  AlertButton,
+  AlertContent,
   defaultFlowbiteAlertConfig,
-  FlowbiteAlert,
-  FlowbiteAlertButton,
-  FlowbiteAlertContent,
 } from 'flowbite-angular/alert';
-import { FlowbiteButton } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Icon } from 'flowbite-angular/icon';
 import { close, eye, infoCircle } from 'flowbite-angular/icon/outline/general';
 
 import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteAlert;
+type StoryType = Alert;
 
 export default {
   title: 'Component/Alert',
-  component: FlowbiteAlert,
+  component: Alert,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteIcon, FlowbiteAlertButton, FlowbiteAlertContent, FlowbiteButton],
+      imports: [Icon, AlertButton, AlertContent, Button],
       providers: [provideIcons({ infoCircle, close, eye })],
     }),
   ],
@@ -68,7 +68,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteAlertConfig.color,
@@ -90,7 +90,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const AlertIcon: StoryObj<StoryType> = {
+export const AlertIconStory: StoryObj<StoryType> = {
   name: 'Alert with icon',
   args: {
     color: defaultFlowbiteAlertConfig.color,
@@ -113,7 +113,7 @@ export const AlertIcon: StoryObj<StoryType> = {
   }),
 };
 
-export const DismissableAlert: StoryObj<StoryType> = {
+export const DismissableAlertStory: StoryObj<StoryType> = {
   name: 'Dismissable Alert',
   args: {
     color: defaultFlowbiteAlertConfig.color,
@@ -141,7 +141,7 @@ export const DismissableAlert: StoryObj<StoryType> = {
   }),
 };
 
-export const AlertMoreContent: StoryObj<StoryType> = {
+export const AlertMoreContentStory: StoryObj<StoryType> = {
   name: 'Alert with more content',
   args: {
     color: defaultFlowbiteAlertConfig.color,

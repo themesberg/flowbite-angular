@@ -1,6 +1,6 @@
-import { FlowbiteButtonComponent, FlowbiteIconButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteClipboardComponent } from 'flowbite-angular/clipboard';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Clipboard } from 'flowbite-angular/clipboard';
+import { Icon } from 'flowbite-angular/icon';
 import { combinator, dev, productHunt, reddit, youtube } from 'flowbite-angular/icon/brand';
 import { arrowRight, chevronRight } from 'flowbite-angular/icon/outline/arrows';
 import { check, eye } from 'flowbite-angular/icon/outline/general';
@@ -28,13 +28,7 @@ import { provideIcons } from '@ng-icons/core';
       chevronRight,
     }),
   ],
-  imports: [
-    FlowbiteButtonComponent,
-    FlowbiteIconButtonDirective,
-    FlowbiteIconComponent,
-    FlowbiteClipboardComponent,
-    RouterLink,
-  ],
+  imports: [Button, Icon, Clipboard, RouterLink],
   templateUrl: './landing.component.html',
 })
 export class LandingComponent {

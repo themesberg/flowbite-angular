@@ -27,10 +27,13 @@
         "compodoc": false
       },
       "configurations": {
+        "production": {},
+        "development": {},
         "ci": {
           "quiet": true
         }
-      }
+      },
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@storybook/angular:start-storybook",
@@ -42,10 +45,13 @@
         "compodoc": false
       },
       "configurations": {
+        "production": {},
+        "development": {},
         "ci": {
           "quiet": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "test": {
       "executor": "nx:run-commands",

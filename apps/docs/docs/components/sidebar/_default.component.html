@@ -1,35 +1,38 @@
 <aside
-  [customTheme]="{ host: { base: 'absolute inset-0 top-0 left-0 z-0 h-full lg:w-64' } }"
   flowbiteSidebar
-  #sidebar>
+  #sidebar="flowbiteSidebar">
   <div flowbiteSidebarContent>
     <li>
-      <a flowbiteSidebarItem><flowbite-icon name="chartPie" />Dashboard</a>
+      <a flowbiteSidebarItem> <flowbite-icon name="chartPie" />Dashboard</a>
     </li>
     <li>
-      <a flowbiteSidebarItem><flowbite-icon name="drawSquare" />Kanban</a>
+      <a flowbiteSidebarItem> <flowbite-icon name="drawSquare" />Kanban</a>
     </li>
     <li>
-      <a flowbiteSidebarItem><flowbite-icon name="inbox" />Inbox</a>
+      <a flowbiteSidebarItem> <flowbite-icon name="inbox" />Inbox</a>
     </li>
     <li>
-      <a flowbiteSidebarItem><flowbite-icon name="users" />Users</a>
+      <a flowbiteSidebarItem> <flowbite-icon name="users" />Users</a>
     </li>
     <li>
-      <a flowbiteSidebarItem><flowbite-icon name="cart" />Products</a>
+      <a flowbiteSidebarItem> <flowbite-icon name="cart" />Products</a>
     </li>
-    <li><a flowbiteSidebarItem>Sign In</a></li>
-    <li><a flowbiteSidebarItem>Sign Up</a></li>
+    <li>
+      <a flowbiteSidebarItem> Sign In</a>
+    </li>
+    <li>
+      <a flowbiteSidebarItem> Sign Up</a>
+    </li>
   </div>
 </aside>
-<div class="w-full lg:ml-64">
+<div class="lg:ml-64">
   <button
     flowbiteSidebarToggle
     [sidebar]="sidebar"></button>
 
   <div class="p-4">
     <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
-      @for (i of [0]; track $index) {
+      @for (i of [0, 1]; track $index) {
         <div class="mb-4 grid grid-cols-3 gap-4">
           <div class="flex h-24 items-center justify-center rounded-sm bg-gray-50 dark:bg-gray-800">
             <p class="text-2xl text-gray-400 dark:text-gray-500">

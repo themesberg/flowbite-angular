@@ -1,9 +1,9 @@
 import { injectFlowbitePaginationConfig } from '../config/pagination-config';
-import { FlowbitePaginationButton } from '../pagination-button/pagination-button.component';
-import { FlowbitePaginationFirst } from '../pagination-first/pagination-first.component';
-import { FlowbitePaginationLast } from '../pagination-last/pagination-last.component';
-import { FlowbitePaginationNext } from '../pagination-next/pagination-next.component';
-import { FlowbitePaginationPrevious } from '../pagination-previous/pagination-previous.component';
+import { PaginationButton } from '../pagination-button/pagination-button.component';
+import { PaginationFirst } from '../pagination-first/pagination-first.component';
+import { PaginationLast } from '../pagination-last/pagination-last.component';
+import { PaginationNext } from '../pagination-next/pagination-next.component';
+import { PaginationPrevious } from '../pagination-previous/pagination-previous.component';
 import { flowbitePaginationState, provideFlowbitePaginationState } from './pagination-state';
 import type {
   FlowbitePaginationColors,
@@ -47,13 +47,7 @@ import { twMerge } from 'tailwind-merge';
       outputs: ['ngpPaginationPageChange:pageChange'],
     },
   ],
-  imports: [
-    FlowbitePaginationLast,
-    FlowbitePaginationNext,
-    FlowbitePaginationFirst,
-    FlowbitePaginationButton,
-    FlowbitePaginationPrevious,
-  ],
+  imports: [PaginationLast, PaginationNext, PaginationFirst, PaginationButton, PaginationPrevious],
   providers: [
     provideFlowbitePaginationState(),
     provideIcons({ chevronLeft, chevronDoubleLeft, chevronRight, chevronDoubleRight }),
@@ -85,7 +79,7 @@ import { twMerge } from 'tailwind-merge';
             [color]="state.color()"
             [size]="state.size()"
             [page]="page"
-            aria-label="Previous Page">
+            [attr.aria-label]="'Page' + page">
             {{ page }}
           </button>
         </li>
@@ -111,7 +105,7 @@ import { twMerge } from 'tailwind-merge';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbitePagination {
+export class Pagination {
   protected readonly paginationState = injectPaginationState();
   protected readonly config = injectFlowbitePaginationConfig();
 
@@ -183,5 +177,5 @@ export class FlowbitePagination {
   /**
    * @internal
    */
-  readonly state = flowbitePaginationState<FlowbitePagination>(this);
+  readonly state = flowbitePaginationState<Pagination>(this);
 }

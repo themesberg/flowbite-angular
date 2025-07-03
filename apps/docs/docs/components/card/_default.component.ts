@@ -1,9 +1,9 @@
-import { FlowbiteCardComponent, FlowbiteCardHeaderComponent } from 'flowbite-angular/card';
+import { Card, CardContent, CardHeader } from 'flowbite-angular/card';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [FlowbiteCardComponent, FlowbiteCardHeaderComponent],
+  imports: [Card, CardHeader, CardContent],
   templateUrl: './_default.component.html',
   host: {
     class: 'flex flex-wrap flex-row gap-3 p-6',

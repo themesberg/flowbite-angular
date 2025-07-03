@@ -1,4 +1,4 @@
-import type { FlowbiteSidebar } from './sidebar.directive';
+import type { Sidebar } from './sidebar.directive';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteSidebarStateToken = createStateToken<FlowbiteSidebar>('Flowbite Sidebar');
+export const FlowbiteSidebarStateToken = createStateToken<Sidebar>('Flowbite Sidebar');
 export const provideFlowbiteSidebarState = createStateProvider(FlowbiteSidebarStateToken);
 export const injectFlowbiteSidebarState = createStateInjector(FlowbiteSidebarStateToken);
 export const flowbiteSidebarState = createState(FlowbiteSidebarStateToken);

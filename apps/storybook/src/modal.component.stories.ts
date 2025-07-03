@@ -1,42 +1,37 @@
-import { FlowbiteButton } from 'flowbite-angular/button';
-import {
-  FlowbiteFormControl,
-  FlowbiteFormField,
-  FlowbiteHelper,
-  FlowbiteLabel,
-} from 'flowbite-angular/form';
+import { Button } from 'flowbite-angular/button';
+import { FormControl, FormField, Helper, Label } from 'flowbite-angular/form';
 import {
   defaultFlowbiteModalConfig,
-  FlowbiteModal,
-  FlowbiteModalContent,
-  FlowbiteModalFooter,
-  FlowbiteModalHeader,
-  FlowbiteModalOverlay,
+  Modal,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
 } from 'flowbite-angular/modal';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpDialogTrigger } from 'ng-primitives/dialog';
 
-type StoryType = FlowbiteModal;
+type StoryType = Modal;
 
 export default {
   title: 'Component/Modal',
-  component: FlowbiteModal,
+  component: Modal,
   decorators: [
     moduleMetadata({
       imports: [
-        FlowbiteModalContent,
-        FlowbiteModalFooter,
-        FlowbiteModalHeader,
-        FlowbiteModalOverlay,
-        FlowbiteButton,
+        ModalContent,
+        ModalFooter,
+        ModalHeader,
+        ModalOverlay,
+        Button,
         NgpDialogTrigger,
-        FlowbiteFormControl,
-        FlowbiteFormField,
-        FlowbiteLabel,
-        FlowbiteHelper,
-        FlowbiteButton,
+        FormControl,
+        FormField,
+        Label,
+        Helper,
+        Button,
       ],
     }),
   ],
@@ -65,7 +60,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     size: defaultFlowbiteModalConfig.size,
@@ -99,7 +94,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const FormModal: StoryObj<StoryType> = {
+export const FormModalStory: StoryObj<StoryType> = {
   name: 'Modal with Form',
   args: {
     size: defaultFlowbiteModalConfig.size,

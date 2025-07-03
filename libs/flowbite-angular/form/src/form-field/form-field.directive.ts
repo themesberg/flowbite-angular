@@ -23,7 +23,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteFormFieldState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteFormField {
+export class FormField {
   readonly config = injectFlowbiteFormFieldConfig();
 
   /**
@@ -60,5 +60,5 @@ export class FlowbiteFormField {
   /**
    * @internal
    */
-  readonly state = flowbiteFormFieldState<FlowbiteFormField>(this);
+  readonly state = flowbiteFormFieldState<FormField>(this);
 }

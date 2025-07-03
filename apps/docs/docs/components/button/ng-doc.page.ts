@@ -1,6 +1,7 @@
 import ComponentCategory from '../ng-doc.category';
 import { FlowbiteDefaultComponent } from './_default.component';
 import { FlowbiteDisabledComponent } from './_disabled.component';
+import { FlowbiteGroupComponent } from './_group.component';
 import { FlowbiteIconComponent } from './_icon.component';
 import { FlowbiteOutlineComponent } from './_outline.component';
 import { FlowbitePillComponent } from './_pill.component';
@@ -22,6 +23,7 @@ const Button: NgDocPage = {
     flowbiteSizeComponent: FlowbiteSizeComponent,
     flowbiteIconComponent: FlowbiteIconComponent,
     flowbiteDisabledComponent: FlowbiteDisabledComponent,
+    flowbiteGroupComponent: FlowbiteGroupComponent,
   },
 };
 

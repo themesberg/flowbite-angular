@@ -1,4 +1,4 @@
-import type { FlowbiteModal } from './modal.directive';
+import type { Modal } from './modal.directive';
 
 import {
   createState,
@@ -7,7 +7,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteModalStateToken = createStateToken<FlowbiteModal>('Flowbite Modal');
+export const FlowbiteModalStateToken = createStateToken<Modal>('Flowbite Modal');
 export const provideFlowbiteModalState = createStateProvider(FlowbiteModalStateToken);
 export const injectFlowbiteModalState = createStateInjector(FlowbiteModalStateToken);
 export const flowbiteModalState = createState(FlowbiteModalStateToken);

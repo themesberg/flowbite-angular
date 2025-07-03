@@ -1,11 +1,11 @@
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { Icon } from 'flowbite-angular/icon';
 import { close } from 'flowbite-angular/icon/outline/general';
 
 import { Component } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 
 @Component({
-  imports: [FlowbiteIconComponent],
+  imports: [Icon],
   providers: [provideIcons({ close })],
   templateUrl: './_default.component.html',
   host: {

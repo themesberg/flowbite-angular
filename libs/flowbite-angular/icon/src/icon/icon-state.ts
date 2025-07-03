@@ -1,4 +1,4 @@
-import type { FlowbiteIcon } from './icon.component';
+import type { Icon } from './icon.component';
 
 import { inject, InjectionToken } from '@angular/core';
 import {
@@ -8,7 +8,7 @@ import {
   createStateToken,
 } from 'ng-primitives/state';
 
-export const FlowbiteIconStateToken = createStateToken<FlowbiteIcon>('Flowbite Icon');
+export const FlowbiteIconStateToken = createStateToken<Icon>('Flowbite Icon');
 export const provideFlowbiteIconState = createStateProvider(FlowbiteIconStateToken);
 export const injectFlowbiteIconState = createStateInjector(FlowbiteIconStateToken);
 export const flowbiteIconState = createState(FlowbiteIconStateToken);

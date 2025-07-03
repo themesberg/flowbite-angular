@@ -1,20 +1,20 @@
-import { FlowbiteButton } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Icon } from 'flowbite-angular/icon';
 import { messages } from 'flowbite-angular/icon/outline/general';
-import { defaultFlowbiteIndicatorConfig, FlowbiteIndicator } from 'flowbite-angular/indicator';
+import { defaultFlowbiteIndicatorConfig, Indicator } from 'flowbite-angular/indicator';
 
 import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
-type StoryType = FlowbiteIndicator;
+type StoryType = Indicator;
 
 export default {
   title: 'Component/Indicator',
-  component: FlowbiteIndicator,
+  component: Indicator,
   decorators: [
     moduleMetadata({
-      imports: [FlowbiteButton, FlowbiteIcon],
+      imports: [Button, Icon],
       providers: [provideIcons({ messages })],
     }),
   ],
@@ -86,7 +86,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteIndicatorConfig.color,
@@ -100,7 +100,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const LegendIndicator: StoryObj<StoryType> = {
+export const LegendIndicatorStory: StoryObj<StoryType> = {
   name: 'Legend indicator',
   args: {
     color: defaultFlowbiteIndicatorConfig.color,
@@ -120,7 +120,7 @@ export const LegendIndicator: StoryObj<StoryType> = {
   }),
 };
 
-export const IndicatorCount: StoryObj<StoryType> = {
+export const IndicatorCountStory: StoryObj<StoryType> = {
   name: 'IndicatorCount',
   args: {
     color: 'primary',

@@ -14,18 +14,6 @@ keyword: BadgePage
 
 ```
 
-## Small badge
-
-{{ NgDocActions.demo('flowbiteSmallComponent', {container: false}) }}
-
-```angular-html file="./_small.component.html" group="small" name="html"
-
-```
-
-```angular-ts file="./_small.component.ts" group="small" name="typescript"
-
-```
-
 ## Bordered badge
 
 {{ NgDocActions.demo('flowbiteBorderComponent', {container: false}) }}

@@ -16,7 +16,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbite<%= className %>State()],
   host: { '[class]': `theme().host.root` },
 })
-export class Flowbite<%= className %> {
+export class <%= className %> {
   readonly config = injectFlowbite<%= className %>Config();
 
   /**
@@ -37,5 +37,5 @@ export class Flowbite<%= className %> {
   /**
    * @internal
    */
-  readonly state = flowbite<%= className %>State<Flowbite<%= className %>>(this);
+  readonly state = flowbite<%= className %>State<<%= className %>>(this);
 }

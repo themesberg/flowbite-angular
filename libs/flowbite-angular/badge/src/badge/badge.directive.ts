@@ -18,7 +18,7 @@ import { twMerge } from 'tailwind-merge';
     '[class]': `theme().host.root`,
   },
 })
-export class FlowbiteBadge {
+export class Badge {
   readonly config = injectFlowbiteBadgeConfig();
 
   /**
@@ -62,5 +62,5 @@ export class FlowbiteBadge {
   /**
    * @internal
    */
-  readonly state = flowbiteBadgeState<FlowbiteBadge>(this);
+  readonly state = flowbiteBadgeState<Badge>(this);
 }

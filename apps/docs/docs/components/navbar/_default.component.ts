@@ -1,21 +1,15 @@
 import {
-  FlowbiteNavbarBrandComponent,
-  FlowbiteNavbarComponent,
-  FlowbiteNavbarContentComponent,
-  FlowbiteNavbarItemComponent,
-  FlowbiteNavbarToggleComponent,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarToggle,
 } from 'flowbite-angular/navbar';
 
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [
-    FlowbiteNavbarBrandComponent,
-    FlowbiteNavbarComponent,
-    FlowbiteNavbarContentComponent,
-    FlowbiteNavbarItemComponent,
-    FlowbiteNavbarToggleComponent,
-  ],
+  imports: [Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarToggle],
   templateUrl: './_default.component.html',
   host: {
     class: 'flex flex-wrap flex-col gap-3 p-6',

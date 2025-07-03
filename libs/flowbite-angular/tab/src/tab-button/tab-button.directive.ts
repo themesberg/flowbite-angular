@@ -3,7 +3,7 @@ import { injectFlowbiteTabState } from '../tab/tab-state';
 import { flowbiteTabButtonState, provideFlowbiteTabButtonState } from './tab-button-state';
 
 import { colorToTheme, mergeDeep } from 'flowbite-angular';
-import { FlowbiteBaseButton } from 'flowbite-angular/button';
+import { BaseButton } from 'flowbite-angular/button';
 
 import { computed, Directive, input } from '@angular/core';
 import { NgpFocus } from 'ng-primitives/interactions';
@@ -28,7 +28,7 @@ import { twMerge } from 'tailwind-merge';
       outputs: [],
     },
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: [],
       outputs: [],
     },
@@ -36,7 +36,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteTabButtonState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteTabButton {
+export class TabButton {
   readonly config = injectFlowbiteTabButtonConfig();
   readonly tabState = injectFlowbiteTabState();
 
@@ -62,5 +62,5 @@ export class FlowbiteTabButton {
   /**
    * @internal
    */
-  readonly state = flowbiteTabButtonState<FlowbiteTabButton>(this);
+  readonly state = flowbiteTabButtonState<TabButton>(this);
 }

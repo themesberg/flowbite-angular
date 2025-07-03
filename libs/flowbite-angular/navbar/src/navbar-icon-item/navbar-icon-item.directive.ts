@@ -1,5 +1,5 @@
 import { injectFlowbiteNavbarIconItemConfig } from '../config/navbar-icon-item-config';
-import { FlowbiteNavbar } from '../navbar/navbar.component';
+import { injectFlowbiteNavbarState } from '../navbar/navbar-state';
 import {
   flowbiteNavbarIconItemState,
   provideFlowbiteNavbarIconItemState,
@@ -7,23 +7,14 @@ import {
 import type { FlowbiteNavbarIconItemTheme } from './theme';
 
 import { colorToTheme, mergeDeep, type DeepPartial } from 'flowbite-angular';
-import { FlowbiteBaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { BaseButton, injectFlowbiteBaseButtonState } from 'flowbite-angular/button';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-  ViewEncapsulation,
-} from '@angular/core';
-import type { IconType } from '@ng-icons/core';
+import { computed, Directive, input } from '@angular/core';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
-@Component({
+@Directive({
   standalone: true,
   selector: `
     button[flowbiteNavbarIconItem],
@@ -32,7 +23,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbarIconItem',
   hostDirectives: [
     {
-      directive: FlowbiteBaseButton,
+      directive: BaseButton,
       inputs: ['color:color'],
       outputs: [],
     },
@@ -47,24 +38,14 @@ import { twMerge } from 'tailwind-merge';
       outputs: ['ngpFocus'],
     },
   ],
-  imports: [FlowbiteIcon],
   providers: [provideFlowbiteNavbarIconItemState()],
   host: { '[class]': `theme().host.root` },
-  template: `<flowbite-icon
-    [name]="iconName()"
-    flowbiteStrokeWidth="lg" />`,
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FlowbiteNavbarIconItem {
+export class NavbarIconItem {
   protected readonly baseButtonState = injectFlowbiteBaseButtonState();
+  protected readonly navbarState = injectFlowbiteNavbarState();
   protected readonly config = injectFlowbiteNavbarIconItemConfig();
 
-  readonly iconName = input.required<IconType>();
-  /**
-   * @see {@link injectFlowbiteNavbarToggleConfig}
-   */
-  readonly navbar = input(inject(FlowbiteNavbar));
   /**
    * @see {@link injectFlowbiteNavbarIconItemConfig}
    */
@@ -80,7 +61,7 @@ export class FlowbiteNavbarIconItem {
           mergedTheme.host.transition,
           mergedTheme.host.focus,
           mergedTheme.host.disabled,
-          colorToTheme(mergedTheme.host.color, this.navbar().state.color())
+          colorToTheme(mergedTheme.host.color, this.navbarState().color())
         ),
       },
     };
@@ -89,5 +70,5 @@ export class FlowbiteNavbarIconItem {
   /**
    * @internal
    */
-  readonly state = flowbiteNavbarIconItemState<FlowbiteNavbarIconItem>(this);
+  readonly state = flowbiteNavbarIconItemState<NavbarIconItem>(this);
 }

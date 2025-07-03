@@ -1,13 +1,13 @@
-import { defaultFlowbiteClipboardConfig, FlowbiteClipboard } from 'flowbite-angular/clipboard';
+import { Clipboard, defaultFlowbiteClipboardConfig } from 'flowbite-angular/clipboard';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate } from '@storybook/angular';
 
-type StoryType = FlowbiteClipboard;
+type StoryType = Clipboard;
 
 export default {
   title: 'Component/Clipboard',
-  component: FlowbiteClipboard,
+  component: Clipboard,
   argTypes: {
     id: {
       control: 'text',
@@ -36,7 +36,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     id: 'clipboard',

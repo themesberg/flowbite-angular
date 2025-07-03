@@ -1,4 +1,4 @@
-import type { FlowbiteDropdownItem } from './dropdown-item.directive';
+import type { DropdownItem } from './dropdown-item.directive';
 
 import {
   createState,
@@ -8,7 +8,7 @@ import {
 } from 'ng-primitives/state';
 
 export const FlowbiteDropdownItemStateToken =
-  createStateToken<FlowbiteDropdownItem>('Flowbite Dropdown Item');
+  createStateToken<DropdownItem>('Flowbite Dropdown Item');
 export const provideFlowbiteDropdownItemState = createStateProvider(FlowbiteDropdownItemStateToken);
 export const injectFlowbiteDropdownItemState = createStateInjector(FlowbiteDropdownItemStateToken);
 export const flowbiteDropdownItemState = createState(FlowbiteDropdownItemStateToken);

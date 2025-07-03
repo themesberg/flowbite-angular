@@ -1,5 +1,5 @@
 import { injectFlowbiteBadgeState } from '../badge/badge-state';
-import { FlowbiteBadge } from '../badge/badge.directive';
+import { Badge } from '../badge/badge.directive';
 import { injectFlowbiteBadgeLinkConfig } from '../config/badge-link-config';
 import { flowbiteBadgeLinkState, provideFlowbiteBadgeLinkState } from './badge-link-state';
 
@@ -19,7 +19,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteBadgeLink',
   hostDirectives: [
     {
-      directive: FlowbiteBadge,
+      directive: Badge,
       inputs: ['color', 'border', 'pill', 'size', 'customTheme:badgeCustomTheme'],
       outputs: [],
     },
@@ -37,7 +37,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteBadgeLinkState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteBadgeLink {
+export class BadgeLink {
   readonly config = injectFlowbiteBadgeLinkConfig();
   readonly badgeState = injectFlowbiteBadgeState();
 
@@ -63,5 +63,5 @@ export class FlowbiteBadgeLink {
   /**
    * @internal
    */
-  readonly state = flowbiteBadgeLinkState<FlowbiteBadgeLink>(this);
+  readonly state = flowbiteBadgeLinkState<BadgeLink>(this);
 }

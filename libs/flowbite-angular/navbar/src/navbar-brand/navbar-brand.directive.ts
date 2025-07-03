@@ -20,7 +20,7 @@ import { twMerge } from 'tailwind-merge';
     '[attr.type]': 'button',
   },
 })
-export class FlowbiteNavbarBrand {
+export class NavbarBrand {
   protected readonly config = injectFlowbiteNavbarBrandConfig();
 
   /**
@@ -38,5 +38,5 @@ export class FlowbiteNavbarBrand {
     };
   });
 
-  protected readonly state = flowbiteNavbarBrandState<FlowbiteNavbarBrand>(this);
+  protected readonly state = flowbiteNavbarBrandState<NavbarBrand>(this);
 }

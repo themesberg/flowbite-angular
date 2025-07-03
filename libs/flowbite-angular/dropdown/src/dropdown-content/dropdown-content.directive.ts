@@ -20,7 +20,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteDropdownContentState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteDropdownContent {
+export class DropdownContent {
   readonly config = injectFlowbiteDropdownContentConfig();
   readonly dropdownState = injectFlowbiteDropdownState();
 
@@ -46,5 +46,5 @@ export class FlowbiteDropdownContent {
   /**
    * @internal
    */
-  readonly state = flowbiteDropdownContentState<FlowbiteDropdownContent>(this);
+  readonly state = flowbiteDropdownContentState<DropdownContent>(this);
 }

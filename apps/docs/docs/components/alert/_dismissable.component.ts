@@ -1,13 +1,12 @@
-import { FlowbiteAlertComponent } from 'flowbite-angular/alert';
-import { FlowbiteIconButtonDirective } from 'flowbite-angular/button';
-import { FlowbiteIconComponent } from 'flowbite-angular/icon';
+import { Alert, AlertButton } from 'flowbite-angular/alert';
+import { Icon } from 'flowbite-angular/icon';
 import { close } from 'flowbite-angular/icon/outline/general';
 
 import { Component } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 
 @Component({
-  imports: [FlowbiteAlertComponent, FlowbiteIconComponent, FlowbiteIconButtonDirective],
+  imports: [Alert, Icon, AlertButton],
   providers: [provideIcons({ close })],
   templateUrl: './_dismissable.component.html',
   host: {

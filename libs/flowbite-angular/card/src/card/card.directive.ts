@@ -16,7 +16,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteCardState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteCard {
+export class Card {
   readonly config = injectFlowbiteCardConfig();
 
   /**
@@ -55,5 +55,5 @@ export class FlowbiteCard {
   /**
    * @internal
    */
-  readonly state = flowbiteCardState<FlowbiteCard>(this);
+  readonly state = flowbiteCardState<Card>(this);
 }

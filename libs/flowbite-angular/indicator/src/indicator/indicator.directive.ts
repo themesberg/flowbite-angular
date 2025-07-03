@@ -16,7 +16,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteIndicatorState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteIndicator {
+export class Indicator {
   readonly config = injectFlowbiteIndicatorConfig();
 
   /**
@@ -59,5 +59,5 @@ export class FlowbiteIndicator {
   /**
    * @internal
    */
-  readonly state = flowbiteIndicatorState<FlowbiteIndicator>(this);
+  readonly state = flowbiteIndicatorState<Indicator>(this);
 }

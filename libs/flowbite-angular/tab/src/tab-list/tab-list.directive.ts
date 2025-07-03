@@ -24,7 +24,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteTabListState()],
   host: { '[class]': `theme().host.root` },
 })
-export class FlowbiteTabList {
+export class TabList {
   readonly config = injectFlowbiteTabListConfig();
   readonly tabState = injectFlowbiteTabState();
 
@@ -50,5 +50,5 @@ export class FlowbiteTabList {
   /**
    * @internal
    */
-  readonly state = flowbiteTabListState<FlowbiteTabList>(this);
+  readonly state = flowbiteTabListState<TabList>(this);
 }

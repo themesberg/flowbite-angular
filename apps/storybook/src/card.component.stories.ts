@@ -1,12 +1,7 @@
-import { FlowbiteButton } from 'flowbite-angular/button';
-import {
-  defaultFlowbiteCardConfig,
-  FlowbiteCard,
-  FlowbiteCardContent,
-  FlowbiteCardHeader,
-} from 'flowbite-angular/card';
-import { FlowbiteDropdown, FlowbiteDropdownItem } from 'flowbite-angular/dropdown';
-import { FlowbiteIcon } from 'flowbite-angular/icon';
+import { Button } from 'flowbite-angular/button';
+import { Card, CardContent, CardHeader, defaultFlowbiteCardConfig } from 'flowbite-angular/card';
+import { Dropdown, DropdownItem } from 'flowbite-angular/dropdown';
+import { Icon } from 'flowbite-angular/icon';
 import { arrowRight } from 'flowbite-angular/icon/outline/arrows';
 import { dotsHorizontal, link } from 'flowbite-angular/icon/outline/general';
 
@@ -15,22 +10,14 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpMenuTrigger } from 'ng-primitives/menu';
 
-type StoryType = FlowbiteCard;
+type StoryType = Card;
 
 export default {
   title: 'Component/Card',
-  component: FlowbiteCard,
+  component: Card,
   decorators: [
     moduleMetadata({
-      imports: [
-        FlowbiteCardHeader,
-        FlowbiteCardContent,
-        FlowbiteButton,
-        FlowbiteIcon,
-        NgpMenuTrigger,
-        FlowbiteDropdown,
-        FlowbiteDropdownItem,
-      ],
+      imports: [CardHeader, CardContent, Button, Icon, NgpMenuTrigger, Dropdown, DropdownItem],
       providers: [provideIcons({ arrowRight, link, dotsHorizontal })],
     }),
   ],
@@ -81,7 +68,7 @@ export default {
   },
 } as Meta<StoryType>;
 
-export const Default: StoryObj<StoryType> = {
+export const DefaultStory: StoryObj<StoryType> = {
   name: 'Default',
   args: {
     color: defaultFlowbiteCardConfig.color,
@@ -102,7 +89,7 @@ export const Default: StoryObj<StoryType> = {
   }),
 };
 
-export const CardButton: StoryObj<StoryType> = {
+export const CardButtonStory: StoryObj<StoryType> = {
   name: 'Card with button',
   args: {
     color: defaultFlowbiteCardConfig.color,
@@ -127,7 +114,7 @@ export const CardButton: StoryObj<StoryType> = {
   }),
 };
 
-export const CardLink: StoryObj<StoryType> = {
+export const CardLinkStory: StoryObj<StoryType> = {
   name: 'Card with link',
   args: {
     color: defaultFlowbiteCardConfig.color,
@@ -152,7 +139,7 @@ export const CardLink: StoryObj<StoryType> = {
   }),
 };
 
-export const CardImage: StoryObj<StoryType> = {
+export const CardImageStory: StoryObj<StoryType> = {
   name: 'Card with image',
   args: {
     color: defaultFlowbiteCardConfig.color,
@@ -178,7 +165,7 @@ export const CardImage: StoryObj<StoryType> = {
   }),
 };
 
-export const CardOrientation: StoryObj<StoryType> = {
+export const CardOrientationStory: StoryObj<StoryType> = {
   name: 'Horizontal Card',
   args: {
     color: defaultFlowbiteCardConfig.color,
@@ -204,7 +191,7 @@ export const CardOrientation: StoryObj<StoryType> = {
   }),
 };
 
-export const UserProfileCard: StoryObj<StoryType> = {
+export const UserProfileCardStory: StoryObj<StoryType> = {
   name: 'User profile Card',
   args: {
     color: defaultFlowbiteCardConfig.color,

@@ -1,18 +1,18 @@
-import { FlowbiteButton } from 'flowbite-angular/button';
-import { defaultFlowbiteTooltipConfig, FlowbiteTooltip } from 'flowbite-angular/tooltip';
+import { Button } from 'flowbite-angular/button';
+import { defaultFlowbiteTooltipConfig, Tooltip } from 'flowbite-angular/tooltip';
 
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { NgpTooltipTrigger } from 'ng-primitives/tooltip';
 
-type StoryType = FlowbiteTooltip;
+type StoryType = Tooltip;
 
 export default {
   title: 'Component/Tooltip',
-  component: FlowbiteTooltip,
+  component: Tooltip,
   decorators: [
     moduleMetadata({
-      imports: [NgpTooltipTrigger, FlowbiteButton],
+      imports: [NgpTooltipTrigger, Button],
     }),
   ],
   argTypes: {
@@ -38,6 +38,10 @@ export default {
       },
     },
   },
+} as Meta<StoryType>;
+
+export const DefaultStory: StoryObj<StoryType> = {
+  name: 'Default',
   args: {
     color: defaultFlowbiteTooltipConfig.color,
     customTheme: defaultFlowbiteTooltipConfig.customTheme,
@@ -52,8 +56,4 @@ export default {
       </ng-template>
     `,
   }),
-} as Meta<StoryType>;
-
-export const Default: StoryObj<StoryType> = {
-  name: 'Default',
 };
