@@ -1,3 +1,5 @@
+import { bindTwoWay, hiddenOutputActions } from '../.storybook/helper';
+
 import { defaultFlowbitePaginationConfig, Pagination } from 'flowbite-angular/pagination';
 
 import type { Meta, StoryObj } from '@storybook/angular';
@@ -65,6 +67,7 @@ export default {
         },
       },
     },
+    ...hiddenOutputActions('pageChange'),
   },
 } as Meta<StoryType>;
 
@@ -77,8 +80,11 @@ export const DefaultStory: StoryObj<StoryType> = {
     size: defaultFlowbitePaginationConfig.size,
     customTheme: defaultFlowbitePaginationConfig.customTheme,
   },
-  render: (args) => ({
-    props: args,
+  render: (args, { id }) => ({
+    props: {
+      ...args,
+      pageChange: bindTwoWay(id, 'page'),
+    },
     template: `
       <nav flowbitePagination ${argsToTemplate(args)}></nav>
     `,

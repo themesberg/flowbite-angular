@@ -1,6 +1,6 @@
 import { Pagination } from 'flowbite-angular/pagination';
 
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   imports: [Pagination],
@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
     class: 'flex flex-wrap flex-row gap-3 p-6',
   },
 })
-export class FlowbiteDefaultComponent {}
+export class FlowbiteDefaultComponent {
+  readonly page = signal<number>(1);
+}
