@@ -1,3 +1,4 @@
+import { bars } from 'flowbite-angular/icon/outline/general';
 import {
   defaultFlowbiteNavbarConfig,
   Navbar,
@@ -7,6 +8,7 @@ import {
   NavbarToggle,
 } from 'flowbite-angular/navbar';
 
+import { provideIcons } from '@ng-icons/core';
 import type { Meta, StoryObj } from '@storybook/angular';
 import { argsToTemplate, moduleMetadata } from '@storybook/angular';
 
@@ -18,6 +20,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [NavbarContent, NavbarItem, NavbarToggle, NavbarBrand],
+      providers: [provideIcons({ bars })],
     }),
   ],
   argTypes: {
@@ -82,7 +85,11 @@ export const DefaultStory: StoryObj<StoryType> = {
           <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
         </a>
-        <button flowbiteNavbarToggle></button>
+        <button flowbiteNavbarToggle>
+          <flowbite-icon
+            name="bars"
+            class="size-5 stroke-2" />
+        </button>
         <div flowbiteNavbarContent>
           <li><a flowbiteNavbarItem href="#">Home</a></li>
           <li><a flowbiteNavbarItem href="#">About</a></li>
