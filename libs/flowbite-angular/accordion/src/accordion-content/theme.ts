@@ -26,23 +26,23 @@ export const flowbiteAccordionContentTheme: FlowbiteAccordionContentTheme = crea
       },
       info: {
         light: 'border-blue-200 bg-white',
-        dark: 'dark:border-blue-700 dark:bg-blue-900',
+        dark: 'dark:border-blue-700 dark:bg-gray-900',
       },
       failure: {
         light: 'border-red-200 bg-white',
-        dark: 'dark:border-red-700 dark:bg-red-900',
+        dark: 'dark:border-red-700 dark:bg-gray-900',
       },
       success: {
         light: 'border-green-200 bg-white',
-        dark: 'dark:border-green-700 dark:bg-green-900',
+        dark: 'dark:border-green-700 dark:bg-gray-900',
       },
       warning: {
         light: 'border-yellow-200 bg-white',
-        dark: 'dark:border-yellow-700 dark:bg-yellow-900',
+        dark: 'dark:border-yellow-700 dark:bg-gray-900',
       },
       primary: {
         light: 'border-primary-200 bg-white',
-        dark: 'dark:border-primary-700 dark:bg-primary-900',
+        dark: 'dark:border-primary-700 dark:bg-gray-900',
       },
     },
     open: {
