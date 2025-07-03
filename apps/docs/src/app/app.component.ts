@@ -5,7 +5,7 @@ import flowbiteAngularPackageJson from '../../../../libs/flowbite-angular/packag
 import { Badge } from 'flowbite-angular/badge';
 import { Icon } from 'flowbite-angular/icon';
 import { bars } from 'flowbite-angular/icon/outline/general';
-import { discord, github, youtube } from 'flowbite-angular/icon/solid/brands';
+import { discord, github, storybook, youtube } from 'flowbite-angular/icon/solid/brands';
 import {
   Navbar,
   NavbarBrand,
@@ -28,7 +28,7 @@ import {
 import { provideIcons } from '@ng-icons/core';
 
 @Component({
-  providers: [provideIcons({ github, discord, youtube, bars })],
+  providers: [provideIcons({ github, discord, youtube, bars, storybook })],
   imports: [
     RouterOutlet,
     NgDocRootComponent,
