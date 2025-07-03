@@ -159,9 +159,6 @@ importers:
       '@storybook/addon-docs':
         specifier: 9.0.15
         version: 9.0.15(@types/react@19.1.8)(storybook@9.0.15(@testing-library/dom@10.4.0)(prettier@3.4.2))
-      '@storybook/addon-styling-webpack':
-        specifier: ^2.0.0
-        version: 2.0.0(storybook@9.0.15(@testing-library/dom@10.4.0)(prettier@3.4.2))(webpack@5.99.8(@swc/core@1.5.29(@swc/helpers@0.5.17))(esbuild@0.25.5))
       '@storybook/addon-themes':
         specifier: 9.0.15
         version: 9.0.15(storybook@9.0.15(@testing-library/dom@10.4.0)(prettier@3.4.2))
@@ -3393,12 +3390,6 @@ packages:
     resolution: {integrity: sha512-HOb45DkF23T1tRzakb9q33qnBRso15S/GM28ippPZWi5ZXR9RAyKVgOSMA/ViEpK4ezASxN+Tee+H7m4ksEFZw==}
     peerDependencies:
       storybook: ^9.0.15
-
-  '@storybook/addon-styling-webpack@2.0.0':
-    resolution: {integrity: sha512-N8jWhWnk3/nbL4P9zl0OEV/47P0Cxn/kPzSHjdAClyDYnqj9jI6upeLsraZgIV9Ro3QSeqeIloeXb1zMasWpOw==}
-    peerDependencies:
-      storybook: ^9.0.0
-      webpack: ^5.0.0
 
   '@storybook/addon-themes@9.0.15':
     resolution: {integrity: sha512-DiJt9JZe8UoUHEq7GQ+LFwdufiowd4e90jkExlcrCe6e0j7OTui87HmII+/kg0XG+40Pq8WekUPoUSzEpfMeNA==}
@@ -15804,11 +15795,6 @@ snapshots:
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
-
-  '@storybook/addon-styling-webpack@2.0.0(storybook@9.0.15(@testing-library/dom@10.4.0)(prettier@3.4.2))(webpack@5.99.8(@swc/core@1.5.29(@swc/helpers@0.5.17))(esbuild@0.25.5))':
-    dependencies:
-      storybook: 9.0.15(@testing-library/dom@10.4.0)(prettier@3.4.2)
-      webpack: 5.99.8(@swc/core@1.5.29(@swc/helpers@0.5.17))(esbuild@0.25.5)
 
   '@storybook/addon-themes@9.0.15(storybook@9.0.15(@testing-library/dom@10.4.0)(prettier@3.4.2))':
     dependencies:
