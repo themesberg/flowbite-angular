@@ -38,6 +38,7 @@
         "port": 4400,
         "configDir": "apps/storybook/.storybook",
         "browserTarget": "storybook:build",
+        "styles": ["apps/storybook/styles.css"],
         "compodoc": false
       },
       "configurations": {
