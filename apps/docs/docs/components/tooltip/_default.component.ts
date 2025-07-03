@@ -8,7 +8,7 @@ import { NgpTooltipTrigger } from 'ng-primitives/tooltip';
   imports: [Button, NgpTooltipTrigger, Tooltip],
   templateUrl: './_default.component.html',
   host: {
-    class: 'relative flex flex-wrap flex-row gap-3 p-6',
+    class: 'flex flex-wrap flex-row gap-3 p-6',
   },
 })
 export class FlowbiteDefaultComponent {

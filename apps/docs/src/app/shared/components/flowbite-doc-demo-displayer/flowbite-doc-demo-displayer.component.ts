@@ -83,7 +83,7 @@ import { provideIcons } from '@ng-icons/core';
       </div>
       <div
         [attr.data-theme]="themeMode()"
-        class="bg-white dark:bg-gray-900">
+        class="bg-white dark:bg-black">
         <ng-content />
       </div>
     </div>

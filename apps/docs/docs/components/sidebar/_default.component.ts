@@ -22,7 +22,7 @@ import { provideIcons } from '@ng-icons/core';
     provideFlowbiteSidebarState(),
   ],
   host: {
-    class: 'flex flex-row relative',
+    class: 'flex flex-row h-72',
   },
 })
 export class FlowbiteDefaultComponent {}

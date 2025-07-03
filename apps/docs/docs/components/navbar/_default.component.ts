@@ -16,7 +16,7 @@ import { provideIcons } from '@ng-icons/core';
   providers: [provideIcons({ bars })],
   templateUrl: './_default.component.html',
   host: {
-    class: 'flex flex-wrap flex-col gap-3 p-6',
+    class: 'flex flex-col gap-3 h-72 overflow-scroll',
   },
 })
 export class FlowbiteDefaultComponent {}

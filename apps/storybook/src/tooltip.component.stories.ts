@@ -49,11 +49,13 @@ export const DefaultStory: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <button flowbiteButton [ngpTooltipTrigger]="tooltip">tooltip</button>
+      <div #container>
+        <button flowbiteButton [ngpTooltipTrigger]="tooltip" [ngpTooltipTriggerContainer]="container">tooltip</button>
 
-      <ng-template #tooltip>
-        <div flowbiteTooltip ${argsToTemplate(args)}>Tooltip content</div>
-      </ng-template>
+        <ng-template #tooltip>
+          <div flowbiteTooltip ${argsToTemplate(args)}>Tooltip content</div>
+        </ng-template>
+      </div>
     `,
   }),
 };
