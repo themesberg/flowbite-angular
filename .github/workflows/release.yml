@@ -51,7 +51,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Release new version 🛠
-        run: pnpm exec nx release {{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }}
+        run: pnpm exec nx release ${{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
