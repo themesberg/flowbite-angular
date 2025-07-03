@@ -1,4 +1,4 @@
-import type { NavbarToggle } from './navbar-toggle.component';
+import type { NavbarToggle } from './navbar-toggle.directive';
 
 import {
   createState,

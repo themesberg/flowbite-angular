@@ -1,6 +1,4 @@
-<aside
-  flowbiteSidebar
-  #sidebar="flowbiteSidebar">
+<aside flowbiteSidebar>
   <div flowbiteSidebarContent>
     <li>
       <a flowbiteSidebarItem> <flowbite-icon name="chartPie" />Dashboard</a>
@@ -26,9 +24,11 @@
   </div>
 </aside>
 <div class="lg:ml-64">
-  <button
-    flowbiteSidebarToggle
-    [sidebar]="sidebar"></button>
+  <button flowbiteSidebarToggle>
+    <flowbite-icon
+      name="barsFromLeft"
+      class="size-10 stroke-2" />
+  </button>
 
   <div class="p-4">
     <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">

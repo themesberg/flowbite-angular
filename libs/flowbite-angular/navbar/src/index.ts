@@ -20,7 +20,7 @@ export * from './navbar-content/theme';
 export * from './config/navbar-content-config';
 
 /* NavbarToggle */
-export * from './navbar-toggle/navbar-toggle.component';
+export * from './navbar-toggle/navbar-toggle.directive';
 export * from './navbar-toggle/navbar-toggle-state';
 export * from './navbar-toggle/theme';
 /* Config */

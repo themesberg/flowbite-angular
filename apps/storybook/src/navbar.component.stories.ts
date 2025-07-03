@@ -1,3 +1,4 @@
+import { Icon } from 'flowbite-angular/icon';
 import { bars } from 'flowbite-angular/icon/outline/general';
 import {
   defaultFlowbiteNavbarConfig,
@@ -19,7 +20,7 @@ export default {
   component: Navbar,
   decorators: [
     moduleMetadata({
-      imports: [NavbarContent, NavbarItem, NavbarToggle, NavbarBrand],
+      imports: [NavbarContent, NavbarItem, NavbarToggle, NavbarBrand, Icon],
       providers: [provideIcons({ bars })],
     }),
   ],

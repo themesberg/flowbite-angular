@@ -13,7 +13,7 @@ export * from './sidebar-content/theme';
 export * from './config/sidebar-content-config';
 
 /* SidebarToggle */
-export * from './sidebar-toggle/sidebar-toggle.component';
+export * from './sidebar-toggle/sidebar-toggle.directive';
 export * from './sidebar-toggle/sidebar-toggle-state';
 export * from './sidebar-toggle/theme';
 /* Config */

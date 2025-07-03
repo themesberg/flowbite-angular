@@ -15,7 +15,7 @@ import { twMerge } from 'tailwind-merge';
   `,
   exportAs: 'flowbiteSidebar',
   hostDirectives: [],
-  providers: [provideFlowbiteSidebarState()],
+  providers: [provideFlowbiteSidebarState({ inherit: true })],
   host: {
     '[class]': `theme().host.root`,
     '(click)': 'onClick()',

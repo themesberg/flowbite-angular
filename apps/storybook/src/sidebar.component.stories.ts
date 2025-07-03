@@ -1,9 +1,11 @@
 import { Icon } from 'flowbite-angular/icon';
+import { barsFromLeft } from 'flowbite-angular/icon/outline/general';
 import { cart } from 'flowbite-angular/icon/solid/e-commerce';
 import { chartPie, drawSquare, inbox } from 'flowbite-angular/icon/solid/general';
 import { users } from 'flowbite-angular/icon/solid/user';
 import {
   defaultFlowbiteSidebarConfig,
+  provideFlowbiteSidebarState,
   Sidebar,
   SidebarContent,
   SidebarItem,
@@ -21,7 +23,10 @@ export default {
   component: Sidebar,
   decorators: [
     moduleMetadata({
-      providers: [provideIcons({ chartPie, inbox, users, cart, drawSquare })],
+      providers: [
+        provideFlowbiteSidebarState(),
+        provideIcons({ chartPie, inbox, users, cart, drawSquare, barsFromLeft }),
+      ],
       imports: [SidebarContent, SidebarToggle, SidebarItem, Icon],
     }),
   ],
@@ -70,7 +75,7 @@ export const DefaultStory: StoryObj<StoryType> = {
   render: (args) => ({
     props: args,
     template: `
-      <aside flowbiteSidebar ${argsToTemplate(args)} #sidebar="flowbiteSidebar">
+      <aside flowbiteSidebar ${argsToTemplate(args)}>
         <div flowbiteSidebarContent>
           <li><a flowbiteSidebarItem><flowbite-icon name="chartPie" />Dashboard</a></li>
           <li><a flowbiteSidebarItem><flowbite-icon name="drawSquare" />Kanban</a></li>
@@ -83,8 +88,11 @@ export const DefaultStory: StoryObj<StoryType> = {
       </aside>
       <div class="lg:ml-64">
         <button
-          flowbiteSidebarToggle
-          [sidebar]="sidebar"></button>
+          flowbiteSidebarToggle>
+            <flowbite-icon
+              name="barsFromLeft"
+              class="size-10 stroke-2" />
+          </button>
 
         <div class="p-4">
           <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">

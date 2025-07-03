@@ -23,7 +23,7 @@ import { twMerge } from 'tailwind-merge';
   exportAs: 'flowbiteNavbar',
   hostDirectives: [],
   imports: [],
-  providers: [provideFlowbiteNavbarState()],
+  providers: [provideFlowbiteNavbarState({ inherit: true })],
   host: { '[class]': `theme().host.root` },
   template: `
     <div [class]="theme().container.root">

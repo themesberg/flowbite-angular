@@ -1,4 +1,4 @@
-import type { SidebarToggle } from './sidebar-toggle.component';
+import type { SidebarToggle } from './sidebar-toggle.directive';
 
 import {
   createState,
