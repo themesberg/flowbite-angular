@@ -60,8 +60,8 @@ importers:
         specifier: 31.3.0
         version: 31.3.0(@angular/common@20.0.6(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
       '@ng-primitives/state':
-        specifier: 0.56.0
-        version: 0.56.0(948022799d7f9fefaa21a9c74ae2d50c)
+        specifier: 0.57.0
+        version: 0.57.0(948022799d7f9fefaa21a9c74ae2d50c)
       '@nx/devkit':
         specifier: 21.2.2
         version: 21.2.2(nx@21.2.2(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
@@ -72,8 +72,8 @@ importers:
         specifier: 4.18.3
         version: 4.18.3
       ng-primitives:
-        specifier: 0.56.0
-        version: 0.56.0(948022799d7f9fefaa21a9c74ae2d50c)
+        specifier: 0.57.0
+        version: 0.57.0(948022799d7f9fefaa21a9c74ae2d50c)
       postcss:
         specifier: ^8.5.3
         version: 8.5.6
@@ -268,14 +268,14 @@ importers:
         specifier: 31.3.0
         version: 31.3.0(@angular/common@20.0.6(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
       '@ng-primitives/state':
-        specifier: 0.56.0
-        version: 0.56.0(948022799d7f9fefaa21a9c74ae2d50c)
+        specifier: 0.57.0
+        version: 0.57.0(948022799d7f9fefaa21a9c74ae2d50c)
       '@tailwindcss/postcss':
         specifier: ^4.0.0
         version: 4.1.11
       ng-primitives:
-        specifier: 0.56.0
-        version: 0.56.0(948022799d7f9fefaa21a9c74ae2d50c)
+        specifier: 0.57.0
+        version: 0.57.0(948022799d7f9fefaa21a9c74ae2d50c)
       rxjs:
         specifier: ^7.4.0
         version: 7.8.2
@@ -2487,8 +2487,8 @@ packages:
       '@angular/core': '>=18.0.0'
       rxjs: ^6.5.3 || ^7.4.0
 
-  '@ng-primitives/state@0.56.0':
-    resolution: {integrity: sha512-IrQXmnZ3F8qBZBEwvMtrJRFvWEWxKkvLnWuUpCr1I5PQdojMxvkQVTAjREZMHHsj39dbKnw0qqCLDE7K902gEg==}
+  '@ng-primitives/state@0.57.0':
+    resolution: {integrity: sha512-MxGQxkpm+sqrJoh9mcfkq8jlgdyagdwQUc4CClvs7CYM8r3P+CWJfrwaHUg0P4HU8CT2ULDITBBAdD1FgfTRPQ==}
     peerDependencies:
       '@angular/core': '>=19.0.0'
 
@@ -7578,8 +7578,8 @@ packages:
       tailwindcss:
         optional: true
 
-  ng-primitives@0.56.0:
-    resolution: {integrity: sha512-0tUY9zeICMLi+UzxQ6MgBCh2jrBTyXGQzsw3YOwGTKpTcrs4pUbU4glEztpkTGendqD8e/YC7+VcPLzXOdd9Qg==}
+  ng-primitives@0.57.0:
+    resolution: {integrity: sha512-UgzXwyJAJci+m4lfn4CA6YBAQG9T7eTK42P1iOjvn6HYTf9SFvCfuHe4iyzdG0f2XXpRva5AaGuk1fDuVSB0JQ==}
     peerDependencies:
       '@angular/cdk': '>=19.0.0'
       '@angular/common': '>=19.0.0'
@@ -13536,10 +13536,10 @@ snapshots:
       rxjs: 7.8.2
       tslib: 2.8.1
 
-  '@ng-primitives/state@0.56.0(948022799d7f9fefaa21a9c74ae2d50c)':
+  '@ng-primitives/state@0.57.0(948022799d7f9fefaa21a9c74ae2d50c)':
     dependencies:
       '@angular/core': 20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0)
-      ng-primitives: 0.56.0(948022799d7f9fefaa21a9c74ae2d50c)
+      ng-primitives: 0.57.0(948022799d7f9fefaa21a9c74ae2d50c)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@angular/cdk'
@@ -19931,7 +19931,7 @@ snapshots:
       rollup: 4.44.1
       tailwindcss: 4.1.11
 
-  ng-primitives@0.56.0(948022799d7f9fefaa21a9c74ae2d50c):
+  ng-primitives@0.57.0(948022799d7f9fefaa21a9c74ae2d50c):
     dependencies:
       '@angular/cdk': 20.0.5(@angular/common@20.0.6(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
       '@angular/common': 20.0.6(@angular/core@20.0.6(@angular/compiler@20.0.6)(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2)
