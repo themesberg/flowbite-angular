@@ -15,6 +15,10 @@ on:
 
 jobs:
   release:
+    strategy:
+      matrix:
+        node-version: [20]
+        
     if: (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/release') || (github.event_name == 'workflow_dispatch' && github.event.inputs.dryRun == 'true')
     name: Release new version 🛠
     runs-on: ubuntu-latest
@@ -31,8 +35,20 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Monorepo install
-        uses: ./.github/actions/setup
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Release new version 🛠
         run: pnpm exec nx release {{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }}

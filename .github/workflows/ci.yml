@@ -8,6 +8,10 @@ concurrency: ${{ github.ref }}
 
 jobs:
   lint:
+    strategy:
+      matrix:
+        node-version: [20]
+
     name: Lint the code 🕵
     runs-on: ubuntu-latest
     steps:
@@ -16,13 +20,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Monorepo install
-        uses: ./.github/actions/setup
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Lint the code 🕵
         run: pnpm all:lint
 
   test:
+    strategy:
+      matrix:
+        node-version: [20]
+
     name: Run unit tests 🔬
     runs-on: ubuntu-latest
     steps:
@@ -31,13 +51,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Monorepo install
-        uses: ./.github/actions/setup
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Run unit tests 🔬
         run: pnpm all:test -- --ci --verbose
 
   build:
+    strategy:
+      matrix:
+        node-version: [20]
+        
     name: Build code 🛠
     runs-on: ubuntu-latest
     steps:
@@ -46,8 +82,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Monorepo install
-        uses: ./.github/actions/setup
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Build code 🛠
         run: pnpm all:build
