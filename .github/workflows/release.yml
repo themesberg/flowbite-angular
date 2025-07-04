@@ -52,9 +52,9 @@ jobs:
 
       - name: Release new version 🛠
         run: |
-          git config --global user.email "${{ vars.GIT_EMAIL }}"
-          git config --global user.name "${{ vars.GIT_NAME }}"
-          pnpm exec nx release ${{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }}
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
