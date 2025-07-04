@@ -19,7 +19,7 @@
     "docs:serve": "nx run docs:serve",
     "format": "prettier --write \"**/*.{ts,html,md,scss,js,json}\"",
     "format:check": "prettier --check \"**/*.{ts,html,md,scss,js,json}\"",
-    "lib:build": "nx run flowbite-angular:build && pnpm dlx @tailwindcss/cli -i ./libs/flowbite-angular/styles/flowbite-angular.css -o ./dist/libs/flowbite-angular/flowbite-angular.css --minify",
+    "lib:build": "nx run flowbite-angular:build",
     "lib:lint": "nx run flowbite-angular:lint",
     "prepare": "husky",
     "storybook:build": "nx run storybook:build",
