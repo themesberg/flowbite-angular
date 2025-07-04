@@ -26,13 +26,7 @@ npm install flowbite-angular
 Make sure to use the flowbite-angular configuration preset in your styles.css
 
 ```css
-@import 'tailwindcss';
-```
+@import 'tailwindcss' source('node_modules/flowbite-angular');
 
-Add this configuration to your application
-
-```json
-"styles": [
-  "node_modules/flowbite-angular/flowbite-angular.css",
-],
+@source "src/";
 ```
