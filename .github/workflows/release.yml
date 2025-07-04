@@ -55,7 +55,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          pnpm exec nx release ${{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }}
+          pnpm exec nx release ${{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }} --yes
 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
