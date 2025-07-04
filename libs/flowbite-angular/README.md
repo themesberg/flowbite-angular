@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>:construction: flowbite-angular (unreleased) :construction:</h1>
+  <h1>flowbite-angular</h1>
   <p>
     <a href="https://flowbite.com">
       <img alt="Flowbite - Tailwind CSS components" width="350" src="https://flowbite.s3.amazonaws.com/github/logo-github.png">
@@ -41,8 +41,6 @@ classes from Tailwind CSS that you can use as a starting point for user interfac
 
 ## Documentation
 
-Documentation for `flowbite-angular` is not yet finished.
-
 If you want to browse the components, visit [flowbite-angular.com](https://flowbite-angular.com/).
 
 If you want to learn more about Flowbite, visit
@@ -50,37 +48,35 @@ If you want to learn more about Flowbite, visit
 
 ## Getting started
 
-To use `flowbite-angular`, you just need to setup `flowbite` normally and install `flowbite-angular`
-from `npm`.
+## Require via `npm`
 
-`flowbite` can be included as a plugin into an existing Tailwind CSS project.
+Make sure that you have <a href="https://nodejs.org/en/" rel="nofollow" >Node.js</a> installed.
 
-### Require via `npm`
-
-Make sure that you have <a href="https://nodejs.org/en/" rel="nofollow" >Node.js</a> and
-<a href="https://tailwindcss.com/" rel="nofollow" >Tailwind CSS</a> installed.
-
-1. Install `flowbite` as a dependency using `npm` by running the following command:
+1. Install `tailwindcss` as a dependency using `npm` by running the following command:
 
 ```bash
-npm i flowbite flowbite-angular
+npm i tailwindcss
 ```
 
-2. Require `flowbite` as a plugin inside the `tailwind.config.js` file:
+2. Install `flowbite-angular` as a dependency using `npm` by running the following command:
 
-```javascript
-module.exports = {
-  plugins: [require('flowbite/plugin')],
-};
+```bash
+npm i flowbite-angular
 ```
 
-## Components
+3. Import `flowbite-angular` inside your `style.css` file:
+
+```css
+@import 'node_modules/flowbite-angular/styles/flowbite-angular.css';
+```
+
+# Components
 
 <table>
   <tr>
     <td width="33.3333%">Alerts</td>
     <td width="33.3333%">Badges</td>
-    <td width="33.3333%">:construction: Breadcrumbs</td>
+    <td width="33.3333%">Breadcrumbs</td>
   </tr>
   <tr>
     <td width="33.3333%">
@@ -101,8 +97,8 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">Buttons</td>
-    <td width="33.3333%">:construction: Button group</td>
-    <td width="33.3333%">:construction: Cards</td>
+    <td width="33.3333%">Button group</td>
+    <td width="33.3333%">Cards</td>
   </tr>
   <tr>
     <td width="33.3333%">
@@ -146,7 +142,7 @@ module.exports = {
   <tr>
     <td width="33.3333%">:construction: Typography</td>
     <td width="33.3333%">Modal</td>
-    <td width="33.3333%">:construction: Tabs</td>
+    <td width="33.3333%">Tabs</td>
   </tr>
   <tr>
     <td width="33.3333%">
@@ -167,7 +163,7 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">Navbar</td>
-    <td width="33.3333%">:construction: Pagination</td>
+    <td width="33.3333%">Pagination</td>
     <td width="33.3333%">:construction: Timeline</td>
   </tr>
   <tr>
@@ -210,7 +206,7 @@ module.exports = {
     </td>
   </tr>
   <tr>
-    <td width="33.3333%">:construction: Tooltips</td>
+    <td width="33.3333%">Tooltips</td>
     <td width="33.3333%">:construction: Datepicker</td>
     <td width="33.3333%">:construction: Spinner</td>
   </tr>
@@ -276,7 +272,7 @@ module.exports = {
     </td>
   </tr>
   <tr>
-    <td width="33.3333%">:construction: Input Field</td>
+    <td width="33.3333%">Input Field</td>
     <td width="33.3333%">:construction: File Input</td>
     <td width="33.3333%">:construction: Search Input</td>
   </tr>
@@ -342,7 +338,7 @@ module.exports = {
     </td>
   </tr>
   <tr>
-    <td width="33.3333%">:construction: Floating Label</td>
+    <td width="33.3333%">Floating Label</td>
   </tr>
   <tr>
     <td width="33.3333%">
@@ -366,8 +362,8 @@ For casual chatting with others using the library:
 ## Contributing
 
 Thank you for your interest in helping! Visit our
-[guide on contributing](https://github.com/themesberg/flowbite-angular/blob/main/CONTRIBUTING.md) to
-get started.
+[guide on contributing](https://github.com/themesberg/flowbite-angular/blob/main/.github/CONTRIBUTING)
+to get started.
 
 ## Figma
 
@@ -379,4 +375,4 @@ If you need the Figma files for the components you can check out our website for
 
 The Flowbite name and logos are trademarks of Crafty Dwarf Inc.
 
-📝 [Read about the licensing terms](https://flowbite.com/docs/getting-started/license/)
+📝 [Read about the licensing terms](https://flowbite-angular.com/docs/getting-started/license)
