@@ -2,7 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/libs/flowbite-angular",
   "lib": {
-    "entryFile": "common/index.ts"
+    "entryFile": "core/src/index.ts"
   },
-  "assets": ["tailwind.config.js", "README.md", "LICENSE"]
+  "assets": ["./styles/**/*.css", "./README.md", "./LICENSE"]
 }

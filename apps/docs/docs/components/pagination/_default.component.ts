@@ -1,10 +1,14 @@
-import { PaginationComponent } from 'flowbite-angular/pagination';
+import { Pagination } from 'flowbite-angular/pagination';
 
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: 'flowbite-demo-pagination-default',
-  imports: [PaginationComponent],
+  imports: [Pagination],
   templateUrl: './_default.component.html',
+  host: {
+    class: 'flex flex-wrap flex-row gap-3 p-6',
+  },
 })
-export class FlowbiteDefaultComponent {}
+export class FlowbiteDefaultComponent {
+  readonly page = signal<number>(1);
+}

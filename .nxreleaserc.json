@@ -1,5 +1,0 @@
-{
-  "repositoryUrl": "https://github.com/themesberg/flowbite-angular",
-  "tagFormat": "${PROJECT_NAME}@v${version}",
-  "branches": ["release"]
-}

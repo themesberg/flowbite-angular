@@ -1,0 +1,12 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@import '../../../../libs/flowbite-angular/styles/flowbite-angular.css';
+
+@import './tw/fonts.css';
+
+@import './ng-doc/base.css';
+@import './ng-doc/dark.css';
+
+:root {
+  --ng-doc-font-system: 'roboto';
+}

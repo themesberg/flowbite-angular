@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@import './part/animation.css';
+@import './part/color.css';
+@import './part/font-size.css';
+@import './part/rounded.css';
+@import './part/shadow.css';
+@import './part/spacing.css';

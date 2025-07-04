@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Storybook",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "directoryName": {
+      "type": "string",
+      "description": "The name of the parent directory of the component",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the parent directory name of the component?"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the component",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What is the name of the component?"
+    }
+  },
+  "required": ["directoryName", "name"]
+}

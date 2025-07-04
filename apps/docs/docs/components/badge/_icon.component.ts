@@ -1,14 +1,16 @@
-import { BadgeComponent } from 'flowbite-angular/badge';
-import { IconComponent } from 'flowbite-angular/icon';
+import { Badge } from 'flowbite-angular/badge';
+import { Icon } from 'flowbite-angular/icon';
+import { check } from 'flowbite-angular/icon/outline/general';
 
 import { Component } from '@angular/core';
+import { provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'flowbite-demo-badge-icon',
-  imports: [BadgeComponent, IconComponent],
+  imports: [Badge, Icon],
+  providers: [provideIcons({ check })],
   templateUrl: './_icon.component.html',
   host: {
-    class: 'flex flex-wrap flex-row gap-3',
+    class: 'flex flex-wrap flex-row gap-3 p-6',
   },
 })
 export class FlowbiteIconComponent {}
