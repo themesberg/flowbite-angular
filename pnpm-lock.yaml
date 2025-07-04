@@ -285,6 +285,7 @@ importers:
       tailwindcss:
         specifier: ^4.0.0
         version: 4.1.11
+    publishDirectory: ../../dist/libs/flowbite-angular
 
   libs/tools:
     dependencies:
