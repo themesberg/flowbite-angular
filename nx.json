@@ -93,8 +93,7 @@
   "defaultBase": "main",
   "release": {
     "version": {
-      "conventionalCommits": true,
-      "preVersionCommand": "pnpm lib:build"
+      "conventionalCommits": true
     },
     "git": {
       "commitMessage": "chore(flowbite-angular): {version}"
@@ -105,7 +104,7 @@
         "createRelease": "github"
       }
     },
-    "projects": ["libs/flowbite-angular"],
+    "projects": ["flowbite-angular"],
     "releaseTagPattern": "flowbite-angular@v{version}"
   }
 }
