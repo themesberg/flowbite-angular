@@ -93,8 +93,7 @@
   "defaultBase": "main",
   "release": {
     "version": {
-      "conventionalCommits": true,
-      "preVersionCommand": "pnpm lib:build && pnpm dlx @tailwindcss/cli -i ./libs/flowbite-angular/styles/flowbite-angular.css -o ./dist/libs/flowbite-angular/flowbite-angular.css --minify"
+      "conventionalCommits": true
     },
     "git": {
       "commitMessage": "chore(flowbite-angular): {version}"

@@ -50,15 +50,22 @@ jobs:
         shell: bash
         run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Release new version 🛠
+      - name: Create new version 🛠
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          pnpm exec nx release ${{ github.event.inputs.version || '' }} --verbose --dryRun=${{ github.event.inputs.dryRun }} --yes
-
+          pnpm exec nx release ${{ github.event.inputs.version || '' }} --skip-publish --verbose --dryRun=${{ github.event.inputs.dryRun }} --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build code 🛠
+        run: pnpm lib:build
+
+      - name: Publish new version 🛠
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          pnpm exec nx release publish --verbose --dryRun=${{ github.event.inputs.dryRun }}
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
