@@ -1,11 +1,6 @@
 <div align="center">
   <h1>flowbite-angular</h1>
   <p>
-    <a href="https://flowbite.com">
-      <img alt="Flowbite - Tailwind CSS components" width="350" src="https://flowbite.s3.amazonaws.com/github/logo-github.png">
-    </a>
-  </p>
-  <p>
     Build websites even faster with components on top of Angular and Tailwind CSS
   </p>
   <p>
