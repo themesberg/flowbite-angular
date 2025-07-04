@@ -1,9 +1,0 @@
-@theme {
-  /* Shadow */
-  --shadow-sm: 0px 1px 2px 0px #00000014;
-  --shadow: 0px 1px 2px -1px #0000001a; /* DEFAULT */
-  --shadow-md: 0px 2px 4px -2px #0000000d;
-  --shadow-lg: 0px 4px 6px 0px #0000000d;
-  --shadow-xl: 0px 10px 10px 0px #0000000a;
-  --shadow-2xl: 0px 25px 50px -12px #00000040;
-}
