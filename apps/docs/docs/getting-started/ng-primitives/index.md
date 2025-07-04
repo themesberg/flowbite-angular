@@ -14,5 +14,5 @@ way.
 We're using `NgPrimitivesDocumentation` to provide accessibility and behavior base so
 flowbite-angular can be on design part. We want to address a special thanks to the maintainer of
 ng-primitives which has provided a packages called
-<span class="text-primary-500">@ng-primitives/state</span> which provides a clean way to have state
-management of components.
+<span class="text-primary-500">@ng-primitives/state</span> providing a clean way to have state
+management inside components.
