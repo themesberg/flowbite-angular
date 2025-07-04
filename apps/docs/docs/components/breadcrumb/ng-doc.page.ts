@@ -4,18 +4,15 @@ import { FlowbiteDefaultComponent } from './_default.component';
 import type { NgDocPage } from '@ng-doc/core';
 
 /**
- * Show the location of the current page in a hierarchical structure using the Tailwind CSS breadcrumb components
  *
- * @status:alert BREAKING CHANGES
  */
-const breadcrumb: NgDocPage = {
+const Breadcrumb: NgDocPage = {
   title: 'Breadcrumb',
   mdFile: './index.md',
   category: ComponentCategory,
-  order: 4,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
 };
 
-export default breadcrumb;
+export default Breadcrumb;

@@ -1,13 +1,11 @@
 import { appRoutes } from './app.routes';
-import { initIcons } from './icon.init';
 import { docDemoDisplayerProcessor } from './shared/processors/doc-demo-displayer-processor/doc-demo-displayer-processor';
 
-import { initFlowbite } from 'flowbite-angular/core';
-import { IconRegistry } from 'flowbite-angular/icon';
+import { provideFlowbiteThemeConfig } from 'flowbite-angular/theme-toggle';
 
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
-import { inject, provideAppInitializer, type ApplicationConfig } from '@angular/core';
-import { DomSanitizer, provideClientHydration } from '@angular/platform-browser';
+import { type ApplicationConfig } from '@angular/core';
+import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import {
@@ -50,10 +48,8 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' })
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
-    initFlowbite(),
-    provideAppInitializer(() => {
-      const initializerFn = initIcons(inject(IconRegistry), inject(DomSanitizer));
-      return initializerFn();
+    provideFlowbiteThemeConfig({
+      type: { type: 'attr', name: 'data-theme' },
     }),
   ],
 };

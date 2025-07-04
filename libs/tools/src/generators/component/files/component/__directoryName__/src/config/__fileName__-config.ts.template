@@ -1,0 +1,50 @@
+import {
+  flowbite<%= className %>Theme,
+  type Flowbite<%= className %>Theme,
+} from '../<%= fileName %>/theme';
+
+import type { DeepPartial } from 'flowbite-angular';
+
+import type { Provider } from '@angular/core';
+import { inject, InjectionToken } from '@angular/core';
+
+export interface Flowbite<%= className %>Config {
+  /**
+   * The default theme of <%= name %>
+   */
+  baseTheme: Flowbite<%= className %>Theme;
+  
+  /**
+   * The custom theme of <%= name %>
+   */
+  customTheme: DeepPartial<Flowbite<%= className %>Theme>;
+}
+
+export const defaultFlowbite<%= className %>Config: Flowbite<%= className %>Config = {
+  baseTheme: flowbite<%= className %>Theme,
+  customTheme: {},
+};
+
+export const Flowbite<%= className %>ConfigToken = new InjectionToken<Flowbite<%= className %>Config>(
+  'Flowbite<%= className %>ConfigToken'
+);
+
+/**
+ * Provide the default <%= className %> configuration
+ * @param config The <%= className %> configuration
+ * @returns The provider
+ */
+export const provideFlowbite<%= className %>Config = (config: Partial<Flowbite<%= className %>Config>): Provider[] => [
+  {
+    provide: Flowbite<%= className %>ConfigToken,
+    useValue: { ...defaultFlowbite<%= className %>Config, ...config },
+  },
+];
+
+/**
+ * Inject the <%= className %> configuration
+ * @see {@link defaultFlowbite<%= className %>Config}
+ * @returns The configuration
+ */
+export const injectFlowbite<%= className %>Config = (): Flowbite<%= className %>Config =>
+  inject(Flowbite<%= className %>ConfigToken, { optional: true }) ?? defaultFlowbite<%= className %>Config;

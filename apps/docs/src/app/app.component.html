@@ -2,131 +2,147 @@
   [sidebar]="!isLandingPage"
   [noWidthLimit]="isLandingPage"
   [footerContent]="footerContent">
-  <flowbite-navbar
+  <nav
+    flowbiteNavbar
     ngDocCustomNavbar
-    class="border-b">
-    <div class="flex flex-row flex-1 items-center gap-2">
+    fixed
+    color="primary">
+    <div class="flex flex-1 flex-row items-center gap-2">
       @if (!isLandingPage) {
-        <flowbite-navbar-icon-button
-          class="block lg:hidden"
+        <button
+          flowbiteNavbarIconItem
+          class="inline-flex! lg:hidden!"
           (click)="sidebarService.toggle()">
+          <span class="sr-only">Sidebar toggle</span>
           <flowbite-icon
-            svgIcon="outline:bars"
-            class="h-5 w-5 block" />
-        </flowbite-navbar-icon-button>
+            name="bars"
+            class="size-5 stroke-2" />
+        </button>
       }
-      <flowbite-navbar-brand
-        flowbiteRouterLink
-        routerLink="/">
-        <flowbite-icon
+      <a
+        flowbiteNavbarBrand
+        [routerLink]="['/']">
+        <img
+          src="favicon.svg"
           class="h-8"
-          svgIcon="flowbite-angular-logo"
           alt="Flowbite Logo" />
         <span
-          class="hidden xl:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          class="hidden self-center text-2xl font-semibold whitespace-nowrap xl:block dark:text-white">
           Flowbite Angular
         </span>
-      </flowbite-navbar-brand>
-      <ng-doc-search class="hidden lg:block pl-2" />
+      </a>
+      <ng-doc-search class="hidden pl-2 lg:block" />
     </div>
-    <flowbite-navbar-content>
-      <flowbite-navbar-item
-        flowbiteRouterLink
-        flowbiteRouterLinkActive
-        routerLink="./docs"
-        [routerLinkActiveOptions]="{ exact: true }">
+
+    <div flowbiteNavbarContent>
+      <a
+        flowbiteNavbarItem
+        [routerLink]="['/docs']">
         Docs
-      </flowbite-navbar-item>
-      <flowbite-navbar-item
-        flowbiteRouterLink
-        flowbiteRouterLinkActive
-        routerLink="./docs/getting-started/quickstart"
-        [routerLinkActiveOptions]="{ exact: true }">
+      </a>
+      <a
+        flowbiteNavbarItem
+        [routerLink]="['/docs', 'getting-started', 'quickstart']">
         Quickstart
-      </flowbite-navbar-item>
-      <flowbite-navbar-item>
-        <a
-          href="https://flowbite.com/figma/"
-          target="_blank"
-          rel="noopener">
-          Figma
-        </a>
-      </flowbite-navbar-item>
-      <flowbite-navbar-item>
-        <a
-          href="https://flowbite.com"
-          target="_blank"
-          rel="noopener">
-          Flowbite
-        </a>
-      </flowbite-navbar-item>
-    </flowbite-navbar-content>
-    <div class="flex flex-row items-center justify-start">
-      <flowbite-navbar-icon-button
-        class="hidden sm:block"
-        color="gray">
-        <a
-          href="https://github.com/themesberg/flowbite-angular"
-          target="_blank"
-          rel="noopener">
-          <flowbite-icon
-            svgIcon="solid:github"
-            class="h-5 w-5 block" />
-        </a>
-      </flowbite-navbar-icon-button>
-      <flowbite-navbar-icon-button
-        class="hidden sm:block"
-        color="gray">
-        <a
-          href="https://discord.gg/4eeurUVvTy"
-          target="_blank"
-          rel="noopener">
-          <flowbite-icon
-            svgIcon="solid:discord"
-            class="h-5 w-5 block" />
-        </a>
-      </flowbite-navbar-icon-button>
-      <flowbite-navbar-icon-button
-        class="hidden sm:block"
-        color="gray">
-        <a
-          href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A"
-          target="_blank"
-          rel="noopener">
-          <flowbite-icon
-            svgIcon="solid:youtube"
-            class="h-5 w-5 block" />
-        </a>
-      </flowbite-navbar-icon-button>
-
-      <ng-doc-theme-toggle />
-
-      <flowbite-badge size="sm">
-        {{ flowbiteAngularVersion() }}
-      </flowbite-badge>
-
-      <flowbite-navbar-toggle />
+      </a>
+      <a
+        flowbiteNavbarItem
+        href="https://flowbite.com/figma"
+        target="_blank"
+        rel="noopener">
+        Figma
+      </a>
+      <a
+        flowbiteNavbarItem
+        href="https://flowbite.com"
+        target="_blank"
+        rel="noopener">
+        Flowbite
+      </a>
     </div>
-  </flowbite-navbar>
+
+    <div class="flex flex-row items-center justify-start">
+      <a
+        flowbiteNavbarIconItem
+        href="https://storybook-flowbite-angular.com"
+        target="_blank"
+        rel="noopener">
+        <flowbite-icon
+          name="storybook"
+          class="size-5 stroke-2" />
+      </a>
+      <a
+        flowbiteNavbarIconItem
+        href="https://github.com/themesberg/flowbite-angular"
+        target="_blank"
+        rel="noopener">
+        <flowbite-icon
+          name="github"
+          class="size-5 stroke-2" />
+      </a>
+      <a
+        flowbiteNavbarIconItem
+        href="https://discord.gg/4eeurUVvTy"
+        target="_blank"
+        rel="noopener">
+        <flowbite-icon
+          name="discord"
+          class="size-5 stroke-2" />
+      </a>
+      <a
+        flowbiteNavbarIconItem
+        href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A"
+        target="_blank"
+        rel="noopener">
+        <flowbite-icon
+          name="youtube"
+          class="size-5 stroke-2" />
+      </a>
+
+      <button
+        type="button"
+        flowbiteThemeToggle
+        color="primary">
+        <span class="sr-only">Theme toggle</span>
+      </button>
+
+      <button
+        type="button"
+        flowbiteNavbarToggle>
+        <span class="sr-only">Navbar toggle</span>
+        <flowbite-icon
+          name="bars"
+          class="size-5 stroke-2" />
+      </button>
+
+      <div class="px-1"></div>
+
+      <span
+        flowbiteBadge
+        size="sm"
+        color="primary">
+        {{ flowbiteAngularVersion() }}
+      </span>
+    </div>
+  </nav>
 
   <ng-doc-sidebar class="mt-2" />
 
   <div class="mt-2">
     <router-outlet />
-    <flowbite-scroll-top />
   </div>
 
   <ng-template #footerContent>
     <section class="flex flex-col items-center">
-      <div class="flex flex-col items-center py-6 md:py-8 px-4 gap-6 md:gap-8">
-        <div class="flex flex-row justify-between items-center pt-6 md:pt-8 border-t-gray-200">
+      <div class="flex flex-col items-center gap-6 px-4 py-6 md:gap-8 md:py-8">
+        <div class="flex flex-row items-center justify-between border-t-gray-200 pt-6 md:pt-8">
           <div
-            class="mx-auto flex flex-col md:flex-row justify-center items-start md:items-center gap-4 md:gap-5">
+            class="mx-auto flex flex-col items-start justify-center gap-4 md:flex-row md:items-center md:gap-5">
             <div class="flex flex-row items-center gap-3">
-              <flowbite-icon
-                svgIcon="flowbite-angular-logo"
-                class="w-8 h-8"
-                alt="Flowbite logo" />
+              <img
+                src="favicon.svg"
+                class="h-8 w-8"
+                alt="Flowbite Logo" />
               <span class="text-2xl font-semibold text-gray-900 dark:text-white"> Flowbite </span>
             </div>
             <p class="text-sm font-normal text-gray-500 dark:text-gray-400">

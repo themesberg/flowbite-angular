@@ -1,6 +1,6 @@
 {
   "extends": ["../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": ["!**/*", "storybook-static"],
   "overrides": [
     {
       "files": ["*.ts"],
@@ -14,32 +14,14 @@
             "style": "camelCase"
           }
         ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "flowbite",
-            "style": "kebab-case"
-          }
-        ]
+        "@angular-eslint/directive-class-suffix": "off",
+        "@angular-eslint/component-class-suffix": "off"
       }
     },
     {
       "files": ["*.html"],
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
-    },
-    {
-      "files": ["*.json"],
-      "parser": "jsonc-eslint-parser",
-      "rules": {
-        "@nx/dependency-checks": [
-          "error",
-          {
-            "ignoredFiles": ["{projectRoot}/eslint.config.{js,cjs,mjs}"]
-          }
-        ]
-      }
     }
   ]
 }

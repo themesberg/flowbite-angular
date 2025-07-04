@@ -34,16 +34,16 @@
             "input": "tmp/apps/docs/ng-doc/docs/assets",
             "output": "assets/ng-doc"
           },
-          "apps/docs/src/assets"
+          {
+            "glob": "**/*",
+            "input": "apps/docs/public"
+          }
         ],
-        "styles": ["node_modules/@ng-doc/app/styles/global.css", "apps/docs/src/styles.css"],
+        "styles": ["node_modules/@ng-doc/app/styles/global.css", "apps/docs/public/css/styles.css"],
         "scripts": [],
         "browser": "apps/docs/src/main.ts",
         "server": "apps/docs/src/main.server.ts",
         "prerender": true,
-        "ssr": {
-          "entry": "apps/docs/server.ts"
-        },
         "allowedCommonJsDependencies": ["@ng-doc/core"]
       },
       "configurations": {
@@ -86,13 +86,6 @@
         }
       },
       "defaultConfiguration": "development"
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/docs"],
-      "options": {
-        "jestConfig": "apps/docs/jest.config.ts"
-      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
