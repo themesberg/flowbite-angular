@@ -10,11 +10,11 @@ keyword: ButtonPage
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L1 group="default" name="typescript"
+```angular-ts file="./_default.component.ts" group="default" name="typescript"
 
 ```
 
-## Button pills
+## Button pill
 
 {{ NgDocActions.demo('flowbitePillComponent', {container: false}) }}
 
@@ -22,47 +22,11 @@ keyword: ButtonPage
 
 ```
 
-```angular-ts file="./_pill.component.ts"#L1-L1 group="pill" name="typescript"
+```angular-ts file="./_pill.component.ts" group="pill" name="typescript"
 
 ```
 
-## Gradient monochrome
-
-{{ NgDocActions.demo('flowbiteGradientMonochromeComponent', {container: false}) }}
-
-```angular-html file="./_gradient-monochrome.component.html" group="gradient-monochrome" name="html"
-
-```
-
-```angular-ts file="./_gradient-monochrome.component.ts"#L1-L1 group="gradient-monochrome" name="typescript"
-
-```
-
-## Gradient duo-tone
-
-{{ NgDocActions.demo('flowbiteGradientDuotoneComponent', {container: false}) }}
-
-```angular-html file="./_gradient-duotone.component.html" group="gradient-duotone" name="html"
-
-```
-
-```angular-ts file="./_gradient-duotone.component.ts"#L1-L1 group="gradient-duotone" name="typescript"
-
-```
-
-## Gradient outline
-
-{{ NgDocActions.demo('flowbiteGradientOutlineComponent', {container: false}) }}
-
-```angular-html file="./_gradient-outline.component.html" group="gradient-outline" name="html"
-
-```
-
-```angular-ts file="./_gradient-outline.component.ts"#L1-L1 group="gradient-outline" name="typescript"
-
-```
-
-## Outline buttons
+## Outline button
 
 {{ NgDocActions.demo('flowbiteOutlineComponent', {container: false}) }}
 
@@ -70,7 +34,7 @@ keyword: ButtonPage
 
 ```
 
-```angular-ts file="./_outline.component.ts"#L1-L1 group="outline" name="typescript"
+```angular-ts file="./_outline.component.ts" group="outline" name="typescript"
 
 ```
 
@@ -82,7 +46,7 @@ keyword: ButtonPage
 
 ```
 
-```angular-ts file="./_size.component.ts"#L1-L1 group="size" name="typescript"
+```angular-ts file="./_size.component.ts" group="size" name="typescript"
 
 ```
 
@@ -94,35 +58,11 @@ keyword: ButtonPage
 
 ```
 
-```angular-ts file="./_icon.component.ts"#L1-L2 group="icon" name="typescript"
+```angular-ts file="./_icon.component.ts" group="icon" name="typescript"
 
 ```
 
-## Button with label
-
-{{ NgDocActions.demo('flowbiteLabelComponent', {container: false}) }}
-
-```angular-html file="./_label.component.html" group="label" name="html"
-
-```
-
-```angular-ts file="./_label.component.ts"#L1-L2 group="label" name="typescript"
-
-```
-
-## Icon buttons
-
-{{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
-
-```angular-html file="./_icon-only.component.html" group="icon-only" name="html"
-
-```
-
-```angular-ts file="./_icon-only.component.ts"#L1-L2 group="icon-only" name="typescript"
-
-```
-
-## Disabled
+## Disabled button
 
 {{ NgDocActions.demo('flowbiteDisabledComponent', {container: false}) }}
 
@@ -130,6 +70,18 @@ keyword: ButtonPage
 
 ```
 
-```angular-ts file="./_disabled.component.ts"#L1-L1 group="disabled" name="typescript"
+```angular-ts file="./_disabled.component.ts" group="disabled" name="typescript"
+
+```
+
+## Button group
+
+{{ NgDocActions.demo('flowbiteGroupComponent', {container: false}) }}
+
+```angular-html file="./_group.component.html" group="group" name="html"
+
+```
+
+```angular-ts file="./_group.component.ts" group="group" name="typescript"
 
 ```

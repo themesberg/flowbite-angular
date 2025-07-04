@@ -10,31 +10,19 @@ keyword: BadgePage
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L1 group="default" name="typescript"
-
-```
-
-## Large badge
-
-{{ NgDocActions.demo('flowbiteLargeComponent', {container: false}) }}
-
-```angular-html file="./_large.component.html" group="large" name="html"
-
-```
-
-```angular-ts file="./_large.component.ts"#L1-L1 group="large" name="typescript"
+```angular-ts file="./_default.component.ts" group="default" name="typescript"
 
 ```
 
 ## Bordered badge
 
-{{ NgDocActions.demo('flowbiteBorderedComponent', {container: false}) }}
+{{ NgDocActions.demo('flowbiteBorderComponent', {container: false}) }}
 
-```angular-html file="./_bordered.component.html" group="bordered" name="html"
+```angular-html file="./_border.component.html" group="border" name="html"
 
 ```
 
-```angular-ts file="./_bordered.component.ts" group="bordered" name="typescript"
+```angular-ts file="./_border.component.ts" group="border" name="typescript"
 
 ```
 
@@ -46,7 +34,7 @@ keyword: BadgePage
 
 ```
 
-```angular-ts file="./_link.component.ts"#L1-L2 group="link" name="typescript"
+```angular-ts file="./_link.component.ts" group="link" name="typescript"
 
 ```
 
@@ -58,34 +46,18 @@ keyword: BadgePage
 
 ```
 
-```angular-ts file="./_icon.component.ts"#L1-L2 group="icon" name="typescript"
-
-```
-
-## Badge with icon only
-
-{{ NgDocActions.demo('flowbiteIconOnlyComponent', {container: false}) }}
-
-```angular-html file="./_icon-only.component.html" group="icon-only" name="html"
-
-```
-
-```angular-ts file="./_icon-only.component.ts"#L1-L2 group="icon-only" name="typescript"
+```angular-ts file="./_icon.component.ts" group="icon" name="typescript"
 
 ```
 
 ## Dismissable badge
 
-{{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
+{{ NgDocActions.demo('flowbiteDismissComponent', {container: false}) }}
 
-```angular-html file="./_dismissable.component.html" group="dismissable" name="html"
-
-```
-
-```angular-ts file="./_dismissable.component.ts"#L1-L1 group="dismissable" name="typescript"
+```angular-html file="./_dismiss.component.html" group="dismiss" name="html"
 
 ```
 
-```angular-ts file="./_dismissable.component.ts"#L14 group="dismissable" name="typescript"
+```angular-ts file="./_dismiss.component.ts" group="dismiss" name="typescript"
 
 ```

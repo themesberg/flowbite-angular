@@ -1,155 +1,147 @@
-<section class="flex flex-col items-center px-4 gap-2 md:px-4 xl:pt-16 xl:pb-24">
-  <div class="max-w-screen-xl mx-auto flex flex-col items-center gap-8 xl:gap-20">
+<section class="flex flex-col items-center gap-2 px-4 md:px-4 xl:pt-16 xl:pb-24">
+  <div class="mx-auto flex max-w-screen-xl flex-col items-center gap-8 xl:gap-20">
     <div class="flex flex-row items-start gap-4 xl:gap-16">
       <div class="flex flex-col items-start xl:gap-10">
         <div class="flex flex-col items-start gap-4 xl:gap-6">
-          <h1 class="leading-7 text-4xl xl:text-6xl font-extrabold text-gray-900 dark:text-white">
+          <h1 class="text-4xl font-extrabold text-gray-900 xl:text-6xl dark:text-white">
             Speed up your web development with
             <span class="text-primary-700"> Flowbite Angular</span>
           </h1>
-          <p class="leading-7 text-lg xl:text-xl font-normal text-gray-500 dark:text-gray-400">
+          <p class="text-lg leading-7 font-normal text-gray-500 xl:text-xl dark:text-gray-400">
             Flowbite Angular is an official Flowbite component library for Angular. All
             interactivities are handled by Angular.
           </p>
         </div>
-        <div class="flex flex-row items-start gap-4 md:gap-6">
-          <flowbite-button
-            flowbiteRouterLink
-            routerLink="/docs"
+        <div class="flex w-full flex-row items-center gap-4 md:gap-6">
+          <div
+            flowbiteClipboard
+            id="npmInstall"
+            value="npm install flowbite-angular"></div>
+          <button
+            flowbiteButton
             color="primary"
             size="lg">
-            Get started
+            <span>Get started</span>
             <flowbite-icon
-              svgIcon="outline:arrow-right"
-              class="block w-6 h-6 ms-2"
-              alt="arrow right" />
-          </flowbite-button>
+              name="arrowRight"
+              class="ml-2 size-5 stroke-2" />
+          </button>
         </div>
       </div>
-      <div class="hidden xl:block size-full">
+      <div class="hidden size-full xl:block">
         <img
           id="hero.content.content.right-content.light"
-          class="flex dark:hidden flex-col content-center w-full h-full rounded-lg"
-          src="/assets/images/angular-hero-mockup-light.png"
+          class="flex h-full w-full flex-col content-center rounded-lg dark:hidden"
+          src="images/angular-hero-mockup-light.png"
           alt="angular hero mockup" />
         <img
           id="hero.content.content.right-content.dark"
-          class="hidden dark:md:flex flex-col content-center w-full h-full rounded-lg"
-          src="/assets/images/angular-hero-mockup-dark.png"
+          class="hidden h-full w-full flex-col content-center rounded-lg dark:md:flex"
+          src="images/angular-hero-mockup-dark.png"
           alt="angular hero mockup" />
       </div>
     </div>
   </div>
 </section>
-<section class="flex flex-col items-center py-6 gap-2 border-gray-100 dark:border-gray-800">
-  <div class="max-w-screen-xl mx-auto flex flex-col justify-center items-center px-4 gap-4">
-    <p class="leading-tight text-base font-normal text-gray-400">Featured in:</p>
-    <div class="flex flex-col md:flex-row items-center gap-8">
+<section class="flex flex-col items-center gap-2 border-gray-100 py-6 dark:border-gray-800">
+  <div class="mx-auto flex max-w-screen-xl flex-col items-center justify-center gap-4 px-4">
+    <p class="text-base leading-tight font-normal text-gray-400">Featured in:</p>
+    <div class="flex flex-col items-center gap-8 text-gray-500 md:flex-row">
       <flowbite-icon
-        class="h-9 text-gray-500"
-        alt="reddit logo"
-        svgIcon="brand:reddit" />
+        class="h-9 w-auto"
+        name="reddit" />
       <flowbite-icon
-        class="h-9 text-gray-500"
-        alt="reddit logo"
-        svgIcon="brand:dev" />
+        class="h-9 w-auto"
+        name="dev" />
       <flowbite-icon
-        class="h-9 text-gray-500"
-        alt="reddit logo"
-        svgIcon="brand:product-hunt" />
+        class="h-9 w-auto"
+        name="productHunt" />
       <flowbite-icon
-        class="h-9 text-gray-500"
-        alt="reddit logo"
-        svgIcon="brand:combinator" />
+        class="h-9 w-auto"
+        name="combinator" />
       <flowbite-icon
-        class="h-9 text-gray-500"
-        alt="reddit logo"
-        svgIcon="brand:youtube" />
+        class="h-9 w-auto"
+        name="youtube" />
     </div>
   </div>
 </section>
 <section
-  class="flex flex-col items-center px-4 py-16 gap-12 border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
-  <div class="max-w-screen-xl mx-auto flex flex-col xl:flex-row items-center gap-6 xl:gap-16">
-    <div class="hidden xl:block size-full">
+  class="flex flex-col items-center gap-12 border-gray-100 bg-gray-50 px-4 py-16 dark:border-gray-700 dark:bg-gray-800">
+  <div class="mx-auto flex max-w-screen-xl flex-col items-center gap-6 xl:flex-row xl:gap-16">
+    <div class="hidden size-full xl:block">
       <img
-        class="block dark:hidden w-full h-[530px] shadow-md rounded-lg"
-        src="/assets/images/code-example-light.png"
+        class="block h-[530px] w-full rounded-lg shadow-md dark:hidden"
+        src="images/code-example-light.png"
         alt="code example light" />
       <img
-        class="hidden dark:block w-full h-[530px] shadow-md rounded-lg"
-        src="/assets/images/code-example-dark.png"
+        class="hidden h-[530px] w-full rounded-lg shadow-md dark:block"
+        src="images/code-example-dark.png"
         alt="code example dark" />
     </div>
-    <div class="flex flex-col items-start gap-6 xl:gap-8 pt-1">
+    <div class="flex flex-col items-start gap-6 pt-1 xl:gap-8">
       <div class="flex flex-col items-start gap-6 md:gap-4">
-        <h2 class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
+        <h2 class="text-3xl leading-10 font-extrabold text-gray-900 xl:text-4xl dark:text-white">
           UI components in Angular
         </h2>
-        <p class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
-          <span class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400-underline">
+        <p class="text-lg leading-7 font-normal text-gray-500 dark:text-gray-400">
+          <span class="dark:text-gray-400-underline text-lg leading-7 font-normal text-gray-500">
             Flowbite budget
           </span>
           is a mobile app that helps users easily track their expenses and create a budget.
         </p>
-        <p class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p class="text-lg leading-7 font-normal text-gray-500 dark:text-gray-400">
           With a user-friendly interface, the app allows users to quickly input their income and
           expenses, and then automatically categorizes them for easy tracking.
         </p>
       </div>
-      <div class="flex flex-col items-start w-full border-t border-t-gray-200">
-        <div class="flex flex-col items-start pt-8 gap-4">
+      <div class="flex w-full flex-col items-start border-t border-t-gray-200">
+        <div class="flex flex-col items-start gap-4 pt-8">
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Dynamic reports and dashboards
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Templates for everyone
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Development workflow
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Limitless business automation
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Knowledge management
               </p>
             </div>
@@ -157,60 +149,62 @@
         </div>
       </div>
       <div class="flex flex-row items-start gap-4">
-        <flowbite-button
-          flowbiteRouterLink
-          routerLink="/docs/getting-started/quickstart"
+        <button
+          flowbiteButton
+          [routerLink]="['/docs', 'getting-started', 'quickstart']"
           color="primary"
-          size="sm">
-          <span class="leading-5 text-sm font-medium">Start building</span>
+          size="lg">
+          <span>Start building</span>
           <flowbite-icon
-            svgIcon="outline:arrow-right"
-            class="block w-5 h-5"
-            alt="arrow right" />
-        </flowbite-button>
-        <flowbite-button
-          color="light"
-          size="sm">
-          <span class="leading-5 text-sm font-medium">Get a demo</span>
+            name="arrowRight"
+            class="ml-2 size-5 stroke-2" />
+        </button>
+        <button
+          flowbiteButton
+          [routerLink]="['/docs', 'getting-started', 'quickstart']"
+          color="default"
+          size="lg">
+          <span>Get a demo</span>
           <flowbite-icon
-            svgIcon="outline:arrow-right"
-            class="block w-5 h-5"
-            alt="arrow right" />
-        </flowbite-button>
+            name="arrowRight"
+            class="ml-2 size-5 stroke-2" />
+        </button>
       </div>
     </div>
   </div>
-  <div class="max-w-screen-xl mx-auto flex flex-col xl:flex-row items-center gap-6 xl:gap-16">
+  <div class="mx-auto flex max-w-screen-xl flex-col items-center gap-6 xl:flex-row xl:gap-16">
     <div class="flex flex-col items-start gap-6 xl:gap-8">
-      <div class="flex flex-row justify-center items-start gap-8">
+      <div class="flex flex-row items-start justify-center gap-8">
         <div class="flex flex-col items-center gap-2">
-          <flowbite-button
+          <button
+            flowbiteButton
             color="primary"
+            size="lg"
             (click)="setTheme('light')">
             <flowbite-icon
-              class="h-5 w-5"
-              alt="light mode toggle"
-              svgIcon="outline:sun" />
-          </flowbite-button>
-          <span class="leading-6 text-base font-medium text-gray-900 dark:text-white">Light</span>
+              name="sun"
+              class="size-5 stroke-2" />
+          </button>
+          <span class="text-base leading-6 font-medium text-gray-900 dark:text-white">Light</span>
         </div>
         <div class="flex flex-col items-center gap-2">
-          <flowbite-button
-            color="light"
+          <button
+            flowbiteButton
+            color="default"
+            size="lg"
             (click)="setTheme('dark')">
             <flowbite-icon
-              class="h-5 w-5"
-              alt="light mode toggle"
-              svgIcon="outline:moon" />
-          </flowbite-button>
-          <span class="leading-6 text-base font-medium text-gray-900 dark:text-white">Dark</span>
+              name="moon"
+              class="size-5 stroke-2" />
+          </button>
+          <span class="text-base leading-6 font-medium text-gray-900 dark:text-white">Dark</span>
         </div>
       </div>
       <div class="flex flex-col items-start gap-4">
-        <h2 class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
+        <h2 class="text-3xl leading-10 font-extrabold text-gray-900 xl:text-4xl dark:text-white">
           Dark mode integration
         </h2>
-        <p class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p class="text-lg leading-7 font-normal text-gray-500 dark:text-gray-400">
           Dark mode is a popular feature that is being offered by many applications, operating
           systems, and websites in recent years.
           <br /><br />
@@ -219,37 +213,34 @@
           appealing.
         </p>
       </div>
-      <div class="flex flex-col items-start border-t w-full border-t-gray-200">
-        <div class="flex flex-col items-start pt-8 gap-4 border-t-gray-200">
+      <div class="flex w-full flex-col items-start border-t border-t-gray-200">
+        <div class="flex flex-col items-start gap-4 border-t-gray-200 pt-8">
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              svgIcon="outline:eye"
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="eye square" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="eye" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Reduce eye strain
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              svgIcon="outline:clipboard-list"
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="eye square" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="eye" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Better visibility in low light conditions
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              svgIcon="outline:users-group"
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="user group square" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="eye" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Accessibility
               </p>
             </div>
@@ -258,107 +249,101 @@
       </div>
       <div class="flex flex-row items-center gap-1">
         <a
-          routerLink="/docs/customize/dark-mode"
-          class="leading-6 text-base font-medium text-primary-600">
+          [routerLink]="['/docs', 'customize', 'dark-mode']"
+          class="text-primary-600 text-base leading-6 font-medium">
           Learn how to integrate dark mode
         </a>
         <flowbite-icon
-          svgIcon="outline:chevron-right"
-          class="block w-5 h-5"
-          alt="arrow right" />
+          name="chevronRight"
+          class="size-3 stroke-2" />
       </div>
     </div>
-    <div class="hidden xl:block size-full">
+    <div class="hidden size-full xl:block">
       <img
-        class="block dark:hidden w-full h-[540px] shadow-md rounded-lg"
-        src="/assets/images/angular-light-mode-thumbnail.png"
+        class="block h-[540px] w-full rounded-lg shadow-md dark:hidden"
+        src="images/angular-light-mode-thumbnail.png"
         alt="thumbnail light" />
       <img
-        class="hidden dark:block w-full h-[540px] shadow-md rounded-lg"
-        src="/assets/images/angular-dark-mode-thumbnail.png"
+        class="hidden h-[540px] w-full rounded-lg shadow-md dark:block"
+        src="images/angular-dark-mode-thumbnail.png"
         alt="thumbnail dark" />
     </div>
   </div>
-  <div class="max-w-screen-xl mx-auto flex flex-col xl:flex-row items-center gap-6 xl:gap-16">
-    <div class="hidden xl:block size-full">
+  <div class="mx-auto flex max-w-screen-xl flex-col items-center gap-6 xl:flex-row xl:gap-16">
+    <div class="hidden size-full xl:block">
       <img
-        class="block dark:hidden w-full h-[540px] shadow-md rounded-lg"
-        src="assets/images/works-with-tailwind-light.png"
+        class="block h-[540px] w-full rounded-lg shadow-md dark:hidden"
+        src="images/works-with-tailwind-light.png"
         alt="work with tailwind light" />
       <img
-        class="hidden dark:block w-full h-[540px] shadow-md rounded-lg"
-        src="assets/images/works-with-tailwind-dark.png"
+        class="hidden h-[540px] w-full rounded-lg shadow-md dark:block"
+        src="images/works-with-tailwind-dark.png"
         alt="work with tailwind dark" />
     </div>
     <div class="flex flex-col items-start gap-6 xl:gap-8">
       <div class="flex flex-col items-start gap-4">
-        <h2 class="leading-10 text-3xl xl:text-4xl font-extrabold text-gray-900 dark:text-white">
+        <h2 class="text-3xl leading-10 font-extrabold text-gray-900 xl:text-4xl dark:text-white">
           Work with Tailwind CSS
         </h2>
-        <p class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
-          <span class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400-underline">
+        <p class="text-lg leading-7 font-normal text-gray-500 dark:text-gray-400">
+          <span class="dark:text-gray-400-underline text-lg leading-7 font-normal text-gray-500">
             Flowbite budget
           </span>
           is a mobile app that helps users easily track their expenses and create a budget.
         </p>
-        <p class="leading-7 text-lg font-normal text-gray-500 dark:text-gray-400">
+        <p class="text-lg leading-7 font-normal text-gray-500 dark:text-gray-400">
           With a user-friendly interface, the app allows users to quickly input their income and
           expenses, and then automatically categorizes them for easy tracking.
         </p>
       </div>
-      <div class="flex flex-col items-start w-full border-t border-t-gray-200">
-        <div class="flex flex-col items-start pt-8 gap-4">
+      <div class="flex w-full flex-col items-start border-t border-t-gray-200">
+        <div class="flex flex-col items-start gap-4 pt-8">
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Dynamic reports and dashboards
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Templates for everyone
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Development workflow
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Limitless business automation
               </p>
             </div>
           </div>
           <div class="flex flex-row items-center gap-2">
             <flowbite-icon
-              class="block w-4 h-4 rounded-[50px] bg-primary-100 dark:bg-gray-700 text-primary-700"
-              alt="check square"
-              svgIcon="outline:check" />
+              class="bg-primary-100 text-primary-700 block h-4 w-4 rounded-[50px] dark:bg-gray-700"
+              name="check" />
             <div class="flex flex-col items-start gap-1">
-              <p class="leading-6 text-base font-medium text-gray-900 dark:text-white">
+              <p class="text-base leading-6 font-medium text-gray-900 dark:text-white">
                 Knowledge management
               </p>
             </div>
@@ -366,26 +351,26 @@
         </div>
       </div>
       <div class="flex flex-row items-start gap-4">
-        <flowbite-button
-          flowbiteRouterLink
-          routerLink="/docs/getting-started/quickstart"
+        <button
+          flowbiteButton
+          [routerLink]="['/docs', 'getting-started', 'quickstart']"
           color="primary"
-          size="sm">
-          <span class="leading-5 text-sm font-medium">Start building</span>
+          size="lg">
+          <span>Start building</span>
           <flowbite-icon
-            svgIcon="outline:arrow-right"
-            class="block w-5 h-5"
-            alt="arrow right" />
-        </flowbite-button>
-        <flowbite-button
-          color="light"
-          size="sm">
-          <span class="leading-5 text-sm font-medium">Get a demo</span>
+            name="arrowRight"
+            class="ml-2 size-5 stroke-2" />
+        </button>
+        <button
+          flowbiteButton
+          [routerLink]="['/docs', 'getting-started', 'quickstart']"
+          color="default"
+          size="lg">
+          <span>Get a demo</span>
           <flowbite-icon
-            svgIcon="outline:arrow-right"
-            class="block w-5 h-5"
-            alt="arrow right" />
-        </flowbite-button>
+            name="arrowRight"
+            class="ml-2 size-5 stroke-2" />
+        </button>
       </div>
     </div>
   </div>

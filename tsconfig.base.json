@@ -19,26 +19,77 @@
     "paths": {
       "@ng-doc/generated": ["tmp/apps/docs/ng-doc/docs/index.ts"],
       "@ng-doc/generated/*": ["tmp/apps/docs/ng-doc/docs/*"],
-      "flowbite-angular": ["libs/flowbite-angular/common/index.ts"],
-      "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/index.ts"],
-      "flowbite-angular/alert": ["libs/flowbite-angular/alert/index.ts"],
-      "flowbite-angular/badge": ["libs/flowbite-angular/badge/index.ts"],
-      "flowbite-angular/breadcrumb": ["libs/flowbite-angular/breadcrumb/index.ts"],
-      "flowbite-angular/button": ["libs/flowbite-angular/button/index.ts"],
-      "flowbite-angular/core": ["libs/flowbite-angular/core/index.ts"],
-      "flowbite-angular/dark-theme-toggle": ["libs/flowbite-angular/dark-theme-toggle/index.ts"],
-      "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/index.ts"],
-      "flowbite-angular/icon": ["libs/flowbite-angular/icon/index.ts"],
-      "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/index.ts"],
-      "flowbite-angular/modal": ["libs/flowbite-angular/modal/index.ts"],
-      "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/index.ts"],
-      "flowbite-angular/router-link": ["libs/flowbite-angular/router-link/index.ts"],
-      "flowbite-angular/router-link-active": ["libs/flowbite-angular/router-link-active/index.ts"],
-      "flowbite-angular/sanitize-html": ["libs/flowbite-angular/sanitize-html/index.ts"],
-      "flowbite-angular/scroll-top": ["libs/flowbite-angular/scroll-top/index.ts"],
-      "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/index.ts"],
-      "flowbite-angular/theme": ["libs/flowbite-angular/theme/index.ts"],
-      "flowbite-angular/utils": ["libs/flowbite-angular/utils/index.ts"]
+      "flowbite-angular": ["libs/flowbite-angular/core/src/index.ts"],
+      "flowbite-angular-tools": ["libs/tools/src/index.ts"],
+      "flowbite-angular/accordion": ["libs/flowbite-angular/accordion/src/index.ts"],
+      "flowbite-angular/alert": ["libs/flowbite-angular/alert/src/index.ts"],
+      "flowbite-angular/badge": ["libs/flowbite-angular/badge/src/index.ts"],
+      "flowbite-angular/breadcrumb": ["libs/flowbite-angular/breadcrumb/src/index.ts"],
+      "flowbite-angular/button": ["libs/flowbite-angular/button/src/index.ts"],
+      "flowbite-angular/button-group": ["libs/flowbite-angular/button-group/src/index.ts"],
+      "flowbite-angular/card": ["libs/flowbite-angular/card/src/index.ts"],
+      "flowbite-angular/clipboard": ["libs/flowbite-angular/clipboard/src/index.ts"],
+      "flowbite-angular/dropdown": ["libs/flowbite-angular/dropdown/src/index.ts"],
+      "flowbite-angular/form": ["libs/flowbite-angular/form/src/index.ts"],
+      "flowbite-angular/icon": ["libs/flowbite-angular/icon/src/index.ts"],
+      "flowbite-angular/icon/brand": ["libs/flowbite-angular/icon/brand/src/index.ts"],
+      "flowbite-angular/icon/outline/arrows": [
+        "libs/flowbite-angular/icon/outline/arrows/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/e-commerce": [
+        "libs/flowbite-angular/icon/outline/e-commerce/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/emoji": [
+        "libs/flowbite-angular/icon/outline/emoji/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/files-folders": [
+        "libs/flowbite-angular/icon/outline/files-folders/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/general": [
+        "libs/flowbite-angular/icon/outline/general/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/media": [
+        "libs/flowbite-angular/icon/outline/media/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/text": [
+        "libs/flowbite-angular/icon/outline/text/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/user": [
+        "libs/flowbite-angular/icon/outline/user/src/index.ts"
+      ],
+      "flowbite-angular/icon/outline/weather": [
+        "libs/flowbite-angular/icon/outline/weather/src/index.ts"
+      ],
+      "flowbite-angular/icon/solid/arrows": [
+        "libs/flowbite-angular/icon/solid/arrows/src/index.ts"
+      ],
+      "flowbite-angular/icon/solid/brands": [
+        "libs/flowbite-angular/icon/solid/brands/src/index.ts"
+      ],
+      "flowbite-angular/icon/solid/e-commerce": [
+        "libs/flowbite-angular/icon/solid/e-commerce/src/index.ts"
+      ],
+      "flowbite-angular/icon/solid/emoji": ["libs/flowbite-angular/icon/solid/emoji/src/index.ts"],
+      "flowbite-angular/icon/solid/files-folders": [
+        "libs/flowbite-angular/icon/solid/files-folder/src/index.ts"
+      ],
+      "flowbite-angular/icon/solid/general": [
+        "libs/flowbite-angular/icon/solid/general/src/index.ts"
+      ],
+      "flowbite-angular/icon/solid/media": ["libs/flowbite-angular/icon/solid/media/src/index.ts"],
+      "flowbite-angular/icon/solid/text": ["libs/flowbite-angular/icon/solid/text/src/index.ts"],
+      "flowbite-angular/icon/solid/user": ["libs/flowbite-angular/icon/solid/user/src/index.ts"],
+      "flowbite-angular/icon/solid/weather": [
+        "libs/flowbite-angular/icon/solid/weather/src/index.ts"
+      ],
+      "flowbite-angular/indicator": ["libs/flowbite-angular/indicator/src/index.ts"],
+      "flowbite-angular/modal": ["libs/flowbite-angular/modal/src/index.ts"],
+      "flowbite-angular/navbar": ["libs/flowbite-angular/navbar/src/index.ts"],
+      "flowbite-angular/pagination": ["libs/flowbite-angular/pagination/src/index.ts"],
+      "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/src/index.ts"],
+      "flowbite-angular/tab": ["libs/flowbite-angular/tab/src/index.ts"],
+      "flowbite-angular/theme-toggle": ["libs/flowbite-angular/theme-toggle/src/index.ts"],
+      "flowbite-angular/tooltip": ["libs/flowbite-angular/tooltip/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

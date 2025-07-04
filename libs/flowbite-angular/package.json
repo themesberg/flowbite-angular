@@ -26,20 +26,19 @@
     "url": "https://github.com/MGREMY"
   },
   "exports": {
-    "./tailwind.config": "./tailwind.config.js"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": ">=18.0.0 < 20.0.0",
-    "tailwindcss": "^3.0.0"
+    "./styles": {
+      "sass": "./styles/**/*.css"
+    }
   },
   "peerDependencies": {
-    "@angular/animations": ">=18.0.0 < 20.0.0",
-    "@angular/common": ">=18.0.0 < 20.0.0",
-    "@angular/core": ">=18.0.0 < 20.0.0",
-    "@angular/platform-browser": ">=18.0.0 < 20.0.0",
-    "@angular/router": ">=18.0.0 < 20.0.0",
-    "jest-preset-angular": "^14.0.0",
-    "rxjs": "7.5.0",
-    "tailwind-merge": "2.5.5"
+    "@angular/cdk": ">=20.0.0 < 21.0.0",
+    "@angular/core": ">=20.0.0 < 21.0.0",
+    "@ng-icons/core": "31.3.0",
+    "@ng-primitives/state": "0.57.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "ng-primitives": "0.57.0",
+    "rxjs": "^7.4.0",
+    "tailwind-merge": "2.5.5",
+    "tailwindcss": "^4.0.0"
   }
 }

@@ -10,11 +10,11 @@ keyword: AlertPage
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L1 group="default" name="typescript"
+```angular-ts file="./_default.component.ts" group="default" name="typescript"
 
 ```
 
-## Alerts with icon
+## Alert with icon
 
 {{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
@@ -22,11 +22,11 @@ keyword: AlertPage
 
 ```
 
-```angular-ts file="./_icon.component.ts"#L1-L2 group="icon" name="typescript"
+```angular-ts file="./_icon.component.ts" group="icon" name="typescript"
 
 ```
 
-## Bordered alerts
+## Bordered alert
 
 {{ NgDocActions.demo('flowbiteBorderComponent', {container: false}) }}
 
@@ -34,11 +34,11 @@ keyword: AlertPage
 
 ```
 
-```angular-ts file="./_border.component.ts"#L1-L1 group="border" name="typescript"
+```angular-ts file="./_border.component.ts" group="border" name="typescript"
 
 ```
 
-## Dismissable alerts
+## Dismissable alert
 
 {{ NgDocActions.demo('flowbiteDismissableComponent', {container: false}) }}
 
@@ -46,11 +46,7 @@ keyword: AlertPage
 
 ```
 
-```angular-ts file="./_dismissable.component.ts"#L1-L1 group="dismissable" name="typescript"
-
-```
-
-```angular-ts file="./_dismissable.component.ts"#L15 group="dismissable" name="typescript"
+```angular-ts file="./_dismissable.component.ts" group="dismissable" name="typescript"
 
 ```
 
@@ -58,22 +54,10 @@ keyword: AlertPage
 
 {{ NgDocActions.demo('flowbiteBorderAccentComponent', {container: false}) }}
 
-```angular-html file="./_border-accent.component.html" group="border-accent" name="html"
+```angular-html file="./_border-accent.component.html" group="borderAccent" name="html"
 
 ```
 
-```angular-ts file="./_border-accent.component.ts"#L1-L1 group="border-accent" name="typescript"
-
-```
-
-## Additional content
-
-{{ NgDocActions.demo('flowbiteAdditionalContentComponent', {container: false}) }}
-
-```angular-html file="./_additional-content.component.html" group="additional-content" name="html"
-
-```
-
-```angular-ts file="./_additional-content.component.ts"#L1-L3 group="additional-content" name="typescript"
+```angular-ts file="./_border-accent.component.ts" group="borderAccent" name="typescript"
 
 ```

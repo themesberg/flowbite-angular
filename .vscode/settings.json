@@ -5,13 +5,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.eol": "\r\n",
   "editor.formatOnSave": true,
+  "tailwindCSS.experimental.configFile": "libs/flowbite-angular/styles/flowbite-angular.css",
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "customStyle"],
-  "tailwindCSS.experimental.classRegex": [
-    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["createTheme\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
+  "tailwindCSS.classFunctions": ["twMerge", "createTheme"],
   "typescript.tsdk": "node_modules/typescript/lib",
-
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false,
@@ -22,5 +19,6 @@
       "strings": "off",
       "other": "off"
     }
-  }
+  },
+  "eslint.validate": ["json"]
 }

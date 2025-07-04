@@ -1,0 +1,12 @@
+@custom-variant dark (&:where([data-mode='dark'] &, .dark &));
+
+@import '../../libs/flowbite-angular/styles/flowbite-angular.css';
+
+@font-face {
+  font-family: roboto;
+  src: url('./public/fonts/roboto.ttf') format('truetype');
+}
+
+@theme {
+  --default-font-family: 'roboto';
+}

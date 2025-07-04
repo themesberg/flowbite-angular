@@ -1,0 +1,57 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "storybook",
+  "sourceRoot": "apps/storybook/src",
+  "tags": [],
+  "implicitDependencies": ["flowbite-angular"],
+  "targets": {
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "storybook:build",
+        "staticFilePath": "dist/storybook",
+        "spa": true
+      }
+    },
+    "build": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook",
+        "configDir": "apps/storybook/.storybook",
+        "browserTarget": "storybook:build",
+        "styles": ["apps/storybook/styles.css"],
+        "assets": [],
+        "compodoc": false
+      },
+      "configurations": {
+        "production": {},
+        "development": {},
+        "ci": {
+          "quiet": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "apps/storybook/.storybook",
+        "browserTarget": "storybook:build",
+        "styles": ["apps/storybook/styles.css"],
+        "compodoc": false
+      },
+      "configurations": {
+        "production": {},
+        "development": {},
+        "ci": {
+          "quiet": true
+        }
+      },
+      "defaultConfiguration": "development"
+    }
+  }
+}

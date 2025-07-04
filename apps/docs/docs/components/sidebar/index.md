@@ -2,7 +2,7 @@
 keyword: SidebarPage
 ---
 
-## Default sidebar
+## Default Sidebar
 
 {{ NgDocActions.demo('flowbiteDefaultComponent', {container: false}) }}
 
@@ -10,18 +10,6 @@ keyword: SidebarPage
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L6 group="default" name="typescript"
-
-```
-
-# Multi-level menu
-
-{{ NgDocActions.demo('flowbiteMultiLevelComponent', {container: false}) }}
-
-```angular-html file="./_multi-level.component.html" group="multi-level" name="html"
-
-```
-
-```angular-ts file="./_multi-level.component.ts"#L1-L7 group="multi-level" name="typescript"
+```angular-ts file="./_default.component.ts" group="default" name="typescript"
 
 ```

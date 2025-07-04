@@ -10,7 +10,7 @@ keyword: AccordionPage
 
 ```
 
-```angular-ts file="./_default.component.ts"#L1-L6 group="default" name="typescript"
+```angular-ts file="./_default.component.ts" group="default" name="typescript"
 
 ```
 
@@ -22,19 +22,19 @@ keyword: AccordionPage
 
 ```
 
-```angular-ts file="./_always-open.component.ts"#L1-L6 group="always-open" name="typescript"
+```angular-ts file="./_always-open.component.ts" group="always-open" name="typescript"
 
 ```
 
 ## Color option
 
-{{ NgDocActions.demo('flowbiteColorOptionComponent', {container: false}) }}
+{{ NgDocActions.demo('flowbiteColorComponent', {container: false}) }}
 
-```angular-html file="./_color-option.component.html" group="color-option" name="html"
+```angular-html file="./_color.component.html" group="color" name="html"
 
 ```
 
-```angular-ts file="./_color-option.component.ts"#L1-L6 group="color-option" name="typescript"
+```angular-ts file="./_color.component.ts" group="color" name="typescript"
 
 ```
 
@@ -46,18 +46,18 @@ keyword: AccordionPage
 
 ```
 
-```angular-ts file="./_flush.component.ts"#L1-L6 group="flush" name="typescript"
+```angular-ts file="./_flush.component.ts" group="flush" name="typescript"
 
 ```
 
-## Arrow style
+## Accordion with Icon
 
-{{ NgDocActions.demo('flowbiteArrowStyleComponent', {container: false}) }}
+{{ NgDocActions.demo('flowbiteIconComponent', {container: false}) }}
 
-```angular-html file="./_arrow-style.component.html" group="arrow-style" name="html"
+```angular-html file="./_icon.component.html" group="icon" name="html"
 
 ```
 
-```angular-ts file="./_arrow-style.component.ts"#L1-L7 group="arrow-style" name="typescript"
+```angular-ts file="./_icon.component.ts" group="icon" name="typescript"
 
 ```

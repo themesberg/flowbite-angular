@@ -1,0 +1,16 @@
+:root {
+  --ng-doc-primary: #ff2c51;
+  --ng-doc-hover-background: #ff9ba8;
+  --ng-doc-tab-group-tabs-background: #f9fafb;
+  --ng-doc-code-background: #f9fafb;
+  --ng-doc-text-selection: rgba(255, 44, 81, 0.15);
+}
+
+ng-doc-tabs {
+  border-radius: 0px !important;
+  margin-top: 0px !important;
+}
+
+ng-doc-tab-group {
+  border-radius: 0px !important;
+}

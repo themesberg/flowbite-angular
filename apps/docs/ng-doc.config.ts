@@ -52,6 +52,10 @@ const config: NgDocConfiguration = {
         title: 'Tailwind CSS Theming documentation',
         url: 'https://tailwindcss.com/docs/theme',
       },
+      NgPrimitivesDocumentation: {
+        title: 'ng-primitives',
+        url: 'https://angularprimitives.com',
+      },
     },
     loaders: [ngKeywordsLoader(), rxjsKeywordsLoader()],
   },
