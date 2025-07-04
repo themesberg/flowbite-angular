@@ -102,12 +102,12 @@ npm i flowbite-angular
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/button-group/">
+        <a href="https://flowbite-angular.com/docs/components/button#button-group">
             <img alt="Tailwind CSS Button Group" src="https://flowbite.s3.amazonaws.com/github/button-group.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/card/">
+        <a href="https://flowbite-angular.com/docs/components/card">
             <img alt="Tailwind CSS Cards" src="https://flowbite.s3.amazonaws.com/github/cards.jpg">
         </a>
     </td>
@@ -151,7 +151,7 @@ npm i flowbite-angular
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/tabs/">
+        <a href="https://flowbite-angular.com/docs/components/tab">
             <img alt="Tailwind CSS Tabs" src="https://flowbite.s3.amazonaws.com/github/tabs.jpg">
         </a>
     </td>
@@ -168,7 +168,7 @@ npm i flowbite-angular
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/pagination/">
+        <a href="https://flowbite-angular.com/docs/components/pagination">
             <img alt="Tailwind CSS Pagination" src="https://flowbite.s3.amazonaws.com/github/pagination.jpg">
         </a>
     </td>
@@ -207,7 +207,7 @@ npm i flowbite-angular
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-angular.com/#/tooltips/">
+        <a href="https://flowbite-angular.com/docs/components/tooltip">
             <img alt="Tailwind CSS Tooltips" src="https://flowbite.s3.amazonaws.com/github/tooltips.jpg">
         </a>
     </td>
@@ -273,7 +273,7 @@ npm i flowbite-angular
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite.com/docs/forms/input-field/">
+        <a href="https://flowbite-angular.com/docs/components/input">
             <img alt="Tailwind CSS Input Field" src="https://flowbite.s3.amazonaws.com/github/input-field.jpg">
         </a>
     </td>
