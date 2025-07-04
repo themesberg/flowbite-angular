@@ -17,6 +17,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
+import { NgpButton } from 'ng-primitives/button';
+import { NgpFocus } from 'ng-primitives/interactions';
 import { twMerge } from 'tailwind-merge';
 
 @Component({
@@ -30,6 +32,16 @@ import { twMerge } from 'tailwind-merge';
       directive: BaseButton,
       inputs: ['color:color'],
       outputs: [],
+    },
+    {
+      directive: NgpButton,
+      inputs: ['disabled:disabled'],
+      outputs: [],
+    },
+    {
+      directive: NgpFocus,
+      inputs: ['ngpFocusDisabled:focusDisabled'],
+      outputs: ['ngpFocus'],
     },
   ],
   imports: [Icon],

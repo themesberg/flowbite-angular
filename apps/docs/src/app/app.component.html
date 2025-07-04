@@ -13,6 +13,7 @@
           flowbiteNavbarIconItem
           class="inline-flex! lg:hidden!"
           (click)="sidebarService.toggle()">
+          <span class="sr-only">Sidebar toggle</span>
           <flowbite-icon
             name="bars"
             class="size-5 stroke-2" />
@@ -99,10 +100,16 @@
       </a>
 
       <button
+        type="button"
         flowbiteThemeToggle
-        color="primary"></button>
+        color="primary">
+        <span class="sr-only">Theme toggle</span>
+      </button>
 
-      <button flowbiteNavbarToggle>
+      <button
+        type="button"
+        flowbiteNavbarToggle>
+        <span class="sr-only">Navbar toggle</span>
         <flowbite-icon
           name="bars"
           class="size-5 stroke-2" />

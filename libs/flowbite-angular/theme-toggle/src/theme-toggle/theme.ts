@@ -28,28 +28,28 @@ export const flowbiteThemeToggleTheme: FlowbiteThemeToggleTheme = createTheme({
     pill: {} as FlowbiteBoolean,
     color: {
       default: {
-        light: 'text-gray-900',
-        dark: 'dark:text-gray-100',
+        light: 'text-gray-800 data-hover:text-gray-900',
+        dark: 'dark:text-white dark:data-hover:text-gray-100',
       },
       info: {
-        light: 'text-blue-900',
-        dark: 'dark:text-blue-100',
+        light: 'text-gray-800 data-hover:text-blue-900',
+        dark: 'dark:text-white dark:data-hover:text-blue-100',
       },
       failure: {
-        light: 'text-red-900',
-        dark: 'dark:text-red-100',
+        light: 'text-gray-800 data-hover:text-red-900',
+        dark: 'dark:text-white dark:data-hover:text-red-100',
       },
       success: {
-        light: 'text-green-900',
-        dark: 'dark:text-green-100',
+        light: 'text-gray-800 data-hover:text-green-900',
+        dark: 'dark:text-white dark:data-hover:text-green-100',
       },
       warning: {
-        light: 'text-yellow-900',
-        dark: 'dark:text-yellow-100',
+        light: 'text-gray-800 data-hover:text-yellow-900',
+        dark: 'dark:text-white dark:data-hover:text-yellow-100',
       },
       primary: {
-        light: 'text-primary-900',
-        dark: 'dark:text-primary-100',
+        light: 'data-hover:text-primary-900 text-gray-800',
+        dark: 'dark:data-hover:text-primary-100 dark:text-white',
       },
     },
     colorOutline: {} as FlowbiteBaseButtonColors,
