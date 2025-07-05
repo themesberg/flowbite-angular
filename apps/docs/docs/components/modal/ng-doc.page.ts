@@ -1,5 +1,6 @@
 import ComponentCategory from '../ng-doc.category';
 import { FlowbiteDefaultComponent } from './_default.component';
+import { FlowbiteOpenprogramaticallyComponent } from './_open-programatically.component';
 
 import type { NgDocPage } from '@ng-doc/core';
 
@@ -12,6 +13,7 @@ const Modal: NgDocPage = {
   category: ComponentCategory,
   demos: {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
+    flowbiteOpenprogramaticallyComponent: FlowbiteOpenprogramaticallyComponent,
   },
 };
 
