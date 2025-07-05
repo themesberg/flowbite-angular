@@ -25,3 +25,15 @@ keyword: ModalPage
 ```angular-ts file="./_open-programatically.component.ts" group="openProgramatically" name="typescript"
 
 ```
+
+## Positioned modal
+
+{{ NgDocActions.demo('flowbitePositionComponent', {container: false}) }}
+
+```angular-html file="./_position.component.html" group="position" name="html"
+
+```
+
+```angular-ts file="./_position.component.ts" group="position" name="typescript"
+
+```
