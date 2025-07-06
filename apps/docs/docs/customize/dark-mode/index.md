@@ -4,16 +4,16 @@ keyword: DarkModePage
 
 ## Enable dark mode
 
-All you need to do is add `FlowbiteThemeDirective` as a `hostDirectives` in your `app.component.ts`.
+All you need to do is add `Theme` as a `hostDirectives` in your `app.component.ts`.
 
 ```angular-ts
 ...
-import { FlowbiteThemeDirective } from 'flowbite-angular/theme-toggle';
+import { Theme } from 'flowbite-angular/theme-toggle';
 ...
 
 @Component({
   ...
-  hostDirectives: [FlowbiteThemeDirective],
+  hostDirectives: [Theme],
 })
 export class AppComponent {
   ...
