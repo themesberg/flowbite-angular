@@ -14,7 +14,7 @@ export interface FlowbiteBreadcrumbItemHostTheme {
 
 export const flowbiteBreadcrumbItemTheme: FlowbiteBreadcrumbItemTheme = createTheme({
   host: {
-    base: 'group flex items-center justify-between text-sm font-medium data-hover:cursor-pointer',
+    base: 'group inline-flex items-center justify-between text-sm font-medium data-hover:cursor-pointer',
     transition: '',
     color: {
       default: {
