@@ -1,6 +1,8 @@
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@import 'tailwindcss';
 
-@import '../../../../libs/flowbite-angular/styles/flowbite-angular.css';
+@source "../../../../libs/flowbite-angular";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @import './tw/fonts.css';
 
