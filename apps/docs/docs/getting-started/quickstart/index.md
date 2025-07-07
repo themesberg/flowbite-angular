@@ -18,7 +18,7 @@ npm install tailwindcss
 Install Flowbite as a dependency using NPM by running this command:
 
 ```bash
-npm install flowbite-angular
+npm install flowbite-angular ng-primitives @ng-icons/core
 ```
 
 ## TailwindCSS configuration
