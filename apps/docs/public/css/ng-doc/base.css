@@ -1,9 +1,56 @@
 :root {
+  --ng-doc-font-system: 'roboto';
+
   --ng-doc-primary: #ff2c51;
-  --ng-doc-hover-background: #ff9ba8;
+
+  --ng-doc-base-0: #ffffff;
+  --ng-doc-base-1: var(--color-primary-50);
+  --ng-doc-base-2: var(--color-primary-100);
+  --ng-doc-base-3: #fdd6da;
+  --ng-doc-base-4: var(--color-primary-200);
+  --ng-doc-base-5: #fcaab6;
+  --ng-doc-base-6: var(--color-primary-300);
+  --ng-doc-base-7: #fb8192;
+  --ng-doc-base-8: var(--color-primary-400);
+  --ng-doc-base-9: #f9506a;
+  --ng-doc-base-10: var(--color-primary-500);
+
+  --ng-doc-background: var(--color-white);
+  --ng-doc-sidebar-background: var(--color-white);
+  --ng-doc-heading-color: #000000;
+  --ng-doc-text: #000000;
+  --ng-doc-border-color: var(--color-gray-200);
   --ng-doc-tab-group-tabs-background: #f9fafb;
   --ng-doc-code-background: #f9fafb;
   --ng-doc-text-selection: rgba(255, 44, 81, 0.15);
+}
+
+:root[data-theme='dark'] {
+  --ng-doc-base-0: #0e0a0c;
+  --ng-doc-base-1: var(--color-primary-950);
+  --ng-doc-base-2: #66061e;
+  --ng-doc-base-3: var(--color-primary-900);
+  --ng-doc-base-4: #9e0c34;
+  --ng-doc-base-5: var(--color-primary-800);
+  --ng-doc-base-6: #b90f3b;
+  --ng-doc-base-7: var(--color-primary-700);
+  --ng-doc-base-8: #d91f3b;
+  --ng-doc-base-9: var(--color-primary-600);
+  --ng-doc-base-10: var(--color-primary-500);
+
+  --ng-doc-background: var(--color-gray-900);
+  --ng-doc-sidebar-background: var(--color-gray-900);
+  --ng-doc-heading-color: #ffffff;
+  --ng-doc-text: #ffffff;
+  --ng-doc-border-color: var(--color-gray-700);
+  --ng-doc-tab-group-tabs-background: #1e1e1e;
+  --ng-doc-code-background: #1e1e1e;
+  --ng-doc-text-selection: rgba(255, 44, 81, 0.25);
+}
+
+:root[data-theme='dark'] .shiki,
+:root[data-theme='dark'] .shiki span {
+  color: var(--shiki-dark) !important;
 }
 
 ng-doc-tabs {
