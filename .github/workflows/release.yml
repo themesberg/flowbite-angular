@@ -55,9 +55,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          
           pnpm exec nx release ${{ github.event.inputs.version || '' }} --skip-publish --verbose --dryRun=${{ github.event.inputs.dryRun }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync main with release 📤
+        if: ${{ github.event.inputs.dryRun == 'false' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git fetch origin
+          git checkout main
+          git pull origin main
+          git merge origin/release --no-ff -m "chore: merge release into main"
+          git push origin main
 
       - name: Build code 🛠
         run: pnpm lib:build
