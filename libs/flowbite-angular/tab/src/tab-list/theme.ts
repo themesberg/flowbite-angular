@@ -14,7 +14,7 @@ export interface FlowbiteTabListHostTheme {
 
 export const flowbiteTabListTheme: FlowbiteTabListTheme = createTheme({
   host: {
-    base: 'flex overflow-x-scroll overflow-y-clip border-b text-center',
+    base: 'flex overflow-x-auto overflow-y-clip border-b text-center',
     transition: '',
     color: {
       default: {
