@@ -67,9 +67,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           git fetch origin
-          git checkout main
+          git switch main
           git pull origin main
-          git merge origin/release --no-ff -m "chore: merge release into main"
+          git merge origin/release --no-ff -m "chore: merge release into main" --no-verify
           git push origin main
 
       - name: Build code 🛠
