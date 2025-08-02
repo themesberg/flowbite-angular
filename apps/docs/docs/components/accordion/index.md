@@ -61,3 +61,6 @@ keyword: AccordionPage
 ```angular-ts file="./_icon.component.ts" group="icon" name="typescript"
 
 ```
+
+{% import "../../shared/theme-macro.md" as themeMacro %}
+{{ themeMacro.display(NgDocPage.data.themes) }}

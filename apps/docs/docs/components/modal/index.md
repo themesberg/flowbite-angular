@@ -37,3 +37,6 @@ keyword: ModalPage
 ```angular-ts file="./_position.component.ts" group="position" name="typescript"
 
 ```
+
+{% import "../../shared/theme-macro.md" as themeMacro %}
+{{ themeMacro.display(NgDocPage.data.themes) }}

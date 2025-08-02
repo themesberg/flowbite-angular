@@ -21,7 +21,6 @@ const api: NgDocApi = {
         'libs/flowbite-angular/button-group/src/index.ts',
         'libs/flowbite-angular/card/src/index.ts',
         'libs/flowbite-angular/clipboard/src/index.ts',
-        'libs/flowbite-angular/core/src/index.ts',
         'libs/flowbite-angular/dropdown/src/index.ts',
         'libs/flowbite-angular/form/src/index.ts',
         'libs/flowbite-angular/icon/src/index.ts',
