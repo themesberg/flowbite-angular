@@ -4,10 +4,10 @@ keyword: UseCustomStylePage
 
 ## Giving customStyle value
 
-On each component call, you can give a <span class="docs highlight">customStyle</span> value.
+On each component call, you can give a <span class="text-primary-500">customTheme</span> value.
 
 ```angular-html
-<div flowbiteAlert [customStyle]='{ root: { base: 'bg-black' } }'>
+<div flowbiteAlert [customTheme]='{ root: { base: 'bg-black' } }'>
     Hello World !
 </div>
 ```

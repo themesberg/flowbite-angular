@@ -85,3 +85,6 @@ keyword: ButtonPage
 ```angular-ts file="./_group.component.ts" group="group" name="typescript"
 
 ```
+
+{% import "../../shared/theme-macro.md" as themeMacro %}
+{{ themeMacro.display(NgDocPage.data.themes) }}

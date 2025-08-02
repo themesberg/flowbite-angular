@@ -3,7 +3,7 @@ import CustomizeCategory from '../ng-doc.category';
 import type { NgDocPage } from '@ng-doc/core';
 
 /**
- * Customize flowbite-angular's component style by override their default style.
+ * Customize flowbite-angular's components by override their default style.
  */
 const OverrideBaseStyle: NgDocPage = {
   title: 'Override base style',
