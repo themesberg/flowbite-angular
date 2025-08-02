@@ -2,7 +2,7 @@
 
 <div class="border-t border-gray-300 dark:border-gray-600 my-4"></div>
 
-# Default themes
+# Themes
 
 {% for theme in themes %}
 
@@ -10,13 +10,15 @@
 
 {% if theme.description %}
 
-> **Note** > {{ theme.description }}
+<!-- prettier-ignore -->
+> **Note**
+> {{ theme.description }}
 
 {% endif %}
 
 <!-- prettier-ignore -->
 ```typescript
-{{ theme.content;}}
+{{ theme.content }}
 ```
 
 {% endfor %} {% endmacro %}

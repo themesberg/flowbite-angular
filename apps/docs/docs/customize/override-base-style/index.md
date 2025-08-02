@@ -14,7 +14,7 @@ Each component provide its own configuration method. Configuration methods are n
   </ul>
 </span>
 
-You can used them to override the default behavior of components, and the applied styles.
+You can use them to override the default behavior of components and the applied styles.
 
 ```typescript
 import { provideFlowbiteBaseButtonConfig } from 'flowbite-angular/button';

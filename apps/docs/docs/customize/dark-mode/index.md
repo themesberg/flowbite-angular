@@ -20,8 +20,9 @@ export class AppComponent {
 }
 ```
 
-The configuration needed for tailwind will depend on the type value of `Theme`. In `Theme`, you are
-able to change its behavior. Here is an example of configuration to make it use data-attributes :
+The Tailwind configuration depends on the `type` of `Theme`. In `Theme`, you can change its
+behavior.  
+Here is an example configuration to make it rely on data attributes:
 
 ```angular-ts
 provideFlowbiteThemeConfig({
@@ -35,5 +36,5 @@ provideFlowbiteThemeConfig({
 
 ## Get or set theme manually
 
-In order to access or to update the application theme manually, you simply have to inject `Theme`
-into your component and call one of the provided functions.
+To access or update the application theme manually, inject `Theme` into your component and call one
+of its helper functions.
