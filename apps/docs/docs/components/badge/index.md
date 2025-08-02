@@ -61,3 +61,6 @@ keyword: BadgePage
 ```angular-ts file="./_dismiss.component.ts" group="dismiss" name="typescript"
 
 ```
+
+{% import "../../shared/theme-macro.md" as themeMacro %}
+{{ themeMacro.display(NgDocPage.data.themes) }}

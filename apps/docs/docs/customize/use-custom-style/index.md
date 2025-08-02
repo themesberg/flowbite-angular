@@ -2,15 +2,15 @@
 keyword: UseCustomStylePage
 ---
 
-## Giving customStyle value
+## Passing customTheme values
 
-On each component call, you can give a <span class="docs highlight">customStyle</span> value.
+For each component call, you can pass a <span class="text-primary-500">customTheme</span> value.
 
 ```angular-html
-<div flowbiteAlert [customStyle]='{ root: { base: 'bg-black' } }'>
-    Hello World !
+<div flowbiteAlert [customTheme]="{ root: { base: 'bg-black' } }">
+    Hello World!
 </div>
 ```
 
 You can then pass TailwindCSS classes, following the component's base theme. If one or more keys are
-not filled in the customStyle, then the base style from the component will be used.
+not filled in the customTheme, the component falls back to its base styles.

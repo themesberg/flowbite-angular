@@ -61,3 +61,6 @@ keyword: AlertPage
 ```angular-ts file="./_border-accent.component.ts" group="borderAccent" name="typescript"
 
 ```
+
+{% import "../../shared/theme-macro.md" as themeMacro %}
+{{ themeMacro.display(NgDocPage.data.themes) }}
