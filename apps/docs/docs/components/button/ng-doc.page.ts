@@ -30,7 +30,7 @@ const Button: NgDocPage = {
     flowbiteGroupComponent: FlowbiteGroupComponent,
   },
   data: {
-    themes: [{ title: 'Button', content: toIndentedJson(flowbiteButtonTheme) }] as DocThemes,
+    themes: [{ title: 'Button', content: toIndentedJson(flowbiteButtonTheme) }] satisfies DocThemes,
   },
 };
 

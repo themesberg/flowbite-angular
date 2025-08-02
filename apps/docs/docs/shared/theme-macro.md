@@ -14,12 +14,9 @@
 
 {% endif %}
 
+<!-- prettier-ignore -->
 ```typescript
-{
-  {
-    theme.content;
-  }
-}
+{{ theme.content;}}
 ```
 
 {% endfor %} {% endmacro %}

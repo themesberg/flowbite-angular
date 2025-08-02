@@ -18,7 +18,7 @@ const Icon: NgDocPage = {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
   data: {
-    themes: [{ title: 'Icon', content: toIndentedJson(flowbiteIconTheme) }] as DocThemes,
+    themes: [{ title: 'Icon', content: toIndentedJson(flowbiteIconTheme) }] satisfies DocThemes,
   },
 };
 

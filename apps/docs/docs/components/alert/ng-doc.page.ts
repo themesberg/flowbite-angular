@@ -34,7 +34,7 @@ const Alert: NgDocPage = {
       { title: 'Alert theme', content: toIndentedJson(flowbiteAlertTheme) },
       { title: 'Alert content theme', content: toIndentedJson(flowbiteAlertContentTheme) },
       { title: 'Alert button theme', content: toIndentedJson(flowbiteAlertButtonTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

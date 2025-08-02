@@ -18,7 +18,9 @@ const Indicator: NgDocPage = {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
   data: {
-    themes: [{ title: 'Indicator', content: toIndentedJson(flowbiteIndicatorTheme) }] as DocThemes,
+    themes: [
+      { title: 'Indicator', content: toIndentedJson(flowbiteIndicatorTheme) },
+    ] satisfies DocThemes,
   },
 };
 

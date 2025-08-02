@@ -26,7 +26,7 @@ const Dropdown: NgDocPage = {
       { title: 'Dropdown content', content: toIndentedJson(flowbiteDropdownContentTheme) },
       { title: 'Dropdown item', content: toIndentedJson(flowbiteDropdownItemTheme) },
       { title: 'Dropdown', content: toIndentedJson(flowbiteDropdownTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

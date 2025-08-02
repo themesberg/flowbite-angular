@@ -36,7 +36,7 @@ const Accordion: NgDocPage = {
       { title: 'Accordion item content', content: toIndentedJson(flowbiteAccordionItemTheme) },
       { title: 'Accordion title theme', content: toIndentedJson(flowbiteAccordionTitleTheme) },
       { title: 'Accordion content', content: toIndentedJson(flowbiteAccordionContentTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

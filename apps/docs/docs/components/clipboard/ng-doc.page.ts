@@ -18,7 +18,9 @@ const Clipboard: NgDocPage = {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
   data: {
-    themes: [{ title: 'Clipboard', content: toIndentedJson(flowbiteClipboardTheme) }] as DocThemes,
+    themes: [
+      { title: 'Clipboard', content: toIndentedJson(flowbiteClipboardTheme) },
+    ] satisfies DocThemes,
   },
 };
 

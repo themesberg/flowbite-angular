@@ -32,7 +32,7 @@ const Navbar: NgDocPage = {
       { title: 'Navbar item', content: toIndentedJson(flowbiteNavbarItemTheme) },
       { title: 'Navbar', content: toIndentedJson(flowbiteNavbarTheme) },
       { title: 'Navbar toggle', content: toIndentedJson(flowbiteNavbarToggleTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

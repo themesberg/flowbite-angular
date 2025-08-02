@@ -34,7 +34,7 @@ const Badge: NgDocPage = {
       { title: 'Badge', content: toIndentedJson(flowbiteBadgeTheme) },
       { title: 'Badge link', content: toIndentedJson(flowbiteBadgeLinkTheme) },
       { title: 'Badge button', content: toIndentedJson(flowbiteBadgeButtonTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

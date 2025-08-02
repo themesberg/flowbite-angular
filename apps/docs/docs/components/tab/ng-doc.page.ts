@@ -28,7 +28,7 @@ const Tab: NgDocPage = {
       { title: 'Tab content', content: toIndentedJson(flowbiteTabContentTheme) },
       { title: 'Tab list', content: toIndentedJson(flowbiteTabListTheme) },
       { title: 'Tab', content: toIndentedJson(flowbiteTabTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

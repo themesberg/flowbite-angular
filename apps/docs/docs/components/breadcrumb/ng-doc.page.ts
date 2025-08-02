@@ -26,7 +26,7 @@ const Breadcrumb: NgDocPage = {
       { title: 'Breadcrumb', content: toIndentedJson(flowbiteBreadcrumbTheme) },
       { title: 'Breadcrumb content', content: toIndentedJson(flowbiteBreadcrumbContentTheme) },
       { title: 'Breadcrumb item', content: toIndentedJson(flowbiteBreadcrumbItemTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

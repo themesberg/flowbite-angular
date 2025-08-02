@@ -34,7 +34,7 @@ const Modal: NgDocPage = {
       { title: 'Modal header', content: toIndentedJson(flowbiteModalHeaderTheme) },
       { title: 'Modal overlay', content: toIndentedJson(flowbiteModalOverlayTheme) },
       { title: 'Modal', content: toIndentedJson(flowbiteModalTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

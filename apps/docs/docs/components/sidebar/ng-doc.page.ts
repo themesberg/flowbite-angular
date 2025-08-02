@@ -28,7 +28,7 @@ const Sidebar: NgDocPage = {
       { title: 'Sidebar item', content: toIndentedJson(flowbiteSidebarItemTheme) },
       { title: 'Sidebar', content: toIndentedJson(flowbiteSidebarTheme) },
       { title: 'Sidebar toggle', content: toIndentedJson(flowbiteSidebarToggleTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

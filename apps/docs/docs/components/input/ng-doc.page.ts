@@ -28,7 +28,7 @@ const Input: NgDocPage = {
       { title: 'Form field', content: toIndentedJson(flowbiteFormFieldTheme) },
       { title: 'Helper', content: toIndentedJson(flowbiteHelperTheme) },
       { title: 'Label', content: toIndentedJson(flowbiteLabelTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

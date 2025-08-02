@@ -32,7 +32,7 @@ const Pagination: NgDocPage = {
       { title: 'Pagination next', content: toIndentedJson(flowbitePaginationNextTheme) },
       { title: 'Pagination previous', content: toIndentedJson(flowbitePaginationPreviousTheme) },
       { title: 'Pagination', content: toIndentedJson(flowbitePaginationTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

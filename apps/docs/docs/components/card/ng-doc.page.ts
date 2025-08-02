@@ -26,7 +26,7 @@ const Card: NgDocPage = {
       { title: 'Card content', content: toIndentedJson(flowbiteCardContentTheme) },
       { title: 'Card header', content: toIndentedJson(flowbiteCardHeaderTheme) },
       { title: 'Card', content: toIndentedJson(flowbiteCardTheme) },
-    ] as DocThemes,
+    ] satisfies DocThemes,
   },
 };
 

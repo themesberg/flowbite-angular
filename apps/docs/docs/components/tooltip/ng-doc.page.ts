@@ -18,7 +18,9 @@ const Tooltip: NgDocPage = {
     flowbiteDefaultComponent: FlowbiteDefaultComponent,
   },
   data: {
-    themes: [{ title: 'Tooltip', content: toIndentedJson(flowbiteTooltipTheme) }] as DocThemes,
+    themes: [
+      { title: 'Tooltip', content: toIndentedJson(flowbiteTooltipTheme) },
+    ] satisfies DocThemes,
   },
 };
 
