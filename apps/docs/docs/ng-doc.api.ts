@@ -31,6 +31,7 @@ const api: NgDocApi = {
         'libs/flowbite-angular/sidebar/src/index.ts',
         'libs/flowbite-angular/tab/src/index.ts',
         'libs/flowbite-angular/theme-toggle/src/index.ts',
+        'libs/flowbite-angular/table/src/index.ts',
         'libs/flowbite-angular/tooltip/src/index.ts',
       ],
     },
