@@ -88,6 +88,7 @@
       "flowbite-angular/pagination": ["libs/flowbite-angular/pagination/src/index.ts"],
       "flowbite-angular/sidebar": ["libs/flowbite-angular/sidebar/src/index.ts"],
       "flowbite-angular/tab": ["libs/flowbite-angular/tab/src/index.ts"],
+      "flowbite-angular/table": ["libs/flowbite-angular/table/src/index.ts"],
       "flowbite-angular/theme-toggle": ["libs/flowbite-angular/theme-toggle/src/index.ts"],
       "flowbite-angular/tooltip": ["libs/flowbite-angular/tooltip/src/index.ts"]
     }
