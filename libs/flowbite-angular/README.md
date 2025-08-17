@@ -56,13 +56,15 @@ npm i tailwindcss
 2. Install `flowbite-angular` as a dependency using `npm` by running the following command:
 
 ```bash
-npm i flowbite-angular
+npm i flowbite-angular ng-primitives @ng-icons/core
 ```
 
 3. Import `flowbite-angular` inside your `style.css` file:
 
 ```css
-@import 'node_modules/flowbite-angular/styles/flowbite-angular.css';
+@import 'tailwindcss';
+
+@source "node_modules/flowbite-angular";
 ```
 
 # Components
