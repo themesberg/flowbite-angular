@@ -16,7 +16,7 @@ export interface FlowbiteTableConfig {
    */
   color: keyof FlowbiteTableColors;
   /**
-   * Whether the button is striped.
+   * Whether the table is striped.
    */
   striped: boolean;
   /**
