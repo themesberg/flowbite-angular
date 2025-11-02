@@ -69,7 +69,7 @@ jobs:
           git fetch origin
           git switch main
           git pull origin main
-          git merge origin/release --no-ff -m "chore: merge release into main" --no-verify
+          git merge origin/release --ff-only -m "chore: merge release into main" --no-verify
           git push origin main
 
       - name: Build code 🛠
