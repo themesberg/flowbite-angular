@@ -34,9 +34,9 @@
     "@angular/cdk": ">=20.0.0 < 21.0.0",
     "@angular/core": ">=20.0.0 < 21.0.0",
     "@ng-icons/core": "^31.3.0",
-    "@ng-primitives/state": "^0.57.0",
+    "@ng-primitives/state": ">=0.57.0",
     "@tailwindcss/postcss": "^4.0.0",
-    "ng-primitives": "^0.57.0",
+    "ng-primitives": ">=0.57.0",
     "rxjs": "^7.4.0",
     "tailwind-merge": "2.5.5",
     "tailwindcss": "^4.0.0"
