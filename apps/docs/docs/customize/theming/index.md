@@ -5,6 +5,8 @@ keyword: ThemingPage
 You can use the theme directive from tailwind to define any style related classes, such as the color
 palette, fonts, breakpoints, and more.
 
+Here is the `primary` color theme used for this documentation :
+
 ```css
 @theme {
   /* Primary */
