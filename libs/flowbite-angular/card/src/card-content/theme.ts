@@ -44,11 +44,11 @@ export const flowbiteCardContentTheme: FlowbiteCardContentTheme = createTheme({
       },
     },
     size: {
-      xs: 'w-xs',
-      sm: 'w-sm',
-      md: 'w-md',
-      lg: 'w-lg',
-      xl: 'w-xl',
+      xs: 'max-w-xs',
+      sm: 'max-w-sm',
+      md: 'max-w-md',
+      lg: 'max-w-lg',
+      xl: 'max-w-xl',
     },
   },
 });
