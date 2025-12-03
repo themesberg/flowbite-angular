@@ -177,7 +177,7 @@ export const CardOrientationStory: StoryObj<StoryType> = {
     props: args,
     template: `
       <div flowbiteCard ${argsToTemplate(args)}>
-        <img class="rounded-t-lg h-96 object-cover" src="images/image-2.jpg" alt="" />
+        <img class="rounded-l-lg max-w-24 md:max-w-48 object-cover" src="images/image-2.jpg" alt="" />
         <div flowbiteCardContent>
           <h5 flowbiteCardHeader>Noteworthy technology acquisitions 2021</h5>
           <p class="mb-3">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
