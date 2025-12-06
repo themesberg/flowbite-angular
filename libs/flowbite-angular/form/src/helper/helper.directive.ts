@@ -1,5 +1,6 @@
 import { injectFlowbiteHelperConfig } from '../config/helper-config';
 import { injectFlowbiteFormFieldState } from '../form-field/form-field-state';
+import type { FlowbiteFormFieldColors } from '../form-field/theme';
 import { flowbiteHelperState, provideFlowbiteHelperState } from './helper-state';
 
 import { colorToTheme, mergeDeep } from 'flowbite-angular';
@@ -29,9 +30,9 @@ export class Helper {
   readonly formFieldState = injectFlowbiteFormFieldState();
 
   /**
-   * @see {@link injectFlowbiteHelperConfig}
+   * @see {@link injectFlowbiteFormFieldState}
    */
-  readonly color = input(this.formFieldState().color());
+  readonly color = input<keyof FlowbiteFormFieldColors>();
 
   /**
    * @see {@link injectFlowbiteHelperConfig}
@@ -46,7 +47,7 @@ export class Helper {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          colorToTheme(mergedTheme.host.color, this.state.color())
+          colorToTheme(mergedTheme.host.color, this.state.color() ?? this.formFieldState().color())
         ),
       },
     };
