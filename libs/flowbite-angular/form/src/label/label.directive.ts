@@ -31,6 +31,11 @@ export class Label {
   /**
    * @see {@link injectFlowbiteLabelConfig}
    */
+  readonly color = input(this.formFieldState().color());
+
+  /**
+   * @see {@link injectFlowbiteLabelConfig}
+   */
   readonly customTheme = input(this.config.customTheme);
 
   readonly theme = computed(() => {
@@ -41,7 +46,7 @@ export class Label {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          colorToTheme(mergedTheme.host.color, this.formFieldState().color()),
+          colorToTheme(mergedTheme.host.color, this.state.color()),
           mergedTheme.host.mode[this.formFieldState().mode()]
         ),
       },
