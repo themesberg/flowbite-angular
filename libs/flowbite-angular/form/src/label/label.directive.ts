@@ -1,5 +1,6 @@
 import { injectFlowbiteLabelConfig } from '../config/label-config';
 import { injectFlowbiteFormFieldState } from '../form-field/form-field-state';
+import type { FlowbiteFormFieldColors } from '../form-field/theme';
 import { flowbiteLabelState, provideFlowbiteLabelState } from './label-state';
 
 import { colorToTheme, mergeDeep } from 'flowbite-angular';
@@ -29,6 +30,11 @@ export class Label {
   readonly formFieldState = injectFlowbiteFormFieldState();
 
   /**
+   * @see {@link injectFlowbiteFormFieldState}
+   */
+  readonly color = input<keyof FlowbiteFormFieldColors>();
+
+  /**
    * @see {@link injectFlowbiteLabelConfig}
    */
   readonly customTheme = input(this.config.customTheme);
@@ -41,7 +47,7 @@ export class Label {
         root: twMerge(
           mergedTheme.host.base,
           mergedTheme.host.transition,
-          colorToTheme(mergedTheme.host.color, this.formFieldState().color()),
+          colorToTheme(mergedTheme.host.color, this.state.color() ?? this.formFieldState().color()),
           mergedTheme.host.mode[this.formFieldState().mode()]
         ),
       },
