@@ -127,8 +127,8 @@ importers:
         specifier: 4.4.0
         version: 4.4.0(prettier@3.4.2)
       '@ng-doc/keywords-loaders':
-        specifier: 20.1.0
-        version: 20.1.0(encoding@0.1.13)
+        specifier: 21.0.0
+        version: 21.0.0(encoding@0.1.13)
       '@nx/angular':
         specifier: 22.3.3
         version: 22.3.3(cc89e6178eaf5e78ccd58d976f9b672a)
@@ -2665,14 +2665,11 @@ packages:
   '@ng-doc/builder@21.0.0':
     resolution: {integrity: sha512-xi/FoRcELk4CYE8JLwxJoeAyhfvxUfdIinR+D1e8/mm0ojH8CyXBM9psQnnk1m9qWWl9CsSW7T3obDOGqv8Ttw==}
 
-  '@ng-doc/core@20.1.0':
-    resolution: {integrity: sha512-NMVwHIsyhx2iogZiIBMdNwnM5ljg61DpH5zMdKeygf1AGm2liTCU2rAdSmdLm2EgPWmGzNLzNLZcMD3QaSJldw==}
-
   '@ng-doc/core@21.0.0':
     resolution: {integrity: sha512-sM12SorUYbqh/iTuI3yvRo4b+hjk2jMYv+jCgtskVyaXap3uL8wKUxRL/cnQkf3S+zvlE1q3RhNHrM46nRn7Yg==}
 
-  '@ng-doc/keywords-loaders@20.1.0':
-    resolution: {integrity: sha512-KCj8l3Sv3gKN6egfbOmLcFdXhO7xpdALXXPpfJNIuZXV16WOBbE38fpMXN5pndMpf2gUa60MdnHGQ0oi31rAjw==}
+  '@ng-doc/keywords-loaders@21.0.0':
+    resolution: {integrity: sha512-tVshbV/Uj+xAki0WmKKVk0QdAoUCixHbFI6mg7Y5YzoPlFGEZVGwU2PRtrbeyn5b0TjA5R+IQFefaTEm/h+cgQ==}
 
   '@ng-doc/ui-kit@21.0.0':
     resolution: {integrity: sha512-3nMLUshvR59jkjjkfK4ho9Zhb/dOyWZ4tDMd5sWkyQP/DLxLXdyL9V7f94cGA27ia6WDMpnmy5ZgjzZGkb213w==}
@@ -14296,13 +14293,6 @@ snapshots:
       - webpack-cli
       - yaml
 
-  '@ng-doc/core@20.1.0':
-    dependencies:
-      css-what: 6.1.0
-      esthetic: 0.5.6-beta.1
-      posthtml-parser: 0.11.0
-      posthtml-render: 3.0.0
-
   '@ng-doc/core@21.0.0':
     dependencies:
       css-what: 6.1.0
@@ -14310,9 +14300,9 @@ snapshots:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
 
-  '@ng-doc/keywords-loaders@20.1.0(encoding@0.1.13)':
+  '@ng-doc/keywords-loaders@21.0.0(encoding@0.1.13)':
     dependencies:
-      '@ng-doc/core': 20.1.0
+      '@ng-doc/core': 21.0.0
       node-fetch: 2.6.11(encoding@0.1.13)
     transitivePeerDependencies:
       - encoding
