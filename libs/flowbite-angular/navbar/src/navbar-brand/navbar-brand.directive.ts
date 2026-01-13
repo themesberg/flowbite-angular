@@ -17,7 +17,7 @@ import { twMerge } from 'tailwind-merge';
   providers: [provideFlowbiteNavbarBrandState()],
   host: {
     '[class]': `theme().host.root`,
-    '[attr.type]': 'button',
+    type: 'button',
   },
 })
 export class NavbarBrand {

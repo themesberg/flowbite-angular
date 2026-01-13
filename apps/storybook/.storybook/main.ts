@@ -1,3 +1,4 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
 import type { StorybookConfig } from '@storybook/angular';
 
 import { createRequire } from 'node:module';
@@ -10,7 +11,7 @@ const config: StorybookConfig = {
   staticDirs: ['../public'],
   addons: [getAbsolutePath('@storybook/addon-themes'), getAbsolutePath('@storybook/addon-docs')],
   framework: {
-    name: '@storybook/angular',
+    name: getAbsolutePath('@storybook/angular'),
     options: {},
   },
   docs: {

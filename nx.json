@@ -105,6 +105,8 @@
       }
     },
     "projects": ["flowbite-angular"],
-    "releaseTagPattern": "flowbite-angular@v{version}"
+    "releaseTag": {
+      "pattern": "flowbite-angular@v{version}"
+    }
   }
 }
