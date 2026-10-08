@@ -9,6 +9,7 @@
     "build": {
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/libs/flowbite-angular"],
+      "defaultConfiguration": "production",
       "options": {
         "project": "libs/flowbite-angular/ng-package.json"
       },
@@ -19,11 +20,7 @@
         "development": {
           "tsConfig": "libs/flowbite-angular/tsconfig.lib.json"
         }
-      },
-      "defaultConfiguration": "production"
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
+      }
     }
   }
 }

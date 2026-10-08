@@ -10,6 +10,7 @@
     "build": {
       "executor": "@ng-doc/builder:application",
       "outputs": ["{options.outputPath.base}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": {
           "base": "dist/docs-static"
@@ -72,11 +73,11 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@ng-doc/builder:dev-server",
+      "defaultConfiguration": "development",
       "configurations": {
         "production": {
           "buildTarget": "docs:build:production"
@@ -84,17 +85,13 @@
         "development": {
           "buildTarget": "docs:build:development"
         }
-      },
-      "defaultConfiguration": "development"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
         "buildTarget": "docs:build"
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
     }
   }
 }

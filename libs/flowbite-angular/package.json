@@ -31,8 +31,8 @@
     }
   },
   "peerDependencies": {
-    "@angular/cdk": ">=21.0.0 < 22.0.0",
-    "@angular/core": ">=21.0.0 < 22.0.0",
+    "@angular/cdk": ">=22.0.0 < 23.0.0",
+    "@angular/core": ">=22.0.0 < 23.0.0",
     "@ng-icons/core": "^31.3.0",
     "@ng-primitives/state": "^0.90.0",
     "@tailwindcss/postcss": "^4.0.0",

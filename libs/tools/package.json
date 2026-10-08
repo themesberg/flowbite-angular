@@ -6,8 +6,8 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
-    "@nx/angular": "22.3.3",
-    "@nx/devkit": "22.3.3",
+    "@nx/angular": "23.3.0",
+    "@nx/devkit": "23.3.0",
     "tslib": "^2.8.1"
   },
   "generators": "./generators.json"

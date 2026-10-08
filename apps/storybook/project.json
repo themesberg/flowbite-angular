@@ -11,7 +11,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "storybook:build",
-        "staticFilePath": "dist/storybook",
+        "staticFilePath": "./dist/storybook",
         "spa": true
       }
     },

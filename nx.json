@@ -78,12 +78,12 @@
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "sharedGlobals": [],
+    "sharedGlobals": ["{workspaceRoot}/eslint.config.mjs"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.mjs",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
       "!{projectRoot}/tsconfig.storybook.json"
@@ -108,5 +108,16 @@
     "releaseTag": {
       "pattern": "flowbite-angular@v{version}"
     }
-  }
+  },
+  "analytics": false,
+  "nxCloudId": "6ac71fe71fdd934184d9db35",
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      },
+      "include": ["apps/docs/**/*", "libs/flowbite-angular/**/*", "libs/tools/**/*"]
+    }
+  ]
 }

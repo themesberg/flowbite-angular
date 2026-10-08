@@ -8,6 +8,7 @@
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/libs/tools",
         "main": "libs/tools/src/index.ts",
@@ -39,11 +40,7 @@
       "configurations": {
         "production": {},
         "development": {}
-      },
-      "defaultConfiguration": "production"
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
+      }
     }
   }
 }
